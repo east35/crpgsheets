@@ -1,66 +1,65 @@
 import { useState } from 'react';
 import type { Game, CharacterBuild } from './types';
+import type { BuildGuide } from './games/rogue-trader/types';
 import { Header } from './components/Header';
 import { GameSelector } from './components/GameSelector';
 import { BuildList } from './components/BuildList';
 import { ImportExportToolbar } from './components/ImportExportToolbar';
-import { RogueTraderBuildEditor } from './games/rogue-trader/components/RogueTraderBuildEditor';
+import { BuildSelector } from './games/rogue-trader/components/BuildSelector';
+import { BuildViewer } from './games/rogue-trader/components/BuildViewer';
 import { useBuilds } from './hooks/useBuilds';
-import type { RogueTraderCharacter } from './games/rogue-trader/types';
 import './App.css';
 
-type View = 'game-select' | 'build-list' | 'build-editor';
+type View = 'game-select' | 'build-guides' | 'build-viewer' | 'my-builds' | 'build-editor';
 
 function App() {
   const [currentGame, setCurrentGame] = useState<Game | null>(null);
   const [view, setView] = useState<View>('game-select');
-  const [selectedBuild, setSelectedBuild] = useState<CharacterBuild | null>(null);
+  const [selectedGuide, setSelectedGuide] = useState<BuildGuide | null>(null);
+  const [currentLevel, setCurrentLevel] = useState(1);
   const [error, setError] = useState<string | null>(null);
 
-  const { builds, addBuild, updateBuild, deleteBuild, importBuilds } = useBuilds(
-    currentGame?.id || ''
-  );
+  const { builds, deleteBuild, importBuilds } = useBuilds(currentGame?.id || '');
 
   const handleSelectGame = (game: Game) => {
     setCurrentGame(game);
-    setView('build-list');
+    setView('build-guides');
   };
 
   const handleGameChange = () => {
     setCurrentGame(null);
     setView('game-select');
-    setSelectedBuild(null);
+    setSelectedGuide(null);
   };
 
-  const handleNewBuild = () => {
-    setSelectedBuild(null);
-    setView('build-editor');
+  const handleSelectGuide = (guide: BuildGuide) => {
+    setSelectedGuide(guide);
+    setCurrentLevel(1);
+    setView('build-viewer');
   };
 
-  const handleSelectBuild = (build: CharacterBuild) => {
-    setSelectedBuild(build);
-    setView('build-editor');
+  const handleBackToGuides = () => {
+    setSelectedGuide(null);
+    setView('build-guides');
+  };
+
+  const handleViewMyBuilds = () => {
+    setView('my-builds');
+  };
+
+  const handleViewBuildGuides = () => {
+    setView('build-guides');
+  };
+
+  const handleSelectBuild = (_build: CharacterBuild) => {
+    // TODO: Implement build viewing/editing
+    console.log('Selected build:', _build);
   };
 
   const handleDeleteBuild = (id: string) => {
     if (confirm('Are you sure you want to delete this build?')) {
       deleteBuild(id);
     }
-  };
-
-  const handleSaveBuild = (name: string, data: RogueTraderCharacter, description?: string) => {
-    if (selectedBuild) {
-      updateBuild(selectedBuild.id, { name, data, description });
-    } else {
-      addBuild(name, data, description);
-    }
-    setView('build-list');
-    setSelectedBuild(null);
-  };
-
-  const handleCancelEdit = () => {
-    setView('build-list');
-    setSelectedBuild(null);
   };
 
   const handleImport = (importedBuilds: CharacterBuild[]) => {
@@ -85,15 +84,43 @@ function App() {
           </div>
         )}
 
+        {/* Navigation tabs for game views */}
+        {currentGame && view !== 'game-select' && (
+          <div className="view-tabs">
+            <button
+              className={`view-tab ${view === 'build-guides' || view === 'build-viewer' ? 'active' : ''}`}
+              onClick={handleViewBuildGuides}
+            >
+              Build Guides
+            </button>
+            <button
+              className={`view-tab ${view === 'my-builds' || view === 'build-editor' ? 'active' : ''}`}
+              onClick={handleViewMyBuilds}
+            >
+              My Builds ({builds.length})
+            </button>
+          </div>
+        )}
+
         {view === 'game-select' && <GameSelector onSelectGame={handleSelectGame} />}
 
-        {view === 'build-list' && currentGame && (
+        {view === 'build-guides' && currentGame?.id === 'rogue-trader' && (
+          <BuildSelector onSelectBuild={handleSelectGuide} />
+        )}
+
+        {view === 'build-viewer' && selectedGuide && (
+          <BuildViewer
+            build={selectedGuide}
+            onBack={handleBackToGuides}
+            currentLevel={currentLevel}
+            onLevelChange={setCurrentLevel}
+          />
+        )}
+
+        {view === 'my-builds' && currentGame && (
           <div className="build-list-view">
             <div className="view-header">
-              <h2>{currentGame.shortName} Builds</h2>
-              <button className="btn btn-primary" onClick={handleNewBuild}>
-                New Build
-              </button>
+              <h2>My {currentGame.shortName} Builds</h2>
             </div>
 
             <ImportExportToolbar
@@ -109,14 +136,6 @@ function App() {
               onDeleteBuild={handleDeleteBuild}
             />
           </div>
-        )}
-
-        {view === 'build-editor' && currentGame?.id === 'rogue-trader' && (
-          <RogueTraderBuildEditor
-            build={selectedBuild}
-            onSave={handleSaveBuild}
-            onCancel={handleCancelEdit}
-          />
         )}
       </main>
     </div>

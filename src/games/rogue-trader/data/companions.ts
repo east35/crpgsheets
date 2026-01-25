@@ -1,139 +1,124 @@
-import type { Archetype, CompanionName, Origin } from '../types';
-
-export interface CompanionInfo {
-  name: CompanionName;
-  fullName: string;
-  startingArchetype: Archetype;
-  origin: Origin;
-  description: string;
-  recruitmentAct: number;
-  startingLevel: number;
-}
+import type { CompanionInfo, CompanionName, BaseArchetype } from '../types';
 
 export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
   Abelard: {
     name: 'Abelard',
     fullName: 'Abelard Werserian',
-    startingArchetype: 'warrior',
+    defaultArchetype: 'warrior',
     origin: 'voidBorn',
     description: 'Your loyal Seneschal and former first officer. A disciplined warrior focused on melee combat.',
     recruitmentAct: 1,
     startingLevel: 1,
+    role: 'Frontline Damage / Tank',
   },
   Argenta: {
     name: 'Argenta',
     fullName: 'Sister Argenta',
-    startingArchetype: 'soldier',
+    defaultArchetype: 'soldier',
     origin: 'schola',
     description: 'A Battle Sister of the Adepta Sororitas. Excels at ranged combat with bolters.',
     recruitmentAct: 1,
     startingLevel: 1,
+    role: 'Ranged Damage',
   },
   Idira: {
     name: 'Idira',
     fullName: 'Idira Tlass',
-    startingArchetype: 'operative',
+    defaultArchetype: 'operative',
     origin: 'crimeWorld',
     description: 'A sanctioned psyker with powerful but dangerous abilities.',
     recruitmentAct: 1,
     startingLevel: 1,
+    role: 'Psyker Support / Disruptor / Blaster',
   },
   Pasqal: {
     name: 'Pasqal',
     fullName: 'Pasqal Haneumann',
-    startingArchetype: 'operative',
+    defaultArchetype: 'operative',
     origin: 'forgeWorld',
     description: 'A Tech-Priest of the Adeptus Mechanicus. Master of technology and mechadendrites.',
     recruitmentAct: 1,
     startingLevel: 1,
+    role: 'Ranged Damage / Support',
   },
   Cassia: {
     name: 'Cassia',
     fullName: 'Cassia Orsellio',
-    startingArchetype: 'officer',
+    defaultArchetype: 'officer',
     origin: 'voidBorn',
     description: 'Your Navigator and heir to House Orsellio. Support-focused with unique Navigator powers.',
     recruitmentAct: 1,
     startingLevel: 1,
+    role: 'Support / Buffer',
   },
   Heinrix: {
     name: 'Heinrix',
     fullName: 'Heinrix van Calox',
-    startingArchetype: 'soldier',
+    defaultArchetype: 'soldier',
     origin: 'imperialWorld',
     description: 'An Interrogator of the Inquisition. Skilled psyker and investigator.',
     recruitmentAct: 1,
     startingLevel: 1,
+    role: 'Psyker / Ranged Damage',
   },
   Jae: {
     name: 'Jae',
     fullName: 'Jae Heydari',
-    startingArchetype: 'operative',
+    defaultArchetype: 'operative',
     origin: 'crimeWorld',
     description: 'A Cold Trader and skilled smuggler. Expert in deception and thievery.',
     recruitmentAct: 2,
     startingLevel: 12,
+    role: 'Melee Damage / Debuffer',
   },
   Yrliet: {
     name: 'Yrliet',
     fullName: 'Yrliet Lanaevyss',
-    startingArchetype: 'soldier',
-    origin: 'deathWorld', // Closest equivalent for Aeldari
+    defaultArchetype: 'soldier',
+    origin: 'deathWorld',
     description: 'An Aeldari Ranger. Master sniper with unparalleled accuracy.',
     recruitmentAct: 2,
     startingLevel: 16,
+    role: 'Long Range Damage',
   },
   Marazhai: {
     name: 'Marazhai',
     fullName: 'Marazhai Aezyrraesh',
-    startingArchetype: 'assassin',
-    origin: 'deathWorld', // Closest equivalent for Drukhari
+    defaultArchetype: 'warrior' as BaseArchetype, // Starts as warrior, typically goes assassin
+    origin: 'deathWorld',
     description: 'A Drukhari Kabalite. Deadly melee assassin who feeds on suffering.',
     recruitmentAct: 3,
     startingLevel: 26,
+    role: 'Melee Damage / Assassin',
   },
   Ulfar: {
     name: 'Ulfar',
     fullName: 'Ulfar',
-    startingArchetype: 'warrior',
+    defaultArchetype: 'warrior',
     origin: 'deathWorld',
     description: 'A Space Wolf. Devastating melee combatant with superhuman abilities.',
     recruitmentAct: 4,
     startingLevel: 36,
+    role: 'Melee Damage / Tank',
   },
-  Custom: {
-    name: 'Custom',
-    fullName: 'Custom Character',
-    startingArchetype: 'warrior',
+  RogueTrader: {
+    name: 'RogueTrader',
+    fullName: 'Rogue Trader',
+    defaultArchetype: 'warrior',
     origin: 'imperialWorld',
-    description: 'Your custom Rogue Trader or custom character build.',
+    description: 'Your custom Rogue Trader protagonist.',
     recruitmentAct: 1,
     startingLevel: 1,
+    role: 'Varies by Build',
   },
 };
 
-export const ARCHETYPE_DISPLAY_NAMES: Record<Archetype, string> = {
-  warrior: 'Warrior',
-  operative: 'Operative',
-  soldier: 'Soldier',
-  officer: 'Officer',
-  assassin: 'Assassin',
-  vanguard: 'Vanguard',
-  bountyHunter: 'Bounty Hunter',
-  masterTactician: 'Master Tactician',
-  archMilitant: 'Arch-Militant',
-  exemplar: 'Exemplar',
-  bladeDancer: 'Blade Dancer',
-  grandStrategist: 'Grand Strategist',
-};
+// Helper to get all companions as array
+export function getAllCompanions(): CompanionInfo[] {
+  return Object.values(COMPANIONS);
+}
 
-export const ORIGIN_DISPLAY_NAMES: Record<Origin, string> = {
-  crimeWorld: 'Crime World',
-  deathWorld: 'Death World',
-  forgeWorld: 'Forge World',
-  imperialWorld: 'Imperial World',
-  voidBorn: 'Void Born',
-  fortress: 'Fortress World',
-  agriWorld: 'Agri-World',
-  schola: 'Schola Progenium',
-};
+// Helper to get companions available at a specific act
+export function getCompanionsByAct(act: number): CompanionInfo[] {
+  return Object.values(COMPANIONS).filter((c) => c.recruitmentAct <= act);
+}

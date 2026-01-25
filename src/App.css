@@ -43,6 +43,36 @@
   box-sizing: border-box;
 }
 
+/* View Tabs */
+.view-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.view-tab {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-tab:hover {
+  color: #fff;
+  border-color: #555;
+}
+
+.view-tab.active {
+  background: #646cff;
+  border-color: #646cff;
+  color: #fff;
+}
+
 /* Error Banner */
 .error-banner {
   background: #5c1a1a;
