@@ -1,35 +1,100 @@
-import { useState } from 'react';
-import type { Game, CharacterBuild } from './types';
-import type { BuildGuide } from './games/rogue-trader/types';
+import { useState, useEffect } from 'react';
+import type { Game, CharacterBuild, Profile } from './types';
+import type { BuildGuide, CompanionName } from './games/rogue-trader/types';
 import { Header } from './components/Header';
 import { GameSelector } from './components/GameSelector';
 import { BuildList } from './components/BuildList';
 import { ImportExportToolbar } from './components/ImportExportToolbar';
 import { BuildSelector } from './games/rogue-trader/components/BuildSelector';
 import { BuildViewer } from './games/rogue-trader/components/BuildViewer';
-import { useBuilds } from './hooks/useBuilds';
+import { CustomBuildEditor, type CustomBuildData } from './games/rogue-trader/components/CustomBuildEditor';
+import { getBuildById } from './games/rogue-trader/data/builds';
+import { usePersistedBuilds } from './hooks/usePersistedBuilds';
+import { useProfiles } from './hooks/useProfiles';
 import './App.css';
 
-type View = 'game-select' | 'build-guides' | 'build-viewer' | 'my-builds' | 'build-editor';
+type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor';
 
 function App() {
   const [currentGame, setCurrentGame] = useState<Game | null>(null);
+  const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
   const [view, setView] = useState<View>('game-select');
   const [selectedGuide, setSelectedGuide] = useState<BuildGuide | null>(null);
   const [currentLevel, setCurrentLevel] = useState(1);
+  const [activeTrackedBuildId, setActiveTrackedBuildId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [customBuildCompanion, setCustomBuildCompanion] = useState<CompanionName | null>(null);
 
-  const { builds, deleteBuild, importBuilds } = useBuilds(currentGame?.id || '');
+  const { 
+    profiles, 
+    createProfile, 
+    updateProfile, 
+    deleteProfile, 
+    duplicateProfile,
+    ensureDefaultProfile,
+    exportProfile,
+    importProfile,
+  } = useProfiles(currentGame?.id || '');
+
+  const { builds, addBuild, updateBuild, deleteBuild, importBuilds } = usePersistedBuilds(
+    currentGame?.id || '', 
+    currentProfile?.id || null
+  );
+
+  // Ensure a default profile exists when game is selected
+  useEffect(() => {
+    if (currentGame && profiles.length === 0) {
+      ensureDefaultProfile().then(profile => {
+        setCurrentProfile(profile);
+      });
+    } else if (currentGame && profiles.length > 0 && !currentProfile) {
+      setCurrentProfile(profiles[0]);
+    }
+  }, [currentGame, profiles, currentProfile, ensureDefaultProfile]);
+
+  // Check if a guide is already being tracked
+  const isGuideTracked = (guideId: string) => {
+    return builds.some((b) => {
+      const data = b.data as { guideId?: string } | undefined;
+      return data?.guideId === guideId;
+    });
+  };
+
+  const handleTrackBuild = (guide: BuildGuide) => {
+    if (isGuideTracked(guide.id)) return;
+
+    addBuild(
+      `${guide.companion}: ${guide.buildName}`,
+      {
+        guideId: guide.id,
+        companion: guide.companion,
+        buildName: guide.buildName,
+        currentLevel: 1,
+        archetypePath: guide.archetypePath,
+      },
+      guide.description
+    );
+  };
 
   const handleSelectGame = (game: Game) => {
     setCurrentGame(game);
-    setView('build-guides');
+    setCurrentProfile(null); // Reset profile, will be set by useEffect
+    setView('rogue-trader-builds');
   };
 
   const handleGameChange = () => {
     setCurrentGame(null);
+    setCurrentProfile(null);
     setView('game-select');
     setSelectedGuide(null);
+  };
+
+  const handleSelectProfile = (profile: Profile) => {
+    setCurrentProfile(profile);
+  };
+
+  const handleRenameProfile = async (id: string, name: string) => {
+    await updateProfile(id, { name });
   };
 
   const handleSelectGuide = (guide: BuildGuide) => {
@@ -40,20 +105,47 @@ function App() {
 
   const handleBackToGuides = () => {
     setSelectedGuide(null);
-    setView('build-guides');
+    setActiveTrackedBuildId(null);
+    setView('companion-builds');
   };
 
   const handleViewMyBuilds = () => {
     setView('my-builds');
   };
 
-  const handleViewBuildGuides = () => {
-    setView('build-guides');
+  const handleViewCompanionBuilds = () => {
+    setView('companion-builds');
   };
 
-  const handleSelectBuild = (_build: CharacterBuild) => {
-    // TODO: Implement build viewing/editing
-    console.log('Selected build:', _build);
+  const handleViewRogueTraderBuilds = () => {
+    setView('rogue-trader-builds');
+  };
+
+  const handleSelectBuild = (build: CharacterBuild) => {
+    const data = build.data as { guideId?: string; currentLevel?: number } | undefined;
+    if (data?.guideId) {
+      const guide = getBuildById(data.guideId);
+      if (guide) {
+        setSelectedGuide(guide);
+        setCurrentLevel(data.currentLevel || 1);
+        setActiveTrackedBuildId(build.id);
+        setView('build-viewer');
+      }
+    }
+  };
+
+  const handleLevelChange = (level: number) => {
+    setCurrentLevel(level);
+    // Persist level change if viewing a tracked build
+    if (activeTrackedBuildId) {
+      const build = builds.find((b) => b.id === activeTrackedBuildId);
+      if (build) {
+        const data = build.data as Record<string, unknown>;
+        updateBuild(activeTrackedBuildId, {
+          data: { ...data, currentLevel: level },
+        });
+      }
+    }
   };
 
   const handleDeleteBuild = (id: string) => {
@@ -72,11 +164,52 @@ function App() {
     setTimeout(() => setError(null), 5000);
   };
 
+  const handleCreateCustomBuild = (companion: CompanionName) => {
+    setCustomBuildCompanion(companion);
+    setView('custom-build-editor');
+  };
+
+  const handleSaveCustomBuild = (buildData: CustomBuildData) => {
+    addBuild(
+      `${buildData.companion}: ${buildData.buildName}`,
+      {
+        isCustom: true,
+        companion: buildData.companion,
+        buildName: buildData.buildName,
+        baseArchetype: buildData.baseArchetype,
+        advancedArchetype: buildData.advancedArchetype,
+        progression: buildData.progression,
+        notes: buildData.notes,
+        currentLevel: 1,
+      },
+      buildData.notes
+    );
+    setCustomBuildCompanion(null);
+    setView('my-builds');
+  };
+
+  const handleCancelCustomBuild = () => {
+    setCustomBuildCompanion(null);
+    setView('companion-builds');
+  };
+
   return (
     <div className="app">
-      <Header currentGame={currentGame} onGameChange={handleGameChange} />
+      <Header 
+        currentGame={currentGame} 
+        onGameChange={handleGameChange}
+        profiles={profiles}
+        currentProfile={currentProfile}
+        onSelectProfile={handleSelectProfile}
+        onCreateProfile={createProfile}
+        onDeleteProfile={deleteProfile}
+        onDuplicateProfile={duplicateProfile}
+        onRenameProfile={handleRenameProfile}
+        onExportProfile={exportProfile}
+        onImportProfile={importProfile}
+      />
 
-      <main className="main-content">
+      <main className={`main-content${currentGame ? ' game-selected' : ''}`}>
         {error && (
           <div className="error-banner">
             {error}
@@ -84,28 +217,48 @@ function App() {
           </div>
         )}
 
-        {/* Navigation tabs for game views */}
+        {/* Navigation tabs */}
         {currentGame && view !== 'game-select' && (
-          <div className="view-tabs">
-            <button
-              className={`view-tab ${view === 'build-guides' || view === 'build-viewer' ? 'active' : ''}`}
-              onClick={handleViewBuildGuides}
-            >
-              Build Guides
-            </button>
-            <button
-              className={`view-tab ${view === 'my-builds' || view === 'build-editor' ? 'active' : ''}`}
-              onClick={handleViewMyBuilds}
-            >
-              My Builds ({builds.length})
-            </button>
-          </div>
+          <>
+            <div className="view-tabs">
+              <button
+                className={`view-tab ${view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader') ? 'active' : ''}`}
+                onClick={handleViewRogueTraderBuilds}
+              >
+                Rogue Trader
+              </button>
+              <button
+                className={`view-tab ${view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader') ? 'active' : ''}`}
+                onClick={handleViewCompanionBuilds}
+              >
+                Companions
+              </button>
+              <button
+                className={`view-tab ${view === 'my-builds' || view === 'build-editor' ? 'active' : ''}`}
+                onClick={handleViewMyBuilds}
+              >
+                My Builds ({builds.length})
+              </button>
+            </div>
+          </>
         )}
 
         {view === 'game-select' && <GameSelector onSelectGame={handleSelectGame} />}
 
-        {view === 'build-guides' && currentGame?.id === 'rogue-trader' && (
-          <BuildSelector onSelectBuild={handleSelectGuide} />
+        {view === 'companion-builds' && currentGame?.id === 'rogue-trader' && (
+          <BuildSelector 
+            onSelectBuild={handleSelectGuide} 
+            onCreateCustomBuild={handleCreateCustomBuild}
+            buildType="companion" 
+          />
+        )}
+
+        {view === 'rogue-trader-builds' && currentGame?.id === 'rogue-trader' && (
+          <BuildSelector 
+            onSelectBuild={handleSelectGuide} 
+            onCreateCustomBuild={handleCreateCustomBuild}
+            buildType="rogueTrader" 
+          />
         )}
 
         {view === 'build-viewer' && selectedGuide && (
@@ -113,7 +266,17 @@ function App() {
             build={selectedGuide}
             onBack={handleBackToGuides}
             currentLevel={currentLevel}
-            onLevelChange={setCurrentLevel}
+            onLevelChange={handleLevelChange}
+            onTrackBuild={handleTrackBuild}
+            isTracked={isGuideTracked(selectedGuide.id)}
+          />
+        )}
+
+        {view === 'custom-build-editor' && customBuildCompanion && (
+          <CustomBuildEditor
+            companion={customBuildCompanion}
+            onSave={handleSaveCustomBuild}
+            onCancel={handleCancelCustomBuild}
           />
         )}
 

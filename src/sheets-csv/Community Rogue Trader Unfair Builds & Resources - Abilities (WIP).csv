@@ -1,0 +1,202 @@
+Abilities,
+Warrior,"Endure: Until the warriors next turn, they gain (TGH \2) Deflection and (10 + level \ 6) temporary Wounds"
+Reckless Strike,"The warrior's next melee attack agains +(5 x STR)% armour penetration and (2x Strength) damage and ignores (3x WS)% of the target's parry. Every enemy who survives an attack enhanced by this ability will attawck the warrior in return, including creatures with ranged weapons."
+Sworn Enemy,"The Warrior marks a target, gaining +(10 + 2 x TGH bonus)% armour and +(2 + STR bonus) damage on melee attacks against that target.
+ If the target attacks the Warrior during this round, the Warrior gains +1 AP (once per round)."
+Break Through,"The Warrior gains the Slash ability with (AGI bonus / 2) charges for this round.
+ Slash cannot be used in the same round as Charge.
+ Slash (0 AP):
+ The Warrior dashes through an enemy to the cell on the enemy's opposite side and makes a melee attack with -50% reduced damage.
+ - Can be applied only once for one target per round.
+ - Does not provoke an attack of opportunity."
+Forceful Strike,The Warrior gathers all their strength for a crushing strike. Their next melee attack pushes the enemy away. The distance of that push is equal to (1 + Strength bonus / 2) cells.
+Taunting Scream,The Warrior screams at their enemies to draw their attention and becomes a priority target of any enemy who fails a Willpower resistance test.
+Officer,"Voice of Command: The Officer forces an ally to fully push themselves, increasing their characteristics by +(5 + 2 x Officer's FEL bonus) for 1 round. Additionally, all of the Officer's abilities can be applied to the target of Voice of Command from any distance. A character who becomes the target of Voice of Command cannot be targeted by this ability again for the next 2 rounds."
+Air of Authority,"The Officer increases an ally's Resolve by a Resolve until the end of combat.
+ If the target is under the effect of Voice of Command, they will start their next turn with 1 additional action point."
+Get back in the fight!,"The Officer encourages a target ally to immediately recover from burning, bleeding, toxin and stun effects.
+ If the target is under Voice of Command effect, it gains +2×(Officer's WP bonus) temporary Wounds."
+Break Their Ranks!,"This ability can only target allies who have enemies adjacent to them.
+ Until the start of the Officer's next turn all melee attacks made by the target deal additional damage equal to (Officer's FEL bonus/ 2) multiplied by the number of enemies adjacent to the target when this ability is used.
+ If the target is under the effect of Voice of Command, they immediately make an attack of opportunity against an adjacent enemy, targeting the one with the lowest remaining wounds."
+"Move, Move, Move!","The Officer immediately grants an ally additional Movement points equal to FEL bonus.
+ If the target is under the effect of Voice of Command, it ignores attacks of opportunity until the end of the Officer's turn."
+Take Aim!,"The target's next attack will ignore cover and will have double the effective distance.
+ If the target is under the effect of voice of command, this attack will ignore enemy dodge. Additionally, the damage from this attack can't be reduced below (30 + 3 x FEL bonus)% for any reason."
+Operative,"Analyse Enemies: The Operative targets one enemy within line of sight. That target immediately gains +(1 + INT bonus / 2) exploits.
+Expose Weakness: The Operative removes all exploits from the target to decrease the target's dodge, parry, and armour by -(15 + exploits stacks x PER bonus)% until the start of the Operative's next turn.
+If this ability reduces the target's armour to 0, the Operative only removes only half of the exploits from the target."
+Joint Analysis,"Until the Operative's next turn, their allies' attacks also remove exploits and deal +INT bonus more damage."
+Precise Attack,"For the next attack against a target affected by an exploit, that target's cover fficiency will be reduced by -(15 + (PER bonus/3 x stacks of exploit))%. This attack will have +(15 + PER bonus/3- x stacks of exploit)% hit chance."
+Intimidation,"The Operative's next non-area attack inflicts the intimidated effect on the first target hit by the attack and all enemies in a 5-cell radius around that target.
+ The damage dealt by intimidated enemies is reduced by -(5 + PER bonus/2)% until the Operative's next turn. This negative effect is doubled for enemies with less than (3 x INT bonus)% armour."
+Perfect Spot,"While in cover, the Operative gains +25% cover efficiency, +15 Perception, and +15 Ballistic Skill. This effect lasts until the Operative moves. Does not stack."
+Tactical Knowledge,"The Operative removes -1 exploit from each enemy in a 5-cell radius around a point within 10 cells from the Operative. If there is only one enemy in the area, the Operative removes all exploit stacks from that enemy.
+ All allies gain +(number of removed exploits)% armour until the end of combat. If 4 or more exploits are removed, the Operative gains +(2 x number of removed exploits)% damage until the end of combat."
+Soldier,"Run and Gun: The Soldier gains +(2 + AGI bonus / 2) MP. Their next attack costs -1 AP less and does not count toward the attack limit per turn.
+Until the end of the next turn, the Soldier becomes winded. While winded, the Soldier suffers a -10 penalty to Skill and cannot use Run and Gun."
+Controlled Shot,The Soldier gives a sign that they are about to open fire. The Soldier and their allies will automatically dodge the Soldier's next attack.
+Dash,"The Soldier immediately dashes in the selected direction, spending all their Movement points. Does not provoke attacks of opportunity. Allows the Soldier to dash through allies and enemies but not through obstacles.
+ Can only be used once per round."
+Concentrated Fire,The next ranged area attack made by the Soldier deals +((50 + 10 x BS bonus) / number of enemies in the area of effect)% damage and has an additional +(10 + 2 x BS bonus)% dodge reduction.
+Entrench,"The Soldier immediately spends all their AP and MP and gains a +30% bonus to cover efficiency.
+ The next time the Soldier uses Run and Gun, they gain back all spent AP and MP plus 1 additional AP. It also resets the 7 cooldown of all other Soldier's abilities except for Run and Gun."
+Rapid Fire,"The Soldier's next burst attacks will have its rate of fire doubled but deal -25% less damage. All the shots will follow random trajectories.
+ Only works with weapons capable of burst fire."
+Bladedancer (DLC 1),"Death from Above: The Bladedancer leaps into the air and lands on the selected cell. Upon landing, they deal (AGI bonus + WS bonus) damage to all adjacent enemies.
+This leap can be made to any unoccupied cell within a 3-cell radius in the Bladedancer's line of sight. This movement does not provoke attacks of opportunity. The Bladedancer cannot jump to a cell that is inaccessible in combat.
+This ability can be used multiple times per turn, but each use requires a charge to be spent. The Bladedancer gains +1 charge of this ability each time they kill a target (excluding kills made with Death From Above). This ability can only be used witha sword equipped.
+Bladedance: The Bladedancer makes (2 + AGI bonus/4) melee attacks against random targets (including allies) adjacent to the Bladedancer, each dealing 50% of their normal damage. Blade Dance is a melee burst attack that does not count toward the attack limit per turn.
+ 
+This ability can only be used with a sword equipped. If two swords are equipped, the Bladedancer makes (1 + AGI bonus/4) attacks with each one."
+Acrobatic Artistry,"The Bladedancer immediately returns to the cell where they started their turn. This
+ movement does not provoke attacks of opportunity. If the Bladedancer used Death From Above this turn, this movement repeats all uses of this ability in reverse."
+Oath of Vengeance,"This ability costs (5 + Bladedancer's level /2) wounds to use.
+ 
+ The Bladedancer selects an ally. Until the end of combat, attacks made by the Bladedancer against enemies who have already attacked that ally gain +(10+AGI bonus)% critical hit chance and +(20 + 2 x WS bonus)% critical damage.
+ 
+ This ability can be used multiple times per turn, but the bonuses do not stack."
+Veil of Blades,"This ability costs (5 + Bladedancer's level / 2) wounds to use.
+ 
+ The Bladedancer faces a side of theirchoice and immediately ends their turn.Until the beginning of the Bladedancer'snext turn, they can dodge area attacks
+ without moving, are immune to all types of forced movement, gain +20% parry againstattacks from that side, and can now parry attacks made against adjacent allies. Whileunder the effect of Veil of Blades, the Bladedancer can even parry ranged attacks (except ranged area attacks) made from that side. The chance to parry a ranged attack is calculated as if it were a melee attack, where the attacker's Weapon Skill is equal to the hit chance of the attack. If an attack is parried in this way, it can be redirected towards one of the enemies on the selected side. The chance of redirection is equal to half of the Bladedancer's parry chance against this attack.
+ 
+ ! This ability can only be used with a sword equipped."
+Blood Oath,"This ability costs (5 + Bladedancer's level / 2) wounds to use.
+ 
+The Bladedancer targets a single enemy, vowing to dispatch their mark. The Bladedancer's next attack against their selected enemy cannot be dodged or parried. If this attack kills the target, the Bladedancer regains +(5 + 2 x TGH bonus) wounds and gains +1 AP along with an additional attack this turn.
+ 
+ This ability can be used multiple times per turn, but it grants +1 AP and an additional attack only once per round."
+Captive Audience,The Bladedancer's next attack inflicts bleeding (AGI bonus + WS bonus) on all targets hit. These targets must pass a Toughness resistance test with a - (10+ 2 x AGI bonus) penalty or become immobilised for 1 round. All enemies immobilised by Captive Audience count as full cover for the Bladedancer and their allies when adjacent to those enemies.
+Arch-Militant,"Versatility: Whenever the Arch-Militant uses an attack that is of a different type from their previous attack, the Arch-Militant gains a stack of versatility. The types of attacks can be single shot, single melee attack, area melee attack, area shot, or burst. The Arch-Militant gains +3 WS and BS for every stack of versatility.
+ 
+ If the Arch-Militant has 4 or more stacks of versatility, the Arch-Militant deals an additional +(10 + WS bonus)% or +(10 + BS bonus)% damage, whichever is highest."
+Reckless Rush,"The Arch-Militant immediately gains +(3 + Arch-Militant's AGI bonus) MP. If the Arch-Militant has stacks of versatility, they gain +3 more stacks until the end of turn."
+Wildfire,"The Arch-Militant's next attack will cost 0 AP, will not count toward the attack limit this turn. The cost of this ability is reduced by -1 for every 4 stacks of versatility (min 1)."
+Devastating Attack,"The Arch-Militant's next attack, if it hit, will cause all the targets to make a Toughness resistance test with a −(2 × Arch-Militant's BS bonus or WS bonus, whichever is higher) penalty. If failed, the targets will suffer a negative effect based on the attack's damage type:
+ Impact damage knocks the target prone for 1 round.
+ Piercing and rending damage inflict bleeding and slowed on the target until the end of combat.
+ Energy and all other damage inflict blinded on the target until the end of combat.
+ Power swords and power axes count as both energy and rending, while power hammers count as both energy and impact. Attacks that combine several types of damage will benefit from each additional effect."
+Kick,"The Arch-Militant makes a melee attack with a kick, dealing (TGH bonus + STR bonus) damage instead of weapon damage. This attack does not count toward the attack limit per turn and counts as a single melee attack for the purposes of Versatility. This attack cannot be parried and will push the target 2 cells away."
+Cautious Approach,"The Arch-Militant gains the cautious approach effect until the end of combat, or until this ability is used again, or until using Confident Approach. Instead of the usual bonuses from Versatility, the Arch-Militant gains +5% dodge and parry for every stack.
+ If the Arch-Militant already has 4 or more stacks of Versatility, the Arch-Militant removes all slowed, blinded, bleeding, burning, and toxin effects from themselves and becomes immune to these effects, as well as stun and prone, for as long as the Arch-Militant keeps the cautious approach effect active."
+Confident Apporach,"The Arch-Militant gains the confident approach effect until the end of combat, or until this ability is used again, or until using Cautious Approach. Instead of the usual bonuses from versatility, the Arch-Militant gains +3% dodge reduction and parry reduction and ignores 3% of enemy cover for every stack.
+ All the Arch-Militant's attacks score critical hits, but the Arch-Militant's critical damage for those attacks is modified by half.
+ If the Arch-Militant already has 4 or more stacks of versatility, the Arch-Militant's attacks always deal maximum damage, as long as the Arch-Militant keeps the confident approach effect active."
+Asssasin,"Seek the opening: The Assassin sees a single opening for each enemy on one of the enemy's sides.
+Opening: whenever the Assassin hits an opening (excluding overpenetration), they deal an additional +10% of target's max wounds damage.
+After an attack, the opening is moved to the opposite side of the enemy. Openings of each enemy that were not hit by the Assassin during the Assassin's turn are moved to a random side of that enemy at the start of the Assassin's next turn."
+Killing Edge,"The Assassin attacks and grants +40% dodge to the target for this attack. If this attack hits, it deals an additional +(lethality / 5) (rounded down) damage increased by twice the percentage of that target's missing wounds.
+ Lethality: a specific Assassin parameter that is equal to dodge or dodge reduction, whichever is higher."
+Death Whisper,"The Assassin makes an attack that does not count toward the limit of attacks per turn and does not block the Assassin's movement, but deals only 25% of base damage
+ If successful, the target of that attack suffers from haemorrhage: At the beginning of each of the target's turn they will suffer (lethality / 10) rending damage that ignores armour and deflection.
+ Lethality: a specific Assassin's characteristic that is equal to dodge or dodge penetration, whichever is higher."
+Danse Macabre,"The Assassin dashes in a straight line for up to (1 + AGI bonus / 2) cells, suffering −Assassin’s WS bonus less damage from attacks of opportunity and gaining +(2 × Assassin’s AGI bonus)% dodge against the enemies they dash through until the next Assassin's turn.
+ If the Assassin hasn't dashed through any enemies, at the end of their turn they gain +(2 × (greater of Assassin’s PER and INT bonus))% cover efficiency to their cover until the Assassin moves.
+ Doesn't stack with itself.
+ After the first use, the Assassin can use this ability again for free."
+Feinting Attack,"The Assassin's next single-target attack will have a −50% armour penetration penalty, with a minimum of 0% armour penetration, and +10 lethality.
+ If it's a melee attack, its target rotates 180 degrees. The enemy's dodge and parry against the Assassin's attack is equal to 0 until the start of this enemy's turn.
+ If it's a ranged attack, its target is forced to move to the closest cell in a 3-cell range with no adjacent cover facing toward the Assassin. This movement provokes attacks of opportunity."
+Poised to Strike,"The Assassin makes an enemy suffer −(2 × Assassin’s AGI bonus)% armour and -((greater of Assassin’s PER and INT bonus) - 1) deflection until the end of the Assassin's turn.
+ If there is only 1 enemy adjacent to them, the Assassin also gains + (2 × Assassin’s AGI bonus)% dodge until the Assassin's next turn.
+ If there are no enemies adjacent to the Assassin, they gain +(2 × (greater of PER and INT bonus))% dodge reduction until their next turn."
+Elusive Shadow,"For 1 round the Assassin becomes the lowest priority target for enemy attacks and gains Elusive:
+ the Assassin can move through enemies
+ the Assassin gains + AGI bonus % dodge and +PER bonus % dodge penetration
+ the Assassin's attacks deal +10% additional damage
+ all half cover provides the Assassin 50% cover efficiency.
+ Elusive fades when the Assassin attacks."
+Bounty Hunter,"Prey: The Bounty Hunter may mark any enemy in combat as prey. Whenever the Bounty Hunter kills a target marked as prey, they gain a stackable bonus until the end of combat. The bonus depends on the enemy difficulty tier (the roman numeral on the enemy's icon):
+ I-II : +25% of the Bounty Hunter's maximum wounds as temporary wounds
+ III-IV: +(5 × prey difficulty tier)% critical damage and +(2 × prey difficulty tier)% critical hit chance until the end of combat
+ V-VII: both of the above
+ Hunt Down The Prey has 3 charges at the start of combat."
+Claim the Bounty,"The Bounty Hunter makes a free single attack with the selected weapon. That attack always hits, does not end the Bounty Hunter's movement, but deals just (4 × (BS bonus + PER bonus))% of usual damage.
+ After each third enemy killed by Claim the Bounty, the Bounty Hunter recovers +1 charge of Hunt Down the Prey.
+ Prey: if Claim the Bounty kills a target marked as prey, the Bounty Hunter receives +2 AP."
+Cull the Bold,"The Bounty Hunter's next attack this turn will have additional effects:
+ Deals an additional +BS bonus damage.
+ Enemy's armour will be reduced by −(3 × target difficulty tier)% against all the Bounty Hunter's attacks until the end of combat.
+ If Cull the Bold lowers the enemy's armour below 20%, the enemy's dodge is also decreased by −(3 × target difficulty tier)% against all the Bounty Hunter's attacks until the end of combat, and the Bounty Hunter's next attack this turn deals an additional +(BS bonus +(greater of PER and INT bonus)) damage.
+ Prey: if the target of the attack is marked as prey, the armour and dodge reduction granted by Cull the Bold also work for the attacks of the Bounty Hunter's allies."
+Hot on the trail,"The Bounty Hunter designates an enemy in a 10-cell radius as trailed and finishes the turn.
+ Trailed:
+ All allies gain +7% hit chance against a trailed enemy, +15% if the enemy's difficulty tier is more than or equal to V.
+ If an ally kills a trailed enemy:
+ The Bounty Hunter gains an additional turn after that ally's turn, with all AP and MP remaining from the moment the Bounty Hunter used Hot on the Trail.
+ The Bounty Hunter gains an additional +(2 + target difficulty tier / 2) MP.
+ The cooldown of Hot on the Trail is reset.
+ When Hot on the Trail is used for the third time during combat, the Bounty Hunter recovers +1 charge of Hunt Down the Prey."
+Piercing Shot,"The Bounty Hunter's next attack during this turn will have +100% overpenetration and +(2 × PER bonus)% armour penetration.
+ Prey: the next attack that hits a target marked as prey is always a critical hit."
+Raid,"Until the Bounty Hunter's next turn, whenever an ally attacks a target marked as prey, this attack deals +(Bounty Hunter’s PER bonus)% additional damage and gains half of the Bounty Hunter's current bonuses to critical hit chance and critical damage granted by Hunt Down the Prey."
+Ensanre the Prey,"The Bounty Hunter sets a trap on a free cell in a 10-cell radius around them. Any enemy entering the 2-cell radius around that trap activates the trap:
+ Each enemy in a 2-cell radius around that trap suffers (2 × (greater of Bounty Hunter’s PER and INT bonus)) direct damage and must pass an Agility resistance test with a −(2 × (greater of Bounty Hunter’s PER and INT bonus)) penalty or become immobilised until the enemy's next turn. 
+ The Bounty Hunter gains +AGI bonus MP at the beginning of their next turn. 
+ Prey: a target marked as prey is always immobilised until their next turn."
+Grand Strategist,"Combat Zones: The Grand Strategist analyses the battlefield and can create specific areas providing bonuses to all allies including the Grand Strategist: Frontline, Backline, and Rear. In the first turn, all 3 areas can be created. In the following turn, only one of them can be created. All areas can be moved with the corresponding abilities and cannot overlap.
+If there are two or more Grand Strategists in the party, the Combat Tactics areas are common for all the Grand Strategists, and the highest INT bonus and FEL bonus of all the Grand Strategists is used. There cannot be more than one Frontline, Backline, or Rear on the battlefield.
+Regardless of the abilities used, the Grand Strategist always acts first in combat"
+Overwhelming Stratagem,"The Grand Strategist chooses one of the Combat Tactics areas. For 1 round, all attacks by allies in that area gain covering against any enemy that fails a Willpower resistance test.
+ Covering:
+ Enemies suffer −(5 + 2 × (Grand Strategist’s INT + FEL bonus)) Ballistic Skill, −25% rate of fire, and −(5 + (Grand Strategist’s INT + FEL bonus)) Weapon Skill during attacks against these allies.
+ Additionally, melee enemies have their MP reduced by −3, and ranged enemies will try to get behind cover. An enemy counts as a melee enemy if they have at least one melee weapon.
+ ! This additional effect does not work on some stronger enemies."
+Blitz Stratagem,"The Grand Strategist chooses one of the Combat Tactics areas. For 1 round, all allies within the range of (Grand Strategist’s INT + FEL bonus) cells gain the ability to move to that area. This movement does not provoke attacks of opportunity and does not spend MP."
+Trenchline Stratagem,"The Grand Strategist chooses one of the Combat Tactics areas. For 1 round, all allies in that area gain +(5 + (Grand Strategist’s INT + FEL bonus))% cover efficiency and re-roll all failed characteristic tests. Additionally, cover in the area does not suffer any damage."
+Killzone Stratagem,"The Grand Strategist chooses one of the Combat Tactics areas. For 1 round, all enemies in that area are forced to re-roll successful dodge and parry tests against all attacks. Any enemies that suffer damage and are left with less than (2 × (Grand Strategist’s INT + FEL bonus)) wounds, immediately die."
+Stronghold Stratagem,"The Grand Strategist chooses one of the Combat Tactics areas. For 1 round, allies in that area gain +(3 + (Grand Strategist’s INT + FEL bonus) / 2)% armour, cannot be overpenetrated, gain immunity to the prone effect, and gain +((Grand Strategist’s INT + FEL bonus) / 4) deflection against area attacks. Additionally, they do not suffer injuries for receiving damage."
+Combat Locus Stratagem,"The Grand Strategist chooses one of the Combat Tactics areas. For 1 round, the targeted area's bonuses are doubled. All other tactical areas are discharged and cannot be used this turn, but can be designated again next round."
+Master Tactician,"The Master Tactician gains +1 stack of tactical advantage per every 5 momentum gained by the Master Tactician or their allies.
+The Master Tactician begins combat with the amount of tactical advantage stacks equal to their FEL bonus.
+Press the advatnage: The Master Tactician empowers their next attack to deal +4% additional damage for every stack of tactical advantage the Master Tactician has, and loses half of their stacks of tactical advantage (rounded up)."
+Inspire,"The target gains +5% damage and +5% additional damage for every 10 stacks of tactical advantage the Master Tactician has, but the Master Tactician loses half of their stacks of tactical advantage (rounded up). This effect stacks and lasts until the end of combat.
+ If the target uses a heroic act before the beginning of the Master Tactician's next turn, they regain +25 momentum."
+Strongpoint,"The target gains +2 temporary wounds and +1 additional temporary wound for every 2 stacks of tactical advantage the Master Tactician has, but the Master Tactician loses half of their stacks of tactical advantage (rounded up).
+ Until the beginning of the Master Tactician's next turn, whenever the target loses temporary wounds from damage, the target gains momentum equal to the number of temporary wounds lost."
+Linchpin,"The target ally or the Master Tactician gains +1 resolve for every 5 stacks of tactical advantage the Master Tactician has, but the Master Tactician loses half of their stacks of tactical advantage (rounded up). This effect stacks and lasts until the end of combat.
+ Until the beginning of the Master Tactician's next turn, the Master Tactician gains stacks of tactical advantage equal to (20 + 3 × Master Tactician’s FEL bonus)% of all momentum the target gains (instead of the usual 20%)."
+Fervour,"The Master Tactician suffers direct damage equal to 20% of their maximum wounds, gains Master Tactician's resolve stacks of tactical advantage, and resets the cooldown of Linchpin, Inspire, and Strongpoint. Until the end of the Master Tactician's turn, these abilities can only target the Master Tactician themselves."
+Assasign Objective,"The Master Tactician marks an enemy. If that enemy is killed by one of the Master Tactician's allies before the beginning of the Master Tactician's next turn, that ally gains (10 + 2 × that ally's resolve) momentum and +5 to all characteristics until the end of combat."
+Finish the job,"Can only be used on enemies with the unfinished business effect. This effect is applied to enemies which were attacked by the Master Tactician's allies (but not by the Master Tactician) and have less than 50% of their maximum wounds remaining.
+ The Master Tactician immediately attacks the target with a single shot or strike. This attack does not count toward the attacks per turn limit, dealing half of the weapon's maximum damage and an additional +BS bonus damage."
+Vanguard,"Each attack against the Vanguard grants them +1 stack of unyielding beacon. Each stack increases their resolve by +1, up to a maximum of +15. All allies in a 2-cell radius around the Vanguard gain 1/5 of that bonus.
+Temporary wounds applied to the Vanguard now stack, but only remain stacked until the start of the Vanguard's turn. At the start of their turn, the remaining temporary wounds are reduced to the largest amount granted by one applied effect. If the remaining number of temporary wounds is less than the number of stacks of unyielding beacon, it becomes equal to the number of those stacks even if the Vanguard has no temporary wounds at the start of their turn."
+Wall of Rockcrete,"The Vanguard and all their allies in a 3-cell radius around them gain +(3 + number of unyielding beacon stacks) temporary wounds.
+ All affected allies gain −50% less damage from the next attack. The effect lasts until the start of the Vanguard's next turn"
+Provocation,The Vanguard forces an enemy in their melee range to immediately attack the Vanguard. All of the Vanguard's allies who are wielding melee weapons and adjacent to the enemy make an attack of opportunity against that enemy. The enemy suffers +FEL bonus more damage from these attacks of opportunity and has a −(10 + 2 × Vanguard’s FEL bonus)% penalty to parry and dodge.
+Follow My Lead,"Until the start of their next turn, the Vanguard gains +(10 + 2 × FEL bonus)% damage and +(10 + 2 × FEL bonus)% armour penetration against enemies in a 2-cell radius around the Vanguard. Additionally, when the ability is cast, all allies in a 2-cell radius around the Vanguard gain the Following! ability until the start of the Vanguard's next turn. Following! (0 AP, 2 MP): The character can move to any cell adjacent to the Vanguard without provoking attack of opportunity."
+Defensive Stance,"The Vanguard gains +(10 + 2 × number of unyielding beacon stacks) % parry until their next turn. Whenever the Vanguard parries an enemy's attack, they immediately make an attack of opportunity with a −20 penalty to Weapon Skill against that enemy."
+Bulwark,"Until the start of their next turn, the Vanguard gains damage deflection against ranged attacks equal to the number of stacks of unyielding beacon on the Vanguard. Additionally, the Vanguard becomes immune to push and forced movement effects until their next turn."
+Forced Distraction,"The Vanguard chooses an ally. All enemies in a 3-cell radius around this ally must make a Willpower resistance test with a −(5 × Vanguard’s FEL bonus) penalty. On a failed test, the Vanguard becomes their priority target.
+ Regardless of the Willpower resistance test results, the chosen ally does not provoke attack of opportunity from these enemies, can shoot enemies in melee range, and move as if not within range of attacks of opportunity."
+Executioner (DLC 1),"Scourging Strikes: The executioner's melee attacks inflict STR + PER bonus levels of bleeding on all targets hit. This effect is applied after all other effects from the attack are applied.
+Forced Repentance: Whenever the executioner inflicts a damage-over-time effect on a target already suffering from an effect of the same type, that target must make the relevant resistance test required to remove that effect with a penalty equal to: (Executioner's medicae \10) if failed the target immediately suffers an additional instance of damage from the initial effect. All damage over time effects of this type on the target (including the one just inflicted) have their level increased by (Medicae \ 15). This bonus stacks.
+Where it hurts: If the target of the Executioner's next successful attack is under any damage-over-time effects, this target will immediately suffer 3 instances of damage from each of these effects (2 instances if the Executioner makes a burst or area attack).
+This damage is dealt after all other effects from the attack are applied. Then, all damage-over-time effects are removed from the target. This ability is applied instead of Scourging Strikes and removes all stacks of Forced Repentance."
+Exsanguination,The Executioner immediately inflicts bleeding (5) on an ally of their choice (including themselves). That ally gains a +(5 + Medicae / 10)% bonus to dodge and +3 additional MP until bleeding ends for any reason.
+Pain Resonance,"All enemies suffering from damage-over- time effects in a 4-cell radius around the Executioner immediately suffer an extra instance of damage from these effects.
+ They must also pass a resistance test with a -(Medicae / 5) penalty or suffer an additional negative effect. The effect and type of the resistance test depend on the initial damage-over-time effect.
+ Bleeding: Agility resistance test, blinded
+ Burning: Willpower resistance test, slowed
+ Toxin: Toughness resistance test, staggered
+ These additional effects are removed at the start of the Executioner's next turn."
+Gift of Torment,"Until the start of their next turn, the Executioner gains bonuses to their
+ parameters for each creature (enemy or ally) in combat suffering from the following
+ damage-over-time effects:
+ Bleeding: +(TGH bonus / 2)% armour per creature
+ Burning: +(TGH bonus / 2)% dodge per creature
+ Toxin: +1 deflection per creature up to a maximum of TGH bonus."
+Reckless Abandon,"The Executioner replaces (30% of their maximum wounds) of their wounds with
+ the same number of temporary wounds until the end of combat.
+ While the Executioner has temporary wounds, all of their melee attacks and damage-over-time effects deal an additional +(30% of their maximum wounds)% damage."
+Terrifying Strike,"The Executioner's next melee attack forces all enemies hit to run away from the Executioner in a straight line for up to 3 cells.
+ During this movement, the targets do not provoke attacks of opportunity and leave a bloody trail on the ground, which remains until the end of combat.
+ Movement through these bloodstained cells costs the Executioner 0 MP."
+Mericiless Verdict,"The Executioner's next ranged attack or psychic staff ability inflicts a damage-over-time effect on all targets hit. The type of this effect depends on the attack's damage type:
+ Physical damage: inflicts toxin
+ Energy damage: inflicts burning
+ The level of this damage-over-time effect is equal to (minimum weapon damage / 7). This effect is only applied once per target after all other effects from the attack are applied."
+Overseer (DLC 2),"Pets: Cyber-Eagle, Servo-Skull Swarm (Officer / Operative), Cyber-Mastiff (Arbitrator), Psyber Raven (Psyker)"

@@ -1,0 +1,87 @@
+Cloaks,,,,
+Name,Description,Locations,Acts,
+Mantle of Heroism ,Requires Iconoclast - Follower; Each heroic act used in battle increases the wearer's dodge by +20% until the end of combat (max 60%),,0,
+Rogue Trader's Cloak,The wearer of this cloak gains a +5 bonus to Fellowship for each enemy in a 2 cell radius.,,1,
+Blessed Cape,Increase melee dmg vs daemons by 2. +4 for Dogmatic Conviction,Rykad Minoris ,1,
+Camouflage Robe,Wearer's range attack decrease target dodge -5%. Does Not Stack,Fellowship of the Void,1,
+Commander Cloak,Increase Officer's ability range by 1,Rykad Minoris ,1,
+Emergency Injector,"When the wearer must fall unconscious, recovers Toughness bonus wounds instead. The wearer loses all MP but gains +30% dodge for 1 round (can only be used once per combat)",Rykad Minoris,1,
+Hypnotising Pendant,Wearer's single-shot attack inflicts slow on target til wearer's next turn,Rykad Minoris ,1,
+Phantom Cloak,Grants +15% armour against warp damage,Rykad Minoris,1,
+Reaper Cape,.+12% dodge reduction for wearer's melee area attack,Fellowship of the Void,1,
+Saturated Cape,"When wearer use Endure, weaerer removes 1 condition in order: Burning, Toxin, Bleeding",Rykadi Philia Prison,1,
+Fireproof Cape,Wearer immune to burning. End turn removes burn from adj. allies,Footfall Atrium ,2 and 4,
+Arch-Strategist's Mantle,"Combat tactic area bonus +5% for 1 round if used different strategem than before, doesn't stack",Kiava Gama,2,
+Backpack with Armour-Piercing Ammo,Wearer's ranged attack inflicts (armour pentration /5 bleed on) target,"Plasma Chamber: (Abulation in Blood or Abberation Quest, servitors puzzle)",2,
+Battle Scarred Cape,"When end turn, remove burning, bleeding, and toxin and then add TGHb / 2 Temp. wound per effect",Jae's Dargonus Quest reward,2,
+BladeDancer's Mantle,DfA deals +(3 x Wearer's Resolve) mental dmg,kasballica 12. pf 56,2,
+Cameleoline Cloak,Grants +10% dodge,Adermatt II system - Recoiligers's Plot Safe,2,
+Cape of Righteous Fury,Every Kill increase Crit Chance +5% until the end of combat,Footfall: Dreams and Stories quest,2,
+Cloak of Hatred,Each enemy killed by wearer's area attack increase wearer's dmg by 3% until end of combat,drusian 6. pf 23,2,
+cloak of retribution,Wearer gain 15% dmg bonus to enemy that deal dmg to wearer this round,drusian 1. pf26,2,
+Cloak of Shadows,"When wearer deals dmg with AoO they gain shrouded effect (doesnt stack). Shrouded - when becoming target of an attack auto dodge, after that the effect is removed",Last Chance of Cyrene: Yrliet quest end,2,
+Distraction Cape,This cape lowers enemy Perception by the wearer's FEL Bonus within a 5 cell radius.,"Pulvis Platinum system, Gutted Voidship",2,
+Embroidered Cloak,"This cloak grants the wearer a +5 bonus on Persuasion. When wearer affected by allies'abilities, gain 3% dodge until end of combat. Stacks",Palatium Stellos system - Governors camp,2,
+Grenadier's Cloak,Wearer and allies are immune to wearer's nade dmg,Footfall Docks,2,
+Malpian Shroud,"Whenever wearer deals dmg with melee attack, gain ( TGHb + 3x Icono Rank ) Temp wounds. Wielder melee attack deal ( Temp Wounds / 2 ) more dmg","Foulstone, 1st project event choices",2,
+Mercy's Gift,While in combat and no enemies within 4 cells wearer gains +15FEL,Jae's personal quest celebration,2,
+Militant's Cloak,Wearer's first melee attack cannot be parried or dodge,drusian rep1. pf 20,2,
+Navy Swashbuckler's Coat,Parry Reduc +10%. AR Pen +5% for melee,Pirate Rep 0. PF 18,2,
+Pack of Reagents,"This set of chemical reagents increases Damage of all Burning, Poison or Bleeding effects applied by the wearer by +2.",Footfall: Mutant Hideout,2,
+Strange Shard,Lore Warp + 10 Lore Xenos + 15,Janus Event 3,2,
+Tactical Backpack,Grant +1 ROF,Pirate Rep10. Pf 36,2,
+Zealot Cloak,Whenever weaer hits ally with area attack. gain zealot effect until end of combat(10% dmg increase / stack),Dargonus Palace Bedroom Secret,2,
+Bladedancer's Mantle,Death from Above deals (3 x Resolve) additional psychic damage,"(Void Shadows DLC)
+Kasballica Mission",2,
+Backpack With Armor-Piercing Ammo,Ranged attacks apply (Armor Penetration / 5) levels of Bleeding to targets,"(Void Shadows DLC)
+Plasma Engine Chamber, chest on the elevator",2,
+Singed Cape,Damage taken by the character is reduced by (veil thinning)%,"(Lex Imperialis DLC)
+Tenebris Aquae, Sargon's Cache
+Tech check required on the Heartless' bridge",2,
+Synth-Feed,"If a character ends their turn in an adjacent space to any familiar, the familiar recovers (2 x the familiar's CON bonus) health.","(Lex Imperialis DLC)
+Tassera",2,
+Battle-Scarred Mantle,"When end turn, remove burning, bleeding, and toxin from all adjacent allies. Then the wearer inflicts 10+2*numer of effects removed levels of bleeding on all adjacent enemies",,3,
+Assault Cloak,Wearer gains +5% parry reduction and dodge reduction for their melee area attacks for each creature targeted by that area attack,Farseer Rescue Area,3,
+Mon-Keigh Hide Cape,Decreases all incoming damage except direct by -1+versatility stacks%,Yremeryss loot,3,
+Sworddancer Cloak,"Every time wearer dodges a melee attack, gain (5 + AGIb) until end of their next turn. Stacks","Commisar / Malice Trade, Looting Shrieker Arsenal post taking over Den",3,
+Xeno Emitter,"When a character applies the Burning effect to an enemy, this effect gains an additional 6 levels.
+
+This enemy is also affected by Psi-Suppression until the character's next turn.","Third Arena
+From the body of Kikeross",3,Unavailable when completing the Heretic's quest
+Intigator's Mantle,Taunting Scream targets do need to fail WP resistance test to be affected,Gertafal's Calamity system - Heinrix's quest location,4,
+Swiftshroud Cloak,When wearer is targeted by AoO they gain +1 stack of swiftshroud and + 2 * (AGIb + PRb). They gain +(AGIb+PR)/2 MP every time they are targeted by AoO. At the end of their turn the wearer expends all their swiftshroud stacks and grants all allies +(stacks * 5)% bonus to dodge until wearer's next turn,Gertafal's Calamity system - Heinrix's quest location,4,
+Grenadier's Backpack,Wearer and allies are immune to damage from wearer;s grenades. First time the wearer uses a grenade during their turn theu have 50% chance to not expend it,Cassia's personal quest location,4,
+trapper's Furs,Astartes Equipment. Each time wearer deals damage to an enemy with a ranged attack from a range of 5+ cells the wearer becomes priority target for this enemy until the wearer's next turn,Emperor's Plan system - Eufrates II,4,
+voltagheist Field Emitter,"The wearer suffers -(2*(5+INTb))% less impact and energy damage. When wearer suffers impact or energy damage, the attacking enemy suffers INTb+5 power damage",Pasqal personal quest location,4,
+Shroud of Dauntlessness,Adeptus Astartes Equipment. When wielder performs heroic act or deperate measure they gain +2 AP +6MP and 2*TGHb temp wounds,Mundus Nullius system - Ruined Palace,4,
+Arch-Militant's Cape,Each of the wearer's critical hits made with ranged weapon increases their melee weapon crit dmg by +STR until the end of combat,Quetza Temer,4,
+Tempestus Carapace Elite Backpack,"If wearer;s weapon has base fire rate or strike count 2-4 the parameter is encreased by BSb/3. If it affects ranged weapon recoil is doubled. /// While the wearer's weapon has 5 or more base rof/strike count, hit chance with the burst attacks is increased by 3*BSb. If its a ranged weapon, recoil is negated",Quetza Temer,4,
+Mantle of Extermination,"Whenever wearer kills an enemy, allies gain 5% crit chance until wearer's next turn",Drusian rep 26. pf92,4,
+Cloak of Bloodthirst,"If target is bleeding, wearer's melee attack deals 2 x AGI % more dmg",Kasballica 18 pf76,4,
+Mantle of Extermination,"When a character kills an enemy with an area-of-effect attack, that character's allies gain a +5% critical hit chance until their next turn. This effect stacks.","(Void Shadows DLC)
+Drusians",4,
+Bag with Stimulants,"When using Carnival of Suffering, the character immediately fully restores health.","(Void Shadows DLC)
+Explorators",4,
+Cloak of Bloodthirst,"When attacking a target affected by bleeding in melee combat, the character deals (2 x DEX bonus)% more damage.","(Void Shadows DLC)
+Kasballica Mission",4,
+Emergency Vox-Casters,"When a character is injured, their allies, if able, immediately make the attack that costs the fewest AP against their closest enemy.","(Void Shadows DLC)
+Fellowship of the void",4,
+Cloak of Mercy,,"(Lex Imperialis DLC)
+Quetza Temer, in the ruined temple before meeting the Aeldari
+Explosives check required",4,
+Sensory-Motor Modulator,"When using Dash, Dance of Death, Sprint, or Death from Above, the character gains +(DEX bonus + PER bonus)% armor penetration and evasion reduction for the rest of their turn. Stacks up to 3 times.","(Lex Imperialis DLC)
+Lethus, in the back crate in the arena with the ambull",4,
+Reactivator Pack,Restarting does not cost any AP. The targeted familiar gains (4 x FEL bonus) temporary health and a +(4 x FEL bonus) bonus to all stats until the end of the round.,(Lex Imperialis DLC) Leetus From the body of Proctor Adriana Yeager,4,
+Lady Theodora's Mantle,"A robe of xenos hide that once draped Lady Theodora's shoulders. No one remembered it for years, nor the station where it was abandoned.
+
+If there are more enemies than allies in combat at the start of a character's turn, the character deals 20% more damage with melee weapons.",(Lex Imperialis DLC) Leethus,4,
+Shadowguide cloak,Wearer becomes least priority target as long as no adj enemy (don't really work/finicky),Kasballica 31. pf126,4,
+Emergency Vox Caster,"Whenever wearer suffer trauma, if possible, all allies immediately attack nearest enemy for with least costing AP attack",Void 29. pf100,4,
+Bag with Stimulants,"Whenever wearer use Carnival of Misery, heal to full",Explorators 32 pf 143,4,
+Dark Reaver,Drukhari Equipment. When wearer dodges and enemy ranged attack they immediately perform single attack with equipped melee weapon on a random adjacent enemy. This attack has +35% armor pen and parry reduction and can only be performed three times in a single round,AN#8954no01-KT system -Dead World Drukhari Camp (Marazhai required),5,
+Holo-Field Emitter,"Wielder gains 3 charges of holo-field. When wielder suffers damage 1 charge is removed to prevent dmg. If there are no charges left, damage is not prevented and the wielder becomes staggered until the end of combat",Sanctum of Taaphetus system - Lifeless world,5,
+Cloaking field Emitter,"When wearer moves one of their comabt tactic areas, the bonuses granted by this area are doubled",Neos Charoitus system - Desert World surface,5,
+Bloody Fury Cloak,"When wearer kills enemy with melee attack, their attack limit is removed until the end of their turn, but every one of their attacks also deals 10% of the wearer's max wounds direct damage to the wearer",Tomb world Epitaph,5,
+Noble Born Mantle,While in combat the wearer of this cloak gains a +15 bonus to Fellowship whenever there are no enemies in a 4 cell radius.,,,
+Righteous Fury Cape,Each kill of the wearer increases Righteous Fury chance by 5% (to a maximum of +30%) untill the end of the combat.,,,
+Xeno-Pelt Cloak,,,,

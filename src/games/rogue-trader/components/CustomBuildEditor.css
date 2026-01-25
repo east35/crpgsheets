@@ -1,0 +1,249 @@
+.custom-build-editor {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #3a3a5a;
+}
+
+.editor-header h2 {
+  margin: 0;
+  color: #f0c040;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.editor-form {
+  background: #1a1a2e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-row.full-width {
+  flex-direction: column;
+}
+
+.form-row label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #a0a0c0;
+  font-size: 0.9rem;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  padding: 0.6rem 0.8rem;
+  background: #2a2a3e;
+  border: 1px solid #3a3a5a;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #f0c040;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.progression-editor h3 {
+  margin: 0 0 0.5rem 0;
+  color: #e0e0e0;
+}
+
+.progression-editor .hint {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.tier-divider {
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 6px 6px 0 0;
+}
+
+.tier-divider.base {
+  background: linear-gradient(90deg, #2a4a2a, transparent);
+  color: #8aff8a;
+}
+
+.tier-divider.advanced {
+  background: linear-gradient(90deg, #3a3a6a, transparent);
+  color: #8a8aff;
+}
+
+.tier-divider.exemplar {
+  background: linear-gradient(90deg, #5a3a2a, transparent);
+  color: #ffaa6a;
+}
+
+.level-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  background: #1a1a2e;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.level-row:hover {
+  background: #2a2a3e;
+}
+
+.level-row.editing {
+  background: #2a2a4e;
+  border-left-color: #f0c040;
+}
+
+.level-row.base {
+  border-left-color: #3a5a3a;
+}
+
+.level-row.advanced {
+  border-left-color: #4a4a7a;
+}
+
+.level-row.exemplar {
+  border-left-color: #6a4a3a;
+}
+
+.level-number {
+  width: 50px;
+  font-weight: 600;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.level-talents {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.selected-talent {
+  padding: 0.25rem 0.6rem;
+  background: #3a4a3a;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #c0ffc0;
+}
+
+.no-talents {
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.talent-picker {
+  background: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  border-radius: 0 0 8px 8px;
+  margin-top: -1px;
+  padding: 1rem;
+}
+
+.talent-search {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: #2a2a3e;
+  border: 1px solid #3a3a5a;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.talent-search:focus {
+  outline: none;
+  border-color: #f0c040;
+}
+
+.talent-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.talent-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: #2a2a3e;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.talent-option:hover {
+  background: #3a3a4e;
+}
+
+.talent-option.selected {
+  background: #3a5a3a;
+  border-left: 3px solid #8aff8a;
+}
+
+.talent-name {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.talent-source {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.more-talents {
+  padding: 0.5rem;
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .editor-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}

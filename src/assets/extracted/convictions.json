@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dogmatic",
+    "name": "Dogmatic",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Dogmatic",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Belief in the holiness and infallibility of the laws of the Imperium. Adherence to the precepts of the God-Emperor and the holy chosen ones, carrying out His will to the ignorant and unruly masses. Unfettered hatred of the enemies of Mankind, be they traitors, heretics, xenos, or servants of Chaos.\nTo be counted among the teeming trillions of those who believe in the holiness and infallibility of the Master of Mankind and His innumerable institutions, laws and civic bodies is to be among the majority of the Imperium. You believe that His works and His empire are, above all else, paramount and must need protecting, even if it comes at the expense of individuals. Oft this means adhering to the principles of those who came before, the blessed chosen few, and then bringing these to the ignorant and unruly masses.\nHatred of Mankind’s endless tide of foes defines a member of the Dogmatic school of thought well, whether they be traitor, xenos, mutant or a servant of the Ruinous Powers. And treading down this path often provides the follower with greater boons.\nAbsolution: In the first round of combat, all critical hits scored by the Rogue Trader's party inflict Burning. In addition, all fire damage suffered by enemies is increased by +1 for each Conviction: Dogmatic rank. Burning: at the start of every turn the affected target suffers 10 damage and must pass an Agility resistance test with a −10 penalty to stop burning.\nPath of Redemption: Any momentum expenditure by the Rogue Trader and their allies, including heroic acts, is reduced by −20%.\nPiercing Resolution: Once per battle the Rogue Trader may choose an ally (including themselves). For 1 round all the target's weapon attacks ignore enemies' armour.\nInstrument of His Will: Until the start of their next turn, the Rogue Trader becomes immune to any attacks from daemons and xenos, and all daemons and xenos in a 5-cell radius consider them a priority target. Can only be used once per battle.",
+    "prerequisite": null,
+    "category": "convictions"
+  },
+  {
+    "id": "iconoclast",
+    "name": "Iconoclast",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Iconoclast",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Belief in humanity, in compassion and the importance of an individual rather than the vast, labyrinthine institutions of the Imperium is a rare oddity oft afforded to the select few with the power to do so. Many of these attributes have died out in the common man, so desperate are they just to find their next meal, but the vestiges of humanity, a belief in the value of human life and freedom, cling on tenaciously even amid the dark squalor of the forty-first millennium.\nSeeking out compromise and understanding, even with those who might be considered foes, is the foremost tenant of this school of thought, rather than engaging in uncompromising destruction. And treading down this path often provides the follower with greater boons.\nMaster of Command: In the first round of every combat, the Rogue Trader and their allies gain +(2 + Rogue Trader's Iconoclast rank) additional MP.\nCourage and Steel: The Rogue Trader and their allies need 30 less momentum to activate a heroic act.\nTranscend the Potential: Once per battle the Rogue Trader may choose an ally. The target ally may immediately use their heroic act without spending momentum. Not applicable to allies whose heroic act is on cooldown.\nExcellence: Any attacks from allies that may hit other allies will be dodged if possible. Any allied ability that may target an ally and has a resistance test will be resisted by allies.",
+    "prerequisite": null,
+    "category": "convictions"
+  },
+  {
+    "id": "heretical",
+    "name": "Heretical",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Heretical",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Beyond the realm of compassion and selfless service to something greater, holier than one’s self lies that of self-interest, devotion to things darker and more malevolent, and a belief in what amounts to poison to one’s very soul. In this grim millennium where the worship of dark gods rips through the material world and belief in nothing but one’s own self-interest runs rampant, there are an increasing number of selfish people who would see themselves rise at the expense of all else. Whether by abusing the corrupting influence of the warp, worshipping foul entities or engaging in whatever base, dark impulses lie within the human heart.\nThat is what it means to follow in the footsteps of the Heretical school of thought. And treading down this path often provides the follower with greater boons.\nResource Preservation: The Rogue Trader and their allies gain a +20% chance to save a combat stimulant or a medikit after using it.\nDestroy the Weak: For the first round of combat, everyone in the Rogue Trader's party gains a 25% chance to regain 1 AP after killing an enemy, however triggering this effect immediately manifests psychic phenomena. Does not reset the cooldowns of attacks and abilities.\nGifts of the Warp: Any psychic phenomena increase the momentum of the Rogue Trader's party by +(2 to 10) instead of decreasing it by −(1 to 5).\nDaemonopathy: Once per battle the Rogue Trader may choose an ally (including themselves) and grant them a +20 bonus to all their characteristics for 2 rounds. After the effect fades, the target falls prone.\nPower From Beyond the Veil: All weapons on the battlefield become warp-imbued for 1 round, gaining bonus damage equal to +(veil degradation level) and an additional +(5 × veil degradation)% armour penetration. Can only be used once per combat.",
+    "prerequisite": null,
+    "category": "convictions"
+  }
+]

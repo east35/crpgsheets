@@ -1,5 +1,5 @@
 import type { Game } from '../types';
-import { getAllGames } from '../games/registry';
+import { getAllGames, COMING_SOON_GAMES } from '../games/registry';
 
 interface GameSelectorProps {
   onSelectGame: (game: Game) => void;
@@ -19,10 +19,26 @@ export function GameSelector({ onSelectGame }: GameSelectorProps) {
             className="game-card"
             onClick={() => onSelectGame(game)}
           >
+            <span className="beta-badge">Beta</span>
             <h3>{game.name}</h3>
             <p>{game.description}</p>
           </button>
         ))}
+        {COMING_SOON_GAMES.map((game) => (
+          <div
+            key={game.id}
+            className="game-card coming-soon"
+            style={game.heroImage ? { backgroundImage: `url(${game.heroImage})` } : undefined}
+          >
+            <span className="coming-soon-badge">Coming Soon</span>
+            <h3>{game.name}</h3>
+            <p>{game.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="storage-notice">
+        <span className="notice-icon">💾</span>
+        <span>Your builds are saved locally to this device only. Use Export/Import in My Builds to transfer data between devices.</span>
       </div>
     </div>
   );

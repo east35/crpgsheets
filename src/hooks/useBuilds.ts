@@ -9,6 +9,7 @@ export function useBuilds(gameId: string) {
     const newBuild: CharacterBuild = {
       id: generateBuildId(),
       gameId,
+      profileId: '', // Legacy hook - not used with profiles
       name,
       description,
       createdAt: new Date().toISOString(),

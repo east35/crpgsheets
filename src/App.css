@@ -20,10 +20,49 @@
   align-items: center;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid #3a3a5a;
+  border-radius: 6px;
+  color: #888;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+  padding-bottom: 2px;
+}
+
+.back-btn:hover {
+  background: #2a2a3e;
+  color: #f0c040;
+  border-color: #4a4a6a;
+}
+
 .header h1 {
   margin: 0;
   font-size: 1.5rem;
   color: #fff;
+}
+
+.game-logo {
+  height: 40px;
+  width: auto;
 }
 
 .current-game {
@@ -41,6 +80,32 @@
   padding: 2rem;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+}
+
+.main-content.game-selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 400px;
+  background-image: url('https://cdn2.steamgriddb.com/hero/73ef4133e49dbac846f32f9667721822.png');
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Profile Bar */
+.profile-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
 }
 
 /* View Tabs */
@@ -49,7 +114,6 @@
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #333;
 }
 
 .view-tab {
@@ -110,21 +174,62 @@
 }
 
 .game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .game-card {
   background: #1a1a2e;
+  background-image: url('https://cdn2.steamgriddb.com/hero/73ef4133e49dbac846f32f9667721822.png');
+  background-size: cover;
+  background-position: center;
   border: 2px solid #333;
   border-radius: 12px;
   padding: 2rem;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
+  position: relative;
+}
+
+/* Storage Notice */
+.storage-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1rem;
+  background: rgba(100, 108, 255, 0.1);
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  border-radius: 8px;
+  color: #a0a0c0;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.storage-notice .notice-icon {
+  font-size: 1.1rem;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.9));
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.game-card h3,
+.game-card p {
+  position: relative;
+  z-index: 1;
 }
 
 .game-card:hover {
@@ -141,6 +246,50 @@
   margin: 0;
   color: #888;
   font-size: 0.9rem;
+}
+
+/* Coming Soon Cards */
+.game-card.coming-soon {
+  cursor: not-allowed;
+  background-size: cover;
+  background-position: center;
+}
+
+.game-card.coming-soon::before {
+  background: linear-gradient(to bottom, rgba(26, 26, 46, 0.75), rgba(26, 26, 46, 0.92));
+}
+
+.game-card.coming-soon:hover {
+  border-color: #333;
+  transform: none;
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background: #4a3a6a;
+  color: #c0a0ff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.beta-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background: #2a6a4a;
+  color: #80ffa0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  z-index: 1;
 }
 
 /* Build List View */
@@ -214,6 +363,40 @@
 .build-date {
   color: #666;
   font-size: 0.8rem;
+}
+
+.build-archetype-path {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+}
+
+.build-archetype-path .archetype {
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.build-archetype-path .archetype.base {
+  background: #2d4a2d;
+  color: #90ee90;
+}
+
+.build-archetype-path .archetype.advanced {
+  background: #4a3d2d;
+  color: #ffd700;
+}
+
+.build-archetype-path .archetype.exemplar {
+  background: #4a2d4a;
+  color: #da70d6;
+}
+
+.build-archetype-path .arrow {
+  color: #555;
 }
 
 .build-actions {

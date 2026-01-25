@@ -1,0 +1,126 @@
+.keyword-trigger {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted currentColor;
+  font-weight: 500;
+}
+
+.keyword-homeworld { color: #4a9eff; }
+.keyword-origin { color: #9b59b6; }
+.keyword-archetype { color: #e74c3c; }
+.keyword-characteristic { color: #f39c12; }
+.keyword-skill { color: #2ecc71; }
+.keyword-stat { color: #1abc9c; }
+.keyword-conviction { color: #e91e63; }
+.keyword-status-effect { color: #ff5722; }
+.keyword-talent { color: #3498db; }
+.keyword-ability { color: #8e44ad; }
+
+.keyword-tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #1a1a2e;
+  border: 1px solid #4a6a8a;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 280px;
+  max-width: 380px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+  text-align: left;
+}
+
+.keyword-tooltip.top {
+  bottom: calc(100% + 8px);
+}
+
+.keyword-tooltip.bottom {
+  top: calc(100% + 8px);
+}
+
+.keyword-tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3a4a5a;
+}
+
+.keyword-tooltip-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #2a2a3e;
+  flex-shrink: 0;
+}
+
+.keyword-tooltip-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.keyword-tooltip-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.keyword-tooltip-category {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  width: fit-content;
+}
+
+.keyword-tooltip-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #c0c0d0;
+  white-space: pre-wrap;
+}
+
+.keyword-tooltip-link {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #3a4a5a;
+}
+
+.keyword-tooltip-link a {
+  color: #4a9eff;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.keyword-tooltip-link a:hover {
+  text-decoration: underline;
+}
+
+/* Arrow for tooltip */
+.keyword-tooltip.top::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+.keyword-tooltip.bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-bottom-color: #1a1a2e;
+}

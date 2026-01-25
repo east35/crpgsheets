@@ -1,0 +1,92 @@
+[
+  {
+    "id": "weapon-skill-ws",
+    "name": "Weapon Skill (WS)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Weapon+Skill",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Weapon Skill (WS) reflects a character's competence in all forms of close combat. It increases their parry and reduces enemy parry and dodge chance against melee attacks. It also increases chances of scoring a critical hit in a melee combat.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "ballistic-skill-bs",
+    "name": "Ballistic Skill (BS)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Ballistic+Skill",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Ballistic Skill (BS) reflects a character's accuracy with all forms of ranged weapons. A high Ballistics Skill indicates that a character is a deadeye, someone to be feared in a gunfight or skirmish. The base hit chance for ranged attacks within a weapon's effective range is 30 + Ballistic Skill.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "strength-str",
+    "name": "Strength (STR)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Strength",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Strength (STR) describes how physically strong a character is. It affects the damage a character inflicts with melee weapons and allows them to lift heavier objects. For each bonus point of Strength, characters deal 1 additional damage with melee weapons. It also affects the Athletics skill.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "toughness-tgh",
+    "name": "Toughness (TGH)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Toughness",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Toughness (TGH) defines how easily a character can shrug off injuries, as well as how easily they can resist toxins, poisonous environments, diseases, and other physical ailments. It increases the chances of resisting negative physical effects and the amount of a character's wounds. For each bonus point of Toughness, characters gain +10% wounds. It also affects the Carouse skill.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "agility-agi",
+    "name": "Agility (AGI)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Agility",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Agility (AGI) measures a character's quickness, reflexes, and poise. High Agility allows a character to manipulate delicate explosives with finesse or to keep their footing when crossing treacherous terrain. It improves the character's initiative, dodge chance, and reaction. If a character uses a melee weapon, their dodge reduction is equal to the half of their Agility. It also affects the Demolition skill.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "intelligence-int",
+    "name": "Intelligence (INT)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Intelligence",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Intelligence (INT) is a measurement of the character's acumen, reason, and knowledge. It also affects the Lore (Imperium), Lore (Warp), Lore (Xenos), Logic, Medicae, and Tech-Use skills.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "perception-per",
+    "name": "Perception (PER)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Perception",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Perception (PER) describes how well a character perceives their surroundings. Characters with high Perception can pick out a stray bolter shell casing in between the day-to-day morass of an underhive, or even tell when someone is being deceitful. It also affects the Awareness skill and reduces enemy dodge chance against a character's attacks.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "willpower-wp",
+    "name": "Willpower (WP)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Willpower",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Willpower (WP) reflects a character's ability to withstand the horrors of warp, the terrors of space, and the dreadful opponents they are bound to encounter in the Koronus Expanse. High Willpower allows characters to exert control over a crowd or interrogate a heretic. It also increases the chances of resisting negative mental effects and psychic powers.",
+    "prerequisite": null,
+    "category": "characteristics"
+  },
+  {
+    "id": "fellowship-fel",
+    "name": "Fellowship (FEL)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Fellowship",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Fellowship (FEL) represents a character's ability to interact with other creatures, to deceive, charm, or befriend them. High Fellowship will help a character find a way to approach a gathering of unsociable servants or to effortlessly make deals with treacherous merchants. It also affects the Persuasion, Coercion, and Commerce skills.",
+    "prerequisite": null,
+    "category": "characteristics"
+  }
+]

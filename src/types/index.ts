@@ -8,9 +8,20 @@ export interface Game {
   icon?: string;
 }
 
+// Profile represents a "save slot" for a playthrough
+export interface Profile {
+  id: string;
+  gameId: string;
+  name: string;
+  description?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface CharacterBuild {
   id: string;
   gameId: string;
+  profileId: string; // Links build to a specific profile/playthrough
   name: string;
   description?: string;
   createdAt: string;

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "death-world",
+    "name": "Death World",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Death+World",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Survival Instinct",
+    "prerequisite": null,
+    "category": "homeworlds"
+  },
+  {
+    "id": "forge-world",
+    "name": "Forge World",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Forge+World",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Forged for a Purpose",
+    "prerequisite": null,
+    "category": "homeworlds"
+  },
+  {
+    "id": "fortress-world",
+    "name": "Fortress World",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Fortress+World",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Never Stop Shooting\nStrength in Numbers",
+    "prerequisite": null,
+    "category": "homeworlds"
+  },
+  {
+    "id": "imperial-world",
+    "name": "Imperial World",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Imperial+World",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Humanity's Finest",
+    "prerequisite": null,
+    "category": "homeworlds"
+  },
+  {
+    "id": "voidborn",
+    "name": "Voidborn",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Voidborn",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Fortune",
+    "prerequisite": null,
+    "category": "homeworlds"
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "adeptus-arbites-shield",
+    "name": "Adeptus Arbites Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Adeptus+Arbites+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "25%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "advanced-shield",
+    "name": "Advanced Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Advanced+Shield+",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "50%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "defender",
+    "name": "Defender",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Defender",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "40%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "flames-of-retribution",
+    "name": "Flames of Retribution",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Flames+of+Retribution",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "35%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "gunnery-shield",
+    "name": "Gunnery Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Gunnery+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "35%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "hardened-shield",
+    "name": "Hardened Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Hardened+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "22%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "heavy-shield",
+    "name": "Heavy Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Heavy+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "30%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "insulator-shield",
+    "name": "Insulator Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Insulator+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "25%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "intimidating-growl",
+    "name": "Intimidating Growl",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Intimidating+Growl",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "40%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "iron-shield",
+    "name": "Iron Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Iron+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "40%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "kinesiostatic-shield",
+    "name": "Kinesiostatic Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Kinesiostatic+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "35%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "last-stand",
+    "name": "Last Stand",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Last+Stand",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "40%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "meragon-shield",
+    "name": "Meragon Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Meragon+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "40%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "radiant-shield",
+    "name": "Radiant Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Radiant+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "25%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "reflective-shield",
+    "name": "Reflective Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Reflective+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "20%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "reflective-shield-altered",
+    "name": "Reflective Shield (Altered)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Reflective+Shield+(Altered)",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "25%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "shield-of-unfaltering-will",
+    "name": "Shield of Unfaltering Will",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Shield+of+Unfaltering+Will",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "40%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "solid-shield",
+    "name": "Solid Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Solid+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "40%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "special-privilege",
+    "name": "Special Privilege",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Special+Privilege",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "30%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "steel-triad",
+    "name": "Steel Triad",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Steel+Triad",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "30%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  },
+  {
+    "id": "stronghold",
+    "name": "Stronghold",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Stronghold",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "25%",
+    "prerequisite": "STR Bonus + TGH Bonus",
+    "category": "shields"
+  }
+]

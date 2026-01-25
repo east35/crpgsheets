@@ -18,7 +18,8 @@ export type BaseArchetype =
   | 'warrior'
   | 'operative'
   | 'soldier'
-  | 'officer';
+  | 'officer'
+  | 'bladeDancer';
 
 // Advanced archetypes (levels 16-35)
 export type AdvancedArchetype =
@@ -28,12 +29,11 @@ export type AdvancedArchetype =
   | 'masterTactician'
   | 'archMilitant'
   | 'executioner'
-  | 'grandStrategist';
+  | 'grandStrategist'
+  | 'overseer';
 
 // Exemplar archetypes (levels 36-55)
-export type ExemplarArchetype =
-  | 'exemplar'
-  | 'bladeDancer';
+export type ExemplarArchetype = 'exemplar';
 
 export type Archetype = BaseArchetype | AdvancedArchetype | ExemplarArchetype;
 
@@ -164,6 +164,9 @@ export interface CompanionInfo {
   defaultArchetype: BaseArchetype;
   origin: Origin;
   description: string;
+  bio: string;
+  quote: string;
+  portraitUrl?: string;
   recruitmentAct: number;
   startingLevel: number;
   role: string; // e.g., "Frontline Damage / Tank"
@@ -189,15 +192,16 @@ export const ARCHETYPE_DISPLAY_NAMES: Record<Archetype, string> = {
   operative: 'Operative',
   soldier: 'Soldier',
   officer: 'Officer',
+  bladeDancer: 'Blade Dancer',
   assassin: 'Assassin',
   vanguard: 'Vanguard',
   bountyHunter: 'Bounty Hunter',
   masterTactician: 'Master Tactician',
   archMilitant: 'Arch-Militant',
   executioner: 'Executioner',
-  exemplar: 'Exemplar',
-  bladeDancer: 'Blade Dancer',
   grandStrategist: 'Grand Strategist',
+  overseer: 'Overseer',
+  exemplar: 'Exemplar',
 };
 
 export const ORIGIN_DISPLAY_NAMES: Record<Origin, string> = {

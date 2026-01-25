@@ -1,0 +1,332 @@
+[
+  {
+    "id": "aeldari-ranger-armour",
+    "name": "Aeldari ranger Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Aeldari+ranger+Armour",
+    "imageRemote": "/file/Rogue-Trader/aeldari_ranger_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/aeldari_ranger_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 30%\nBase armour property: +10% dodge if the wearer is in any cover.",
+    "prerequisite": "Aeldari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "armoured-bodyglove",
+    "name": "Armoured Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Armoured+Bodyglove",
+    "imageRemote": "/file/Rogue-Trader/armoured_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/armoured_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 15%\nHas no effect",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "carapace-chestplate",
+    "name": "Carapace Chestplate",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Carapace+Chestplate",
+    "imageRemote": "/file/Rogue-Trader/carapace_chestplate_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/carapace_chestplate_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 25%\nHas no effect",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "chaos-bodyglove",
+    "name": "Chaos Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Chaos+Bodyglove",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nGrants +15% more damage to any psyker or Navigator power.\nBase armour property: +10 dodge against non-deamos.",
+    "prerequisite": "Heretical - Follower; Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "commissar-flak-breastplate",
+    "name": "Commissar Flak Breastplate",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Commissar+Flak+Breastplate",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 35%\nBase armour property: +INT bonus to Weapon Skill and Ballistic Skill.\n+10 dodge if the wearer's Intelligence is more than 65",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "condensed-carapace",
+    "name": "Condensed Carapace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Condensed+Carapace",
+    "imageRemote": "/file/Rogue-Trader/condensed_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/condensed_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 35%\nThe wearer's critical hit chance in melee combat is increased by +(2 x AGI bonus)%.\nBase armour property: +10% dodge against human enemies.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "duellist-uniform",
+    "name": "Duellist Uniform",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Duellist+Uniform",
+    "imageRemote": "/file/Rogue-Trader/duellist_uniform_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/duellist_uniform_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nIf the wearer equips two pistols, they gain +10 Ballistic Skill and +10% hit chance.\nBase armour property: +15% dodge chance if th wearer's Ballistic Skill is more than 70.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "efficient-armoured-bodyglove",
+    "name": "Efficient Armoured Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Efficient+Armoured+Bodyglove",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 35%\nGrants +15% more damage to any psyker or Navigator power.\nBase armour property: +10 dodge against non-deamos.",
+    "prerequisite": "Heretical - Follower; Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "enforcer-light-carapace",
+    "name": "Enforcer Light Carapace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Enforcer+Light+Carapace",
+    "imageRemote": "/file/Rogue-Trader/enforcer_light_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/enforcer_light_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 25%\nHas no effect",
+    "prerequisite": "None",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "fortress-world-origin-chaos-light-enforcer-carapace",
+    "name": "[Fortress World Origin] Chaos Light Enforcer Carapace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/[Fortress+World+Origin]+Chaos+Light+Enforcer+Carapace",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 45%\nBase armour property: +20 dodge against deamos.\nWorld property: +15 Toughness",
+    "prerequisite": "Heretical - Follower; Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "ghostplate-armour",
+    "name": "Ghostplate Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Ghostplate+Armour",
+    "imageRemote": "/file/Rogue-Trader/ghostplate_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/ghostplate_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 35%\nBase armour property: +5% dodge if the wearer has no cover.",
+    "prerequisite": "Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "headhunter-light-carapace",
+    "name": "Headhunter Light Carapace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Headhunter+Light+Carapace",
+    "imageRemote": "/file/Rogue-Trader/headhunter_light_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/headhunter_light_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 30%\nBase armour property: +1(Awareness / 10)% dodge.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "improved-armoured-bodyglove",
+    "name": "Improved Armoured Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Improved+Armoured+Bodyglove",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 25%\nNone",
+    "prerequisite": "None",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "improved-enforcer-light-carapace",
+    "name": "Improved Enforcer Light Carapace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Improved+Enforcer+Light+Carapace",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 20%\nNone",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "kabalite-armour",
+    "name": "Kabalite Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Kabalite+Armour",
+    "imageRemote": "/file/Rogue-Trader/kabalite_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/kabalite_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 30%\nHas no effect",
+    "prerequisite": "Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "light-carapace-scale-armour",
+    "name": "Light Carapace Scale Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Light+Carapace+Scale+Armour",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nThe wearer gains +15% dodge reduc ion for 1 round if they move at least 3 cells per turn.\nBase armour property: +(Persuasion /10)% dodge.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "light-flak-armour",
+    "name": "Light Flak Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Light+Flak+Armour",
+    "imageRemote": "/file/Rogue-Trader/light_flak_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/light_flak_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 15%\nBase armour property: +10% parry chance against melee attacks.\n+1 temporary wound for every dodged or parried attack.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "loyalist-garb",
+    "name": "Loyalist Garb",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Loyalist+Garb",
+    "imageRemote": "/file/Rogue-Trader/loyalist_garb_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/loyalist_garb_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 50%\nBase armour property: +20% dodge against ranged attacks.\nIf the wearer hasn't moved during their turn, their cover efficiency is increased by +20% for 1 round. If the wearer moves at least 3 cells per turn, they gain +20% dodge for 1 round.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "panoply-of-the-assassin",
+    "name": "Panoply of the Assassin",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Panoply+of+the+Assassin",
+    "imageRemote": "/file/Rogue-Trader/panoply_of_the_assassin_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/panoply_of_the_assassin_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nEach round the wearer's dodge is increased by +10%% until the end of the combat. This effect resets after any attack made on the wearer.\nBase armour property: +15% dodge against ranged attacks.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "psychic-bodyglove",
+    "name": "Psychic Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Psychic+Bodyglove",
+    "imageRemote": "/file/Rogue-Trader/psychic_bodybloge_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/psychic_bodybloge_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 25%\nThe wearer ignores the first critical hit damage in combat.\nBase armour property: +(3x psy rating)% dodge if the wearer's Willpower is more than 40.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "ranger-armour",
+    "name": "Ranger Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Ranger+Armour",
+    "imageRemote": "/file/Rogue-Trader/ranger_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/ranger_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nBase armour property: +15% dodge against non-Aeldari enemies.",
+    "prerequisite": "None",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "reiforced-wych-armour",
+    "name": "Reiforced Wych Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Reiforced+Wych+Armour",
+    "imageRemote": "/file/Rogue-Trader/reinforced_wych_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/reinforced_wych_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 35%\nBase armour property: +10% dodge against non-Drukhari enemies.",
+    "prerequisite": "Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "reinforced-kabalite-armour",
+    "name": "Reinforced Kabalite Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Reinforced+Kabalite+Armour",
+    "imageRemote": "/file/Rogue-Trader/reinforced_kabalite_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/reinforced_kabalite_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nBase armour property: +10% dodge if the wearer's Agility is more than 65.",
+    "prerequisite": "Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "rune-armour",
+    "name": "Rune Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Rune+Armour",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 30%\nBase armour property: +10% dodge if the wearer's Willpower is more than 50.",
+    "prerequisite": "Aeldari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "slick-bodyglove",
+    "name": "Slick Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Slick+Bodyglove",
+    "imageRemote": "/file/Rogue-Trader/slick_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/slick_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 35%\nThis bodyglove grants the wearer +20% dodge against enemies with Perception lower than that of the wearer.\nBase armour property: +10% dodge against ranged attacks.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "synskin",
+    "name": "Synskin",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Synskin",
+    "imageRemote": "/file/Rogue-Trader/synskin_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/synskin_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 25%\nBase armour property: +5% dodge if the wearer's Agility is more than 40.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "wych-armour",
+    "name": "Wych Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Wych+Armour",
+    "imageRemote": "/file/Rogue-Trader/wych_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/wych_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 25%\nHas no effect",
+    "prerequisite": "Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "armoury-world-origin-malleus-bodyglove",
+    "name": "[Armoury World Origin] Malleus Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/[Armoury+World+Origin]+Malleus+Bodyglove",
+    "imageRemote": "/file/Rogue-Trader/armoury_world_origin_malleus_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/armoury_world_origin_malleus_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nBase armour property: +15% dodge against nexos enemies.\nWorld property: +10% hit chance.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "black-heart-kabal-origin-kabalite-armour",
+    "name": "[Black Heart Kabal Origin] Kabalite Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/[Black+Heart+Kabal+Origin]+Kabalite+Armour",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nBase armour property: +15% dodge if the wielder's Agility is more than 70.\nWorld property: immune to burning, toxin, and bleeding.",
+    "prerequisite": "Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "death-world-origin-armoured-bodyglove",
+    "name": "[Death World Origin] Armoured Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/[Death+World+Origin]+Armoured+Bodyglove",
+    "imageRemote": "/file/Rogue-Trader/death_world_origin_armoured_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/death_world_origin_armoured_bodyglove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 40%\nBase armour property: +10% dodge against ranged attacks.\nWorld property: + 2MP.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "death-world-origin-enforcer-light-carapace",
+    "name": "[Death World Origin] Enforcer Light Carapace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/[Death+World+Origin]+Enforcer+Light+Carapace",
+    "imageRemote": "/file/Rogue-Trader/death_world_origin_enforcer_light_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/death_world_origin_enforcer_light_carapace_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 38%\nBase armour property: +10% dodge against human enemies.\nWorld property: +10 Agility.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "death-world-origin-light-flak-armour",
+    "name": "[Death World Origin] Light Flak Armour",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/[Death+World+Origin]+Light+Flak+Armour",
+    "imageRemote": "/file/Rogue-Trader/deat_world_origin_light_flak_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/deat_world_origin_light_flak_armour_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 15%\nBase armour property: +10% parry chance against melee attacks.\nWorld property: +5 Agility.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  },
+  {
+    "id": "war-world-origin-fencing-bodyglove",
+    "name": "[War World Origin] Fencing Bodyglove",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/[War+World+Origin]+Fencing+Bodyglove",
+    "imageRemote": "/file/Rogue-Trader/war_world_origin_fencing_bodyblove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "imageLocal": "light-chest-armor-images/war_world_origin_fencing_bodyblove_light_chest_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "effect": "Type: Light Chest Armor\nArmor: 25%\nBase armour property: +10% dodge against melee attacks.\nWorld property: +10 parry.",
+    "prerequisite": "Must not Have features:; Adeptus Astartes Equipment; Aeldari Equipment; Drukhari Equipment",
+    "category": "light-chest-armor"
+  }
+]

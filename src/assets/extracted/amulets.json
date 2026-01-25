@@ -1,0 +1,722 @@
+[
+  {
+    "id": "aether-amulet",
+    "name": "Aether Amulet",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Aether+Amulet",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer deals damage to at least 2 enemies with one attack, they gain the effect of the Assassin's Elusive Shadow ability.\nFor 1 round the Assassin becomes the lowest priority target for enemy attacks and gains Elusive:\nthe Assassin can move through enemies\nthe Assassin gains +AGI bonus% dodge and +PER bonus% dodge reduction\nthe Assassin's attacks deal +10% additional damage\nall half cover provides the Assassin 50% cover efficiency\nElusive fades when the Assassin attacks.",
+    "category": "amulets"
+  },
+  {
+    "id": "anatomist-s-amulet",
+    "name": "Anatomist's Amulet",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Anatomist's+Amulet",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "None",
+    "prerequisite": "If the wearer inflicts the bleeding, burning, or toxin effect on a target, this target gets an additional +2 stacks of this effect.",
+    "category": "amulets"
+  },
+  {
+    "id": "ancient-xenomechanism",
+    "name": "Ancient Xenomechanism",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Ancient+Xenomechanism",
+    "imageRemote": "data:image/png;base64,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",
+    "imageLocal": "amulets-images/cvs0evaaaaaelftksuqmcc",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer ends their turn, the deal (3 x INT bonus) energy damage (with armour penetration equal to wearer's INT to all adjacent creatures.\nIf the number of damaged creatures exceeds 3, the wearer suffers the staggered effect.",
+    "category": "amulets"
+  },
+  {
+    "id": "aquila-pendant",
+    "name": "Aquila Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Aquila+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Grants +10 Willpower.\nIf the wearer has Conviction - Dogmatic, they also gain +5 Fellowship.",
+    "category": "amulets"
+  },
+  {
+    "id": "blessed-bolter-casing",
+    "name": "Blessed Bolter Casing",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Blessed+Bolter+Casing",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Single attacks with bolter weapons automatically hit the target.",
+    "category": "amulets"
+  },
+  {
+    "id": "blessing-of-the-warp-spider",
+    "name": "Blessing of the Warp Spider",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Blessing+of+the+Warp+Spider",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer kills an enemy or scores a critical hit, they gain +2 movement points on their next turn.",
+    "category": "amulets"
+  },
+  {
+    "id": "burnt-aquila-pendant",
+    "name": "Burnt Aquila Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Burnt+Aquila+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "Requires Conviction-Dogmatic",
+    "prerequisite": "+1 damage against xenos and daemons.\n+Dogmatic rank fire damage against xenos and daemons.",
+    "category": "amulets"
+  },
+  {
+    "id": "camaraderie-badge",
+    "name": "Camaraderie Badge",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Camaraderie+Badge",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "When the wearer hits an enemy in melee range, the wearer's nearest ally gains (wearer's WP + FEL bonus) temporary wounds.",
+    "category": "amulets"
+  },
+  {
+    "id": "carapace-fragment",
+    "name": "Carapace Fragment",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Carapace+Fragment",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "This item negates all energy damage dealt to the wearer, but it cannot occur more than 3 times per combat.",
+    "category": "amulets"
+  },
+  {
+    "id": "cassia-s-gift",
+    "name": "Cassia's Gift",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Cassia's+Gift",
+    "imageRemote": "data:image/png;base64,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",
+    "imageLocal": "amulets-images/o25ld8gv0f_wf8hxty2h7biy9caaaaasuvork5cyii",
+    "effect": "None",
+    "prerequisite": "As long as Cassia remains in the party, this amulet grants both the Rogue Trader and Cassia +(Cassia's WP bonus) to all their characteristics.",
+    "category": "amulets"
+  },
+  {
+    "id": "chain-of-crystals",
+    "name": "Chain of Crystals",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Chain+of+Crystals",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Grants a +10 bonus to Lore (Warp).\nWhenever the wearer hits a deamon or a psyker for the first time in combat, the target suffers - (Lore (Warp)/10) Willpower and Perception and -1 psy rating until the end of combat. Does not stack.",
+    "category": "amulets"
+  },
+  {
+    "id": "chains-of-domination",
+    "name": "Chains of Domination",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Chains+of+Domination",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer kills an enemy, they receive a stacking +5 bonus to Willpower until the end of combat.",
+    "category": "amulets"
+  },
+  {
+    "id": "charm-of-bonded-souls",
+    "name": "Charm of Bonded Souls",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Charm+of+Bonded+Souls",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "Iconoclast - Votary",
+    "prerequisite": "Requires Heretical - Votary.\nWhenever the wearer's ally receives damage, the wearer gains +1 stack of the bonded souls effect until the end of their next turn.\nBonded Souls: the wearer gains a +2% bonus to damage for each stack of bonded souls.",
+    "category": "amulets"
+  },
+  {
+    "id": "chartist-s-pendant",
+    "name": "Chartist's Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Chartist's+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +5 Fellowship and +10 Commerce.\nIf the wearer has Dogmatic - Adherent or above, their Lore (Imperium) will depend on Fellowship instead of Intelligence.\nThe wearer also gains +10 Lore (Imperium).",
+    "category": "amulets"
+  },
+  {
+    "id": "conmilitum-badge",
+    "name": "Conmilitum Badge",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Conmilitum+Badge",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "When the wearer hits an enemy in melee range, all allies adjacent to the wearer gain (wearer's WP + FEL bonus) temporary wounds and perform an attack of opportunity against the enemy hit by the wearer.",
+    "category": "amulets"
+  },
+  {
+    "id": "conversion-field",
+    "name": "Conversion Field",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Conversion+Field",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer suffers a critical hit for the first time in a round, all damage from this hit is prevented.\nAfter that, a blinded negative effect is inflicted on all characters in a 2-cell radius around the wearer until the end of the wearer's next turn.",
+    "category": "amulets"
+  },
+  {
+    "id": "daemon-tool",
+    "name": "Daemon Tool",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Daemon+Tool",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer deals warp damage, the damaged character also suffers burning (3). Burning effects inflicted by the wearer have their power increased by +veil degradation.",
+    "category": "amulets"
+  },
+  {
+    "id": "dashing-aquila",
+    "name": "Dashing Aquila",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Dashing+Aquila",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains the Dash ability that costs 0 AP and can be performed twice per round.\nWhenever the wearer uses Dash, all adjacent enemies suffer -30 Perception until the start of the wearer's next turn.\nDoesn't stack.",
+    "category": "amulets"
+  },
+  {
+    "id": "dissector-s-amulet",
+    "name": "Dissector's Amulet",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Dissector's+Amulet",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "All burning, bleeding, and toxin effects inflicted by the wearer have their power increased by +2.\nWhenever the wearer hits an enemy, that enemy will now suffer damage from all the burning, bleeding, and toxin effects inflicted on them every time that enemy is hit by an attack.",
+    "category": "amulets"
+  },
+  {
+    "id": "dust-of-rending",
+    "name": "Dust of Rending",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Dust+of+Rending",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "A bag of strange dust that shimmers with impossible shades of colours that should not exist.",
+    "category": "amulets"
+  },
+  {
+    "id": "fang-of-perdition",
+    "name": "Fang of Perdition",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Fang+of+Perdition",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +15 Coercion and +15 Lore (Xenos).",
+    "category": "amulets"
+  },
+  {
+    "id": "flashlight-emitter",
+    "name": "Flashlight Emitter",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Flashlight+Emitter",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer is the target of an attack of opportunity, the attacker becomes blinded for 1 turn. The wearer will perform their lowest cost AP attack against this enemy (including the ranged weapon).",
+    "category": "amulets"
+  },
+  {
+    "id": "focus-incense",
+    "name": "Focus Incense",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Focus+Incense",
+    "imageRemote": "data:image/png;base64,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",
+    "imageLocal": "amulets-images/2ear5bpkp9c9tusm9eerhjgaaaabjru5erkjggg",
+    "effect": "None",
+    "prerequisite": "Each use of Revel in Slaughter increases the wearer's Perception by +10 until the end of combat. Stacks.",
+    "category": "amulets"
+  },
+  {
+    "id": "for-the-defence-of-cadia",
+    "name": "For the Defence of Cadia",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/For+the+Defence+of+Cadia",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "When the wearer of this badge gains a stack of versatility, they also gain +3 momentum.",
+    "category": "amulets"
+  },
+  {
+    "id": "fury-incarnate",
+    "name": "Fury Incarnate",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Fury+Incarnate",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer is under the effect of Reckless Rush:\nall wearer's attacks gain +50% critical hit chance\nthe wearer gains +50% critical damage\nall attacks against the wearer gain +50% critical hit chance and the wearer suffers +50% critical damage",
+    "category": "amulets"
+  },
+  {
+    "id": "gem-of-dark-vitality",
+    "name": "Gem of Dark Vitality",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Gem+of+Dark+Vitality",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "Heretical - Follower",
+    "prerequisite": "+4 maximum wounds.\nWhen veil degradation is above 15:\n+10 Toughness\nEach round the wearer regenerates wounds equal to wearer's Heretical rank.",
+    "category": "amulets"
+  },
+  {
+    "id": "grace-of-the-oblivious",
+    "name": "Grace of the Oblivious",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Grace+of+the+Oblivious",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +5 Toughness if their Intelligence is less than 35.",
+    "category": "amulets"
+  },
+  {
+    "id": "hexagrammic-grace",
+    "name": "Hexagrammic Grace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Hexagrammic+Grace",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Grants +10 Logic, +10 Coercion, and +10 Persuasion.",
+    "category": "amulets"
+  },
+  {
+    "id": "honour-insignia",
+    "name": "Honour Insignia",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Honour+Insignia",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "If only one of the wearer's Combat Tactics area is active in combat, the wearer gains +20 Intelligence and Fellowship.",
+    "category": "amulets"
+  },
+  {
+    "id": "hope-pendant",
+    "name": "Hope Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Hope+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "Iconoclast - Votary",
+    "prerequisite": "Requires Iconoclast - Votary\nAt the start of each turn (except for extra turns), the wearer gains +resolve momentum for each ally (including themselves) with 50% or less wounds.",
+    "category": "amulets"
+  },
+  {
+    "id": "hypnotising-pendant",
+    "name": "Hypnotising Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Hypnotising+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "When the wearer successfully hits with a single-shot attack, the target suffers slowed until the wearer's next turn.",
+    "category": "amulets"
+  },
+  {
+    "id": "invigorating-resolve",
+    "name": "Invigorating Resolve",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Invigorating+Resolve",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer and allies in a 2-cells radius gain momentum, they also gain an equal amount of temporary wounds.",
+    "category": "amulets"
+  },
+  {
+    "id": "laughing-god-s-pendant",
+    "name": "Laughing God's Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Laughing+God's+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains the Danse Macabre ability.\nThe Assassin dashes in a straight line for up to ??? cells, suffering ??? less damage from attacks of opportunity and gaining +???% dodge against the enemies they dash through until the next Assassin's turn.\nIf the Assassin hasn't dashed through any enemies, at the end of their turn they gain +???% cover efficiency to their cover until the Assassin moves.\nDoesn't stack with itself.\nAfter the first use, the Assassin can use this ability again for free.",
+    "category": "amulets"
+  },
+  {
+    "id": "laurels-of-command",
+    "name": "Laurels of Command",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Laurels+of+Command",
+    "imageRemote": "data:image/png;base64,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",
+    "imageLocal": "amulets-images/ox8c3nz_m9owssfmnrl7waaaabjru5erkjggg",
+    "effect": "None",
+    "prerequisite": "The wearer gains the Move, Move, Move! ability that costs 0 AP.\nThe wearer and targets of Move, Move, Move! are immune to the slowed effect until the end of round.",
+    "category": "amulets"
+  },
+  {
+    "id": "medal-of-alacrity",
+    "name": "Medal of Alacrity",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Medal+of+Alacrity",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "When the wearer targets an ally with the Bring It Down! ability for the first time in combat, that ally gains +1 additional action point.",
+    "category": "amulets"
+  },
+  {
+    "id": "mystic-ward",
+    "name": "Mystic Ward",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Mystic+Ward",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "At the start of every combat, the wearer's allies gain +1 deflection equal to the wearer's psy rating.\nWhenever an ally suffers any damage and loses non-temporary wounds, this effect is removed from that ally.",
+    "category": "amulets"
+  },
+  {
+    "id": "officer-s-aquila-pendant",
+    "name": "Officer's Aquila Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Officer's+Aquila+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The target of the wearer's Move, Move, Move! ability automatically reloads their current weapon and gains +1 AP.",
+    "category": "amulets"
+  },
+  {
+    "id": "omnissiah-holy-symbol",
+    "name": "Omnissiah Holy Symbol",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Omnissiah+Holy+Symbol",
+    "imageRemote": "data:image/png;base64,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",
+    "imageLocal": "amulets-images/4qhwo9l9yddzffflvd4n_dflo_su2hr2bvs9rwwaaaabjru5erkjggg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +20 Tech-Use and +20 Logic. They can also reroll failed Tech-Use or Logic tests once per test.",
+    "category": "amulets"
+  },
+  {
+    "id": "onslaught-amulet",
+    "name": "Onslaught Amulet",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Onslaught+Amulet",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "After the wearer uses Press the Advantage, if the wearer still has:\nmore than 5 tactical advantage stacks: the next attack ignores deflection\nmore than 10 tactical advantage stacks: also ignores cover\nmore than 15 tactical advantage stacks: also ignores dodge\nIf the wearer already has the Undisputed Advantage talent, then using Press the Advantage will only spend 1/4 of the tactical advantage stacks instead of 1/2.",
+    "category": "amulets"
+  },
+  {
+    "id": "open-soul-pendant",
+    "name": "Open Soul Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Open+Soul+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The first use of each Navigator power in combat costs -1 AP less.",
+    "category": "amulets"
+  },
+  {
+    "id": "phoenix-gem",
+    "name": "Phoenix Gem",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Phoenix+Gem",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +20 Medicae and +20 Carouse.\nWhenever the wearer uses a medikit or a stimulant for the first time in a round, it costs 0 AP.",
+    "category": "amulets"
+  },
+  {
+    "id": "psy-focus",
+    "name": "Psy Focus",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Psy+Focus",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer deals an additional +(5 × psy rating) warp damage with their melee attacks.\nWhenever the wearer suffers a critical hit, their dodge and armour is reduced by -30% until the end of combat.",
+    "category": "amulets"
+  },
+  {
+    "id": "psychic-ward",
+    "name": "Psychic Ward",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Psychic+Ward",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "Unsanctioned Psyker\n(Can only be equipped by an unsanctioned psyker)",
+    "prerequisite": "While veil degradation is equal to or more than 10, the wearer deals +(WP bonus + PER bonus)% additional damage with all psychic powers.",
+    "category": "amulets"
+  },
+  {
+    "id": "requiemator",
+    "name": "Requiemator",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Requiemator",
+    "imageRemote": "data:image/png;base64,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",
+    "imageLocal": "amulets-images/aujb9saszhn9aaaaaelftksuqmcc",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer kills their target with a melee attack, all enemies in a 2-cell range around the wearer suffer wearer's WP bonus mental damage.",
+    "category": "amulets"
+  },
+  {
+    "id": "sage-necklace",
+    "name": "Sage Necklace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Sage+Necklace",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +15 Lore (Xenos) and + 15 Lore (Warp)",
+    "category": "amulets"
+  },
+  {
+    "id": "seeker-of-the-weak",
+    "name": "Seeker of the Weak",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Seeker+of+the+Weak",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"128\" height=\"128\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "All enemies suffering from burning, toxin, or bleeding suffer a -30% penalty to dodge.",
+    "category": "amulets"
+  },
+  {
+    "id": "slicing-symbol",
+    "name": "Slicing Symbol",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Slicing+Symbol",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer uses Slash, Dash, or Kick, they gain +AGI bonus MP and +(wearer's resolve / 2 + 1) momentum.",
+    "category": "amulets"
+  },
+  {
+    "id": "soldier-aquila-pendant",
+    "name": "Soldier Aquila Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Soldier+Aquila+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer hits with a ranged weapon within melee range, the target gains +1 stack of the perplexed effect.\nPerplexed: this creature suffers a -10 penalty to Ballistic Skill, Weapon Skill, Intelligence, and Perception tests for each level of this effect.",
+    "category": "amulets"
+  },
+  {
+    "id": "the-last-flash",
+    "name": "The Last Flash",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/The+Last+Flash",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Whenever the wearer is the target of an attack of opportunity, the attacker becomes blinded for 1 turn.",
+    "category": "amulets"
+  },
+  {
+    "id": "the-vial-of-falstow",
+    "name": "The Vial of Falstow",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/The+Vial+of+Falstow",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "At the start of combat, the wearer gains MP equal to their resolve.\nThe wearer can't be slowed.\nIf the wearer has Dogmatic - Votary, they gain +2 resolve for each rank in Dogmatic and cannot be immobilised.",
+    "category": "amulets"
+  },
+  {
+    "id": "unholy-relics",
+    "name": "Unholy Relics",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Unholy+Relics",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "This amulet grants the wielder a +20 bonus to Coercion and a -5 penalty to Intelligence.",
+    "category": "amulets"
+  },
+  {
+    "id": "unholy-shard",
+    "name": "Unholy Shard",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Unholy+Shard",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "Heretical - Votary",
+    "prerequisite": "This amulet grants its wearer +50% resistance to toxic damage. If the wearer has Heretical - Votary, they also heal (1 wound per Heretical rank) each time they suffer toxic damage.",
+    "category": "amulets"
+  },
+  {
+    "id": "vortex-pendant",
+    "name": "Vortex Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Vortex+Pendant",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +5 Willpower each time their abilities affect an ally. This effect remains until the end of combat. Stacks.",
+    "category": "amulets"
+  },
+  {
+    "id": "warlord-s-amulet",
+    "name": "Warlord's Amulet",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Warlord's+Amulet",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "Grants +wearer's INT bonus % dodge to the wearer and their allies.",
+    "category": "amulets"
+  },
+  {
+    "id": "withering-shard",
+    "name": "Withering Shard",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Withering+Shard",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "None",
+    "prerequisite": "The wearer‘s Strength, Toughness, and Agility are decreased by -15.\nThe wearer can use heroic acts at 125 momentum instead of 175 and desperate measures at +50 momentum higher (capped at 100 momentum).\nThe wearer is considered as having Heretical - Adherent if they do not yet have it.",
+    "category": "amulets"
+  },
+  {
+    "id": "wolf-tooth-necklace",
+    "name": "Wolf Tooth Necklace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Wolf+Tooth+Necklace",
+    "imageRemote": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAABGdBTUEAALGPC/xhBQAAAwBQTFRFGR4HWXpPnIdSbXpekINZwbOMv7SUinlbi5R/mZyKLDgosqF2dnpmaGxVf3ZsVGE/PGxULzgiI041ppVianpZdoxcPEQtM2EvPVQwblo8LjQoiHFLODosN3NWYYZkhHFMfW5GsKaJZlA9VX9mBCwUYFc3Rj8lcmM6EUMjgHNUqqJ8Z2toRkRAVFZNRT48JkU8TW9djZNlU3pfREY2XkwxRmNJH1o5BDAVh39iVWpLMTMdGUsneWlJuqyGDjgjLEg0XYtvZ4NtSHBXPmI5aGlZkodoV4FlQEIuEjkXtKqTQnRbGyYUOFVFVlJHQW1RDh4FgHdec4BzFyYWSX5hWVdLdWY9SE5JaKVzKkImUEcvnpZwWIpnRH5gZJNxiHtUjpmFmX1iTVk8bWtLhp+IZpN1hIJybph4HjYfTIdswqt2MzczUEc5R0AzT29IcGlUYF1IT3xoU0suo52KOWtHWJFqCxwMPUgvXWA/opiAvLihKTkvZGNJNkA+SXJeRGJWv7yqR3tlZJZ2aZ5+iLSYs7qlm6mWpMOwYZd5erGPf6+RvcGusb+rr8CunbmgrcCrAAAAvc/Gnsy4ap6EmHNSjaicdmdbKlA4fXpTU2BPP0g/VWxfRiUMf3ZIOTgZdlk6OyQEkG0+SUkoa1olQHJeiIZZd21GlGxFl5Rpa08nHD0uOVdIgG5IDy8hBhEFGAwALx8Mjn5ZQS8TSC8LLS0rDi4RWUgyU00wv6Nirpdnfm9SMz4mMCoNHygQGhwTpoNUESUaq5ptTTwrJTMufV06XjsdpYxarY9dtJ9tIDMbNyYbh2xCT0EknHdLTS8dVUUploxgRz0hpI9kjoZhdGJFd2Ayfmg5aVdBs5peQzEij3ZGUTcSQioaPyUSSjcZcmA9HBcHgGhCYksePTkkV0EWiHBNZ0knTTYkk3xQQTcrQkAqSy8SXFE7VjwqLy8fV0EgVTkbh2I5YE8wXUMhLCUYalAyu6mAdlYxOS8jiHlOtKN3ICcjnH9QloRWbFk2nYhaX0kpDjZRjwAAAJB0Uk5T9vHz5u/Ou+j6qoPY+ebG7pC2v+z89u7N5u3M4tvLvPXMve/97uz33vq29f3t5fz+q/y9ssvM2vzVx/Li+/397aea2eyOodTQ6m+izdbUvOyTbvSap/39mP7+/ZesjP1x/f39Y2KFed9i/v3+/uGlvHDjXLF5/v7+hVb8/v6Y/UCIUTMaNEwMQyY7HCYTBQEA1rmL3gAADVBJREFUaN7tmndUW1eex2d3ZnenZJJJ72XcE9tx7457790G23QMBgwG00zvIKT3PIkr3Zjem8GmiI5NLxISoI4KakioWRKqcwUJyJN4V3Kc/WPXPziHc3joft6vfe/vvsfvbvwv2O9eQ15DXkP+j0Hg3xQCx6Dikch4FAT9ZhAYFbp/9+qFX319zAsJ/zYQCBXq/9XCd9999y//8Z+7rV9I+VUQOGr/1x//++WhoaHLzya/+/v+F1F+DQQO3b2wc+jyo6EnQ5cvP/vum7/vj4dfKQQ2+LH70/qnlx89MngCIM8ABQm9Uk8gFNL/U03bo0fTkGcAAij+UdCrgsBwfPjx/f7rbXSTQ4DxaOgxYHwH0vLNX/yj4FcBMfRFtL/H4aV/tcPYUDrrDa4ACLDJycnG9f7IXw2BIVRUuPX2vUsWV7icu1dVpscNDj16MgUBiMlnjZZvesX8OgggeDm6r9yx81zC4qDmvPY6Ypf2wdO2oScDP0IaG/v+a/fPA2YOJD56l/ubh5eGzA15L+BeUHP+PddKsnjw8dO2J22XJyd/hFitd0TBLwkBufY65vH7pWcSExffe882KDEoKLCaPybTP34CrG1y8unk08bGxoGBgi89QqGXg8Dx14+t/njOGwn5IYmJgX6BFYuD7t3G9pJ4NtOQpwZrbHys0zA3f+wY/1IQKGrX4TlYvG/IncTFtwP9+PyKirxEvqycdbN+ytoePzZAHg/oNDSKeG80/BIQKHr3/Eo8ntuen5F4Gx9ox3eraF6WUZXLkt/szu7u7lar255OB4vNxmn1vY6Q2RAQqt1z8Fh8ie2WO3PfuI3HW2zcse2dtXPT9axckUh0//59A+TxADAdk6nV88iHY8yFoEKPrZbJZPyOonsZd4Ajt5s+WHkJiQjbYSvU57aIDHa/uw0QGgd07ALaqLDcbAgUZf31p6msVGZ1scC3MKTGDe/qtM0BdHX8xbeq9HqZHBigqHXANGwaVktgEMgeZoULAkW13oopyraxwRZTi4qK0Hy3j7Y5xxmCGL2B2zUOMLJceUtLp1rDZjKZqVp9OYFAdjQj8SAZ7uv/oGtTq9XsgerhYipaynf7YHl45NQaqF0f0IfHxsb1EhaLJad10mgtLTIxmUAgeEabXsIw0v+rL78caFOzR9RqHRMfyOW4jruucfjpcvQGKjASwLAkoyyWTC+cIJelTYBoIU2HxPt/OsJWazQaHXuk+yaTqa+sdHU95B05UxFhR6kJCdSOcYmQMNoqmSCTy8qSkia6PC/FmA7x+qrzvsEHnUajzs7uZEgklfyl2yNm/yD6sOpMM1o6xuMxWnlkIrGjtiQpaWzBzxXyxZDQrykGiK5Np8vubEllsVJl/I/OI4wWQL7p4qLKyy/uKSvj9ZBKpCUlVOrYAo9Y01U4/thmWudItwGizm5poeiZTPzS7bFGf4F0XHqmoSEjr5hEIhFJxcCoVLTvmuOw6fvJ9YWncbgRQ/3f7BS1tGCx2DeunJ+5SfAz/vjhb4Ma8vOLijtKOkqKqW4VqoaigDVh8abvjPHupztxnSManY4tkstbUittbY0YEBgjvFYtcVGF3Mr3QaOlVDQVnZCgCjm0/CrS9D0evj6fAhxhg8qiDWopFJnF1s/DEDM9GvrnVX86FBRQmHjrHwH5IVsa0Gi0T0OQakcYIsaMkQhkfXBwBEA0NK2WYpfuu2ObM3JWlE8tWbI1ZFlexq1//FG1ddul7etd0Pn5QQ0XkOZMkPHH5mtpbHU9W6M0MAJ3rvRGoGauIk4t+fbbM0F5GT98f0t1YnkojPJXFeUvS2gIjjEH4uXZq2Wy27rVGooMu9lv54XwSKM72DXFaM7I+P77APQhe+CavQodktCsCobMgCBPdWkLlLoRIN1abHX1W19EQ8bp+sxNpQpqDglZdkvVsDUYaYBUFFUEVZwIM2eqt/+gSlyqVGo0yqzqarvAPVdRxozVrlQfVUBeSHOzqiHviIEPXVUBa9561QxIvLtFFcXKStmXrCwAjB0XjcoSDl3FlxY1NxdmhLi4FIastDfwAeTMmWWFh8JNh0BensCRUqUmOVlJwfpdMZYSONR9jk2xzw9btmQUVqgK91hPtR5k7aJqXrbuAsJ0CMqdi9dW9ymVyk4mYJxEPFd2c2xsiosKM9YBSEXh8un2Rm13AdFqWBlrMgQK3WtRSekrwGQlK7P8rpw1lkR4v6fNzYEyatHcH/ISOCqfsJhp9z5pBglSHbpqcglDx7/lV1phlMqsxpz3QKyMdcBrdUF3dzathOqDvudK5My7OnUDMY4BPg0BARUBJ+NMhaBOubniS5OzsgYs/3hl+3Nhvr76NLs7W9SZxefz3ZqInM+nMx36iU/+skIXTsWRWFMhiM9cLfiWmOTMSct/W/lcvUQB0eyuF+FwWnHlOEfBOTF959CugLz8dXfOSAWbnE08M0LHXdwsqnMwmTmWK9ZeMjppwihHT3b3kxEcDieWjI81SWvWTOcA+UmzT8iyuT4CwZYwyDQIKtjNogrT15eZ883Os3HPCfNepbq+WzSI07JaJ3p6FPOmSxa231iBLjpTJ5AKCk2FxB1xa/LLzMnsy3n/w+eD5fEl+0m9aHDwtF4o6enp4aydFgLolELB4UgVdHpd4QsU8l8hcOwhev/dFStON1ruPBtprGf+H2d3j9SLcrV6MPuQhjtO/Nh7qL0dCmlHx/AwUdoQjDIJAh3fSu/HZGZmDqx4zhGk/0JRdrb6iVwrk+h7SMSO9p+6Ikqh6OAACJFUazIkLI/b34fJWpHz1tk4ePb5hqMnM7v7PnBEJpaNA4hg3YGo6WvHBVKpQjFM7DFAIk2DnN/Sji8tzVrx/ocOswEOdfcUd94X1YvkLL14nEgidbR/7jx9OeaUQKCYgpTVNhwwDQIHLxLgS5WZ74PSgmYG0lULKC2DOJ26JVeo1xOHicPtm8J+rLyoz6RSkA9QCeTah6ZCTm4RBFZvtnv/2oxmwdFvL9DK5IMjms4WUFhjJOKwYN6M4lqDrBOJpJ7WiQmTITfCFp3jVwf6fWg/40fo23S8TJ6LUyppMomQzCOWKAI+/2kfQ54aIyWRSGk9ra2ttQ9NTPwN57Xt9Cq7Kxdn+hC1ayNfK2O1jWhOa4V6IY9Hogc4hf1UFF6ePbyktLQ0ngGyLsy0PrkRcXJfTYrtBcRM714/yBfrR8HhWaefEOonCLwy+tHzETObaC/4TXla+URrK6N2kbOpAhn7Nyena+HQ7GziCiA6jZItJ/CEE8CTJp9rsbNjTReZV16eBkZ+BqFurckqDMWFe8/6AdsfrsLrlRoaTS4p55HJ5RNdVKeZG0a6i4WEJEIagTE6KkkrOWLyfgKeBMXMam+0R7pYrGSmylMlExO8pDJyf+2J4Jm1rD0lo4TWcsbo4AOGsIT6grz/8kg02+nRHha9+gIahZULlLc1iUeurXt4bWbujvKQyUcZknIWDpc7Sq51cn6Jp6kwdN1jQW8vhULRsvQMCUhHUm3dvNl8oRzny+W5o+W5o7QRhrCs7kiE+RAYaf0J3aJXrKUUyCYkwt4ucllt7dELswep6A1auejB6ChjcHCUJaHO80aZDYGiV23s7e0SiwsKtBKCRNiV3l+bcnT5bAFFbZ/fIpJPQXCtE2N1FyLMfsKNtD7IGR/vEmuxTJlEAmj9/WUpRw/MMpCXrmyWj+AeABtksIQpe53NfVYPNHEjp6mpt1dLwWq1YoBIT+lPObptNlYohy8CKZ00jSb5wWCupJV89GKceRAYefwgndM0XlklxqdqxXrA6KLTuUe3Gx1sY7f99TSNmdyn0YDyJUhSrsWa92oDnKScpJzh8UqLSr5MP94FItVP53KdLhqtgwzbc5dZamXVpxt5wGAw0jeEw+ZAoIhLe08oOIrhyrGmcYP1D/f3c7m+By9FzK4T4/DFe8mlVpgcSw2NxWD0r7WHzHlJA0W/fUIq5QCbYoyNjTVx6TU1594x2ihvwIgDv8+ySr6bY2lZTdMLUz76bxLyS9uvw0HDlq2gczmKJgBo4nLpgppz+4wk08D42x67AqWyLycHg9UKUzadRZjzTgtyPiiQdkgVbnQwSw0bEDXt7ef2veMd8S8MW0opGM36MNX4rvSPzsbCZkBg1MF2NPBEahgOhocVihrBw3WbrgGE8fkhImyPLf8umDL7SpVYWfrzk78JnsT82elhHbB28FUnqDvhdM07PCLSGAHGo7Add/yyMBhQvUosvmqDdxxkHgSKtD+57+GULQLrI+IA4PlQwIjgK75VdnfvYkptwEHMdoPD/4T4pepCxUXExiIiIgzr34B/FmzEgZ01/WIMJhOD0W4O9F3jHfeSLzNhg71A0oK3+nL7sdWlmMB0P/rGPZeQ8Ct/Ywo5fFZDt/Cz4/Mt0kFhf2ESw1wI6mQN162JzgXfNXc2nQ2PN4VhLiTyZHuNra9vja9v+74jxjrzSiEXNy0C3Xnu4b4jF2MjTf2UuS/OIrzPXzuyZvlFB0QkfOO3gsAxkXFxcZGoGNiMD73+z4LXkNeQ/0+QfwLifOSeqEtSZQAAAABJRU5ErkJggg==",
+    "imageLocal": "amulets-images/0_qfwlifoseqetszqaaaabjru5erkjggg",
+    "effect": "None",
+    "prerequisite": "The wearer gains +15 Weapon Skill and Ballistic Skill while they have 85% wounds or more.",
+    "category": "amulets"
+  },
+  {
+    "id": "wraithbone-necklace",
+    "name": "Wraithbone Necklace",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Wraithbone+Necklace",
+    "imageRemote": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect fill-opacity=\"0\"/></svg>",
+    "imageLocal": "amulets-images/svg",
+    "effect": "(Asuryani and Drukhari only)",
+    "prerequisite": "Grants +10 Agility and Perception.",
+    "category": "amulets"
+  },
+  {
+    "id": "yrliet-s-charm",
+    "name": "Yrliet's Charm",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Yrliet's+Charm",
+    "imageRemote": "data:image/png;base64,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",
+    "imageLocal": "amulets-images/w1mhusrryqlngaaaabjru5erkjggg",
+    "effect": "None",
+    "prerequisite": "The wearer gains the In My Sights ability that costs 0 AP and provides:\nadditional armour penetration equal to the wearer's Perception\nadditional dodge reduction equal to the wearer's Ballistic Skill.\nThe wearer also gains Aeldari Weapon Proficiency.",
+    "category": "amulets"
+  },
+  {
+    "id": "amulet-of-the-indomitable-spirit",
+    "name": "Amulet of the Indomitable Spirit",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Amulet+of+the+Indomitable+Spirit",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "Once per battle, whenever the wearer's wounds drop to 0, they regain 20% of their maximum\nwounds.",
+    "category": "amulets"
+  },
+  {
+    "id": "amulet-of-the-pauper-princes",
+    "name": "Amulet of the Pauper Princes",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Amulet+of+the+Pauper+Princes",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "In the first round of combat, the wearer's MP is doubled.",
+    "category": "amulets"
+  },
+  {
+    "id": "chirurgeon-s-vow",
+    "name": "Chirurgeon's Vow",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Chirurgeon's+Vow",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "The wearer's Toughness is increased by +XX.",
+    "category": "amulets"
+  },
+  {
+    "id": "denial-of-nightmares",
+    "name": "Denial of Nightmares",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Denial+of+Nightmares",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "If worn by a psyker, the wearer gains immunity to the horrors of the warp effect.",
+    "category": "amulets"
+  },
+  {
+    "id": "lady-theodora-s-immaculacy",
+    "name": "Lady Theodora's Immaculacy",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Lady+Theodora's+Immaculacy",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "The wearer's Persuasion is increased by +XX.",
+    "category": "amulets"
+  },
+  {
+    "id": "laughing-god-s-pendant",
+    "name": "Laughing God's Pendant",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Laughing+God's+Pendant",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "The wearer gains the Danse Macabre ability.\nThe Assassin dashes in a straight line for up to (1 + AGI bonus / 2) cells, suffering -Assassin's Weapon Skill bonus less damage from attacks of opportunity and gaining Assassin's Weapon\nSkill bonus% dodge against the enemies they dash through until the next Assassin's turn.\nIf the Assassin has not dashed through any enemies, at the end of their turn they gain +(2 x Assassin's AGI bonus)% cover efficiency to their cover until the Assassin moves. Does not stack with itself.\nAfter the first use, the Assassin can use this ability again for free.",
+    "category": "amulets"
+  },
+  {
+    "id": "martyr-s-bone-charm",
+    "name": "Martyr's Bone Charm",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Martyr's+Bone+Charm",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "If worn by a Death Cult assassin, when the wearer is affected by blood phial, they gain +10 Toughness for 2 rounds. Does not stack.",
+    "category": "amulets"
+  },
+  {
+    "id": "missionary-oath",
+    "name": "Missionary Oath",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Missionary+Oath",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "Once per combat, if the wearer does not use any abilities during their turn, they can end their turn to immediately grant all adjacent allies an extra turn with 1 AP.",
+    "category": "amulets"
+  },
+  {
+    "id": "relics-of-unknown-saints",
+    "name": "Relics of Unknown Saints",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Relics+of+Unknown+Saints",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "When the wearer has less than 50% wounds, every second attack against them is automatically dodged. The effect lasts for up to 2 rounds.",
+    "category": "amulets"
+  },
+  {
+    "id": "saint-s-bone-charm",
+    "name": "Saint's Bone Charm",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Saint's+Bone+Charm",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "If worn by a Death Cult assassin, the wearer gains +20 Toughness for 2 rounds when affected by blood phial. Does not stack.",
+    "category": "amulets"
+  },
+  {
+    "id": "sire-s-patronage",
+    "name": "Sire's Patronage",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Sire's+Patronage",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "The wearer can skip their turn to make an ally of their choice immune to all damage until the start of the wearer's next turn.\n! Can only be used once per combat.",
+    "category": "amulets"
+  },
+  {
+    "id": "starmist-scarf",
+    "name": "Starmist Scarf",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Starmist+Scarf",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "If the wearer is not wearing any armour, at the start of combat, they gain XX% dodge.\nThe wearer's psy rating is increased by +2.",
+    "category": "amulets"
+  },
+  {
+    "id": "tarnished-breacher-s-aquila",
+    "name": "Tarnished Breacher's Aquila",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Tarnished+Breacher's+Aquila",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "Enemies within the wearer's area of attack suffer -XX% dodge, and allies within the wearer's\narea of attack gain +XX% dodge for 1 round.",
+    "category": "amulets"
+  },
+  {
+    "id": "the-princess-of-efreet",
+    "name": "The Princess of Efreet",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/The+Princess+of+Efreet",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "",
+    "prerequisite": "If the wearer is a Cold Trader, they gain +FEL bonus to all skills.",
+    "category": "amulets"
+  }
+]

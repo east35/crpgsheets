@@ -1,0 +1,482 @@
+[
+  {
+    "id": "winged-delusion",
+    "name": "Winged Delusion",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Winged+Delusion",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +5 Agility and Perception and deals +100% more damage.\nWhen the cyber-eagle starts soaring, adjacent enemies must pass a Willpower resistance test with a +20 bonus or suffer +1 stack of perplexed.\nThe cyber-eagle deals +100% more damage to perplexed targets.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "targeted-harassment",
+    "name": "Targeted Harassment",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Targeted+Harassment",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +20 Agility and Perception and deals +250% more damage.\nWhenever the obstructed enemy is hit by any attack (excluding the cyber-eagle's attacks) for the first 4 times in a round, the cyber-eagle attacks that enemy as well, dealing +100% more damage. If this attack hits, the enemy becomes staggered.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "steel-talons",
+    "name": "Steel Talons",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Steel+Talons",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +10 Agility and deals +100% more damage.\nWhenever it dodges an enemy's attack, that enemy's block, dodge, and parry are reduced by -10%. Lasts until the end of combat. Stacks.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "sky-hunter-mk-ii",
+    "name": "Sky Hunter Mk II",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Sky+Hunter+Mk+II",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +35 Agility and Perception and deals +350% damage.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "sky-hunter-mk-i",
+    "name": "Sky Hunter Mk I",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Sky+Hunter+Mk+I",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +25 Agility and Perception and deals +200% damage.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "scourge-of-the-feeble",
+    "name": "Scourge of the Feeble",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Scourge+of+the+Feeble",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +30 Agility and Perception and deals +300% damage.\nWhenever the cyber-eagle deals damage to a target suffering from bleeding, burning, or toxin, that target must pass a Willpower resistance test or suffer +1 stack of perplexed.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "hurricane-squall",
+    "name": "Hurricane Squall",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Hurricane+Squall",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +20 Agility, deals +300% damage, and scores guaranteed critical hits against prone targets.\nWhen the cyber-eagle starts soaring, adjacent enemies must pass a Toughness resistance test with a +20 bonus or be knocked prone.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "falconry",
+    "name": "Falconry",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Falconry",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +20 Agility and Perception and deals +400% damage.\nWhenever the Overseer's attack hits, the cyber-eagle scores a critical hit against the obstructed enemy and reduces their Perception by -0 until the end of the round. This penalty does not stack.\nWhenever the cyber-eagle starts soaring, adjacent enemies lose all temporary wounds and become immobilised for 1 round.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "claustrophobia",
+    "name": "Claustrophobia",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Claustrophobia",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +10 Perception and deals +150% more damage. The cyber-eagle gains +16% dodge against the obstructed enemy's melee attacks.\nIf the cyber-eagle dodges the obstructed enemy's melee attack, that enemy immediately hits its random adjacent ally using the lowest AP-cost attack, scoring a guaranteed critical hit.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "blood-feast",
+    "name": "Blood Feast",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Blood+Feast",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +20 Perception and deals +300% damage.\nIts critical damage against bleeding targets is increased by +25%. At the start of the cyber-eagle's turn, it attacks the obstructed enemy. This attack has the following possible effects.\n- If the obstructed enemy has 100% wounds before that attack, they must pass a Toughness resistance test to suffer PER bonus levels of bleeding.\n- If the obstructed enemy has 50% or less wounds before that attack, the attack gains +50% critical hit chance.\n- If the obstructed enemy was hit by the Overseer this round, the cyber-eagle's attack gains +20% critical damage.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "air-support",
+    "name": "Air Support",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Air+Support",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +10 Agility and Perception and deals +150% more damage.\nWhile the cyber-eagle is soaring, the Overseer gains +8% critical hit chance for ranged attacks.\nCritical damage dealt to the obstructed enemy is increased by +14%.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "enhanced-optics-x2",
+    "name": "Enhanced Optics (x2)",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Enhanced+Optics+(x2)",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Eagle",
+    "prerequisite": "The cyber-eagle gains +15 Perception and deals +150% more damage.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "the-smell-of-fear",
+    "name": "The Smell of Fear",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+The+Smell+of+Fear",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +10 Weapon Skill and Strength and deals +200% more damage.\nAt the start of the apprehended enemy's turn, that enemy must pass a Toughness resistance test with a -STR bonus penalty. If failed, the cyber-mastiff attacks the enemy, dealing +100% more damage.\nThe protected ally gains the combat master effect.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "steel-predator-mk-ii",
+    "name": "Steel Predator Mk II",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Steel+Predator+Mk+II",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +25 Weapon Skill and Strength. Its maximum wounds are increased by +75%, and it deals +300% more damage.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "steel-predator-mk-i",
+    "name": "Steel Predator Mk I",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Steel+Predator+Mk+I",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +15 Weapon Skill and Strength. Its maximum wounds are increased by +25%, and it deals +250% more damage.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "protective-instinct",
+    "name": "Protective Instinct",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Protective+Instinct",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff deals +150% more damage.\nWhenever its protected ally dodges or parries an attack, the cyber-mastiff gains +8 temporary wounds and deals +8% more damage for 1 round. Does not stack.\nProtect! can be used multiple times per turn, but each subsequent use in a round increases its cost by +1 AP.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "pack-hunting",
+    "name": "Pack Hunting",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Pack+Hunting",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +20 Weapon Skill and Strength. Its maximum wounds are increased by +50%, and it deals +300% more damage.\nThe apprehending cyber-mastiff attacks the apprehended target whenever an ally (other than the Overseer) successfully attacks it for the first 3 times in a round.\nWhenever the cyber-mastiff kills an enemy for the first time in a round, the cyber-mastiff regains 20% of its maximum wounds.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "merciless-onslaught",
+    "name": "Merciless Onslaught",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Merciless+Onslaught",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff deals +300% more damage and gains +0% critical hit chance.\nApprehended enemies cannot dodge the cyber-mastiff's attacks. Its critical hits knock them prone.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "living-snare",
+    "name": "Living Snare",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Living+Snare",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +15 Weapon Skill and Strength and deals +150% more damage.\nThe cyber-mastiff's attacks of opportunity against the apprehended target always cancel its movement.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "indomitable-rage",
+    "name": "Indomitable Rage",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Indomitable+Rage",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +10 Weapon Skill and deals +100% more damage.\nWhen the cyber-mastiff hits the apprehended enemy, the cyber-mastiff gains a stacking +12 bonus to Strength for 1 round.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "domination-and-elimination",
+    "name": "Domination and Elimination",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Domination+and+Elimination",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +10 Strength and deals +100% more damage.\nIf the cyber-mastiff is adjacent to an enemy at the end of the Overseer's turn, the Overseer gains +1 resolve until the end of combat. Stacks.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "death-grip",
+    "name": "Death Grip",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Death+Grip",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +5 Strength and Weapon Skill and deals +100% more damage.\nWhenever the cyber-mastiff falls unconscious, it gains a stacking +100% bonus to damage dealt until the end of combat.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "bloodlust",
+    "name": "Bloodlust",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Bloodlust",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +25 Weapon Skill. Its maximum wounds are increased by +50%, and it deals +300% more damage.\nWhile in battle mode: standby, the cyber-mastiff's critical hit chance is increased by +0%, and its critical hits inflict STR bonus levels of bleeding.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "heel-protocol",
+    "name": "\"Heel!\" Protocol",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/+Heel!+Protocol",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Cyber-Mastiff",
+    "prerequisite": "The cyber-mastiff gains +25 Weapon Skill and Strength and deals +400% more damage.\nThe Overseer gains the Heel! ability.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "thermodynamic-protocol",
+    "name": "Thermodynamic Protocol",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Thermodynamic+Protocol",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +20 Intelligence.\nAt the start of the Overseer's turn, allies in a 4-cell radius around the servo-skull swarm have their burning, toxin, and bleeding level reduced by −FEL bonus.\nAt the end of the Overseer's turn, their servo-skull swarm explodes, mimicking the effects of fire grenade.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "stimulation-protocol",
+    "name": "Stimulation Protocol",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Stimulation+Protocol",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +20 Fellowship and Intelligence.\nWhenever the servo-skull swarm extrapolates the Overseer's ability, it gains +1 stack of added stimulus. At 5 stacks, it grants an extra turn to the closest ally (excluding the Overseer). Then, all the stacks are removed.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "self-destruct-algorithm",
+    "name": "Self-Destruct Algorithm",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Self-Destruct+Algorithm",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +10 Fellowship and Intelligence.\nOnce the servo-skull swarm's wounds are reduced to 0, it deals 18 shock damage with 50% armour penetration to each enemy in a 4-cell radius.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "phasing-radiation",
+    "name": "Phasing Radiation",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Phasing+Radiation",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +20 Fellowship.\nThe servo-skull swarm can maintain multiple signal effects at the same time.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "inanimate-shield",
+    "name": "Inanimate Shield",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Inanimate+Shield",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +5 Fellowship and Intelligence.\nWhile any signal effect is active, the servo-skull swarm gains +1 deflection, cannot be overpenetrated, and counts as partial cover for its allies.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "fortification-protocol",
+    "name": "Fortification Protocol",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Fortification+Protocol",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +15 Fellowship and Intelligence, +12% dodge, and +1 deflection.\nThe servo-skull swarm becomes the priority target for enemies in a 4-cell radius. Whenever it is hit, incoming damage is reduced by −FEL bonus. Lasts until the end of round. Stacks.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "enhanced-radio-signal",
+    "name": "Enhanced Radio Signal",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Enhanced+Radio+Signal",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +25 Fellowship and Intelligence.\nWhen calculating the effects of signal abilities, the servo-skull swarm's characteristics are considered to be increased by +30.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "dangerous-neighbourhood",
+    "name": "Dangerous Neighbourhood",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Dangerous+Neighbourhood",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +10 Fellowship.\nAt the start of the Overseer's turn, enemies adjacent to the servo-skull swarm must pass a Willpower resistance test with a +20 bonus or suffer +1 stack of perplexed. The servo-skull swarm's deflection is increased by +1 for each perplexed enemy in a 4-cell radius.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "computation-module-fi-dr-beta",
+    "name": "Computation Module FI-DR-Beta",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Computation+Module+FI-DR-Beta",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +30 Fellowship and Intelligence. Incoming damage is reduced by −30%.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "computation-module-fi-dr-alpha",
+    "name": "Computation Module FI-DR-Alpha",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Computation+Module+FI-DR-Alpha",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +10 Fellowship and Intelligence. Incoming damage is reduced by −15%.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "beyond-logic",
+    "name": "Beyond Logic",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Beyond+Logic",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "The servo-skull swarm gains +10 Fellowship and Intelligence.\nIt suffers no damage from area attacks.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "analytics-module",
+    "name": "Analytics Module",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Analytics+Module",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Servo-Skull Swarm",
+    "prerequisite": "Whenever an ability extrapolated through the servo-skull swarm affects other creatures, the servo-skull swarm gains a stacking +5 bonus to Intelligence and Fellowship until the end of the Overseer's next turn.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "synergy",
+    "name": "Synergy",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Synergy",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +10 Willpower.\nIf the psyber-raven is adjacent to 2 or more creatures after Relocate is used on it, psychic powers relayed through this psyber-raven are calculated as if psy rating were increased by +1 until the end of the Overseer's turn.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "step-into-the-abyss",
+    "name": "Step into the Abyss",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Step+into+the+Abyss",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +25 Willpower.\nAt the start of the Overseer's turn, enemies in a 4-cell radius around the psyber-raven immediately move 1 cell toward the psyber-raven and must pass a Willpower resistance test with a +20 bonus or become staggered.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "psyconductive-frame",
+    "name": "Psyconductive Frame",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Psyconductive+Frame",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +20 Willpower and +50% maximum wounds.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "life-emanations",
+    "name": "Life Emanations",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Life+Emanations",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "Whenever the psyber-raven relays one of the Overseer's non-attacking psychic powers, it gains +5 Willpower for 1 round. Stacks.\nIf the psyber-raven's Willpower is 80 or more at the end of the Overseer's turn, it immediately heals to full. If it is already at full wounds, it grants +1 resolve to each ally in a 4-cell radius.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "law-of-equilibrium",
+    "name": "Law of Equilibrium",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Law+of+Equilibrium",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +15 Willpower.\nAt the end of the Overseer's turn, allies in a 4-cell radius around the psyber-raven have their burning, toxin, and bleeding level reduced by −10 and enemies in that area suffering any of those effects have their level increased by +2.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "immaterium-shroud",
+    "name": "Immaterium Shroud",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Immaterium+Shroud",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +15 Willpower.\nEnemies affected by a relayed psychic power must pass an Agility resistance test or become slowed.\nIf the enemy is already slowed, it must pass an Agility resistance test with a +20 bonus or become immobilised. Targets immune to immobilised suffer warp damage equal to 5% of maximum wounds.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "harbinger-of-death",
+    "name": "Harbinger of Death",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Harbinger+of+Death",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +30 Willpower.\nTargets of the first relayed psychic power in a turn automatically fail their resistance tests against that psychic power.\nIf the first relayed psychic power in a turn affects 3 or more creatures, the Overseer regains +1 AP.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "grave-chill",
+    "name": "Grave Chill",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Grave+Chill",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +30 Willpower.\nAt the start of combat, veil degradation is increased by +5.\nWhile veil degradation is 10 or more, the psyber-raven suffers no damage and any relayed psychic powers deal an additional 12 warp damage to enemies affected.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "ether-wind",
+    "name": "Ether Wind",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Ether+Wind",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +40 Willpower.\nWhenever it relays a psychic power, the Overseer gains +3 MP. Whenever an attacking psychic power is relayed, the damage of the next relayed attacking psychic power is increased by +14%.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "blessing-of-the-immaterium",
+    "name": "Blessing of the Immaterium",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Blessing+of+the+Immaterium",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +30 Willpower.\nWhile in a 4-cell radius around the psyber-raven, the Overseer's relayed attacking psychic powers deal +12% more damage and do not count toward the attack limit per turn. But, whenever the psyber-raven relays an attacking psychic power, the Overseer suffers damage equal to 10% of their maximum wounds. Additionally, the Overseer is slowed and cannot dodge attacks while in this area.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "black-omen-mk-ii",
+    "name": "Black Omen Mk II",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Black+Omen+Mk+II",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +35 Willpower and Agility and +100% maximum wounds.",
+    "category": "familiar-items"
+  },
+  {
+    "id": "black-omen-mk-i",
+    "name": "Black Omen Mk I",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Black+Omen+Mk+I",
+    "imageRemote": null,
+    "imageLocal": null,
+    "effect": "Psyber-Raven",
+    "prerequisite": "The psyber-raven gains +30 Willpower and Agility and +75% maximum wounds.",
+    "category": "familiar-items"
+  }
+]

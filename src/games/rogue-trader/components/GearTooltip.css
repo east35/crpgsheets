@@ -1,0 +1,125 @@
+.gear-tooltip-trigger {
+  position: relative;
+  cursor: help;
+  color: #8ac4ff;
+  border-bottom: 1px dotted #8ac4ff;
+}
+
+.gear-tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #1a1a2e;
+  border: 1px solid #4a6a8a;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 280px;
+  max-width: 380px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.gear-tooltip.top {
+  bottom: calc(100% + 8px);
+}
+
+.gear-tooltip.bottom {
+  top: calc(100% + 8px);
+}
+
+.gear-tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3a4a5a;
+}
+
+.gear-tooltip-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #2a2a3e;
+  flex-shrink: 0;
+}
+
+.gear-tooltip-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.gear-tooltip-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #8ac4ff;
+}
+
+.gear-tooltip-type {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.gear-tooltip-type.weapon {
+  background: #4a3030;
+  color: #ff8a8a;
+}
+
+.gear-tooltip-type.accessory {
+  background: #3a4a30;
+  color: #8aff8a;
+}
+
+.gear-tooltip-type.item {
+  background: #3a3a4a;
+  color: #c0c0ff;
+}
+
+.gear-tooltip-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.gear-stat {
+  padding: 2px 6px;
+  background: #2a2a3e;
+  border-radius: 4px;
+  color: #a0a0c0;
+}
+
+.gear-tooltip-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #c0c0d0;
+}
+
+/* Arrow for tooltip */
+.gear-tooltip.top::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+.gear-tooltip.bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-bottom-color: #1a1a2e;
+}

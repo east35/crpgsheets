@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import type { BuildGuide } from '../types';
 import { ARCHETYPE_DISPLAY_NAMES, GEAR_SLOT_LABELS } from '../types';
+import { TalentTooltip } from './TalentTooltip';
+import { GearTooltip } from './GearTooltip';
+import { KeywordText } from './KeywordText';
 import './BuildViewer.css';
 
 interface BuildViewerProps {
@@ -8,9 +11,11 @@ interface BuildViewerProps {
   onBack: () => void;
   currentLevel?: number;
   onLevelChange?: (level: number) => void;
+  onTrackBuild?: (build: BuildGuide) => void;
+  isTracked?: boolean;
 }
 
-export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange }: BuildViewerProps) {
+export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, onTrackBuild, isTracked }: BuildViewerProps) {
   const [activeTab, setActiveTab] = useState<'progression' | 'gear'>('progression');
   const [showAllLevels, setShowAllLevels] = useState(false);
 
@@ -50,10 +55,19 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange }: 
             <span className="tier exemplar">{ARCHETYPE_DISPLAY_NAMES[archetypePath.exemplar]}</span>
           </div>
         </div>
+        {onTrackBuild && (
+          <button
+            className={`btn ${isTracked ? 'btn-secondary' : 'btn-primary'}`}
+            onClick={() => onTrackBuild(build)}
+            disabled={isTracked}
+          >
+            {isTracked ? 'Tracking' : 'Track Build'}
+          </button>
+        )}
       </div>
 
       {build.description && (
-        <p className="build-description">{build.description}</p>
+        <p className="build-description"><KeywordText text={build.description} /></p>
       )}
 
       {build.videoUrl && (
@@ -63,7 +77,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange }: 
       )}
 
       <div className="skill-options">
-        <strong>Recommended Skills:</strong> {build.skillOptions.join(', ')}
+        <strong>Recommended Skills:</strong> <KeywordText text={build.skillOptions.join(', ')} />
       </div>
 
       {onLevelChange && (
@@ -135,7 +149,9 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange }: 
                       {levelData.talents.length > 0 && (
                         <div className="talents">
                           {levelData.talents.map((talent, i) => (
-                            <span key={i} className="talent">{talent}</span>
+                            <TalentTooltip key={i} talentName={talent}>
+                              <span className="talent">{talent}</span>
+                            </TalentTooltip>
                           ))}
                         </div>
                       )}
@@ -163,9 +179,11 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange }: 
               <div className="slot-name">{GEAR_SLOT_LABELS[gear.slot]}</div>
               <div className="gear-options">
                 {gear.items.map((item, i) => (
-                  <span key={i} className={`gear-item ${i === 0 ? 'primary' : ''}`}>
-                    {item}
-                  </span>
+                  <GearTooltip key={i} gearName={item}>
+                    <span className={`gear-item ${i === 0 ? 'primary' : ''}`}>
+                      {item}
+                    </span>
+                  </GearTooltip>
                 ))}
               </div>
             </div>
