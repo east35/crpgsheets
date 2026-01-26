@@ -20,7 +20,7 @@ import { useProfiles } from './hooks/useProfiles';
 import { SearchBar } from './components/SearchBar';
 import './App.css';
 
-type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor' | 'bg3-builds';
+type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor' | 'bg3-builds' | 'bg3-companion-builds';
 
 function App() {
   const [currentGame, setCurrentGame] = useState<Game | null>(null);
@@ -32,6 +32,7 @@ function App() {
   const [error, setError] = useState<string | null>(null);
   const [customBuildCompanion, setCustomBuildCompanion] = useState<CompanionName | null>(null);
   const [selectedBG3Build, setSelectedBG3Build] = useState<BG3Build | null>(null);
+  const [bg3PreviousView, setBg3PreviousView] = useState<'bg3-builds' | 'bg3-companion-builds'>('bg3-builds');
 
   const { 
     profiles, 
@@ -323,10 +324,16 @@ function App() {
                   My Builds
                 </button>
                 <button
-                  className={`view-tab ${view === 'bg3-builds' || (view === 'build-viewer' && selectedBG3Build) ? 'active' : ''}`}
+                  className={`view-tab ${view === 'bg3-builds' ? 'active' : ''}`}
                   onClick={() => setView('bg3-builds')}
                 >
                   Community Builds
+                </button>
+                <button
+                  className={`view-tab ${view === 'bg3-companion-builds' ? 'active' : ''}`}
+                  onClick={() => setView('bg3-companion-builds')}
+                >
+                  Companions
                 </button>
               </div>
             </div>
@@ -365,7 +372,7 @@ function App() {
         {view === 'build-viewer' && selectedBG3Build && currentGame?.id === 'baldurs-gate-3' && (
           <BG3BuildViewer
             build={selectedBG3Build}
-            onBack={() => { setSelectedBG3Build(null); setView('bg3-builds'); }}
+            onBack={() => { setSelectedBG3Build(null); setView(bg3PreviousView); }}
             currentLevel={currentLevel}
             onLevelChange={setCurrentLevel}
           />
@@ -373,8 +380,23 @@ function App() {
 
         {view === 'bg3-builds' && currentGame?.id === 'baldurs-gate-3' && (
           <BG3BuildSelector
+            buildType="all"
             onSelectBuild={(build) => {
               setSelectedBG3Build(build);
+              setBg3PreviousView('bg3-builds');
+              setCurrentLevel(1);
+              setView('build-viewer');
+              window.scrollTo(0, 0);
+            }}
+          />
+        )}
+
+        {view === 'bg3-companion-builds' && currentGame?.id === 'baldurs-gate-3' && (
+          <BG3BuildSelector
+            buildType="companion"
+            onSelectBuild={(build) => {
+              setSelectedBG3Build(build);
+              setBg3PreviousView('bg3-companion-builds');
               setCurrentLevel(1);
               setView('build-viewer');
               window.scrollTo(0, 0);

@@ -4,10 +4,29 @@ import './BuildSelector.css';
 
 interface BuildSelectorProps {
   onSelectBuild: (build: BG3Build) => void;
+  buildType?: 'all' | 'companion';
 }
 
-export function BuildSelector({ onSelectBuild }: BuildSelectorProps) {
-  const builds = getAllBuilds();
+const DIFFICULTY_ORDER: Record<string, number> = {
+  'Beginner': 1,
+  'Intermediate': 2,
+  'Advanced': 3,
+};
+
+export function BuildSelector({ onSelectBuild, buildType = 'all' }: BuildSelectorProps) {
+  const allBuilds = getAllBuilds();
+  
+  // Filter by type
+  const filteredBuilds = buildType === 'companion' 
+    ? allBuilds.filter(b => b.tags?.includes('Companion'))
+    : allBuilds.filter(b => !b.tags?.includes('Companion'));
+  
+  // Sort by difficulty
+  const builds = [...filteredBuilds].sort((a, b) => {
+    const aOrder = DIFFICULTY_ORDER[a.difficulty || 'Intermediate'] || 2;
+    const bOrder = DIFFICULTY_ORDER[b.difficulty || 'Intermediate'] || 2;
+    return aOrder - bOrder;
+  });
 
   // Format class levels for display
   const formatClassLevels = (build: BG3Build) => {
@@ -22,9 +41,11 @@ export function BuildSelector({ onSelectBuild }: BuildSelectorProps) {
 
   return (
     <div className="build-selector bg3">
-      <h2>Community Builds</h2>
+      <h2>{buildType === 'companion' ? 'Companion Builds' : 'Community Builds'}</h2>
       <p className="build-credit">
-        Popular builds from the BG3 community
+        {buildType === 'companion' 
+          ? 'Optimized builds for each BG3 companion'
+          : 'Popular builds from the BG3 community'}
       </p>
       
       <div className="build-list">
