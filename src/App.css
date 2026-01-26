@@ -92,7 +92,7 @@
   transform: translateX(-50%);
   width: 100vw;
   height: 400px;
-  background-image: url('https://cdn2.steamgriddb.com/hero/73ef4133e49dbac846f32f9667721822.png');
+  background-image: url('/images/heroes/rogue-trader-hero.png');
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
@@ -193,7 +193,7 @@
 
 .game-card {
   background: #1a1a2e;
-  background-image: url('https://cdn2.steamgriddb.com/hero/73ef4133e49dbac846f32f9667721822.png');
+  background-image: url('/images/heroes/rogue-trader-hero.png');
   background-size: cover;
   background-position: center;
   border: 2px solid #333;

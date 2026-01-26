@@ -19,6 +19,6 @@
     # XSS protection (legacy browsers)
     X-XSS-Protection = "1; mode=block"
     # Content Security Policy
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://roguetrader.wiki.fextralife.com https://cdn2.steamgriddb.com https://file.garden; font-src 'self'; connect-src 'self'; frame-ancestors 'none';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';"
     # Permissions Policy (disable unnecessary features)
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"

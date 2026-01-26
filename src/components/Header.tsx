@@ -17,7 +17,7 @@ interface HeaderProps {
 }
 
 const GAME_LOGOS: Record<string, string> = {
-  'rogue-trader': 'https://cdn2.steamgriddb.com/logo/404bfdece06f0fc5ba56bef1e19d8896.png',
+  'rogue-trader': '/images/logos/rogue-trader-logo.png',
 };
 
 export function Header({ 
