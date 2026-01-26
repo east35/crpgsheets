@@ -1,0 +1,183 @@
+import type { BG3Build } from '../../types';
+
+export const COMMUNITY_BUILDS: BG3Build[] = [
+  {
+    id: 'swords-bard-dps',
+    name: 'Swords Bard DPS',
+    description: 'A powerful melee damage dealer that combines martial prowess with full spellcasting. Excellent for players who want versatility.',
+    author: 'Community',
+    race: 'Half-Elf',
+    subrace: 'High Half-Elf',
+    background: 'Entertainer',
+    abilityScores: {
+      Strength: 8,
+      Dexterity: 17,
+      Constitution: 14,
+      Intelligence: 8,
+      Wisdom: 10,
+      Charisma: 16,
+    },
+    progression: [
+      { characterLevel: 1, classLevels: [{ class: 'Bard', level: 1 }], notes: 'Start with Bard for proficiencies. Pick up Vicious Mockery and Friends cantrips.' },
+      { characterLevel: 2, classLevels: [{ class: 'Bard', level: 2 }], notes: 'Jack of All Trades and Song of Rest.' },
+      { characterLevel: 3, classLevels: [{ class: 'Bard', level: 3, subclass: 'College of Swords' }], notes: 'Choose College of Swords. Get Fighting Style: Duelling and Blade Flourish.' },
+      { characterLevel: 4, classLevels: [{ class: 'Bard', level: 4 }], feat: 'Ability Improvement', abilityScoreImprovement: { Dexterity: 2 }, notes: '+2 DEX to 19.' },
+      { characterLevel: 5, classLevels: [{ class: 'Bard', level: 5 }], notes: 'Font of Inspiration. Access to 3rd level spells.' },
+      { characterLevel: 6, classLevels: [{ class: 'Bard', level: 6 }], notes: 'Extra Attack from College of Swords!' },
+      { characterLevel: 7, classLevels: [{ class: 'Bard', level: 7 }], notes: '4th level spells. Consider Greater Invisibility.' },
+      { characterLevel: 8, classLevels: [{ class: 'Bard', level: 8 }], feat: 'Ability Improvement', abilityScoreImprovement: { Dexterity: 1, Charisma: 1 }, notes: 'DEX to 20, CHA to 17.' },
+      { characterLevel: 9, classLevels: [{ class: 'Bard', level: 9 }], notes: '5th level spells. Hold Monster is excellent.' },
+      { characterLevel: 10, classLevels: [{ class: 'Bard', level: 10 }], notes: 'Magical Secrets! Grab Haste and Counterspell.' },
+      { characterLevel: 11, classLevels: [{ class: 'Bard', level: 11 }], notes: '6th level spells. Otto\'s Irresistible Dance.' },
+      { characterLevel: 12, classLevels: [{ class: 'Bard', level: 12 }], feat: 'Alert', notes: 'Alert feat for +5 initiative. Go first, control the battlefield.' },
+    ],
+    tags: ['Melee', 'Spellcaster', 'Versatile', 'Beginner Friendly'],
+    difficulty: 'Beginner',
+  },
+  {
+    id: 'sorlock-blaster',
+    name: 'Sorlock Eldritch Blaster',
+    description: 'The classic Sorcerer/Warlock multiclass. Quickened Eldritch Blast for devastating ranged damage every turn.',
+    author: 'Community',
+    race: 'Half-Elf',
+    subrace: 'Drow Half-Elf',
+    background: 'Sage',
+    abilityScores: {
+      Strength: 8,
+      Dexterity: 14,
+      Constitution: 14,
+      Intelligence: 10,
+      Wisdom: 10,
+      Charisma: 17,
+    },
+    progression: [
+      { characterLevel: 1, classLevels: [{ class: 'Sorcerer', level: 1, subclass: 'Draconic Bloodline' }], notes: 'Start Sorcerer for CON save proficiency. Choose Fire or Lightning ancestry.' },
+      { characterLevel: 2, classLevels: [{ class: 'Sorcerer', level: 1 }, { class: 'Warlock', level: 1, subclass: 'The Fiend' }], notes: 'Dip Warlock for Eldritch Blast and Dark One\'s Blessing.' },
+      { characterLevel: 3, classLevels: [{ class: 'Sorcerer', level: 1 }, { class: 'Warlock', level: 2 }], notes: 'Agonizing Blast and Repelling Blast invocations!' },
+      { characterLevel: 4, classLevels: [{ class: 'Sorcerer', level: 2 }, { class: 'Warlock', level: 2 }], notes: 'Back to Sorcerer. Get Sorcery Points.' },
+      { characterLevel: 5, classLevels: [{ class: 'Sorcerer', level: 3 }, { class: 'Warlock', level: 2 }], notes: 'Metamagic! Take Quickened Spell and Twinned Spell.' },
+      { characterLevel: 6, classLevels: [{ class: 'Sorcerer', level: 4 }, { class: 'Warlock', level: 2 }], feat: 'Ability Improvement', abilityScoreImprovement: { Charisma: 2 }, notes: 'CHA to 19.' },
+      { characterLevel: 7, classLevels: [{ class: 'Sorcerer', level: 5 }, { class: 'Warlock', level: 2 }], notes: '3rd level Sorcerer spells. Haste, Fireball, Counterspell.' },
+      { characterLevel: 8, classLevels: [{ class: 'Sorcerer', level: 6 }, { class: 'Warlock', level: 2 }], notes: 'Elemental Affinity - add CHA to damage of your element.' },
+      { characterLevel: 9, classLevels: [{ class: 'Sorcerer', level: 7 }, { class: 'Warlock', level: 2 }], notes: '4th level spells. Greater Invisibility, Banishment.' },
+      { characterLevel: 10, classLevels: [{ class: 'Sorcerer', level: 8 }, { class: 'Warlock', level: 2 }], feat: 'Ability Improvement', abilityScoreImprovement: { Charisma: 1, Constitution: 1 }, notes: 'CHA to 20, CON to 15.' },
+      { characterLevel: 11, classLevels: [{ class: 'Sorcerer', level: 9 }, { class: 'Warlock', level: 2 }], notes: '5th level spells. Hold Monster, Cloudkill.' },
+      { characterLevel: 12, classLevels: [{ class: 'Sorcerer', level: 10 }, { class: 'Warlock', level: 2 }], notes: 'Additional Metamagic option.' },
+    ],
+    tags: ['Ranged', 'Multiclass', 'Blaster', 'Advanced'],
+    difficulty: 'Advanced',
+  },
+  {
+    id: 'paladin-smite',
+    name: 'Vengeance Paladin Smiter',
+    description: 'A straightforward and powerful melee build focused on massive Divine Smite crits.',
+    author: 'Community',
+    race: 'Half-Orc',
+    background: 'Soldier',
+    abilityScores: {
+      Strength: 17,
+      Dexterity: 10,
+      Constitution: 14,
+      Intelligence: 8,
+      Wisdom: 10,
+      Charisma: 14,
+    },
+    progression: [
+      { characterLevel: 1, classLevels: [{ class: 'Paladin', level: 1, subclass: 'Oath of Vengeance' }], notes: 'Paladin 1. Divine Sense and Lay on Hands.' },
+      { characterLevel: 2, classLevels: [{ class: 'Paladin', level: 2 }], notes: 'Fighting Style: Great Weapon Fighting. Divine Smite unlocked!' },
+      { characterLevel: 3, classLevels: [{ class: 'Paladin', level: 3 }], notes: 'Oath of Vengeance. Vow of Enmity for advantage on one target.' },
+      { characterLevel: 4, classLevels: [{ class: 'Paladin', level: 4 }], feat: 'Great Weapon Master', notes: 'GWM for massive damage. -5 to hit, +10 damage.' },
+      { characterLevel: 5, classLevels: [{ class: 'Paladin', level: 5 }], notes: 'Extra Attack! Two attacks per turn.' },
+      { characterLevel: 6, classLevels: [{ class: 'Paladin', level: 6 }], notes: 'Aura of Protection. Add CHA to all saves for nearby allies.' },
+      { characterLevel: 7, classLevels: [{ class: 'Paladin', level: 7 }], notes: 'Relentless Avenger - free movement when hitting Vow target.' },
+      { characterLevel: 8, classLevels: [{ class: 'Paladin', level: 8 }], feat: 'Ability Improvement', abilityScoreImprovement: { Strength: 2 }, notes: 'STR to 19.' },
+      { characterLevel: 9, classLevels: [{ class: 'Paladin', level: 9 }], notes: '3rd level spells. Haste from Oath spell list!' },
+      { characterLevel: 10, classLevels: [{ class: 'Paladin', level: 10 }], notes: 'Aura of Courage - immunity to frightened.' },
+      { characterLevel: 11, classLevels: [{ class: 'Paladin', level: 11 }], notes: 'Improved Divine Smite - extra 1d8 radiant on every hit.' },
+      { characterLevel: 12, classLevels: [{ class: 'Paladin', level: 12 }], feat: 'Ability Improvement', abilityScoreImprovement: { Strength: 1, Charisma: 1 }, notes: 'STR to 20, CHA to 15.' },
+    ],
+    tags: ['Melee', 'Tank', 'Burst Damage', 'Beginner Friendly'],
+    difficulty: 'Beginner',
+  },
+  {
+    id: 'gloom-stalker-assassin',
+    name: 'Gloom Stalker / Assassin',
+    description: 'A devastating first-turn damage dealer. Combines Gloom Stalker\'s Dread Ambusher with Assassin\'s auto-crits.',
+    author: 'Community',
+    race: 'Elf',
+    subrace: 'Wood Elf',
+    background: 'Criminal',
+    abilityScores: {
+      Strength: 8,
+      Dexterity: 17,
+      Constitution: 14,
+      Intelligence: 10,
+      Wisdom: 14,
+      Charisma: 8,
+    },
+    progression: [
+      { characterLevel: 1, classLevels: [{ class: 'Ranger', level: 1 }], notes: 'Ranger 1. Favoured Enemy and Natural Explorer.' },
+      { characterLevel: 2, classLevels: [{ class: 'Ranger', level: 2 }], notes: 'Fighting Style: Archery (+2 to ranged attacks).' },
+      { characterLevel: 3, classLevels: [{ class: 'Ranger', level: 3, subclass: 'Gloom Stalker' }], notes: 'Gloom Stalker! Dread Ambusher for extra attack and damage on first turn.' },
+      { characterLevel: 4, classLevels: [{ class: 'Ranger', level: 4 }], feat: 'Sharpshooter', notes: 'Sharpshooter for -5/+10 ranged damage.' },
+      { characterLevel: 5, classLevels: [{ class: 'Ranger', level: 5 }], notes: 'Extra Attack!' },
+      { characterLevel: 6, classLevels: [{ class: 'Ranger', level: 5 }, { class: 'Rogue', level: 1 }], notes: 'Dip Rogue for Sneak Attack and Expertise.' },
+      { characterLevel: 7, classLevels: [{ class: 'Ranger', level: 5 }, { class: 'Rogue', level: 2 }], notes: 'Cunning Action - Dash, Disengage, Hide as bonus action.' },
+      { characterLevel: 8, classLevels: [{ class: 'Ranger', level: 5 }, { class: 'Rogue', level: 3, subclass: 'Assassin' }], notes: 'Assassin subclass! Auto-crit on surprised enemies.' },
+      { characterLevel: 9, classLevels: [{ class: 'Ranger', level: 5 }, { class: 'Rogue', level: 4 }], feat: 'Ability Improvement', abilityScoreImprovement: { Dexterity: 2 }, notes: 'DEX to 19.' },
+      { characterLevel: 10, classLevels: [{ class: 'Ranger', level: 5 }, { class: 'Rogue', level: 5 }], notes: 'Uncanny Dodge - halve damage from one attack.' },
+      { characterLevel: 11, classLevels: [{ class: 'Ranger', level: 5 }, { class: 'Rogue', level: 6 }], notes: 'Expertise in more skills.' },
+      { characterLevel: 12, classLevels: [{ class: 'Ranger', level: 5 }, { class: 'Rogue', level: 7 }], notes: 'Evasion - take no damage on DEX save success.' },
+    ],
+    tags: ['Ranged', 'Multiclass', 'Stealth', 'Burst Damage'],
+    difficulty: 'Intermediate',
+  },
+  {
+    id: 'open-hand-monk',
+    name: 'Open Hand Monk',
+    description: 'A mobile martial artist that excels at stunning enemies and controlling the battlefield.',
+    author: 'Community',
+    race: 'Githyanki',
+    background: 'Outlander',
+    abilityScores: {
+      Strength: 8,
+      Dexterity: 17,
+      Constitution: 14,
+      Intelligence: 10,
+      Wisdom: 16,
+      Charisma: 8,
+    },
+    progression: [
+      { characterLevel: 1, classLevels: [{ class: 'Monk', level: 1 }], notes: 'Monk 1. Martial Arts and Unarmored Defense.' },
+      { characterLevel: 2, classLevels: [{ class: 'Monk', level: 2 }], notes: 'Ki points! Flurry of Blows, Patient Defense, Step of the Wind.' },
+      { characterLevel: 3, classLevels: [{ class: 'Monk', level: 3, subclass: 'Way of the Open Hand' }], notes: 'Open Hand Technique - push, prone, or prevent reactions.' },
+      { characterLevel: 4, classLevels: [{ class: 'Monk', level: 4 }], feat: 'Ability Improvement', abilityScoreImprovement: { Dexterity: 2 }, notes: 'DEX to 19. Slow Fall.' },
+      { characterLevel: 5, classLevels: [{ class: 'Monk', level: 5 }], notes: 'Extra Attack and Stunning Strike!' },
+      { characterLevel: 6, classLevels: [{ class: 'Monk', level: 6 }], notes: 'Ki-Empowered Strikes and Wholeness of Body.' },
+      { characterLevel: 7, classLevels: [{ class: 'Monk', level: 7 }], notes: 'Evasion and Stillness of Mind.' },
+      { characterLevel: 8, classLevels: [{ class: 'Monk', level: 8 }], feat: 'Ability Improvement', abilityScoreImprovement: { Dexterity: 1, Wisdom: 1 }, notes: 'DEX to 20, WIS to 17.' },
+      { characterLevel: 9, classLevels: [{ class: 'Monk', level: 9 }], notes: 'Advanced Unarmored Movement - run on walls and water.' },
+      { characterLevel: 10, classLevels: [{ class: 'Monk', level: 10 }], notes: 'Purity of Body - immunity to poison and disease.' },
+      { characterLevel: 11, classLevels: [{ class: 'Monk', level: 11 }], notes: 'Tranquility - Sanctuary at the start of each long rest.' },
+      { characterLevel: 12, classLevels: [{ class: 'Monk', level: 12 }], feat: 'Mobile', notes: 'Mobile feat for even more speed and hit-and-run tactics.' },
+    ],
+    tags: ['Melee', 'Mobile', 'Control', 'Beginner Friendly'],
+    difficulty: 'Beginner',
+  },
+];
+
+export function getBuild(id: string): BG3Build | undefined {
+  return COMMUNITY_BUILDS.find(b => b.id === id);
+}
+
+export function getAllBuilds(): BG3Build[] {
+  return COMMUNITY_BUILDS;
+}
+
+export function getBuildsByTag(tag: string): BG3Build[] {
+  return COMMUNITY_BUILDS.filter(b => b.tags?.includes(tag));
+}
+
+export function getBuildsByDifficulty(difficulty: BG3Build['difficulty']): BG3Build[] {
+  return COMMUNITY_BUILDS.filter(b => b.difficulty === difficulty);
+}

@@ -1,21 +1,26 @@
 import { useState, useEffect } from 'react';
 import type { Game, CharacterBuild, Profile } from './types';
 import type { BuildGuide, CompanionName } from './games/rogue-trader/types';
+import type { BG3Build } from './games/baldurs-gate-3/types';
 import { Header } from './components/Header';
 import { GameSelector } from './components/GameSelector';
 import { BuildList } from './components/BuildList';
-import { BuildSelector } from './games/rogue-trader/components/BuildSelector';
-import { BuildViewer } from './games/rogue-trader/components/BuildViewer';
+// Rogue Trader imports
+import { BuildSelector as RTBuildSelector } from './games/rogue-trader/components/BuildSelector';
+import { BuildViewer as RTBuildViewer } from './games/rogue-trader/components/BuildViewer';
 import { CustomBuildEditor, type CustomBuildData } from './games/rogue-trader/components/CustomBuildEditor';
-import { getBuildById } from './games/rogue-trader/data/builds';
+import { getBuildById as getRTBuildById } from './games/rogue-trader/data/builds';
+import { getTalentInfo, WIKI_TALENTS } from './games/rogue-trader/data/talents';
+import { getGearInfo, GEAR_DATA } from './games/rogue-trader/data/gear';
+// BG3 imports
+import { BuildSelector as BG3BuildSelector } from './games/baldurs-gate-3/components/BuildSelector';
+import { BuildViewer as BG3BuildViewer } from './games/baldurs-gate-3/components/BuildViewer';
 import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
 import { SearchBar } from './components/SearchBar';
-import { getTalentInfo, WIKI_TALENTS } from './games/rogue-trader/data/talents';
-import { getGearInfo, GEAR_DATA } from './games/rogue-trader/data/gear';
 import './App.css';
 
-type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor';
+type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor' | 'bg3-builds';
 
 function App() {
   const [currentGame, setCurrentGame] = useState<Game | null>(null);
@@ -26,6 +31,7 @@ function App() {
   const [activeTrackedBuildId, setActiveTrackedBuildId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [customBuildCompanion, setCustomBuildCompanion] = useState<CompanionName | null>(null);
+  const [selectedBG3Build, setSelectedBG3Build] = useState<BG3Build | null>(null);
 
   const { 
     profiles, 
@@ -82,7 +88,12 @@ function App() {
   const handleSelectGame = (game: Game) => {
     setCurrentGame(game);
     setCurrentProfile(null); // Reset profile, will be set by useEffect
-    setView('my-builds');
+    // Set default view based on game
+    if (game.id === 'baldurs-gate-3') {
+      setView('bg3-builds');
+    } else {
+      setView('my-builds');
+    }
   };
 
   const handleGameChange = () => {
@@ -130,7 +141,7 @@ function App() {
   const handleSelectBuild = (build: CharacterBuild) => {
     const data = build.data as { guideId?: string; currentLevel?: number } | undefined;
     if (data?.guideId) {
-      const guide = getBuildById(data.guideId);
+      const guide = getRTBuildById(data.guideId);
       if (guide) {
         setSelectedGuide(guide);
         setCurrentLevel(data.currentLevel || 1);
@@ -271,8 +282,8 @@ function App() {
           </div>
         )}
 
-        {/* Navigation tabs */}
-        {currentGame && view !== 'game-select' && (
+        {/* Navigation tabs - Rogue Trader */}
+        {currentGame?.id === 'rogue-trader' && view !== 'game-select' && (
           <>
             <div className="nav-row">
               <div className="view-tabs">
@@ -300,10 +311,32 @@ function App() {
           </>
         )}
 
+        {/* Navigation tabs - BG3 */}
+        {currentGame?.id === 'baldurs-gate-3' && view !== 'game-select' && (
+          <>
+            <div className="nav-row">
+              <div className="view-tabs">
+                <button
+                  className={`view-tab ${view === 'my-builds' ? 'active' : ''}`}
+                  onClick={handleViewMyBuilds}
+                >
+                  My Builds
+                </button>
+                <button
+                  className={`view-tab ${view === 'bg3-builds' || (view === 'build-viewer' && selectedBG3Build) ? 'active' : ''}`}
+                  onClick={() => setView('bg3-builds')}
+                >
+                  Community Builds
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+
         {view === 'game-select' && <GameSelector onSelectGame={handleSelectGame} />}
 
         {view === 'companion-builds' && currentGame?.id === 'rogue-trader' && (
-          <BuildSelector 
+          <RTBuildSelector 
             onSelectBuild={handleSelectGuide} 
             onCreateCustomBuild={handleCreateCustomBuild}
             buildType="companion" 
@@ -311,21 +344,41 @@ function App() {
         )}
 
         {view === 'rogue-trader-builds' && currentGame?.id === 'rogue-trader' && (
-          <BuildSelector 
+          <RTBuildSelector 
             onSelectBuild={handleSelectGuide} 
             onCreateCustomBuild={handleCreateCustomBuild}
             buildType="rogueTrader" 
           />
         )}
 
-        {view === 'build-viewer' && selectedGuide && (
-          <BuildViewer
+        {view === 'build-viewer' && selectedGuide && currentGame?.id === 'rogue-trader' && (
+          <RTBuildViewer
             build={selectedGuide}
             onBack={handleBackToGuides}
             currentLevel={currentLevel}
             onLevelChange={handleLevelChange}
             onTrackBuild={handleTrackBuild}
             isTracked={isGuideTracked(selectedGuide.id)}
+          />
+        )}
+
+        {view === 'build-viewer' && selectedBG3Build && currentGame?.id === 'baldurs-gate-3' && (
+          <BG3BuildViewer
+            build={selectedBG3Build}
+            onBack={() => { setSelectedBG3Build(null); setView('bg3-builds'); }}
+            currentLevel={currentLevel}
+            onLevelChange={setCurrentLevel}
+          />
+        )}
+
+        {view === 'bg3-builds' && currentGame?.id === 'baldurs-gate-3' && (
+          <BG3BuildSelector
+            onSelectBuild={(build) => {
+              setSelectedBG3Build(build);
+              setCurrentLevel(1);
+              setView('build-viewer');
+              window.scrollTo(0, 0);
+            }}
           />
         )}
 

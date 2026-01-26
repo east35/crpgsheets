@@ -7,6 +7,12 @@ export const GAMES: Record<string, Game> = {
     shortName: 'Rogue Trader',
     description: 'Manage your Rogue Trader party builds and progression',
   },
+  'baldurs-gate-3': {
+    id: 'baldurs-gate-3',
+    name: "Baldur's Gate 3",
+    shortName: 'BG3',
+    description: 'Plan your BG3 character builds and party composition',
+  },
 };
 
 export interface ComingSoonGame {
@@ -18,13 +24,6 @@ export interface ComingSoonGame {
 }
 
 export const COMING_SOON_GAMES: ComingSoonGame[] = [
-  {
-    id: 'baldurs-gate-3',
-    name: "Baldur's Gate 3",
-    shortName: 'BG3',
-    description: 'Plan your BG3 character builds',
-    heroImage: '/images/heroes/bg3-hero.png',
-  },
   {
     id: 'divinity-os2',
     name: 'Divinity: Original Sin 2',

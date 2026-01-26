@@ -1,0 +1,314 @@
+/* BG3 Build Viewer */
+.build-viewer.bg3 {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.build-viewer-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.build-title {
+  flex: 1;
+}
+
+.build-title h2 {
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+}
+
+.build-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.build-meta .separator {
+  color: #444;
+}
+
+.build-meta .race {
+  color: #8b5cf6;
+}
+
+.build-meta .background {
+  color: #f59e0b;
+}
+
+.build-meta .classes {
+  color: #10b981;
+}
+
+.build-description {
+  color: #aaa;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.build-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.build-tags .tag {
+  background: #2a2a4a;
+  color: #888;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.build-tags .tag.difficulty {
+  font-weight: 600;
+}
+
+.build-tags .tag.difficulty.beginner {
+  background: #064e3b;
+  color: #34d399;
+}
+
+.build-tags .tag.difficulty.intermediate {
+  background: #78350f;
+  color: #fbbf24;
+}
+
+.build-tags .tag.difficulty.advanced {
+  background: #7f1d1d;
+  color: #f87171;
+}
+
+/* Level Selector */
+.level-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #1a1a2e;
+  border-radius: 8px;
+}
+
+.level-selector label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.level-selector input[type="range"] {
+  flex: 1;
+  accent-color: #8b5cf6;
+}
+
+.level-display {
+  background: #8b5cf6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #888;
+  background: #1a1a2e;
+}
+
+.tab.active {
+  color: #fff;
+  background: #2a2a4a;
+}
+
+/* Progression View */
+.progression-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.level-row {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #1a1a2e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.level-row:hover {
+  background: #222244;
+}
+
+.level-row.current {
+  border-left-color: #8b5cf6;
+  background: #2a2a4a;
+}
+
+.level-row.completed {
+  opacity: 0.6;
+}
+
+.level-row.completed .level-number {
+  color: #10b981;
+}
+
+.level-number {
+  min-width: 60px;
+  font-weight: 600;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.level-number .check {
+  color: #10b981;
+}
+
+.level-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.class-levels {
+  color: #fff;
+  font-weight: 500;
+}
+
+.feat {
+  color: #f59e0b;
+  font-size: 0.9rem;
+}
+
+.feat-label {
+  color: #888;
+}
+
+.asi {
+  margin-left: 0.5rem;
+  color: #10b981;
+  font-size: 0.85rem;
+}
+
+.spells-learned {
+  color: #8b5cf6;
+  font-size: 0.9rem;
+}
+
+.spells-label {
+  color: #888;
+}
+
+.level-notes {
+  color: #888;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Stats View */
+.stats-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stats-section {
+  background: #1a1a2e;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.stats-section h3 {
+  margin: 0 0 1rem 0;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.stats-section p {
+  color: #888;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.ability-scores {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.ability-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: #2a2a4a;
+  border-radius: 8px;
+}
+
+.stat-name {
+  color: #888;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stat-modifier {
+  color: #8b5cf6;
+  font-size: 0.9rem;
+}
+
+.traits, .skills {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.traits strong, .skills strong {
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ability-scores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .build-meta {
+    flex-wrap: wrap;
+  }
+}
