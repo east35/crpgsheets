@@ -103,7 +103,6 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #333;
-  padding-bottom: 0.5rem;
 }
 
 .tab {
@@ -131,44 +130,86 @@
   margin-top: 1rem;
 }
 
-.progression-controls {
-  margin-bottom: 1rem;
+/* Tier Accordion */
+.tier-accordion {
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.progression-controls label {
+.tier-accordion-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.tier-accordion-header.base {
+  background: #2d4a2d;
+  color: #90ee90;
+}
+
+.tier-accordion-header.base:hover {
+  background: #3d5a3d;
+}
+
+.tier-accordion-header.advanced {
+  background: #4a3d2d;
+  color: #ffd700;
+}
+
+.tier-accordion-header.advanced:hover {
+  background: #5a4d3d;
+}
+
+.tier-accordion-header.exemplar {
+  background: #4a2d4a;
+  color: #da70d6;
+}
+
+.tier-accordion-header.exemplar:hover {
+  background: #5a3d5a;
+}
+
+.tier-accordion-header.completed {
+  opacity: 0.8;
+}
+
+.tier-accordion-icon {
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.tier-accordion-title {
+  flex: 1;
+}
+
+.tier-completed-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.tier-accordion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
 }
 
 .level-list {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-}
-
-.tier-header {
-  padding: 0.5rem 0.75rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-.tier-header.base {
-  background: #2d4a2d;
-  color: #90ee90;
-}
-
-.tier-header.advanced {
-  background: #4a3d2d;
-  color: #ffd700;
-}
-
-.tier-header.exemplar {
-  background: #4a2d4a;
-  color: #da70d6;
 }
 
 .level-row {
@@ -287,12 +328,21 @@
   padding: 0.2rem 0.5rem;
   background: #333;
   border-radius: 4px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.gear-item:hover {
+  background: #444;
 }
 
 .gear-item.primary {
   background: #4a3d2d;
   color: #ffd700;
+}
+
+.gear-item.primary:hover {
+  background: #5a4d3d;
 }
 
 /* Responsive */

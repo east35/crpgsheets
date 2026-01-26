@@ -4,13 +4,15 @@ import type { BuildGuide, CompanionName } from './games/rogue-trader/types';
 import { Header } from './components/Header';
 import { GameSelector } from './components/GameSelector';
 import { BuildList } from './components/BuildList';
-import { ImportExportToolbar } from './components/ImportExportToolbar';
 import { BuildSelector } from './games/rogue-trader/components/BuildSelector';
 import { BuildViewer } from './games/rogue-trader/components/BuildViewer';
 import { CustomBuildEditor, type CustomBuildData } from './games/rogue-trader/components/CustomBuildEditor';
 import { getBuildById } from './games/rogue-trader/data/builds';
 import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
+import { SearchBar } from './components/SearchBar';
+import { getTalentInfo } from './games/rogue-trader/data/talents';
+import { getGearInfo } from './games/rogue-trader/data/gear';
 import './App.css';
 
 type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor';
@@ -36,7 +38,7 @@ function App() {
     importProfile,
   } = useProfiles(currentGame?.id || '');
 
-  const { builds, addBuild, updateBuild, deleteBuild, importBuilds } = usePersistedBuilds(
+  const { builds, addBuild, updateBuild, deleteBuild } = usePersistedBuilds(
     currentGame?.id || '', 
     currentProfile?.id || null
   );
@@ -79,7 +81,7 @@ function App() {
   const handleSelectGame = (game: Game) => {
     setCurrentGame(game);
     setCurrentProfile(null); // Reset profile, will be set by useEffect
-    setView('rogue-trader-builds');
+    setView('my-builds');
   };
 
   const handleGameChange = () => {
@@ -104,9 +106,11 @@ function App() {
   };
 
   const handleBackToGuides = () => {
+    // Return to the correct view based on the selected guide's companion type
+    const returnView = selectedGuide?.companion === 'RogueTrader' ? 'rogue-trader-builds' : 'companion-builds';
     setSelectedGuide(null);
     setActiveTrackedBuildId(null);
-    setView('companion-builds');
+    setView(returnView);
   };
 
   const handleViewMyBuilds = () => {
@@ -154,16 +158,7 @@ function App() {
     }
   };
 
-  const handleImport = (importedBuilds: CharacterBuild[]) => {
-    importBuilds(importedBuilds);
-    setError(null);
-  };
-
-  const handleError = (message: string) => {
-    setError(message);
-    setTimeout(() => setError(null), 5000);
-  };
-
+  
   const handleCreateCustomBuild = (companion: CompanionName) => {
     setCustomBuildCompanion(companion);
     setView('custom-build-editor');
@@ -193,6 +188,58 @@ function App() {
     setView('companion-builds');
   };
 
+  const handleSearch = (query: string) => {
+    const results: { type: 'talent' | 'gear'; name: string; description?: string }[] = [];
+    const lowerQuery = query.toLowerCase();
+
+    // Search talents
+    const talentInfo = getTalentInfo(query);
+    if (talentInfo) {
+      results.push({
+        type: 'talent',
+        name: talentInfo.name,
+        description: talentInfo.effect?.slice(0, 100) + (talentInfo.effect && talentInfo.effect.length > 100 ? '...' : ''),
+      });
+    }
+
+    // Search gear
+    const gearInfo = getGearInfo(query);
+    if (gearInfo) {
+      results.push({
+        type: 'gear',
+        name: gearInfo.name,
+        description: gearInfo.effect?.slice(0, 100) + (gearInfo.effect && gearInfo.effect.length > 100 ? '...' : ''),
+      });
+    }
+
+    // Also do partial matching by importing the data directly
+    import('./games/rogue-trader/data/talents/talents-from-wiki').then(({ WIKI_TALENTS }) => {
+      Object.values(WIKI_TALENTS).forEach((talent) => {
+        if (talent.name.toLowerCase().includes(lowerQuery) && !results.find(r => r.name === talent.name)) {
+          results.push({
+            type: 'talent',
+            name: talent.name,
+            description: talent.effect?.slice(0, 100) + (talent.effect && talent.effect.length > 100 ? '...' : ''),
+          });
+        }
+      });
+    });
+
+    import('./games/rogue-trader/data/gear/gear-from-wiki').then(({ GEAR_DATA }) => {
+      Object.values(GEAR_DATA).forEach((gear) => {
+        if (gear.name.toLowerCase().includes(lowerQuery) && !results.find(r => r.name === gear.name)) {
+          results.push({
+            type: 'gear',
+            name: gear.name,
+            description: gear.effect?.slice(0, 100) + (gear.effect && gear.effect.length > 100 ? '...' : ''),
+          });
+        }
+      });
+    });
+
+    return results;
+  };
+
   return (
     <div className="app">
       <Header 
@@ -220,25 +267,28 @@ function App() {
         {/* Navigation tabs */}
         {currentGame && view !== 'game-select' && (
           <>
-            <div className="view-tabs">
-              <button
-                className={`view-tab ${view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader') ? 'active' : ''}`}
-                onClick={handleViewRogueTraderBuilds}
-              >
-                Rogue Trader
-              </button>
-              <button
-                className={`view-tab ${view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader') ? 'active' : ''}`}
-                onClick={handleViewCompanionBuilds}
-              >
-                Companions
-              </button>
-              <button
-                className={`view-tab ${view === 'my-builds' || view === 'build-editor' ? 'active' : ''}`}
-                onClick={handleViewMyBuilds}
-              >
-                My Builds ({builds.length})
-              </button>
+            <div className="nav-row">
+              <div className="view-tabs">
+                <button
+                  className={`view-tab ${view === 'my-builds' || view === 'build-editor' ? 'active' : ''}`}
+                  onClick={handleViewMyBuilds}
+                >
+                  My Builds
+                </button>
+                <button
+                  className={`view-tab ${view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader') ? 'active' : ''}`}
+                  onClick={handleViewRogueTraderBuilds}
+                >
+                  Rogue Trader
+                </button>
+                <button
+                  className={`view-tab ${view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader') ? 'active' : ''}`}
+                  onClick={handleViewCompanionBuilds}
+                >
+                  Companions
+                </button>
+              </div>
+              <SearchBar onSearch={handleSearch} />
             </div>
           </>
         )}
@@ -285,13 +335,6 @@ function App() {
             <div className="view-header">
               <h2>My {currentGame.shortName} Builds</h2>
             </div>
-
-            <ImportExportToolbar
-              game={currentGame}
-              builds={builds}
-              onImport={handleImport}
-              onError={handleError}
-            />
 
             <BuildList
               builds={builds}

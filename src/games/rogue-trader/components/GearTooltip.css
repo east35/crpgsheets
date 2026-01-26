@@ -1,6 +1,6 @@
 .gear-tooltip-trigger {
   position: relative;
-  cursor: help;
+  cursor: pointer;
   color: #8ac4ff;
   border-bottom: 1px dotted #8ac4ff;
 }
@@ -17,7 +17,7 @@
   min-width: 280px;
   max-width: 380px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .gear-tooltip.top {

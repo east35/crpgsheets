@@ -10,20 +10,61 @@ interface GearTooltipProps {
 export function GearTooltip({ gearName, children }: GearTooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState<'top' | 'bottom'>('top');
+  const [horizontalOffset, setHorizontalOffset] = useState(0);
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const hideTimeoutRef = useRef<number | null>(null);
 
   const gearInfo = getGearInfo(gearName);
+
+  const handleMouseEnter = () => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = null;
+    }
+    setIsVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    hideTimeoutRef.current = window.setTimeout(() => {
+      setIsVisible(false);
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (isVisible && triggerRef.current && tooltipRef.current) {
       const triggerRect = triggerRef.current.getBoundingClientRect();
       const tooltipHeight = tooltipRef.current.offsetHeight;
+      const tooltipWidth = tooltipRef.current.offsetWidth;
       
       if (triggerRect.top - tooltipHeight - 10 < 0) {
         setPosition('bottom');
       } else {
         setPosition('top');
+      }
+
+      // Check horizontal containment within main content area
+      const mainContent = document.querySelector('.main-content');
+      if (mainContent) {
+        const mainRect = mainContent.getBoundingClientRect();
+        const tooltipLeft = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
+        const tooltipRight = tooltipLeft + tooltipWidth;
+        
+        if (tooltipLeft < mainRect.left + 10) {
+          setHorizontalOffset(mainRect.left + 10 - tooltipLeft);
+        } else if (tooltipRight > mainRect.right - 10) {
+          setHorizontalOffset(mainRect.right - 10 - tooltipRight);
+        } else {
+          setHorizontalOffset(0);
+        }
       }
     }
   }, [isVisible]);
@@ -32,12 +73,18 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
     <span
       ref={triggerRef}
       className="gear-tooltip-trigger"
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {children || gearName}
       {isVisible && gearInfo && (
-        <div ref={tooltipRef} className={`gear-tooltip ${position}`}>
+        <div 
+          ref={tooltipRef} 
+          className={`gear-tooltip ${position}`}
+          style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="gear-tooltip-header">
             {gearInfo.imageRemote && (
               <img 

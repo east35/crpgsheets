@@ -1,0 +1,120 @@
+.archetype-tooltip-trigger {
+  position: relative;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.archetype-tooltip-trigger.tier-base {
+  background: #2d4a2d;
+  color: #90ee90;
+}
+
+.archetype-tooltip-trigger.tier-base:hover {
+  background: #3d5a3d;
+}
+
+.archetype-tooltip-trigger.tier-advanced {
+  background: #4a3d2d;
+  color: #ffd700;
+}
+
+.archetype-tooltip-trigger.tier-advanced:hover {
+  background: #5a4d3d;
+}
+
+.archetype-tooltip-trigger.tier-exemplar {
+  background: #4a2d4a;
+  color: #da70d6;
+}
+
+.archetype-tooltip-trigger.tier-exemplar:hover {
+  background: #5a3d5a;
+}
+
+.archetype-tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #1a1a2e;
+  border: 1px solid #4a4a6a;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 250px;
+  max-width: 320px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.archetype-tooltip.top {
+  bottom: calc(100% + 8px);
+}
+
+.archetype-tooltip.bottom {
+  top: calc(100% + 8px);
+}
+
+.archetype-tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3a3a5a;
+}
+
+.archetype-tooltip-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.archetype-tooltip-name.tier-base {
+  color: #90ee90;
+}
+
+.archetype-tooltip-name.tier-advanced {
+  color: #ffd700;
+}
+
+.archetype-tooltip-name.tier-exemplar {
+  color: #da70d6;
+}
+
+.archetype-tooltip-role {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  background: #2a2a3e;
+  border-radius: 4px;
+  color: #8a8aaa;
+}
+
+.archetype-tooltip-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #c0c0d0;
+}
+
+/* Arrow for tooltip */
+.archetype-tooltip.top::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+.archetype-tooltip.bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-bottom-color: #1a1a2e;
+}

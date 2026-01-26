@@ -3,6 +3,7 @@ import type { BuildGuide } from '../types';
 import { ARCHETYPE_DISPLAY_NAMES, GEAR_SLOT_LABELS } from '../types';
 import { TalentTooltip } from './TalentTooltip';
 import { GearTooltip } from './GearTooltip';
+import { ArchetypeTooltip } from './ArchetypeTooltip';
 import { KeywordText } from './KeywordText';
 import './BuildViewer.css';
 
@@ -17,27 +18,39 @@ interface BuildViewerProps {
 
 export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, onTrackBuild, isTracked }: BuildViewerProps) {
   const [activeTab, setActiveTab] = useState<'progression' | 'gear'>('progression');
-  const [showAllLevels, setShowAllLevels] = useState(false);
-
+  
   const archetypePath = build.archetypePath;
 
-  // Determine archetype tier boundaries
-  const getArchetypeForLevel = (level: number) => {
-    if (level <= 15) return archetypePath.base;
-    if (level <= 35) return archetypePath.advanced;
-    return archetypePath.exemplar;
-  };
-
-  const getTierForLevel = (level: number): 'base' | 'advanced' | 'exemplar' => {
-    if (level <= 15) return 'base';
-    if (level <= 35) return 'advanced';
+  // Determine which tier the current level is in
+  const getCurrentTier = (): 'base' | 'advanced' | 'exemplar' => {
+    if (currentLevel <= 15) return 'base';
+    if (currentLevel <= 35) return 'advanced';
     return 'exemplar';
   };
 
-  // Filter levels to show
-  const levelsToShow = showAllLevels
-    ? build.progression
-    : build.progression.filter((l) => l.level <= currentLevel + 5 && l.level >= currentLevel - 2);
+  // Check if a tier is completed (all levels in that tier are below current level)
+  const isTierCompleted = (tier: 'base' | 'advanced' | 'exemplar'): boolean => {
+    if (tier === 'base') return currentLevel > 15;
+    if (tier === 'advanced') return currentLevel > 35;
+    return false; // Exemplar can't be "completed" in this sense
+  };
+
+  // Initialize accordion state: expand current tier, collapse completed tiers
+  const currentTier = getCurrentTier();
+  const [expandedTiers, setExpandedTiers] = useState<Record<string, boolean>>({
+    base: currentTier === 'base' || !isTierCompleted('base'),
+    advanced: currentTier === 'advanced',
+    exemplar: currentTier === 'exemplar',
+  });
+
+  const toggleTier = (tier: 'base' | 'advanced' | 'exemplar') => {
+    setExpandedTiers(prev => ({ ...prev, [tier]: !prev[tier] }));
+  };
+
+  // Group levels by tier
+  const baseLevels = build.progression.filter(l => l.level >= 1 && l.level <= 15);
+  const advancedLevels = build.progression.filter(l => l.level >= 16 && l.level <= 35);
+  const exemplarLevels = build.progression.filter(l => l.level >= 36 && l.level <= 55);
 
   return (
     <div className="build-viewer">
@@ -48,11 +61,11 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
         <div className="build-title">
           <h2>{build.companion}: {build.buildName}</h2>
           <div className="archetype-path">
-            <span className="tier base">{ARCHETYPE_DISPLAY_NAMES[archetypePath.base]}</span>
+            <ArchetypeTooltip archetype={archetypePath.base} tier="base" />
             <span className="arrow">→</span>
-            <span className="tier advanced">{ARCHETYPE_DISPLAY_NAMES[archetypePath.advanced]}</span>
+            <ArchetypeTooltip archetype={archetypePath.advanced} tier="advanced" />
             <span className="arrow">→</span>
-            <span className="tier exemplar">{ARCHETYPE_DISPLAY_NAMES[archetypePath.exemplar]}</span>
+            <ArchetypeTooltip archetype={archetypePath.exemplar} tier="exemplar" />
           </div>
         </div>
         {onTrackBuild && (
@@ -111,63 +124,156 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
 
       {activeTab === 'progression' && (
         <div className="progression-view">
-          <div className="progression-controls">
-            <label>
-              <input
-                type="checkbox"
-                checked={showAllLevels}
-                onChange={(e) => setShowAllLevels(e.target.checked)}
-              />
-              Show all levels
-            </label>
+          {/* Base Tier Accordion */}
+          <div className="tier-accordion">
+            <button 
+              className={`tier-accordion-header base ${isTierCompleted('base') ? 'completed' : ''}`}
+              onClick={() => toggleTier('base')}
+            >
+              <span className="tier-accordion-icon">{expandedTiers.base ? '▼' : '▶'}</span>
+              <span className="tier-accordion-title">
+                {ARCHETYPE_DISPLAY_NAMES[archetypePath.base]} (Levels 1-15)
+              </span>
+              {isTierCompleted('base') && <span className="tier-completed-badge">✓ Complete</span>}
+            </button>
+            {expandedTiers.base && (
+              <div className="tier-accordion-content">
+                {baseLevels.map((levelData) => {
+                  const isCurrentLevel = levelData.level === currentLevel;
+                  const isPastLevel = levelData.level < currentLevel;
+                  return (
+                    <div
+                      key={levelData.level}
+                      className={`level-row base ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
+                      onClick={() => onLevelChange?.(levelData.level)}
+                    >
+                      <div className="level-number">
+                        {isPastLevel && <span className="check">✓</span>}
+                        Lv {levelData.level}
+                      </div>
+                      <div className="level-content">
+                        {levelData.talents.length > 0 && (
+                          <div className="talents">
+                            {levelData.talents.map((talent, i) => (
+                              <TalentTooltip key={i} talentName={talent}>
+                                <span className="talent">{talent}</span>
+                              </TalentTooltip>
+                            ))}
+                          </div>
+                        )}
+                        {levelData.statIncrease && (
+                          <div className="stat-increase">+{levelData.statIncrease}</div>
+                        )}
+                        {levelData.notes && (
+                          <div className="level-notes">{levelData.notes}</div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
-          <div className="level-list">
-            {levelsToShow.map((levelData) => {
-              const tier = getTierForLevel(levelData.level);
-              const archetype = getArchetypeForLevel(levelData.level);
-              const isCurrentLevel = levelData.level === currentLevel;
-              const isPastLevel = levelData.level < currentLevel;
-              const isTierStart = levelData.level === 1 || levelData.level === 16 || levelData.level === 36;
+          {/* Advanced Tier Accordion */}
+          <div className="tier-accordion">
+            <button 
+              className={`tier-accordion-header advanced ${isTierCompleted('advanced') ? 'completed' : ''}`}
+              onClick={() => toggleTier('advanced')}
+            >
+              <span className="tier-accordion-icon">{expandedTiers.advanced ? '▼' : '▶'}</span>
+              <span className="tier-accordion-title">
+                {ARCHETYPE_DISPLAY_NAMES[archetypePath.advanced]} (Levels 16-35)
+              </span>
+              {isTierCompleted('advanced') && <span className="tier-completed-badge">✓ Complete</span>}
+            </button>
+            {expandedTiers.advanced && (
+              <div className="tier-accordion-content">
+                {advancedLevels.map((levelData) => {
+                  const isCurrentLevel = levelData.level === currentLevel;
+                  const isPastLevel = levelData.level < currentLevel;
+                  return (
+                    <div
+                      key={levelData.level}
+                      className={`level-row advanced ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
+                      onClick={() => onLevelChange?.(levelData.level)}
+                    >
+                      <div className="level-number">
+                        {isPastLevel && <span className="check">✓</span>}
+                        Lv {levelData.level}
+                      </div>
+                      <div className="level-content">
+                        {levelData.talents.length > 0 && (
+                          <div className="talents">
+                            {levelData.talents.map((talent, i) => (
+                              <TalentTooltip key={i} talentName={talent}>
+                                <span className="talent">{talent}</span>
+                              </TalentTooltip>
+                            ))}
+                          </div>
+                        )}
+                        {levelData.statIncrease && (
+                          <div className="stat-increase">+{levelData.statIncrease}</div>
+                        )}
+                        {levelData.notes && (
+                          <div className="level-notes">{levelData.notes}</div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
 
-              return (
-                <div key={levelData.level}>
-                  {isTierStart && (
-                    <div className={`tier-header ${tier}`}>
-                      {ARCHETYPE_DISPLAY_NAMES[archetype]} (Levels {levelData.level}-{tier === 'base' ? 15 : tier === 'advanced' ? 35 : 55})
+          {/* Exemplar Tier Accordion */}
+          <div className="tier-accordion">
+            <button 
+              className={`tier-accordion-header exemplar`}
+              onClick={() => toggleTier('exemplar')}
+            >
+              <span className="tier-accordion-icon">{expandedTiers.exemplar ? '▼' : '▶'}</span>
+              <span className="tier-accordion-title">
+                {ARCHETYPE_DISPLAY_NAMES[archetypePath.exemplar]} (Levels 36-55)
+              </span>
+            </button>
+            {expandedTiers.exemplar && (
+              <div className="tier-accordion-content">
+                {exemplarLevels.map((levelData) => {
+                  const isCurrentLevel = levelData.level === currentLevel;
+                  const isPastLevel = levelData.level < currentLevel;
+                  return (
+                    <div
+                      key={levelData.level}
+                      className={`level-row exemplar ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
+                      onClick={() => onLevelChange?.(levelData.level)}
+                    >
+                      <div className="level-number">
+                        {isPastLevel && <span className="check">✓</span>}
+                        Lv {levelData.level}
+                      </div>
+                      <div className="level-content">
+                        {levelData.talents.length > 0 && (
+                          <div className="talents">
+                            {levelData.talents.map((talent, i) => (
+                              <TalentTooltip key={i} talentName={talent}>
+                                <span className="talent">{talent}</span>
+                              </TalentTooltip>
+                            ))}
+                          </div>
+                        )}
+                        {levelData.statIncrease && (
+                          <div className="stat-increase">+{levelData.statIncrease}</div>
+                        )}
+                        {levelData.notes && (
+                          <div className="level-notes">{levelData.notes}</div>
+                        )}
+                      </div>
                     </div>
-                  )}
-                  <div
-                    className={`level-row ${tier} ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
-                    onClick={() => onLevelChange?.(levelData.level)}
-                  >
-                    <div className="level-number">
-                      {isPastLevel && <span className="check">✓</span>}
-                      Lv {levelData.level}
-                    </div>
-                    <div className="level-content">
-                      {levelData.talents.length > 0 && (
-                        <div className="talents">
-                          {levelData.talents.map((talent, i) => (
-                            <TalentTooltip key={i} talentName={talent}>
-                              <span className="talent">{talent}</span>
-                            </TalentTooltip>
-                          ))}
-                        </div>
-                      )}
-                      {levelData.statIncrease && (
-                        <div className="stat-increase">
-                          +{levelData.statIncrease}
-                        </div>
-                      )}
-                      {levelData.notes && (
-                        <div className="level-notes">{levelData.notes}</div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       )}

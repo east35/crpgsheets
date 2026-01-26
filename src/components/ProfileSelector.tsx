@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import type { Profile } from '../types';
 import './ProfileSelector.css';
 
@@ -30,6 +30,24 @@ export function ProfileSelector({
   const [newProfileName, setNewProfileName] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editingName, setEditingName] = useState('');
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsExpanded(false);
+      }
+    };
+
+    if (isExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isExpanded]);
 
   const handleCreate = async () => {
     if (!newProfileName.trim()) return;
@@ -75,7 +93,7 @@ export function ProfileSelector({
   };
 
   return (
-    <div className="profile-selector">
+    <div className="profile-selector" ref={containerRef}>
       <button 
         className="profile-selector-toggle"
         onClick={() => setIsExpanded(!isExpanded)}

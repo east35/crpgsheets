@@ -1,6 +1,6 @@
 .talent-tooltip-trigger {
   position: relative;
-  cursor: help;
+  cursor: pointer;
 }
 
 .talent-tooltip {
@@ -15,7 +15,7 @@
   min-width: 280px;
   max-width: 350px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .talent-tooltip.top {

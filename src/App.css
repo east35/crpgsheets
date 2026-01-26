@@ -108,12 +108,21 @@
   margin-bottom: 1rem;
 }
 
+/* Navigation Row */
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
 /* View Tabs */
 .view-tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
 }
 
 .view-tab {

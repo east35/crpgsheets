@@ -1,0 +1,136 @@
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #2a2a3e;
+  border: 1px solid #3a3a5a;
+  border-radius: 6px;
+  padding: 0 12px;
+  transition: all 0.2s;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #646cff;
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+}
+
+.search-icon {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-right: 8px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #6a6a8a;
+}
+
+.search-clear {
+  background: transparent;
+  border: none;
+  color: #6a6a8a;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  transition: color 0.2s;
+}
+
+.search-clear:hover {
+  color: #e0e0e0;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #2a2a3e;
+  color: #e0e0e0;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: #2a2a4e;
+}
+
+.result-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.result-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.result-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-description {
+  font-size: 0.8rem;
+  color: #8a8aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-type {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: #3a3a5a;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #8a8aaa;
+  flex-shrink: 0;
+}
+
+.search-no-results {
+  padding: 16px;
+  text-align: center;
+  color: #6a6a8a;
+  font-size: 0.9rem;
+}
