@@ -11,8 +11,8 @@ import { getBuildById } from './games/rogue-trader/data/builds';
 import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
 import { SearchBar } from './components/SearchBar';
-import { getTalentInfo } from './games/rogue-trader/data/talents';
-import { getGearInfo } from './games/rogue-trader/data/gear';
+import { getTalentInfo, WIKI_TALENTS } from './games/rogue-trader/data/talents';
+import { getGearInfo, GEAR_DATA } from './games/rogue-trader/data/gear';
 import './App.css';
 
 type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor';
@@ -191,10 +191,12 @@ function App() {
   const handleSearch = (query: string) => {
     const results: { type: 'talent' | 'gear'; name: string; description?: string }[] = [];
     const lowerQuery = query.toLowerCase();
+    const seen = new Set<string>();
 
-    // Search talents
+    // Search talents - exact match first
     const talentInfo = getTalentInfo(query);
-    if (talentInfo) {
+    if (talentInfo && !seen.has(talentInfo.name)) {
+      seen.add(talentInfo.name);
       results.push({
         type: 'talent',
         name: talentInfo.name,
@@ -202,9 +204,10 @@ function App() {
       });
     }
 
-    // Search gear
+    // Search gear - exact match first
     const gearInfo = getGearInfo(query);
-    if (gearInfo) {
+    if (gearInfo && !seen.has(gearInfo.name)) {
+      seen.add(gearInfo.name);
       results.push({
         type: 'gear',
         name: gearInfo.name,
@@ -212,29 +215,28 @@ function App() {
       });
     }
 
-    // Also do partial matching by importing the data directly
-    import('./games/rogue-trader/data/talents/talents-from-wiki').then(({ WIKI_TALENTS }) => {
-      Object.values(WIKI_TALENTS).forEach((talent) => {
-        if (talent.name.toLowerCase().includes(lowerQuery) && !results.find(r => r.name === talent.name)) {
-          results.push({
-            type: 'talent',
-            name: talent.name,
-            description: talent.effect?.slice(0, 100) + (talent.effect && talent.effect.length > 100 ? '...' : ''),
-          });
-        }
-      });
+    // Partial matching for talents
+    Object.values(WIKI_TALENTS).forEach((talent) => {
+      if (talent.name.toLowerCase().includes(lowerQuery) && !seen.has(talent.name)) {
+        seen.add(talent.name);
+        results.push({
+          type: 'talent',
+          name: talent.name,
+          description: talent.effect?.slice(0, 100) + (talent.effect && talent.effect.length > 100 ? '...' : ''),
+        });
+      }
     });
 
-    import('./games/rogue-trader/data/gear/gear-from-wiki').then(({ GEAR_DATA }) => {
-      Object.values(GEAR_DATA).forEach((gear) => {
-        if (gear.name.toLowerCase().includes(lowerQuery) && !results.find(r => r.name === gear.name)) {
-          results.push({
-            type: 'gear',
-            name: gear.name,
-            description: gear.effect?.slice(0, 100) + (gear.effect && gear.effect.length > 100 ? '...' : ''),
-          });
-        }
-      });
+    // Partial matching for gear
+    Object.values(GEAR_DATA).forEach((gear) => {
+      if (gear.name.toLowerCase().includes(lowerQuery) && !seen.has(gear.name)) {
+        seen.add(gear.name);
+        results.push({
+          type: 'gear',
+          name: gear.name,
+          description: gear.effect?.slice(0, 100) + (gear.effect && gear.effect.length > 100 ? '...' : ''),
+        });
+      }
     });
 
     return results;
