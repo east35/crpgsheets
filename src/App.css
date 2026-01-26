@@ -101,7 +101,7 @@
   transform: translateX(-50%);
   width: 100vw;
   height: 400px;
-  background-image: url('/images/heroes/rogue-trader-hero.png');
+  background-image: var(--hero-image, url('/images/heroes/rogue-trader-hero.png'));
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
@@ -202,7 +202,6 @@
 
 .game-card {
   background: #1a1a2e;
-  background-image: url('/images/heroes/rogue-trader-hero.png');
   background-size: cover;
   background-position: center;
   border: 2px solid #333;
@@ -212,7 +211,18 @@
   transition: all 0.2s ease;
   text-align: left;
   position: relative;
-  height: 125px
+  height: 125px;
+}
+
+.game-card .game-logo {
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 /* Storage Notice */

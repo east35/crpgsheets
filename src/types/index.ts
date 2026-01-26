@@ -6,6 +6,8 @@ export interface Game {
   shortName: string;
   description: string;
   icon?: string;
+  heroImage?: string;
+  logo?: string;
 }
 
 // Profile represents a "save slot" for a playthrough

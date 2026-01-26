@@ -1,0 +1,89 @@
+/* BG3 Gear Tooltip */
+.gear-trigger {
+  cursor: default;
+}
+
+.gear-trigger.has-info {
+  cursor: pointer;
+  color: #8b5cf6;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+
+.gear-trigger.has-info:hover {
+  color: #a78bfa;
+}
+
+.bg3-gear-tooltip {
+  background: #1a1a2e;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.75rem;
+  z-index: 10000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  max-width: 320px;
+  font-size: 0.9rem;
+  isolation: isolate;
+}
+
+.gear-tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.gear-tooltip-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.gear-tooltip-rarity {
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.gear-tooltip-meta {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: capitalize;
+}
+
+.gear-tooltip-effect {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+}
+
+.gear-tooltip-location {
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #333;
+}
+
+.gear-tooltip-link {
+  padding-top: 0.5rem;
+  border-top: 1px solid #333;
+}
+
+.gear-tooltip-link a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.gear-tooltip-link a:hover {
+  text-decoration: underline;
+}

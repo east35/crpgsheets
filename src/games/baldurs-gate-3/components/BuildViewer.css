@@ -298,6 +298,70 @@
   font-size: 0.9rem;
 }
 
+/* Gear View */
+.gear-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gear-intro {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.gear-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gear-slot {
+  background: #1a1a2e;
+  padding: 1rem;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.slot-name {
+  color: #888;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.slot-items {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.item-separator {
+  color: #555;
+}
+
+.slot-notes {
+  grid-column: 2;
+  color: #666;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .gear-slot {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .slot-notes {
+    grid-column: 1;
+  }
+}
+
 .traits strong, .skills strong {
   color: #888;
 }

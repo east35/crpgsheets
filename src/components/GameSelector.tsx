@@ -18,9 +18,14 @@ export function GameSelector({ onSelectGame }: GameSelectorProps) {
             key={game.id}
             className="game-card"
             onClick={() => onSelectGame(game)}
+            style={game.heroImage ? { backgroundImage: `url(${game.heroImage})` } : undefined}
           >
             <span className="beta-badge">Beta</span>
-            <h3>{game.name}</h3>
+            {game.logo ? (
+              <img src={game.logo} alt={game.name} className="game-logo" />
+            ) : (
+              <h3>{game.name}</h3>
+            )}
             <p>{game.description}</p>
           </button>
         ))}

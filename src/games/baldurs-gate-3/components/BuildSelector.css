@@ -44,6 +44,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+  gap: .5rem;
 }
 
 .build-selector.bg3 .build-card-header h3 {
@@ -100,6 +101,7 @@
   font-size: 0.9rem;
   margin: 0 0 0.75rem 0;
   line-height: 1.4;
+  text-align: center;
 }
 
 .build-selector.bg3 .build-card-tags {

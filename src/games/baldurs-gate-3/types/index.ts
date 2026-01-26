@@ -131,6 +131,37 @@ export interface LevelProgression {
   notes?: string;
 }
 
+export type GearSlot = 
+  | 'head'
+  | 'cloak'
+  | 'armour'
+  | 'gloves'
+  | 'boots'
+  | 'amulet'
+  | 'ring1'
+  | 'ring2'
+  | 'melee'
+  | 'ranged'
+  | 'handwear';
+
+export interface GearRecommendation {
+  slot: GearSlot;
+  items: string[];
+  notes?: string;
+}
+
+export interface GearInfo {
+  name: string;
+  type: 'weapon' | 'armour' | 'accessory' | 'clothing';
+  slot: GearSlot;
+  rarity: 'Common' | 'Uncommon' | 'Rare' | 'Very Rare' | 'Legendary';
+  effect: string;
+  location?: string;
+  act?: 1 | 2 | 3;
+  wikiUrl?: string;
+  iconPath?: string;
+}
+
 export interface BG3Build {
   id: string;
   name: string;
@@ -141,6 +172,7 @@ export interface BG3Build {
   background: BackgroundName;
   abilityScores: Record<AbilityScore, number>;
   progression: LevelProgression[];
+  gearRecommendations?: GearRecommendation[];
   tags?: string[];
   difficulty?: 'Beginner' | 'Intermediate' | 'Advanced';
 }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { BG3Build } from '../types';
 import { getRace } from '../data/character/races';
 import { getBackground } from '../data/character/backgrounds';
+import { GearTooltip } from './GearTooltip';
 import './BuildViewer.css';
 
 interface BuildViewerProps {
@@ -14,7 +15,7 @@ interface BuildViewerProps {
 }
 
 export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, onTrackBuild, isTracked }: BuildViewerProps) {
-  const [activeTab, setActiveTab] = useState<'progression' | 'stats'>('progression');
+  const [activeTab, setActiveTab] = useState<'progression' | 'stats' | 'gear'>('progression');
 
   const raceInfo = getRace(build.race);
   const backgroundInfo = getBackground(build.background);
@@ -103,6 +104,14 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
         >
           Starting Stats
         </button>
+        {build.gearRecommendations && build.gearRecommendations.length > 0 && (
+          <button
+            className={`tab ${activeTab === 'gear' ? 'active' : ''}`}
+            onClick={() => setActiveTab('gear')}
+          >
+            Gear
+          </button>
+        )}
       </div>
 
       {activeTab === 'progression' && (
@@ -190,6 +199,30 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
                 <strong>Skill Proficiencies:</strong> {backgroundInfo.skillProficiencies.join(', ')}
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'gear' && build.gearRecommendations && (
+        <div className="gear-view">
+          <p className="gear-intro">Recommended gear for this build. Hover over items with tooltips for details.</p>
+          <div className="gear-slots">
+            {build.gearRecommendations.map((rec) => (
+              <div key={rec.slot} className="gear-slot">
+                <div className="slot-name">{rec.slot}</div>
+                <div className="slot-items">
+                  {rec.items.map((item, idx) => (
+                    <span key={item}>
+                      <GearTooltip gearName={item}>
+                        {item}
+                      </GearTooltip>
+                      {idx < rec.items.length - 1 && <span className="item-separator"> / </span>}
+                    </span>
+                  ))}
+                </div>
+                {rec.notes && <div className="slot-notes">{rec.notes}</div>}
+              </div>
+            ))}
           </div>
         </div>
       )}

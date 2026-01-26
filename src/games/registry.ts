@@ -6,12 +6,16 @@ export const GAMES: Record<string, Game> = {
     name: 'Warhammer 40,000: Rogue Trader',
     shortName: 'Rogue Trader',
     description: 'Manage your Rogue Trader party builds and progression',
+    heroImage: '/images/heroes/rogue-trader-hero.png',
+    logo: '/images/logos/rogue-trader-logo.png',
   },
   'baldurs-gate-3': {
     id: 'baldurs-gate-3',
-    name: "Baldur's Gate 3",
+    name: "Baldur's Gate III",
     shortName: 'BG3',
     description: 'Plan your BG3 character builds and party composition',
+    heroImage: '/images/heroes/bg3-hero.png',
+    logo: '/images/logos/baldurs-gate-logo.png',
   },
 };
 

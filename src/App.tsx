@@ -275,7 +275,10 @@ function App() {
         onClearAllData={clearAllData}
       />
 
-      <main className={`main-content${currentGame ? ' game-selected' : ''}`}>
+      <main 
+        className={`main-content${currentGame ? ' game-selected' : ''}`}
+        style={currentGame?.heroImage ? { '--hero-image': `url(${currentGame.heroImage})` } as React.CSSProperties : undefined}
+      >
         {error && (
           <div className="error-banner">
             {error}
