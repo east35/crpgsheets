@@ -48,9 +48,16 @@ export function Header({
           {gameLogo ? (
             <img src={gameLogo} alt={currentGame?.name} className="game-logo" />
           ) : (
-            <h1>CRPG Character Manager</h1>
+            <h1>cRPG: Character Manager</h1>
           )}
         </div>
+        {!currentGame && (
+          <div className="header-right">
+            <p className="storage-notice">
+              Your builds are saved locally to this device only. Use Export/Import in My Builds to transfer data between devices.
+            </p>
+          </div>
+        )}
         {currentGame && profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
           <div className="header-right">
             <ProfileSelector

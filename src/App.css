@@ -31,6 +31,15 @@
   align-items: center;
 }
 
+.storage-notice {
+  color: #666;
+  font-size: 0.8rem;
+  max-width: 400px;
+  text-align: right;
+  margin: 0;
+  line-height: 1.4;
+}
+
 .back-btn {
   display: flex;
   align-items: center;
