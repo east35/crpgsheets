@@ -36,6 +36,7 @@ function App() {
     ensureDefaultProfile,
     exportProfile,
     importProfile,
+    clearAllData,
   } = useProfiles(currentGame?.id || '');
 
   const { builds, addBuild, updateBuild, deleteBuild } = usePersistedBuilds(
@@ -259,6 +260,7 @@ function App() {
         onRenameProfile={handleRenameProfile}
         onExportProfile={exportProfile}
         onImportProfile={importProfile}
+        onClearAllData={clearAllData}
       />
 
       <main className={`main-content${currentGame ? ' game-selected' : ''}`}>

@@ -6,3 +6,19 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Prevent MIME type sniffing
+    X-Content-Type-Options = "nosniff"
+    # Control referrer information
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Prevent clickjacking
+    X-Frame-Options = "DENY"
+    # XSS protection (legacy browsers)
+    X-XSS-Protection = "1; mode=block"
+    # Content Security Policy
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://roguetrader.wiki.fextralife.com https://cdn2.steamgriddb.com https://file.garden; font-src 'self'; connect-src 'self'; frame-ancestors 'none';"
+    # Permissions Policy (disable unnecessary features)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"

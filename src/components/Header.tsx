@@ -13,6 +13,7 @@ interface HeaderProps {
   onRenameProfile?: (id: string, name: string) => Promise<void>;
   onExportProfile?: (id: string) => Promise<void>;
   onImportProfile?: (file: File) => Promise<Profile>;
+  onClearAllData?: () => Promise<void>;
 }
 
 const GAME_LOGOS: Record<string, string> = {
@@ -31,6 +32,7 @@ export function Header({
   onRenameProfile,
   onExportProfile,
   onImportProfile,
+  onClearAllData,
 }: HeaderProps) {
   const gameLogo = currentGame ? GAME_LOGOS[currentGame.id] : null;
 
@@ -61,6 +63,7 @@ export function Header({
               onRenameProfile={onRenameProfile}
               onExportProfile={onExportProfile}
               onImportProfile={onImportProfile}
+              onClearAllData={onClearAllData}
             />
           </div>
         )}

@@ -216,3 +216,32 @@
   background: rgba(100, 108, 255, 0.2);
   border-color: rgba(100, 108, 255, 0.6);
 }
+
+.profile-privacy {
+  padding: 8px;
+  border-top: 1px solid #2a2a3e;
+}
+
+.privacy-notice {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.clear-data-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 6px;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.clear-data-btn:hover {
+  background: rgba(220, 53, 69, 0.2);
+  border-color: rgba(220, 53, 69, 0.5);
+}

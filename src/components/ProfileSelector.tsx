@@ -12,6 +12,7 @@ interface ProfileSelectorProps {
   onRenameProfile: (id: string, name: string) => Promise<void>;
   onExportProfile: (id: string) => Promise<void>;
   onImportProfile: (file: File) => Promise<Profile>;
+  onClearAllData?: () => Promise<void>;
 }
 
 export function ProfileSelector({
@@ -24,6 +25,7 @@ export function ProfileSelector({
   onRenameProfile,
   onExportProfile,
   onImportProfile,
+  onClearAllData,
 }: ProfileSelectorProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
@@ -216,6 +218,23 @@ export function ProfileSelector({
             >
               + New Playthrough
             </button>
+          )}
+
+          {onClearAllData && (
+            <div className="profile-privacy">
+              <p className="privacy-notice">Data is stored locally on this device.</p>
+              <button 
+                className="clear-data-btn"
+                onClick={async () => {
+                  if (confirm('This will permanently delete ALL profiles and builds. This cannot be undone. Continue?')) {
+                    await onClearAllData();
+                    setIsExpanded(false);
+                  }
+                }}
+              >
+                🗑️ Clear All Local Data
+              </button>
+            </div>
           )}
         </div>
       )}

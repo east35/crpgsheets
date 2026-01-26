@@ -104,35 +104,95 @@ export function useProfiles(gameId: string) {
   }, []);
 
   const importProfile = useCallback(async (file: File): Promise<Profile> => {
-    const text = await file.text();
-    const data = JSON.parse(text);
+    // Security: Check file size (5MB max)
+    const MAX_FILE_SIZE = 5 * 1024 * 1024;
+    const MAX_NAME_LENGTH = 200;
+    const MAX_BUILDS = 1000;
     
-    if (!data.profile || !data.builds) {
+    if (file.size > MAX_FILE_SIZE) {
+      throw new Error(`File too large. Maximum size is ${MAX_FILE_SIZE / 1024 / 1024}MB`);
+    }
+    
+    const text = await file.text();
+    
+    let data: unknown;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error('Invalid JSON file');
+    }
+    
+    // Validate structure
+    if (!data || typeof data !== 'object') {
       throw new Error('Invalid profile file format');
     }
     
-    // Create new profile with new ID
+    const d = data as Record<string, unknown>;
+    
+    if (!d.profile || typeof d.profile !== 'object') {
+      throw new Error('Invalid profile file format: missing profile');
+    }
+    if (!Array.isArray(d.builds)) {
+      throw new Error('Invalid profile file format: builds must be an array');
+    }
+    if (d.builds.length > MAX_BUILDS) {
+      throw new Error(`Too many builds. Maximum is ${MAX_BUILDS}`);
+    }
+    
+    const profile = d.profile as Record<string, unknown>;
+    
+    // Validate and sanitize profile name
+    const profileName = typeof profile.name === 'string' 
+      ? profile.name.slice(0, MAX_NAME_LENGTH) 
+      : 'Imported Profile';
+    const profileDesc = typeof profile.description === 'string'
+      ? profile.description.slice(0, 10000)
+      : undefined;
+    
+    // Create new profile with new ID (don't trust imported IDs)
     const newProfile: Profile = {
       id: generateProfileId(),
       gameId,
-      name: data.profile.name + ' (Imported)',
-      description: data.profile.description,
+      name: profileName + ' (Imported)',
+      description: profileDesc,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
     await db.profiles.add(newProfile);
     
-    // Import builds with new IDs
-    const newBuilds = data.builds.map((build: { id: string; profileId: string; createdAt: string; updatedAt: string }) => ({
-      ...build,
-      id: `build-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      profileId: newProfile.id,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    }));
-    await db.builds.bulkAdd(newBuilds);
+    // Import builds with new IDs, sanitizing each one
+    const newBuilds = [];
+    for (const build of d.builds) {
+      if (!build || typeof build !== 'object') continue;
+      const b = build as Record<string, unknown>;
+      
+      // Validate required fields exist
+      if (typeof b.name !== 'string') continue;
+      
+      // Sanitize and create new build with safe fields only
+      newBuilds.push({
+        id: `build-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        gameId,
+        profileId: newProfile.id,
+        name: (b.name as string).slice(0, MAX_NAME_LENGTH),
+        description: typeof b.description === 'string' ? b.description.slice(0, 10000) : undefined,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        data: b.data && typeof b.data === 'object' ? b.data : undefined,
+      });
+    }
+    
+    if (newBuilds.length > 0) {
+      await db.builds.bulkAdd(newBuilds);
+    }
     
     return newProfile;
+  }, [gameId]);
+
+  const clearAllData = useCallback(async () => {
+    // Delete all builds and profiles for this game
+    await db.builds.where('gameId').equals(gameId).delete();
+    await db.profiles.where('gameId').equals(gameId).delete();
   }, [gameId]);
 
   return {
@@ -144,5 +204,6 @@ export function useProfiles(gameId: string) {
     ensureDefaultProfile,
     exportProfile,
     importProfile,
+    clearAllData,
   };
 }
