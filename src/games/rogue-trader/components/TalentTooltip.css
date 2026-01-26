@@ -4,10 +4,7 @@
 }
 
 .talent-tooltip {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 9999;
   background: #1a1a2e;
   border: 1px solid #4a4a6a;
   border-radius: 8px;
@@ -16,14 +13,6 @@
   max-width: 350px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
-}
-
-.talent-tooltip.top {
-  bottom: calc(100% + 8px);
-}
-
-.talent-tooltip.bottom {
-  top: calc(100% + 8px);
 }
 
 .talent-tooltip-header {
@@ -85,23 +74,3 @@
   margin-bottom: 0;
 }
 
-/* Arrow for tooltip */
-.talent-tooltip.top::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: #1a1a2e;
-}
-
-.talent-tooltip.bottom::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-bottom-color: #1a1a2e;
-}

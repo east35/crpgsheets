@@ -42,6 +42,16 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType }:
     <div className="build-selector">
       <h2>{title}</h2>
       <p className="subtitle">{subtitle}</p>
+      <p className="build-credit">
+        Builds sourced from{' '}
+        <a 
+          href="https://docs.google.com/spreadsheets/d/1rskX4sYcNm6Wqt4rtm8EQqRR4__yrEuxCEzjwoKlHOY/edit?gid=1688447117#gid=1688447117" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Community Rogue Trader Unfair Builds & Resources
+        </a>
+      </p>
 
       <div className="companion-list">
         {buildsByCompanion.map(({ companion, info, builds }) => (

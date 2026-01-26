@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { getTalentInfo } from '../data/talents';
 import './TalentTooltip.css';
 
@@ -10,7 +11,7 @@ interface TalentTooltipProps {
 export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState<'top' | 'bottom'>('top');
-  const [horizontalOffset, setHorizontalOffset] = useState(0);
+  const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeoutRef = useRef<number | null>(null);
@@ -45,30 +46,74 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
       const tooltipHeight = tooltipRef.current.offsetHeight;
       const tooltipWidth = tooltipRef.current.offsetWidth;
       
-      // Check if tooltip would go above viewport
+      // Calculate position
+      let top: number;
+      let newPosition: 'top' | 'bottom';
+      
       if (triggerRect.top - tooltipHeight - 10 < 0) {
-        setPosition('bottom');
+        newPosition = 'bottom';
+        top = triggerRect.bottom + 8;
       } else {
-        setPosition('top');
+        newPosition = 'top';
+        top = triggerRect.top - tooltipHeight - 8;
       }
+      
+      setPosition(newPosition);
 
-      // Check horizontal containment within main content area
-      const mainContent = document.querySelector('.main-content');
-      if (mainContent) {
-        const mainRect = mainContent.getBoundingClientRect();
-        const tooltipLeft = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
-        const tooltipRight = tooltipLeft + tooltipWidth;
-        
-        if (tooltipLeft < mainRect.left + 10) {
-          setHorizontalOffset(mainRect.left + 10 - tooltipLeft);
-        } else if (tooltipRight > mainRect.right - 10) {
-          setHorizontalOffset(mainRect.right - 10 - tooltipRight);
-        } else {
-          setHorizontalOffset(0);
-        }
+      // Calculate horizontal position with viewport containment
+      let left = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
+      
+      // Constrain to viewport
+      const padding = 10;
+      if (left < padding) {
+        left = padding;
+      } else if (left + tooltipWidth > window.innerWidth - padding) {
+        left = window.innerWidth - padding - tooltipWidth;
       }
+      
+      setTooltipStyle({
+        position: 'fixed',
+        top: `${top}px`,
+        left: `${left}px`,
+      });
     }
   }, [isVisible]);
+
+  const tooltipContent = isVisible && talentInfo && createPortal(
+    <div 
+      ref={tooltipRef} 
+      className={`talent-tooltip ${position}`}
+      style={tooltipStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="talent-tooltip-header">
+        {talentInfo.iconPath && (
+          <img
+            src={talentInfo.iconPath}
+            alt={talentInfo.name}
+            className="talent-tooltip-image"
+          />
+        )}
+        <span className="talent-tooltip-name">{talentInfo.name}</span>
+      </div>
+      {talentInfo.source && talentInfo.source.length > 0 && (
+        <div className="talent-tooltip-source">
+          {talentInfo.source.join(', ')}
+        </div>
+      )}
+      {(talentInfo.cost || talentInfo.target) && (
+        <div className="talent-tooltip-meta">
+          {talentInfo.cost && <span className="talent-cost">Cost: {talentInfo.cost}</span>}
+          {talentInfo.target && <span className="talent-target">Target: {talentInfo.target}</span>}
+        </div>
+      )}
+      <div className="talent-tooltip-description">
+        {talentInfo.effect}
+      </div>
+    </div>,
+    document.body
+  );
 
   return (
     <span
@@ -78,40 +123,7 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
       onMouseLeave={handleMouseLeave}
     >
       {children || talentName}
-      {isVisible && talentInfo && (
-        <div 
-          ref={tooltipRef} 
-          className={`talent-tooltip ${position}`}
-          style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="talent-tooltip-header">
-            {talentInfo.iconPath && (
-              <img
-                src={talentInfo.iconPath}
-                alt={talentInfo.name}
-                className="talent-tooltip-image"
-              />
-            )}
-            <span className="talent-tooltip-name">{talentInfo.name}</span>
-          </div>
-          {talentInfo.source && talentInfo.source.length > 0 && (
-            <div className="talent-tooltip-source">
-              {talentInfo.source.join(', ')}
-            </div>
-          )}
-          {(talentInfo.cost || talentInfo.target) && (
-            <div className="talent-tooltip-meta">
-              {talentInfo.cost && <span className="talent-cost">Cost: {talentInfo.cost}</span>}
-              {talentInfo.target && <span className="talent-target">Target: {talentInfo.target}</span>}
-            </div>
-          )}
-          <div className="talent-tooltip-description">
-            {talentInfo.effect}
-          </div>
-        </div>
-      )}
+      {tooltipContent}
     </span>
   );
 }

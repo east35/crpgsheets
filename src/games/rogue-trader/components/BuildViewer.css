@@ -132,9 +132,21 @@
 
 /* Tier Accordion */
 .tier-accordion {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.tier-accordion.base {
+  background: #2d4a2d;
+}
+
+.tier-accordion.advanced {
+  background: #4a3d2d;
+}
+
+.tier-accordion.exemplar {
+  background: #4a2d4a;
 }
 
 .tier-accordion-header {
@@ -202,8 +214,8 @@
 .tier-accordion-content {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.5rem 0;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
 }
 
 .level-list {
@@ -215,8 +227,8 @@
 .level-row {
   display: flex;
   gap: 1rem;
-  padding: 0.5rem 0.75rem;
-  background: #1a1a2e;
+  padding: 0.6rem 0.75rem;
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   border-left: 3px solid transparent;
   cursor: pointer;
@@ -224,7 +236,7 @@
 }
 
 .level-row:hover {
-  background: #252540;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .level-row.base {
@@ -240,11 +252,14 @@
 }
 
 .level-row.current {
-  background: #252550;
+  background: rgba(100, 108, 255, 0.3);
   box-shadow: 0 0 0 2px #646cff;
+  position: relative;
+  z-index: 1;
 }
 
-.level-row.completed {
+.level-row.completed .level-number,
+.level-row.completed .level-content {
   opacity: 0.7;
 }
 

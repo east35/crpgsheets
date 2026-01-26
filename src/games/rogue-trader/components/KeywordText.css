@@ -1,6 +1,6 @@
 .keyword-trigger {
   position: relative;
-  cursor: help;
+  cursor: pointer;
   border-bottom: 1px dotted currentColor;
   font-weight: 500;
 }
@@ -17,10 +17,7 @@
 .keyword-ability { color: #8e44ad; }
 
 .keyword-tooltip {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 9999;
   background: #1a1a2e;
   border: 1px solid #4a6a8a;
   border-radius: 8px;
@@ -30,14 +27,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
   text-align: left;
-}
-
-.keyword-tooltip.top {
-  bottom: calc(100% + 8px);
-}
-
-.keyword-tooltip.bottom {
-  top: calc(100% + 8px);
 }
 
 .keyword-tooltip-header {
@@ -104,23 +93,3 @@
   text-decoration: underline;
 }
 
-/* Arrow for tooltip */
-.keyword-tooltip.top::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: #1a1a2e;
-}
-
-.keyword-tooltip.bottom::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-bottom-color: #1a1a2e;
-}

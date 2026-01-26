@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { findKeyword, ALL_KEYWORD_NAMES, type KeywordInfo } from '../data/character';
 import './KeywordText.css';
 
@@ -53,19 +54,68 @@ function findKeywordMatches(text: string): KeywordMatch[] {
 function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React.ReactNode }) {
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState<'top' | 'bottom'>('top');
+  const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const hideTimeoutRef = useRef<number | null>(null);
+
+  const handleMouseEnter = () => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = null;
+    }
+    setIsVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    hideTimeoutRef.current = window.setTimeout(() => {
+      setIsVisible(false);
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (isVisible && triggerRef.current && tooltipRef.current) {
       const triggerRect = triggerRef.current.getBoundingClientRect();
       const tooltipHeight = tooltipRef.current.offsetHeight;
+      const tooltipWidth = tooltipRef.current.offsetWidth;
+      
+      // Calculate vertical position
+      let top: number;
+      let newPosition: 'top' | 'bottom';
       
       if (triggerRect.top - tooltipHeight - 10 < 0) {
-        setPosition('bottom');
+        newPosition = 'bottom';
+        top = triggerRect.bottom + 8;
       } else {
-        setPosition('top');
+        newPosition = 'top';
+        top = triggerRect.top - tooltipHeight - 8;
       }
+      
+      setPosition(newPosition);
+
+      // Calculate horizontal position with viewport containment
+      let left = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
+      
+      const padding = 10;
+      if (left < padding) {
+        left = padding;
+      } else if (left + tooltipWidth > window.innerWidth - padding) {
+        left = window.innerWidth - padding - tooltipWidth;
+      }
+      
+      setTooltipStyle({
+        position: 'fixed',
+        top: `${top}px`,
+        left: `${left}px`,
+      });
     }
   }, [isVisible]);
 
@@ -82,48 +132,57 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
     ability: '#8e44ad',
   };
 
+  const tooltipContent = isVisible && createPortal(
+    <div 
+      ref={tooltipRef} 
+      className={`keyword-tooltip ${position}`}
+      style={tooltipStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="keyword-tooltip-header">
+        {info.imageRemote && (
+          <img 
+            src={info.imageRemote} 
+            alt={info.name}
+            className="keyword-tooltip-image"
+          />
+        )}
+        <div className="keyword-tooltip-header-text">
+          <span className="keyword-tooltip-name">{info.name}</span>
+          <span 
+            className="keyword-tooltip-category"
+            style={{ backgroundColor: categoryColors[info.category] || '#666' }}
+          >
+            {info.category.replace('-', ' ')}
+          </span>
+        </div>
+      </div>
+      {info.effect && (
+        <div className="keyword-tooltip-description">
+          {info.effect}
+        </div>
+      )}
+      {info.wikiUrl && (
+        <div className="keyword-tooltip-link">
+          <a href={info.wikiUrl} target="_blank" rel="noopener noreferrer">
+            View on Wiki →
+          </a>
+        </div>
+      )}
+    </div>,
+    document.body
+  );
+
   return (
     <span
       ref={triggerRef}
       className={`keyword-trigger keyword-${info.category}`}
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {children}
-      {isVisible && (
-        <div ref={tooltipRef} className={`keyword-tooltip ${position}`}>
-          <div className="keyword-tooltip-header">
-            {info.imageRemote && (
-              <img 
-                src={info.imageRemote} 
-                alt={info.name}
-                className="keyword-tooltip-image"
-              />
-            )}
-            <div className="keyword-tooltip-header-text">
-              <span className="keyword-tooltip-name">{info.name}</span>
-              <span 
-                className="keyword-tooltip-category"
-                style={{ backgroundColor: categoryColors[info.category] || '#666' }}
-              >
-                {info.category.replace('-', ' ')}
-              </span>
-            </div>
-          </div>
-          {info.effect && (
-            <div className="keyword-tooltip-description">
-              {info.effect}
-            </div>
-          )}
-          {info.wikiUrl && (
-            <div className="keyword-tooltip-link">
-              <a href={info.wikiUrl} target="_blank" rel="noopener noreferrer">
-                View on Wiki →
-              </a>
-            </div>
-          )}
-        </div>
-      )}
+      {tooltipContent}
     </span>
   );
 }

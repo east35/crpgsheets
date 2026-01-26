@@ -41,11 +41,11 @@
   border: 1px solid #3a3a5a;
   border-radius: 6px;
   color: #888;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: all 0.2s;
   line-height: 1;
-  padding-bottom: 2px;
+  padding: 0;
 }
 
 .back-btn:hover {
@@ -81,6 +81,7 @@
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  overflow: visible;
 }
 
 .main-content.game-selected::before {

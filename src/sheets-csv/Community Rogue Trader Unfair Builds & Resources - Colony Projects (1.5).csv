@@ -1,165 +1,0 @@
-,,,
-,Colony: Foulstone,,
-,Project,Cost,Benefit
-,Level 1,,
-,Dominion of the Hammer,None,Weapon: Hammer of Epiphany / Security +2 / Drusian Reputation +2500
-,High Throne,None,Ship Trait: Emperor's Retribution / Holy Gifts: x5 / Effeciency: +2
-,A Celestial Protector,None,Trait: Benevolent Protection / Profit factor: +2 / Complacency: +2
-,Level 2,,
-,Touched by Holiness,Profit factor: ≥ 20,Ship Trait: Shield of Faith / Effeciency: +2 / Drusian Rep: +2500
-,Dirty bureaucracy,Profit factor: ≥ 25 / Drusian Reputation: ≥15810 (Level 3),Profit factor: +3 / Mechanisms +3 / Weapons +3 / Unquenchable Greed
-,Indulgence for sale,None,Profit factor: +3 / Fellowship of the Void +2500 / Heretical +30
-,Hallowed Railway,Explorator Reputation: ≥11675 (level 8) / Plasteel: 1 / Mechanisms: 1 / Adamantium: 1,Item: Requiemator / Reputation Explorators: +2500 / Complacency: +2
-,Cemetery of the Faithful,Drusian Reputation: ≥22060 (Level 6),Ship Trait: Blessing of the Fallen / Drusian Reputation: +2500 / Complacency: +1 (for all colonies)
-,Thousand-faced relic,Chemicals 1 / People 3 / Promethium 1,Drusians +2500 / Complacency +2 / Efficiency +2 / Drusians +2500
-,Bonfires of Righteousness,Contentment: ≥4 / Efficiency: ≥4 / Promethium: 1 / People: 3 / Weapons: 1 / Xenotech: 1,Weapon: Infernical / Profit factor: +2 / Security: +2
-,Good Tidings,Flogiston: 2 / Adamantium: 2,Character Trait: Frequency of Faith / Profit Factor +2 / Complacency: +2
-,Level 3,,
-,In Drusus' Footsteps,"One of the projects: ""Bonfires of Righteousness""/ ""Good News"" / Imperial Navy Reputation: ≥6500 (Level 3) / Promethium: 2 / Plasteel: 6 / Provisions: 2 / People: 9 / Mechanisms: 2 / Adamantium: 2",Subject: Accuser of Sin / Profit factor: +5 / Complacency: +2 (for all colonies)
-,Crusade,"Project ""Bonfires of Righteousness"" / Provisions: 3 / Weapons: 3 / People: 9",Trait of the Retinue: Accusation of Heresy / Character Trait: Accusation of Heresy / Profit factor: +5 / Security: +2 (for all colonies)
-,Shrine,"Project ""Good News"" / Profit factor: ≥ 50 / Adamantium: 4 / Flogiston: 4",Weapon: Epiphany / Drusians +5000 / Complacency: +3 / Efficiency: +3
-,Level 4,,
-,False Wonders,Any level 3 project,Item Caligae of Saint Keefe / People: +6 / Effeciency +2 / Complacency +2
-,Missionaries,"Completed: In Drusus's footsteps, Crusade or Shrine",Feature: Light of Faith / Profit Factor +3 / Security +2 (Global)
-,Holy Ammunition,"Completed: In Drusus's footsteps, Crusade or Shrine / Reputation with Drusians >= 35600",Feature: Sanctified Projects / Weapons 3 / Promethium 3 / Security +2 (Global)
-,Lightbearers,Any level 3 project & Warp Guides / Promethium 4 / Plasteel 4 / People 2,Imperial Navy Reputation: +5000 / Security: +2
-,Gracious Priests,Praisng the Muses / Provisions 3 / Chemicals 3 / Plasteel 4,Replenishable item: Hospitalist's medical kit x5 / Dogmatic +40 / Complacency +3 Global
-,Holy Prey,Reputation with Drusians >= 35600,Weapon: Lamp of Blessed Petrakara / Heretic: +40 points / Effeciency +3 / Safety -1 (Global)
-,Crucible,Any level 3 project / Chemicals 2 / Flogiston 3 / Promethium 5,Character Trait: Holy Man / Holy Gifts 10 / Profit Factor 5 / Complacency +3 (Global)
-,Level 5,,
-,Holy Defenders,"Project ""Crucible"" / Project ""Praise of the Muses"" (Dargonus) / Plasteel 6 / People 3",Armor: Arbiter Solomon Vir's Armor / Profit factor: +5 / Drusians +5000 Security 2 / Adamantine 3
-,Sacred Comet,"Project ""Crucible"" / Project ""Orbital Shipyard"" (Keiva Gamma) / Flogiston 6 / Weapons 3 / Mechanisms",Profit factor 5 / Drusians 2500 / Explorators 2500 / Security: +2 (for all colonies) / Complacency: +4 (for all colonies)
-,Reliquary,"Project ""Crucible"" / Adamantium: 5",Character Trait: Blessing of Saint Cognatius / Profit factor: +5
-,,,
-,Colony: Dargonus,,
-,Project,Cost,Benefit
-,Level 1,,
-,Restoration,Provisions 1 / Plasteel 3,Profot Factor +2 / Valancius Restoration / People +4
-,Ecstasiums for the Nobility,People 1 / Plasteel 1 / Flogiston 2,Profit Factor +2 / Complacency +2 / Effeciency +2
-,Emporium,None,Jewellery 5 / Ship Components 5 / Profit Factor 3 / Effeciency 2 / Adamantine 1 / Mechanisms 1 / Plasteel 2
-,Level 2,,
-,Genetic Mercy,None,People +6 / Iconoclast +30 / Security 1 / Complacency 1
-,Scriptorium Schools,Provisions 4 / Profit Factor 1,Efficiency +2 (global) / People 4 / Complacency 1
-,Doctrine of Rationality,Mechanisms 1 / People 2 / Plasteel 1,Dogmatic 30 / Effeciency 2 / Complacency 2 / Security 2
-,Sordid Good,People 3 / Reputation Void Brotherhood ≥ 8500,Fellowship of the void 2500 / Mechanisms 2 / Weapons 2 / Xenotech 2
-,Kasballican Auction,Adamantine 1 / Plasteel 1 / Weapons 2 / Reputation Mission Kasballika ≥ 16410 (level 8),Weapon: Ash Breath / Reputation Mission Kasballika +3500 / Profit factor +3
-,Hallucinatory Chem-Thermae,Chemicals 2 / Provisions 1 / People 1,Refillable item: Crimson Haze / Profit factor +2 / Complacency 2 / Heretic: +30 points
-,Shield of the Emperor,Profit Factor 3 / Reputation with Imperial Navy 10500,Additional: Escort ship / Ship Trait: Pirate bane Security +1 (for all colonies) / Imperial Navy Reputation +2500
-,The Scourge of Expanse,Provisions 4,Additional: Escort ship / Ship Trait: Master Raider / Fellowship of the void 2500 / Effeciency +1 (global)
-,Level 3,,
-,Guilds,"One of the projects ""Shield of the Emperor"" / ""The Scourge of Expanse"" / Complacency >=4 / Effeciency >=4",Refillable Item: MkXVi Frag Grenade / Profit Factor 5 / Efficiency +3 / Complacency -1
-,Adeptus Arbites,Reputation with Imperial Navy 10500 / Complacency >=4,Item Zealot Profit Factor 3 / Imperial Navy Reputation / +5000 / Security +3
-,Season of wars,"Project ""The Filth of Expanse"" / Complacency >=4 / Effeciency >=4",Character Trait: Bloody Underhive Leader / Weapon: Karkalla's Honour / Security 3 / Complacency 3
-,Level 4,,
-,Holy Profit,Any level 3 project / Effeciency >=5,Item Eyes of Joyeuse / People +5 / People 6
-,Praing the muses,Any level 3 project / Plastal 6 / Adamantium 4,Trait Remembered in Prayers / People 4 / Complacency 2 / Effeciency 2
-,Pleasing the Tired,Any level 3 project / Provisions 4 / Mechanisms 3 / Flogiston 3 / Profit Factor 3,Trait Nobility is perfection / Drusians 5000 / Security +2
-,Call to Arms,Any level 3 project,Item: Familial Power Armour / Security +3 / People 3 / Weapons 3
-,Militia Navy,Any level 3 project / Reputation Imperial Navy ≥ 2250 / Mechanisms 2 / People 4 / Promethium 2,Ship trait Battle Mastery / Imperial Navy Reputation 5000 / Security +2 (Global) / Complacency +2 (for all colonies)
-,Charter of Minimum Rights,Any level 3 project / Complacency >=5,Character Trait: Bestower of Freedom / Iconoclast +40 / Effeciency 2 / Security +2
-,Bastion,Any level 3 project / Contentment: ≥ 7 / Safety: ≥ 7 / Efficiency: ≥ 7 / Profit factor: ≥ 60,Profit Factor 5 / Ship components 5 / Jewellery 5 / Xeno-Artefacts 5 / Complacency -3 (Global)
-,Level 5,,
-,Schola Progenium,"Project ""Bastion"" Project ""Pure Blood"" (Vheabos-6) / Provisions 3 / Plasteel 6 / Weapons 3",Armor: Loyalist garb Profit Factor 3 People 6 Security +3 (for all colonies)
-,Librarium,"Project ""Bastion"" Project ""Secret Lodge"" (Janus) / Xenotech 3",Item: Echo of Victory / Profit factor +5 / Kasballica +5000 / Effeciency +2 (Global)
-,Society of Cartographers,"Project ""Bastion"" Promethium 6 Mechanisms 3 Provisions 3",Weapon: Woebringer / Profit Factor 4 / Imperial Navy 5000 / Complacency 2 / Security 2
-,The Fate of the Tithe,Adamantium 10 / Chemicals 10 / Promethium 10 / Provisions 25 / Plasteel 25 (needs double checking for 1.5),Contracts Available: Strengthen Relations: Drusians / Strengthen Relations: Explorators / Strengthen Relations: Kasballika Mission / Strengthen Relations: fellowship of the void / Strengthen Relations: Imperial Fleet Colony / Trait: Capital of the Expanse / Complacency +2 (for all colonies)
-,,,
-,Colony: Janus,,
-,Project,Cost,Benefit
-,Level 1,,
-,Chem-princes,None,"Refillable item: Grenade ""Apexalium Stimulant""		Security +1	Chemicals +4	Provisions +2"
-,The Ultraquisitors,None,"Refillable item: Grenade ""Tears of Repentance""                Profit Factor 2        Kasballica 2500        Complacency +1"
-,Sophocracy,None,"Chemicals +2		Security +1	Efficiency +1	Provisions +4"
-,Level 2,,
-,The Reaping,"Project ""Giants"" (On the colony of Kieva Gamma - 2nd level)                                Plasteel 3                Promethium 1        Mechanisms 1","Profit factor +3		Provisions +6	Efficiency +2	Complacency +2"
-,The Secret of the Winterscales,"Profit factor ≥ 35				Provisions 3			","Chemicals +6	Promethium +5	New Contract: Blood and Nephium	Fellowship of the void 2500	Security -1 (global)"
-,A Cure for sloth,Chemicals 3				People 1			,"Feature: Neuro-suppressants		Heretical +30	Efficiency +2	Complacency +2"
-,Science of Virtue,"Drusian Reputation ≥ 28310 (Level 8)							",Profit factor +3                Drusian Reputation +3500        Dogmatic 30        Provisions 6
-,Rose of Zamarkand,Reputation Mission Kasbalika ≥ 29390 (level 8)                        Chemicals 1        People 2                Xenotech 1        ,Refillable item: Pollen of the unreal		Reputation Mission Kasballika +3500	Feature Poisonous nectar	
-,The Execution of the Heretic Vistenza Wyatt,Discover Wyatt is a heretic,"Contentment +1			Efficiency -1	"
-,Capella Biologis,"Reputation Explorators ≥ 11675 (level 8)		Xenotech 1		Plastele 2		Mechanisms 1	","Refillable item: Surgeon's Medikit		Effeciency +2		Chemicals +3"
-,Dark Sages,Reputation Mission Kasbalika ≥ 35880 (level 10)                                Chemicals 2        Provisions 2        Xenotech 2        ,"Character Trait: Advice from the Dark Sages		Profit factor +4	Complacency 1	Security +1 (global)"
-,Level 3,,
-,Forest fortresses,"One of the projects ""Capella Biologis""/""Dark Sages""                                Weapon 2        Plasteel 6        Adamantium 2        ","Weapon: Starblight		Feature Punisher	Profit Factor 5	Security 3
-"
-,Monstrous servants,The Capella Biologis Project                                Chemicals 3        Mechanisms 2        People 6        ,Refillable Scorcher			Explorators 5000	Effciency 3
-,Xenodefense,"Project ""Dark Sages""				Xenotech 3		Flogiston 2	Promethium 4",Item: Seeker of the Weak                Complacency 2        Security 2        Weapons 6
-,Level 4,,
-,Payment In Organs,"Any level 3 project				People 4			","Item: Chant of Stagnation		Profit factor 3	Xenotech 3	Complacency -2"
-,Secret Lair,"Any level 3 project				Xenotech 3		Provisions 3	","Feature Aeldari Machine Taming		Kasballica 5000	Efficiency +1 (Global)	Security -3"
-,Xenos Intoxicant,"Any level 3 project				Xenotech 1		Chemicals 3	","Item: Falstow Vial		Profit Factor 5		Complacency 1"
-,The Lost,Any level 3 project                                Provisions 4                Reputation Void Brotherhood ≥ 20250        ,"Item: Fang of Perdition		Profit factor +5	Reputation Fellowship of the void +5000	
-"
-,Death Cult of the reaper Emperor,"Completed Guilds, Adeptus Arbites or The Season Of Wars				People: 3		
-","Dogmatic +40			Provisions +6	Effeciency 3"
-,The Great Fire,"Any level 3 project				Promethium 3		Chemicals 3	","Character Trait: Lord of Flame		Provisions +9		"
-,Level 5,,
-,Shelter,The Great Fire Project                Charter of minimal Rights                Promethium 3                Provisions 3 Plasteel 6        Plasteel 6,"Character Trait: Merciful Savior		Profit Factor 3	People 12	Complacency 
-"
-,Xenovivisectory,"The Great Fire Project		Project ""Captive Xenos""		Chemicals 3	Mechanisms 3	Plasteel 6	",Character Trait: Xenovivisectionist		Item Wraithdancer Garments	Kasballica 5000	Xenotech 3
-,Pleasure World,"The Great Fire Project							",Weapon: Watchers from Above	Profit Factor 5	Effeciency 3	Complacency 3	Security -2 (global)
-,,,
-,Colony: Vheabos VI,,
-,Project,Cost,Benefit
-,Level 1,,
-,Punishment of the Thinkers,People 4,Character Trait: Enemy of Knowledge / Complacency +1 (global) / Adamantine 4 / Chemicals 2
-,Punishment of Outsiders,Reputation Imperial Navy ≥ 10500 / Mechanisms 2 / Weapons 2,Imperial Navy +2500 / Adamantine 3 / Chemicals 1 / Effeciency 1
-,Punishment by calculation,Reputation Imperial Navy ≥ 10500 / Profit Factor >=40 / Profit factor 2,Fellowship of the void 2500 / Security +1 global / Adamantine 3 / Security -2
-,Level 2,,
-,Underground workers,Complacency >= 3 / Compelted project Giants,Adamantine 2 / Flogiston 6 / Promethium 2 / Complacency -1
-,Dreamless,Mechanisms 1 / Plasteel 1,Feature Abosolute Efficiency / Flogiston 2 /Promethium 2  /Effeciency 2
-,Warp Guides,Security >=4,Iconoclast 30 / Security 1 / Complacency 2
-,Lair in the Void,Provisions 1 / Plasteel 3 / Weapons 1 / Reputation Void Brotherhood ≥ 8500,Refillable item: Ironeye Grenade / Profit factor +2 / Fellowship of the void 2500 / Security +1 global
-,Holy Servitude,People 1 / Drusian Reputation ≥ 18980,Itemt: Vigilance / Drusian Reputation +2500 / complacency 1  /Profit factor +2
-,Extraction Metallica,Promethium 2 / Chemicals 2 / Promethium 2 / Complete secret of the winterscales Reputation Explorators ≥ 5650,Adamantine 4 / Plasteel 4 / Flogiston 2 / Effeciency 2 / Security -1
-,Enviro-dome,Flogiston 2 / Mechanisms 1 / Adamantine 1,Character Trait: I will not fear poison / Security +2 / Complacency 2
-,Ergonomics,Chemicals 2 / Plasteel 2,Profit Factor 2 / Efficiency +2
-,Level 3,,
-,Test of will,"One of the projects of ""Enviro-Dome""/ ""Ergonomics"" / Weapon 1 / Provisions 1",Ship Trait: Unerring Shots / Navy +5000 / People 4 / Security 2
-,Blood Sports,"One of the projects of ""Enviro-Dome""/ ""Ergonomics"" / Plasteel 2 / People 2 / Promethium 1",Weapon: Wrath of the Vile Rabble / Feature Cutthroat / Profit factor +3 / Complacency 2 (for all colonies)
-,Killing Fields,"One of the projects of ""Enviro-Dome""/ ""Ergonomics"" / People 3 / Provisions 2",Character Trait: Superior Munitions / Profit Factor 2 / Promethium +6 / Chemicals +2
-,Level 4,,
-,Earthbreaker,Any level 3 project / Mechanisms 5 Promethium 3,Item: Wytch's Last Cry / Flogiston 6 / Xenotech 2
-,Pure blood,Any level 3 project,Profit Factor 5 / Iconoclast 40 / Complacency 2 / Effeciency 2
-,Extractium Ignifera,Any level 3 project / People 6,Chemicals 3 / Plasteel 3 / Flogiston 6 / Effeciency 1
-,Captive Xenos,Any level 3 project & Warp Guides / Promethium 4 / Plasteel 4 / People 2,Item: Imminent Torment / Kasballica 5000 / People 6 / Security -2 (global)
-,Navy Whips,Any level 3 project Reputation Imperial Navy ≥ 22500,Weapon: Craven's Bane / Complacency 2 / Efficiency +2 / Security +2
-,Purification by Death,People 3 / Mechanism 2,Adamatine 6 / Plasteel 6 / Xenotech 2 / Effeciency 2
-,Penal battalion,Any level 3 project / Promethium 3 / Provisions 4 / Weapon 3,Ship Trait: Diligent cannoneers / People 3 / Security 2
-,Level 5,,
-,Raider base,"Project ""Penal Battalion"" / Project ""Instruments of Murder"" (Kieva Gamma) / Reputation Void Brotherhood ≥ 35500 / Promethium 3 / Provisions 3 / Weapons 6",Item: Freedom and Vengence / Profit Factor 3 / Reputation Brotherhood of the void +5000 / Security 3 (global)
-,Palaces of the Outcasts,"Project ""Penal Battalion"" / Project ""Inhuman Dope"" (Janus) / Plasteel 6 / People 3 / Flogiston 3",Character Trait: Master of the Shadowy expanse / Profit Factor 5 / Provisions 6 / Weapons 3  /Complacency 3
-,Repentance of the Lost,"Project ""Penal Battalion"" / Drusian Reputation ≥ 45230",Weapon: Voice of Paduvian / Profit Factor 3 / Security 3 / Effeciency 3
-,,,
-,Colony: Kieva Gamma,,
-,Project,Cost,Benefit
-,Level 1,,
-,Restoration,None,Item: Cursed Boots / Efficiency +2 / Profit Factor +2
-,Blessed are the weaponsmiths,None,Weapon: Dark Marchesa / Security +1 (global) / Mechanisms 1 / Weapon +3
-,Calculating Holiness,None,Weapon: Hand of Xenocide / Complacency +2 / Mechanisms +3 / Weapons +1
-,Level 2,,
-,Chapel of Enumeration,Flogiston 1 / Flogiston 1 / Promethium 2,Feature eye of the omnissiah / Explorators 2500 / Complacency 1 / Security 1
-,Mag-Trains,Plasteel 3 / Flogiston 1 / Promethium 1,Profit factor +3 / Mechanisms 4 / Weapons 2 / Effciency 2
-,Giants,Efficiency ≥ 5 / Adamantine 1 / Mechanisms 2 / Plasteel 2,Item: Mobile Extraction x10 (replenishing) / New Contract: Instruments of Righteousness / Complacency 2
-,Compassion for the silent,Promethium 1 / Plasteel 1 / Chemicals 2,Ship Trait: Mettle of metal / Effciency 2 / Iconoclast: +30 points / Complacency 2
-,The motive force is life,Reputation Explorators ≥ 5650 / Adamantine 1 / Plasteel 1 / Flogiston 2,Item: Saturnine-Pattern Class 5 Engine / Profit factor +3 / Reputation Exporters +2500 / Complacency 2 / Security 2
-,Flawless Servitors,Efficiency ≥ 5 / Mechanisms 1 / People 1 / Plasteel 2,Efficiency +2 (for all colonies) / Profit factor +2
-,Vigil of the Tech-Guard,Reputation Explorators ≥ 16075 / Plastal 3 / Weapon 2,Retinue Trait: Wisdom of the Tech-Guardians / Reputation Exporters +2500 / Security 2 (all colonies) / Profit Factor 2
-,Decree on Diligence,People 2,Complacency -1 / Effciency 2 / Provisions 2 / Mechanisms 2 / Weapons 2
-,Level 3,,
-,Inferno,Chemicals 3 / Promethium 3,Ship Trait: Armored prow / Profit factor +5 / Plasteel +6 / Adamantine +2 / Complacency -1
-,Armoured Rage,Adamantine 2 / Mechanisms 1 / Plasteel 3,Ship Weapon: Fangs of Janus / Profit factor +2 / Security +2 / (all colonies) / Weapon +3
-,Unwelcome Guests,Provisions 3 / People 1 / Flogiston 2,Item: Instability Detonator / Heretic Trophies 5 / Xeno Artefacts 5 / Xenotech 3
-,Level 4,,
-,Brand of the motive force,Any level 3 project / Adamantine 3 / Plasteel 4 / Flogiston 3,Profit Factor 3 / Mechanisms 3 / Security 2 (all colonies) / Effeciency 2
-,Orbital Shipyard,Any level 3 project / Promethium 3 / Plastal 8 / People 8 / Mechanisms 3,Feature Fleet Overhau /l Imperial Navy 5000 / Security 2 (Global)
-,Tools of Killing,Any level 3 project / Mechanisms 2,Item Arc Rifle Mindstorm / Fellowship of the void 2500 / Complacency 2 / Security 2
-,Sacred Flame,Any level 3 project / Promethium 3 / Chemicals 3,Feature Sanctified Promethium / Promethium 6 / Complacency 2
-,Dark Experiments,Any level 3 project / Reputation Kasballica Mission ≥ 35880 / Weapons 3 / Xenotech 3,Ship Trait: Vulnerabilities of xenos / Ship Weapon: Titanforge lance weapon / Kasballica 2500
-,A Mechanical Trade,Any level 3 project / Reputation Imperial Navy ≥ 22500 / People 3,Ship Item: Memory of Daring / Imperial Navy Reputation +2500 / Profit Factor 3
-,Sacrilege Creation,Adamantine 3 / Chemicals 3,Subject: Hungering Mind / Heretic: +40 points / Mechanisms 6 / Weapons 3 / Security -2 (global)
-,Archive of the expanse,Any level 3 / project People 3 / Mechanisms 3,Ship Item: Eye of the Omnissiah / Profit factor +5 / Efficiency +2
-,Level 5,,
-,Sky Barrier,"Project ""Archive of Space"" / Project ""Sacred Projectiles"" (Foulstone) / Plasteel 6 / Chemicals 3 / Adamantine 3","Character Trait: Exalted Instruments of War / Ship's weapon: Battery ""Triumph and Fury"" / Mechanisms 3 / Weapons 6"
-,The Power of Plasma,"Project ""Archive of the expanse"" / Explorator 29000 / Plasteel 6 / Promethium 3 / Flogiston 3",Ship Item: Sacrament of Light / Profit Factor 5 / Mechanisms +12 / Complacency 3 / Effeciency 3
-,Warp Revelations,"Project ""Archive of the expanse"" / Mechanisms 3 / Provisions 3 / Plasteel 6 / Reputation Explorators ≥ 16075",Item: Ethereal Visor / Profit Factor 3 / Explorators 5000 / Effeciency +3 (global) / Security 2

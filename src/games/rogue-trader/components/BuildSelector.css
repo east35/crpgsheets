@@ -10,7 +10,22 @@
 
 .build-selector .subtitle {
   color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.build-selector .build-credit {
+  color: #666;
+  font-size: 0.85rem;
   margin-bottom: 2rem;
+}
+
+.build-selector .build-credit a {
+  color: #646cff;
+  text-decoration: none;
+}
+
+.build-selector .build-credit a:hover {
+  text-decoration: underline;
 }
 
 .companion-list {

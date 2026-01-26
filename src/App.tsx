@@ -103,6 +103,7 @@ function App() {
     setSelectedGuide(guide);
     setCurrentLevel(1);
     setView('build-viewer');
+    window.scrollTo(0, 0);
   };
 
   const handleBackToGuides = () => {
@@ -134,6 +135,7 @@ function App() {
         setCurrentLevel(data.currentLevel || 1);
         setActiveTrackedBuildId(build.id);
         setView('build-viewer');
+        window.scrollTo(0, 0);
       }
     }
   };
@@ -162,6 +164,7 @@ function App() {
   const handleCreateCustomBuild = (companion: CompanionName) => {
     setCustomBuildCompanion(companion);
     setView('custom-build-editor');
+    window.scrollTo(0, 0);
   };
 
   const handleSaveCustomBuild = (buildData: CustomBuildData) => {

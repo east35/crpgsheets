@@ -125,7 +125,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
       {activeTab === 'progression' && (
         <div className="progression-view">
           {/* Base Tier Accordion */}
-          <div className="tier-accordion">
+          <div className="tier-accordion base">
             <button 
               className={`tier-accordion-header base ${isTierCompleted('base') ? 'completed' : ''}`}
               onClick={() => toggleTier('base')}
@@ -176,7 +176,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
           </div>
 
           {/* Advanced Tier Accordion */}
-          <div className="tier-accordion">
+          <div className="tier-accordion advanced">
             <button 
               className={`tier-accordion-header advanced ${isTierCompleted('advanced') ? 'completed' : ''}`}
               onClick={() => toggleTier('advanced')}
@@ -227,7 +227,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
           </div>
 
           {/* Exemplar Tier Accordion */}
-          <div className="tier-accordion">
+          <div className="tier-accordion exemplar">
             <button 
               className={`tier-accordion-header exemplar`}
               onClick={() => toggleTier('exemplar')}

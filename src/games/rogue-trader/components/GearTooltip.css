@@ -9,7 +9,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 9999;
   background: #1a1a2e;
   border: 1px solid #4a6a8a;
   border-radius: 8px;
@@ -103,23 +103,3 @@
   color: #c0c0d0;
 }
 
-/* Arrow for tooltip */
-.gear-tooltip.top::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: #1a1a2e;
-}
-
-.gear-tooltip.bottom::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-bottom-color: #1a1a2e;
-}

@@ -43,7 +43,6 @@
 .profile-dropdown {
   position: absolute;
   top: calc(100% + 4px);
-  left: 0;
   right: 0;
   min-width: 280px;
   background: #1a1a2e;

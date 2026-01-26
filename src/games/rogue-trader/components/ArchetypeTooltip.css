@@ -98,23 +98,3 @@
   color: #c0c0d0;
 }
 
-/* Arrow for tooltip */
-.archetype-tooltip.top::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: #1a1a2e;
-}
-
-.archetype-tooltip.bottom::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-bottom-color: #1a1a2e;
-}
