@@ -11,7 +11,7 @@ export function GameSelector({ onSelectGame }: GameSelectorProps) {
   return (
     <div className="game-selector">
       <h2>Select a Game</h2>
-      <p className="subtitle">Choose which game you want to manage builds for</p>
+      <p className="subtitle">Your builds are saved locally to this device only. Use Export/Import in My Builds to transfer data between devices.</p>
       <div className="game-grid">
         {games.map((game) => (
           <button
