@@ -11,7 +11,7 @@ export function GameSelector({ onSelectGame }: GameSelectorProps) {
   return (
     <div className="game-selector">
       <h2>Select a Game</h2>
-      <p className="subtitle">Your builds are saved locally to this device only. Use Export/Import in My Builds to transfer data between devices.</p>
+      <p className="subtitle">Your builds are saved locally to this device only.<br />Use Export/Import in My Builds to transfer data between devices.</p>
       <div className="game-grid">
         {games.map((game) => (
           <button
@@ -35,10 +35,6 @@ export function GameSelector({ onSelectGame }: GameSelectorProps) {
             <p>{game.description}</p>
           </div>
         ))}
-      </div>
-      <div className="storage-notice">
-        <span className="notice-icon">💾</span>
-        <span>Your builds are saved locally to this device only. Use Export/Import in My Builds to transfer data between devices.</span>
       </div>
     </div>
   );
