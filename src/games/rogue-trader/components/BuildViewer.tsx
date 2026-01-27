@@ -34,7 +34,7 @@ interface BuildViewerProps {
 
 export function BuildViewer({ 
   build, 
-  onBack, 
+  onBack: _onBack, 
   currentLevel = 1, 
   onLevelChange, 
   onTrackBuild, 
@@ -44,6 +44,7 @@ export function BuildViewer({
   onSelectTrackedBuild,
   onDeleteTrackedBuild,
 }: BuildViewerProps) {
+  void _onBack;
   const [activeTab, setActiveTab] = useState<'progression' | 'gear'>('progression');
   
   const archetypePath = build.archetypePath;

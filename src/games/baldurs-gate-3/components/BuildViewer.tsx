@@ -54,7 +54,7 @@ function GearItem({ name }: { name: string }) {
 
 export function BuildViewer({ 
   build, 
-  onBack, 
+  onBack: _onBack, 
   currentLevel = 1, 
   onLevelChange, 
   onTrackBuild, 
@@ -65,6 +65,7 @@ export function BuildViewer({
   onDeleteTrackedBuild,
   getBuildById,
 }: BuildViewerProps) {
+  void _onBack;
   const [activeTab, setActiveTab] = useState<'progression' | 'stats' | 'gear'>('progression');
 
   const showPartyBar = trackedBuilds.length > 0 && onSelectTrackedBuild && onDeleteTrackedBuild && getBuildById;
