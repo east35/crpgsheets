@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Game } from '../types';
 import { getAllGames, COMING_SOON_GAMES } from '../games/registry';
-import { Xmark, List, Check, User } from 'iconoir-react';
+import { Xmark } from 'iconoir-react';
 import './GameLibrary.css';
 
 interface GameLibraryProps {
@@ -15,163 +15,131 @@ const GAME_STATS: Record<string, { builds: number; companions: number }> = {
   'disco-elysium': { builds: 0, companions: 0 },
 };
 
-const CHANGELOG: Record<string, { date: string; changes: string[] }[]> = {
-  'rogue-trader': [
-    { date: 'Jan 2026', changes: ['Added 36 optimized companion builds', 'Level-by-level progression tracking', 'Talent and gear recommendations'] },
-    { date: 'Dec 2025', changes: ['Initial release with party management'] },
-  ],
-  'baldurs-gate-3': [
-    { date: 'Jan 2026', changes: ['Added 16 character builds', 'Multi-class support', 'Companion build guides'] },
-  ],
-};
-
-const FEATURES = [
-  { icon: 'builds', title: 'Curated Builds', desc: 'Optimized character builds for every companion' },
-  { icon: 'tracker', title: 'Level Tracker', desc: 'Track progress across your entire party' },
-  { icon: 'local', title: 'Local Storage', desc: 'Your data stays private on your device' },
-];
-
 export function GameLibrary({ onSelectGame }: GameLibraryProps) {
   const games = getAllGames();
-  const allGames = [...games, ...COMING_SOON_GAMES];
   const [showPicker, setShowPicker] = useState(false);
-
-  const isComingSoon = (gameId: string) => {
-    return COMING_SOON_GAMES.some(g => g.id === gameId);
-  };
-
-  const totalBuilds = Object.values(GAME_STATS).reduce((sum, g) => sum + g.builds, 0);
 
   return (
     <div className="landing-page">
-      {/* Full-screen Hero */}
       <section className="hero-fullscreen">
-        <div 
+        <div
           className="hero-bg"
-          style={{ backgroundImage: 'url(/images/marketing/m7.jpg)' }}
+          style={{ backgroundImage: 'url(/images/marketing/background.png)' }}
         />
-        
-        <div className="hero-content">
-          <h1 className="hero-title">cRPG Sheets</h1>
-          <p className="hero-tagline">
-            Track your party builds.<br />
-            Follow optimized guides.<br />
-            Master every companion.
-          </p>
-          <button 
-            className="hero-cta"
-            onClick={() => setShowPicker(true)}
-          >
-            Get started — it's free!
-          </button>
-          <p className="hero-subtitle">The build tracker for CRPG lovers.</p>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="stats-section">
-        <div className="stats-grid">
-          <div className="stat-item">
-            <span className="stat-value">{totalBuilds}+</span>
-            <span className="stat-label">Premade Builds</span>
+        <div className="hero-split">
+          <div className="hero-content">
+            <img
+              src="/images/marketing/SheetsLogo.png"
+              alt="Sheets"
+              className="hero-logo"
+            />
+            <p className="hero-tagline">
+              Track your party builds.<br />
+              Follow optimized guides.<br />
+              Master every companion.
+            </p>
+            <button
+              className="hero-cta"
+              onClick={() => setShowPicker(true)}
+            >
+              Start Tracking
+            </button>
+            <p className="hero-subtitle">The build tracker for cRPG lovers.</p>
           </div>
-          <div className="stat-item">
-            <span className="stat-value">{allGames.length}</span>
-            <span className="stat-label">Supported Games</span>
+
+          <div className="hero-screenshots">
+            <img
+              src="/images/marketing/screenshot1.png"
+              alt="App screenshot"
+              className="hero-screenshot screenshot-front"
+            />
+            <img
+              src="/images/marketing/screenshot2.png"
+              alt="App screenshot"
+              className="hero-screenshot screenshot-back"
+            />
           </div>
-          <div className="stat-item">
-            <span className="stat-value">100%</span>
-            <span className="stat-label">Free & Local</span>
-          </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features-section">
-        <div className="features-grid">
-          {FEATURES.map((feature, i) => (
-            <div key={i} className="feature-card">
-              <div className="feature-icon">
-                {feature.icon === 'builds' && <List width={24} height={24} />}
-                {feature.icon === 'tracker' && <Check width={24} height={24} />}
-                {feature.icon === 'local' && <User width={24} height={24} />}
-              </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Changelog Section */}
-      <section className="changelog-section">
-        <h2>Recent Updates</h2>
-        <div className="changelog-grid">
-          {games.map((game) => {
-            const logs = CHANGELOG[game.id];
-            if (!logs) return null;
-            return (
-              <div key={game.id} className="changelog-card">
-                <h3>{game.shortName || game.name}</h3>
-                {logs.map((log, i) => (
-                  <div key={i} className="changelog-entry">
-                    <span className="changelog-date">{log.date}</span>
-                    <ul>
-                      {log.changes.map((change, j) => (
-                        <li key={j}>{change}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="landing-footer">
-        <p>Your builds are saved locally to this device. Use Export/Import to transfer data between devices.</p>
-      </footer>
-
-      {/* Game Picker Modal */}
       {showPicker && (
         <div className="picker-overlay" onClick={() => setShowPicker(false)}>
           <div className="picker-modal" onClick={e => e.stopPropagation()}>
             <button className="picker-close" onClick={() => setShowPicker(false)}>
               <Xmark width={24} height={24} />
             </button>
-            <h2>Choose Your Game</h2>
+            <h2>Available Game Sheets</h2>
             <div className="game-grid">
-              {allGames.map((game) => {
-                const comingSoon = isComingSoon(game.id);
+              {games.map((game) => {
                 const stats = GAME_STATS[game.id];
                 return (
                   <button
                     key={game.id}
-                    className={`game-card ${comingSoon ? 'coming-soon' : ''}`}
-                    onClick={() => !comingSoon && onSelectGame(game as Game)}
-                    disabled={comingSoon}
+                    className="game-card"
+                    onClick={() => onSelectGame(game)}
                     style={game.heroImage ? { backgroundImage: `url(${game.heroImage})` } : undefined}
                   >
-                    {comingSoon && <span className="coming-soon-badge">Coming Soon</span>}
-                    {!comingSoon && <span className="beta-badge">Beta</span>}
+                    <span className="beta-badge">Beta</span>
                     {game.logo ? (
                       <img src={game.logo} alt={game.name} className="game-logo" />
                     ) : (
                       <h3>{game.name}</h3>
                     )}
-                    {stats && !comingSoon && (
-                      <p className="game-stats">{stats.builds} builds • {stats.companions} companions</p>
-                    )}
-                    {comingSoon && <p>{game.description}</p>}
                   </button>
                 );
               })}
             </div>
+
+            <h3 className="section-header">Games Planned</h3>
+            <div className="game-grid">
+              {COMING_SOON_GAMES.map((game) => (
+                <button
+                  key={game.id}
+                  className="game-card coming-soon"
+                  disabled
+                  style={game.heroImage ? { backgroundImage: `url(${game.heroImage})` } : undefined}
+                >
+                  <span className="coming-soon-badge">Coming Soon</span>
+                  {game.logo ? (
+                    <img src={game.logo} alt={game.name} className="game-logo" />
+                  ) : (
+                    <h3>{game.name}</h3>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
+
+      <footer className="landing-footer">
+        <div className="footer-content">
+          <span className="footer-item">
+            ©{' '}
+            <a href="https://jimjordan.design/" target="_blank" rel="noreferrer">
+              Jim Jordan
+            </a>
+          </span>
+          <span className="footer-dot" aria-hidden="true">•</span>
+          <a
+            className="footer-github"
+            href="https://github.com/jimjordan/crpg-character-manager"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg
+              className="footer-github-icon"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.54 7.54 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+            </svg>
+            Contribute on GitHub
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
