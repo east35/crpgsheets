@@ -245,3 +245,12 @@
   background: rgba(220, 53, 69, 0.2);
   border-color: rgba(220, 53, 69, 0.5);
 }
+
+/* Mobile: dropdown opens upward */
+@media (max-width: 768px) {
+  .profile-dropdown {
+    top: auto;
+    bottom: calc(100% + 4px);
+    max-height: 60vh;
+  }
+}

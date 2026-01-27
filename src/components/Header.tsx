@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import type { Game, Profile } from '../types';
 import { ProfileSelector } from './ProfileSelector';
-import { Search, Shield, User, List, FlaskSolid, NavArrowLeft } from 'iconoir-react';
+import { HeaderGameSelector } from './HeaderGameSelector';
+import { Search, Shield, User, List, FlaskSolid } from 'iconoir-react';
 
 interface SearchResult {
   type: 'talent' | 'gear' | 'companion' | 'build';
@@ -11,8 +12,8 @@ interface SearchResult {
 }
 
 interface HeaderProps {
-  currentGame: Game | null;
-  onGameChange: () => void;
+  currentGame: Game;
+  onSelectGame: (game: Game) => void;
   profiles?: Profile[];
   currentProfile?: Profile | null;
   onSelectProfile?: (profile: Profile) => void;
@@ -26,14 +27,9 @@ interface HeaderProps {
   onSearch?: (query: string) => SearchResult[];
 }
 
-const GAME_LOGOS: Record<string, string> = {
-  'rogue-trader': '/images/logos/rogue-trader-logo.png',
-  'baldurs-gate-3': '/images/logos/baldurs-gate-logo.png',
-};
-
-export function Header({ 
-  currentGame, 
-  onGameChange,
+export function Header({
+  currentGame,
+  onSelectGame,
   profiles,
   currentProfile,
   onSelectProfile,
@@ -46,7 +42,6 @@ export function Header({
   onClearAllData,
   onSearch,
 }: HeaderProps) {
-  const gameLogo = currentGame ? GAME_LOGOS[currentGame.id] : null;
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
@@ -98,18 +93,12 @@ export function Header({
     <header className="header">
       <div className="header-content">
         <div className="header-left">
-          {currentGame && (
-            <button onClick={onGameChange} className="back-btn" title="Change Game">
-              <NavArrowLeft width={18} height={18} />
-            </button>
-          )}
-          {gameLogo ? (
-            <img src={gameLogo} alt={currentGame?.name} className="game-logo" />
-          ) : (
-            <h1>cRPG: Character Manager</h1>
-          )}
+          <HeaderGameSelector
+            currentGame={currentGame}
+            onSelectGame={onSelectGame}
+          />
         </div>
-        {currentGame && profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
+        {profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
           <div className="header-right">
             {onSearch && (
               <div className="header-search" ref={searchRef}>

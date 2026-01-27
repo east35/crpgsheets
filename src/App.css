@@ -677,14 +677,108 @@
   font-size: 0.85rem;
 }
 
+/* App Footer */
+.app-footer {
+  position: relative;
+  z-index: 10;
+  padding: 1rem 2rem;
+  background: #0d1014;
+  border-top: 1px solid #1c2228;
+  text-align: center;
+}
+
+.app-footer .footer-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: #567;
+  flex-wrap: wrap;
+}
+
+.app-footer a {
+  color: #9ab;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  color: #fff;
+}
+
+.footer-landing-link {
+  background: none;
+  border: none;
+  color: #9ab;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+
+.footer-landing-link:hover {
+  color: #fff;
+}
+
+.app-footer .footer-dot {
+  color: #345;
+}
+
+.app-footer .footer-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.app-footer .footer-github-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 /* Responsive */
-@media (max-width: 600px) {
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+@media (max-width: 768px) {
+  /* Move header to bottom on mobile */
+  .header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    padding: 0.75rem 1rem;
+    border-bottom: none;
+    border-top: 1px solid #333;
+    z-index: 200;
+    background: rgba(26, 26, 46, 0.95);
   }
 
+  .header-content {
+    gap: 0.5rem;
+  }
+
+  /* Search dropdown opens upward on mobile */
+  .header-search-dropdown {
+    top: auto;
+    bottom: calc(100% + 8px);
+    max-height: 60vh;
+  }
+
+  /* Main content padding for mobile - only when game is selected */
+  .main-content.game-selected {
+    padding-bottom: 80px;
+  }
+
+  /* Keep landing page padding as-is */
+  .main-content.landing {
+    padding: 0;
+  }
+
+  /* Hide footer on mobile (header is now at bottom) */
+  .app-footer {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
   .form-row {
     grid-template-columns: 1fr;
   }
