@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Xmark, Check, EditPencil } from 'iconoir-react';
 import './PartyBar.css';
 
 export interface PartyMember {
@@ -73,7 +74,7 @@ export function PartyBar({
                   {initials}
                 </div>
                 <div className="party-level">{member.level}</div>
-                {deleteMode && <div className="delete-badge">✕</div>}
+                {deleteMode && <div className="delete-badge"><Xmark width={12} height={12} /></div>}
                 {isActive && <div className="active-indicator" />}
               </div>
             );
@@ -84,7 +85,7 @@ export function PartyBar({
           onClick={() => setDeleteMode(!deleteMode)}
           title={deleteMode ? 'Done editing' : 'Remove builds'}
         >
-          {deleteMode ? '✓' : '✎'}
+          {deleteMode ? <Check width={16} height={16} /> : <EditPencil width={16} height={16} />}
         </button>
       </div>
     </div>

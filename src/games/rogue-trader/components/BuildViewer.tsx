@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavArrowDown, NavArrowRight, Check } from 'iconoir-react';
 import type { BuildGuide, CompanionName } from '../types';
 import type { CharacterBuild } from '../../../types';
 import { ARCHETYPE_DISPLAY_NAMES, GEAR_SLOT_LABELS } from '../types';
@@ -24,6 +25,7 @@ interface BuildViewerProps {
   currentLevel?: number;
   onLevelChange?: (level: number) => void;
   onTrackBuild?: (build: BuildGuide) => void;
+  onUntrackBuild?: (guideId: string) => void;
   isTracked?: boolean;
   trackedBuilds?: TrackedRTBuild[];
   onSelectTrackedBuild?: (guideId: string, level: number) => void;
@@ -36,6 +38,7 @@ export function BuildViewer({
   currentLevel = 1, 
   onLevelChange, 
   onTrackBuild, 
+  onUntrackBuild,
   isTracked,
   trackedBuilds = [],
   onSelectTrackedBuild,
@@ -124,10 +127,9 @@ export function BuildViewer({
         {onTrackBuild && (
           <button
             className={`btn ${isTracked ? 'btn-secondary' : 'btn-primary'}`}
-            onClick={() => onTrackBuild(build)}
-            disabled={isTracked}
+            onClick={() => isTracked && onUntrackBuild ? onUntrackBuild(build.id) : onTrackBuild(build)}
           >
-            {isTracked ? 'Tracking' : 'Track Build'}
+            {isTracked ? 'Untrack' : 'Track Build'}
           </button>
         )}
       </div>
@@ -183,11 +185,11 @@ export function BuildViewer({
               className={`tier-accordion-header base ${isTierCompleted('base') ? 'completed' : ''}`}
               onClick={() => toggleTier('base')}
             >
-              <span className="tier-accordion-icon">{expandedTiers.base ? '▼' : '▶'}</span>
+              <span className="tier-accordion-icon">{expandedTiers.base ? <NavArrowDown width={14} height={14} /> : <NavArrowRight width={14} height={14} />}</span>
               <span className="tier-accordion-title">
                 {ARCHETYPE_DISPLAY_NAMES[archetypePath.base]} (Levels 1-15)
               </span>
-              {isTierCompleted('base') && <span className="tier-completed-badge">✓ Complete</span>}
+              {isTierCompleted('base') && <span className="tier-completed-badge"><Check width={12} height={12} /> Complete</span>}
             </button>
             {expandedTiers.base && (
               <div className="tier-accordion-content">
@@ -201,7 +203,7 @@ export function BuildViewer({
                       onClick={() => onLevelChange?.(levelData.level)}
                     >
                       <div className="level-number">
-                        {isPastLevel && <span className="check">✓</span>}
+                        {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
                         Lv {levelData.level}
                       </div>
                       <div className="level-content">
@@ -234,11 +236,11 @@ export function BuildViewer({
               className={`tier-accordion-header advanced ${isTierCompleted('advanced') ? 'completed' : ''}`}
               onClick={() => toggleTier('advanced')}
             >
-              <span className="tier-accordion-icon">{expandedTiers.advanced ? '▼' : '▶'}</span>
+              <span className="tier-accordion-icon">{expandedTiers.advanced ? <NavArrowDown width={14} height={14} /> : <NavArrowRight width={14} height={14} />}</span>
               <span className="tier-accordion-title">
                 {ARCHETYPE_DISPLAY_NAMES[archetypePath.advanced]} (Levels 16-35)
               </span>
-              {isTierCompleted('advanced') && <span className="tier-completed-badge">✓ Complete</span>}
+              {isTierCompleted('advanced') && <span className="tier-completed-badge"><Check width={12} height={12} /> Complete</span>}
             </button>
             {expandedTiers.advanced && (
               <div className="tier-accordion-content">
@@ -252,7 +254,7 @@ export function BuildViewer({
                       onClick={() => onLevelChange?.(levelData.level)}
                     >
                       <div className="level-number">
-                        {isPastLevel && <span className="check">✓</span>}
+                        {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
                         Lv {levelData.level}
                       </div>
                       <div className="level-content">
@@ -285,7 +287,7 @@ export function BuildViewer({
               className={`tier-accordion-header exemplar`}
               onClick={() => toggleTier('exemplar')}
             >
-              <span className="tier-accordion-icon">{expandedTiers.exemplar ? '▼' : '▶'}</span>
+              <span className="tier-accordion-icon">{expandedTiers.exemplar ? <NavArrowDown width={14} height={14} /> : <NavArrowRight width={14} height={14} />}</span>
               <span className="tier-accordion-title">
                 {ARCHETYPE_DISPLAY_NAMES[archetypePath.exemplar]} (Levels 36-55)
               </span>
@@ -302,7 +304,7 @@ export function BuildViewer({
                       onClick={() => onLevelChange?.(levelData.level)}
                     >
                       <div className="level-number">
-                        {isPastLevel && <span className="check">✓</span>}
+                        {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
                         Lv {levelData.level}
                       </div>
                       <div className="level-content">

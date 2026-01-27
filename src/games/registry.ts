@@ -25,6 +25,7 @@ export interface ComingSoonGame {
   shortName: string;
   description: string;
   heroImage?: string;
+  logo?: string;
 }
 
 export const COMING_SOON_GAMES: ComingSoonGame[] = [
@@ -34,6 +35,7 @@ export const COMING_SOON_GAMES: ComingSoonGame[] = [
     shortName: 'DOS2',
     description: 'Manage your party builds and skill combinations',
     heroImage: '/images/heroes/dos2-hero.png',
+    logo: '/images/logos/divinity.png',
   },
   {
     id: 'disco-elysium',
@@ -41,6 +43,7 @@ export const COMING_SOON_GAMES: ComingSoonGame[] = [
     shortName: 'Disco Elysium',
     description: 'Track your detective skills and thought cabinet',
     heroImage: '/images/heroes/disco-elysium-hero.png',
+    logo: '/images/logos/disco.png',
   },
 ];
 

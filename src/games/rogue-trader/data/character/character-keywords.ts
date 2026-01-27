@@ -1816,7 +1816,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'tonicity': {
     name: 'Tonicity',
     category: 'talent',
-    effect: '\' alt="shot on the run talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-38)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">"',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Tonicity',
   },
   'be_vigilant': {
@@ -1828,7 +1828,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'eye_of_oblivion': {
     name: 'Eye of Oblivion',
     category: 'talent',
-    effect: '\' alt="shot on the run talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-38)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Eye+of+Oblivion',
   },
   'inspiring_speech': {
@@ -1840,7 +1840,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'strange_vitality_navigator': {
     name: 'Strange Vitality (Navigator)',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Strange+Vitality+(Navigator)',
   },
   'warp_saturation': {
@@ -1852,37 +1852,37 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'perilous_ways': {
     name: 'Perilous Ways',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Perilous+Ways',
   },
   'the_course_untravelled': {
     name: 'The Course Untravelled',
     category: 'talent',
-    effect: '\' alt="shot on the run talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-38)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/The+Course+Untravelled',
   },
   'guide_of_souls': {
     name: 'Guide of Souls',
     category: 'talent',
-    effect: '\' alt="shot on the run talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-38)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Guide+of+Souls',
   },
   'under_my_protection': {
     name: 'Under My Protection',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Under+My+Protection',
   },
   'veil_of_protection': {
     name: 'Veil of Protection',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Veil+of+Protection',
   },
   'blood_augury': {
     name: 'Blood Augury',
     category: 'talent',
-    effect: '\' alt="shot on the run talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-38)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Blood+Augury',
   },
   'steady': {
@@ -1894,7 +1894,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'ebb_and_flow': {
     name: 'Ebb and Flow',
     category: 'talent',
-    effect: '\' alt="shot on the run talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-38)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Ebb+and+Flow',
   },
   'blood_of_martyrs': {
@@ -1936,19 +1936,19 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'mind_over_matter': {
     name: 'Mind Over Matter',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Mind+Over+Matter',
   },
   'unnatural_allure': {
     name: 'Unnatural Allure',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Unnatural+Allure',
   },
   'threads_and_faults': {
     name: 'Threads and Faults',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Threads+and+Faults',
   },
   'seize_the_initiative': {
@@ -1966,7 +1966,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'open_to_the_warp': {
     name: 'Open to the Warp',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Open+to+the+Warp',
   },
   'lead_by_example': {
@@ -1978,7 +1978,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'mastery_of_time': {
     name: 'Mastery of Time',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Mastery+of+Time',
   },
   'watch_yourself': {
@@ -1990,7 +1990,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'pass_unscathed': {
     name: 'Pass Unscathed',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Pass+Unscathed',
   },
   'commanding_voice': {
@@ -2002,7 +2002,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'undam_the_sea_of_souls': {
     name: 'Undam the Sea of Souls',
     category: 'talent',
-    effect: '\' alt="shot on the run talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-38)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Undam+the+Sea+of+Souls',
   },
   'iron_discipline': {
@@ -2020,13 +2020,13 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'unblinking_stare': {
     name: 'Unblinking Stare',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Unblinking+Stare',
   },
   'stable_routes': {
     name: 'Stable Routes',
     category: 'talent',
-    effect: '\' alt="placeholder buff advantage04 talents warhammer 40k rogue trader wiki guide 100px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Stable+Routes',
   },
   'inspire_courage': {
@@ -2422,7 +2422,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'litany_of_hatred': {
     name: 'Litany of Hatred',
     category: 'talent',
-    effect: '\' alt="litany of hatred talents warhammer 40k rogue trader wiki guide 100px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-40)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Whenever the Ministorum Priest uses War Hymn, for 1 round, the Priest and allies in a 5-cell radius deal additional weapon damage equal to half the number of zeal stacks. This bonus is doubled against daemons, psykers, and Xenos.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Litany+of+Hatred',
   },
   'exploit_surroundings': {
@@ -3166,13 +3166,13 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'get_into_cover': {
     name: 'Get Into Cover!',
     category: 'talent',
-    effect: '\' alt="cover warhammer 40k rogue trader wiki guide 64px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Get+Into+Cover!',
   },
   'get_off_me': {
     name: 'Get off Me',
     category: 'talent',
-    effect: '\' alt="cover warhammer 40k rogue trader wiki guide 64px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-61)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Get+off+Me',
   },
   'evasive_manoeuvres': {
@@ -3184,19 +3184,19 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'fleet_combat_training': {
     name: 'Fleet Combat Training',
     category: 'talent',
-    effect: '\' alt="perfect timing warhammer 40k rogue trader wiki guide 64px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Fleet+Combat+Training',
   },
   'perfect_timing': {
     name: 'Perfect Timing',
     category: 'talent',
-    effect: '\' alt="perfect timing warhammer 40k rogue trader wiki guide 64px" width=45 height=45>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Perfect+Timing',
   },
   'scatter': {
     name: 'Scatter',
     category: 'talent',
-    effect: '\' alt="cover warhammer 40k rogue trader wiki guide 64px" width=45 style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-61)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Scatter',
   },
   'do_not_falter': {
@@ -3208,7 +3208,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'war_hymn': {
     name: 'War Hymn',
     category: 'talent',
-    effect: '\' alt="litany of hatred talents warhammer 40k rogue trader wiki guide 100px" width=50 height=50>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/War+Hymn',
   },
   'the_last_plan': {
@@ -3250,7 +3250,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'for_the_emperor': {
     name: 'For the Emperor!',
     category: 'talent',
-    effect: '\' alt="litany of hatred talents warhammer 40k rogue trader wiki guide 100px" width=50 height=50>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/For+the+Emperor!',
   },
   'summary_execution': {
@@ -3262,7 +3262,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'motivation': {
     name: 'Motivation',
     category: 'talent',
-    effect: '\' alt="litany of hatred talents warhammer 40k rogue trader wiki guide 100px" width=50 height=50>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Motivation',
   },
   'one_for_the_enemies_two_for_the_traitors': {
@@ -3286,7 +3286,7 @@ export const KEYWORD_DATA: Record<string, KeywordInfo> = {
   'duty_and_honour': {
     name: 'Duty and Honour!',
     category: 'talent',
-    effect: '\' alt="litany of hatred talents warhammer 40k rogue trader wiki guide 100px" width=50 height=50>',
+    effect: 'Effect description not available.',
     wikiUrl: 'https://roguetrader.wiki.fextralife.com/Duty+and+Honour!',
   },
   'iconic_sidearm': {

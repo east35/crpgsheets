@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import type { Profile } from '../types';
+import { Folder, NavArrowDown, Check, Xmark, EditPencil, Copy, Download, Upload, Trash } from 'iconoir-react';
 import './ProfileSelector.css';
 
 interface ProfileSelectorProps {
@@ -100,9 +101,9 @@ export function ProfileSelector({
         className="profile-selector-toggle"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <span className="profile-icon">📁</span>
+        <span className="profile-icon"><Folder width={16} height={16} /></span>
         <span className="profile-name">{currentProfile?.name || 'Select Profile'}</span>
-        <span className={`profile-arrow ${isExpanded ? 'expanded' : ''}`}>▼</span>
+        <span className={`profile-arrow ${isExpanded ? 'expanded' : ''}`}><NavArrowDown width={14} height={14} /></span>
       </button>
 
       {isExpanded && (
@@ -122,8 +123,8 @@ export function ProfileSelector({
                       onKeyDown={(e) => e.key === 'Enter' && handleSaveRename()}
                       autoFocus
                     />
-                    <button onClick={handleSaveRename}>✓</button>
-                    <button onClick={() => setEditingId(null)}>✕</button>
+                    <button onClick={handleSaveRename}><Check width={14} height={14} /></button>
+                    <button onClick={() => setEditingId(null)}><Xmark width={14} height={14} /></button>
                   </div>
                 ) : (
                   <>
@@ -142,28 +143,28 @@ export function ProfileSelector({
                         onClick={() => handleStartRename(profile)}
                         title="Rename"
                       >
-                        ✏️
+                        <EditPencil width={14} height={14} />
                       </button>
                       <button 
                         className="profile-action-btn"
                         onClick={() => handleDuplicate(profile)}
                         title="Duplicate"
                       >
-                        📋
+                        <Copy width={14} height={14} />
                       </button>
                       <button 
                         className="profile-action-btn"
                         onClick={() => onExportProfile(profile.id)}
                         title="Export"
                       >
-                        📤
+                        <Download width={14} height={14} />
                       </button>
                       <button 
                         className="profile-action-btn delete"
                         onClick={() => handleDelete(profile)}
                         title="Delete"
                       >
-                        🗑️
+                        <Trash width={14} height={14} />
                       </button>
                     </div>
                   </>
@@ -194,7 +195,7 @@ export function ProfileSelector({
                 input.click();
               }}
             >
-              📥 Import Playthrough
+              <Upload width={14} height={14} /> Import Playthrough
             </button>
           </div>
 
@@ -232,7 +233,7 @@ export function ProfileSelector({
                   }
                 }}
               >
-                🗑️ Clear All Local Data
+                <Trash width={14} height={14} /> Clear All Local Data
               </button>
             </div>
           )}

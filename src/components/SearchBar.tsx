@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Search, Shield, User, List, FlaskSolid, Xmark } from 'iconoir-react';
 import './SearchBar.css';
 
 interface SearchResult {
@@ -59,18 +60,18 @@ export function SearchBar({ onSearch, placeholder = 'Search talents, gear, items
 
   const getTypeIcon = (type: SearchResult['type']) => {
     switch (type) {
-      case 'talent': return '⚔️';
-      case 'gear': return '🛡️';
-      case 'companion': return '👤';
-      case 'build': return '📋';
-      default: return '🔍';
+      case 'talent': return <FlaskSolid width={16} height={16} />;
+      case 'gear': return <Shield width={16} height={16} />;
+      case 'companion': return <User width={16} height={16} />;
+      case 'build': return <List width={16} height={16} />;
+      default: return <Search width={16} height={16} />;
     }
   };
 
   return (
     <div className="search-bar" ref={containerRef}>
       <div className="search-input-wrapper">
-        <span className="search-icon">🔍</span>
+        <span className="search-icon"><Search width={16} height={16} /></span>
         <input
           ref={inputRef}
           type="text"
@@ -85,7 +86,7 @@ export function SearchBar({ onSearch, placeholder = 'Search talents, gear, items
             className="search-clear" 
             onClick={() => { setQuery(''); setResults([]); setIsOpen(false); }}
           >
-            ✕
+            <Xmark width={14} height={14} />
           </button>
         )}
       </div>

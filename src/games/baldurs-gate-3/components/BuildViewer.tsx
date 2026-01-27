@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Check } from 'iconoir-react';
 import type { BG3Build } from '../types';
 import type { CharacterBuild } from '../../../types';
 import { getRace } from '../data/character/races';
@@ -22,6 +23,7 @@ interface BuildViewerProps {
   currentLevel?: number;
   onLevelChange?: (level: number) => void;
   onTrackBuild?: (build: BG3Build) => void;
+  onUntrackBuild?: (buildId: string) => void;
   isTracked?: boolean;
   trackedBuilds?: TrackedBG3Build[];
   onSelectTrackedBuild?: (buildId: string, level: number) => void;
@@ -56,6 +58,7 @@ export function BuildViewer({
   currentLevel = 1, 
   onLevelChange, 
   onTrackBuild, 
+  onUntrackBuild,
   isTracked,
   trackedBuilds = [],
   onSelectTrackedBuild,
@@ -122,10 +125,9 @@ export function BuildViewer({
         {onTrackBuild && (
           <button
             className={`btn ${isTracked ? 'btn-secondary' : 'btn-primary'}`}
-            onClick={() => onTrackBuild(build)}
-            disabled={isTracked}
+            onClick={() => isTracked && onUntrackBuild ? onUntrackBuild(build.id) : onTrackBuild(build)}
           >
-            {isTracked ? 'Tracking' : 'Track Build'}
+            {isTracked ? 'Untrack' : 'Track Build'}
           </button>
         )}
       </div>
@@ -193,7 +195,7 @@ export function BuildViewer({
                 onClick={() => onLevelChange?.(levelData.characterLevel)}
               >
                 <div className="level-number">
-                  {isPastLevel && <span className="check">✓</span>}
+                  {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
                   Lv {levelData.characterLevel}
                 </div>
                 <div className="level-content">

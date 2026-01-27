@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import type { Game, Profile } from '../types';
 import { ProfileSelector } from './ProfileSelector';
+import { Search, Shield, User, List, FlaskSolid, NavArrowLeft } from 'iconoir-react';
 
 interface SearchResult {
   type: 'talent' | 'gear' | 'companion' | 'build';
@@ -85,11 +86,11 @@ export function Header({
 
   const getTypeIcon = (type: SearchResult['type']) => {
     switch (type) {
-      case 'talent': return '⚔️';
-      case 'gear': return '🛡️';
-      case 'companion': return '👤';
-      case 'build': return '📋';
-      default: return '🔍';
+      case 'talent': return <FlaskSolid width={16} height={16} />;
+      case 'gear': return <Shield width={16} height={16} />;
+      case 'companion': return <User width={16} height={16} />;
+      case 'build': return <List width={16} height={16} />;
+      default: return <Search width={16} height={16} />;
     }
   };
 
@@ -99,7 +100,7 @@ export function Header({
         <div className="header-left">
           {currentGame && (
             <button onClick={onGameChange} className="back-btn" title="Change Game">
-              ‹
+              <NavArrowLeft width={18} height={18} />
             </button>
           )}
           {gameLogo ? (
@@ -117,7 +118,7 @@ export function Header({
                   onClick={() => setSearchOpen(!searchOpen)}
                   title="Search"
                 >
-                  🔍
+                  <Search width={18} height={18} />
                 </button>
                 {searchOpen && (
                   <div className="header-search-dropdown">

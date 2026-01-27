@@ -235,6 +235,12 @@
   z-index: 1;
 }
 
+.main-content.landing {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Profile Bar */
 .profile-bar {
   display: flex;

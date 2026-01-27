@@ -3,7 +3,7 @@ import type { Game, CharacterBuild, Profile } from './types';
 import type { BuildGuide, CompanionName } from './games/rogue-trader/types';
 import type { BG3Build } from './games/baldurs-gate-3/types';
 import { Header } from './components/Header';
-import { GameSelector } from './components/GameSelector';
+import { GameLibrary } from './components/GameLibrary';
 import { BuildList } from './components/BuildList';
 // Rogue Trader imports
 import { BuildSelector as RTBuildSelector } from './games/rogue-trader/components/BuildSelector';
@@ -18,14 +18,27 @@ import { BuildViewer as BG3BuildViewer } from './games/baldurs-gate-3/components
 import { getBuild as getBG3BuildById } from './games/baldurs-gate-3/data/builds';
 import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
+import { getGame } from './games/registry';
 import './App.css';
 
 type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor' | 'bg3-builds' | 'bg3-companion-builds';
 
+const LAST_GAME_KEY = 'crpgsheets_last_game';
+
 function App() {
-  const [currentGame, setCurrentGame] = useState<Game | null>(null);
+  // Initialize from localStorage synchronously
+  const [currentGame, setCurrentGame] = useState<Game | null>(() => {
+    const lastGameId = localStorage.getItem(LAST_GAME_KEY);
+    return lastGameId ? getGame(lastGameId) || null : null;
+  });
   const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
-  const [view, setView] = useState<View>('game-select');
+  const [view, setView] = useState<View>(() => {
+    const lastGameId = localStorage.getItem(LAST_GAME_KEY);
+    if (lastGameId) {
+      return lastGameId === 'baldurs-gate-3' ? 'bg3-builds' : 'my-builds';
+    }
+    return 'game-select';
+  });
   const [selectedGuide, setSelectedGuide] = useState<BuildGuide | null>(null);
   const [currentLevel, setCurrentLevel] = useState(1);
   const [activeTrackedBuildId, setActiveTrackedBuildId] = useState<string | null>(null);
@@ -86,9 +99,21 @@ function App() {
     );
   };
 
+  const handleUntrackRTBuild = (guideId: string) => {
+    const trackedBuild = builds.find((b) => {
+      const data = b.data as { guideId?: string } | undefined;
+      return data?.guideId === guideId;
+    });
+    if (trackedBuild) {
+      deleteBuild(trackedBuild.id);
+    }
+  };
+
   const handleSelectGame = (game: Game) => {
     setCurrentGame(game);
     setCurrentProfile(null); // Reset profile, will be set by useEffect
+    // Persist last selected game
+    localStorage.setItem(LAST_GAME_KEY, game.id);
     // Set default view based on game
     if (game.id === 'baldurs-gate-3') {
       setView('bg3-builds');
@@ -215,6 +240,16 @@ function App() {
       },
       build.description
     );
+  };
+
+  const handleUntrackBG3Build = (buildId: string) => {
+    const trackedBuild = builds.find((b) => {
+      const data = b.data as { buildId?: string } | undefined;
+      return data?.buildId === buildId;
+    });
+    if (trackedBuild) {
+      deleteBuild(trackedBuild.id);
+    }
   };
 
   const handleSelectTrackedBG3Build = (buildId: string, level: number) => {
@@ -349,23 +384,25 @@ function App() {
           />
         </div>
       )}
-      <Header 
-        currentGame={currentGame} 
-        onGameChange={handleGameChange}
-        profiles={profiles}
-        currentProfile={currentProfile}
-        onSelectProfile={handleSelectProfile}
-        onCreateProfile={createProfile}
-        onDeleteProfile={deleteProfile}
-        onDuplicateProfile={duplicateProfile}
-        onRenameProfile={handleRenameProfile}
-        onExportProfile={exportProfile}
-        onImportProfile={importProfile}
-        onClearAllData={clearAllData}
-        onSearch={currentGame?.id === 'rogue-trader' ? handleSearch : undefined}
-      />
+      {currentGame && (
+        <Header 
+          currentGame={currentGame} 
+          onGameChange={handleGameChange}
+          profiles={profiles}
+          currentProfile={currentProfile}
+          onSelectProfile={handleSelectProfile}
+          onCreateProfile={createProfile}
+          onDeleteProfile={deleteProfile}
+          onDuplicateProfile={duplicateProfile}
+          onRenameProfile={handleRenameProfile}
+          onExportProfile={exportProfile}
+          onImportProfile={importProfile}
+          onClearAllData={clearAllData}
+          onSearch={currentGame?.id === 'rogue-trader' ? handleSearch : undefined}
+        />
+      )}
 
-      <main className={`main-content${currentGame ? ' game-selected' : ''}`}>
+      <main className={`main-content${view === 'game-select' ? ' landing' : ''}${currentGame ? ' game-selected' : ''}`}>
         {error && (
           <div className="error-banner">
             {error}
@@ -429,7 +466,7 @@ function App() {
           </>
         )}
 
-        {view === 'game-select' && <GameSelector onSelectGame={handleSelectGame} />}
+        {view === 'game-select' && <GameLibrary onSelectGame={handleSelectGame} />}
 
         {view === 'companion-builds' && currentGame?.id === 'rogue-trader' && (
           <RTBuildSelector 
@@ -454,6 +491,7 @@ function App() {
             currentLevel={currentLevel}
             onLevelChange={handleLevelChange}
             onTrackBuild={handleTrackBuild}
+            onUntrackBuild={handleUntrackRTBuild}
             isTracked={isGuideTracked(selectedGuide.id)}
             trackedBuilds={getTrackedRTBuilds()}
             onSelectTrackedBuild={handleSelectTrackedRTBuild}
@@ -468,6 +506,7 @@ function App() {
             currentLevel={currentLevel}
             onLevelChange={handleBG3LevelChange}
             onTrackBuild={handleTrackBG3Build}
+            onUntrackBuild={handleUntrackBG3Build}
             isTracked={isBG3BuildTracked(selectedBG3Build.id)}
             trackedBuilds={getTrackedBG3Builds()}
             onSelectTrackedBuild={handleSelectTrackedBG3Build}
