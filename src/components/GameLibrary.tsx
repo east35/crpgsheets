@@ -8,13 +8,6 @@ interface GameLibraryProps {
   onSelectGame: (game: Game) => void;
 }
 
-const GAME_STATS: Record<string, { builds: number; companions: number }> = {
-  'rogue-trader': { builds: 36, companions: 10 },
-  'baldurs-gate-3': { builds: 16, companions: 7 },
-  'divinity-original-sin-2': { builds: 0, companions: 6 },
-  'disco-elysium': { builds: 0, companions: 0 },
-};
-
 export function GameLibrary({ onSelectGame }: GameLibraryProps) {
   const games = getAllGames();
   const [showPicker, setShowPicker] = useState(false);
@@ -71,9 +64,7 @@ export function GameLibrary({ onSelectGame }: GameLibraryProps) {
             </button>
             <h2>Available Game Sheets</h2>
             <div className="game-grid">
-              {games.map((game) => {
-                const stats = GAME_STATS[game.id];
-                return (
+              {games.map((game) => (
                   <button
                     key={game.id}
                     className="game-card"
@@ -87,8 +78,7 @@ export function GameLibrary({ onSelectGame }: GameLibraryProps) {
                       <h3>{game.name}</h3>
                     )}
                   </button>
-                );
-              })}
+              ))}
             </div>
 
             <h3 className="section-header">Games Planned</h3>
