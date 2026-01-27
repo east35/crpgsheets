@@ -1,11 +1,22 @@
 import { useState } from 'react';
-import type { BuildGuide } from '../types';
+import type { BuildGuide, CompanionName } from '../types';
+import type { CharacterBuild } from '../../../types';
 import { ARCHETYPE_DISPLAY_NAMES, GEAR_SLOT_LABELS } from '../types';
 import { TalentTooltip } from './TalentTooltip';
 import { GearTooltip } from './GearTooltip';
 import { ArchetypeTooltip } from './ArchetypeTooltip';
 import { KeywordText } from './KeywordText';
+import { PartyBar, type PartyMember } from '../../../components/PartyBar';
+import { COMPANIONS } from '../data/companions';
 import './BuildViewer.css';
+
+interface TrackedRTBuild extends CharacterBuild {
+  data: {
+    guideId: string;
+    companion: CompanionName;
+    currentLevel: number;
+  };
+}
 
 interface BuildViewerProps {
   build: BuildGuide;
@@ -14,12 +25,38 @@ interface BuildViewerProps {
   onLevelChange?: (level: number) => void;
   onTrackBuild?: (build: BuildGuide) => void;
   isTracked?: boolean;
+  trackedBuilds?: TrackedRTBuild[];
+  onSelectTrackedBuild?: (guideId: string, level: number) => void;
+  onDeleteTrackedBuild?: (id: string) => void;
 }
 
-export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, onTrackBuild, isTracked }: BuildViewerProps) {
+export function BuildViewer({ 
+  build, 
+  onBack, 
+  currentLevel = 1, 
+  onLevelChange, 
+  onTrackBuild, 
+  isTracked,
+  trackedBuilds = [],
+  onSelectTrackedBuild,
+  onDeleteTrackedBuild,
+}: BuildViewerProps) {
   const [activeTab, setActiveTab] = useState<'progression' | 'gear'>('progression');
   
   const archetypePath = build.archetypePath;
+  const showPartyBar = trackedBuilds.length > 0 && onSelectTrackedBuild && onDeleteTrackedBuild;
+
+  const partyMembers: PartyMember[] = [];
+  for (const tracked of trackedBuilds) {
+    const companion = COMPANIONS[tracked.data.companion];
+    partyMembers.push({
+      id: tracked.id,
+      buildId: tracked.data.guideId,
+      name: `${tracked.data.companion}`,
+      level: tracked.data.currentLevel || 1,
+      avatarUrl: companion?.portraitUrl || null,
+    });
+  }
 
   // Determine which tier the current level is in
   const getCurrentTier = (): 'base' | 'advanced' | 'exemplar' => {
@@ -53,11 +90,27 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
   const exemplarLevels = build.progression.filter(l => l.level >= 36 && l.level <= 55);
 
   return (
-    <div className="build-viewer">
+    <>
+      {showPartyBar && (
+        <PartyBar
+          members={partyMembers}
+          currentBuildId={build.id}
+          onSelectMember={onSelectTrackedBuild}
+          onDeleteMember={onDeleteTrackedBuild}
+        />
+      )}
+      <div className={`build-viewer ${showPartyBar ? 'has-party-bar' : ''}`}>
       <div className="build-viewer-header">
-        <button className="btn btn-secondary btn-sm" onClick={onBack}>
+        {/* <button className="btn btn-secondary btn-sm" onClick={onBack}>
           Back
-        </button>
+        </button> */}
+        {COMPANIONS[build.companion]?.portraitUrl && (
+          <img 
+            src={COMPANIONS[build.companion].portraitUrl} 
+            alt="" 
+            className="build-avatar"
+          />
+        )}
         <div className="build-title">
           <h2>{build.companion}: {build.buildName}</h2>
           <div className="archetype-path">
@@ -297,5 +350,6 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
         </div>
       )}
     </div>
+    </>
   );
 }

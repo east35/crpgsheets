@@ -7,9 +7,13 @@
 
 /* Header */
 .header {
-  background: #1a1a2e;
+  background: rgba(26, 26, 46, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid #333;
   padding: 1rem 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .header-content {
@@ -29,6 +33,121 @@
 .header-right {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+}
+
+/* Header Search */
+.header-search {
+  position: relative;
+}
+
+.header-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid #3a3a5a;
+  border-radius: 6px;
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-search-btn:hover,
+.header-search-btn.active {
+  background: #2a2a3e;
+  color: #fff;
+  border-color: #4a4a6a;
+}
+
+.header-search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 320px;
+  background: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.header-search-input {
+  width: 100%;
+  padding: 12px;
+  background: #2a2a3e;
+  border: none;
+  border-bottom: 1px solid #3a3a5a;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.header-search-input::placeholder {
+  color: #6a6a8a;
+}
+
+.header-search-results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.header-search-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #2a2a3e;
+  color: #e0e0e0;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.header-search-result:last-child {
+  border-bottom: none;
+}
+
+.header-search-result:hover {
+  background: #2a2a4e;
+}
+
+.header-search-result .result-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.header-search-result .result-name {
+  flex: 1;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-search-result .result-type {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  background: #3a3a5a;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #8a8aaa;
+  flex-shrink: 0;
+}
+
+.header-search-empty {
+  padding: 16px;
+  text-align: center;
+  color: #6a6a8a;
+  font-size: 0.85rem;
 }
 
 .storage-notice {
@@ -81,6 +200,29 @@
   color: #888;
 }
 
+/* Backdrop Container - Letterboxd-style */
+.backdrop-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  max-height: 500px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.backdrop-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+
 /* Main Content */
 .main-content {
   flex: 1;
@@ -90,25 +232,7 @@
   width: 100%;
   box-sizing: border-box;
   position: relative;
-  overflow: visible;
-}
-
-.main-content.game-selected::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 400px;
-  background-image: var(--hero-image, url('/images/heroes/rogue-trader-hero.png'));
-  background-size: 100% auto;
-  background-position: top center;
-  background-repeat: no-repeat;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%);
-  z-index: -1;
-  pointer-events: none;
+  z-index: 1;
 }
 
 /* Profile Bar */
@@ -211,7 +335,6 @@
   transition: all 0.2s ease;
   text-align: left;
   position: relative;
-  height: 125px;
 }
 
 .game-card .game-logo {

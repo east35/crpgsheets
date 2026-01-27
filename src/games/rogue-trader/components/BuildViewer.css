@@ -4,11 +4,25 @@
   margin: 0 auto;
 }
 
+.build-viewer.has-party-bar {
+  padding-bottom: 100px;
+}
+
 .build-viewer-header {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.build-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid #444;
+  flex-shrink: 0;
 }
 
 .build-title {
@@ -101,7 +115,6 @@
 .tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1rem;
   border-bottom: 1px solid #333;
 }
 

@@ -15,9 +15,9 @@ import { getGearInfo, GEAR_DATA } from './games/rogue-trader/data/gear';
 // BG3 imports
 import { BuildSelector as BG3BuildSelector } from './games/baldurs-gate-3/components/BuildSelector';
 import { BuildViewer as BG3BuildViewer } from './games/baldurs-gate-3/components/BuildViewer';
+import { getBuild as getBG3BuildById } from './games/baldurs-gate-3/data/builds';
 import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
-import { SearchBar } from './components/SearchBar';
 import './App.css';
 
 type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor' | 'bg3-builds' | 'bg3-companion-builds';
@@ -173,6 +173,87 @@ function App() {
     }
   };
 
+  // RT build tracking helpers
+  const getTrackedRTBuilds = () => {
+    return builds.filter((b) => {
+      const data = b.data as { guideId?: string; companion?: string } | undefined;
+      return data?.guideId !== undefined && data?.companion !== undefined;
+    }) as Array<CharacterBuild & { data: { guideId: string; companion: CompanionName; currentLevel: number } }>;
+  };
+
+  const handleSelectTrackedRTBuild = (guideId: string, level: number) => {
+    const guide = getRTBuildById(guideId);
+    if (guide) {
+      setSelectedGuide(guide);
+      setCurrentLevel(level);
+      const trackedBuild = builds.find((b) => {
+        const data = b.data as { guideId?: string } | undefined;
+        return data?.guideId === guideId;
+      });
+      if (trackedBuild) {
+        setActiveTrackedBuildId(trackedBuild.id);
+      }
+    }
+  };
+
+  // BG3 build tracking
+  const isBG3BuildTracked = (buildId: string) => {
+    return builds.some((b) => {
+      const data = b.data as { buildId?: string } | undefined;
+      return data?.buildId === buildId;
+    });
+  };
+
+  const handleTrackBG3Build = (build: BG3Build) => {
+    if (isBG3BuildTracked(build.id)) return;
+
+    addBuild(
+      build.name,
+      {
+        buildId: build.id,
+        currentLevel: currentLevel,
+      },
+      build.description
+    );
+  };
+
+  const handleSelectTrackedBG3Build = (buildId: string, level: number) => {
+    const build = getBG3BuildById(buildId);
+    if (build) {
+      setSelectedBG3Build(build);
+      setCurrentLevel(level);
+      // Find the tracked build to set as active
+      const trackedBuild = builds.find((b) => {
+        const data = b.data as { buildId?: string } | undefined;
+        return data?.buildId === buildId;
+      });
+      if (trackedBuild) {
+        setActiveTrackedBuildId(trackedBuild.id);
+      }
+    }
+  };
+
+  const handleBG3LevelChange = (level: number) => {
+    setCurrentLevel(level);
+    // Persist level change if viewing a tracked build
+    if (activeTrackedBuildId) {
+      const build = builds.find((b) => b.id === activeTrackedBuildId);
+      if (build) {
+        const data = build.data as Record<string, unknown>;
+        updateBuild(activeTrackedBuildId, {
+          data: { ...data, currentLevel: level },
+        });
+      }
+    }
+  };
+
+  const getTrackedBG3Builds = () => {
+    return builds.filter((b) => {
+      const data = b.data as { buildId?: string } | undefined;
+      return data?.buildId !== undefined;
+    }) as Array<CharacterBuild & { data: { buildId: string; currentLevel: number } }>;
+  };
+
   
   const handleCreateCustomBuild = (companion: CompanionName) => {
     setCustomBuildCompanion(companion);
@@ -259,7 +340,15 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className={`app ${currentGame ? 'has-backdrop' : ''}`}>
+      {currentGame?.heroImage && (
+        <div className="backdrop-container">
+          <div 
+            className="backdrop-image" 
+            style={{ backgroundImage: `url(${currentGame.heroImage})` }}
+          />
+        </div>
+      )}
       <Header 
         currentGame={currentGame} 
         onGameChange={handleGameChange}
@@ -273,12 +362,10 @@ function App() {
         onExportProfile={exportProfile}
         onImportProfile={importProfile}
         onClearAllData={clearAllData}
+        onSearch={currentGame?.id === 'rogue-trader' ? handleSearch : undefined}
       />
 
-      <main 
-        className={`main-content${currentGame ? ' game-selected' : ''}`}
-        style={currentGame?.heroImage ? { '--hero-image': `url(${currentGame.heroImage})` } as React.CSSProperties : undefined}
-      >
+      <main className={`main-content${currentGame ? ' game-selected' : ''}`}>
         {error && (
           <div className="error-banner">
             {error}
@@ -310,7 +397,6 @@ function App() {
                   Companions
                 </button>
               </div>
-              <SearchBar onSearch={handleSearch} />
             </div>
           </>
         )}
@@ -369,15 +455,24 @@ function App() {
             onLevelChange={handleLevelChange}
             onTrackBuild={handleTrackBuild}
             isTracked={isGuideTracked(selectedGuide.id)}
+            trackedBuilds={getTrackedRTBuilds()}
+            onSelectTrackedBuild={handleSelectTrackedRTBuild}
+            onDeleteTrackedBuild={handleDeleteBuild}
           />
         )}
 
         {view === 'build-viewer' && selectedBG3Build && currentGame?.id === 'baldurs-gate-3' && (
           <BG3BuildViewer
             build={selectedBG3Build}
-            onBack={() => { setSelectedBG3Build(null); setView(bg3PreviousView); }}
+            onBack={() => { setSelectedBG3Build(null); setActiveTrackedBuildId(null); setView(bg3PreviousView); }}
             currentLevel={currentLevel}
-            onLevelChange={setCurrentLevel}
+            onLevelChange={handleBG3LevelChange}
+            onTrackBuild={handleTrackBG3Build}
+            isTracked={isBG3BuildTracked(selectedBG3Build.id)}
+            trackedBuilds={getTrackedBG3Builds()}
+            onSelectTrackedBuild={handleSelectTrackedBG3Build}
+            onDeleteTrackedBuild={handleDeleteBuild}
+            getBuildById={getBG3BuildById}
           />
         )}
 

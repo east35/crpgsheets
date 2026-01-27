@@ -1,11 +1,20 @@
 import { useState } from 'react';
 import type { BG3Build } from '../types';
+import type { CharacterBuild } from '../../../types';
 import { getRace } from '../data/character/races';
 import { getBackground } from '../data/character/backgrounds';
 import { getGearInfo } from '../data/gear';
 import { GearTooltip } from './GearTooltip';
 import { KeywordText } from './KeywordText';
+import { MyBuildsPanel, getAvatarForBuild } from './MyBuildsPanel';
 import './BuildViewer.css';
+
+interface TrackedBG3Build extends CharacterBuild {
+  data: {
+    buildId: string;
+    currentLevel: number;
+  };
+}
 
 interface BuildViewerProps {
   build: BG3Build;
@@ -14,6 +23,10 @@ interface BuildViewerProps {
   onLevelChange?: (level: number) => void;
   onTrackBuild?: (build: BG3Build) => void;
   isTracked?: boolean;
+  trackedBuilds?: TrackedBG3Build[];
+  onSelectTrackedBuild?: (buildId: string, level: number) => void;
+  onDeleteTrackedBuild?: (id: string) => void;
+  getBuildById?: (id: string) => BG3Build | undefined;
 }
 
 function GearItem({ name }: { name: string }) {
@@ -37,8 +50,21 @@ function GearItem({ name }: { name: string }) {
   );
 }
 
-export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, onTrackBuild, isTracked }: BuildViewerProps) {
+export function BuildViewer({ 
+  build, 
+  onBack, 
+  currentLevel = 1, 
+  onLevelChange, 
+  onTrackBuild, 
+  isTracked,
+  trackedBuilds = [],
+  onSelectTrackedBuild,
+  onDeleteTrackedBuild,
+  getBuildById,
+}: BuildViewerProps) {
   const [activeTab, setActiveTab] = useState<'progression' | 'stats' | 'gear'>('progression');
+
+  const showPartyBar = trackedBuilds.length > 0 && onSelectTrackedBuild && onDeleteTrackedBuild && getBuildById;
 
   const raceInfo = getRace(build.race);
   const backgroundInfo = getBackground(build.background);
@@ -61,11 +87,28 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
   const finalClassLevels = getClassLevelsAtLevel(12);
 
   return (
-    <div className="build-viewer bg3">
+    <>
+      {showPartyBar && (
+        <MyBuildsPanel
+          trackedBuilds={trackedBuilds}
+          currentBuildId={build.id}
+          onSelectBuild={onSelectTrackedBuild}
+          onDeleteBuild={onDeleteTrackedBuild}
+          getBuildById={getBuildById}
+        />
+      )}
+      <div className={`build-viewer bg3 ${showPartyBar ? 'has-party-bar' : ''}`}>
       <div className="build-viewer-header">
-        <button className="btn btn-secondary btn-sm" onClick={onBack}>
+        {/* <button className="btn btn-secondary btn-sm" onClick={onBack}>
           Back
-        </button>
+        </button> */}
+        {getAvatarForBuild(build) && (
+          <img 
+            src={getAvatarForBuild(build)!} 
+            alt="" 
+            className="build-avatar"
+          />
+        )}
         <div className="build-title">
           <h2>{build.name}</h2>
           <div className="build-meta">
@@ -248,5 +291,6 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
         </div>
       )}
     </div>
+    </>
   );
 }
