@@ -1,0 +1,300 @@
+{
+  "ability_improvement": {
+    "name": "Ability Improvement",
+    "description": "Increase one ability score by 2, or two ability scores by 1, up to a maximum of 20.",
+    "benefits": [
+      "Increase one ability score by 2, or two ability scores by 1, up to a maximum of 20."
+    ]
+  },
+  "actor": {
+    "name": "Actor",
+    "description": "Your Charisma ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Charisma ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "alert": {
+    "name": "Alert",
+    "description": "You gain a +5 bonus to initiative and can't be Surprised .",
+    "benefits": [
+      "You gain a +5 bonus to initiative and can't be Surprised ."
+    ]
+  },
+  "athlete": {
+    "name": "Athlete",
+    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.\nWhen you are Prone , standing up uses significantly less movement.",
+    "benefits": [
+      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
+      "When you are Prone , standing up uses significantly less movement."
+    ]
+  },
+  "charger": {
+    "name": "Charger",
+    "description": "Charge forward and slam your weapon into the first enemy in your way without provoking Opportunity Attacks .",
+    "benefits": [
+      "Charge forward and slam your weapon into the first enemy in your way without provoking Opportunity Attacks ."
+    ]
+  },
+  "crossbow_expert": {
+    "name": "Crossbow Expert",
+    "description": "When you make crossbow attacks within melee range, the attack rolls do not have Disadvantage .",
+    "benefits": [
+      "When you make crossbow attacks within melee range, the attack rolls do not have Disadvantage ."
+    ]
+  },
+  "defensive_duellist": {
+    "name": "Defensive Duellist",
+    "description": "When you are attacked with a melee attack while wielding a Finesse weapon you are proficient in, you can use a Reaction to increase your Armour Class by your proficiency bonus, possibly causing the attack to miss. Requires Dexterity to be at least 13.",
+    "benefits": [
+      "When you are attacked with a melee attack while wielding a Finesse weapon you are proficient in, you can use a Reaction to increase your Armour Class by your proficiency bonus, possibly causing the attack to miss. Requires Dexterity to be at least 13."
+    ]
+  },
+  "dual_wielder": {
+    "name": "Dual Wielder",
+    "description": "You can use Two-Weapon Fighting even if your weapons aren't Light .",
+    "benefits": [
+      "You can use Two-Weapon Fighting even if your weapons aren't Light ."
+    ]
+  },
+  "dungeon_delver": {
+    "name": "Dungeon Delver",
+    "description": "You gain Advantage on Perception checks made to detect hidden objects and on Saving throws made to avoid or resist traps.",
+    "benefits": [
+      "You gain Advantage on Perception checks made to detect hidden objects and on Saving throws made to avoid or resist traps."
+    ]
+  },
+  "durable": {
+    "name": "Durable",
+    "description": "Your Constitution ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Constitution ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "elemental_adept": {
+    "name": "Elemental Adept",
+    "description": "Your spells and attacks ignore resistance to a damage type of your choice. In addition, when you deal that type of damage with a spell , you cannot roll a 1.\nDamage resistance options are one of the following: Elemental Adept: Acid\nElemental Adept: Cold\nElemental Adept: Lightning\nElemental Adept: Fire",
+    "benefits": [
+      "Your spells and attacks ignore resistance to a damage type of your choice. In addition, when you deal that type of damage with a spell , you cannot roll a 1.",
+      "Damage resistance options are one of the following: Elemental Adept: Acid",
+      "Elemental Adept: Cold",
+      "Elemental Adept: Lightning",
+      "Elemental Adept: Fire"
+    ]
+  },
+  "great_weapon_master": {
+    "name": "Great Weapon Master",
+    "description": "When an attack with a melee weapon lands a Critical Hit or kills a creature, you can make another melee weapon attack as a Bonus Action that turn.",
+    "benefits": [
+      "When an attack with a melee weapon lands a Critical Hit or kills a creature, you can make another melee weapon attack as a Bonus Action that turn."
+    ]
+  },
+  "heavily_armoured": {
+    "name": "Heavily Armoured",
+    "description": "Your Strength ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Strength ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "heavy_armour_master": {
+    "name": "Heavy Armour Master",
+    "description": "Your Strength ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Strength ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "lightly_armoured": {
+    "name": "Lightly Armoured",
+    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "lucky": {
+    "name": "Lucky",
+    "description": "You gain 3 Luck Points that recharge after a Long Rest , which you can use to gain Advantage on Attack rolls , Ability checks , or Saving throws , or to make an enemy reroll their Attack roll .",
+    "benefits": [
+      "You gain 3 Luck Points that recharge after a Long Rest , which you can use to gain Advantage on Attack rolls , Ability checks , or Saving throws , or to make an enemy reroll their Attack roll ."
+    ]
+  },
+  "mage_slayer": {
+    "name": "Mage Slayer",
+    "description": "When a creature casts a Spell within melee range of you, you have Advantage on any Saving throws against it.",
+    "benefits": [
+      "When a creature casts a Spell within melee range of you, you have Advantage on any Saving throws against it."
+    ]
+  },
+  "magic_initiate_bard": {
+    "name": "Magic Initiate: Bard",
+    "description": "Learn 2 Cantrips and a 1st-level Spell from the Bard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma .",
+    "benefits": [
+      "Learn 2 Cantrips and a 1st-level Spell from the Bard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma ."
+    ]
+  },
+  "magic_initiate_cleric": {
+    "name": "Magic Initiate: Cleric",
+    "description": "Learn 2 Cantrips and a 1st-level Spell from the Cleric spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom .",
+    "benefits": [
+      "Learn 2 Cantrips and a 1st-level Spell from the Cleric spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom ."
+    ]
+  },
+  "magic_initiate_druid": {
+    "name": "Magic Initiate: Druid",
+    "description": "Learn 2 Cantrips and a 1st-level Spell from the Druid spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom .",
+    "benefits": [
+      "Learn 2 Cantrips and a 1st-level Spell from the Druid spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom ."
+    ]
+  },
+  "magic_initiate_sorcerer": {
+    "name": "Magic Initiate: Sorcerer",
+    "description": "Learn 2 Cantrips and a 1st-level Spell from the Sorcerer spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma .",
+    "benefits": [
+      "Learn 2 Cantrips and a 1st-level Spell from the Sorcerer spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma ."
+    ]
+  },
+  "magic_initiate_warlock": {
+    "name": "Magic Initiate: Warlock",
+    "description": "Learn 2 Cantrips and a 1st-level Spell from the Warlock spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma .",
+    "benefits": [
+      "Learn 2 Cantrips and a 1st-level Spell from the Warlock spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma ."
+    ]
+  },
+  "magic_initiate_wizard": {
+    "name": "Magic Initiate: Wizard",
+    "description": "Learn 2 Cantrips and a 1st-level Spell from the Wizard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Intelligence .",
+    "benefits": [
+      "Learn 2 Cantrips and a 1st-level Spell from the Wizard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Intelligence ."
+    ]
+  },
+  "martial_adept": {
+    "name": "Martial Adept",
+    "description": "Learn two Manoeuvres from the Battle Master archetype and receive 1 (additional) Superiority Die to fuel them. You regain expended Superiority Dice after a Short or Long Rest .",
+    "benefits": [
+      "Learn two Manoeuvres from the Battle Master archetype and receive 1 (additional) Superiority Die to fuel them. You regain expended Superiority Dice after a Short or Long Rest ."
+    ]
+  },
+  "medium_armour_master": {
+    "name": "Medium Armour Master",
+    "description": "When you wear medium armour, it doesn't impose Disadvantage on Stealth checks. The bonus to Armour Class you can gain from your Dexterity modifier also becomes +3 instead of +2.",
+    "benefits": [
+      "When you wear medium armour, it doesn't impose Disadvantage on Stealth checks. The bonus to Armour Class you can gain from your Dexterity modifier also becomes +3 instead of +2."
+    ]
+  },
+  "mobile": {
+    "name": "Mobile",
+    "description": "Your Movement Speed increases by ⁠3 m / 10 ft.",
+    "benefits": [
+      "Your Movement Speed increases by ⁠3 m / 10 ft."
+    ]
+  },
+  "moderately_armoured": {
+    "name": "Moderately Armoured",
+    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "performer": {
+    "name": "Performer",
+    "description": "Your Charisma ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Charisma ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "polearm_master": {
+    "name": "Polearm Master",
+    "description": "When attacking with a Glaive , Halberd , Pike , Quarterstaff , or Spear , you can use a Bonus Action to attack with the butt of your weapon.",
+    "benefits": [
+      "When attacking with a Glaive , Halberd , Pike , Quarterstaff , or Spear , you can use a Bonus Action to attack with the butt of your weapon."
+    ]
+  },
+  "resilient": {
+    "name": "Resilient",
+    "description": "You increase an Ability by 1, to a maximum of 20.\nGain Proficiency in that ability's Saving throws .\nThe available passive features are: Resilient: Strength\nResilient: Dexterity\nResilient: Constitution\nResilient: Intelligence\nResilient: Wisdom",
+    "benefits": [
+      "You increase an Ability by 1, to a maximum of 20.",
+      "Gain Proficiency in that ability's Saving throws .",
+      "The available passive features are: Resilient: Strength",
+      "Resilient: Dexterity",
+      "Resilient: Constitution",
+      "Resilient: Intelligence",
+      "Resilient: Wisdom"
+    ]
+  },
+  "ritual_caster": {
+    "name": "Ritual Caster",
+    "description": "You learn two Ritual spells of your choice.",
+    "benefits": [
+      "You learn two Ritual spells of your choice."
+    ]
+  },
+  "savage_attacker": {
+    "name": "Savage Attacker",
+    "description": "When making melee weapon attacks, you roll your damage dice twice and use the highest result.",
+    "benefits": [
+      "When making melee weapon attacks, you roll your damage dice twice and use the highest result."
+    ]
+  },
+  "sentinel": {
+    "name": "Sentinel",
+    "description": "When an enemy in melee range attacks an ally, you can use a Reaction to make a weapon attack against that enemy. Target ally must not have the Sentinel feat.",
+    "benefits": [
+      "When an enemy in melee range attacks an ally, you can use a Reaction to make a weapon attack against that enemy. Target ally must not have the Sentinel feat."
+    ]
+  },
+  "sharpshooter": {
+    "name": "Sharpshooter",
+    "description": "Your ranged weapon attacks are not penalized for High Ground Rules .",
+    "benefits": [
+      "Your ranged weapon attacks are not penalized for High Ground Rules ."
+    ]
+  },
+  "shield_master": {
+    "name": "Shield Master",
+    "description": "Gain a +2 bonus to Dexterity saving throw when wielding a Shield .",
+    "benefits": [
+      "Gain a +2 bonus to Dexterity saving throw when wielding a Shield ."
+    ]
+  },
+  "skilled": {
+    "name": "Skilled",
+    "description": "You gain Proficiency in 3 Skills of your choice.",
+    "benefits": [
+      "You gain Proficiency in 3 Skills of your choice."
+    ]
+  },
+  "spell_sniper": {
+    "name": "Spell Sniper",
+    "description": "You learn a cantrip, and the number you need to roll a Critical Hit while attacking with a Spell is reduced by 1. This effect can stack.",
+    "benefits": [
+      "You learn a cantrip, and the number you need to roll a Critical Hit while attacking with a Spell is reduced by 1. This effect can stack."
+    ]
+  },
+  "tavern_brawler": {
+    "name": "Tavern Brawler",
+    "description": "Your Strength or Constitution ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Strength or Constitution ability score increases by 1, to a maximum of 20."
+    ]
+  },
+  "tough": {
+    "name": "Tough",
+    "description": "Hit Point maximum increased by 2 for each level.",
+    "benefits": [
+      "Hit Point maximum increased by 2 for each level."
+    ]
+  },
+  "war_caster": {
+    "name": "War Caster",
+    "description": "You gain Advantage on Saving throws to maintain Concentration on a Spell .",
+    "benefits": [
+      "You gain Advantage on Saving throws to maintain Concentration on a Spell ."
+    ]
+  },
+  "weapon_master": {
+    "name": "Weapon Master",
+    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
+    "benefits": [
+      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20."
+    ]
+  }
+}

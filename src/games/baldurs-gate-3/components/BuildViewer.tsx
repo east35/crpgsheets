@@ -2,7 +2,9 @@ import { useState } from 'react';
 import type { BG3Build } from '../types';
 import { getRace } from '../data/character/races';
 import { getBackground } from '../data/character/backgrounds';
+import { getGearInfo } from '../data/gear';
 import { GearTooltip } from './GearTooltip';
+import { KeywordText } from './KeywordText';
 import './BuildViewer.css';
 
 interface BuildViewerProps {
@@ -12,6 +14,27 @@ interface BuildViewerProps {
   onLevelChange?: (level: number) => void;
   onTrackBuild?: (build: BG3Build) => void;
   isTracked?: boolean;
+}
+
+function GearItem({ name }: { name: string }) {
+  const [hasIcon, setHasIcon] = useState(true);
+  const info = getGearInfo(name);
+
+  return (
+    <GearTooltip gearName={name}>
+      <span className="gear-item">
+        {info?.iconPath && hasIcon && (
+          <img
+            className="gear-item-icon"
+            src={info.iconPath}
+            alt={name}
+            onError={() => setHasIcon(false)}
+          />
+        )}
+        <span className="gear-item-name">{name}</span>
+      </span>
+    </GearTooltip>
+  );
 }
 
 export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, onTrackBuild, isTracked }: BuildViewerProps) {
@@ -64,7 +87,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
         )}
       </div>
 
-      <p className="build-description">{build.description}</p>
+      <p className="build-description"><KeywordText text={build.description} /></p>
 
       {build.tags && build.tags.length > 0 && (
         <div className="build-tags">
@@ -137,7 +160,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
                   
                   {levelData.feat && (
                     <div className="feat">
-                      <span className="feat-label">Feat:</span> {levelData.feat}
+                      <span className="feat-label">Feat:</span> <KeywordText text={levelData.feat} />
                       {levelData.abilityScoreImprovement && (
                         <span className="asi">
                           {Object.entries(levelData.abilityScoreImprovement)
@@ -150,12 +173,12 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
                   
                   {levelData.spellsLearned && levelData.spellsLearned.length > 0 && (
                     <div className="spells-learned">
-                      <span className="spells-label">Spells:</span> {levelData.spellsLearned.join(', ')}
+                      <span className="spells-label">Spells:</span> <KeywordText text={levelData.spellsLearned.join(', ')} />
                     </div>
                   )}
                   
                   {levelData.notes && (
-                    <div className="level-notes">{levelData.notes}</div>
+                    <div className="level-notes"><KeywordText text={levelData.notes} /></div>
                   )}
                 </div>
               </div>
@@ -183,7 +206,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
 
           <div className="stats-section">
             <h3>Race: {build.subrace || build.race}</h3>
-            <p>{raceInfo?.description}</p>
+            {raceInfo?.description && <p><KeywordText text={raceInfo.description} /></p>}
             {raceInfo?.traits && (
               <div className="traits">
                 <strong>Racial Traits:</strong> {raceInfo.traits.join(', ')}
@@ -193,7 +216,7 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
 
           <div className="stats-section">
             <h3>Background: {build.background}</h3>
-            <p>{backgroundInfo?.description}</p>
+            {backgroundInfo?.description && <p><KeywordText text={backgroundInfo.description} /></p>}
             {backgroundInfo?.skillProficiencies && (
               <div className="skills">
                 <strong>Skill Proficiencies:</strong> {backgroundInfo.skillProficiencies.join(', ')}
@@ -213,14 +236,12 @@ export function BuildViewer({ build, onBack, currentLevel = 1, onLevelChange, on
                 <div className="slot-items">
                   {rec.items.map((item, idx) => (
                     <span key={item}>
-                      <GearTooltip gearName={item}>
-                        {item}
-                      </GearTooltip>
+                      <GearItem name={item} />
                       {idx < rec.items.length - 1 && <span className="item-separator"> / </span>}
                     </span>
                   ))}
                 </div>
-                {rec.notes && <div className="slot-notes">{rec.notes}</div>}
+                {rec.notes && <div className="slot-notes"><KeywordText text={rec.notes} /></div>}
               </div>
             ))}
           </div>

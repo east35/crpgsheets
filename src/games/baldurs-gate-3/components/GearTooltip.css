@@ -35,9 +35,28 @@
   margin-bottom: 0.5rem;
 }
 
+.gear-tooltip-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.gear-tooltip-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #2a2a4a;
+  flex-shrink: 0;
+}
+
 .gear-tooltip-name {
   font-weight: 600;
   font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .gear-tooltip-rarity {

@@ -344,6 +344,25 @@
   color: #555;
 }
 
+.gear-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.gear-item-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 3px;
+  background: #2a2a4a;
+  flex-shrink: 0;
+}
+
+.gear-item-name {
+  vertical-align: baseline;
+}
+
 .slot-notes {
   grid-column: 2;
   color: #666;

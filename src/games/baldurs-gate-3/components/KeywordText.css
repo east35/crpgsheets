@@ -1,0 +1,159 @@
+/* BG3 Keyword Trigger Styles */
+.bg3-keyword-trigger {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px dotted currentColor;
+  font-weight: 500;
+}
+
+/* Category-specific trigger colors */
+.bg3-keyword-class { color: #e74c3c; }
+.bg3-keyword-subclass { color: #c0392b; }
+.bg3-keyword-race { color: #9b59b6; }
+.bg3-keyword-subrace { color: #8e44ad; }
+.bg3-keyword-background { color: #3498db; }
+.bg3-keyword-spell { color: #f39c12; }
+.bg3-keyword-feat { color: #2ecc71; }
+.bg3-keyword-condition { color: #e91e63; }
+.bg3-keyword-ability-score { color: #1abc9c; }
+.bg3-keyword-skill { color: #27ae60; }
+
+/* BG3-themed tooltip */
+.bg3-keyword-tooltip {
+  z-index: 9999;
+  background: #1a1a1a;
+  border: 1px solid #8b7355; /* BG3 gold/brown theme */
+  border-radius: 4px;
+  padding: 12px;
+  min-width: 280px;
+  max-width: 380px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+  text-align: left;
+}
+
+.bg3-keyword-tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #4a4035;
+}
+
+.bg3-keyword-tooltip-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #2a2520;
+  flex-shrink: 0;
+  border: 1px solid #5a4a3a;
+}
+
+.bg3-keyword-tooltip-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.bg3-keyword-tooltip-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #e8dcc8; /* BG3 parchment color */
+}
+
+.bg3-keyword-tooltip-category {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  width: fit-content;
+}
+
+.bg3-keyword-tooltip-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #b8a890;
+  white-space: pre-wrap;
+}
+
+.bg3-keyword-tooltip-field {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #b8a890;
+  margin-bottom: 4px;
+}
+
+.bg3-keyword-tooltip-label {
+  font-weight: 700;
+  color: #e8dcc8;
+}
+
+.bg3-keyword-tooltip-flavor {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #b8a890;
+  font-style: italic;
+  margin: 8px 0;
+  padding: 6px 0;
+  border-top: 1px solid #4a4035;
+  border-bottom: 1px solid #4a4035;
+}
+
+.bg3-keyword-tooltip-concentration {
+  font-size: 0.85rem;
+  color: #f39c12;
+  font-weight: 500;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #4a4035;
+}
+
+.bg3-keyword-tooltip-link {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #4a4035;
+}
+
+.bg3-keyword-tooltip-link a {
+  color: #c9a75c; /* BG3 gold link color */
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.bg3-keyword-tooltip-link a:hover {
+  text-decoration: underline;
+  color: #e8c96c;
+}
+
+/* Feat-specific styles */
+.bg3-keyword-tooltip-benefits {
+  margin: 8px 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.bg3-keyword-tooltip-benefits li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #b8a890;
+  margin-bottom: 6px;
+}
+
+.bg3-keyword-tooltip-benefits li::marker {
+  color: #2ecc71;
+}
+
+.bg3-keyword-tooltip-notes {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #9a8a7a;
+  font-style: italic;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #4a4035;
+}

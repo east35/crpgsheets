@@ -12,6 +12,7 @@ export const GEAR_DATA: Record<string, GearInfo> = {
     location: 'Blighted Village - Shabby Wooden Doors basement',
     act: 1,
     wikiUrl: 'https://bg3.wiki/wiki/Haste_Helm',
+    iconPath: '/images/bg3/gear/haste-helm.png',
   },
   'helmet-of-arcane-acuity': {
     name: 'Helmet of Arcane Acuity',
@@ -22,6 +23,7 @@ export const GEAR_DATA: Record<string, GearInfo> = {
     location: "Sold by Araj Oblodra in Moonrise Towers",
     act: 2,
     wikiUrl: 'https://bg3.wiki/wiki/Helmet_of_Arcane_Acuity',
+    iconPath: '/images/bg3/gear/helmet-of-arcane-acuity.png',
   },
   'circlet-of-fire': {
     name: 'Circlet of Fire',
@@ -32,6 +34,7 @@ export const GEAR_DATA: Record<string, GearInfo> = {
     location: 'Grymforge - Adamantine Forge area',
     act: 1,
     wikiUrl: 'https://bg3.wiki/wiki/Circlet_of_Fire',
+    iconPath: '/images/bg3/gear/circlet-of-fire.png',
   },
   'birthright': {
     name: 'Birthright',
@@ -42,6 +45,7 @@ export const GEAR_DATA: Record<string, GearInfo> = {
     location: 'Ramazith\'s Tower - Lorroakan\'s portal',
     act: 3,
     wikiUrl: 'https://bg3.wiki/wiki/Birthright',
+    iconPath: '/images/bg3/gear/birthright.png',
   },
   'helm-of-balduran': {
     name: 'Helm of Balduran',

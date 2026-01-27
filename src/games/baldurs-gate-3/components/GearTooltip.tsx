@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { getGearInfo } from '../data/gear';
+import { KeywordText } from './KeywordText';
 import './GearTooltip.css';
 
 interface GearTooltipProps {
@@ -12,6 +13,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState<'above' | 'below'>('below');
   const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
+  const [hasIcon, setHasIcon] = useState(true);
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<number | null>(null);
@@ -97,12 +99,22 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
       onMouseLeave={handleMouseLeave}
     >
       <div className="gear-tooltip-header">
-        <span 
-          className="gear-tooltip-name"
-          style={{ color: rarityColors[gearInfo.rarity] || '#fff' }}
-        >
-          {gearInfo.name}
-        </span>
+        <div className="gear-tooltip-title">
+          {gearInfo.iconPath && hasIcon && (
+            <img
+              className="gear-tooltip-icon"
+              src={gearInfo.iconPath}
+              alt={gearInfo.name}
+              onError={() => setHasIcon(false)}
+            />
+          )}
+          <span 
+            className="gear-tooltip-name"
+            style={{ color: rarityColors[gearInfo.rarity] || '#fff' }}
+          >
+            {gearInfo.name}
+          </span>
+        </div>
         <span 
           className="gear-tooltip-rarity"
           style={{ backgroundColor: rarityColors[gearInfo.rarity] || '#666' }}
@@ -115,7 +127,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
         {gearInfo.act && <span className="gear-act">Act {gearInfo.act}</span>}
       </div>
       <div className="gear-tooltip-effect">
-        {gearInfo.effect}
+        <KeywordText text={gearInfo.effect} />
       </div>
       {gearInfo.location && (
         <div className="gear-tooltip-location">
