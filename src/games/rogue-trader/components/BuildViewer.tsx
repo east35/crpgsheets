@@ -169,6 +169,16 @@ export function BuildViewer({
             </button>
             <div className="build-avatar-level">{currentLevel}</div>
           </div>
+        ) : isPlayerBuild && profileId ? (
+          <div className="build-avatar-wrapper">
+            <AvatarUpload
+              buildId={build.id}
+              gameId={gameId}
+              profileId={profileId}
+              className="build-avatar-upload"
+            />
+            <div className="build-avatar-level">{currentLevel}</div>
+          </div>
         ) : null}
         <div className="build-title">
           <h2>{build.companion}: {build.buildName}</h2>

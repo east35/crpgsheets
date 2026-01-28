@@ -54,6 +54,36 @@
   border: none;
 }
 
+/* Mobile subnav tabs */
+.header-subnav-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid #4a4a6a;
+}
+
+.header-subnav-tab {
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid #4a4a6a;
+  border-radius: 6px;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.header-subnav-tab:hover {
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.header-subnav-tab.active {
+  color: #fff;
+  background: #4a4a6a;
+  border-color: #5a5a7a;
+}
+
 /* Header */
 .header {
   background: rgba(26, 26, 46, 0.15);

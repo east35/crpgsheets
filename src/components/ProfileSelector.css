@@ -161,15 +161,16 @@
 
 /* Switch Profile Section */
 .profile-switch-section {
-  border-bottom: 1px solid #2a2a3e;
+  padding: 16px;
+  background: #1a1a2e;
 }
 
 .profile-switch-header {
-  padding: 10px 16px 6px;
   font-size: 0.75rem;
   color: #8a8aaa;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  margin-bottom: 8px;
 }
 
 .profile-list {
@@ -181,10 +182,13 @@
   display: flex;
   align-items: center;
   padding: 4px;
+}
+
+.profile-selector:not(.mobile) .profile-item {
   border-bottom: 1px solid #2a2a3e;
 }
 
-.profile-item:last-child {
+.profile-selector:not(.mobile) .profile-item:last-child {
   border-bottom: none;
 }
 

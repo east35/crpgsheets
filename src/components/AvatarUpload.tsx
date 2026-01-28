@@ -189,8 +189,7 @@ export function AvatarUpload({
           onClick={() => fileInputRef.current?.click()}
           disabled={isUploading}
         >
-          <Camera width={24} height={24} />
-          <span>{isUploading ? 'Uploading...' : 'Add Photo'}</span>
+          <span className="avatar-upload-plus">{isUploading ? '...' : '+'}</span>
         </button>
       )}
       

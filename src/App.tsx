@@ -487,18 +487,18 @@ function App() {
           onClearAllData={clearAllData}
           onSearch={currentGame.id === 'rogue-trader' ? handleSearch : undefined}
           isPartyActive={view === 'my-builds' || (view === 'build-viewer' && navContext === 'party')}
-          isBuildsActive={
-            (currentGame.id === 'rogue-trader' && (view === 'companion-builds' || view === 'rogue-trader-builds' || (view === 'build-viewer' && navContext === 'builds'))) ||
-            (currentGame.id === 'baldurs-gate-3' && (view === 'bg3-builds' || view === 'bg3-companion-builds' || (view === 'build-viewer' && navContext === 'builds')))
-          }
           onViewParty={handleViewMyBuilds}
-          onViewBuilds={() => {
-            if (currentGame.id === 'rogue-trader') {
-              handleViewCompanionBuilds();
-            } else {
-              setView('bg3-companion-builds');
-            }
-          }}
+          subnavItems={
+            currentGame.id === 'rogue-trader'
+              ? [
+                  { label: 'Companions', active: view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader'), onClick: handleViewCompanionBuilds },
+                  { label: 'Rogue Trader', active: view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader'), onClick: () => setView('rogue-trader-builds') },
+                ]
+              : [
+                  { label: 'Companions', active: view === 'bg3-companion-builds', onClick: () => setView('bg3-companion-builds') },
+                  { label: 'Tav', active: view === 'bg3-builds', onClick: () => setView('bg3-builds') },
+                ]
+          }
         />
       )}
 

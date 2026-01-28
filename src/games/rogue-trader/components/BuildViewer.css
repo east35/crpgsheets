@@ -83,6 +83,17 @@
   display: block;
 }
 
+.build-avatar-upload .avatar-upload-placeholder,
+.build-avatar-upload .avatar-upload-preview {
+  width: 80px;
+  height: 100px;
+}
+
+.build-avatar-upload .avatar-upload-image {
+  width: 100%;
+  height: 100%;
+}
+
 .build-avatar-container {
   position: relative;
   flex-shrink: 0;

@@ -28,9 +28,9 @@ interface HeaderProps {
   onSearch?: (query: string) => SearchResult[];
   // Mobile nav props
   isPartyActive?: boolean;
-  isBuildsActive?: boolean;
   onViewParty?: () => void;
-  onViewBuilds?: () => void;
+  // Subnav items for mobile nav
+  subnavItems?: { label: string; active: boolean; onClick: () => void }[];
 }
 
 export function Header({
@@ -48,9 +48,8 @@ export function Header({
   onClearAllData,
   onSearch,
   isPartyActive,
-  isBuildsActive,
   onViewParty,
-  onViewBuilds,
+  subnavItems,
 }: HeaderProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -128,8 +127,8 @@ export function Header({
           />
         )}
 
-        {/* Mobile: Party/Builds tabs aligned right */}
-        {onViewParty && onViewBuilds && (
+        {/* Mobile: Flat nav - Party, Companions, Rogue Trader/Tav */}
+        {onViewParty && subnavItems && (
           <div className="header-mobile-nav mobile-only">
             <button
               className={`header-nav-tab ${isPartyActive ? 'active' : ''}`}
@@ -137,12 +136,15 @@ export function Header({
             >
               Party
             </button>
-            <button
-              className={`header-nav-tab ${isBuildsActive ? 'active' : ''}`}
-              onClick={onViewBuilds}
-            >
-              Builds
-            </button>
+            {subnavItems.map((item, i) => (
+              <button
+                key={i}
+                className={`header-nav-tab ${item.active ? 'active' : ''}`}
+                onClick={item.onClick}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         )}
 

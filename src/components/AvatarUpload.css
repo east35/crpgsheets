@@ -38,6 +38,12 @@
   text-align: center;
 }
 
+.avatar-upload-plus {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
 .avatar-upload-preview {
   position: relative;
   width: 80px;

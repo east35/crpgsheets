@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import type { Profile } from '../types';
-import { Folder, NavArrowDown, Check, Xmark, EditPencil, Copy, Download, Upload, Trash } from 'iconoir-react';
+import { Folder, NavArrowDown, Check, Xmark, EditPencil, Copy, Download, ShareIos, Trash } from 'iconoir-react';
 import './ProfileSelector.css';
 
 interface ProfileSelectorProps {
@@ -128,8 +128,8 @@ export function ProfileSelector({
                   className="profile-action-btn-large"
                   onClick={() => onExportProfile(currentProfile.id)}
                 >
-                  <Download width={16} height={16} />
-                  <span>Export</span>
+                  <ShareIos width={16} height={16} />
+                  <span>Share</span>
                 </button>
                 <button
                   className="profile-action-btn-large delete"
@@ -171,7 +171,7 @@ export function ProfileSelector({
           {/* Switch Profile Section */}
           {profiles.length > 1 && (
             <div className="profile-switch-section">
-              <div className="profile-switch-header">Switch Playthrough</div>
+              <span className="profile-current-label">Switch Playthrough</span>
               <div className="profile-list">
                 {profiles.filter(p => p.id !== currentProfile?.id).map(profile => (
                   <div key={profile.id} className="profile-item">
@@ -246,7 +246,7 @@ export function ProfileSelector({
               input.click();
             }}
           >
-            <Upload width={14} height={14} /> Import Playthrough
+            <Download width={14} height={14} /> Import Playthrough
           </button>
 
           {onClearAllData && (
@@ -308,7 +308,7 @@ export function ProfileSelector({
                   className="profile-action-btn-large"
                   onClick={() => onExportProfile(currentProfile.id)}
                 >
-                  <Download width={16} height={16} />
+                  <ShareIos width={16} height={16} />
                   <span>Export</span>
                 </button>
                 <button
@@ -406,7 +406,7 @@ export function ProfileSelector({
                 input.click();
               }}
             >
-              <Upload width={14} height={14} /> Import Playthrough
+              <Download width={14} height={14} /> Import Playthrough
             </button>
             {isCreating ? (
             <div className="profile-create-form">

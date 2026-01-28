@@ -174,7 +174,7 @@ export function useProfiles(gameId: string) {
     const newProfile: Profile = {
       id: generateProfileId(),
       gameId,
-      name: profileName + ' (Imported)',
+      name: profileName,
       description: profileDesc,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
