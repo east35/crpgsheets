@@ -7,7 +7,9 @@ import { getBackground } from '../data/character/backgrounds';
 import { getGearInfo } from '../data/gear';
 import { GearTooltip } from './GearTooltip';
 import { KeywordText } from './KeywordText';
-import { MyBuildsPanel, getAvatarForBuild } from './MyBuildsPanel';
+import { MyBuildsPanel, getAvatarForBuild, getCompanionFromBuild } from './MyBuildsPanel';
+import { ImageLightbox } from '../../../components/ImageLightbox';
+import { AvatarUpload, useCustomAvatar } from '../../../components/AvatarUpload';
 import './BuildViewer.css';
 
 interface TrackedBG3Build extends CharacterBuild {
@@ -29,6 +31,8 @@ interface BuildViewerProps {
   onSelectTrackedBuild?: (buildId: string, level: number) => void;
   onDeleteTrackedBuild?: (id: string) => void;
   getBuildById?: (id: string) => BG3Build | undefined;
+  gameId?: string;
+  profileId?: string;
 }
 
 function GearItem({ name }: { name: string }) {
@@ -58,17 +62,27 @@ export function BuildViewer({
   currentLevel = 1, 
   onLevelChange, 
   onTrackBuild, 
-  onUntrackBuild,
+  onUntrackBuild: _onUntrackBuild,
   isTracked,
   trackedBuilds = [],
   onSelectTrackedBuild,
   onDeleteTrackedBuild,
   getBuildById,
+  gameId = 'baldurs-gate-3',
+  profileId = '',
 }: BuildViewerProps) {
   void _onBack;
+  void _onUntrackBuild;
   const [activeTab, setActiveTab] = useState<'progression' | 'stats' | 'gear'>('progression');
+  const [showLightbox, setShowLightbox] = useState(false);
+  const [pendingLevelChange, setPendingLevelChange] = useState<number | null>(null);
 
   const showPartyBar = trackedBuilds.length > 0 && onSelectTrackedBuild && onDeleteTrackedBuild && getBuildById;
+  
+  // Check if this is a player character build (not a companion)
+  const isPlayerBuild = !getCompanionFromBuild(build);
+  const customAvatar = useCustomAvatar(isPlayerBuild ? build.id : undefined);
+  const avatarUrl = customAvatar?.imageData || getAvatarForBuild(build);
 
   const raceInfo = getRace(build.race);
   const backgroundInfo = getBackground(build.background);
@@ -77,6 +91,19 @@ export function BuildViewer({
   const getClassLevelsAtLevel = (level: number) => {
     const prog = build.progression.find(p => p.characterLevel === level);
     return prog?.classLevels || [];
+  };
+
+  // Calculate cumulative ability scores at a given level
+  const getAbilityScoresAtLevel = (level: number) => {
+    const scores = { ...build.abilityScores };
+    for (const prog of build.progression) {
+      if (prog.characterLevel <= level && prog.abilityScoreImprovement) {
+        for (const [stat, bonus] of Object.entries(prog.abilityScoreImprovement)) {
+          scores[stat as keyof typeof scores] += bonus;
+        }
+      }
+    }
+    return scores;
   };
 
   // Format class levels for display
@@ -89,6 +116,25 @@ export function BuildViewer({
 
   // Get total class breakdown
   const finalClassLevels = getClassLevelsAtLevel(12);
+
+  // Handle level row click - show confirmation if different from current level
+  const handleLevelClick = (level: number) => {
+    if (level === currentLevel) return;
+    setPendingLevelChange(level);
+  };
+
+  // Confirm level change
+  const confirmLevelChange = () => {
+    if (pendingLevelChange !== null) {
+      onLevelChange?.(pendingLevelChange);
+      setPendingLevelChange(null);
+    }
+  };
+
+  // Cancel level change
+  const cancelLevelChange = () => {
+    setPendingLevelChange(null);
+  };
 
   return (
     <>
@@ -106,13 +152,22 @@ export function BuildViewer({
         {/* <button className="btn btn-secondary btn-sm" onClick={onBack}>
           Back
         </button> */}
-        {getAvatarForBuild(build) && (
-          <img 
-            src={getAvatarForBuild(build)!} 
-            alt="" 
-            className="build-avatar"
-          />
-        )}
+        {avatarUrl ? (
+          <div className="build-avatar-wrapper">
+            <button
+              className="build-avatar-btn"
+              onClick={() => setShowLightbox(true)}
+              aria-label="View larger portrait"
+            >
+              <img
+                src={avatarUrl}
+                alt=""
+                className="build-avatar"
+              />
+            </button>
+            <div className="build-avatar-level">{currentLevel}</div>
+          </div>
+        ) : null}
         <div className="build-title">
           <h2>{build.name}</h2>
           <div className="build-meta">
@@ -122,43 +177,28 @@ export function BuildViewer({
             <span className="separator">•</span>
             <span className="classes">{formatClassLevels(finalClassLevels)}</span>
           </div>
+          {build.tags && build.tags.length > 0 && (
+            <div className="build-tags">
+              {build.tags.map(tag => (
+                <span key={tag} className="tag">{tag}</span>
+              ))}
+              {build.difficulty && (
+                <span className={`tag difficulty ${build.difficulty.toLowerCase()}`}>{build.difficulty}</span>
+              )}
+            </div>
+          )}
+          <p className="build-description"><KeywordText text={build.description} /></p>
         </div>
-        {onTrackBuild && (
+        
+        {onTrackBuild && !isTracked && (
           <button
-            className={`btn ${isTracked ? 'btn-secondary' : 'btn-primary'}`}
-            onClick={() => isTracked && onUntrackBuild ? onUntrackBuild(build.id) : onTrackBuild(build)}
+            className="btn btn-primary"
+            onClick={() => onTrackBuild(build)}
           >
-            {isTracked ? 'Untrack' : 'Track Build'}
+            Add to Party
           </button>
         )}
       </div>
-
-      <p className="build-description"><KeywordText text={build.description} /></p>
-
-      {build.tags && build.tags.length > 0 && (
-        <div className="build-tags">
-          {build.tags.map(tag => (
-            <span key={tag} className="tag">{tag}</span>
-          ))}
-          {build.difficulty && (
-            <span className={`tag difficulty ${build.difficulty.toLowerCase()}`}>{build.difficulty}</span>
-          )}
-        </div>
-      )}
-
-      {onLevelChange && (
-        <div className="level-selector">
-          <label>Current Level:</label>
-          <input
-            type="range"
-            min="1"
-            max="12"
-            value={currentLevel}
-            onChange={(e) => onLevelChange(Number(e.target.value))}
-          />
-          <span className="level-display">{currentLevel}</span>
-        </div>
-      )}
 
       <div className="tabs">
         <button
@@ -193,7 +233,7 @@ export function BuildViewer({
               <div
                 key={levelData.characterLevel}
                 className={`level-row ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
-                onClick={() => onLevelChange?.(levelData.characterLevel)}
+                onClick={() => handleLevelClick(levelData.characterLevel)}
               >
                 <div className="level-number">
                   {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
@@ -227,6 +267,25 @@ export function BuildViewer({
                     <div className="level-notes"><KeywordText text={levelData.notes} /></div>
                   )}
                 </div>
+                
+                {levelData.abilityScoreImprovement && (
+                  <div className="level-stat-changes">
+                    {(() => {
+                      const newScores = getAbilityScoresAtLevel(levelData.characterLevel);
+                      return Object.entries(levelData.abilityScoreImprovement).map(([stat, _bonus]) => {
+                        const newValue = newScores[stat as keyof typeof newScores];
+                        const modifier = Math.floor((newValue - 10) / 2);
+                        return (
+                          <div key={stat} className="stat-change-item">
+                            <span className="stat-change-name">{stat.slice(0, 3).toUpperCase()}</span>
+                            <span className="stat-change-value">{newValue}</span>
+                            <span className="stat-change-mod">{modifier >= 0 ? '+' : ''}{modifier}</span>
+                          </div>
+                        );
+                      });
+                    })()}
+                  </div>
+                )}
               </div>
             );
           })}
@@ -294,6 +353,39 @@ export function BuildViewer({
         </div>
       )}
     </div>
+    {showLightbox && avatarUrl && (
+      <ImageLightbox
+        src={avatarUrl}
+        alt={`${build.name} portrait`}
+        onClose={() => setShowLightbox(false)}
+      >
+        {isPlayerBuild && profileId && (
+          <AvatarUpload
+            buildId={build.id}
+            gameId={gameId}
+            profileId={profileId}
+          />
+        )}
+      </ImageLightbox>
+    )}
+    {pendingLevelChange !== null && (
+      <div className="level-confirm-overlay" onClick={cancelLevelChange}>
+        <div className="level-confirm-dialog" onClick={(e) => e.stopPropagation()}>
+          <div className="level-confirm-title">Change Level?</div>
+          <div className="level-confirm-message">
+            Set {build.name} to <strong>Level {pendingLevelChange}</strong>?
+          </div>
+          <div className="level-confirm-actions">
+            <button className="level-confirm-cancel" onClick={cancelLevelChange}>
+              Cancel
+            </button>
+            <button className="level-confirm-ok" onClick={confirmLevelChange}>
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
     </>
   );
 }

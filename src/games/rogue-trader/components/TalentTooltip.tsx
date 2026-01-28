@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { getTalentInfo } from '../data/talents';
+import { useTooltipSheet } from '../../../components/TooltipSheet';
 import './TalentTooltip.css';
 
 interface TalentTooltipProps {
@@ -15,10 +16,12 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeoutRef = useRef<number | null>(null);
+  const { showSheet, isMobile } = useTooltipSheet();
 
   const talentInfo = getTalentInfo(talentName);
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
@@ -27,9 +30,28 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     hideTimeoutRef.current = window.setTimeout(() => {
       setIsVisible(false);
     }, 150);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isMobile || !talentInfo) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const meta: Array<{ label: string; value: string; color?: string }> = [];
+    if (talentInfo.cost) meta.push({ label: 'Cost', value: talentInfo.cost, color: '#60a0ff' });
+    if (talentInfo.target) meta.push({ label: 'Target', value: talentInfo.target, color: '#a0ff60' });
+
+    showSheet({
+      title: talentInfo.name,
+      subtitle: talentInfo.source?.join(', '),
+      iconUrl: talentInfo.iconPath,
+      meta,
+      description: talentInfo.effect || '',
+    });
   };
 
   useEffect(() => {
@@ -45,11 +67,11 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
       const triggerRect = triggerRef.current.getBoundingClientRect();
       const tooltipHeight = tooltipRef.current.offsetHeight;
       const tooltipWidth = tooltipRef.current.offsetWidth;
-      
+
       // Calculate position
       let top: number;
       let newPosition: 'top' | 'bottom';
-      
+
       if (triggerRect.top - tooltipHeight - 10 < 0) {
         newPosition = 'bottom';
         top = triggerRect.bottom + 8;
@@ -57,12 +79,12 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
         newPosition = 'top';
         top = triggerRect.top - tooltipHeight - 8;
       }
-      
+
       setPosition(newPosition);
 
       // Calculate horizontal position with viewport containment
       let left = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
-      
+
       // Constrain to viewport
       const padding = 10;
       if (left < padding) {
@@ -70,7 +92,7 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
       } else if (left + tooltipWidth > window.innerWidth - padding) {
         left = window.innerWidth - padding - tooltipWidth;
       }
-      
+
       setTooltipStyle({
         position: 'fixed',
         top: `${top}px`,
@@ -79,9 +101,9 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
     }
   }, [isVisible]);
 
-  const tooltipContent = isVisible && talentInfo && createPortal(
-    <div 
-      ref={tooltipRef} 
+  const tooltipContent = isVisible && !isMobile && talentInfo && createPortal(
+    <div
+      ref={tooltipRef}
       className={`talent-tooltip ${position}`}
       style={tooltipStyle}
       onMouseEnter={handleMouseEnter}
@@ -121,6 +143,7 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
       className="talent-tooltip-trigger"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children || talentName}
       {tooltipContent}

@@ -1,11 +1,21 @@
-import type { BG3Build } from '../types';
+import { useState } from 'react';
+import { EditPencil, NavArrowRight } from 'iconoir-react';
+import type { BG3Build, CompanionInfo } from '../types';
 import { getAllBuilds } from '../data/builds';
 import { getAllCompanions } from '../data/companions';
+import { BuildSelectorModal } from './BuildSelectorModal';
 import './BuildSelector.css';
+
+interface TrackedBuildInfo {
+  buildId: string;
+  currentLevel: number;
+}
 
 interface BuildSelectorProps {
   onSelectBuild: (build: BG3Build) => void;
   buildType?: 'all' | 'companion';
+  trackedBuilds?: TrackedBuildInfo[];
+  onSelectTrackedBuild?: (buildId: string, level: number) => void;
 }
 
 const DIFFICULTY_ORDER: Record<string, number> = {
@@ -14,7 +24,14 @@ const DIFFICULTY_ORDER: Record<string, number> = {
   'Advanced': 3,
 };
 
-export function BuildSelector({ onSelectBuild, buildType = 'all' }: BuildSelectorProps) {
+export function BuildSelector({ onSelectBuild, buildType = 'all', trackedBuilds = [], onSelectTrackedBuild }: BuildSelectorProps) {
+  const [modalCompanion, setModalCompanion] = useState<CompanionInfo | null>(null);
+
+  // Get tracked build info by buildId
+  const getTrackedBuild = (buildId: string): TrackedBuildInfo | undefined => {
+    return trackedBuilds.find(tb => tb.buildId === buildId);
+  };
+
   const allBuilds = getAllBuilds();
   const allCompanions = getAllCompanions();
   
@@ -29,18 +46,38 @@ export function BuildSelector({ onSelectBuild, buildType = 'all' }: BuildSelecto
     }).join(' / ');
   };
 
+  // Get builds for a specific companion
+  const getBuildsForCompanion = (companion: CompanionInfo): BG3Build[] => {
+    return allBuilds
+      .filter(b => b.tags?.includes('Companion') && b.tags?.includes(companion.name))
+      .sort((a, b) => {
+        const aOrder = DIFFICULTY_ORDER[a.difficulty || 'Intermediate'] || 2;
+        const bOrder = DIFFICULTY_ORDER[b.difficulty || 'Intermediate'] || 2;
+        return aOrder - bOrder;
+      });
+  };
+
+  // Get tracked build for a specific companion
+  const getTrackedBuildForCompanion = (companion: CompanionInfo): { build: BG3Build; info: TrackedBuildInfo } | undefined => {
+    const builds = getBuildsForCompanion(companion);
+    for (const build of builds) {
+      const tracked = getTrackedBuild(build.id);
+      if (tracked) {
+        return { build, info: tracked };
+      }
+    }
+    return undefined;
+  };
+
   if (buildType === 'companion') {
-    // Group builds by companion
-    const companionBuilds = allCompanions.map(companion => {
-      const builds = allBuilds
-        .filter(b => b.tags?.includes('Companion') && b.tags?.includes(companion.name))
-        .sort((a, b) => {
-          const aOrder = DIFFICULTY_ORDER[a.difficulty || 'Intermediate'] || 2;
-          const bOrder = DIFFICULTY_ORDER[b.difficulty || 'Intermediate'] || 2;
-          return aOrder - bOrder;
-        });
-      return { companion, builds };
-    }).filter(({ builds }) => builds.length > 0);
+    // Get companions that have builds
+    const companionsWithBuilds = allCompanions.filter(companion => {
+      const builds = getBuildsForCompanion(companion);
+      return builds.length > 0;
+    });
+
+    // Get the modal companion's builds
+    const modalBuilds = modalCompanion ? getBuildsForCompanion(modalCompanion) : [];
 
     return (
       <div className="build-selector bg3">
@@ -50,59 +87,116 @@ export function BuildSelector({ onSelectBuild, buildType = 'all' }: BuildSelecto
         </p>
 
         <div className="companion-list">
-          {companionBuilds.map(({ companion, builds }) => (
-            <div
-              key={companion.name}
-              className="companion-section"
-              style={
-                companion.portraitUrl
-                  ? { '--companion-bg': `url(${companion.portraitUrl})` } as React.CSSProperties
-                  : undefined
-              }
-            >
-              <div className="companion-header">
-                <div className="companion-title-row">
+          {companionsWithBuilds.map((companion) => {
+            const builds = getBuildsForCompanion(companion);
+            const trackedData = getTrackedBuildForCompanion(companion);
+            
+            // When tracked, show the build details; otherwise show companion info
+            const trackedBuild = trackedData?.build;
+            
+            return (
+              <div
+                key={companion.name}
+                className={`companion-section ${trackedData ? 'has-tracked' : ''}`}
+              >
+                {/* Companion/Build Card Layout */}
+                <div className="companion-card-layout">
                   {companion.portraitUrl && (
-                    <img 
-                      src={companion.portraitUrl} 
-                      alt={companion.fullName} 
-                      className="companion-portrait"
-                    />
-                  )}
-                  <div className="companion-title-info">
-                    <h3>{companion.fullName}</h3>
-                    <span className="companion-role">{companion.role}</span>
-                  </div>
-                </div>
-                <p className="companion-bio">{companion.bio}</p>
-                <blockquote className="companion-quote">"{companion.quote}"</blockquote>
-              </div>
-
-              <div className="builds-grid">
-                {builds.map((build) => (
-                  <button
-                    key={build.id}
-                    className="build-card"
-                    onClick={() => onSelectBuild(build)}
-                  >
-                    <div className="build-card-header">
-                      <div className="build-name">{build.name.replace(`${companion.name}: `, '')}</div>
-                      {build.difficulty && (
-                        <span className={`difficulty-badge ${build.difficulty.toLowerCase()}`}>
-                          {build.difficulty}
-                        </span>
+                    <div className="companion-card-portrait-wrapper">
+                      <img
+                        src={companion.portraitUrl}
+                        alt={companion.fullName}
+                        className="companion-card-portrait"
+                      />
+                      {trackedData && (
+                        <div className="companion-card-level-badge">{trackedData.info.currentLevel}</div>
                       )}
                     </div>
-                    <div className="build-path">
-                      {formatClassLevels(build)}
+                  )}
+                  <div className="companion-card-content">
+                    <div className="companion-card-title">
+                      {trackedBuild ? trackedBuild.name : companion.fullName}
                     </div>
-                    <p className="build-desc">{build.description}</p>
+                    <div className="companion-card-meta">
+                      <span className="companion-card-race">{companion.subrace || companion.race}</span>
+                      <span className="companion-card-separator">•</span>
+                      <span className="companion-card-background">{companion.background}</span>
+                      {trackedBuild && (
+                        <>
+                          <span className="companion-card-separator">•</span>
+                          <span className="companion-card-classes">{formatClassLevels(trackedBuild)}</span>
+                        </>
+                      )}
+                    </div>
+                    {trackedBuild?.tags && trackedBuild.tags.length > 0 && (
+                      <div className="companion-card-tags">
+                        {trackedBuild.tags.map(tag => (
+                          <span 
+                            key={tag} 
+                            className={`companion-card-tag ${tag === trackedBuild.difficulty ? `difficulty ${trackedBuild.difficulty?.toLowerCase()}` : ''}`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {trackedBuild?.description ? (
+                      <div className="companion-card-desc">{trackedBuild.description}</div>
+                    ) : (
+                      <div className="companion-card-desc">{companion.bio}</div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Build Actions */}
+                {trackedData && onSelectTrackedBuild ? (
+                  <div className="tracked-build-actions">
+                    <button
+                      className="tracked-build-change-btn"
+                      onClick={() => setModalCompanion(companion)}
+                    >
+                      All Builds
+                    </button>
+                    <button
+                      className="tracked-build-edit-btn"
+                      onClick={() => onSelectTrackedBuild(trackedData.info.buildId, trackedData.info.currentLevel)}
+                    >
+                      <EditPencil width={14} height={14} />
+                      View Build
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    className="unselected-build-preview"
+                    onClick={() => setModalCompanion(companion)}
+                  >
+                    <div className="unselected-build-info">
+                      <span className="unselected-badge">No Build Selected</span>
+                      <span className="unselected-build-count">{builds.length} builds available</span>
+                    </div>
+                    <span className="unselected-build-action">
+                      Select Build
+                      <NavArrowRight width={14} height={14} />
+                    </span>
                   </button>
-                ))}
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
+        {/* Build Selection Modal */}
+        {modalCompanion && (
+          <BuildSelectorModal
+            companion={modalCompanion}
+            builds={modalBuilds}
+            isOpen={!!modalCompanion}
+            onClose={() => setModalCompanion(null)}
+            onSelectBuild={onSelectBuild}
+            trackedBuildId={getTrackedBuildForCompanion(modalCompanion)?.info.buildId}
+            trackedLevel={getTrackedBuildForCompanion(modalCompanion)?.info.currentLevel}
+          />
+        )}
       </div>
     );
   }

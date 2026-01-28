@@ -16,13 +16,78 @@
   margin-bottom: 1.5rem;
 }
 
+.build-avatar-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.build-avatar-btn:hover {
+  transform: scale(1.05);
+}
+
+.build-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.build-avatar-level {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: #646cff;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  min-width: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .build-avatar {
-  width: 64px;
-  height: 64px;
+  width: 140px;
+  height: 200px;
   border-radius: 8px;
   object-fit: cover;
+  object-position: top;
   border: 2px solid #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.build-avatar-container {
+  position: relative;
   flex-shrink: 0;
+}
+
+.build-avatar-container .avatar-upload-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.build-avatar-container:hover .avatar-upload-overlay {
+  opacity: 1;
+}
+
+.build-avatar-container .avatar-upload-overlay .avatar-upload-placeholder,
+.build-avatar-container .avatar-upload-overlay .avatar-upload-preview {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .build-avatar-container .avatar-upload-overlay {
+    opacity: 1;
+    position: relative;
+    margin-top: 0.5rem;
+  }
 }
 
 .build-title {
@@ -40,6 +105,7 @@
   gap: 0.5rem;
   color: #888;
   font-size: 0.9rem;
+  margin-bottom: .5rem;
 }
 
 .build-meta .separator {
@@ -59,8 +125,8 @@
 }
 
 .build-description {
+  margin: 0 auto;
   color: #aaa;
-  margin-bottom: 1rem;
   line-height: 1.5;
 }
 
@@ -68,7 +134,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .build-tags .tag {
@@ -98,25 +164,17 @@
   color: #f87171;
 }
 
-/* Level Selector */
-.level-selector {
+/* Level Indicator */
+.level-indicator {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: #1a1a2e;
-  border-radius: 8px;
 }
 
-.level-selector label {
+.level-label {
   color: #888;
   font-size: 0.9rem;
-}
-
-.level-selector input[type="range"] {
-  flex: 1;
-  accent-color: #8b5cf6;
 }
 
 .level-display {
@@ -246,6 +304,57 @@
   color: #888;
   font-size: 0.85rem;
   font-style: italic;
+}
+
+/* Stat Changes in Level Progression */
+.level-stat-changes {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.stat-change-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.5rem 0.75rem;
+  background: #2a2a4a;
+  border-radius: 6px;
+  border: 1px solid #8b5cf6;
+  min-width: 55px;
+}
+
+@media (max-width: 600px) {
+  .level-row {
+    flex-wrap: wrap;
+  }
+  
+  .level-stat-changes {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+    padding-left: 70px;
+  }
+}
+
+.stat-change-name {
+  color: #888;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-change-value {
+  color: #10b981;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stat-change-mod {
+  color: #8b5cf6;
+  font-size: 0.75rem;
 }
 
 /* Stats View */
@@ -398,8 +507,86 @@
   color: #888;
 }
 
+/* Level Change Confirmation Dialog */
+.level-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.level-confirm-dialog {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+}
+
+.level-confirm-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.level-confirm-message {
+  color: #aaa;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.level-confirm-message strong {
+  color: #fff;
+}
+
+.level-confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.level-confirm-cancel,
+.level-confirm-ok {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.level-confirm-cancel {
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+}
+
+.level-confirm-cancel:hover {
+  background: #2a2a4a;
+  border-color: #555;
+  color: #fff;
+}
+
+.level-confirm-ok {
+  background: #646cff;
+  border: none;
+  color: #fff;
+}
+
+.level-confirm-ok:hover {
+  background: #5558dd;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .build-viewer-header {
+    align-items: center;
+}
   .ability-scores {
     grid-template-columns: repeat(3, 1fr);
   }

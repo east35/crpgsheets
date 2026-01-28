@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { getGearInfo } from '../data/gear';
 import { KeywordText } from './KeywordText';
+import { useTooltipSheet } from '../../../components/TooltipSheet';
 import './GearTooltip.css';
 
 interface GearTooltipProps {
@@ -17,6 +18,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<number | null>(null);
+  const { showSheet, isMobile } = useTooltipSheet();
 
   const gearInfo = getGearInfo(gearName);
 
@@ -56,6 +58,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   };
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
     }
@@ -66,12 +69,36 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
     }
     hoverTimeoutRef.current = window.setTimeout(() => {
       setIsVisible(false);
     }, 100);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isMobile || !gearInfo) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const meta: Array<{ label: string; value: string; color?: string }> = [];
+    meta.push({ label: 'Slot', value: gearInfo.slot });
+    if (gearInfo.act) meta.push({ label: 'Act', value: String(gearInfo.act) });
+
+    let description = gearInfo.effect;
+    if (gearInfo.location) {
+      description += `\n\n📍 ${gearInfo.location}`;
+    }
+
+    showSheet({
+      title: gearInfo.name,
+      subtitle: gearInfo.rarity,
+      iconUrl: gearInfo.iconPath,
+      meta,
+      description,
+    });
   };
 
   useEffect(() => {
@@ -90,7 +117,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
     'Legendary': '#ff8000',
   };
 
-  const tooltipContent = isVisible && gearInfo && createPortal(
+  const tooltipContent = isVisible && !isMobile && gearInfo && createPortal(
     <div
       ref={tooltipRef}
       className={`bg3-gear-tooltip ${position}`}
@@ -108,14 +135,14 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
               onError={() => setHasIcon(false)}
             />
           )}
-          <span 
+          <span
             className="gear-tooltip-name"
             style={{ color: rarityColors[gearInfo.rarity] || '#fff' }}
           >
             {gearInfo.name}
           </span>
         </div>
-        <span 
+        <span
           className="gear-tooltip-rarity"
           style={{ backgroundColor: rarityColors[gearInfo.rarity] || '#666' }}
         >
@@ -152,6 +179,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
         className={`gear-trigger ${gearInfo ? 'has-info' : ''}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         {children}
       </span>

@@ -8,6 +8,8 @@ import { GearTooltip } from './GearTooltip';
 import { ArchetypeTooltip } from './ArchetypeTooltip';
 import { KeywordText } from './KeywordText';
 import { PartyBar, type PartyMember } from '../../../components/PartyBar';
+import { ImageLightbox } from '../../../components/ImageLightbox';
+import { AvatarUpload, useCustomAvatar, useCustomAvatars } from '../../../components/AvatarUpload';
 import { COMPANIONS } from '../data/companions';
 import './BuildViewer.css';
 
@@ -30,6 +32,8 @@ interface BuildViewerProps {
   trackedBuilds?: TrackedRTBuild[];
   onSelectTrackedBuild?: (guideId: string, level: number) => void;
   onDeleteTrackedBuild?: (id: string) => void;
+  gameId?: string;
+  profileId?: string;
 }
 
 export function BuildViewer({ 
@@ -38,27 +42,50 @@ export function BuildViewer({
   currentLevel = 1, 
   onLevelChange, 
   onTrackBuild, 
-  onUntrackBuild,
+  onUntrackBuild: _onUntrackBuild,
   isTracked,
   trackedBuilds = [],
   onSelectTrackedBuild,
   onDeleteTrackedBuild,
+  gameId = 'rogue-trader',
+  profileId = '',
 }: BuildViewerProps) {
   void _onBack;
+  void _onUntrackBuild;
   const [activeTab, setActiveTab] = useState<'progression' | 'gear'>('progression');
+  const [showLightbox, setShowLightbox] = useState(false);
+  const [pendingLevelChange, setPendingLevelChange] = useState<number | null>(null);
+  
+  // Check if this is a player character build (RogueTrader, not a companion)
+  const isPlayerBuild = build.companion === 'RogueTrader';
+  const customAvatar = useCustomAvatar(isPlayerBuild ? build.id : undefined);
+  
+  // Get all player character build IDs for fetching their custom avatars
+  const playerBuildIds = trackedBuilds
+    .filter(t => t.data.companion === 'RogueTrader')
+    .map(t => t.data.guideId);
+  const customAvatarsMap = useCustomAvatars(playerBuildIds);
   
   const archetypePath = build.archetypePath;
   const showPartyBar = trackedBuilds.length > 0 && onSelectTrackedBuild && onDeleteTrackedBuild;
+  
+  // Get avatar URL - custom avatar takes precedence for player builds
+  const companionAvatar = COMPANIONS[build.companion]?.portraitUrl;
+  const avatarUrl = (isPlayerBuild && customAvatar?.imageData) || companionAvatar;
 
   const partyMembers: PartyMember[] = [];
   for (const tracked of trackedBuilds) {
     const companion = COMPANIONS[tracked.data.companion];
+    const isPlayer = tracked.data.companion === 'RogueTrader';
+    const playerCustomAvatar = isPlayer ? (customAvatarsMap as Record<string, string>)[tracked.data.guideId] : null;
     partyMembers.push({
       id: tracked.id,
       buildId: tracked.data.guideId,
-      name: `${tracked.data.companion}`,
+      name: isPlayer ? 'Rogue Trader' : tracked.data.companion,
       level: tracked.data.currentLevel || 1,
       avatarUrl: companion?.portraitUrl || null,
+      isPlayerCharacter: isPlayer,
+      customAvatarUrl: playerCustomAvatar || null,
     });
   }
 
@@ -73,7 +100,7 @@ export function BuildViewer({
   const isTierCompleted = (tier: 'base' | 'advanced' | 'exemplar'): boolean => {
     if (tier === 'base') return currentLevel > 15;
     if (tier === 'advanced') return currentLevel > 35;
-    return false; // Exemplar can't be "completed" in this sense
+    return false;
   };
 
   // Initialize accordion state: expand current tier, collapse completed tiers
@@ -93,6 +120,25 @@ export function BuildViewer({
   const advancedLevels = build.progression.filter(l => l.level >= 16 && l.level <= 35);
   const exemplarLevels = build.progression.filter(l => l.level >= 36 && l.level <= 55);
 
+  // Handle level row click - show confirmation if different from current level
+  const handleLevelClick = (level: number) => {
+    if (level === currentLevel) return;
+    setPendingLevelChange(level);
+  };
+
+  // Confirm level change
+  const confirmLevelChange = () => {
+    if (pendingLevelChange !== null) {
+      onLevelChange?.(pendingLevelChange);
+      setPendingLevelChange(null);
+    }
+  };
+
+  // Cancel level change
+  const cancelLevelChange = () => {
+    setPendingLevelChange(null);
+  };
+
   return (
     <>
       {showPartyBar && (
@@ -108,13 +154,22 @@ export function BuildViewer({
         {/* <button className="btn btn-secondary btn-sm" onClick={onBack}>
           Back
         </button> */}
-        {COMPANIONS[build.companion]?.portraitUrl && (
-          <img 
-            src={COMPANIONS[build.companion].portraitUrl} 
-            alt="" 
-            className="build-avatar"
-          />
-        )}
+        {avatarUrl ? (
+          <div className="build-avatar-wrapper">
+            <button
+              className="build-avatar-btn"
+              onClick={() => setShowLightbox(true)}
+              aria-label="View larger portrait"
+            >
+              <img
+                src={avatarUrl}
+                alt=""
+                className="build-avatar"
+              />
+            </button>
+            <div className="build-avatar-level">{currentLevel}</div>
+          </div>
+        ) : null}
         <div className="build-title">
           <h2>{build.companion}: {build.buildName}</h2>
           <div className="archetype-path">
@@ -124,43 +179,30 @@ export function BuildViewer({
             <span className="arrow">→</span>
             <ArchetypeTooltip archetype={archetypePath.exemplar} tier="exemplar" />
           </div>
-        </div>
-        {onTrackBuild && (
-          <button
-            className={`btn ${isTracked ? 'btn-secondary' : 'btn-primary'}`}
-            onClick={() => isTracked && onUntrackBuild ? onUntrackBuild(build.id) : onTrackBuild(build)}
-          >
-            {isTracked ? 'Untrack' : 'Track Build'}
-          </button>
-        )}
-      </div>
+          <div className="skill-options">
+            <strong>Skills:</strong> <KeywordText text={build.skillOptions.join(', ')} />
+          </div>
 
       {build.description && (
         <p className="build-description"><KeywordText text={build.description} /></p>
       )}
 
+
+        </div>
+        {onTrackBuild && !isTracked && (
+          <button
+            className="btn btn-primary"
+            onClick={() => onTrackBuild(build)}
+          >
+            Add to Party
+          </button>
+        )}
+      </div>
+
       {build.videoUrl && (
         <a href={build.videoUrl} target="_blank" rel="noopener noreferrer" className="video-link">
           Watch Video Guide
         </a>
-      )}
-
-      <div className="skill-options">
-        <strong>Recommended Skills:</strong> <KeywordText text={build.skillOptions.join(', ')} />
-      </div>
-
-      {onLevelChange && (
-        <div className="level-selector">
-          <label>Current Level:</label>
-          <input
-            type="range"
-            min="1"
-            max="55"
-            value={currentLevel}
-            onChange={(e) => onLevelChange(Number(e.target.value))}
-          />
-          <span className="level-display">{currentLevel}</span>
-        </div>
       )}
 
       <div className="tabs">
@@ -201,7 +243,7 @@ export function BuildViewer({
                     <div
                       key={levelData.level}
                       className={`level-row base ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
-                      onClick={() => onLevelChange?.(levelData.level)}
+                      onClick={() => handleLevelClick(levelData.level)}
                     >
                       <div className="level-number">
                         {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
@@ -210,7 +252,7 @@ export function BuildViewer({
                       <div className="level-content">
                         {levelData.talents.length > 0 && (
                           <div className="talents">
-                            {levelData.talents.map((talent, i) => (
+                            {levelData.talents.map((talent: string, i: number) => (
                               <TalentTooltip key={i} talentName={talent}>
                                 <span className="talent">{talent}</span>
                               </TalentTooltip>
@@ -252,7 +294,7 @@ export function BuildViewer({
                     <div
                       key={levelData.level}
                       className={`level-row advanced ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
-                      onClick={() => onLevelChange?.(levelData.level)}
+                      onClick={() => handleLevelClick(levelData.level)}
                     >
                       <div className="level-number">
                         {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
@@ -261,7 +303,7 @@ export function BuildViewer({
                       <div className="level-content">
                         {levelData.talents.length > 0 && (
                           <div className="talents">
-                            {levelData.talents.map((talent, i) => (
+                            {levelData.talents.map((talent: string, i: number) => (
                               <TalentTooltip key={i} talentName={talent}>
                                 <span className="talent">{talent}</span>
                               </TalentTooltip>
@@ -302,7 +344,7 @@ export function BuildViewer({
                     <div
                       key={levelData.level}
                       className={`level-row exemplar ${isCurrentLevel ? 'current' : ''} ${isPastLevel ? 'completed' : ''}`}
-                      onClick={() => onLevelChange?.(levelData.level)}
+                      onClick={() => handleLevelClick(levelData.level)}
                     >
                       <div className="level-number">
                         {isPastLevel && <span className="check"><Check width={12} height={12} /></span>}
@@ -311,7 +353,7 @@ export function BuildViewer({
                       <div className="level-content">
                         {levelData.talents.length > 0 && (
                           <div className="talents">
-                            {levelData.talents.map((talent, i) => (
+                            {levelData.talents.map((talent: string, i: number) => (
                               <TalentTooltip key={i} talentName={talent}>
                                 <span className="talent">{talent}</span>
                               </TalentTooltip>
@@ -353,6 +395,39 @@ export function BuildViewer({
         </div>
       )}
     </div>
+    {showLightbox && avatarUrl && (
+      <ImageLightbox
+        src={avatarUrl}
+        alt={`${build.companion} portrait`}
+        onClose={() => setShowLightbox(false)}
+      >
+        {isPlayerBuild && profileId && (
+          <AvatarUpload
+            buildId={build.id}
+            gameId={gameId}
+            profileId={profileId}
+          />
+        )}
+      </ImageLightbox>
+    )}
+    {pendingLevelChange !== null && (
+      <div className="level-confirm-overlay" onClick={cancelLevelChange}>
+        <div className="level-confirm-dialog" onClick={(e) => e.stopPropagation()}>
+          <div className="level-confirm-title">Change Level?</div>
+          <div className="level-confirm-message">
+            Set {build.companion === 'RogueTrader' ? 'Rogue Trader' : build.companion} to <strong>Level {pendingLevelChange}</strong>?
+          </div>
+          <div className="level-confirm-actions">
+            <button className="level-confirm-cancel" onClick={cancelLevelChange}>
+              Cancel
+            </button>
+            <button className="level-confirm-ok" onClick={confirmLevelChange}>
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
     </>
   );
 }

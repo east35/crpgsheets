@@ -94,11 +94,32 @@ export function useProfiles(gameId: string) {
       builds,
     };
     
+    const fileName = `${profile.name.replace(/[^a-z0-9]/gi, '-').toLowerCase()}-${new Date().toISOString().split('T')[0]}.json`;
     const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+    
+    // Try native share sheet first (mobile)
+    if (navigator.share && navigator.canShare) {
+      const file = new File([blob], fileName, { type: 'application/json' });
+      const shareData = { files: [file] };
+      
+      if (navigator.canShare(shareData)) {
+        try {
+          await navigator.share(shareData);
+          return; // Successfully shared
+        } catch (err) {
+          // User cancelled or share failed - fall through to download
+          if ((err as Error).name === 'AbortError') {
+            return; // User cancelled, don't download
+          }
+        }
+      }
+    }
+    
+    // Fallback to download
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${profile.name.replace(/[^a-z0-9]/gi, '-').toLowerCase()}-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = fileName;
     a.click();
     URL.revokeObjectURL(url);
   }, []);

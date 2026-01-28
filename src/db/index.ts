@@ -1,11 +1,37 @@
 import Dexie, { type EntityTable } from 'dexie';
 import type { CharacterBuild, Profile } from '../types';
 
+export interface CustomAvatar {
+  id: string; // buildId or a unique identifier
+  gameId: string;
+  profileId: string;
+  buildId: string;
+  imageData: string; // base64 encoded image
+  mimeType: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 // Database schema
 const db = new Dexie('crpg-character-manager') as Dexie & {
   profiles: EntityTable<Profile, 'id'>;
   builds: EntityTable<CharacterBuild, 'id'>;
+  customAvatars: EntityTable<CustomAvatar, 'id'>;
 };
+
+// Version 4: Added compound index for builds filtering by profileId+gameId
+db.version(4).stores({
+  profiles: 'id, gameId, name, createdAt, updatedAt',
+  builds: 'id, gameId, profileId, [profileId+gameId], name, createdAt, updatedAt',
+  customAvatars: 'id, gameId, profileId, buildId, createdAt',
+});
+
+// Version 3: Added customAvatars table for player character avatars
+db.version(3).stores({
+  profiles: 'id, gameId, name, createdAt, updatedAt',
+  builds: 'id, gameId, profileId, name, createdAt, updatedAt',
+  customAvatars: 'id, gameId, profileId, buildId, createdAt',
+});
 
 // Version 2: Added profiles table and profileId to builds
 db.version(2).stores({

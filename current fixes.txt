@@ -1,0 +1,43 @@
+cRPG Sheets 
+
+New branch for general enhancements 
+
+Navigation
+- reverse chevron on game switcher on mobile (doesn’t make sense to show a down chevron when the selector appears above the nav)
+- bg3, change the tabs to “Party”, “Tav”, and “Companions”
+- rt, change the tabs to “Party”, “Rogue Trader”, and “Companions”
+
+Build Selector
+- Our build lists need to be collapsable, the page can extend far too long when we have all builds expose. 
+- If a companion already has a tracked build, display that build in the companion preview with a button to edit and select a new build. 
+
+Build Detail
+- only allow a single build per character (can’t play with two of the same companions or main character in a game)
+- Change “Track” to “Add to Party”
+- We don’t need the level slider, it’s too easy to accidentally change the characters level (Keep the current level indicator)
+- bg3, party overlay isn’t tracking character’s level (this does work in rt)
+- We need to experiment with another method to confirming new level. On mobile, you want to tap the tooltip keyword to expose the tooltip but that also locks in the level. 
+- On mobile, use a sheet or modal for toolips
+- Show companion avatar
+- Clicking/tapping avatar displays photo in Lightbox
+- On desktop for RT, we should place the level progression in a horizontal grid since the actual levels themselves only have a keyword or two. 
+- for BG3 level progression, whenever there’s a stat change, let’s reuse our starting stats component fixed to the right of the cell.
+
+Tav/Rogue Trader Builds
+- I’d like to enable custom avatars for the player’s character. We can set some basic parameters to ensure quality uploads.
+- Will need to allow for avatar editing (delete, replace, etc).
+
+Profile
+- The controls for the active profile are not accessible or usable (the fonts are way too small) and it’s causing the profile name to wrap. Let’s group all the actions as buttons under the profile name. 
+- On native, I want to launch a share-sheet when exporting profiles. 
+
+My Builds (now called “My Party”)
+- I want to see expanded previews. Avatar, Companion/Player name, Build Title as subtitle, and keep the current level and leveling sequence. 
+
+Game Data (save this piece for last)
+- let’s create a page just for game objects. This is what our search is kind of doing now but it’s not usable. 
+- RT 
+	- Data is still a bit of a mess. Bg3 has pretty good data and I want to keep up that quality here as well. For example, the ability “Bring it Down” is missing the artwork and I’d like to see labels for Cost, Target, and Cooldown <https://roguetrader.wiki.fextralife.com/Bring+It+Down>!
+
+BizStrategy (just for ideating)
+- In its current state, the app is a great open-source utility for managing game character sheets. In the future, I’d like to expand and monetize new features like a social graph, sharing and exporting custom builds, etc (Patreon features).

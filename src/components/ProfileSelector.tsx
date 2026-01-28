@@ -14,6 +14,7 @@ interface ProfileSelectorProps {
   onExportProfile: (id: string) => Promise<void>;
   onImportProfile: (file: File) => Promise<Profile>;
   onClearAllData?: () => Promise<void>;
+  variant?: 'default' | 'mobile';
 }
 
 export function ProfileSelector({
@@ -27,6 +28,7 @@ export function ProfileSelector({
   onExportProfile,
   onImportProfile,
   onClearAllData,
+  variant = 'default',
 }: ProfileSelectorProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
@@ -95,6 +97,178 @@ export function ProfileSelector({
     setEditingName('');
   };
 
+  // Mobile variant: show content directly without dropdown toggle
+  if (variant === 'mobile') {
+    return (
+      <div className="profile-selector mobile" ref={containerRef}>
+        <div className="profile-dropdown mobile">
+          {/* Current Profile Section */}
+          {currentProfile && editingId !== currentProfile.id && (
+            <div className="profile-current">
+              <div className="profile-current-header">
+                <span className="profile-current-label">Current Playthrough</span>
+              </div>
+              <div className="profile-current-name">{currentProfile.name}</div>
+              <div className="profile-current-actions">
+                <button
+                  className="profile-action-btn-large"
+                  onClick={() => handleStartRename(currentProfile)}
+                >
+                  <EditPencil width={16} height={16} />
+                  <span>Rename</span>
+                </button>
+                <button
+                  className="profile-action-btn-large"
+                  onClick={() => handleDuplicate(currentProfile)}
+                >
+                  <Copy width={16} height={16} />
+                  <span>Duplicate</span>
+                </button>
+                <button
+                  className="profile-action-btn-large"
+                  onClick={() => onExportProfile(currentProfile.id)}
+                >
+                  <Download width={16} height={16} />
+                  <span>Export</span>
+                </button>
+                <button
+                  className="profile-action-btn-large delete"
+                  onClick={() => handleDelete(currentProfile)}
+                >
+                  <Trash width={16} height={16} />
+                  <span>Delete</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Rename form for current profile */}
+          {editingId === currentProfile?.id && (
+            <div className="profile-current">
+              <div className="profile-current-header">
+                <span className="profile-current-label">Rename Playthrough</span>
+              </div>
+              <div className="profile-edit-large">
+                <input
+                  type="text"
+                  value={editingName}
+                  onChange={(e) => setEditingName(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSaveRename()}
+                  autoFocus
+                />
+                <div className="profile-edit-buttons">
+                  <button className="save" onClick={handleSaveRename}>
+                    <Check width={16} height={16} /> Save
+                  </button>
+                  <button onClick={() => setEditingId(null)}>
+                    <Xmark width={16} height={16} /> Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Switch Profile Section */}
+          {profiles.length > 1 && (
+            <div className="profile-switch-section">
+              <div className="profile-switch-header">Switch Playthrough</div>
+              <div className="profile-list">
+                {profiles.filter(p => p.id !== currentProfile?.id).map(profile => (
+                  <div key={profile.id} className="profile-item">
+                    {editingId === profile.id ? (
+                      <div className="profile-edit">
+                        <input
+                          type="text"
+                          value={editingName}
+                          onChange={(e) => setEditingName(e.target.value)}
+                          onKeyDown={(e) => e.key === 'Enter' && handleSaveRename()}
+                          autoFocus
+                        />
+                        <button onClick={handleSaveRename}><Check width={14} height={14} /></button>
+                        <button onClick={() => setEditingId(null)}><Xmark width={14} height={14} /></button>
+                      </div>
+                    ) : (
+                      <button
+                        className="profile-select-btn"
+                        onClick={() => onSelectProfile(profile)}
+                      >
+                        {profile.name}
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Bottom actions - pinned to bottom of panel */}
+        <div className="profile-bottom-actions">
+          {isCreating ? (
+            <div className="profile-create-form">
+              <input
+                type="text"
+                placeholder="New profile name..."
+                value={newProfileName}
+                onChange={(e) => setNewProfileName(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleCreate()}
+                autoFocus
+              />
+              <button onClick={handleCreate}>Create</button>
+              <button onClick={() => setIsCreating(false)}>Cancel</button>
+            </div>
+          ) : (
+            <button 
+              className="profile-create-btn"
+              onClick={() => setIsCreating(true)}
+            >
+              + New Playthrough
+            </button>
+          )}
+
+          <button
+            className="profile-import-btn"
+            onClick={() => {
+              const input = document.createElement('input');
+              input.type = 'file';
+              input.accept = '.json';
+              input.onchange = async (e) => {
+                const file = (e.target as HTMLInputElement).files?.[0];
+                if (file) {
+                  try {
+                    const newProfile = await onImportProfile(file);
+                    onSelectProfile(newProfile);
+                  } catch (err) {
+                    alert('Failed to import: ' + (err as Error).message);
+                  }
+                }
+              };
+              input.click();
+            }}
+          >
+            <Upload width={14} height={14} /> Import Playthrough
+          </button>
+
+          {onClearAllData && (
+            <div className="profile-privacy">
+              <p className="privacy-notice">Data is stored locally on this device.</p>
+              <button 
+                className="clear-data-btn"
+                onClick={async () => {
+                  if (confirm('This will permanently delete ALL profiles and builds. This cannot be undone. Continue?')) {
+                    await onClearAllData();
+                  }
+                }}
+              >
+                <Trash width={14} height={14} /> Clear All Local Data
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="profile-selector" ref={containerRef}>
       <button 
@@ -108,73 +282,110 @@ export function ProfileSelector({
 
       {isExpanded && (
         <div className="profile-dropdown">
-          <div className="profile-list">
-            {profiles.map(profile => (
-              <div 
-                key={profile.id} 
-                className={`profile-item ${currentProfile?.id === profile.id ? 'active' : ''}`}
-              >
-                {editingId === profile.id ? (
-                  <div className="profile-edit">
-                    <input
-                      type="text"
-                      value={editingName}
-                      onChange={(e) => setEditingName(e.target.value)}
-                      onKeyDown={(e) => e.key === 'Enter' && handleSaveRename()}
-                      autoFocus
-                    />
-                    <button onClick={handleSaveRename}><Check width={14} height={14} /></button>
-                    <button onClick={() => setEditingId(null)}><Xmark width={14} height={14} /></button>
-                  </div>
-                ) : (
-                  <>
-                    <button 
-                      className="profile-select-btn"
-                      onClick={() => {
-                        onSelectProfile(profile);
-                        setIsExpanded(false);
-                      }}
-                    >
-                      {profile.name}
-                    </button>
-                    <div className="profile-actions">
-                      <button 
-                        className="profile-action-btn"
-                        onClick={() => handleStartRename(profile)}
-                        title="Rename"
-                      >
-                        <EditPencil width={14} height={14} />
-                      </button>
-                      <button 
-                        className="profile-action-btn"
-                        onClick={() => handleDuplicate(profile)}
-                        title="Duplicate"
-                      >
-                        <Copy width={14} height={14} />
-                      </button>
-                      <button 
-                        className="profile-action-btn"
-                        onClick={() => onExportProfile(profile.id)}
-                        title="Export"
-                      >
-                        <Download width={14} height={14} />
-                      </button>
-                      <button 
-                        className="profile-action-btn delete"
-                        onClick={() => handleDelete(profile)}
-                        title="Delete"
-                      >
-                        <Trash width={14} height={14} />
-                      </button>
-                    </div>
-                  </>
-                )}
+          {/* Current Profile Section */}
+          {currentProfile && editingId !== currentProfile.id && (
+            <div className="profile-current">
+              <div className="profile-current-header">
+                <span className="profile-current-label">Current Playthrough</span>
               </div>
-            ))}
-          </div>
+              <div className="profile-current-name">{currentProfile.name}</div>
+              <div className="profile-current-actions">
+                <button
+                  className="profile-action-btn-large"
+                  onClick={() => handleStartRename(currentProfile)}
+                >
+                  <EditPencil width={16} height={16} />
+                  <span>Rename</span>
+                </button>
+                <button
+                  className="profile-action-btn-large"
+                  onClick={() => handleDuplicate(currentProfile)}
+                >
+                  <Copy width={16} height={16} />
+                  <span>Duplicate</span>
+                </button>
+                <button
+                  className="profile-action-btn-large"
+                  onClick={() => onExportProfile(currentProfile.id)}
+                >
+                  <Download width={16} height={16} />
+                  <span>Export</span>
+                </button>
+                <button
+                  className="profile-action-btn-large delete"
+                  onClick={() => handleDelete(currentProfile)}
+                >
+                  <Trash width={16} height={16} />
+                  <span>Delete</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Rename form for current profile */}
+          {editingId === currentProfile?.id && (
+            <div className="profile-current">
+              <div className="profile-current-header">
+                <span className="profile-current-label">Rename Playthrough</span>
+              </div>
+              <div className="profile-edit-large">
+                <input
+                  type="text"
+                  value={editingName}
+                  onChange={(e) => setEditingName(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSaveRename()}
+                  autoFocus
+                />
+                <div className="profile-edit-buttons">
+                  <button className="save" onClick={handleSaveRename}>
+                    <Check width={16} height={16} /> Save
+                  </button>
+                  <button onClick={() => setEditingId(null)}>
+                    <Xmark width={16} height={16} /> Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Switch Profile Section */}
+          {profiles.length > 1 && (
+            <div className="profile-switch-section">
+              <div className="profile-switch-header">Switch Playthrough</div>
+              <div className="profile-list">
+                {profiles.filter(p => p.id !== currentProfile?.id).map(profile => (
+                  <div key={profile.id} className="profile-item">
+                    {editingId === profile.id ? (
+                      <div className="profile-edit">
+                        <input
+                          type="text"
+                          value={editingName}
+                          onChange={(e) => setEditingName(e.target.value)}
+                          onKeyDown={(e) => e.key === 'Enter' && handleSaveRename()}
+                          autoFocus
+                        />
+                        <button onClick={handleSaveRename}><Check width={14} height={14} /></button>
+                        <button onClick={() => setEditingId(null)}><Xmark width={14} height={14} /></button>
+                      </div>
+                    ) : (
+                      <button
+                        className="profile-select-btn"
+                        onClick={() => {
+                          onSelectProfile(profile);
+                          setIsExpanded(false);
+                        }}
+                      >
+                        {profile.name}
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="profile-import-export">
-            <button 
+            <button
               className="profile-import-btn"
               onClick={() => {
                 const input = document.createElement('input');
@@ -197,9 +408,7 @@ export function ProfileSelector({
             >
               <Upload width={14} height={14} /> Import Playthrough
             </button>
-          </div>
-
-          {isCreating ? (
+            {isCreating ? (
             <div className="profile-create-form">
               <input
                 type="text"
@@ -220,6 +429,9 @@ export function ProfileSelector({
               + New Playthrough
             </button>
           )}
+          </div>
+
+          
 
           {onClearAllData && (
             <div className="profile-privacy">

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { getGearInfo } from '../data/gear';
+import { useTooltipSheet } from '../../../components/TooltipSheet';
 import './GearTooltip.css';
 
 interface GearTooltipProps {
@@ -14,10 +15,12 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeoutRef = useRef<number | null>(null);
+  const { showSheet, isMobile } = useTooltipSheet();
 
   const gearInfo = getGearInfo(gearName);
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
@@ -26,9 +29,30 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     hideTimeoutRef.current = window.setTimeout(() => {
       setIsVisible(false);
     }, 150);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isMobile || !gearInfo) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const meta: Array<{ label: string; value: string; color?: string }> = [];
+    if (gearInfo.stats?.damage) meta.push({ label: 'Damage', value: gearInfo.stats.damage });
+    if (gearInfo.stats?.armorPenetration) meta.push({ label: 'AP', value: String(gearInfo.stats.armorPenetration) });
+    if (gearInfo.stats?.damageType) meta.push({ label: 'Type', value: gearInfo.stats.damageType });
+    if (gearInfo.stats?.slot) meta.push({ label: 'Slot', value: gearInfo.stats.slot });
+
+    showSheet({
+      title: gearInfo.name,
+      subtitle: gearInfo.type,
+      iconUrl: gearInfo.imageRemote,
+      meta,
+      description: gearInfo.effect || '',
+    });
   };
 
   useEffect(() => {
@@ -44,7 +68,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
       const triggerRect = triggerRef.current.getBoundingClientRect();
       const tooltipHeight = tooltipRef.current.offsetHeight;
       const tooltipWidth = tooltipRef.current.offsetWidth;
-      
+
       if (triggerRect.top - tooltipHeight - 10 < 0) {
         setPosition('bottom');
       } else {
@@ -57,7 +81,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
         const mainRect = mainContent.getBoundingClientRect();
         const tooltipLeft = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
         const tooltipRight = tooltipLeft + tooltipWidth;
-        
+
         if (tooltipLeft < mainRect.left + 10) {
           setHorizontalOffset(mainRect.left + 10 - tooltipLeft);
         } else if (tooltipRight > mainRect.right - 10) {
@@ -75,11 +99,12 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
       className="gear-tooltip-trigger"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children || gearName}
-      {isVisible && gearInfo && (
-        <div 
-          ref={tooltipRef} 
+      {isVisible && !isMobile && gearInfo && (
+        <div
+          ref={tooltipRef}
           className={`gear-tooltip ${position}`}
           style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
           onMouseEnter={handleMouseEnter}
@@ -87,8 +112,8 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
         >
           <div className="gear-tooltip-header">
             {gearInfo.imageRemote && (
-              <img 
-                src={gearInfo.imageRemote} 
+              <img
+                src={gearInfo.imageRemote}
                 alt={gearInfo.name}
                 className="gear-tooltip-image"
               />

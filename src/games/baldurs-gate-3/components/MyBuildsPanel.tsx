@@ -2,6 +2,8 @@ import type { BG3Build, CompanionName } from '../types';
 import type { CharacterBuild } from '../../../types';
 import { COMPANIONS } from '../data/companions';
 import { PartyBar, type PartyMember } from '../../../components/PartyBar';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '../../../db';
 
 interface TrackedBG3Build extends CharacterBuild {
   data: {
@@ -48,17 +50,31 @@ export function MyBuildsPanel({
   onDeleteBuild,
   getBuildById,
 }: MyBuildsPanelProps) {
+  // Fetch all custom avatars for tracked builds
+  const buildIds = trackedBuilds.map(t => t.data.buildId);
+  const customAvatars = useLiveQuery(
+    () => db.customAvatars.where('buildId').anyOf(buildIds).toArray(),
+    [buildIds.join(',')]
+  );
+  
+  const getCustomAvatar = (buildId: string) => {
+    return customAvatars?.find(a => a.buildId === buildId)?.imageData || null;
+  };
+
   const members: PartyMember[] = [];
   
   for (const tracked of trackedBuilds) {
     const build = getBuildById(tracked.data.buildId);
     if (build) {
+      const isPlayer = !getCompanionFromBuild(build);
       members.push({
         id: tracked.id,
         buildId: tracked.data.buildId,
         name: build.name,
         level: tracked.data.currentLevel || 1,
         avatarUrl: getAvatarForBuild(build),
+        isPlayerCharacter: isPlayer,
+        customAvatarUrl: getCustomAvatar(tracked.data.buildId),
       });
     }
   }

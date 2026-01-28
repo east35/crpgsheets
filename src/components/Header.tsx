@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import type { Game, Profile } from '../types';
 import { ProfileSelector } from './ProfileSelector';
 import { HeaderGameSelector } from './HeaderGameSelector';
+import { MobileMenu } from './MobileMenu';
 import { Search, Shield, User, List, FlaskSolid } from 'iconoir-react';
 
 interface SearchResult {
@@ -25,6 +26,11 @@ interface HeaderProps {
   onImportProfile?: (file: File) => Promise<Profile>;
   onClearAllData?: () => Promise<void>;
   onSearch?: (query: string) => SearchResult[];
+  // Mobile nav props
+  isPartyActive?: boolean;
+  isBuildsActive?: boolean;
+  onViewParty?: () => void;
+  onViewBuilds?: () => void;
 }
 
 export function Header({
@@ -41,6 +47,10 @@ export function Header({
   onImportProfile,
   onClearAllData,
   onSearch,
+  isPartyActive,
+  isBuildsActive,
+  onViewParty,
+  onViewBuilds,
 }: HeaderProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -92,14 +102,53 @@ export function Header({
   return (
     <header className="header">
       <div className="header-content">
-        <div className="header-left">
+        {/* Desktop: Game selector on left */}
+        <div className="header-left desktop-only">
           <HeaderGameSelector
             currentGame={currentGame}
             onSelectGame={onSelectGame}
           />
         </div>
+
+        {/* Mobile: Hamburger menu */}
         {profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
-          <div className="header-right">
+          <MobileMenu
+            currentGame={currentGame}
+            onSelectGame={onSelectGame}
+            profiles={profiles}
+            currentProfile={currentProfile ?? null}
+            onSelectProfile={onSelectProfile}
+            onCreateProfile={onCreateProfile}
+            onDeleteProfile={onDeleteProfile}
+            onDuplicateProfile={onDuplicateProfile}
+            onRenameProfile={onRenameProfile}
+            onExportProfile={onExportProfile}
+            onImportProfile={onImportProfile}
+            onClearAllData={onClearAllData}
+          />
+        )}
+
+        {/* Mobile: Party/Builds tabs aligned right */}
+        {onViewParty && onViewBuilds && (
+          <div className="header-mobile-nav mobile-only">
+            <button
+              className={`header-nav-tab ${isPartyActive ? 'active' : ''}`}
+              onClick={onViewParty}
+            >
+              Party
+            </button>
+            <button
+              className={`header-nav-tab ${isBuildsActive ? 'active' : ''}`}
+              onClick={onViewBuilds}
+            >
+              Builds
+            </button>
+          </div>
+        )}
+
+        {/* Desktop: Search and Profile selector on right */}
+        {profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
+          <div className="header-right desktop-only">
             {onSearch && (
               <div className="header-search" ref={searchRef}>
                 <button 

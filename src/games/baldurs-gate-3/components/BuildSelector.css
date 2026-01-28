@@ -120,9 +120,15 @@
 
 /* Companion Builds - grouped by character */
 .build-selector.bg3 .companion-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .build-selector.bg3 .companion-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .build-selector.bg3 .companion-section {
@@ -131,64 +137,126 @@
   padding: 1.25rem;
   position: relative;
   overflow: hidden;
-}
-
-.build-selector.bg3 .companion-header {
+  transition: background 0.2s;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  position: relative;
-  z-index: 1;
 }
 
-.build-selector.bg3 .companion-title-row {
+/* Companion Card Layout - Portrait + Content */
+.build-selector.bg3 .companion-card-layout {
   display: flex;
-  align-items: center;
   gap: 1rem;
+  flex: 1;
 }
 
-.build-selector.bg3 .companion-portrait {
-  width: 80px;
-  height: 80px;
+.build-selector.bg3 .companion-card-portrait-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.build-selector.bg3 .companion-card-portrait {
+  width: 100px;
+  height: 100px;
   border-radius: 8px;
   object-fit: cover;
   border: 2px solid #444;
 }
 
-.build-selector.bg3 .companion-title-info {
+.build-selector.bg3 .companion-card-level-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: #4a7c4a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.build-selector.bg3 .companion-card-content {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
-.build-selector.bg3 .companion-header h3 {
-  margin: 0;
-  font-size: 1.25rem;
+.build-selector.bg3 .companion-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
 }
 
-.build-selector.bg3 .companion-role {
+.build-selector.bg3 .companion-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.build-selector.bg3 .companion-card-race {
   color: #888;
-  font-size: 0.9rem;
 }
 
-.build-selector.bg3 .companion-bio {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #aaa;
-  line-height: 1.5;
+.build-selector.bg3 .companion-card-separator {
+  color: #555;
 }
 
-.build-selector.bg3 .companion-quote {
-  margin: 0;
-  padding: 0.75rem 1rem;
-  background: rgba(139, 92, 246, 0.1);
-  border-left: 3px solid #8b5cf6;
-  border-radius: 0 8px 8px 0;
-  font-style: italic;
+.build-selector.bg3 .companion-card-background {
+  color: #f0a040;
+}
+
+.build-selector.bg3 .companion-card-classes {
+  color: #10b981;
+}
+
+/* Tags */
+.build-selector.bg3 .companion-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.build-selector.bg3 .companion-card-tag {
+  padding: 2px 8px;
+  background: #3a3a5a;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.build-selector.bg3 .companion-card-tag.difficulty {
+  font-weight: 600;
+}
+
+.build-selector.bg3 .companion-card-tag.difficulty.beginner {
+  background: rgba(74, 124, 74, 0.3);
+  color: #6a9c6a;
+}
+
+.build-selector.bg3 .companion-card-tag.difficulty.intermediate {
+  background: rgba(200, 150, 50, 0.3);
+  color: #f0a040;
+}
+
+.build-selector.bg3 .companion-card-tag.difficulty.advanced {
+  background: rgba(200, 80, 80, 0.3);
+  color: #f06060;
+}
+
+/* Description */
+.build-selector.bg3 .companion-card-desc {
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
   font-size: 0.85rem;
   color: #999;
+  font-style: italic;
   line-height: 1.5;
 }
 
@@ -237,13 +305,178 @@
   margin: 0;
 }
 
+/* Tracked Build Actions */
+.build-selector.bg3 .tracked-build-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #3a3a5a;
+}
+
+.build-selector.bg3 .tracked-build-change-btn {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #4a4a6a;
+  border-radius: 6px;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.build-selector.bg3 .tracked-build-change-btn:hover {
+  background: #3a3a5a;
+  border-color: #5a5a7a;
+  color: #e0e0e0;
+}
+
+.build-selector.bg3 .tracked-build-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #4a7c4a;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.build-selector.bg3 .tracked-build-edit-btn:hover {
+  background: #5a9c5a;
+}
+
+/* Unselected Build Preview (neutral state) */
+.build-selector.bg3 .unselected-build-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+
+.build-selector.bg3 .unselected-build-preview:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.build-selector.bg3 .unselected-build-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.build-selector.bg3 .unselected-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: #3a3a5a;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888;
+}
+
+.build-selector.bg3 .unselected-build-count {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.build-selector.bg3 .unselected-build-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #8b5cf6;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.build-selector.bg3 .tracked-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: #4a7c4a;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.build-selector.bg3 .tracked-build-name {
+  color: #fff;
+  font-weight: 500;
+}
+
+.build-selector.bg3 .tracked-build-level {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.build-selector.bg3 .tracked-build-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #3a3a5a;
+  border: 1px solid #4a4a6a;
+  border-radius: 6px;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.build-selector.bg3 .tracked-build-edit-btn:hover {
+  background: #4a4a6a;
+  border-color: #5a5a7a;
+}
+
+/* Tracked Build Card */
+.build-selector.bg3 .builds-grid .build-card.tracked {
+  border-color: #4a7c4a;
+  background: rgba(74, 124, 74, 0.1);
+}
+
+.build-selector.bg3 .builds-grid .build-card.tracked:hover {
+  border-color: #5a9c5a;
+  background: rgba(74, 124, 74, 0.2);
+}
+
+.build-selector.bg3 .build-card-tracked-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: #4a7c4a;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  align-self: flex-start;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
-  .build-selector.bg3 .companion-title-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .build-selector.bg3 .builds-grid {
     grid-template-columns: 1fr;
   }

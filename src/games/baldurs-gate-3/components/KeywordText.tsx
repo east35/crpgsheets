@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { findKeyword, ALL_KEYWORD_NAMES, type KeywordInfo } from '../data/keywords';
+import { useTooltipSheet } from '../../../components/TooltipSheet';
 import './KeywordText.css';
 
 interface KeywordTextProps {
@@ -58,8 +59,10 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeoutRef = useRef<number | null>(null);
+  const { showSheet, isMobile } = useTooltipSheet();
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
@@ -68,9 +71,39 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     hideTimeoutRef.current = window.setTimeout(() => {
       setIsVisible(false);
     }, 150);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isMobile) return;
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Build description from available info
+    let description = info.description || '';
+    if (info.category === 'spell') {
+      const parts = [];
+      if (info.flavorText) parts.push(info.flavorText);
+      if (info.schoolRank) parts.push(`School: ${info.schoolRank}`);
+      if (info.damage) parts.push(`Damage: ${info.damage}`);
+      if (info.duration) parts.push(`Duration: ${info.duration}`);
+      if (info.range) parts.push(`Range: ${info.range}`);
+      if (info.concentration) parts.push('Requires Concentration');
+      description = parts.join('\n');
+    } else if (info.category === 'feat' && info.benefits) {
+      description = info.benefits.join('\n• ');
+      if (description) description = '• ' + description;
+    }
+    
+    showSheet({
+      title: info.name,
+      subtitle: info.category.replace('-', ' '),
+      iconUrl: info.icon,
+      description,
+    });
   };
 
   useEffect(() => {
@@ -306,9 +339,10 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
       className={`bg3-keyword-trigger bg3-keyword-${info.category}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
-      {tooltipContent}
+      {!isMobile && tooltipContent}
     </span>
   );
 }

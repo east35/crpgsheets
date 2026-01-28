@@ -5,19 +5,67 @@
   flex-direction: column;
 }
 
+/* Responsive utilities */
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: flex !important;
+  }
+  
+  /* Hide main content nav tabs on mobile - they're in the header now */
+  .nav-row {
+    display: none !important;
+  }
+}
+
+/* Header mobile nav tabs */
+.header-mobile-nav {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.header-nav-tab {
+  padding: 0.5rem 0.75rem;
+  background: #3a3a5a;
+  border: 1px solid #4a4a6a;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header-nav-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header-nav-tab.active {
+  color: #fff;
+  background: #646cff;
+  border: none;
+}
+
 /* Header */
 .header {
   background: rgba(26, 26, 46, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #3a3a5a;
   padding: 1rem 2rem;
   position: relative;
   z-index: 10;
 }
 
 .header-content {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -235,6 +283,12 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem 0.75rem;
+  }
+}
+
 .main-content.landing {
   max-width: none;
   margin: 0;
@@ -283,6 +337,43 @@
 .view-tab.active {
   background: #646cff;
   border-color: #646cff;
+  color: #fff;
+}
+
+/* Primary and Secondary Tabs */
+.primary-tabs .view-tab {
+  font-weight: 600;
+}
+
+.nav-row.subnav {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+  border-bottom: 1px solid #3a3a5a;
+}
+
+.secondary-tabs {
+  gap: 0.25rem;
+}
+
+.secondary-tabs .view-tab {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+}
+
+.secondary-tabs .view-tab:hover {
+  color: #fff;
+  border-bottom-color: #555;
+}
+
+.secondary-tabs .view-tab.active {
+  background: transparent;
+  border-color: transparent;
+  border-bottom-color: #646cff;
   color: #fff;
 }
 
@@ -452,7 +543,6 @@
 
 /* Build List View */
 .build-list-view {
-  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -479,9 +569,15 @@
 
 /* Build List */
 .build-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .build-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .build-list-empty {
@@ -494,7 +590,7 @@
 
 .build-card {
   background: #1a1a2e;
-  border: 1px solid #333;
+  border: 1px solid #3a3a5a;
   border-radius: 8px;
   padding: 1rem;
   display: flex;
@@ -737,44 +833,18 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  /* Move header to bottom on mobile */
+  /* Standard top header on mobile */
   .header {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: auto;
     padding: 0.75rem 1rem;
-    border-bottom: none;
-    border-top: 1px solid #333;
-    z-index: 200;
-    background: rgba(26, 26, 46, 0.95);
   }
 
   .header-content {
     gap: 0.5rem;
   }
 
-  /* Search dropdown opens upward on mobile */
-  .header-search-dropdown {
-    top: auto;
-    bottom: calc(100% + 8px);
-    max-height: 60vh;
-  }
-
-  /* Main content padding for mobile - only when game is selected */
-  .main-content.game-selected {
-    padding-bottom: 80px;
-  }
-
   /* Keep landing page padding as-is */
   .main-content.landing {
     padding: 0;
-  }
-
-  /* Hide footer on mobile (header is now at bottom) */
-  .app-footer {
-    display: none;
   }
 }
 

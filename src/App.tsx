@@ -46,6 +46,8 @@ function App() {
   const [customBuildCompanion, setCustomBuildCompanion] = useState<CompanionName | null>(null);
   const [selectedBG3Build, setSelectedBG3Build] = useState<BG3Build | null>(null);
   const [bg3PreviousView, setBg3PreviousView] = useState<'bg3-builds' | 'bg3-companion-builds'>('bg3-builds');
+  // Track navigation context: did we enter detail view from Party or Builds?
+  const [navContext, setNavContext] = useState<'party' | 'builds'>('builds');
 
   const { 
     profiles, 
@@ -83,10 +85,29 @@ function App() {
     });
   };
 
-  const handleTrackBuild = (guide: BuildGuide) => {
+  // Check if a companion already has any build tracked (RT)
+  const getTrackedBuildForCompanion = (companion: CompanionName) => {
+    return builds.find((b) => {
+      const data = b.data as { companion?: string } | undefined;
+      return data?.companion === companion;
+    });
+  };
+
+  const handleTrackBuild = async (guide: BuildGuide) => {
     if (isGuideTracked(guide.id)) return;
 
-    addBuild(
+    // If companion already has a build tracked, show confirmation
+    const existingBuild = getTrackedBuildForCompanion(guide.companion);
+    if (existingBuild) {
+      const existingData = existingBuild.data as { buildName?: string; currentLevel?: number } | undefined;
+      const confirmed = window.confirm(
+        `${guide.companion} already has a tracked build "${existingData?.buildName || existingBuild.name}" at level ${existingData?.currentLevel || 1}.\n\nReplacing it will delete all tracked progress for that build.\n\nContinue with the new build?`
+      );
+      if (!confirmed) return;
+      await deleteBuild(existingBuild.id);
+    }
+
+    const newBuild = await addBuild(
       `${guide.companion}: ${guide.buildName}`,
       {
         guideId: guide.id,
@@ -97,6 +118,7 @@ function App() {
       },
       guide.description
     );
+    setActiveTrackedBuildId(newBuild.id);
   };
 
   const handleUntrackRTBuild = (guideId: string) => {
@@ -140,16 +162,23 @@ function App() {
   const handleSelectGuide = (guide: BuildGuide) => {
     setSelectedGuide(guide);
     setCurrentLevel(1);
+    setNavContext('builds');
     setView('build-viewer');
     window.scrollTo(0, 0);
   };
 
   const handleBackToGuides = () => {
-    // Return to the correct view based on the selected guide's companion type
-    const returnView = selectedGuide?.companion === 'RogueTrader' ? 'rogue-trader-builds' : 'companion-builds';
-    setSelectedGuide(null);
-    setActiveTrackedBuildId(null);
-    setView(returnView);
+    // Return to Party if we came from Party, otherwise return to appropriate Builds view
+    if (navContext === 'party') {
+      setSelectedGuide(null);
+      setActiveTrackedBuildId(null);
+      setView('my-builds');
+    } else {
+      const returnView = selectedGuide?.companion === 'RogueTrader' ? 'rogue-trader-builds' : 'companion-builds';
+      setSelectedGuide(null);
+      setActiveTrackedBuildId(null);
+      setView(returnView);
+    }
   };
 
   const handleViewMyBuilds = () => {
@@ -165,13 +194,27 @@ function App() {
   };
 
   const handleSelectBuild = (build: CharacterBuild) => {
-    const data = build.data as { guideId?: string; currentLevel?: number } | undefined;
+    const data = build.data as { guideId?: string; buildId?: string; currentLevel?: number } | undefined;
+    // RT build from Party
     if (data?.guideId) {
       const guide = getRTBuildById(data.guideId);
       if (guide) {
         setSelectedGuide(guide);
         setCurrentLevel(data.currentLevel || 1);
         setActiveTrackedBuildId(build.id);
+        setNavContext('party');
+        setView('build-viewer');
+        window.scrollTo(0, 0);
+      }
+    }
+    // BG3 build from Party
+    if (data?.buildId) {
+      const bg3Build = getBG3BuildById(data.buildId);
+      if (bg3Build) {
+        setSelectedBG3Build(bg3Build);
+        setCurrentLevel(data.currentLevel || 1);
+        setActiveTrackedBuildId(build.id);
+        setNavContext('party');
         setView('build-viewer');
         window.scrollTo(0, 0);
       }
@@ -218,6 +261,8 @@ function App() {
       if (trackedBuild) {
         setActiveTrackedBuildId(trackedBuild.id);
       }
+      setView('build-viewer');
+      window.scrollTo(0, 0);
     }
   };
 
@@ -229,17 +274,57 @@ function App() {
     });
   };
 
-  const handleTrackBG3Build = (build: BG3Build) => {
+  // Get companion name from BG3 build tags
+  const getBG3BuildCompanion = (build: BG3Build): string | null => {
+    if (!build.tags?.includes('Companion')) return null;
+    // Companion name is in tags (e.g., ['Companion', 'Shadowheart'])
+    const companionTag = build.tags.find(t => t !== 'Companion' && !['Melee', 'Ranged', 'Support', 'Tank', 'Damage', 'Control'].includes(t));
+    return companionTag || null;
+  };
+
+  // Check if a BG3 companion already has any build tracked
+  const getTrackedBG3BuildForCompanion = (companionName: string | null) => {
+    if (!companionName) {
+      // For Tav builds (non-companion), check for any non-companion tracked build
+      return builds.find((b) => {
+        const data = b.data as { buildId?: string; companion?: string | null } | undefined;
+        if (!data?.buildId) return false;
+        return data.companion === null || data.companion === undefined;
+      });
+    }
+    return builds.find((b) => {
+      const data = b.data as { companion?: string } | undefined;
+      return data?.companion === companionName;
+    });
+  };
+
+  const handleTrackBG3Build = async (build: BG3Build) => {
     if (isBG3BuildTracked(build.id)) return;
 
-    addBuild(
+    const companion = getBG3BuildCompanion(build);
+    const characterName = companion || 'Tav';
+
+    // If companion/Tav already has a build tracked, show confirmation
+    const existingBuild = getTrackedBG3BuildForCompanion(companion);
+    if (existingBuild) {
+      const existingData = existingBuild.data as { currentLevel?: number } | undefined;
+      const confirmed = window.confirm(
+        `${characterName} already has a tracked build "${existingBuild.name}" at level ${existingData?.currentLevel || 1}.\n\nReplacing it will delete all tracked progress for that build.\n\nContinue with the new build?`
+      );
+      if (!confirmed) return;
+      await deleteBuild(existingBuild.id);
+    }
+
+    const newBuild = await addBuild(
       build.name,
       {
         buildId: build.id,
         currentLevel: currentLevel,
+        companion: companion, // Store companion name for easier querying
       },
       build.description
     );
+    setActiveTrackedBuildId(newBuild.id);
   };
 
   const handleUntrackBG3Build = (buildId: string) => {
@@ -265,6 +350,8 @@ function App() {
       if (trackedBuild) {
         setActiveTrackedBuildId(trackedBuild.id);
       }
+      setView('build-viewer');
+      window.scrollTo(0, 0);
     }
   };
 
@@ -399,6 +486,19 @@ function App() {
           onImportProfile={importProfile}
           onClearAllData={clearAllData}
           onSearch={currentGame.id === 'rogue-trader' ? handleSearch : undefined}
+          isPartyActive={view === 'my-builds' || (view === 'build-viewer' && navContext === 'party')}
+          isBuildsActive={
+            (currentGame.id === 'rogue-trader' && (view === 'companion-builds' || view === 'rogue-trader-builds' || (view === 'build-viewer' && navContext === 'builds'))) ||
+            (currentGame.id === 'baldurs-gate-3' && (view === 'bg3-builds' || view === 'bg3-companion-builds' || (view === 'build-viewer' && navContext === 'builds')))
+          }
+          onViewParty={handleViewMyBuilds}
+          onViewBuilds={() => {
+            if (currentGame.id === 'rogue-trader') {
+              handleViewCompanionBuilds();
+            } else {
+              setView('bg3-companion-builds');
+            }
+          }}
         />
       )}
 
@@ -414,27 +514,40 @@ function App() {
         {currentGame?.id === 'rogue-trader' && view !== 'game-select' && (
           <>
             <div className="nav-row">
-              <div className="view-tabs">
+              <div className="view-tabs primary-tabs">
                 <button
-                  className={`view-tab ${view === 'my-builds' || view === 'build-editor' ? 'active' : ''}`}
+                  className={`view-tab ${view === 'my-builds' || view === 'build-editor' || (view === 'build-viewer' && navContext === 'party') ? 'active' : ''}`}
                   onClick={handleViewMyBuilds}
                 >
-                  My Builds
+                  Party
                 </button>
                 <button
-                  className={`view-tab ${view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader') ? 'active' : ''}`}
-                  onClick={handleViewRogueTraderBuilds}
-                >
-                  Rogue Trader
-                </button>
-                <button
-                  className={`view-tab ${view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader') ? 'active' : ''}`}
+                  className={`view-tab ${view === 'rogue-trader-builds' || view === 'companion-builds' || (view === 'build-viewer' && navContext === 'builds') ? 'active' : ''}`}
                   onClick={handleViewCompanionBuilds}
                 >
-                  Companions
+                  Builds
                 </button>
               </div>
             </div>
+            {/* Subnav for Builds - only show when in Builds context */}
+            {(view === 'rogue-trader-builds' || view === 'companion-builds' || (view === 'build-viewer' && navContext === 'builds')) && (
+              <div className="nav-row subnav">
+                <div className="view-tabs secondary-tabs">
+                  <button
+                    className={`view-tab ${view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader') ? 'active' : ''}`}
+                    onClick={handleViewCompanionBuilds}
+                  >
+                    Companions
+                  </button>
+                  <button
+                    className={`view-tab ${view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader') ? 'active' : ''}`}
+                    onClick={handleViewRogueTraderBuilds}
+                  >
+                    Rogue Trader
+                  </button>
+                </div>
+              </div>
+            )}
           </>
         )}
 
@@ -442,45 +555,70 @@ function App() {
         {currentGame?.id === 'baldurs-gate-3' && view !== 'game-select' && (
           <>
             <div className="nav-row">
-              <div className="view-tabs">
+              <div className="view-tabs primary-tabs">
                 <button
-                  className={`view-tab ${view === 'my-builds' ? 'active' : ''}`}
+                  className={`view-tab ${view === 'my-builds' || (view === 'build-viewer' && selectedBG3Build && navContext === 'party') ? 'active' : ''}`}
                   onClick={handleViewMyBuilds}
                 >
-                  My Builds
+                  Party
                 </button>
                 <button
-                  className={`view-tab ${view === 'bg3-builds' ? 'active' : ''}`}
-                  onClick={() => setView('bg3-builds')}
-                >
-                  Community Builds
-                </button>
-                <button
-                  className={`view-tab ${view === 'bg3-companion-builds' ? 'active' : ''}`}
+                  className={`view-tab ${view === 'bg3-builds' || view === 'bg3-companion-builds' || (view === 'build-viewer' && selectedBG3Build && navContext === 'builds') ? 'active' : ''}`}
                   onClick={() => setView('bg3-companion-builds')}
                 >
-                  Companions
+                  Builds
                 </button>
               </div>
             </div>
+            {/* Subnav for Builds - only show when in Builds context */}
+            {(view === 'bg3-builds' || view === 'bg3-companion-builds' || (view === 'build-viewer' && selectedBG3Build && navContext === 'builds')) && (
+              <div className="nav-row subnav">
+                <div className="view-tabs secondary-tabs">
+                  <button
+                    className={`view-tab ${view === 'bg3-companion-builds' ? 'active' : ''}`}
+                    onClick={() => setView('bg3-companion-builds')}
+                  >
+                    Companions
+                  </button>
+                  <button
+                    className={`view-tab ${view === 'bg3-builds' ? 'active' : ''}`}
+                    onClick={() => setView('bg3-builds')}
+                  >
+                    Tav
+                  </button>
+                </div>
+              </div>
+            )}
           </>
         )}
 
         {view === 'game-select' && <GameLibrary onSelectGame={handleSelectGame} />}
 
         {view === 'companion-builds' && currentGame?.id === 'rogue-trader' && (
-          <RTBuildSelector 
-            onSelectBuild={handleSelectGuide} 
+          <RTBuildSelector
+            onSelectBuild={handleSelectGuide}
             onCreateCustomBuild={handleCreateCustomBuild}
-            buildType="companion" 
+            buildType="companion"
+            trackedBuilds={getTrackedRTBuilds().map(b => ({
+              guideId: b.data.guideId,
+              companion: b.data.companion,
+              currentLevel: b.data.currentLevel,
+            }))}
+            onSelectTrackedBuild={handleSelectTrackedRTBuild}
           />
         )}
 
         {view === 'rogue-trader-builds' && currentGame?.id === 'rogue-trader' && (
-          <RTBuildSelector 
-            onSelectBuild={handleSelectGuide} 
+          <RTBuildSelector
+            onSelectBuild={handleSelectGuide}
             onCreateCustomBuild={handleCreateCustomBuild}
-            buildType="rogueTrader" 
+            buildType="rogueTrader"
+            trackedBuilds={getTrackedRTBuilds().map(b => ({
+              guideId: b.data.guideId,
+              companion: b.data.companion,
+              currentLevel: b.data.currentLevel,
+            }))}
+            onSelectTrackedBuild={handleSelectTrackedRTBuild}
           />
         )}
 
@@ -496,13 +634,14 @@ function App() {
             trackedBuilds={getTrackedRTBuilds()}
             onSelectTrackedBuild={handleSelectTrackedRTBuild}
             onDeleteTrackedBuild={handleDeleteBuild}
+            profileId={currentProfile?.id}
           />
         )}
 
         {view === 'build-viewer' && selectedBG3Build && currentGame?.id === 'baldurs-gate-3' && (
           <BG3BuildViewer
             build={selectedBG3Build}
-            onBack={() => { setSelectedBG3Build(null); setActiveTrackedBuildId(null); setView(bg3PreviousView); }}
+            onBack={() => { setSelectedBG3Build(null); setActiveTrackedBuildId(null); setView(navContext === 'party' ? 'my-builds' : bg3PreviousView); }}
             currentLevel={currentLevel}
             onLevelChange={handleBG3LevelChange}
             onTrackBuild={handleTrackBG3Build}
@@ -512,6 +651,7 @@ function App() {
             onSelectTrackedBuild={handleSelectTrackedBG3Build}
             onDeleteTrackedBuild={handleDeleteBuild}
             getBuildById={getBG3BuildById}
+            profileId={currentProfile?.id}
           />
         )}
 
@@ -522,9 +662,15 @@ function App() {
               setSelectedBG3Build(build);
               setBg3PreviousView('bg3-builds');
               setCurrentLevel(1);
+              setNavContext('builds');
               setView('build-viewer');
               window.scrollTo(0, 0);
             }}
+            trackedBuilds={getTrackedBG3Builds().map(b => ({
+              buildId: b.data.buildId,
+              currentLevel: b.data.currentLevel,
+            }))}
+            onSelectTrackedBuild={handleSelectTrackedBG3Build}
           />
         )}
 
@@ -535,9 +681,15 @@ function App() {
               setSelectedBG3Build(build);
               setBg3PreviousView('bg3-companion-builds');
               setCurrentLevel(1);
+              setNavContext('builds');
               setView('build-viewer');
               window.scrollTo(0, 0);
             }}
+            trackedBuilds={getTrackedBG3Builds().map(b => ({
+              buildId: b.data.buildId,
+              currentLevel: b.data.currentLevel,
+            }))}
+            onSelectTrackedBuild={handleSelectTrackedBG3Build}
           />
         )}
 
@@ -552,7 +704,7 @@ function App() {
         {view === 'my-builds' && currentGame && (
           <div className="build-list-view">
             <div className="view-header">
-              <h2>My {currentGame.shortName} Builds</h2>
+              <h2>My Party</h2>
             </div>
 
             <BuildList

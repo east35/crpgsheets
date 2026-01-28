@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import type { Archetype } from '../types';
 import { ARCHETYPE_DISPLAY_NAMES } from '../types';
+import { useTooltipSheet } from '../../../components/TooltipSheet';
 import './ArchetypeTooltip.css';
 
 // Archetype descriptions
@@ -76,11 +77,13 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeoutRef = useRef<number | null>(null);
+  const { showSheet, isMobile } = useTooltipSheet();
 
   const info = ARCHETYPE_DESCRIPTIONS[archetype];
   const displayName = ARCHETYPE_DISPLAY_NAMES[archetype];
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
@@ -89,9 +92,22 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     hideTimeoutRef.current = window.setTimeout(() => {
       setIsVisible(false);
     }, 150);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isMobile || !info) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    showSheet({
+      title: displayName,
+      subtitle: info.role,
+      description: info.description,
+    });
   };
 
   useEffect(() => {
@@ -107,7 +123,7 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
       const triggerRect = triggerRef.current.getBoundingClientRect();
       const tooltipHeight = tooltipRef.current.offsetHeight;
       const tooltipWidth = tooltipRef.current.offsetWidth;
-      
+
       if (triggerRect.top - tooltipHeight - 10 < 0) {
         setPosition('bottom');
       } else {
@@ -119,7 +135,7 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
         const mainRect = mainContent.getBoundingClientRect();
         const tooltipLeft = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
         const tooltipRight = tooltipLeft + tooltipWidth;
-        
+
         if (tooltipLeft < mainRect.left + 10) {
           setHorizontalOffset(mainRect.left + 10 - tooltipLeft);
         } else if (tooltipRight > mainRect.right - 10) {
@@ -137,11 +153,12 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
       className={`archetype-tooltip-trigger tier-${tier}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children || displayName}
-      {isVisible && info && (
-        <div 
-          ref={tooltipRef} 
+      {isVisible && !isMobile && info && (
+        <div
+          ref={tooltipRef}
           className={`archetype-tooltip ${position}`}
           style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
           onMouseEnter={handleMouseEnter}

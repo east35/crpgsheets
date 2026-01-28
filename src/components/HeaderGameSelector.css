@@ -106,4 +106,13 @@
   .header-game-name {
     display: none;
   }
+
+  /* On mobile, nav is at bottom so dropdown opens upward - flip chevron */
+  .header-game-arrow {
+    transform: rotate(180deg);
+  }
+
+  .header-game-arrow.expanded {
+    transform: rotate(0deg);
+  }
 }

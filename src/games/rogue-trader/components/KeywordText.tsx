@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { findKeyword, ALL_KEYWORD_NAMES, type KeywordInfo } from '../data/character';
+import { useTooltipSheet } from '../../../components/TooltipSheet';
 import './KeywordText.css';
 
 interface KeywordTextProps {
@@ -58,8 +59,10 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeoutRef = useRef<number | null>(null);
+  const { showSheet, isMobile } = useTooltipSheet();
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
@@ -68,9 +71,23 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     hideTimeoutRef.current = window.setTimeout(() => {
       setIsVisible(false);
     }, 150);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isMobile) return;
+    e.preventDefault();
+    e.stopPropagation();
+    
+    showSheet({
+      title: info.name,
+      subtitle: info.category.replace('-', ' '),
+      iconUrl: info.imageRemote,
+      description: info.effect || '',
+    });
   };
 
   useEffect(() => {
@@ -180,9 +197,10 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
       className={`keyword-trigger keyword-${info.category}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
-      {tooltipContent}
+      {!isMobile && tooltipContent}
     </span>
   );
 }

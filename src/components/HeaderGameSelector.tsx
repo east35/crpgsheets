@@ -12,9 +12,10 @@ const GAME_ICONS: Record<string, string> = {
 interface HeaderGameSelectorProps {
   currentGame: Game;
   onSelectGame: (game: Game) => void;
+  variant?: 'default' | 'mobile';
 }
 
-export function HeaderGameSelector({ currentGame, onSelectGame }: HeaderGameSelectorProps) {
+export function HeaderGameSelector({ currentGame, onSelectGame, variant = 'default' }: HeaderGameSelectorProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [dropdownStyle, setDropdownStyle] = useState<React.CSSProperties>({});
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,21 +26,11 @@ export function HeaderGameSelector({ currentGame, onSelectGame }: HeaderGameSele
   useEffect(() => {
     if (isExpanded && toggleRef.current) {
       const rect = toggleRef.current.getBoundingClientRect();
-      const isMobile = window.innerWidth <= 768;
-
-      if (isMobile) {
-        // On mobile, header is at bottom, so dropdown opens upward
-        setDropdownStyle({
-          bottom: window.innerHeight - rect.top + 4,
-          left: rect.left,
-        });
-      } else {
-        // On desktop, dropdown opens downward
-        setDropdownStyle({
-          top: rect.bottom + 4,
-          left: rect.left,
-        });
-      }
+      // Dropdown opens downward from header
+      setDropdownStyle({
+        top: rect.bottom + 4,
+        left: rect.left,
+      });
     }
   }, [isExpanded, games.length]);
 
@@ -61,6 +52,28 @@ export function HeaderGameSelector({ currentGame, onSelectGame }: HeaderGameSele
   }, [isExpanded]);
 
   const currentIcon = GAME_ICONS[currentGame.id];
+
+  // Mobile variant: show games as a simple list
+  if (variant === 'mobile') {
+    return (
+      <div className="header-game-selector mobile">
+        <div className="header-game-list mobile">
+          {games.map(game => (
+            <button
+              key={game.id}
+              className={'header-game-item' + (currentGame.id === game.id ? ' active' : '')}
+              onClick={() => onSelectGame(game)}
+            >
+              {GAME_ICONS[game.id] && (
+                <img src={GAME_ICONS[game.id]} alt="" className="header-game-item-icon" />
+              )}
+              <span className="header-game-item-name">{game.name}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="header-game-selector" ref={containerRef}>

@@ -8,10 +8,13 @@ export function usePersistedBuilds(gameId: string, profileId: string | null) {
   // Live query that auto-updates when DB changes
   const builds = useLiveQuery(
     () => {
-      if (!profileId) return [];
-      return db.builds.where('profileId').equals(profileId).toArray();
+      if (!profileId || !gameId) return [];
+      return db.builds
+        .where(['profileId', 'gameId'])
+        .equals([profileId, gameId])
+        .toArray();
     },
-    [profileId],
+    [profileId, gameId],
     [] // default value while loading
   );
 

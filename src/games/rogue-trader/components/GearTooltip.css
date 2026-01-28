@@ -101,5 +101,6 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: #c0c0d0;
+  white-space: pre-line;
 }
 
