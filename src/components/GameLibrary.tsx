@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { Game } from '../types';
-import { getAllGames, COMING_SOON_GAMES } from '../games/registry';
-import { Xmark } from 'iconoir-react';
+import { GamePickerModal } from './GamePickerModal';
 import './GameLibrary.css';
 
 interface GameLibraryProps {
@@ -9,7 +8,6 @@ interface GameLibraryProps {
 }
 
 export function GameLibrary({ onSelectGame }: GameLibraryProps) {
-  const games = getAllGames();
   const [showPicker, setShowPicker] = useState(false);
 
   return (
@@ -57,50 +55,10 @@ export function GameLibrary({ onSelectGame }: GameLibraryProps) {
       </section>
 
       {showPicker && (
-        <div className="picker-overlay" onClick={() => setShowPicker(false)}>
-          <div className="picker-modal" onClick={e => e.stopPropagation()}>
-            <button className="picker-close" onClick={() => setShowPicker(false)}>
-              <Xmark width={24} height={24} />
-            </button>
-            <h2>Available Game Sheets</h2>
-            <div className="game-grid">
-              {games.map((game) => (
-                  <button
-                    key={game.id}
-                    className="game-card"
-                    onClick={() => onSelectGame(game)}
-                    style={game.heroImage ? { backgroundImage: `url(${game.heroImage})` } : undefined}
-                  >
-                    <span className="beta-badge">Beta</span>
-                    {game.logo ? (
-                      <img src={game.logo} alt={game.name} className="game-logo" />
-                    ) : (
-                      <h3>{game.name}</h3>
-                    )}
-                  </button>
-              ))}
-            </div>
-
-            <h3 className="section-header">Games Planned</h3>
-            <div className="game-grid">
-              {COMING_SOON_GAMES.map((game) => (
-                <button
-                  key={game.id}
-                  className="game-card coming-soon"
-                  disabled
-                  style={game.heroImage ? { backgroundImage: `url(${game.heroImage})` } : undefined}
-                >
-                  <span className="coming-soon-badge">Coming Soon</span>
-                  {game.logo ? (
-                    <img src={game.logo} alt={game.name} className="game-logo" />
-                  ) : (
-                    <h3>{game.name}</h3>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
+        <GamePickerModal
+          onSelectGame={onSelectGame}
+          onClose={() => setShowPicker(false)}
+        />
       )}
 
       <footer className="landing-footer">

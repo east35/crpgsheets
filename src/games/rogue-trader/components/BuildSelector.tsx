@@ -53,7 +53,7 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
 
   const title = buildType === 'companion' ? 'Companion Builds' : 'Rogue Trader Builds';
   const subtitle = buildType === 'companion'
-    ? 'Choose a companion and build to view the level-by-level progression guide'
+    ? 'Choose a companion build to view the level-by-level progression guide'
     : 'Choose a build for your Rogue Trader protagonist';
 
   // For Rogue Trader builds, show directly without expansion pattern
@@ -63,7 +63,7 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
     
     return (
       <div className="build-selector">
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         <p className="subtitle">{subtitle}</p>
         <p className="build-credit">
           Builds sourced from{' '}
@@ -129,7 +129,7 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
 
   return (
     <div className="build-selector">
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       <p className="subtitle">{subtitle}</p>
       <p className="build-credit">
         Builds sourced from{' '}

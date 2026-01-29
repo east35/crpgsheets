@@ -90,7 +90,6 @@ export function TooltipSheetProvider({ children }: TooltipSheetProviderProps) {
             className={`tooltip-sheet ${isVisible ? 'visible' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="tooltip-sheet-handle" />
             <button className="tooltip-sheet-close" onClick={hideSheet}>
               <Xmark width={20} height={20} />
             </button>

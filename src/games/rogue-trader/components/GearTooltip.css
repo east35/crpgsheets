@@ -2,7 +2,6 @@
   position: relative;
   cursor: pointer;
   color: #8ac4ff;
-  border-bottom: 1px dotted #8ac4ff;
 }
 
 .gear-tooltip {

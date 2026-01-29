@@ -4,6 +4,24 @@ import { ARCHETYPE_DISPLAY_NAMES } from '../types';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
 import './ArchetypeTooltip.css';
 
+// Archetype image paths
+const ARCHETYPE_IMAGES: Partial<Record<Archetype, string>> = {
+  warrior: '/images/archetypes/rogue-trader/warrior.png',
+  operative: '/images/archetypes/rogue-trader/operative.png',
+  soldier: '/images/archetypes/rogue-trader/soldier.png',
+  officer: '/images/archetypes/rogue-trader/officer.png',
+  bladeDancer: '/images/archetypes/rogue-trader/bladeDancer.png',
+  assassin: '/images/archetypes/rogue-trader/assassin.png',
+  vanguard: '/images/archetypes/rogue-trader/vanguard.png',
+  bountyHunter: '/images/archetypes/rogue-trader/bountyHunter.png',
+  masterTactician: '/images/archetypes/rogue-trader/masterTactician.png',
+  archMilitant: '/images/archetypes/rogue-trader/archMilitant.png',
+  executioner: '/images/archetypes/rogue-trader/executioner.png',
+  grandStrategist: '/images/archetypes/rogue-trader/grandStrategist.png',
+  overseer: '/images/archetypes/rogue-trader/overseer.png',
+  exemplar: '/images/archetypes/rogue-trader/exemplar.png',
+};
+
 // Archetype descriptions
 const ARCHETYPE_DESCRIPTIONS: Partial<Record<Archetype, { description: string; role: string }>> = {
   warrior: {
@@ -81,6 +99,7 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
 
   const info = ARCHETYPE_DESCRIPTIONS[archetype];
   const displayName = ARCHETYPE_DISPLAY_NAMES[archetype];
+  const imageSrc = ARCHETYPE_IMAGES[archetype];
 
   const handleMouseEnter = () => {
     if (isMobile) return;
@@ -107,6 +126,7 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
       title: displayName,
       subtitle: info.role,
       description: info.description,
+      iconUrl: imageSrc,
     });
   };
 
@@ -165,8 +185,17 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
           onMouseLeave={handleMouseLeave}
         >
           <div className="archetype-tooltip-header">
-            <span className={`archetype-tooltip-name tier-${tier}`}>{displayName}</span>
-            <span className="archetype-tooltip-role">{info.role}</span>
+            {imageSrc && (
+              <img
+                src={imageSrc}
+                alt={displayName}
+                className="archetype-tooltip-image"
+              />
+            )}
+            <div className="archetype-tooltip-header-text">
+              <span className={`archetype-tooltip-name tier-${tier}`}>{displayName}</span>
+              <span className="archetype-tooltip-role">{info.role}</span>
+            </div>
           </div>
           <div className="archetype-tooltip-description">
             {info.description}

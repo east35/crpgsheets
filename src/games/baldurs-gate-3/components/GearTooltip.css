@@ -89,12 +89,12 @@
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
   padding-top: 0.5rem;
-  border-top: 1px solid #333;
+  border-top: 1px solid #3a3a5a;
 }
 
 .gear-tooltip-link {
   padding-top: 0.5rem;
-  border-top: 1px solid #333;
+  border-top: 1px solid #3a3a5a;
 }
 
 .gear-tooltip-link a {

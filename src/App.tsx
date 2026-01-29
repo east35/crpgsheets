@@ -10,8 +10,6 @@ import { BuildSelector as RTBuildSelector } from './games/rogue-trader/component
 import { BuildViewer as RTBuildViewer } from './games/rogue-trader/components/BuildViewer';
 import { CustomBuildEditor, type CustomBuildData } from './games/rogue-trader/components/CustomBuildEditor';
 import { getBuildById as getRTBuildById } from './games/rogue-trader/data/builds';
-import { getTalentInfo, WIKI_TALENTS } from './games/rogue-trader/data/talents';
-import { getGearInfo, GEAR_DATA } from './games/rogue-trader/data/gear';
 // BG3 imports
 import { BuildSelector as BG3BuildSelector } from './games/baldurs-gate-3/components/BuildSelector';
 import { BuildViewer as BG3BuildViewer } from './games/baldurs-gate-3/components/BuildViewer';
@@ -187,10 +185,6 @@ function App() {
 
   const handleViewCompanionBuilds = () => {
     setView('companion-builds');
-  };
-
-  const handleViewRogueTraderBuilds = () => {
-    setView('rogue-trader-builds');
   };
 
   const handleSelectBuild = (build: CharacterBuild) => {
@@ -407,60 +401,6 @@ function App() {
     setView('companion-builds');
   };
 
-  const handleSearch = (query: string) => {
-    const results: { type: 'talent' | 'gear'; name: string; description?: string }[] = [];
-    const lowerQuery = query.toLowerCase();
-    const seen = new Set<string>();
-
-    // Search talents - exact match first
-    const talentInfo = getTalentInfo(query);
-    if (talentInfo && !seen.has(talentInfo.name)) {
-      seen.add(talentInfo.name);
-      results.push({
-        type: 'talent',
-        name: talentInfo.name,
-        description: talentInfo.effect?.slice(0, 100) + (talentInfo.effect && talentInfo.effect.length > 100 ? '...' : ''),
-      });
-    }
-
-    // Search gear - exact match first
-    const gearInfo = getGearInfo(query);
-    if (gearInfo && !seen.has(gearInfo.name)) {
-      seen.add(gearInfo.name);
-      results.push({
-        type: 'gear',
-        name: gearInfo.name,
-        description: gearInfo.effect?.slice(0, 100) + (gearInfo.effect && gearInfo.effect.length > 100 ? '...' : ''),
-      });
-    }
-
-    // Partial matching for talents
-    Object.values(WIKI_TALENTS).forEach((talent) => {
-      if (talent.name.toLowerCase().includes(lowerQuery) && !seen.has(talent.name)) {
-        seen.add(talent.name);
-        results.push({
-          type: 'talent',
-          name: talent.name,
-          description: talent.effect?.slice(0, 100) + (talent.effect && talent.effect.length > 100 ? '...' : ''),
-        });
-      }
-    });
-
-    // Partial matching for gear
-    Object.values(GEAR_DATA).forEach((gear) => {
-      if (gear.name.toLowerCase().includes(lowerQuery) && !seen.has(gear.name)) {
-        seen.add(gear.name);
-        results.push({
-          type: 'gear',
-          name: gear.name,
-          description: gear.effect?.slice(0, 100) + (gear.effect && gear.effect.length > 100 ? '...' : ''),
-        });
-      }
-    });
-
-    return results;
-  };
-
   return (
     <div className={`app ${currentGame ? 'has-backdrop' : ''}`}>
       {currentGame?.heroImage && (
@@ -485,19 +425,24 @@ function App() {
           onExportProfile={exportProfile}
           onImportProfile={importProfile}
           onClearAllData={clearAllData}
-          onSearch={currentGame.id === 'rogue-trader' ? handleSearch : undefined}
           isPartyActive={view === 'my-builds' || (view === 'build-viewer' && navContext === 'party')}
           onViewParty={handleViewMyBuilds}
           subnavItems={
             currentGame.id === 'rogue-trader'
               ? [
-                  { label: 'Companions', active: view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader'), onClick: handleViewCompanionBuilds },
-                  { label: 'Rogue Trader', active: view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader'), onClick: () => setView('rogue-trader-builds') },
+                  { label: 'Companions', active: view === 'companion-builds' || (view === 'build-viewer' && navContext === 'builds' && selectedGuide?.companion !== 'RogueTrader'), onClick: handleViewCompanionBuilds },
+                  { label: 'Rogue Trader', active: view === 'rogue-trader-builds' || (view === 'build-viewer' && navContext === 'builds' && selectedGuide?.companion === 'RogueTrader'), onClick: () => setView('rogue-trader-builds') },
                 ]
               : [
-                  { label: 'Companions', active: view === 'bg3-companion-builds', onClick: () => setView('bg3-companion-builds') },
-                  { label: 'Tav', active: view === 'bg3-builds', onClick: () => setView('bg3-builds') },
+                  { label: 'Companions', active: view === 'bg3-companion-builds' || (view === 'build-viewer' && navContext === 'builds' && (selectedBG3Build?.tags?.includes('Companion') ?? false)), onClick: () => setView('bg3-companion-builds') },
+                  { label: 'Tav', active: view === 'bg3-builds' || (view === 'build-viewer' && navContext === 'builds' && !(selectedBG3Build?.tags?.includes('Companion') ?? false)), onClick: () => setView('bg3-builds') },
                 ]
+          }
+          showBuildsSubnav={
+            view === 'companion-builds' ||
+            view === 'rogue-trader-builds' ||
+            view === 'bg3-companion-builds' ||
+            view === 'bg3-builds'
           }
         />
       )}
@@ -508,88 +453,6 @@ function App() {
             {error}
             <button onClick={() => setError(null)}>Dismiss</button>
           </div>
-        )}
-
-        {/* Navigation tabs - Rogue Trader */}
-        {currentGame?.id === 'rogue-trader' && view !== 'game-select' && (
-          <>
-            <div className="nav-row">
-              <div className="view-tabs primary-tabs">
-                <button
-                  className={`view-tab ${view === 'my-builds' || view === 'build-editor' || (view === 'build-viewer' && navContext === 'party') ? 'active' : ''}`}
-                  onClick={handleViewMyBuilds}
-                >
-                  Party
-                </button>
-                <button
-                  className={`view-tab ${view === 'rogue-trader-builds' || view === 'companion-builds' || (view === 'build-viewer' && navContext === 'builds') ? 'active' : ''}`}
-                  onClick={handleViewCompanionBuilds}
-                >
-                  Builds
-                </button>
-              </div>
-            </div>
-            {/* Subnav for Builds - only show when in Builds context */}
-            {(view === 'rogue-trader-builds' || view === 'companion-builds' || (view === 'build-viewer' && navContext === 'builds')) && (
-              <div className="nav-row subnav">
-                <div className="view-tabs secondary-tabs">
-                  <button
-                    className={`view-tab ${view === 'companion-builds' || (view === 'build-viewer' && selectedGuide?.companion !== 'RogueTrader') ? 'active' : ''}`}
-                    onClick={handleViewCompanionBuilds}
-                  >
-                    Companions
-                  </button>
-                  <button
-                    className={`view-tab ${view === 'rogue-trader-builds' || (view === 'build-viewer' && selectedGuide?.companion === 'RogueTrader') ? 'active' : ''}`}
-                    onClick={handleViewRogueTraderBuilds}
-                  >
-                    Rogue Trader
-                  </button>
-                </div>
-              </div>
-            )}
-          </>
-        )}
-
-        {/* Navigation tabs - BG3 */}
-        {currentGame?.id === 'baldurs-gate-3' && view !== 'game-select' && (
-          <>
-            <div className="nav-row">
-              <div className="view-tabs primary-tabs">
-                <button
-                  className={`view-tab ${view === 'my-builds' || (view === 'build-viewer' && selectedBG3Build && navContext === 'party') ? 'active' : ''}`}
-                  onClick={handleViewMyBuilds}
-                >
-                  Party
-                </button>
-                <button
-                  className={`view-tab ${view === 'bg3-builds' || view === 'bg3-companion-builds' || (view === 'build-viewer' && selectedBG3Build && navContext === 'builds') ? 'active' : ''}`}
-                  onClick={() => setView('bg3-companion-builds')}
-                >
-                  Builds
-                </button>
-              </div>
-            </div>
-            {/* Subnav for Builds - only show when in Builds context */}
-            {(view === 'bg3-builds' || view === 'bg3-companion-builds' || (view === 'build-viewer' && selectedBG3Build && navContext === 'builds')) && (
-              <div className="nav-row subnav">
-                <div className="view-tabs secondary-tabs">
-                  <button
-                    className={`view-tab ${view === 'bg3-companion-builds' ? 'active' : ''}`}
-                    onClick={() => setView('bg3-companion-builds')}
-                  >
-                    Companions
-                  </button>
-                  <button
-                    className={`view-tab ${view === 'bg3-builds' ? 'active' : ''}`}
-                    onClick={() => setView('bg3-builds')}
-                  >
-                    Tav
-                  </button>
-                </div>
-              </div>
-            )}
-          </>
         )}
 
         {view === 'game-select' && <GameLibrary onSelectGame={handleSelectGame} />}
@@ -704,7 +567,7 @@ function App() {
         {view === 'my-builds' && currentGame && (
           <div className="build-list-view">
             <div className="view-header">
-              <h2>My Party</h2>
+              <h1>My Party</h1>
             </div>
 
             <BuildList

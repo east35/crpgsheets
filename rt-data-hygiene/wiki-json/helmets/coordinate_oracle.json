@@ -1,0 +1,44 @@
+{
+  "id": "coordinate_oracle",
+  "name": "Coordinate Oracle",
+  "wikiUrl": "https://roguetrader.wiki.fextralife.com/Coordinate+Oracle",
+  "sourceHtml": "rt-data-hygiene/wiki-html/helmets/Coordinate_Oracle.html",
+  "images": [
+    "/file/Rogue-Trader/coordinate_oracle_head_armor_warhammer_40k_rogue_trader_wiki_guide_128px.png",
+    "/file/Rogue-Trader/coordinate_oracle_location_rogue_trader_wiki_guide.jpg"
+  ],
+  "slot": "Helmet",
+  "type": "",
+  "rarity": "",
+  "infobox": {},
+  "statsTables": [
+    {
+      "title": "Coordinate Oracle",
+      "rows": [
+        [
+          "This matrix grants the wearer a +15 bonus to Awereness ."
+        ]
+      ]
+    }
+  ],
+  "requirements": [],
+  "effect": "This matrix grants the wearer a +15 bonus to Awereness .",
+  "description": "Home Home Wiki Forums Wiki To-Do Wiki Shop Fextralife Blog Fextralife Wiki Hub General General Information Founder's Packs DLCs Patch Notes Colony Management D100 System Trade Controls Difficulty Combat Space Combat Difficulty FAQs Character Character Information Character Creation Difficulty Convictions Homeworlds Origins Archetypes Abilities Talents Stats Status Effects Characteristics Skills Builds Equipment Equipment Weapons Ranged Weapons Melee Weapons Armor Accessories Helmets Gloves Boots Cloaks Rings Amulets Items Consumables Grenades Ship Components World World Information Locations Colony Management Quests Factions Companions NPCs Merchants Creatures & Enemies Bosses Enemies Lore Rogue Traders Guides Guides & Walkthroughs New Player Help Game Progress Route Walkthrough Romance Builds Companion Builds Endings Bosses Guide Achievement Guide Threads Home Home Wiki Forums Wiki To-Do Wiki Shop Fextralife Blog Fextralife Wiki Hub General General Information Founder's Packs DLCs Patch Notes Colony Management D100 System Trade Controls Difficulty Combat Space Combat Difficulty FAQs Character Character Information Character Creation Difficulty Convictions Homeworlds Origins Archetypes Abilities Talents Stats Status Effects Characteristics Skills Builds Equipment Equipment Weapons Ranged Weapons Melee Weapons Armor Accessories Helmets Gloves Boots Cloaks Rings Amulets Items Consumables Grenades Ship Components World World Information Locations Colony Management Quests Factions Companions NPCs Merchants Creatures & Enemies Bosses Enemies Lore Rogue Traders Guides Guides & Walkthroughs New Player Help Game Progress Route Walkthrough Romance Builds Companion Builds Endings Bosses Guide Achievement Guide Chat Wikis All Wikis Sign In Now Sign In Help Profile Following Account Preferences Premium Log Out Sign In Now Equipment / Accessories / Helmets + 5 \u2026 Visit Discord Create new page Edit History Recent Changes Rename Redirect Lock Unlock Permissions Javascript Tags Edit Open Graph Clear page cache Clear comments cache File Manager Page Manager Wiki Templates Comments Approval Wiki Settings Wiki Manager Delete Recent Changes New page File Manager Members Page Manager Settings Create Wiki Home Home Wiki Forums Wiki To-Do Wiki Shop Fextralife Blog Fextralife Wiki Hub General General Information Founder's Packs DLCs Patch Notes Colony Management D100 System Trade Controls Difficulty Combat Space Combat Difficulty FAQs Character Character Information Character Creation Difficulty Convictions Homeworlds Origins Archetypes Abilities Talents Stats Status Effects Characteristics Skills Builds Equipment Equipment Weapons Ranged Weapons Melee Weapons Armor Accessories Helmets Gloves Boots Cloaks Rings Amulets Items Consumables Grenades Ship Components World World Information Locations Colony Management Quests Factions Companions NPCs Merchants Creatures & Enemies Bosses Enemies Lore Rogue Traders Guides Guides & Walkthroughs New Player Help Game Progress Route Walkthrough Romance Builds Companion Builds Endings Bosses Guide Achievement Guide Search Results Coordinate Oracle | Rogue Trader Wiki Coordinate Oracle This matrix grants the wearer a +15 bonus to Awereness .",
+  "flavorText": "Home Home Wiki Forums Wiki To-Do Wiki Shop Fextralife Blog Fextralife Wiki Hub General General Information Founder's Packs DLCs Patch Notes Colony Management D100 System Trade Controls Difficulty Combat Space Combat Difficulty FAQs Character Character Information Character Creation Difficulty Convictions Homeworlds Origins Archetypes Abilities Talents Stats Status Effects Characteristics Skills Builds Equipment Equipment Weapons Ranged Weapons Melee Weapons Armor Accessories Helmets Gloves Boots Cloaks Rings Amulets Items Consumables Grenades Ship Components World World Information Locations Colony Management Quests Factions Companions NPCs Merchants Creatures & Enemies Bosses Enemies Lore Rogue Traders Guides Guides & Walkthroughs New Player Help Game Progress Route Walkthrough Romance Builds Companion Builds Endings Bosses Guide Achievement Guide Threads Home Home Wiki Forums Wiki To-Do Wiki Shop Fextralife Blog Fextralife Wiki Hub General General Information Founder's Packs DLCs Patch Notes Colony Management D100 System Trade Controls Difficulty Combat Space Combat Difficulty FAQs Character Character Information Character Creation Difficulty Convictions Homeworlds Origins Archetypes Abilities Talents Stats Status Effects Characteristics Skills Builds Equipment Equipment Weapons Ranged Weapons Melee Weapons Armor Accessories Helmets Gloves Boots Cloaks Rings Amulets Items Consumables Grenades Ship Components World World Information Locations Colony Management Quests Factions Companions NPCs Merchants Creatures & Enemies Bosses Enemies Lore Rogue Traders Guides Guides & Walkthroughs New Player Help Game Progress Route Walkthrough Romance Builds Companion Builds Endings Bosses Guide Achievement Guide Chat Wikis All Wikis Sign In Now Sign In Help Profile Following Account Preferences Premium Log Out Sign In Now Equipment / Accessories / Helmets + 5 \u2026 Visit Discord Create new page Edit History Recent Changes Rename Redirect Lock Unlock Permissions Javascript Tags Edit Open Graph Clear page cache Clear comments cache File Manager Page Manager Wiki Templates Comments Approval Wiki Settings Wiki Manager Delete Recent Changes New page File Manager Members Page Manager Settings Create Wiki Home Home Wiki Forums Wiki To-Do Wiki Shop Fextralife Blog Fextralife Wiki Hub General General Information Founder's Packs DLCs Patch Notes Colony Management D100 System Trade Controls Difficulty Combat Space Combat Difficulty FAQs Character Character Information Character Creation Difficulty Convictions Homeworlds Origins Archetypes Abilities Talents Stats Status Effects Characteristics Skills Builds Equipment Equipment Weapons Ranged Weapons Melee Weapons Armor Accessories Helmets Gloves Boots Cloaks Rings Amulets Items Consumables Grenades Ship Components World World Information Locations Colony Management Quests Factions Companions NPCs Merchants Creatures & Enemies Bosses Enemies Lore Rogue Traders Guides Guides & Walkthroughs New Player Help Game Progress Route Walkthrough Romance Builds Companion Builds Endings Bosses Guide Achievement Guide Search Results Coordinate Oracle | Rogue Trader Wiki Coordinate Oracle This matrix grants the wearer a +15 bonus to Awereness .",
+  "parsedAt": "2026-01-29T16:44:03Z",
+  "stats": [
+    {
+      "label": "Slot",
+      "value": "Helmet"
+    },
+    {
+      "label": "Effect",
+      "value": "This matrix grants the wearer a +15 bonus to Awereness ."
+    }
+  ],
+  "keywords": [
+    "bonus",
+    "Awereness"
+  ],
+  "sourceTooltip": "rt-data-hygiene/wiki-html/helmets/tooltips/tooltip_Coordinate_Oracle.html"
+}

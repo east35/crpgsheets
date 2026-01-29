@@ -15,7 +15,7 @@
   width: 80px;
   height: 100px;
   background: #2a2a4a;
-  border: 2px dashed #444;
+  border: 2px dashed #3a3a5a;
   border-radius: 8px;
   color: #888;
   cursor: pointer;
@@ -34,8 +34,9 @@
 }
 
 .avatar-upload-placeholder span {
-  font-size: 0.7rem;
+  font-size: 3rem;
   text-align: center;
+  color: #fff;
 }
 
 .avatar-upload-plus {

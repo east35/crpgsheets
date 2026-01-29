@@ -35,14 +35,6 @@
   transform: translateY(0);
 }
 
-.tooltip-sheet-handle {
-  width: 40px;
-  height: 4px;
-  background: #4a4a6a;
-  border-radius: 2px;
-  margin: 12px auto 8px;
-}
-
 .tooltip-sheet-close {
   position: absolute;
   top: 12px;
@@ -83,7 +75,8 @@
   height: 56px;
   border-radius: 8px;
   object-fit: cover;
-  border: 1px solid #5a5a7a;
+  border: 1px solid #3a3a5a;
+  background-color: #0f0f1a;
   flex-shrink: 0;
 }
 

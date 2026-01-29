@@ -1,16 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import type { Game, Profile } from '../types';
-import { ProfileSelector } from './ProfileSelector';
-import { HeaderGameSelector } from './HeaderGameSelector';
 import { MobileMenu } from './MobileMenu';
-import { Search, Shield, User, List, FlaskSolid } from 'iconoir-react';
-
-interface SearchResult {
-  type: 'talent' | 'gear' | 'companion' | 'build';
-  name: string;
-  description?: string;
-  onClick?: () => void;
-}
 
 interface HeaderProps {
   currentGame: Game;
@@ -25,12 +15,18 @@ interface HeaderProps {
   onExportProfile?: (id: string) => Promise<void>;
   onImportProfile?: (file: File) => Promise<Profile>;
   onClearAllData?: () => Promise<void>;
-  onSearch?: (query: string) => SearchResult[];
-  // Mobile nav props
+  // Nav props
   isPartyActive?: boolean;
   onViewParty?: () => void;
-  // Subnav items for mobile nav
+  // Subnav items for nav tabs (Companions, Rogue Trader/Tav)
   subnavItems?: { label: string; active: boolean; onClick: () => void }[];
+  // Explicitly control when to show the builds subnav (only when browsing build lists)
+  showBuildsSubnav?: boolean;
+}
+
+// Check if any subnav item is active (means we're in "Builds" mode)
+function isBuildsActive(subnavItems?: { active: boolean }[]): boolean {
+  return subnavItems?.some(item => item.active) ?? false;
 }
 
 export function Header({
@@ -46,153 +42,71 @@ export function Header({
   onExportProfile,
   onImportProfile,
   onClearAllData,
-  onSearch,
   isPartyActive,
   onViewParty,
   subnavItems,
+  showBuildsSubnav,
 }: HeaderProps) {
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-  const searchRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setSearchOpen(false);
-        setSearchQuery('');
-        setSearchResults([]);
-      }
-    };
-    if (searchOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      inputRef.current?.focus();
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [searchOpen]);
-
-  const handleSearchInput = (value: string) => {
-    setSearchQuery(value);
-    if (value.trim().length >= 2 && onSearch) {
-      setSearchResults(onSearch(value));
-    } else {
-      setSearchResults([]);
-    }
-  };
-
-  const handleResultClick = (result: SearchResult) => {
-    result.onClick?.();
-    setSearchOpen(false);
-    setSearchQuery('');
-    setSearchResults([]);
-  };
-
-  const getTypeIcon = (type: SearchResult['type']) => {
-    switch (type) {
-      case 'talent': return <FlaskSolid width={16} height={16} />;
-      case 'gear': return <Shield width={16} height={16} />;
-      case 'companion': return <User width={16} height={16} />;
-      case 'build': return <List width={16} height={16} />;
-      default: return <Search width={16} height={16} />;
-    }
-  };
+  const buildsActive = isBuildsActive(subnavItems);
 
   return (
-    <header className="header">
-      <div className="header-content">
-        {/* Desktop: Game selector on left */}
-        <div className="header-left desktop-only">
-          <HeaderGameSelector
-            currentGame={currentGame}
-            onSelectGame={onSelectGame}
-          />
-        </div>
-
-        {/* Mobile: Hamburger menu */}
-        {profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
-          <MobileMenu
-            currentGame={currentGame}
-            onSelectGame={onSelectGame}
-            profiles={profiles}
-            currentProfile={currentProfile ?? null}
-            onSelectProfile={onSelectProfile}
-            onCreateProfile={onCreateProfile}
-            onDeleteProfile={onDeleteProfile}
-            onDuplicateProfile={onDuplicateProfile}
-            onRenameProfile={onRenameProfile}
-            onExportProfile={onExportProfile}
-            onImportProfile={onImportProfile}
-            onClearAllData={onClearAllData}
-          />
-        )}
-
-        {/* Mobile: Flat nav - Party, Companions, Rogue Trader/Tav */}
-        {onViewParty && subnavItems && (
-          <div className="header-mobile-nav mobile-only">
-            <button
-              className={`header-nav-tab ${isPartyActive ? 'active' : ''}`}
-              onClick={onViewParty}
-            >
-              Party
-            </button>
-            {subnavItems.map((item, i) => (
-              <button
-                key={i}
-                className={`header-nav-tab ${item.active ? 'active' : ''}`}
-                onClick={item.onClick}
-              >
-                {item.label}
-              </button>
-            ))}
+    <>
+      <header className="header">
+        <div className="header-content">
+          {/* Left: Logo */}
+          <div className="header-left">
+            <img
+              src="/images/marketing/SheetsLogo.png"
+              alt="Sheets"
+              className="header-logo"
+            />
           </div>
-        )}
 
-        {/* Desktop: Search and Profile selector on right */}
-        {profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
-          <div className="header-right desktop-only">
-            {onSearch && (
-              <div className="header-search" ref={searchRef}>
-                <button 
-                  className={`header-search-btn ${searchOpen ? 'active' : ''}`}
-                  onClick={() => setSearchOpen(!searchOpen)}
-                  title="Search"
+          {/* Center: Nav tabs */}
+          {onViewParty && subnavItems && (
+            <>
+              {/* Desktop: Party, Companions, Rogue Trader/Tav */}
+              <div className="header-nav desktop-only">
+                <button
+                  className={`header-nav-tab ${isPartyActive ? 'active' : ''}`}
+                  onClick={onViewParty}
                 >
-                  <Search width={18} height={18} />
+                  Party
                 </button>
-                {searchOpen && (
-                  <div className="header-search-dropdown">
-                    <input
-                      ref={inputRef}
-                      type="text"
-                      className="header-search-input"
-                      placeholder="Search talents, gear..."
-                      value={searchQuery}
-                      onChange={(e) => handleSearchInput(e.target.value)}
-                    />
-                    {searchResults.length > 0 && (
-                      <div className="header-search-results">
-                        {searchResults.slice(0, 10).map((result, i) => (
-                          <button
-                            key={`${result.type}-${result.name}-${i}`}
-                            className="header-search-result"
-                            onClick={() => handleResultClick(result)}
-                          >
-                            <span className="result-icon">{getTypeIcon(result.type)}</span>
-                            <span className="result-name">{result.name}</span>
-                            <span className="result-type">{result.type}</span>
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                    {searchQuery.length >= 2 && searchResults.length === 0 && (
-                      <div className="header-search-empty">No results</div>
-                    )}
-                  </div>
-                )}
+                {subnavItems.map((item, i) => (
+                  <button
+                    key={i}
+                    className={`header-nav-tab ${item.active ? 'active' : ''}`}
+                    onClick={item.onClick}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
-            )}
-            <ProfileSelector
+
+              {/* Mobile: Party, Builds (consolidated) */}
+              <div className="header-nav mobile-only">
+                <button
+                  className={`header-nav-tab ${isPartyActive ? 'active' : ''}`}
+                  onClick={onViewParty}
+                >
+                  Party
+                </button>
+                <button
+                  className={`header-nav-tab ${buildsActive ? 'active' : ''}`}
+                  onClick={subnavItems[0]?.onClick}
+                >
+                  Builds
+                </button>
+              </div>
+            </>
+          )}
+
+          {/* Right: Hamburger menu (dropdown on desktop, slide-out on mobile) */}
+          {profiles && onSelectProfile && onCreateProfile && onDeleteProfile && onDuplicateProfile && onRenameProfile && onExportProfile && onImportProfile && (
+            <MobileMenu
+              currentGame={currentGame}
+              onSelectGame={onSelectGame}
               profiles={profiles}
               currentProfile={currentProfile ?? null}
               onSelectProfile={onSelectProfile}
@@ -204,9 +118,26 @@ export function Header({
               onImportProfile={onImportProfile}
               onClearAllData={onClearAllData}
             />
-          </div>
-        )}
-      </div>
-    </header>
+          )}
+        </div>
+      </header>
+
+      {/* Mobile sticky bottom subnav: Companions / Rogue Trader tabs */}
+      {/* Only shown when actively browsing build lists (not viewing party details) */}
+      {subnavItems && showBuildsSubnav && createPortal(
+        <div className="builds-subnav mobile-only">
+          {subnavItems.map((item, i) => (
+            <button
+              key={i}
+              className={`builds-subnav-tab ${item.active ? 'active' : ''}`}
+              onClick={item.onClick}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>,
+        document.body
+      )}
+    </>
   );
 }

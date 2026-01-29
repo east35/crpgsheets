@@ -229,6 +229,20 @@
     padding-right: 2rem;
   }
 
+  .build-selector-modal-overlay.bg3 .build-card-layout {
+    gap: 0.75rem;
+  }
+
+  .build-selector-modal-overlay.bg3 .build-card-icon-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+
+  .build-selector-modal-overlay.bg3 .build-card-class-icon {
+    width: 56px;
+    height: 56px;
+  }
+
   .build-selector-modal-overlay.bg3 .build-card-portrait {
     width: 80px;
     height: 80px;

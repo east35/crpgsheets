@@ -60,11 +60,27 @@
 
 .archetype-tooltip-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 12px;
   margin-bottom: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #3a3a5a;
+}
+
+.archetype-tooltip-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #2a2a3e;
+  flex-shrink: 0;
+}
+
+.archetype-tooltip-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
 }
 
 .archetype-tooltip-name {
@@ -85,11 +101,12 @@
 }
 
 .archetype-tooltip-role {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   padding: 2px 8px;
   background: #2a2a3e;
   border-radius: 4px;
   color: #8a8aaa;
+  align-self: flex-start;
 }
 
 .archetype-tooltip-description {

@@ -214,7 +214,7 @@
 .tabs {
   display: flex;
   gap: 0.5rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #3a3a5a;
 }
 
 .tab {
@@ -407,7 +407,7 @@
 
 .talent {
   padding: 0.2rem 0.5rem;
-  background: #333;
+  background: #3a3a5a;
   border-radius: 4px;
   font-size: 0.9rem;
 }
