@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Retinal Analyser",
+    "slot": "Helmet",
+    "type": "Accessory",
+    "effect": "Whenever the wearer hits a target with a shield, that target must pass a Toughness resistance test or be knocked prone.",
+    "wikiUrl": "https://roguetrader.wiki.fextralife.com/Retinal+Analyser"
+  }
+]

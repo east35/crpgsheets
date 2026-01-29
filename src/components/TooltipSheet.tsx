@@ -2,12 +2,23 @@ import { createContext, useContext, useState, useCallback, useEffect, type React
 import { createPortal } from 'react-dom';
 import { Xmark } from 'iconoir-react';
 import './TooltipSheet.css';
+import { TooltipCard, type TooltipBadge, type TooltipField, type TooltipLink } from './TooltipCard';
 
 interface TooltipContent {
   title: string;
   subtitle?: string;
+  subtitleVariant?: 'text' | 'badge';
+  subtitleColor?: string;
+  subtitleBackground?: string;
+  badge?: TooltipBadge;
+  sections?: TooltipField[];
+  flavor?: string;
   iconUrl?: string;
   meta?: Array<{ label: string; value: string; color?: string }>;
+  stats?: TooltipField[];
+  callout?: string;
+  link?: TooltipLink;
+  descriptionItalic?: boolean;
   description: string;
 }
 
@@ -94,37 +105,28 @@ export function TooltipSheetProvider({ children }: TooltipSheetProviderProps) {
               <Xmark width={20} height={20} />
             </button>
             <div className="tooltip-sheet-content">
-              <div className="tooltip-sheet-header">
-                {content.iconUrl && (
-                  <img
-                    src={content.iconUrl}
-                    alt=""
-                    className="tooltip-sheet-icon"
-                  />
-                )}
-                <div className="tooltip-sheet-titles">
-                  <h3 className="tooltip-sheet-title">{content.title}</h3>
-                  {content.subtitle && (
-                    <span className="tooltip-sheet-subtitle">{content.subtitle}</span>
-                  )}
-                </div>
-              </div>
-              {content.meta && content.meta.length > 0 && (
-                <div className="tooltip-sheet-meta">
-                  {content.meta.map((item, i) => (
-                    <span
-                      key={i}
-                      className="tooltip-sheet-meta-item"
-                      style={item.color ? { color: item.color } : undefined}
-                    >
-                      {item.label}: {item.value}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <div className="tooltip-sheet-description">
-                {content.description}
-              </div>
+              <TooltipCard
+                title={content.title}
+                iconUrl={content.iconUrl}
+                badge={
+                  content.badge ||
+                  (content.subtitle
+                    ? {
+                        label: content.subtitle,
+                        background: content.subtitleBackground,
+                        color: content.subtitleColor,
+                      }
+                    : undefined)
+                }
+                sections={content.sections}
+                flavor={content.flavor}
+                description={content.description}
+                descriptionItalic={content.descriptionItalic}
+                stats={content.stats || content.meta}
+                callout={content.callout}
+                link={content.link}
+                variant="sheet"
+              />
             </div>
           </div>
         </div>,

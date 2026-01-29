@@ -23,7 +23,10 @@
   }
   
   .build-viewer-header .build-title {
+    flex: 1;
     align-items: center;
+    display: flex;
+    flex-direction: column;
   }
   
   .build-viewer-header .archetype-path {

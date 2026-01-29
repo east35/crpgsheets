@@ -17,6 +17,7 @@ import xml.etree.ElementTree as ET
 DEFAULT_SITEMAP_PATH = "rt-data-hygiene/sitemap.xml"
 DEFAULT_HTML_DIR = "rt-data-hygiene/wiki-html/helmets"
 DEFAULT_OUT_DIR = "rt-data-hygiene/wiki-json/helmets"
+DEFAULT_MANUAL_PATH = "rt-data-hygiene/manual-helmets.json"
 
 
 TAG_RE = re.compile(r"<[^>]+>")
@@ -377,6 +378,47 @@ def parse_html_file(path: str, url: str | None) -> dict:
     return item
 
 
+def normalize_manual_item(raw: dict) -> dict:
+    name = raw.get("name", "").strip()
+    slug = slugify(name) if name else slugify(raw.get("id", "item"))
+    effect = raw.get("effect", "").strip()
+    requirements = [r for r in raw.get("requirements", []) if r]
+    keywords = [k for k in raw.get("keywords", []) if k]
+    images = [img for img in raw.get("images", []) if img]
+    item = {
+        "id": slug,
+        "name": name,
+        "wikiUrl": raw.get("wikiUrl"),
+        "sourceHtml": None,
+        "images": list(dict.fromkeys(images)),
+        "slot": raw.get("slot", "Helmet"),
+        "type": raw.get("type", ""),
+        "rarity": raw.get("rarity", ""),
+        "infobox": raw.get("infobox", {}),
+        "statsTables": raw.get("statsTables", []),
+        "requirements": requirements,
+        "effect": effect,
+        "description": raw.get("description", ""),
+        "flavorText": raw.get("flavorText", ""),
+        "parsedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "sourceTooltip": raw.get("sourceTooltip"),
+        "keywords": keywords,
+    }
+    stats: list[dict[str, str]] = []
+    if item.get("slot"):
+        stats.append({"label": "Slot", "value": item.get("slot", "")})
+    if item.get("type"):
+        stats.append({"label": "Type", "value": item.get("type", "")})
+    if item.get("rarity"):
+        stats.append({"label": "Rarity", "value": item.get("rarity", "")})
+    for req in requirements:
+        stats.append({"label": "Requirements", "value": req})
+    if effect:
+        stats.append({"label": "Effect", "value": effect})
+    item["stats"] = stats
+    return item
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sitemap", default=DEFAULT_SITEMAP_PATH)
@@ -386,6 +428,7 @@ def main() -> None:
     parser.add_argument("--tooltip-dir", default="rt-data-hygiene/wiki-html/helmets/tooltips")
     parser.add_argument("--match", default=r"\bHelm(et)?\b", help="regex matched against decoded URL/title")
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--manual", default=DEFAULT_MANUAL_PATH)
     args = parser.parse_args()
 
     if not os.path.exists(args.html_dir):
@@ -505,6 +548,29 @@ def main() -> None:
         out_path = os.path.join(args.out_dir, f"{item['id']}.json")
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(item, f, ensure_ascii=True, indent=2)
+
+    if os.path.exists(args.manual):
+        with open(args.manual, "r", encoding="utf-8") as f:
+            manual_items = json.load(f)
+        if isinstance(manual_items, dict):
+            manual_items = manual_items.get("items", [])
+        if manual_items:
+            by_id = {item["id"]: item for item in items if item.get("id")}
+            for raw in manual_items:
+                manual_item = normalize_manual_item(raw)
+                existing = by_id.get(manual_item["id"])
+                if existing:
+                    for key in ("effect", "requirements", "keywords", "images", "wikiUrl", "rarity", "type"):
+                        if not existing.get(key) and manual_item.get(key):
+                            existing[key] = manual_item[key]
+                    if not existing.get("stats"):
+                        existing["stats"] = manual_item.get("stats", [])
+                else:
+                    items.append(manual_item)
+                    by_id[manual_item["id"]] = manual_item
+                    out_path = os.path.join(args.out_dir, f"{manual_item['id']}.json")
+                    with open(out_path, "w", encoding="utf-8") as f:
+                        json.dump(manual_item, f, ensure_ascii=True, indent=2)
 
     index_path = os.path.join(args.out_dir, "index.json")
     with open(index_path, "w", encoding="utf-8") as f:

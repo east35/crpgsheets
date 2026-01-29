@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import type { Archetype } from '../types';
 import { ARCHETYPE_DISPLAY_NAMES } from '../types';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
+import { TooltipCard, type TooltipField } from '../../../components/TooltipCard';
 import './ArchetypeTooltip.css';
 
 // Archetype image paths
@@ -124,7 +125,7 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
 
     showSheet({
       title: displayName,
-      subtitle: info.role,
+      badge: { label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' },
       description: info.description,
       iconUrl: imageSrc,
     });
@@ -179,27 +180,18 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
       {isVisible && !isMobile && info && (
         <div
           ref={tooltipRef}
-          className={`archetype-tooltip ${position}`}
+          className={`crpg-tooltip-container ${position}`}
           style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="archetype-tooltip-header">
-            {imageSrc && (
-              <img
-                src={imageSrc}
-                alt={displayName}
-                className="archetype-tooltip-image"
-              />
-            )}
-            <div className="archetype-tooltip-header-text">
-              <span className={`archetype-tooltip-name tier-${tier}`}>{displayName}</span>
-              <span className="archetype-tooltip-role">{info.role}</span>
-            </div>
-          </div>
-          <div className="archetype-tooltip-description">
-            {info.description}
-          </div>
+          <TooltipCard
+            title={displayName}
+            iconUrl={imageSrc}
+            badge={{ label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }}
+            sections={[{ label: 'Tier', value: tier } as TooltipField]}
+            description={info.description}
+          />
         </div>
       )}
     </span>

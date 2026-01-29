@@ -1,0 +1,147 @@
+.crpg-tooltip-card {
+  background: #1b1b1b;
+  border: 1px solid #6f5f3b;
+  border-radius: 12px;
+  padding: 16px;
+  color: #d9cdb8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.crpg-tooltip-card.tooltip {
+  min-width: 320px;
+  max-width: 460px;
+}
+
+.crpg-tooltip-card.sheet {
+  width: 100%;
+}
+
+.crpg-tooltip-container {
+  position: absolute;
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+.crpg-tooltip-container.top {
+  bottom: calc(100% + 8px);
+}
+
+.crpg-tooltip-container.bottom {
+  top: calc(100% + 8px);
+}
+
+.crpg-tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1rem;
+}
+
+.crpg-tooltip-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #25201a;
+  border: 1px solid #6f5f3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 12px rgba(217, 184, 109, 0.18);
+}
+
+.crpg-tooltip-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.crpg-tooltip-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.crpg-tooltip-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e8dbc6;
+}
+
+.crpg-tooltip-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #f0a319;
+  color: #1b1206;
+  width: fit-content;
+}
+
+.crpg-tooltip-divider {
+  height: 1px;
+  background: #514636;
+  margin: 14px 0;
+}
+
+.crpg-tooltip-section,
+.crpg-tooltip-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.crpg-tooltip-kv {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+}
+
+.crpg-tooltip-label {
+  font-weight: 700;
+  color: #e6d9c4;
+}
+
+.crpg-tooltip-value {
+  color: #bfae95;
+}
+
+.crpg-tooltip-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #c7b7a0;
+  white-space: pre-line;
+}
+
+.crpg-tooltip-description.italic {
+  font-style: italic;
+  color: #c5b39c;
+}
+
+.crpg-tooltip-callout {
+  color: #f0a319;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.crpg-tooltip-link {
+  color: #d3b36b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.crpg-tooltip-link:hover {
+  color: #f0c96d;
+}
+
+@media (max-width: 768px) {
+  .crpg-tooltip-card.tooltip {
+    min-width: 0;
+    max-width: none;
+  }
+}

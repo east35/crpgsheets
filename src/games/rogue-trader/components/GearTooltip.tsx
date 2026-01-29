@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { getGearInfo } from '../data/gear';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
+import { TooltipCard, type TooltipBadge, type TooltipField, type TooltipLink } from '../../../components/TooltipCard';
 import './GearTooltip.css';
 
 interface GearTooltipProps {
@@ -18,6 +19,19 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   const { showSheet, isMobile } = useTooltipSheet();
 
   const gearInfo = getGearInfo(gearName);
+  const sections: TooltipField[] = [];
+  if (gearInfo?.stats?.slot) sections.push({ label: 'Slot', value: gearInfo.stats.slot });
+  const stats: TooltipField[] = [];
+  if (gearInfo?.stats?.rarity) stats.push({ label: 'Rarity', value: gearInfo.stats.rarity });
+  if (gearInfo?.stats?.requirements) stats.push({ label: 'Requirements', value: gearInfo.stats.requirements });
+  if (gearInfo?.stats?.keywords) stats.push({ label: 'Keywords', value: gearInfo.stats.keywords });
+
+  const typeStyles: Record<string, { background: string; color: string }> = {
+    weapon: { background: '#4a3030', color: '#ff8a8a' },
+    accessory: { background: '#3a4a30', color: '#8aff8a' },
+    item: { background: '#3a3a4a', color: '#c0c0ff' },
+  };
+  const typeStyle = gearInfo ? (typeStyles[gearInfo.type] || { background: '#3a3a4a', color: '#c0c0ff' }) : { background: '#3a3a4a', color: '#c0c0ff' };
 
   const handleMouseEnter = () => {
     if (isMobile) return;
@@ -40,18 +54,27 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
     e.preventDefault();
     e.stopPropagation();
 
-    const meta: Array<{ label: string; value: string; color?: string }> = [];
-    if (gearInfo.stats?.damage) meta.push({ label: 'Damage', value: gearInfo.stats.damage });
-    if (gearInfo.stats?.armorPenetration) meta.push({ label: 'AP', value: String(gearInfo.stats.armorPenetration) });
-    if (gearInfo.stats?.damageType) meta.push({ label: 'Type', value: gearInfo.stats.damageType });
-    if (gearInfo.stats?.slot) meta.push({ label: 'Slot', value: gearInfo.stats.slot });
+    const sections: TooltipField[] = [];
+    if (gearInfo.stats?.slot) sections.push({ label: 'Slot', value: gearInfo.stats.slot });
+    const stats: TooltipField[] = [];
+    if (gearInfo.stats?.rarity) stats.push({ label: 'Rarity', value: gearInfo.stats.rarity });
+    if (gearInfo.stats?.requirements) stats.push({ label: 'Requirements', value: gearInfo.stats.requirements });
+    if (gearInfo.stats?.keywords) stats.push({ label: 'Keywords', value: gearInfo.stats.keywords });
+
+    const badge: TooltipBadge = {
+      label: gearInfo.type.toUpperCase(),
+      background: typeStyle.background,
+      color: typeStyle.color,
+    };
 
     showSheet({
       title: gearInfo.name,
-      subtitle: gearInfo.type,
+      badge,
       iconUrl: gearInfo.imageRemote,
-      meta,
+      sections,
+      stats,
       description: gearInfo.effect || '',
+      link: gearInfo.wikiUrl ? ({ label: 'View on Wiki', url: gearInfo.wikiUrl } as TooltipLink) : undefined,
     });
   };
 
@@ -105,35 +128,20 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
       {isVisible && !isMobile && gearInfo && (
         <div
           ref={tooltipRef}
-          className={`gear-tooltip ${position}`}
+          className={`crpg-tooltip-container ${position}`}
           style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="gear-tooltip-header">
-            {gearInfo.imageRemote && (
-              <img
-                src={gearInfo.imageRemote}
-                alt={gearInfo.name}
-                className="gear-tooltip-image"
-              />
-            )}
-            <div className="gear-tooltip-header-text">
-              <span className="gear-tooltip-name">{gearInfo.name}</span>
-              <span className={`gear-tooltip-type ${gearInfo.type}`}>{gearInfo.type}</span>
-            </div>
-          </div>
-          {gearInfo.stats && Object.keys(gearInfo.stats).length > 0 && (
-            <div className="gear-tooltip-stats">
-              {gearInfo.stats.damage && <span className="gear-stat">Damage: {gearInfo.stats.damage}</span>}
-              {gearInfo.stats.armorPenetration && <span className="gear-stat">AP: {gearInfo.stats.armorPenetration}</span>}
-              {gearInfo.stats.damageType && <span className="gear-stat">Type: {gearInfo.stats.damageType}</span>}
-              {gearInfo.stats.slot && <span className="gear-stat">Slot: {gearInfo.stats.slot}</span>}
-            </div>
-          )}
-          <div className="gear-tooltip-description">
-            {gearInfo.effect}
-          </div>
+          <TooltipCard
+            title={gearInfo.name}
+            iconUrl={gearInfo.imageRemote}
+            badge={{ label: gearInfo.type.toUpperCase(), background: typeStyle.background, color: typeStyle.color }}
+            sections={sections}
+            description={gearInfo.effect || ''}
+            stats={stats}
+            link={gearInfo.wikiUrl ? ({ label: 'View on Wiki', url: gearInfo.wikiUrl } as TooltipLink) : undefined}
+          />
         </div>
       )}
     </span>

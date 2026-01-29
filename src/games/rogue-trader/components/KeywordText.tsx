@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { findKeyword, ALL_KEYWORD_NAMES, type KeywordInfo } from '../data/character';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
+import { TooltipCard, type TooltipBadge, type TooltipField, type TooltipLink } from '../../../components/TooltipCard';
 import './KeywordText.css';
 
 interface KeywordTextProps {
@@ -54,12 +55,31 @@ function findKeywordMatches(text: string): KeywordMatch[] {
 
 function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React.ReactNode }) {
   const [isVisible, setIsVisible] = useState(false);
-  const [position, setPosition] = useState<'top' | 'bottom'>('top');
   const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeoutRef = useRef<number | null>(null);
   const { showSheet, isMobile } = useTooltipSheet();
+
+  const categoryColors: Record<string, string> = {
+    homeworld: '#4a9eff',
+    origin: '#9b59b6',
+    archetype: '#e74c3c',
+    characteristic: '#f39c12',
+    skill: '#2ecc71',
+    stat: '#1abc9c',
+    conviction: '#e91e63',
+    'status-effect': '#ff5722',
+    talent: '#3498db',
+    ability: '#8e44ad',
+  };
+
+  const buildBadge = (category: string): TooltipBadge => ({
+    label: category.replace('-', ' ').toUpperCase(),
+    background: categoryColors[category] || '#f0a319',
+  });
+
+  const buildSections = (): TooltipField[] => [];
 
   const handleMouseEnter = () => {
     if (isMobile) return;
@@ -84,9 +104,11 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
     
     showSheet({
       title: info.name,
-      subtitle: info.category.replace('-', ' '),
+      badge: buildBadge(info.category),
       iconUrl: info.imageRemote,
+      sections: buildSections(),
       description: info.effect || '',
+      link: info.wikiUrl ? ({ label: 'View on Wiki', url: info.wikiUrl } as TooltipLink) : undefined,
     });
   };
 
@@ -106,17 +128,11 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
       
       // Calculate vertical position
       let top: number;
-      let newPosition: 'top' | 'bottom';
-      
       if (triggerRect.top - tooltipHeight - 10 < 0) {
-        newPosition = 'bottom';
         top = triggerRect.bottom + 8;
       } else {
-        newPosition = 'top';
         top = triggerRect.top - tooltipHeight - 8;
       }
-      
-      setPosition(newPosition);
 
       // Calculate horizontal position with viewport containment
       let left = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
@@ -136,57 +152,22 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
     }
   }, [isVisible]);
 
-  const categoryColors: Record<string, string> = {
-    homeworld: '#4a9eff',
-    origin: '#9b59b6',
-    archetype: '#e74c3c',
-    characteristic: '#f39c12',
-    skill: '#2ecc71',
-    stat: '#1abc9c',
-    conviction: '#e91e63',
-    'status-effect': '#ff5722',
-    talent: '#3498db',
-    ability: '#8e44ad',
-  };
-
   const tooltipContent = isVisible && createPortal(
     <div 
       ref={tooltipRef} 
-      className={`keyword-tooltip ${position}`}
+      className="crpg-tooltip-container"
       style={tooltipStyle}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="keyword-tooltip-header">
-        {info.imageRemote && (
-          <img 
-            src={info.imageRemote} 
-            alt={info.name}
-            className="keyword-tooltip-image"
-          />
-        )}
-        <div className="keyword-tooltip-header-text">
-          <span className="keyword-tooltip-name">{info.name}</span>
-          <span 
-            className="keyword-tooltip-category"
-            style={{ backgroundColor: categoryColors[info.category] || '#666' }}
-          >
-            {info.category.replace('-', ' ')}
-          </span>
-        </div>
-      </div>
-      {info.effect && (
-        <div className="keyword-tooltip-description">
-          {info.effect}
-        </div>
-      )}
-      {info.wikiUrl && (
-        <div className="keyword-tooltip-link">
-          <a href={info.wikiUrl} target="_blank" rel="noopener noreferrer">
-            View on Wiki →
-          </a>
-        </div>
-      )}
+      <TooltipCard
+        title={info.name}
+        iconUrl={info.imageRemote}
+        badge={buildBadge(info.category)}
+        sections={buildSections()}
+        description={info.effect || ''}
+        link={info.wikiUrl ? ({ label: 'View on Wiki', url: info.wikiUrl } as TooltipLink) : undefined}
+      />
     </div>,
     document.body
   );

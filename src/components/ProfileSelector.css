@@ -161,7 +161,6 @@
 
 /* Switch Profile Section */
 .profile-switch-section {
-  padding: 16px;
   background: #1a1a2e;
 }
 
@@ -181,7 +180,6 @@
 .profile-item {
   display: flex;
   align-items: center;
-  padding: 4px;
 }
 
 .profile-selector:not(.mobile) .profile-item {

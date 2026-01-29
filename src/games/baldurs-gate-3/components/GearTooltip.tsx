@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { getGearInfo } from '../data/gear';
-import { KeywordText } from './KeywordText';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
+import { TooltipCard, type TooltipBadge, type TooltipField, type TooltipLink } from '../../../components/TooltipCard';
 import './GearTooltip.css';
 
 interface GearTooltipProps {
@@ -12,15 +12,20 @@ interface GearTooltipProps {
 
 export function GearTooltip({ gearName, children }: GearTooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const [position, setPosition] = useState<'above' | 'below'>('below');
   const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
-  const [hasIcon, setHasIcon] = useState(true);
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<number | null>(null);
   const { showSheet, isMobile } = useTooltipSheet();
 
   const gearInfo = getGearInfo(gearName);
+  const rarityColors: Record<string, string> = {
+    Common: '#9d9d9d',
+    Uncommon: '#1eff00',
+    Rare: '#0070dd',
+    'Very Rare': '#a335ee',
+    Legendary: '#ff8000',
+  };
 
   const updatePosition = () => {
     if (!triggerRef.current) return;
@@ -36,10 +41,8 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
 
     let top: number;
     if (spaceBelow >= tooltipHeight || spaceBelow >= spaceAbove) {
-      setPosition('below');
       top = rect.bottom + 8;
     } else {
-      setPosition('above');
       top = rect.top - tooltipHeight - 8;
     }
 
@@ -83,21 +86,26 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
     e.preventDefault();
     e.stopPropagation();
 
-    const meta: Array<{ label: string; value: string; color?: string }> = [];
-    meta.push({ label: 'Slot', value: gearInfo.slot });
-    if (gearInfo.act) meta.push({ label: 'Act', value: String(gearInfo.act) });
+    const sections: TooltipField[] = [{ label: 'Slot', value: gearInfo.slot }];
+    if (gearInfo.act) sections.push({ label: 'Act', value: String(gearInfo.act) });
+    const stats: TooltipField[] = [];
+    if (gearInfo.rarity) stats.push({ label: 'Rarity', value: gearInfo.rarity });
+    if (gearInfo.location) stats.push({ label: 'Location', value: gearInfo.location });
 
-    let description = gearInfo.effect;
-    if (gearInfo.location) {
-      description += `\n\n📍 ${gearInfo.location}`;
-    }
+    const badge: TooltipBadge = {
+      label: gearInfo.type.toUpperCase(),
+      background: rarityColors[gearInfo.rarity] || '#f0a319',
+      color: '#1b1206',
+    };
 
     showSheet({
       title: gearInfo.name,
-      subtitle: gearInfo.rarity,
+      badge,
+      sections,
+      stats,
       iconUrl: gearInfo.iconPath,
-      meta,
-      description,
+      description: gearInfo.effect,
+      link: gearInfo.wikiUrl ? ({ label: 'View on Wiki', url: gearInfo.wikiUrl } as TooltipLink) : undefined,
     });
   };
 
@@ -109,65 +117,33 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
     };
   }, []);
 
-  const rarityColors: Record<string, string> = {
-    'Common': '#9d9d9d',
-    'Uncommon': '#1eff00',
-    'Rare': '#0070dd',
-    'Very Rare': '#a335ee',
-    'Legendary': '#ff8000',
-  };
-
   const tooltipContent = isVisible && !isMobile && gearInfo && createPortal(
     <div
       ref={tooltipRef}
-      className={`bg3-gear-tooltip ${position}`}
+      className="crpg-tooltip-container"
       style={tooltipStyle}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="gear-tooltip-header">
-        <div className="gear-tooltip-title">
-          {gearInfo.iconPath && hasIcon && (
-            <img
-              className="gear-tooltip-icon"
-              src={gearInfo.iconPath}
-              alt={gearInfo.name}
-              onError={() => setHasIcon(false)}
-            />
-          )}
-          <span
-            className="gear-tooltip-name"
-            style={{ color: rarityColors[gearInfo.rarity] || '#fff' }}
-          >
-            {gearInfo.name}
-          </span>
-        </div>
-        <span
-          className="gear-tooltip-rarity"
-          style={{ backgroundColor: rarityColors[gearInfo.rarity] || '#666' }}
-        >
-          {gearInfo.rarity}
-        </span>
-      </div>
-      <div className="gear-tooltip-meta">
-        <span className="gear-slot">{gearInfo.slot}</span>
-        {gearInfo.act && <span className="gear-act">Act {gearInfo.act}</span>}
-      </div>
-      <div className="gear-tooltip-effect">
-        <KeywordText text={gearInfo.effect} />
-      </div>
-      {gearInfo.location && (
-        <div className="gear-tooltip-location">
-          📍 {gearInfo.location}
-        </div>
-      )}
-      {gearInfo.wikiUrl && (
-        <div className="gear-tooltip-link">
-          <a href={gearInfo.wikiUrl} target="_blank" rel="noopener noreferrer">
-            View on Wiki →
-          </a>
-        </div>
-      )}
+      <TooltipCard
+        title={gearInfo.name}
+        iconUrl={gearInfo.iconPath}
+        badge={{
+          label: gearInfo.type.toUpperCase(),
+          background: rarityColors[gearInfo.rarity] || '#f0a319',
+          color: '#1b1206',
+        }}
+        sections={[
+          { label: 'Slot', value: gearInfo.slot },
+          ...(gearInfo.act ? [{ label: 'Act', value: String(gearInfo.act) }] : []),
+        ]}
+        description={gearInfo.effect}
+        stats={[
+          ...(gearInfo.rarity ? [{ label: 'Rarity', value: gearInfo.rarity }] : []),
+          ...(gearInfo.location ? [{ label: 'Location', value: gearInfo.location }] : []),
+        ]}
+        link={gearInfo.wikiUrl ? ({ label: 'View on Wiki', url: gearInfo.wikiUrl } as TooltipLink) : undefined}
+      />
     </div>,
     document.body
   );

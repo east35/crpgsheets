@@ -1,0 +1,326 @@
+Missing gear referenced in Rogue Trader builds: 163
+- Adherent of Mankind
+- Aeldari Flow
+- Alpha's Arc Rifle
+- Anatomist's Amulet
+- Apex Predator's Gloves
+- Arc Rifle Mindstorm
+- Arch-Militant Cape
+- Armour of Hidden Promise
+- Armour of the One Star
+- Auto-Striking Powersword
+- Autoguns
+- Battle Psyker's Boots
+- Black Heart Kabalite Armour
+- Black Ring of the Inquisition
+- Blade of the Blood Hunter
+- Blessing of Death
+- Blood Hunter
+- Blood Ice Gauntlets
+- Bloodcraver
+- Bloodrinker Staff
+- Bloodseeker Klaive
+- Bloody Mentor
+- Bone Shatterer
+- Bonebreaker
+- Boots of Silence
+- Breacher's Armour
+- Carnivorous Blade
+- Chant of Stagnation
+- Chartist Pendant
+- Chirurgen's Manual
+- Chorus of Battle
+- Cloak of Mercy
+- Coffinmaker Sledge
+- CoffinMaker's Sledge
+- Coffinmaker's Sledge
+- Commander's Chrono
+- Commander's Notes
+- Commissar's Cap
+- Corruption Eradicator Helmet
+- Death World Enforcer Light Carapace
+- Death World Origin Enforcer Light Carapace
+- Death World Origin Enforcer's Light Carapace
+- Dog Tag
+- Dog Tags
+- Double Barreled-Shotgun
+- Double-Barrel Shotgun
+- Enforcer's Light Boots
+- Executioner's Gauntlets
+- Executioner's Gloves
+- Experimental Psy-Amplifier
+- Fortress World Origin Armour
+- Fortress World Origin Tempestus Carapace
+- Ghosthelm
+- Gift of Kurnous
+- Gloves of Inevitable Demise
+- Grenadier's Gloves
+- Grimoire of the Void
+- Grin of the Iron Wolf
+- Gunslinger's Helm
+- Hadd-Pattern-Data-Loom
+- Hand of Avolius
+- Heart Piercer
+- Heavy Breacher Boots
+- Heavy Maul
+- Hellbrute Horn Trophy
+- High Spinner Armour
+- Hive World Origin Voidsman's Armour
+- Hive World Origin Voidsmen Armour
+- Hive World Voidsmen Armour
+- Hiveworld Voidsman Armour
+- Holy Power Armour
+- Icebreaker Sabatons
+- Immaterium's Channeller
+- Imminent Torment
+- Impulse Boots
+- Inertia Boots
+- Interrogator Knife
+- Invincible Onslaught Armour
+- Khaine's Revenge
+- Lady Theodora's Mantle
+- Lasguns
+- Laughing God's Pendant
+- Lingering Whisper
+- Low damage pistol options for At All Costs
+- Lullaby of Sha'eil
+- Malpain Shroud
+- Marksman Bracers
+- Marksman Gloves
+- Mars-Pattern Bolt Pistol
+- Mars-Pattern Hot Shot LasPistol
+- Mars-Pattern Hot Shot Laspistol
+- Mars-Pattern Thunder Hammer
+- Master Duellist's Gloves
+- Mercy's Gift
+- Mezoa-Pattern Astartes Bolt Pistol
+- Mezoa-Pattern Bolt Pistol
+- Might of Fenris Armour
+- Mjodlner
+- Notes on Weakness
+- Officer's Aquila Pendant
+- Omnissiah's Providence
+- One Star Power Armour
+- Piety's Charge
+- Plasma Pistol with Cryo-Module
+- Precinct Vox Relay
+- Precinct's Vox Relay
+- Psyker's Breastplate
+- Psyker's Footware
+- Quick Firing Las Pistol
+- Quick-Fire Las Pistol
+- Quick-Firing Las Pistol
+- Red Wolf Skull
+- Relish Anguish
+- Riposte Gauntlets
+- Rogue Trader's Cloak
+- Ruby Splash
+- Ruby Splash Necklace
+- Saint Cognacius Scriptures
+- Saint Cognatius Scriptures
+- Saint Cognatius's Scriptures
+- Sanguine Judgement
+- Scoped Shotgun
+- Self Calibrating Goggles
+- Sensory Motor Module
+- Shadow of the Undying One
+- Singed Cape
+- Skitarii Ranger Armour
+- Slithering Slaughter
+- Slow March of Death
+- Snipers
+- Sol Elite Power Sword
+- Sol Pattern Las Pistol
+- Sol Pattern Laspistol
+- Sol Pattern Shotgun
+- Sol-Pattern Plasma Pistol
+- Sol-Pattern Shotgun
+- Solid Shield Enarmes
+- Sturdy Shield Straps
+- Suffering Collector
+- Swashbuckler Cloak
+- Swiftshroud Cloak
+- Symphony of Pain
+- Synaptic Coagulator
+- Tactica Imperialis Excerpt
+- Tarvanna's Last Stand
+- Tempestus Elite Carapace
+- Tempestus Elite Carapace Backpack
+- Thassertium Mask
+- Thassertium Necklace
+- The Hunter-Father's Armour
+- Thrice Pioneers Bracers
+- Thrice-Pioneer's Bracers
+- Triumph of Faith
+- Typhoon
+- Voidborn's Pride
+- Wanderer's Potent
+- War World Origin Armour
+- War World Origin Tempestus Elite Carapace
+- Warlord's Amulet
+- Well-Maintained Rock Saw
+- Well-Maintained Rocksaw
+- Wrathful Mask
+- Wytch's Last Cry
+
+Missing talents/abilities referenced in Rogue Trader builds: 160
+- Adamantium Alloys
+- Agility
+- Allout
+- AP +1
+- Armoured Hide
+- Athletics
+- Athletics / Lore Xenos
+- Awareness
+- Awareness / Lore Imperium
+- Awareness / Lore Warp
+- Ballistic Calculation
+- Ballistic Calculations
+- Base Skill: Lore Imperium
+- Base Skill: Lore Xenos
+- Blade Dance
+- Bolt Weapon Proficiency
+- Bound by Warp
+- Brother-In-Arms
+- Carnival of Misery
+- Carnival of Misery III
+- Carnival of Misery IV
+- Carouse
+- Carouse / Awareness
+- Carouse / Lore Xenos
+- Castigating Echoes
+- Center Of Attention
+- Characteristic Training Int
+- Characteristic Training PER
+- Characteristic Training Will
+- Characteristic Training: AGL
+- Characteristic Training: BS
+- Characteristic Training: FEL
+- Characteristic Training: Int
+- Characteristic Training: Per
+- Characteristic Training: PER
+- Close Quarters Training
+- Coercion
+- Combat Locus
+- Commerce
+- Commerce / Lore Imperium
+- Counter Attack Stance
+- Daring Breach
+- Daring Breach I
+- Daring Breach II
+- Daring Breach IV
+- Deadly Accuracy
+- Deadly Calculations
+- Death Waltz
+- Death Waltz II
+- Death Waltz III
+- Decisive Response
+- Defensive Manoeuvre
+- Demolition
+- Demolition / Lore Xenos
+- Demolitions
+- Dismantling
+- Dismantling Attack
+- Dismantling Attack II
+- Dismantling Attack III
+- Dismantling Attack IV
+- Dismantling II
+- Dismantling III
+- Dismantling IV
+- Dispatch
+- Dispatch I
+- Dispatch II
+- Dispatch III
+- Drukhari Equipment
+- Dual Weapon Combat
+- Dual-Weapon Specialist
+- Echopulse
+- Enhanced Augmetics
+- Enhanced Splash Area
+- External Power Block
+- Fellowship
+- Finesse
+- Finest Hour
+- Finest Hour I
+- Finest Hour IV
+- Firearm Mastery
+- Firearm Mastery II
+- Firearm Mastery III
+- Flash Fire
+- Focus
+- Get off Me!
+- Get off me!
+- Heavy
+- Heavy Armour
+- Hunter's Ambush
+- Impure Force
+- In The Hero's Footsteps
+- In the Hero's Footsteps
+- Instant Retribution
+- Intelligence
+- It Will Not Die!
+- Kinetic Module
+- Leader Assault
+- Leader's Assault
+- Lethal Concentration
+- Liturgy of Insulation
+- Logic
+- Lore Imperium
+- Lore Warp / Awareness
+- Lore Xenos
+- Master's Patronage
+- Medicae
+- Medicae / Awareness
+- Medicae / Lore Warp
+- Melee Weapon Specialist
+- Move Move Move
+- Move, Move, Move
+- Orchestrate Flame
+- Orchestrated Firestorm
+- Orchestrated Firestorm II
+- Orchestrated Firestorm III
+- Overcharge I
+- Overcharge II
+- Overcharge III
+- Overclocking Module
+- Overpower
+- Perception
+- Persuasion
+- Persuasion / Commerce
+- Plasma Bank
+- Point Blank
+- Power
+- Power Armour Proficiency
+- Power Weapon Proficiency
+- Power Weapon Specialist
+- Psyker Extremis
+- Psyker Majoris
+- Psyker Minoris
+- Psyker Terminus
+- Residual Charge
+- Sacrificial Penance
+- Safety Training
+- Scourging Strike
+- Self-Learning Algorithms
+- Servo-Skull Swarm
+- Shield Mastery
+- Staggering Jolt
+- Steady Superiority
+- Steady Superiority II
+- Steady Superiority IV
+- Stentorian Voice
+- Strange Vitality
+- Support The Advance
+- Support the Advance
+- Take and Hold
+- Take and Hold II
+- Take and Hold III
+- Take and Hold IV
+- Tech-Use
+- Toughness
+- Unyielding Guard
+- Unyielding Guard II
+- Wild Fire
+- Wild Hunt
+- Wild Hunt II
+- Wild Hunt III

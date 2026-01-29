@@ -21,7 +21,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #1a1a2e;
+  background: transparent;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   max-height: 70vh;
@@ -42,8 +42,8 @@
   width: 32px;
   height: 32px;
   border: none;
-  background: #2a2a4a;
-  color: #888;
+  background: #2a2218;
+  color: #e2c98c;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -53,8 +53,8 @@
 }
 
 .tooltip-sheet-close:hover {
-  background: #3a3a5a;
-  color: #fff;
+  background: #3a2e1d;
+  color: #fff1c9;
 }
 
 .tooltip-sheet-content {
@@ -98,6 +98,19 @@
   font-style: italic;
   display: block;
   margin-top: 2px;
+}
+
+.tooltip-sheet-subtitle.badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 6px;
 }
 
 .tooltip-sheet-meta {

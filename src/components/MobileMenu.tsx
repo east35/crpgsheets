@@ -6,6 +6,11 @@ import { GamePickerModal } from './GamePickerModal';
 import { Menu, Xmark, NavArrowRight } from 'iconoir-react';
 import './MobileMenu.css';
 
+const GAME_ICONS: Record<string, string> = {
+  'rogue-trader': '/images/icons/roguetrader.png',
+  'baldurs-gate-3': '/images/icons/baldursgate.png',
+};
+
 interface MobileMenuProps {
   currentGame: Game;
   onSelectGame: (game: Game) => void;
@@ -118,11 +123,10 @@ export function MobileMenu({
             onClick={() => setShowGamePicker(true)}
           >
             <span className="game-select-info">
-              {currentGame.logo ? (
-                <img src={currentGame.logo} alt={currentGame.name} className="game-select-logo" />
-              ) : (
-                <span className="game-select-name">{currentGame.name}</span>
+              {GAME_ICONS[currentGame.id] && (
+                <img src={GAME_ICONS[currentGame.id]} alt="" className="game-select-logo" />
               )}
+              <span className="game-select-name">{currentGame.name}</span>
             </span>
             <NavArrowRight width={20} height={20} />
           </button>
