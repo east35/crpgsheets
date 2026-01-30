@@ -1,0 +1,207 @@
+{
+  "source": "reddit",
+  "type": "single-class",
+  "builds": [
+    {
+      "name": "Astarion",
+      "role": "Striker",
+      "class": "Rogue 12",
+      "subclass": "Thief",
+      "description": "Specializes on sneak attacks with hand crossbows. Try to start each encounter hidden if possible. Toggle Sharpshooter bonus damage on and off depending on the chance to hit.",
+      "stats": {
+        "strength": 8,
+        "dexterity": 17,
+        "constitution": 16,
+        "intelligence": 10,
+        "wisdom": 14,
+        "charisma": 8
+      },
+      "skills": ["Acrobatics", "Insight", "Investigation", "Stealth"],
+      "expertise": {
+        "level1": ["Perception", "Stealth"],
+        "level6": ["Acrobatics", "Investigation"]
+      },
+      "progression": [
+        { "level": 1, "feature": "Class", "choice": "Rogue" },
+        { "level": 3, "feature": "Subclass", "choice": "Thief" },
+        { "level": 4, "feature": "Feat", "choice": "Sharpshooter" },
+        { "level": 8, "feature": "Feat", "choice": "Moderately Armored (Dex +1)" },
+        { "level": 10, "feature": "Feat", "choice": "Ability Score Improvement (Dex +2)" },
+        { "level": 12, "feature": "Feat", "choice": "Alert" }
+      ]
+    },
+    {
+      "name": "Gale",
+      "role": "Blaster",
+      "class": "Wizard 12",
+      "subclass": "Divination",
+      "description": "Specializes in ranged area-of-effect magical nova damage. Portent is fantastic; use a low roll to force enemy fails on ally control spells, use a high roll to guarantee hits. Keep him behind your frontliner and striker.",
+      "stats": {
+        "strength": 8,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 16,
+        "wisdom": 12,
+        "charisma": 8
+      },
+      "skills": ["Investigation", "Perception", "Religion"],
+      "cantrips": {
+        "level1": ["Acid Splash", "Fire Bolt", "Poison Spray"],
+        "level4": ["Bone Chill"],
+        "level10": ["Ray of Frost"]
+      },
+      "spells": {
+        "level1": ["Burning Hands", "Chromatic Orb", "Find Familiar", "Ice Knife", "Magic Missile", "Shield"],
+        "level2": ["Ray of Sickness", "Thunderwave"],
+        "level3": ["Cloud of Daggers", "Misty Step"],
+        "level4": ["Scorching Ray", "Shatter"],
+        "level5": ["Fireball", "Lightning Bolt"],
+        "level6": ["Animate Dead", "Counterspell"],
+        "level7": ["Conjure Minor Elemental", "Ice Storm"],
+        "level8": ["Blight", "Dimension Door"],
+        "level9": ["Cone of Cold", "Conjure Elemental"],
+        "level10": ["Cloudkill", "Telekinesis"],
+        "level11": ["Chain Lightning", "Disintegrate"],
+        "level12": ["Circle of Death", "Otiluke's Freezing Sphere"]
+      },
+      "progression": [
+        { "level": 1, "feature": "Class", "choice": "Wizard" },
+        { "level": 2, "feature": "Subclass", "choice": "Divination" },
+        { "level": 4, "feature": "Feat", "choice": "Ability Score Improvement (Int +2)" },
+        { "level": 8, "feature": "Feat", "choice": "Ability Score Improvement (Int +2)" },
+        { "level": 12, "feature": "Feat", "choice": "Alert" }
+      ]
+    },
+    {
+      "name": "Karlach",
+      "role": "Striker",
+      "class": "Barbarian 12",
+      "subclass": "Berserker",
+      "description": "Specializes in thrown weapons. Tavern Brawler is a deeply broken feat. Get her a returning thrown weapon, let her chuck heavy items, throw enemies at each other. Just rage and use Enraged Throw.",
+      "stats": {
+        "strength": 17,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 8
+      },
+      "skills": ["Nature", "Perception"],
+      "progression": [
+        { "level": 1, "feature": "Class", "choice": "Barbarian" },
+        { "level": 3, "feature": "Subclass", "choice": "Berserker" },
+        { "level": 4, "feature": "Feat", "choice": "Tavern Brawler (Str +1)" },
+        { "level": 8, "feature": "Feat", "choice": "Ability Score Improvement (Str +2)" },
+        { "level": 12, "feature": "Feat", "choice": "Alert" }
+      ]
+    },
+    {
+      "name": "Lae'zel",
+      "role": "Frontliner",
+      "class": "Fighter 12",
+      "subclass": "Battle Master",
+      "description": "Specializes in battlefield control. Her role is keeping enemies near her and away from everyone else. Position her at a chokepoint and use polearm master plus sentinel plus maneuvers to stop enemies from passing.",
+      "stats": {
+        "strength": 17,
+        "dexterity": 10,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 14,
+        "charisma": 8
+      },
+      "skills": ["Perception", "Survival"],
+      "fightingStyle": "Great Weapon Fighting",
+      "maneuvers": {
+        "level3": ["Menacing Attack", "Pushing Attack", "Riposte"],
+        "level7": ["Goading Attack", "Trip Attack"],
+        "level10": ["Disarming Attack", "Precision Attack"]
+      },
+      "progression": [
+        { "level": 1, "feature": "Class", "choice": "Fighter" },
+        { "level": 3, "feature": "Subclass", "choice": "Battle Master" },
+        { "level": 4, "feature": "Feat", "choice": "Polearm Master" },
+        { "level": 6, "feature": "Feat", "choice": "Sentinel" },
+        { "level": 8, "feature": "Feat", "choice": "Athlete (Str +1)" },
+        { "level": 12, "feature": "Feat", "choice": "Ability Score Improvement (Str +2)" }
+      ]
+    },
+    {
+      "name": "Shadowheart",
+      "role": "Frontliner",
+      "class": "Cleric 12",
+      "subclass": "War",
+      "description": "Focuses on Spirit Guardians which deals damage and slows enemies near the caster. Between that, Spiritual Weapon, and improved melee attacks from the War Domain, she can deal significant damage to anything near her.",
+      "stats": {
+        "strength": 16,
+        "dexterity": 10,
+        "constitution": 15,
+        "intelligence": 8,
+        "wisdom": 16,
+        "charisma": 8
+      },
+      "skills": ["History", "Medicine"],
+      "cantrips": {
+        "level1": ["Guidance", "Produce Flame", "Sacred Flame"],
+        "level4": ["Blade Ward"],
+        "level10": ["Resistance"]
+      },
+      "progression": [
+        { "level": 1, "feature": "Class", "choice": "Cleric" },
+        { "level": 1, "feature": "Subclass", "choice": "War" },
+        { "level": 4, "feature": "Feat", "choice": "Resilient (Con)" },
+        { "level": 8, "feature": "Feat", "choice": "Ability Score Improvement (Wis +2)" },
+        { "level": 12, "feature": "Feat", "choice": "Ability Score Improvement (Wis +2)" }
+      ]
+    },
+    {
+      "name": "Wyll",
+      "role": "Blaster",
+      "class": "Warlock 12",
+      "subclass": "Fiend",
+      "description": "Focuses on Eldritch Blast and area-of-effect nova damage. Go pew-pew, and if that doesn't work, go boom-boom. The Imp summoned with Pact of the Chain is useful for tanking or enabling sneak attacks.",
+      "stats": {
+        "strength": 8,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 12,
+        "charisma": 16
+      },
+      "skills": ["Arcana", "Investigation", "Perception"],
+      "pactBoon": "Pact of the Chain",
+      "cantrips": {
+        "level1": ["Eldritch Blast", "Poison Spray"],
+        "level4": ["Bone Chill"]
+      },
+      "spells": {
+        "level1": ["Armor of Agathys", "Hex"],
+        "level2": ["Hellish Rebuke"],
+        "level3": ["Misty Step"],
+        "level4": ["Darkness"],
+        "level5": ["Fireball"],
+        "level6": ["Hunger of Hadar"],
+        "level7": ["Wall of Fire"],
+        "level8": ["Blight"],
+        "level9": ["Cone of Cold"],
+        "level10": ["Flame Strike"],
+        "level11": ["Circle of Death (Mystic Arcanum)"],
+        "level12": ["Counterspell"]
+      },
+      "invocations": {
+        "level2": ["Agonizing Blast", "Repelling Blast"],
+        "level5": ["Devil's Sight"],
+        "level7": ["Sign of Ill Omen"],
+        "level9": ["Minions of Chaos"],
+        "level12": ["One with Shadows"]
+      },
+      "progression": [
+        { "level": 1, "feature": "Class", "choice": "Warlock" },
+        { "level": 1, "feature": "Subclass", "choice": "Fiend" },
+        { "level": 3, "feature": "Pact Boon", "choice": "Pact of the Chain" },
+        { "level": 4, "feature": "Feat", "choice": "Ability Score Improvement (Cha +2)" },
+        { "level": 8, "feature": "Feat", "choice": "Ability Score Improvement (Cha +2)" },
+        { "level": 12, "feature": "Feat", "choice": "Alert" }
+      ]
+    }
+  ]
+}

@@ -9,10 +9,12 @@ function generateProfileId(): string {
 
 export function useProfiles(gameId: string) {
   // Live query that auto-updates when DB changes
-  const profiles = useLiveQuery(
-    () => db.profiles.where('gameId').equals(gameId).toArray(),
-    [gameId],
-    [] // default value while loading
+  const profileQuery = useLiveQuery(
+    async () => ({
+      gameId,
+      profiles: await db.profiles.where('gameId').equals(gameId).toArray(),
+    }),
+    [gameId]
   );
 
   const createProfile = useCallback(async (name: string, description?: string) => {
@@ -217,7 +219,8 @@ export function useProfiles(gameId: string) {
   }, [gameId]);
 
   return {
-    profiles: profiles ?? [],
+    profiles: profileQuery?.profiles ?? [],
+    profilesReady: profileQuery?.gameId === gameId && profileQuery !== undefined,
     createProfile,
     updateProfile,
     deleteProfile,

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Game, CharacterBuild, Profile } from './types';
 import type { BuildGuide, CompanionName } from './games/rogue-trader/types';
-import type { BG3Build } from './games/baldurs-gate-3/types';
+import type { BG3Build, CompanionInfo as BG3CompanionInfo } from './games/baldurs-gate-3/types';
 import { Header } from './components/Header';
 import { GameLibrary } from './components/GameLibrary';
 import { BuildList } from './components/BuildList';
@@ -13,11 +13,13 @@ import { getBuildById as getRTBuildById } from './games/rogue-trader/data/builds
 // BG3 imports
 import { BuildSelector as BG3BuildSelector } from './games/baldurs-gate-3/components/BuildSelector';
 import { BuildViewer as BG3BuildViewer } from './games/baldurs-gate-3/components/BuildViewer';
-import { getBuild as getBG3BuildById } from './games/baldurs-gate-3/data/builds';
+import { CompanionDetailScreen as BG3CompanionDetailScreen } from './games/baldurs-gate-3/components/CompanionDetailScreen';
+import { getBuild as getBG3BuildById, getAllBuilds as getAllBG3Builds } from './games/baldurs-gate-3/data/builds';
 import { DataAuditView } from './components/DataAuditView';
 import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
 import { getGame } from './games/registry';
+import { getProfileSelectionAction } from './utils/profileSelection';
 import './App.css';
 
 type View =
@@ -30,6 +32,7 @@ type View =
   | 'custom-build-editor'
   | 'bg3-builds'
   | 'bg3-companion-builds'
+  | 'bg3-companion-detail'
   | 'data-audit';
 
 const LAST_GAME_KEY = 'crpgsheets_last_game';
@@ -55,12 +58,14 @@ function App() {
   const [error, setError] = useState<string | null>(null);
   const [customBuildCompanion, setCustomBuildCompanion] = useState<CompanionName | null>(null);
   const [selectedBG3Build, setSelectedBG3Build] = useState<BG3Build | null>(null);
-  const [bg3PreviousView, setBg3PreviousView] = useState<'bg3-builds' | 'bg3-companion-builds'>('bg3-builds');
+  const [selectedBG3Companion, setSelectedBG3Companion] = useState<BG3CompanionInfo | null>(null);
+  const [bg3PreviousView, setBg3PreviousView] = useState<'bg3-builds' | 'bg3-companion-builds' | 'bg3-companion-detail'>('bg3-builds');
   // Track navigation context: did we enter detail view from Party or Builds?
   const [navContext, setNavContext] = useState<'party' | 'builds'>('builds');
 
   const { 
     profiles, 
+    profilesReady,
     createProfile, 
     updateProfile, 
     deleteProfile, 
@@ -78,14 +83,29 @@ function App() {
 
   // Ensure a default profile exists when game is selected
   useEffect(() => {
-    if (currentGame && profiles.length === 0) {
+    const action = getProfileSelectionAction({
+      currentGameId: currentGame?.id ?? null,
+      profilesReady,
+      profiles,
+      currentProfile,
+    });
+
+    if (action.type === 'clear') {
+      setCurrentProfile(null);
+      return;
+    }
+
+    if (action.type === 'ensureDefault') {
       ensureDefaultProfile().then(profile => {
         setCurrentProfile(profile);
       });
-    } else if (currentGame && profiles.length > 0 && !currentProfile) {
-      setCurrentProfile(profiles[0]);
+      return;
     }
-  }, [currentGame, profiles, currentProfile, ensureDefaultProfile]);
+
+    if (action.type === 'set') {
+      setCurrentProfile(action.profile);
+    }
+  }, [currentGame, profilesReady, profiles, currentProfile, ensureDefaultProfile]);
 
   useEffect(() => {
     if (view === 'data-audit' && !enableDataAudit) {
@@ -127,12 +147,21 @@ function App() {
       await deleteBuild(existingBuild.id);
     }
 
+    // For player character (RogueTrader), prompt for custom name
+    let customName: string | undefined;
+    if (guide.companion === 'RogueTrader') {
+      const name = window.prompt('Enter a name for your Rogue Trader:', 'Rogue Trader');
+      if (name === null) return; // User cancelled
+      customName = name.trim() || 'Rogue Trader';
+    }
+
     const newBuild = await addBuild(
-      `${guide.companion}: ${guide.buildName}`,
+      guide.buildName,
       {
         guideId: guide.id,
         companion: guide.companion,
         buildName: guide.buildName,
+        customName: customName,
         currentLevel: 1,
         archetypePath: guide.archetypePath,
       },
@@ -265,6 +294,14 @@ function App() {
     }) as Array<CharacterBuild & { data: { guideId: string; companion: CompanionName; currentLevel: number } }>;
   };
 
+  const getTrackedRTCustomName = (guideId: string) => {
+    const tracked = builds.find((b) => {
+      const data = b.data as { guideId?: string } | undefined;
+      return data?.guideId === guideId;
+    });
+    return (tracked?.data as { customName?: string } | undefined)?.customName;
+  };
+
   const handleSelectTrackedRTBuild = (guideId: string, level: number) => {
     const guide = getRTBuildById(guideId);
     if (guide) {
@@ -331,12 +368,21 @@ function App() {
       await deleteBuild(existingBuild.id);
     }
 
+    // For player character (Tav), prompt for custom name
+    let customName: string | undefined;
+    if (!companion) {
+      const name = window.prompt('Enter a name for your character:', 'Tav');
+      if (name === null) return; // User cancelled
+      customName = name.trim() || 'Tav';
+    }
+
     const newBuild = await addBuild(
       build.name,
       {
         buildId: build.id,
         currentLevel: currentLevel,
         companion: companion, // Store companion name for easier querying
+        customName: customName,
       },
       build.description
     );
@@ -392,7 +438,47 @@ function App() {
     }) as Array<CharacterBuild & { data: { buildId: string; currentLevel: number } }>;
   };
 
-  
+  const getTrackedBG3CustomName = (buildId: string) => {
+    const tracked = builds.find((b) => {
+      const data = b.data as { buildId?: string } | undefined;
+      return data?.buildId === buildId;
+    });
+    return (tracked?.data as { customName?: string } | undefined)?.customName;
+  };
+
+  // Get builds for a BG3 companion
+  const getBG3BuildsForCompanion = (companion: BG3CompanionInfo): BG3Build[] => {
+    return getAllBG3Builds()
+      .filter(b => b.tags?.includes('Companion') && b.tags?.includes(companion.name));
+  };
+
+  // Get tracked build info for a BG3 companion
+  const getTrackedBG3BuildInfoForCompanion = (companion: BG3CompanionInfo) => {
+    const companionBuilds = getBG3BuildsForCompanion(companion);
+    for (const build of companionBuilds) {
+      const tracked = builds.find(b => {
+        const data = b.data as { buildId?: string } | undefined;
+        return data?.buildId === build.id;
+      });
+      if (tracked) {
+        const data = tracked.data as { buildId: string; currentLevel: number };
+        return { buildId: data.buildId, currentLevel: data.currentLevel };
+      }
+    }
+    return undefined;
+  };
+
+  const handleSelectBG3Companion = (companion: BG3CompanionInfo) => {
+    setSelectedBG3Companion(companion);
+    setView('bg3-companion-detail');
+    window.scrollTo(0, 0);
+  };
+
+  const handleBackFromBG3CompanionDetail = () => {
+    setSelectedBG3Companion(null);
+    setView('bg3-companion-builds');
+  };
+
   const handleCreateCustomBuild = (companion: CompanionName) => {
     setCustomBuildCompanion(companion);
     setView('custom-build-editor');
@@ -401,7 +487,7 @@ function App() {
 
   const handleSaveCustomBuild = (buildData: CustomBuildData) => {
     addBuild(
-      `${buildData.companion}: ${buildData.buildName}`,
+      buildData.buildName,
       {
         isCustom: true,
         companion: buildData.companion,
@@ -456,7 +542,7 @@ function App() {
                   { label: 'Rogue Trader', active: view === 'rogue-trader-builds' || (view === 'build-viewer' && navContext === 'builds' && selectedGuide?.companion === 'RogueTrader'), onClick: () => setView('rogue-trader-builds') },
                 ]
               : [
-                  { label: 'Companions', active: view === 'bg3-companion-builds' || (view === 'build-viewer' && navContext === 'builds' && (selectedBG3Build?.tags?.includes('Companion') ?? false)), onClick: () => setView('bg3-companion-builds') },
+                  { label: 'Companions', active: view === 'bg3-companion-builds' || view === 'bg3-companion-detail' || (view === 'build-viewer' && navContext === 'builds' && (selectedBG3Build?.tags?.includes('Companion') ?? false)), onClick: () => setView('bg3-companion-builds') },
                   { label: 'Tav', active: view === 'bg3-builds' || (view === 'build-viewer' && navContext === 'builds' && !(selectedBG3Build?.tags?.includes('Companion') ?? false)), onClick: () => setView('bg3-builds') },
                 ]
           }
@@ -535,13 +621,22 @@ function App() {
             onSelectTrackedBuild={handleSelectTrackedRTBuild}
             onDeleteTrackedBuild={handleDeleteBuild}
             profileId={currentProfile?.id}
+            customName={getTrackedRTCustomName(selectedGuide.id)}
           />
         )}
 
         {view === 'build-viewer' && selectedBG3Build && currentGame?.id === 'baldurs-gate-3' && (
           <BG3BuildViewer
             build={selectedBG3Build}
-            onBack={() => { setSelectedBG3Build(null); setActiveTrackedBuildId(null); setView(navContext === 'party' ? 'my-builds' : bg3PreviousView); }}
+            onBack={() => {
+              setSelectedBG3Build(null);
+              setActiveTrackedBuildId(null);
+              if (navContext === 'party') {
+                setView('my-builds');
+              } else {
+                setView(bg3PreviousView);
+              }
+            }}
             currentLevel={currentLevel}
             onLevelChange={handleBG3LevelChange}
             onTrackBuild={handleTrackBG3Build}
@@ -552,6 +647,7 @@ function App() {
             onDeleteTrackedBuild={handleDeleteBuild}
             getBuildById={getBG3BuildById}
             profileId={currentProfile?.id}
+            customName={getTrackedBG3CustomName(selectedBG3Build.id)}
           />
         )}
 
@@ -585,11 +681,30 @@ function App() {
               setView('build-viewer');
               window.scrollTo(0, 0);
             }}
+            onSelectCompanion={handleSelectBG3Companion}
             trackedBuilds={getTrackedBG3Builds().map(b => ({
               buildId: b.data.buildId,
               currentLevel: b.data.currentLevel,
             }))}
             onSelectTrackedBuild={handleSelectTrackedBG3Build}
+          />
+        )}
+
+        {view === 'bg3-companion-detail' && currentGame?.id === 'baldurs-gate-3' && selectedBG3Companion && (
+          <BG3CompanionDetailScreen
+            companion={selectedBG3Companion}
+            builds={getBG3BuildsForCompanion(selectedBG3Companion)}
+            onBack={handleBackFromBG3CompanionDetail}
+            onSelectBuild={(build) => {
+              setSelectedBG3Build(build);
+              setBg3PreviousView('bg3-companion-detail');
+              setCurrentLevel(1);
+              setNavContext('builds');
+              setView('build-viewer');
+              window.scrollTo(0, 0);
+            }}
+            trackedBuildId={getTrackedBG3BuildInfoForCompanion(selectedBG3Companion)?.buildId}
+            trackedLevel={getTrackedBG3BuildInfoForCompanion(selectedBG3Companion)?.currentLevel}
           />
         )}
 

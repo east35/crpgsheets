@@ -1,0 +1,474 @@
+{
+  "source": "pcgaming",
+  "type": "multiclass",
+  "builds": [
+    {
+      "name": "Master Martial Artist",
+      "classes": "Open Hand Monk 9 / Thief Rogue 3",
+      "description": "Open Hand Monks have three knockouts on offer: Flurry of Blows, Manifestation, and the Tavern Brawler feat. Flurry of Blows gives two full unarmed attacks for the price of one Bonus Action. Adding Thief levels gets an extra Bonus Action with Fast Hands.",
+      "recommendedSkills": ["Athletics", "Insight", "Persuade"],
+      "stats": {
+        "strength": 8,
+        "dexterity": 16,
+        "constitution": 15,
+        "intelligence": 8,
+        "wisdom": 16,
+        "charisma": 8
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Monk", "notes": null },
+        { "level": 2, "class": "Monk", "notes": null },
+        { "level": 3, "class": "Monk", "notes": "Way of the Open Hand, improved Flurry of Blows" },
+        { "level": 4, "class": "Monk", "notes": "Tavern Brawler (+1 Constitution)" },
+        { "level": 5, "class": "Monk", "notes": "Extra Attack" },
+        { "level": 6, "class": "Monk", "notes": "Manifestation of Mind/Body/Soul, Wholeness of Body" },
+        { "level": 7, "class": "Monk", "notes": "Evasion, Stillness of Mind" },
+        { "level": 8, "class": "Monk", "notes": "ASI +2 Wisdom" },
+        { "level": 9, "class": "Monk", "notes": "Ki Resonance" },
+        { "level": 10, "class": "Rogue", "notes": null },
+        { "level": 11, "class": "Rogue", "notes": null },
+        { "level": 12, "class": "Rogue", "notes": "Thief, Fast Hands" }
+      ],
+      "notableGear": {
+        "act1": [
+          "Ring of Protection (Mol, Druid's Grove)",
+          "The Sparkly Hands",
+          "Gloves of Cinder and Sizzle (Lady Esther)",
+          "Auntie Ethel's Hair (Save Mayrina)",
+          "Caustic Band (Underdark, Derryth Bonecloak)",
+          "Club of Hill Giant Strength (Underdark Arcane Tower)",
+          "Elixirs of Hill Giant Strength",
+          "Disintegrating Nightwalkers (True Soul Nere)",
+          "Armor of Uninhibited Kushigo (Underdark, Find the Missing Boots)"
+        ],
+        "act2": [
+          "The Mighty Cloth (Harper Quartermaster)",
+          "Gloves of Crushing (Moonrise Towers, Roah Moonglow)",
+          "Cloak of Protection (Harper Quartermaster)",
+          "Darkfire Shortbow (Dammon)",
+          "Hat of Uninhibited Kushigo (Harper Quartermaster)"
+        ],
+        "act3": [
+          "Boots of Uninhibited Kushigo (Intro Fight)",
+          "Vest of Soul Rejuvenation (Sorcerous Sundries)",
+          "Elixirs of Cloud Giant Strength",
+          "Fey Semblance Amulet (Avenge the Hag Survivors)",
+          "Gontr Mael (Steel Watch Foundry)",
+          "Gloves of Soul Catching (House of Hope)"
+        ]
+      }
+    },
+    {
+      "name": "Hand Crossbow Gunslinger Bard",
+      "classes": "College of Swords Bard 10 / Fighter 2",
+      "description": "Swords Bard lets you launch two arrows for one attack with Slashing Flourish. Pair with The Dead Shot longbow and Band of the Mystic Scoundrel for powerful illusion and enchantment spells like Hold Monster.",
+      "recommendedSkills": null,
+      "stats": {
+        "strength": 8,
+        "dexterity": 17,
+        "constitution": 14,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 16
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Bard", "notes": null },
+        { "level": 2, "class": "Bard", "notes": null },
+        { "level": 3, "class": "Bard", "notes": "College of Swords, Dual Wield Combat Style" },
+        { "level": 4, "class": "Bard", "notes": "Sharpshooter" },
+        { "level": 5, "class": "Bard", "notes": null },
+        { "level": 6, "class": "Bard", "notes": "Extra Attack" },
+        { "level": 7, "class": "Fighter", "notes": "Archery Combat Style" },
+        { "level": 8, "class": "Fighter", "notes": "Action Surge" },
+        { "level": 9, "class": "Bard", "notes": null },
+        { "level": 10, "class": "Bard", "notes": "Charisma (or Dex) +2, or Alert" },
+        { "level": 11, "class": "Bard", "notes": null },
+        { "level": 12, "class": "Bard", "notes": null }
+      ],
+      "notableGear": {
+        "act1": [
+          "Gloves of Archery (Grat the Trader, Goblin Camp)",
+          "Hand Crossbow +1 (Occasionally sold by Dammon)",
+          "Auntie Ethel's Hair (Save Mayrina)",
+          "Caustic Band (Myconid Colony Dwarf Trader)",
+          "Knife of the Undermountain King (Creche Y'llek Trader)",
+          "Strange Conduit Ring (Creche Y'llek)"
+        ],
+        "act2": [
+          "Amulet of the Harpers (Quartermaster Talli)",
+          "Gloves of the Automaton (Barcus Wroot)",
+          "Hellfire Hand Crossbow (defeat Yurgir, Gauntlet of Shar)",
+          "Helmet of Arcane Acuity (Mason's Guild)"
+        ],
+        "act3": [
+          "Band of the Mystic Scoundrel (win the Genie's game)",
+          "The Dead Shot (Stormshore Armory)",
+          "Armour of Landfall (Sorcerous Sundries)",
+          "Legacy of the Masters (Dammon, Lower City)",
+          "Bloodthirst (Defeat Orin)"
+        ]
+      }
+    },
+    {
+      "name": "Sorcerer Paladin (Sorcadin)",
+      "classes": "Devotion Paladin 6 / Sorcerer 6",
+      "description": "Pair Paladin with a Charisma caster to take advantage of combat buffs and ample Spell Slots for smiting. Sacred Weapon ability makes them one of the best two hand weapon classes in the early game.",
+      "recommendedSkills": ["Persuade", "Religion", "Athletics"],
+      "stats": {
+        "strength": 17,
+        "dexterity": 8,
+        "constitution": 14,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 16
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Paladin", "notes": null },
+        { "level": 2, "class": "Paladin", "notes": "Divine Smite, Great Weapon Fighting" },
+        { "level": 3, "class": "Paladin", "notes": "Divine Health" },
+        { "level": 4, "class": "Paladin", "notes": "Great Weapon Master" },
+        { "level": 5, "class": "Paladin", "notes": "Extra Attack" },
+        { "level": 6, "class": "Paladin", "notes": "Aura of Protection" },
+        { "level": 7, "class": "Sorcerer", "notes": null },
+        { "level": 8, "class": "Sorcerer", "notes": null },
+        { "level": 9, "class": "Sorcerer", "notes": null },
+        { "level": 10, "class": "Sorcerer", "notes": "ASI +2 Charisma or Strength" },
+        { "level": 11, "class": "Sorcerer", "notes": null },
+        { "level": 12, "class": "Sorcerer", "notes": null }
+      ],
+      "notableGear": {
+        "act1": [
+          "Everburn Blade (Nautiloid Prologue)",
+          "Sword of Justice (Our Fiery Friend)",
+          "Auntie Ethel's Hair (Save Mayrina)",
+          "Caustic Band (Myconid Colony Dwarf vendor)",
+          "Strange Conduit Ring (Creche Y'llek Inquisitor's Chamber)",
+          "Gloves of Dexterity (Creche Y'llek merchant)",
+          "Diadem of Arcane Synergy (Creche Y'llek Inquisitor's Chamber)",
+          "Ring of Protection (Steal the Idol for Mol)",
+          "Adamantine Splint Mail (Grymforge)"
+        ],
+        "act2": [
+          "Halberd of Vigilance (Moonrise Towers, Lann Tarv)",
+          "Dwarven Splintmail (Moonrise Towers, Lann Tarv)",
+          "Evasive Shoes (Last Light, Mattis)",
+          "Cloak of Protection (Last Light, Quartermaster Talli)",
+          "Gloves of the Automaton (Last Light, Barcus Wroot)",
+          "Potion of Everlasting Vigour (Moonrise Towers, Araj Oblodra)"
+        ],
+        "act3": [
+          "Armour of Persistence (Dammon's Smithy, Lower City)",
+          "Balduran's Giantslayer (The Blade of Frontiers)",
+          "Birthright (Sorcerous Sundries)",
+          "Amulet of Greater Health (House of Hope)"
+        ]
+      }
+    },
+    {
+      "name": "Circle of Stars Spirit Guardians Death Cleric",
+      "classes": "Death Cleric 10 / Circle of Stars Druid 2",
+      "description": "Dragon Form provides a huge bonus to concentration rolls and a bonus action 2d6 Radiant damage AOE. Stack Radiant and Reverberation gear for a walking AOE wrecking ball.",
+      "recommendedSkills": null,
+      "stats": {
+        "strength": 8,
+        "dexterity": 16,
+        "constitution": 15,
+        "intelligence": 8,
+        "wisdom": 17,
+        "charisma": 8
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Cleric", "notes": "Death Cleric" },
+        { "level": 2, "class": "Cleric", "notes": null },
+        { "level": 3, "class": "Cleric", "notes": null },
+        { "level": 4, "class": "Cleric", "notes": "Feat: Wis +1, Con +1" },
+        { "level": 5, "class": "Cleric", "notes": null },
+        { "level": 6, "class": "Cleric", "notes": null },
+        { "level": 7, "class": "Cleric", "notes": null },
+        { "level": 8, "class": "Cleric", "notes": "Feat: Wis +2 or War Caster" },
+        { "level": 9, "class": "Cleric", "notes": null },
+        { "level": 10, "class": "Cleric", "notes": null },
+        { "level": 11, "class": "Druid", "notes": "Circle of Stars" },
+        { "level": 12, "class": "Druid", "notes": "Starry Form" }
+      ],
+      "notableGear": {
+        "act1": [
+          "Boots of Stormy Clamour",
+          "Luminous Armour",
+          "Blood of Lathander",
+          "Adamantine Shield",
+          "Ring of Protection",
+          "Gloves of Belligerent Skies",
+          "Disintegrating Nightwalkers"
+        ],
+        "act2": [
+          "Coruscation Ring",
+          "Ring of Spiteful Thunder",
+          "Cloak of Protection",
+          "Evasive Shoes"
+        ],
+        "act3": [
+          "Viconia's Walking Fortress",
+          "Amulet of Greater Health",
+          "Fey Semblance Amulet"
+        ]
+      }
+    },
+    {
+      "name": "Giant Barbarian Rainbow Thrower",
+      "classes": "Giant Barbarian 10 / Fighter 2",
+      "description": "Elemental Cleaver means anything can be a throwing weapon. Multiple sources of elemental damage with paired debuffs: Mourning Frost cold damage with Snowburst Ring, and Elemental Cleaver Lightning/Thunder damage with Gloves of Belligerent Skies for Reverberation debuffs.",
+      "recommendedSkills": null,
+      "stats": {
+        "strength": 17,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 8
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Barbarian", "notes": null },
+        { "level": 2, "class": "Barbarian", "notes": null },
+        { "level": 3, "class": "Barbarian", "notes": "Giant" },
+        { "level": 4, "class": "Barbarian", "notes": "Feat: Tavern Brawler Str +1" },
+        { "level": 5, "class": "Barbarian", "notes": "Extra Attack, Boot of the Giants" },
+        { "level": 6, "class": "Barbarian", "notes": "Elemental Cleaver" },
+        { "level": 7, "class": "Barbarian", "notes": null },
+        { "level": 8, "class": "Barbarian", "notes": "Feat: Strength +2" },
+        { "level": 9, "class": "Barbarian", "notes": null },
+        { "level": 10, "class": "Barbarian", "notes": "Mighty Impel" },
+        { "level": 11, "class": "Fighter", "notes": null },
+        { "level": 12, "class": "Fighter", "notes": "Action Surge" }
+      ],
+      "notableGear": {
+        "act1": [
+          "Returning Pike (pre-level 6)",
+          "Ring of Flinging",
+          "Gloves of Belligerent Skies",
+          "Mourning Frost",
+          "Boots of Stormy Clamour"
+        ],
+        "act2": [
+          "Snowburst Ring",
+          "Marksmanship Hat",
+          "Ring of Spiteful Thunder"
+        ],
+        "act3": [
+          "Helldusk Gloves",
+          "Bonespike Garb"
+        ]
+      }
+    },
+    {
+      "name": "Hexbuckler",
+      "classes": "Swashbuckler Rogue 7 / Hexblade Warlock 5",
+      "description": "Flick o' the Wrist offers an alternative to Extra Attack. Sneak Attacks are easier to land. Use Phalar Aluve with Great Weapon Master. Combo Potent Robe with Blasts and Booming Blade for stacking Charisma damage.",
+      "recommendedSkills": null,
+      "stats": {
+        "strength": 8,
+        "dexterity": 16,
+        "constitution": 14,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 17
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Rogue", "notes": "Sneak Attack +1d6" },
+        { "level": 2, "class": "Rogue", "notes": null },
+        { "level": 3, "class": "Rogue", "notes": "Swashbuckler - Rakish Audacity, Sneak Atk +2d6" },
+        { "level": 4, "class": "Rogue", "notes": "Dirty Tricks, Feat: Great Weapon Master" },
+        { "level": 5, "class": "Warlock", "notes": "Hexblade - Pact of the Blade" },
+        { "level": 6, "class": "Warlock", "notes": "Invocations: Agonizing Blast, Beast Speech or Repelling Blast" },
+        { "level": 7, "class": "Warlock", "notes": null },
+        { "level": 8, "class": "Warlock", "notes": "Feat: Cha+2" },
+        { "level": 9, "class": "Warlock", "notes": "Extra Attack, Invocation: Armour of Shadows" },
+        { "level": 10, "class": "Rogue", "notes": "Sneak Atk +3d6, Uncanny Dodge" },
+        { "level": 11, "class": "Rogue", "notes": null },
+        { "level": 12, "class": "Rogue", "notes": "Sneak Atk +4d6" }
+      ],
+      "notableGear": {
+        "act1": [
+          "Ring of Protection",
+          "Spidersilk Armour",
+          "Bow of Awareness",
+          "Phalar Aluve",
+          "Auntie Ethel's Hair",
+          "Disintegrating Night Walkers",
+          "Bracers of Defence",
+          "Strange Conduit Ring"
+        ],
+        "act2": [
+          "Evasive Shoes",
+          "Cloak of Protection",
+          "Potent Robe",
+          "Gloves of the Automaton"
+        ],
+        "act3": [
+          "The Dead Shot",
+          "Amulet of Greater Health",
+          "Helldusk Boots"
+        ]
+      }
+    },
+    {
+      "name": "Mostly Pure Arcane Archer",
+      "classes": "Arcane Archer Fighter 11 / War Cleric 1",
+      "description": "Arcane Archer has access to powerful effects like Banishing Arrow, which sends targets to the Shadow Realm for two rounds. War Cleric's Channel Divinity lets you make a main-hand attack as a bonus action once per Short Rest.",
+      "recommendedSkills": null,
+      "stats": {
+        "strength": 8,
+        "dexterity": 17,
+        "constitution": 14,
+        "intelligence": 16,
+        "wisdom": 10,
+        "charisma": 8
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Fighter", "notes": null },
+        { "level": 2, "class": "Fighter", "notes": "Archery Combat Style" },
+        { "level": 3, "class": "Fighter", "notes": "Arcane Archer - Banishing, Shadow, and Piercing Arrow" },
+        { "level": 4, "class": "Fighter", "notes": "Feat: Dex +2" },
+        { "level": 5, "class": "Fighter", "notes": "Extra Attack" },
+        { "level": 6, "class": "Fighter", "notes": "Feat: Sharpshooter" },
+        { "level": 7, "class": "Fighter", "notes": "Grasping Arrow" },
+        { "level": 8, "class": "Fighter", "notes": "Feat: Int +2 OR Alert" },
+        { "level": 9, "class": "Fighter", "notes": null },
+        { "level": 10, "class": "Fighter", "notes": "Beguiling Arrow" },
+        { "level": 11, "class": "Fighter", "notes": "Improved Extra Attack" },
+        { "level": 12, "class": "Cleric", "notes": "War Cleric" }
+      ],
+      "notableGear": {
+        "act1": [
+          "Titanstring Bow",
+          "Club of Hill Giant Strength",
+          "Gloves of Archery",
+          "Caustic Band",
+          "Knife of the Undermountain King"
+        ],
+        "act2": [
+          "Marksmanship Hat",
+          "Risky Ring"
+        ],
+        "act3": [
+          "Gontr Mael",
+          "Bloodthirst",
+          "Sarevok's Horned Helmet",
+          "Helldusk Gloves"
+        ]
+      }
+    },
+    {
+      "name": "Bladesinging Wizardin",
+      "classes": "Bladesinging Wizard 10 / Oath of the Ancients Paladin 2",
+      "description": "Bladesingers are tankier and more versatile battlemages. Between Bladesinging ability, Haste, Mirror Image, and Constitution saving throw-boosting gear, this class can stand and fight without needing surprise rounds.",
+      "recommendedSkills": null,
+      "stats": {
+        "strength": 8,
+        "dexterity": 17,
+        "constitution": 14,
+        "intelligence": 16,
+        "wisdom": 10,
+        "charisma": 8
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Wizard", "notes": null },
+        { "level": 2, "class": "Wizard", "notes": "Bladesinger" },
+        { "level": 3, "class": "Wizard", "notes": null },
+        { "level": 4, "class": "Wizard", "notes": "Feat: Savage Attacker OR Great Weapon Master" },
+        { "level": 5, "class": "Wizard", "notes": null },
+        { "level": 6, "class": "Wizard", "notes": "Extra Attack" },
+        { "level": 7, "class": "Wizard", "notes": null },
+        { "level": 8, "class": "Wizard", "notes": "Feat: +2 Dexterity" },
+        { "level": 9, "class": "Wizard", "notes": null },
+        { "level": 10, "class": "Paladin", "notes": "Oath of the Ancients" },
+        { "level": 11, "class": "Paladin", "notes": "Divine Smite" },
+        { "level": 12, "class": "Wizard", "notes": "Song of Defence" }
+      ],
+      "keySpells": {
+        "cantrips": ["Booming Blade"],
+        "level1": ["Shield", "Expeditious Retreat", "Longstrider", "Mage Armour", "Magic Missile"],
+        "level2": ["Shadow Blade", "Blur", "Mirror Image", "Hold Person", "Invisibility", "Misty Step", "Detect Thoughts"],
+        "level3": ["Haste", "Animate Dead", "Fireball"],
+        "level4": ["Greater Invisibility", "Conjure Minor Elemental", "Ice Storm"],
+        "level5": ["Cone of Cold", "Conjure Elemental", "Hold Monster"]
+      },
+      "notableGear": {
+        "act1": [
+          "Ring of Protection",
+          "Strange Conduit Ring",
+          "Diadem of Arcane Synergy",
+          "Wondrous Gloves",
+          "Bracers of Defence",
+          "Knife of the Undermountain King",
+          "Disintegrating Night Walkers",
+          "Bow of Awareness",
+          "Phalar Aluve",
+          "Auntie Ethel's Hair"
+        ],
+        "act2": [
+          "Cloak of Protection",
+          "Gloves of Battlemage's Power",
+          "Gloves of the Automaton",
+          "Evasive Shoes"
+        ],
+        "act3": [
+          "Elegant Studded Leather",
+          "Elven Chain",
+          "Belm",
+          "Band of the Mystic Scoundrel",
+          "Amulet of Greater Health",
+          "The Dead Shot"
+        ]
+      }
+    },
+    {
+      "name": "Pure Hexblade",
+      "classes": "Hexblade Warlock 12",
+      "description": "Shadow Blade summons a 2d8 psychic damage short sword until long rest. Pair with Potent Robe, Devil Sight, Darkness, and Agonizing Blast. Resonance Stone doubles psychic damage from Shadow Blade. Lifedrinker adds Charisma bonus as necrotic damage to all attacks.",
+      "recommendedSkills": null,
+      "stats": {
+        "strength": 8,
+        "dexterity": 16,
+        "constitution": 14,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 17
+      },
+      "levelingOrder": [
+        { "level": 1, "class": "Warlock", "notes": "Hexblade" },
+        { "level": 2, "class": "Warlock", "notes": "Agonising Blast, Beast Speech" },
+        { "level": 3, "class": "Warlock", "notes": "Pact of the Blade, Shadow Blade" },
+        { "level": 4, "class": "Warlock", "notes": "Feat: Savage Attacker" },
+        { "level": 5, "class": "Warlock", "notes": "Pact Extra Attack, Devil Sight" },
+        { "level": 6, "class": "Warlock", "notes": "Accursed Specter" },
+        { "level": 7, "class": "Warlock", "notes": "Beguiling Influence" },
+        { "level": 8, "class": "Warlock", "notes": "Feat: Charisma +2" },
+        { "level": 9, "class": "Warlock", "notes": "Armour of Shadows" },
+        { "level": 10, "class": "Warlock", "notes": null },
+        { "level": 11, "class": "Warlock", "notes": null },
+        { "level": 12, "class": "Warlock", "notes": "Lifedrinker" }
+      ],
+      "notableGear": {
+        "act1": [
+          "Knife of the Undermountain King",
+          "Spidersilk Armour",
+          "Disintegrating Night Walkers",
+          "Diadem of Arcane Synergy",
+          "Bow of Awareness",
+          "Auntie Ethel's Hair",
+          "Bracers of Defence",
+          "Ring of Protection"
+        ],
+        "act2": [
+          "Potent Robe",
+          "Cloak of Protection",
+          "Resonance Stone"
+        ],
+        "act3": [
+          "Belm"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "templateVersion": "1.0",
+  "game": "bg3",
+  "source": {
+    "title": "Sneaky Assassin Guy Classic",
+    "url": "",
+    "author": "",
+    "publisher": "",
+    "publishedAt": "",
+    "retrievedAt": "2026-01-30"
+  },
+  "build": {
+    "title": "Sneaky Assassin Guy Classic",
+    "summary": "Assassin Rogue 4 / Gloom Stalker Ranger 5 / Champion Fighter 3 focused on surprise rounds and dual-dagger assassin play.",
+    "patch": "",
+    "playstyle": "Open fights from stealth; exploit surprise rounds and Gloom Stalker initiative.",
+    "characterType": "tav",
+    "startingAttributes": {
+      "strength": 8,
+      "dexterity": 17,
+      "constitution": 14,
+      "intelligence": 8,
+      "wisdom": 10,
+      "charisma": 16
+    },
+    "levelingOrder": [
+      {
+        "level": 1,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 2,
+        "class": { "name": "Ranger", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 3,
+        "class": { "name": "Ranger", "subclass": "" },
+        "notes": "",
+        "features": ["Fighting Style: Two Weapon Fighting"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 4,
+        "class": { "name": "Ranger", "subclass": "Gloom Stalker" },
+        "notes": "",
+        "features": ["Subclass: Gloom Stalker"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 5,
+        "class": { "name": "Ranger", "subclass": "Gloom Stalker" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": ["Ability Improvement (+2 DEX)"]
+      },
+      {
+        "level": 6,
+        "class": { "name": "Ranger", "subclass": "Gloom Stalker" },
+        "notes": "",
+        "features": ["Extra Attack"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 7,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 8,
+        "class": { "name": "Rogue", "subclass": "Assassin" },
+        "notes": "",
+        "features": ["Subclass: Assassin"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 9,
+        "class": { "name": "Rogue", "subclass": "Assassin" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "feat",
+            "options": ["Alert", "Savage Attacker"]
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "class": { "name": "Fighter", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "fighting_style",
+            "options": ["Defense", "Archery"]
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "class": { "name": "Fighter", "subclass": "" },
+        "notes": "",
+        "features": ["Action Surge"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 12,
+        "class": { "name": "Fighter", "subclass": "Champion" },
+        "notes": "",
+        "features": ["Subclass: Champion"],
+        "spells": [],
+        "feats": []
+      }
+    ],
+    "keySpells": [],
+    "gearByAct": [
+      {
+        "act": 1,
+        "items": [
+          { "name": "Auntie Ethel's Hair", "slot": "", "notes": "Save Mayrina" },
+          { "name": "Caustic Band", "slot": "", "notes": "Myconid Colony Dwarf Trader" },
+          { "name": "Knife of the Undermountain King", "slot": "", "notes": "Creche Y'llek Trader" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 2,
+        "items": [
+          { "name": "Yuan-Ti Scale Mail", "slot": "", "notes": "Quartermaster Talli" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 3,
+        "items": [
+          { "name": "Elegant Studded Leather", "slot": "", "notes": "The Counting House" },
+          { "name": "Legacy of the Masters", "slot": "", "notes": "Dammon, Lower City" },
+          { "name": "Armour of Agility", "slot": "", "notes": "Stormshore Armoury" },
+          { "name": "Bloodthirst", "slot": "", "notes": "Defeat Orin" },
+          { "name": "Crimson Mischief", "slot": "", "notes": "Defeat Orin" },
+          { "name": "Sarevok's Helmet", "slot": "", "notes": "Investigate the Murders" },
+          { "name": "Bhaalist Armor", "slot": "", "notes": "Impress the Murder Tribunal" },
+          { "name": "Greater Amulet of Health", "slot": "", "notes": "House of Hope" }
+        ],
+        "notes": ""
+      }
+    ],
+    "companions": [],
+    "references": {
+      "classes": ["Rogue", "Ranger", "Fighter"],
+      "subclasses": ["Assassin", "Gloom Stalker", "Champion"],
+      "spells": [],
+      "feats": ["Ability Improvement (+2 DEX)", "Alert", "Savage Attacker"],
+      "items": [
+        "Auntie Ethel's Hair",
+        "Caustic Band",
+        "Knife of the Undermountain King",
+        "Yuan-Ti Scale Mail",
+        "Elegant Studded Leather",
+        "Legacy of the Masters",
+        "Armour of Agility",
+        "Bloodthirst",
+        "Crimson Mischief",
+        "Sarevok's Helmet",
+        "Bhaalist Armor",
+        "Greater Amulet of Health"
+      ]
+    }
+  },
+  "raw": {
+    "htmlFile": "data/tav/pcgaming-multiclass.md",
+    "sectionId": "sneaky-assassin-guy-classic",
+    "sectionTitle": "Sneaky Assassin Guy Classic",
+    "sectionHtml": ""
+  },
+  "parseWarnings": [
+    "Dexterity 17 assumes Auntie Ethel's Hair; base DEX may be 16 without it."
+  ]
+}

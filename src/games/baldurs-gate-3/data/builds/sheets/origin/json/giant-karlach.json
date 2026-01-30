@@ -1,0 +1,181 @@
+{
+  "source": "giant",
+  "type": "single-class",
+  "builds": [
+    {
+      "name": "Karlach",
+      "characterLevel": 12,
+      "race": "Zariel Tiefling",
+      "origin": "Tiefling",
+      "class": "Barbarian 12",
+      "subclass": "Path of Giants",
+      "description": "A Path of Giants Barbarian build focusing on thrown weapons and Unarmoured Defence. Giant's Rage makes Karlach bigger, increases weapon damage, and gives advantage on Strength checks. Vaprak's Greed increases carrying capacity for more throwable items. Elemental Cleaver makes any weapon into a returning thrown weapon.",
+      "stats": {
+        "strength": 23,
+        "dexterity": 14,
+        "constitution": 23,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 8
+      },
+      "features": [
+        "Darkvision",
+        "Hellish Resistance",
+        "Zariel Tiefling Magic",
+        "Danger Sense",
+        "Extra Attack",
+        "Fast Movement",
+        "Feral Instinct",
+        "Brutal Critical",
+        "Relentless Rage",
+        "Vaprak's Greed",
+        "Tavern Brawler: Attack Increase",
+        "Tavern Brawler: Improvised Weapons",
+        "Ability Improvement",
+        "Charger",
+        "Unarmoured Defence (Barbarian)"
+      ],
+      "progression": [
+        {
+          "level": 1,
+          "features": [
+            { "source": "Origin", "name": "Heart Ablaze" },
+            { "source": "Class", "name": "Unarmoured Defence" },
+            { "source": "Class", "name": "Rage" },
+            { "source": "Racial", "name": "Darkvision" },
+            { "source": "Racial", "name": "Hellish Resistance" },
+            { "source": "Racial Spell", "name": "Thaumaturgy" }
+          ],
+          "notes": "Lean into Unarmoured Defence and build around it. Clothing options intended for Monks become powerful for Path of Giants Barbarian."
+        },
+        {
+          "level": 2,
+          "features": [
+            { "source": "Class", "name": "Danger Sense" },
+            { "source": "Class", "name": "Reckless Attack" }
+          ],
+          "notes": "Reckless Attack is useful against enemies with low AC that you can one-shot."
+        },
+        {
+          "level": 3,
+          "features": [
+            { "source": "Subclass", "name": "Path of Giants" },
+            { "source": "Class", "name": "Vaprak's Greed" },
+            { "source": "Class", "name": "Giant's Rage" },
+            { "source": "Racial", "name": "Legacy of Avernus: Searing Smite" }
+          ],
+          "notes": "Giant's Rage makes Karlach bigger (Enlarge effect), increases weapon and throw damage, and gives advantage on Strength checks."
+        },
+        {
+          "level": 4,
+          "features": [
+            { "source": "Feat", "name": "Tavern Brawler (Strength +1 to 18)" }
+          ],
+          "notes": "Tavern Brawler makes all thrown attacks stronger. Most important feat for this build."
+        },
+        {
+          "level": 5,
+          "features": [
+            { "source": "Class", "name": "Extra Attack" },
+            { "source": "Class", "name": "Fast Movement" },
+            { "source": "Class", "name": "Boot of the Giants" },
+            { "source": "Racial", "name": "Legacy of Avernus: Branding Smite" }
+          ],
+          "notes": "Boot of the Giants is an improved Shove that pushes creatures twice as far. Use to push enemies into deadly obstacles."
+        },
+        {
+          "level": 6,
+          "features": [
+            { "source": "Class", "name": "Elemental Cleaver" }
+          ],
+          "notes": "Makes any weapon a returning thrown weapon and adds elemental damage. Now all powerful weapons benefit from Tavern Brawler."
+        },
+        {
+          "level": 7,
+          "features": [
+            { "source": "Class", "name": "Feral Instinct" }
+          ],
+          "notes": "Better initiative and immunity to surprises."
+        },
+        {
+          "level": 8,
+          "features": [
+            { "source": "Feat", "name": "Ability Improvement (Strength +2 to 20)" }
+          ],
+          "notes": "Push Strength to 20 for maximum effectiveness."
+        },
+        {
+          "level": 9,
+          "features": [
+            { "source": "Class", "name": "Brutal Critical" }
+          ],
+          "notes": "Needed to keep up with late game enemy damage requirements."
+        },
+        {
+          "level": 10,
+          "features": [
+            { "source": "Class", "name": "Mighty Impel" }
+          ],
+          "notes": "Pick up any medium or smaller enemy and throw them. Combines the most powerful Shove with a strong improvised throwing attack."
+        },
+        {
+          "level": 11,
+          "features": [
+            { "source": "Class", "name": "Relentless Rage" }
+          ],
+          "notes": "Survive 1 more round than normal against nightmarish late game fights."
+        },
+        {
+          "level": 12,
+          "features": [
+            { "source": "Feat", "name": "Charger, Alert, or Dual Wielder" }
+          ],
+          "notes": "Charger for melee, Dual Wielder for two weapons with throwing, Alert for ranged throwing builds."
+        }
+      ],
+      "equipment": {
+        "act1": {
+          "weapons": ["Monster Slayer Glaive", "Club of Hill Giant Strength", "Everburn Blade", "Jorgoral's Greatsword", "The Blood of Lathander", "Intransigent Warhammer"],
+          "headwear": ["Cap of Wrath", "Haste Helm"],
+          "armour": ["Bloodguzzler Garb", "The Graceful Cloth", "Adamantine Scale Mail"],
+          "handwear": ["Bracers of Defence", "Gloves of Uninhibited Kushigo", "Fleetfingers", "Gloves of Dexterity"],
+          "footwear": ["Linebreaker Boots", "Boots of Genial Striding", "Swiresy Shoes"],
+          "amulet": ["Amulet of the Unworthy", "Amulet of Misty Step"],
+          "rings": ["Bracing Band", "Crusher's Ring", "Ring of Flinging"],
+          "inventory": ["Heavy and Explosive Items"]
+        },
+        "act2": {
+          "weapons": ["Thermodynamo Axe", "Moonlight Glaive", "Sword of Life Stealing"],
+          "headwear": ["Coldbrim Hat"],
+          "cloak": ["Cloak of Elemental Absorption", "Cloak of Protection"],
+          "armour": ["The Mighty Cloth", "Enraging Heart Garb"],
+          "handwear": ["Flawed Helldusk Gloves", "Dark Justiciar Gauntlets"],
+          "footwear": ["Acrobat Shoes"],
+          "amulet": ["Surgeon's Subjugation Amulet"],
+          "rings": ["Killer's Sweetheart", "Callous Glow Ring", "Risky Ring", "Coruscation Ring"]
+        },
+        "act3": {
+          "weapons": ["Balduran's Giantslayer", "Vicious Battleaxe", "Hellfire Greataxe", "Sword of Chaos", "Nyrulna"],
+          "secondaryHand": ["Bloodthirst", "Handmaiden's Mace"],
+          "headwear": ["Helldusk Helmet", "Bonespike Helmet"],
+          "armour": ["Bonespike Garb"],
+          "handwear": ["Gauntlets of Hill Giant Strength", "Bonespike Gloves", "Craterflesh Gloves"],
+          "footwear": ["Helldusk Boots"],
+          "amulet": ["Amulet of Greater Health"],
+          "rings": ["Ring of Regeneration", "After Death Do Us Part"]
+        }
+      },
+      "finalGear": [
+        "Balduran's Giantslayer",
+        "Bonespike Garb",
+        "Helldusk Helmet",
+        "Helldusk Boots",
+        "Cloak of Elemental Absorption",
+        "Ring of Regeneration",
+        "After Death Do Us Part",
+        "Gauntlets of Hill Giant Strength",
+        "Amulet of Greater Health"
+      ]
+    }
+  ]
+}

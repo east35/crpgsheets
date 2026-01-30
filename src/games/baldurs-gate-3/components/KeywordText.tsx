@@ -67,8 +67,15 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
     'spell': '#f39c12',
     'feat': '#2ecc71',
     'condition': '#e91e63',
-    'ability-score': '#1abc9c',
+    'ability': '#1abc9c',
     'skill': '#27ae60',
+    'action': '#f97316',
+    'feature': '#f59e0b',
+    'potion': '#38bdf8',
+    'elixir': '#22c55e',
+    'grenade': '#ef4444',
+    'arrow': '#94a3b8',
+    'bonus': '#f472b6',
   };
 
   const buildBadge = (category: string): TooltipBadge => ({

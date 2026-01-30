@@ -11,6 +11,7 @@ import { PartyBar, type PartyMember } from '../../../components/PartyBar';
 import { ImageLightbox } from '../../../components/ImageLightbox';
 import { AvatarUpload, useCustomAvatar, useCustomAvatars } from '../../../components/AvatarUpload';
 import { COMPANIONS } from '../data/companions';
+import '../../../components/MobileStickyButton.css';
 import './BuildViewer.css';
 
 interface TrackedRTBuild extends CharacterBuild {
@@ -18,6 +19,7 @@ interface TrackedRTBuild extends CharacterBuild {
     guideId: string;
     companion: CompanionName;
     currentLevel: number;
+    customName?: string;
   };
 }
 
@@ -34,14 +36,15 @@ interface BuildViewerProps {
   onDeleteTrackedBuild?: (id: string) => void;
   gameId?: string;
   profileId?: string;
+  customName?: string;
 }
 
-export function BuildViewer({ 
-  build, 
-  onBack: _onBack, 
-  currentLevel = 1, 
-  onLevelChange, 
-  onTrackBuild, 
+export function BuildViewer({
+  build,
+  onBack: _onBack,
+  currentLevel = 1,
+  onLevelChange,
+  onTrackBuild,
   onUntrackBuild: _onUntrackBuild,
   isTracked,
   trackedBuilds = [],
@@ -49,6 +52,7 @@ export function BuildViewer({
   onDeleteTrackedBuild,
   gameId = 'rogue-trader',
   profileId = '',
+  customName,
 }: BuildViewerProps) {
   void _onBack;
   void _onUntrackBuild;
@@ -78,10 +82,14 @@ export function BuildViewer({
     const companion = COMPANIONS[tracked.data.companion];
     const isPlayer = tracked.data.companion === 'RogueTrader';
     const playerCustomAvatar = isPlayer ? (customAvatarsMap as Record<string, string>)[tracked.data.guideId] : null;
+    // Use custom name for player character, otherwise use companion name
+    const displayName = isPlayer
+      ? (tracked.data.customName || 'Rogue Trader')
+      : tracked.data.companion;
     partyMembers.push({
       id: tracked.id,
       buildId: tracked.data.guideId,
-      name: isPlayer ? 'Rogue Trader' : tracked.data.companion,
+      name: displayName,
       level: tracked.data.currentLevel || 1,
       avatarUrl: companion?.portraitUrl || null,
       isPlayerCharacter: isPlayer,
@@ -181,7 +189,7 @@ export function BuildViewer({
           </div>
         ) : null}
         <div className="build-title">
-          <h2>{build.companion}: {build.buildName}</h2>
+          <h2>{customName || build.companion}: {build.buildName}</h2>
           <div className="archetype-path">
             <ArchetypeTooltip archetype={archetypePath.base} tier="base" />
             <span className="arrow">→</span>
@@ -199,15 +207,28 @@ export function BuildViewer({
 
 
         </div>
+        {/* Desktop Add to Party button */}
         {onTrackBuild && !isTracked && (
           <button
-            className="btn btn-primary"
+            className="btn btn-primary add-to-party-desktop"
             onClick={() => onTrackBuild(build)}
           >
             Add to Party
           </button>
         )}
       </div>
+
+      {/* Mobile floating Add to Party button */}
+      {onTrackBuild && !isTracked && (
+        <div className={`add-to-party-mobile ${showPartyBar ? 'above-party-bar' : ''}`}>
+          <button
+            className="btn btn-primary"
+            onClick={() => onTrackBuild(build)}
+          >
+            Add to Party
+          </button>
+        </div>
+      )}
 
       {build.videoUrl && (
         <a href={build.videoUrl} target="_blank" rel="noopener noreferrer" className="video-link">

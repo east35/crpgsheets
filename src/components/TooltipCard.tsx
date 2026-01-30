@@ -37,15 +37,42 @@ export function TooltipCard({
   callout,
   variant = 'tooltip',
 }: TooltipCardProps) {
+  const decodeSvgData = (url: string) => {
+    const commaIndex = url.indexOf(',');
+    if (commaIndex === -1) return '';
+    const data = url.slice(commaIndex + 1);
+    if (url.includes(';base64')) {
+      try {
+        return atob(data);
+      } catch {
+        return '';
+      }
+    }
+    try {
+      return decodeURIComponent(data);
+    } catch {
+      return data;
+    }
+  };
+
+  const isInvisibleRect = (rectTag: string) => {
+    return /fill=\"none\"|fill='none'|fill-opacity=\"0\"|fill-opacity='0'|stroke=\"none\"|stroke='none'|stroke-opacity=\"0\"|stroke-opacity='0'/.test(rectTag);
+  };
+
   const isPlaceholderIcon = (url?: string) => {
     if (!url) return true;
     const trimmed = url.trim();
     if (!trimmed) return true;
     if (trimmed.includes('__image__')) return true;
     if (trimmed.startsWith('data:image/svg+xml')) {
-      const lower = trimmed.toLowerCase();
-      const hasShape = /(path|circle|polygon|polyline|ellipse|line)/.test(lower);
-      return !hasShape;
+      const svg = decodeSvgData(trimmed).toLowerCase();
+      if (!svg) return true;
+      const hasNonRectShape = /(path|circle|polygon|polyline|ellipse|line)/.test(svg);
+      if (hasNonRectShape) return false;
+      const rects = svg.match(/<rect[^>]*>/g) || [];
+      if (!rects.length) return true;
+      const anyVisibleRect = rects.some((rect) => !isInvisibleRect(rect));
+      return !anyVisibleRect;
     }
     return false;
   };

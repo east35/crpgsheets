@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check } from 'iconoir-react';
+import { Check, NavArrowLeft } from 'iconoir-react';
 import type { BG3Build } from '../types';
 import type { CharacterBuild } from '../../../types';
 import { getRace } from '../data/character/races';
@@ -10,6 +10,7 @@ import { KeywordText } from './KeywordText';
 import { MyBuildsPanel, getAvatarForBuild, getCompanionFromBuild } from './MyBuildsPanel';
 import { ImageLightbox } from '../../../components/ImageLightbox';
 import { AvatarUpload, useCustomAvatar } from '../../../components/AvatarUpload';
+import '../../../components/MobileStickyButton.css';
 import './BuildViewer.css';
 
 interface TrackedBG3Build extends CharacterBuild {
@@ -33,6 +34,7 @@ interface BuildViewerProps {
   getBuildById?: (id: string) => BG3Build | undefined;
   gameId?: string;
   profileId?: string;
+  customName?: string;
 }
 
 function GearItem({ name }: { name: string }) {
@@ -57,12 +59,12 @@ function GearItem({ name }: { name: string }) {
   );
 }
 
-export function BuildViewer({ 
-  build, 
-  onBack: _onBack, 
-  currentLevel = 1, 
-  onLevelChange, 
-  onTrackBuild, 
+export function BuildViewer({
+  build,
+  onBack,
+  currentLevel = 1,
+  onLevelChange,
+  onTrackBuild,
   onUntrackBuild: _onUntrackBuild,
   isTracked,
   trackedBuilds = [],
@@ -71,8 +73,8 @@ export function BuildViewer({
   getBuildById,
   gameId = 'baldurs-gate-3',
   profileId = '',
+  customName,
 }: BuildViewerProps) {
-  void _onBack;
   void _onUntrackBuild;
   const [activeTab, setActiveTab] = useState<'progression' | 'stats' | 'gear'>('progression');
   const [showLightbox, setShowLightbox] = useState(false);
@@ -117,6 +119,7 @@ export function BuildViewer({
 
   // Get total class breakdown
   const finalClassLevels = getClassLevelsAtLevel(12);
+  const title = isPlayerBuild && customName ? `${customName}: ${build.name}` : build.name;
 
   // Handle level row click - show confirmation if different from current level
   const handleLevelClick = (level: number) => {
@@ -149,10 +152,11 @@ export function BuildViewer({
         />
       )}
       <div className={`build-viewer bg3 ${showPartyBar ? 'has-party-bar' : ''}`}>
+      <button className="build-viewer-back-btn" onClick={onBack}>
+        <NavArrowLeft width={20} height={20} />
+        <span>Back</span>
+      </button>
       <div className="build-viewer-header">
-        {/* <button className="btn btn-secondary btn-sm" onClick={onBack}>
-          Back
-        </button> */}
         {avatarUrl ? (
           <div className="build-avatar-wrapper">
             <button
@@ -180,7 +184,7 @@ export function BuildViewer({
           </div>
         ) : null}
         <div className="build-title">
-          <h2>{build.name}</h2>
+          <h2>{title}</h2>
           <div className="build-meta">
             <span className="race">{build.subrace || build.race}</span>
             <span className="separator">•</span>
@@ -200,16 +204,29 @@ export function BuildViewer({
           )}
           <p className="build-description"><KeywordText text={build.description} /></p>
         </div>
-        
+
+        {/* Desktop Add to Party button */}
         {onTrackBuild && !isTracked && (
           <button
-            className="btn btn-primary"
+            className="btn btn-primary add-to-party-desktop"
             onClick={() => onTrackBuild(build)}
           >
             Add to Party
           </button>
         )}
       </div>
+
+      {/* Mobile floating Add to Party button */}
+      {onTrackBuild && !isTracked && (
+        <div className={`add-to-party-mobile ${showPartyBar ? 'above-party-bar' : ''}`}>
+          <button
+            className="btn btn-primary"
+            onClick={() => onTrackBuild(build)}
+          >
+            Add to Party
+          </button>
+        </div>
+      )}
 
       <div className="tabs">
         <button

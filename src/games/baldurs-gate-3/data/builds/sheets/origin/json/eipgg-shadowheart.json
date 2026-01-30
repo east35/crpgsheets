@@ -1,0 +1,193 @@
+{
+  "source": "eipgg",
+  "sourceUrl": "https://eip.gg/bg3/builds/companion-shadowheart/",
+  "type": "companion",
+  "buildGuidelines": [
+    "Build should be relatively straightforward so as not to upstage the main character",
+    "No permanent bonuses like Auntie Ethel boon, conventional gear only",
+    "Respects developers' vision for the character",
+    "No respecs to change starting skills and abilities",
+    "No exploiting known bugs",
+    "Multiclassing used sparingly and only if it makes sense",
+    "Effective enough to feel useful on any difficulty"
+  ],
+  "builds": [
+    {
+      "name": "Shadowheart",
+      "race": "High Half-Elf",
+      "origin": "Half-Elf",
+      "background": "Acolyte",
+      "class": "Cleric 12",
+      "subclass": "Trickery Domain",
+      "description": "A Spirit Guardians-focused Cleric build. Uses Concentration on Spirit Guardians for massive damage to nearby enemies. Hellrider's Pride and The Whispering Promise provide free Bless and Blade Ward to allies on heals. Mirror Image from Trickery Domain provides strong defense.",
+      "startingStats": {
+        "strength": 13,
+        "dexterity": 13,
+        "constitution": 14,
+        "intelligence": 10,
+        "wisdom": 17,
+        "charisma": 8
+      },
+      "finalStats": {
+        "strength": 14,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 10,
+        "wisdom": 18,
+        "charisma": 8
+      },
+      "skills": ["History", "Insight", "Medicine", "Religion"],
+      "startingCantrips": ["Fire Bolt", "Guidance", "Resistance", "Sacred Flame"],
+      "startingSpells": ["All Level 1 Cleric spells", "Charm Person (Domain)", "Disguise Self (Domain)"],
+      "feats": [
+        {
+          "level": 4,
+          "name": "Ability Improvement",
+          "effect": "+1 Dexterity, +1 Wisdom",
+          "notes": "Maximize medium armour effectiveness and make offensive spells harder to avoid"
+        },
+        {
+          "level": 8,
+          "name": "Resilient",
+          "effect": "+1 Constitution (to 15)",
+          "notes": "Gain Proficiency in Constitution Saving Throws for Concentration"
+        },
+        {
+          "level": 12,
+          "name": "Ability Improvement",
+          "effect": "+1 Strength, +1 Constitution",
+          "notes": "Help melee attacks and round Constitution to 16"
+        }
+      ],
+      "keySpells": [
+        "Healing Word",
+        "Sanctuary",
+        "Spiritual Weapon",
+        "Mirror Image",
+        "Spirit Guardians",
+        "Mass Healing Word",
+        "Planar Ally"
+      ],
+      "domainSpells": {
+        "level1": ["Charm Person", "Disguise Self"],
+        "level2": ["Mirror Image", "Pass Without Trace"],
+        "level3": ["Bestow Curse", "Fear"],
+        "level4": ["Polymorph", "Dimension Door"],
+        "level5": ["Dominate Person", "Seeming"]
+      },
+      "spellsByLevel": {
+        "level1": ["Bless", "Cure Wounds", "Healing Word", "Guiding Bolt", "Inflict Wounds", "Sanctuary", "Shield of Faith"],
+        "level2": ["Hold Person", "Prayer of Healing", "Silence", "Spiritual Weapon", "Warding Bond"],
+        "level3": ["Glyph of Warding", "Mass Healing Word", "Spirit Guardians"],
+        "level4": ["Freedom of Movement"],
+        "level5": ["Greater Restoration", "Mass Cure Wounds"],
+        "level6": ["Heal", "Heroes' Feast", "Planar Ally"]
+      },
+      "equipment": {
+        "weapon": {
+          "name": "The Blood of Lathander",
+          "location": "Act 1 - Find the Blood of Lathander quest in Crèche Y'llek",
+          "notes": "Legendary +3 mace. Light blinds fiends and undead. Essential for Act 2 undead encounters."
+        },
+        "shield": {
+          "primary": {
+            "name": "Ketheric's Shield",
+            "location": "Act 2 - Defeat Ketheric Thorm",
+            "notes": "Makes spells harder to resist"
+          },
+          "lategame": {
+            "name": "Viconia's Walking Fortress",
+            "location": "Act 3 - Shadowheart's personal quest",
+            "notes": "Legendary shield upgrade"
+          }
+        },
+        "handwear": {
+          "name": "Hellrider's Pride",
+          "location": "Act 1 - Zevlor",
+          "notes": "Healing allies gives them Blade Ward for 2 turns (resistance to physical damage)"
+        },
+        "armour": {
+          "name": "Dark Justiciar Half-Plate",
+          "location": "Act 2 - Gauntlet of Shar (Rare) or kill Nightsong (Very Rare)",
+          "notes": "Provides Advantage on Constitution Saving Throws"
+        },
+        "headwear": [
+          {
+            "name": "Dark Justiciar Helm",
+            "location": "Act 1 - Grymforge",
+            "notes": "+1 bonus to Constitution Saving Throws"
+          },
+          {
+            "name": "Helmet of Arcane Acuity",
+            "location": "Act 2 - Mason's Guild basement",
+            "notes": "Bonuses to spell attack rolls and DC on melee hits"
+          },
+          {
+            "name": "Wapira's Crown",
+            "location": "Act 1 - Save the Refugees quest",
+            "notes": "Heals Shadowheart when she heals party members"
+          }
+        ],
+        "cloak": {
+          "name": "Vivacious Cloak",
+          "location": "Act 2 - Grand Mausoleum",
+          "notes": "8 temporary HP when casting a spell in melee range"
+        },
+        "footwear": [
+          {
+            "name": "Boots of Striding",
+            "location": "Act 1 - Kill Minthara at Goblin Camp",
+            "notes": "Movement speed boost on Concentration spells, can't be pushed or knocked down while concentrating"
+          },
+          {
+            "name": "Evasive Shoes",
+            "location": "Act 2 - Mattis at Last Light Inn",
+            "notes": "AC bonus alternative if you don't kill Minthara"
+          }
+        ],
+        "amulet": [
+          {
+            "name": "Amulet of Restoration",
+            "location": "Act 1 - Derryth Bonecloak, Myconid Colony, Underdark",
+            "notes": "Healing without spell slots"
+          },
+          {
+            "name": "Amulet of the Devout",
+            "location": "Act 3 - Stormshore Tabernacle",
+            "notes": "Late-game option, makes spells harder to resist"
+          }
+        ],
+        "rings": [
+          {
+            "name": "The Whispering Promise",
+            "location": "Act 1 - Volo or Grat the Trader, Goblin Camp",
+            "notes": "Source of free Bless when healing - crucial part of the build"
+          },
+          {
+            "name": "Band of the Mystic Scoundrel",
+            "location": "Act 3 - Akabi's wheel jackpot",
+            "notes": "Cast Illusion or Enchantment spell as Bonus Action after landing melee attack"
+          }
+        ]
+      },
+      "gameplan": {
+        "core": "Boost Constitution Saving Throws, upcast Spirit Guardians, and wade into the fray. Deals massive damage to nearby enemies, and with Blood of Lathander, fiends and undead also get Blinded.",
+        "healing": "Use Hellrider's Pride and The Whispering Promise to give allies Bless and Blade Ward whenever healing. Mass Healing Word costs only a Bonus Action and doesn't need Concentration, allowing buffing the entire team while doing something else.",
+        "summoning": "Spiritual Weapon and Planar Ally are strong summoning options.",
+        "nonConcentration": [
+          "Sanctuary (prevents all damage, Bonus Action, no Concentration)",
+          "Mirror Image (strong defense, no Concentration)",
+          "Warding Bond (make ally sturdier, no Concentration)"
+        ],
+        "concentrationWarnings": [
+          "Fear (Concentration - breaks Spirit Guardians)",
+          "Dominate Person (Concentration - breaks Spirit Guardians)"
+        ],
+        "alternatives": [
+          "Shield of Faith for tanking strong foes",
+          "Silence to shut down enemy spellcasters"
+        ]
+      }
+    }
+  ]
+}

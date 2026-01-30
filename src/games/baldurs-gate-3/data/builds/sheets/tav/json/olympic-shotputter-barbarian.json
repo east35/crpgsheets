@@ -1,0 +1,198 @@
+{
+  "templateVersion": "1.0",
+  "game": "bg3",
+  "source": {
+    "title": "Olympic Shotputter Barbarian",
+    "url": "",
+    "author": "",
+    "publisher": "",
+    "publishedAt": "",
+    "retrievedAt": "2026-01-30"
+  },
+  "build": {
+    "title": "Olympic Shotputter Barbarian",
+    "summary": "Berserker Barbarian 5 / Thief Rogue 4 / Champion Fighter 3 built around thrown weapon damage and bonus actions.",
+    "patch": "",
+    "playstyle": "Throwing build with returning weapons and bonus-action throws.",
+    "characterType": "tav",
+    "startingAttributes": {
+      "strength": 17,
+      "dexterity": 14,
+      "constitution": 16,
+      "intelligence": 8,
+      "wisdom": 10,
+      "charisma": 8
+    },
+    "levelingOrder": [
+      {
+        "level": 1,
+        "class": { "name": "Barbarian", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 2,
+        "class": { "name": "Barbarian", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 3,
+        "class": { "name": "Barbarian", "subclass": "Berserker" },
+        "notes": "",
+        "features": ["Subclass: Berserker"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 4,
+        "class": { "name": "Barbarian", "subclass": "Berserker" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": ["Tavern Brawler (+1 STR)"]
+      },
+      {
+        "level": 5,
+        "class": { "name": "Barbarian", "subclass": "Berserker" },
+        "notes": "",
+        "features": ["Extra Attack"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 6,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 7,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 8,
+        "class": { "name": "Rogue", "subclass": "Thief" },
+        "notes": "",
+        "features": ["Subclass: Thief", "Fast Hands"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 9,
+        "class": { "name": "Rogue", "subclass": "Thief" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "feat",
+            "options": ["Ability Improvement (+2 STR)", "Alert"]
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "class": { "name": "Fighter", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 11,
+        "class": { "name": "Fighter", "subclass": "" },
+        "notes": "",
+        "features": ["Action Surge"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 12,
+        "class": { "name": "Fighter", "subclass": "Champion" },
+        "notes": "",
+        "features": ["Subclass: Champion"],
+        "spells": [],
+        "feats": []
+      }
+    ],
+    "keySpells": [],
+    "gearByAct": [
+      {
+        "act": 1,
+        "items": [
+          { "name": "Returning Pike", "slot": "", "notes": "Grat the Trader, Goblin Camp" },
+          { "name": "Ring of Flinging", "slot": "", "notes": "Aaron, Druid's Grove" },
+          { "name": "Gloves of Uninhibited Kushigo", "slot": "", "notes": "Find the Mushroom Picker" },
+          { "name": "Caustic Band", "slot": "", "notes": "Myconid Colony Dwarf Trader" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 2,
+        "items": [
+          { "name": "The Mighty Cloth", "slot": "", "notes": "Harper Quartermaster" },
+          { "name": "Lightning Jabber", "slot": "", "notes": "Cursed Kuo-Toa Chief" },
+          { "name": "Enraging Heart Garb", "slot": "", "notes": "Lann Tarv, Moonrise Towers" },
+          { "name": "Potion of Everlasting Vigour", "slot": "", "notes": "Moonrise Towers, Araj Oblodra" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 3,
+        "items": [
+          { "name": "Nyrulna", "slot": "", "notes": "Rivington, Expose Akabi" },
+          { "name": "Dwarven Thrower", "slot": "", "notes": "Rivington, Ferg Drogher" },
+          { "name": "Flame Enameled Armour", "slot": "", "notes": "Wyrm's Rock Fortress" },
+          { "name": "Viconia's Walking Fortress", "slot": "", "notes": "House of Grief" },
+          { "name": "Sarevok's Helmet", "slot": "", "notes": "Investigate the Murders" },
+          { "name": "Horns of the Berserker", "slot": "", "notes": "Rivington, Danthelon's shop" },
+          { "name": "Legacy of the Masters", "slot": "", "notes": "Dammon, Lower City" }
+        ],
+        "notes": ""
+      }
+    ],
+    "companions": [],
+    "references": {
+      "classes": ["Barbarian", "Rogue", "Fighter"],
+      "subclasses": ["Berserker", "Thief", "Champion"],
+      "spells": [],
+      "feats": ["Tavern Brawler (+1 STR)", "Ability Improvement (+2 STR)", "Alert"],
+      "items": [
+        "Returning Pike",
+        "Ring of Flinging",
+        "Gloves of Uninhibited Kushigo",
+        "Caustic Band",
+        "The Mighty Cloth",
+        "Lightning Jabber",
+        "Enraging Heart Garb",
+        "Potion of Everlasting Vigour",
+        "Nyrulna",
+        "Dwarven Thrower",
+        "Flame Enameled Armour",
+        "Viconia's Walking Fortress",
+        "Sarevok's Helmet",
+        "Horns of the Berserker",
+        "Legacy of the Masters"
+      ]
+    }
+  },
+  "raw": {
+    "htmlFile": "data/tav/pcgaming-multiclass.md",
+    "sectionId": "olympic-shotputter-barbarian",
+    "sectionTitle": "Olympic Shotputter Barbarian",
+    "sectionHtml": ""
+  },
+  "parseWarnings": []
+}

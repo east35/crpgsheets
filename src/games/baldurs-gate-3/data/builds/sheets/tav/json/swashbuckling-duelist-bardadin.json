@@ -1,0 +1,196 @@
+{
+  "templateVersion": "1.0",
+  "game": "bg3",
+  "source": {
+    "title": "Swashbuckling Duelist Bardadin",
+    "url": "",
+    "author": "",
+    "publisher": "",
+    "publishedAt": "",
+    "retrievedAt": "2026-01-30"
+  },
+  "build": {
+    "title": "Swashbuckling Duelist Bardadin",
+    "summary": "Oath of Vengeance Paladin 2 / College of Swords Bard 10 focusing on Dexterity, dueling, and Bard utility; respec recommended for Honor mode.",
+    "patch": "",
+    "playstyle": "Finesse weapon + shield early; drop shield with Duellist's Prerogative; strong face skills and Magical Secrets.",
+    "characterType": "tav",
+    "startingAttributes": {
+      "strength": 8,
+      "dexterity": 17,
+      "constitution": 14,
+      "intelligence": 8,
+      "wisdom": 10,
+      "charisma": 16
+    },
+    "levelingOrder": [
+      {
+        "level": 1,
+        "class": { "name": "Paladin", "subclass": "Oath of Vengeance" },
+        "notes": "",
+        "features": ["Subclass: Oath of Vengeance"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 2,
+        "class": { "name": "Paladin", "subclass": "Oath of Vengeance" },
+        "notes": "",
+        "features": ["Divine Smite"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 3,
+        "class": { "name": "Bard", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 4,
+        "class": { "name": "Bard", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 5,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": ["Subclass: College of Swords"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 6,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "feat",
+            "options": ["Ability Improvement (+2 DEX)", "Savage Attacker"]
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 8,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": ["Extra Attack"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 9,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 10,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": ["Alert"]
+      },
+      {
+        "level": 11,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 12,
+        "class": { "name": "Bard", "subclass": "College of Swords" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      }
+    ],
+    "keySpells": [],
+    "gearByAct": [
+      {
+        "act": 1,
+        "items": [
+          { "name": "Auntie Ethel's Hair", "slot": "", "notes": "Save Mayrina" },
+          { "name": "Caustic Band", "slot": "", "notes": "Myconid Colony Dwarf Trader" },
+          { "name": "Knife of the Undermountain King", "slot": "", "notes": "Creche Y'llek Trader" },
+          { "name": "Phalar Aluve", "slot": "", "notes": "Underdark" },
+          { "name": "Strange Conduit Ring", "slot": "", "notes": "Creche Y'llek; use with Ability Improvement spell" },
+          { "name": "Adamantine Shield", "slot": "", "notes": "The Grymforge" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 2,
+        "items": [
+          { "name": "Yuan-Ti Scale Mail", "slot": "", "notes": "Harper Quartermaster" },
+          { "name": "Flawed Helldusk Gloves", "slot": "", "notes": "Bring Dammon Infernal Iron" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 3,
+        "items": [
+          { "name": "Duellist's Prerogative", "slot": "", "notes": "Save Vanra" },
+          { "name": "Legacy of the Masters", "slot": "", "notes": "Dammon, Lower City" },
+          { "name": "Armour of Agility", "slot": "", "notes": "Stormshore Armoury" },
+          { "name": "Bhaalist Armor", "slot": "", "notes": "Impress the Murder Tribunal" },
+          { "name": "Sarevok's Helmet", "slot": "", "notes": "Investigate the Murders" }
+        ],
+        "notes": ""
+      }
+    ],
+    "companions": [],
+    "references": {
+      "classes": ["Paladin", "Bard"],
+      "subclasses": ["Oath of Vengeance", "College of Swords"],
+      "spells": [],
+      "feats": ["Ability Improvement (+2 DEX)", "Savage Attacker", "Alert"],
+      "items": [
+        "Auntie Ethel's Hair",
+        "Caustic Band",
+        "Knife of the Undermountain King",
+        "Phalar Aluve",
+        "Strange Conduit Ring",
+        "Adamantine Shield",
+        "Yuan-Ti Scale Mail",
+        "Flawed Helldusk Gloves",
+        "Duellist's Prerogative",
+        "Legacy of the Masters",
+        "Armour of Agility",
+        "Bhaalist Armor",
+        "Sarevok's Helmet"
+      ]
+    }
+  },
+  "raw": {
+    "htmlFile": "data/tav/pcgaming-multiclass.md",
+    "sectionId": "swashbuckling-duelist-bardadin",
+    "sectionTitle": "Swashbuckling Duelist Bardadin",
+    "sectionHtml": ""
+  },
+  "parseWarnings": [
+    "Dexterity 17 assumes Auntie Ethel's Hair; base DEX may be 16 without it."
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "source": "reddit",
+  "type": "multiclass",
+  "builds": [
+    {
+      "name": "Astarion",
+      "role": "Striker",
+      "classes": "Ranger (Gloom Stalker) 5 / Rogue (Thief) 4 / Fighter (Battle Master) 3",
+      "description": "Leans further into dual hand crossbows for maximum sustained DPR. Toggle Sharpshooter on and off as necessary, enter every combat hidden if possible, use haste potions frequently. At level 11, with haste and action surge you get 9 shots in the first round!",
+      "stats": {
+        "strength": 10,
+        "dexterity": 17,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 14,
+        "charisma": 8
+      },
+      "skills": ["Insight", "Stealth", "Survival"],
+      "expertise": ["Perception", "Stealth"],
+      "progression": [
+        { "level": 1, "class": "Ranger", "feature": "Favored Enemy", "choice": "Bounty Hunter" },
+        { "level": 1, "class": "Ranger", "feature": "Natural Explorer", "choice": "Wasteland Wanderer: Fire" },
+        { "level": 2, "class": "Ranger", "feature": "Spells", "choice": "Ensnaring Strike, Hunter's Mark" },
+        { "level": 2, "class": "Ranger", "feature": "Fighting Style", "choice": "Archery" },
+        { "level": 3, "class": "Ranger", "feature": "Subclass", "choice": "Gloom Stalker" },
+        { "level": 3, "class": "Ranger", "feature": "Spells", "choice": "Hail of Thorns" },
+        { "level": 4, "class": "Ranger", "feature": "Feat", "choice": "Sharpshooter" },
+        { "level": 5, "class": "Ranger", "feature": "Spells", "choice": "Pass Without Trace" },
+        { "level": 6, "class": "Rogue", "feature": "Skills", "choice": "Acrobatics" },
+        { "level": 8, "class": "Rogue", "feature": "Subclass", "choice": "Thief" },
+        { "level": 9, "class": "Rogue", "feature": "Feat", "choice": "Athlete (Dex +1)" },
+        { "level": 10, "class": "Fighter", "feature": "Fighting Style", "choice": "Defense" },
+        { "level": 12, "class": "Fighter", "feature": "Subclass", "choice": "Battle Master" },
+        { "level": 12, "class": "Fighter", "feature": "Maneuvers", "choice": "Menacing, Pushing, Trip" }
+      ]
+    },
+    {
+      "name": "Gale",
+      "role": "Blaster",
+      "classes": "Wizard (Divination) 10 / Cleric (Tempest) 2",
+      "description": "Mixes in Cleric for protection, utility, and a once per short rest nova from Destructive Wrath. Prepare the battlefield using Create Water. Because Wizards can scribe spells based on total caster level, you still have access to 6th level spells. Double-damage, maximized, forced failed saving throw Chain Lightning at level 11!",
+      "stats": {
+        "strength": 8,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 16,
+        "wisdom": 12,
+        "charisma": 8
+      },
+      "skills": ["Investigation", "Perception", "Religion"],
+      "progression": [
+        { "level": 1, "class": "Wizard", "feature": "Cantrips", "choice": "Fire Bolt, Ray of Frost, Shocking Grasp" },
+        { "level": 1, "class": "Wizard", "feature": "Spells", "choice": "Chromatic Orb, Find Familiar, Ice Knife, Magic Missile, Shield, Thunderwave" },
+        { "level": 2, "class": "Cleric", "feature": "Subclass", "choice": "Tempest" },
+        { "level": 2, "class": "Cleric", "feature": "Cantrips", "choice": "Blade Ward, Guidance, Resistance" },
+        { "level": 2, "class": "Cleric", "feature": "Deity", "choice": "Mystra" },
+        { "level": 3, "class": "Wizard", "feature": "Subclass", "choice": "Divination" },
+        { "level": 3, "class": "Wizard", "feature": "Spells", "choice": "Burning Hands, Ray of Sickness" },
+        { "level": 4, "class": "Wizard", "feature": "Spells", "choice": "Cloud of Daggers, Shatter" },
+        { "level": 5, "class": "Wizard", "feature": "Cantrips", "choice": "Bone Chill" },
+        { "level": 5, "class": "Wizard", "feature": "Spells", "choice": "Misty Step, Scorching Ray" },
+        { "level": 5, "class": "Wizard", "feature": "Feat", "choice": "Ability Improvement (Int +2)" },
+        { "level": 6, "class": "Wizard", "feature": "Spells", "choice": "Lightning Bolt, Glyph of Warding" },
+        { "level": 7, "class": "Cleric", "feature": "Channel Divinity", "choice": "Destructive Wrath" },
+        { "level": 8, "class": "Wizard", "feature": "Spells", "choice": "Counterspell, Fireball" },
+        { "level": 9, "class": "Wizard", "feature": "Spells", "choice": "Conjure Minor Elemental, Ice Storm" },
+        { "level": 10, "class": "Wizard", "feature": "Spells", "choice": "Blight, Dimension Door" },
+        { "level": 10, "class": "Wizard", "feature": "Feat", "choice": "Ability Improvement (Int +2)" },
+        { "level": 11, "class": "Wizard", "feature": "Spells", "choice": "Cone of Cold, Conjure Elemental" },
+        { "level": 12, "class": "Wizard", "feature": "Cantrips", "choice": "Acid Splash" },
+        { "level": 12, "class": "Wizard", "feature": "Spells", "choice": "Cloudkill, Telekinesis" }
+      ]
+    },
+    {
+      "name": "Karlach",
+      "role": "Striker",
+      "classes": "Barbarian (Berserker) 5 / Rogue (Thief) 4 / Fighter (Champion) 3",
+      "description": "Starts same as single-class but dips out to keep increasing thrown weapon DPR. Fast Hands gives an extra enraged throw in mid game, and Action Surge gives a nova round per short rest in late game. Hide before combat or when not using rage for advantage to roughly double crit chance.",
+      "stats": {
+        "strength": 17,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 8
+      },
+      "skills": ["Nature", "Perception"],
+      "expertise": ["Perception", "Stealth"],
+      "progression": [
+        { "level": 1, "class": "Barbarian", "feature": null, "choice": null },
+        { "level": 2, "class": "Barbarian", "feature": null, "choice": null },
+        { "level": 3, "class": "Barbarian", "feature": "Subclass", "choice": "Berserker" },
+        { "level": 4, "class": "Barbarian", "feature": "Feat", "choice": "Tavern Brawler (Str+1)" },
+        { "level": 5, "class": "Barbarian", "feature": "Extra Attack", "choice": null },
+        { "level": 6, "class": "Rogue", "feature": "Skills", "choice": "Stealth" },
+        { "level": 8, "class": "Rogue", "feature": "Subclass", "choice": "Thief" },
+        { "level": 9, "class": "Rogue", "feature": "Feat", "choice": "Ability Improvement (Str+2)" },
+        { "level": 10, "class": "Fighter", "feature": "Fighting Style", "choice": "Defense" },
+        { "level": 11, "class": "Fighter", "feature": "Action Surge", "choice": null },
+        { "level": 12, "class": "Fighter", "feature": "Subclass", "choice": "Champion" }
+      ]
+    },
+    {
+      "name": "Lae'zel",
+      "role": "Frontliner",
+      "classes": "Fighter (Battle Master) 8 / Paladin (Vengeance) 4",
+      "description": "Trades last 4 levels of fighter for paladin. Core competency is battlefield control. Once fully online, adds damage dealing with Bless concentration and occasional smites. Capstone is Great Weapon Master for dramatically improved DPR.",
+      "stats": {
+        "strength": 17,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 10,
+        "charisma": 8
+      },
+      "skills": ["Perception", "Survival"],
+      "maneuvers": {
+        "level3": ["Menacing", "Pushing", "Riposte"],
+        "level7": ["Goading", "Precision"]
+      },
+      "progression": [
+        { "level": 1, "class": "Fighter", "feature": "Fighting Style", "choice": "Defense" },
+        { "level": 2, "class": "Fighter", "feature": "Action Surge", "choice": null },
+        { "level": 3, "class": "Fighter", "feature": "Subclass", "choice": "Battle Master" },
+        { "level": 4, "class": "Fighter", "feature": "Feat", "choice": "Polearm Master" },
+        { "level": 5, "class": "Fighter", "feature": "Extra Attack", "choice": null },
+        { "level": 6, "class": "Fighter", "feature": "Feat", "choice": "Sentinel" },
+        { "level": 8, "class": "Fighter", "feature": "Feat", "choice": "Athlete (Str+1)" },
+        { "level": 9, "class": "Paladin", "feature": "Subclass", "choice": "Vengeance" },
+        { "level": 10, "class": "Paladin", "feature": "Fighting Style", "choice": "Great Weapon Fighting" },
+        { "level": 11, "class": "Paladin", "feature": "Divine Smite", "choice": null },
+        { "level": 12, "class": "Paladin", "feature": "Feat", "choice": "Great Weapon Master" }
+      ]
+    },
+    {
+      "name": "Shadowheart",
+      "role": "Frontliner",
+      "classes": "Sorcerer (Storm) 1 / Cleric (Light) 11",
+      "description": "Dips into Sorcerer for Constitution saving throws, bonus action flight upon casting a spell, and the Shield spell. Light subclass gives Warding Flare for defense and nice offensive spells. Spiritual Weapon and Spirit Guardians provide solid baseline damage.",
+      "stats": {
+        "strength": 12,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 16,
+        "charisma": 8
+      },
+      "skills": ["Arcana", "Persuasion"],
+      "progression": [
+        { "level": 1, "class": "Sorcerer", "feature": "Subclass", "choice": "Storm" },
+        { "level": 1, "class": "Sorcerer", "feature": "Cantrips", "choice": "Blade Ward, Friends, Mage Hand, Minor Illusion" },
+        { "level": 1, "class": "Sorcerer", "feature": "Spells", "choice": "Magic Missile, Shield" },
+        { "level": 2, "class": "Cleric", "feature": "Subclass", "choice": "Light" },
+        { "level": 2, "class": "Cleric", "feature": "Cantrips", "choice": "Guidance, Produce Flame, Sacred Flame" },
+        { "level": 5, "class": "Cleric", "feature": "Cantrips", "choice": "Resistance" },
+        { "level": 5, "class": "Cleric", "feature": "Feat", "choice": "Ability Improvement (Wis +2)" },
+        { "level": 9, "class": "Cleric", "feature": "Feat", "choice": "Ability Improvement (Wis +2)" },
+        { "level": 11, "class": "Cleric", "feature": "Cantrips", "choice": "Thaumaturgy" }
+      ]
+    },
+    {
+      "name": "Wyll",
+      "role": "Blaster",
+      "classes": "Fighter (Champion) 3 / Warlock (Fiend) 9",
+      "description": "Dips Fighter for Constitution saving throws, armor proficiency, Action Surge, and more crits. Rebuilt to allow dipping into melee combat with Pact of the Blade, but more optimal to hang back, Eldritch Blast, and throw occasional Fireballs. Hide inside Darkness for major encounters once you reach level 6.",
+      "stats": {
+        "strength": 8,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 8,
+        "wisdom": 12,
+        "charisma": 16
+      },
+      "skills": ["Acrobatics", "Insight", "Perception"],
+      "pactBoon": "Pact of the Blade",
+      "invocations": {
+        "level3": ["Agonizing Blast", "Repelling Blast"],
+        "level6": ["Devil's Sight"],
+        "level9": ["One with Shadows"],
+        "level11": ["Minions of Chaos"]
+      },
+      "progression": [
+        { "level": 1, "class": "Fighter", "feature": "Fighting Style", "choice": "Defense" },
+        { "level": 2, "class": "Warlock", "feature": "Subclass", "choice": "Fiend" },
+        { "level": 2, "class": "Warlock", "feature": "Cantrips", "choice": "Eldritch Blast, Mage Hand" },
+        { "level": 2, "class": "Warlock", "feature": "Spells", "choice": "Armor of Agathys, Hex" },
+        { "level": 3, "class": "Warlock", "feature": "Spells", "choice": "Hellish Rebuke" },
+        { "level": 4, "class": "Warlock", "feature": "Pact Boon", "choice": "Pact of the Blade" },
+        { "level": 4, "class": "Warlock", "feature": "Spells", "choice": "Cloud of Daggers" },
+        { "level": 5, "class": "Warlock", "feature": "Cantrips", "choice": "Minor Illusion" },
+        { "level": 5, "class": "Warlock", "feature": "Spells", "choice": "Darkness" },
+        { "level": 5, "class": "Warlock", "feature": "Feat", "choice": "Ability Improvement (Cha +2)" },
+        { "level": 6, "class": "Warlock", "feature": "Spells", "choice": "Fireball" },
+        { "level": 7, "class": "Fighter", "feature": "Action Surge", "choice": null },
+        { "level": 8, "class": "Warlock", "feature": "Spells", "choice": "Hunger of Hadar" },
+        { "level": 9, "class": "Warlock", "feature": "Spells", "choice": "Fire Shield" },
+        { "level": 10, "class": "Warlock", "feature": "Spells", "choice": "Blight" },
+        { "level": 10, "class": "Warlock", "feature": "Feat", "choice": "Ability Improvement (Cha +2)" },
+        { "level": 11, "class": "Warlock", "feature": "Spells", "choice": "Cone of Cold" },
+        { "level": 12, "class": "Fighter", "feature": "Subclass", "choice": "Champion" }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ interface TrackedBuildData {
   buildId?: string;
   companion?: string;
   buildName?: string;
+  customName?: string;
   currentLevel?: number;
   isCustom?: boolean;
   archetypePath?: {
@@ -34,10 +35,20 @@ function getAvatarForTrackedBuild(data: TrackedBuildData | undefined, gameId: st
 }
 
 function getCharacterName(data: TrackedBuildData | undefined): string {
-  if (!data?.companion) return 'Unknown';
+  // Use custom name if available (for protagonist builds)
+  if (data?.customName) return data.customName;
+  if (!data?.companion) return 'Tav';
   // For RT, RogueTrader is the player character
   if (data.companion === 'RogueTrader') return 'Rogue Trader';
   return data.companion;
+}
+
+function getBuildDisplayName(build: CharacterBuild, data: TrackedBuildData | undefined, characterName: string): string {
+  if (data?.buildName) return data.buildName;
+  if (build.gameId === 'rogue-trader' && build.name.startsWith(`${characterName}: `)) {
+    return build.name.slice(characterName.length + 2);
+  }
+  return build.name;
 }
 
 interface BuildListProps {
@@ -55,6 +66,7 @@ function BuildCard({ build, onSelect, onDelete }: {
   const currentLevel = data?.currentLevel || 1;
   const isCustom = data?.isCustom;
   const characterName = getCharacterName(data);
+  const buildDisplayName = getBuildDisplayName(build, data, characterName);
   const defaultAvatar = getAvatarForTrackedBuild(data, build.gameId);
   
   // Check for custom avatar
@@ -83,7 +95,7 @@ function BuildCard({ build, onSelect, onDelete }: {
           <span className="party-member-name">{characterName}</span>
           <span className="party-member-level">Lv {currentLevel}</span>
         </div>
-        <div className="party-member-build">{build.name}</div>
+        <div className="party-member-build">{buildDisplayName}</div>
         {data?.archetypePath && (
           <div className="party-member-path">
             <span className="archetype base">

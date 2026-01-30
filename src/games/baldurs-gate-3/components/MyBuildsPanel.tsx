@@ -9,6 +9,7 @@ interface TrackedBG3Build extends CharacterBuild {
   data: {
     buildId: string;
     currentLevel: number;
+    customName?: string;
   };
 }
 
@@ -66,11 +67,16 @@ export function MyBuildsPanel({
   for (const tracked of trackedBuilds) {
     const build = getBuildById(tracked.data.buildId);
     if (build) {
-      const isPlayer = !getCompanionFromBuild(build);
+      const companion = getCompanionFromBuild(build);
+      const isPlayer = !companion;
+      // Use custom name for player character, companion name, or build name as fallback
+      const displayName = isPlayer
+        ? (tracked.data.customName || 'Tav')
+        : (companion || build.name);
       members.push({
         id: tracked.id,
         buildId: tracked.data.buildId,
-        name: build.name,
+        name: displayName,
         level: tracked.data.currentLevel || 1,
         avatarUrl: getAvatarForBuild(build),
         isPlayerCharacter: isPlayer,

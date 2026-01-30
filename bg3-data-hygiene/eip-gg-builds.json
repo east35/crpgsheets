@@ -1,0 +1,249 @@
+{
+  "source": "eip.gg",
+  "baseUrl": "https://eip.gg/bg3/builds/",
+  "scrapedAt": "2026-01-30",
+  "builds": [
+    {
+      "id": "companion-shadowheart",
+      "name": "Companion Shadowheart",
+      "url": "https://eip.gg/bg3/builds/companion-shadowheart/",
+      "classes": ["Cleric"],
+      "subclasses": ["Trickery Domain"],
+      "multiclass": false,
+      "tags": ["Beginner", "Caster", "Healing"],
+      "companion": "Shadowheart",
+      "votes": 11
+    },
+    {
+      "id": "companion-astarion",
+      "name": "Companion Astarion",
+      "url": "https://eip.gg/bg3/builds/companion-astarion/",
+      "classes": ["Fighter", "Rogue"],
+      "subclasses": ["Thief"],
+      "multiclass": true,
+      "tags": ["Beginner", "Melee", "Stealth/Sneak Attack"],
+      "companion": "Astarion",
+      "votes": 6
+    },
+    {
+      "id": "drama-queen-astarion",
+      "name": "Drama Queen Astarion",
+      "url": "https://eip.gg/bg3/builds/drama-queen-astarion/",
+      "classes": ["Bard", "Rogue"],
+      "subclasses": ["College of Swords", "Swashbuckler"],
+      "multiclass": true,
+      "tags": ["Face of Party", "Melee", "Stealth/Sneak Attack"],
+      "companion": "Astarion",
+      "votes": 9
+    },
+    {
+      "id": "companion-laezel",
+      "name": "Companion Lae'zel",
+      "url": "https://eip.gg/bg3/builds/companion-laezel/",
+      "classes": ["Fighter"],
+      "subclasses": ["Battle Master"],
+      "multiclass": false,
+      "tags": ["Actions/Bonus Actions", "Beginner", "Melee"],
+      "companion": "Laezel",
+      "votes": 7
+    },
+    {
+      "id": "companion-karlach",
+      "name": "Companion Karlach",
+      "url": "https://eip.gg/bg3/builds/companion-karlach/",
+      "classes": ["Barbarian"],
+      "subclasses": ["Berserker"],
+      "multiclass": false,
+      "tags": ["Beginner", "Melee"],
+      "companion": "Karlach",
+      "votes": 6
+    },
+    {
+      "id": "giant-karlach",
+      "name": "Giant Karlach",
+      "url": "https://eip.gg/bg3/builds/giant-karlach/",
+      "classes": ["Barbarian"],
+      "subclasses": ["Giant"],
+      "multiclass": false,
+      "tags": ["Control", "Melee", "Strong"],
+      "companion": "Karlach",
+      "votes": 6
+    },
+    {
+      "id": "companion-pact-of-the-blade-wyll",
+      "name": "Companion Pact of the Blade Wyll",
+      "url": "https://eip.gg/bg3/builds/companion-pact-of-the-blade-wyll/",
+      "classes": ["Warlock", "Paladin"],
+      "subclasses": ["Fiend", "Oath of Vengeance"],
+      "multiclass": true,
+      "tags": ["Beginner", "Melee", "Strong"],
+      "companion": "Wyll",
+      "votes": 6
+    },
+    {
+      "id": "hexblade-warrior-wyll",
+      "name": "Hexblade Warrior Wyll",
+      "url": "https://eip.gg/bg3/builds/hexblade-warrior-wyll/",
+      "classes": ["Warlock"],
+      "subclasses": ["The Hexblade"],
+      "multiclass": false,
+      "tags": ["Battlemage/Gish", "Caster", "Face of Party"],
+      "companion": "Wyll",
+      "votes": 9
+    },
+    {
+      "id": "companion-halsin",
+      "name": "Companion Halsin",
+      "url": "https://eip.gg/bg3/builds/companion-halsin/",
+      "classes": ["Druid"],
+      "subclasses": ["Circle of the Moon"],
+      "multiclass": false,
+      "tags": ["Act 2", "Beginner", "Control"],
+      "companion": "Halsin",
+      "votes": 6
+    },
+    {
+      "id": "companion-jaheira",
+      "name": "Companion Jaheira",
+      "url": "https://eip.gg/bg3/builds/companion-jaheira/",
+      "classes": ["Druid", "Fighter"],
+      "subclasses": ["Circle of the Land"],
+      "multiclass": true,
+      "tags": ["Act 2", "Battlemage/Gish", "Ranged"],
+      "companion": "Jaheira",
+      "votes": 6
+    },
+    {
+      "id": "companion-minsc",
+      "name": "Companion Minsc",
+      "url": "https://eip.gg/bg3/builds/companion-minsc/",
+      "classes": ["Ranger", "Rogue"],
+      "subclasses": ["Hunter", "Thief"],
+      "multiclass": true,
+      "tags": ["Act 3", "Beginner", "Melee"],
+      "companion": "Minsc",
+      "votes": 6
+    },
+    {
+      "id": "companion-minthara",
+      "name": "Companion Minthara",
+      "url": "https://eip.gg/bg3/builds/companion-minthara/",
+      "classes": ["Paladin"],
+      "subclasses": ["Oath of Vengeance"],
+      "multiclass": false,
+      "tags": ["Act 2", "Beginner", "Strong"],
+      "companion": "Minthara",
+      "votes": 9
+    },
+    {
+      "id": "pondering-the-orb-jack-of-all-trades",
+      "name": "Pondering the Orb Jack of All Trades",
+      "url": "https://eip.gg/bg3/builds/pondering-the-orb-jack-of-all-trades/",
+      "classes": ["Barbarian", "Bard", "Sorcerer", "Druid", "Fighter", "Cleric", "Monk", "Warlock", "Paladin", "Ranger", "Rogue", "Wizard"],
+      "subclasses": ["Draconic", "Knowledge", "Fiend", "Vengeance"],
+      "multiclass": true,
+      "tags": ["Multiclass", "Act 3", "Face of Party", "Roleplay"],
+      "companion": null,
+      "votes": 7
+    },
+    {
+      "id": "drow-infiltrator-rogue-ranger",
+      "name": "Drow Infiltrator Rogue / Ranger",
+      "url": "https://eip.gg/bg3/builds/drow-infiltrator-rogue-ranger/",
+      "classes": ["Rogue", "Ranger"],
+      "subclasses": ["Assassin", "Gloom Stalker"],
+      "multiclass": true,
+      "tags": ["Act 1", "Roleplay", "Stealth/Sneak Attack"],
+      "companion": null,
+      "votes": 6
+    },
+    {
+      "id": "thief-bard",
+      "name": "Thief Bard",
+      "url": "https://eip.gg/bg3/builds/thief-bard/",
+      "classes": ["Bard"],
+      "subclasses": ["College of Lore"],
+      "multiclass": false,
+      "tags": ["Caster", "Face of Party"],
+      "companion": null,
+      "votes": 6
+    },
+    {
+      "id": "healer-bard",
+      "name": "Healer Bard",
+      "url": "https://eip.gg/bg3/builds/healer-bard/",
+      "classes": ["Bard"],
+      "subclasses": ["College of Lore"],
+      "multiclass": false,
+      "tags": ["Caster", "Face of Party", "Healing"],
+      "companion": null,
+      "votes": 6
+    },
+    {
+      "id": "control-sorcerer",
+      "name": "Control Sorcerer",
+      "url": "https://eip.gg/bg3/builds/control-sorcerer/",
+      "classes": ["Sorcerer", "Warlock"],
+      "subclasses": ["Draconic", "Great Old One"],
+      "multiclass": true,
+      "tags": ["Caster", "Control", "Strong"],
+      "companion": null,
+      "votes": 7
+    },
+    {
+      "id": "battle-master-fighter",
+      "name": "Battle Master Fighter",
+      "url": "https://eip.gg/bg3/builds/battle-master-fighter/",
+      "classes": ["Fighter"],
+      "subclasses": ["Battle Master"],
+      "multiclass": false,
+      "tags": ["Actions/Bonus Actions", "Melee", "Strong"],
+      "companion": null,
+      "votes": 7
+    },
+    {
+      "id": "feared-warlock-ambusher-rogue-warlock",
+      "name": "Feared Warlock Ambusher",
+      "url": "https://eip.gg/bg3/builds/feared-warlock-ambusher-rogue-warlock/",
+      "classes": ["Rogue", "Warlock"],
+      "subclasses": ["Assassin", "Great Old One"],
+      "multiclass": true,
+      "tags": ["Act 1", "Battlemage/Gish", "Stealth/Sneak Attack"],
+      "companion": null,
+      "votes": 6
+    },
+    {
+      "id": "oopsy-daisy-the-clumsy-thief",
+      "name": "Oopsy Daisy, the Clumsy Thief",
+      "url": "https://eip.gg/bg3/builds/oopsy-daisy-the-clumsy-thief/",
+      "classes": ["Rogue"],
+      "subclasses": ["Thief"],
+      "multiclass": false,
+      "tags": ["Funny", "Meme", "Roleplay"],
+      "companion": null,
+      "votes": 5
+    },
+    {
+      "id": "holy-salami-warrior-paladin",
+      "name": "Holy Salami Warrior Paladin",
+      "url": "https://eip.gg/bg3/builds/holy-salami-warrior-paladin/",
+      "classes": ["Paladin"],
+      "subclasses": ["Oath of the Ancients"],
+      "multiclass": false,
+      "tags": ["Face of Party", "Meme", "Strong"],
+      "companion": null,
+      "votes": 6
+    },
+    {
+      "id": "berserker-thief-barbarian",
+      "name": "Berserker/Thief Barbarian",
+      "url": "https://eip.gg/bg3/builds/berserker-thief-barbarian/",
+      "classes": ["Barbarian", "Rogue"],
+      "subclasses": ["Berserker", "Thief"],
+      "multiclass": true,
+      "tags": ["Melee", "Strong"],
+      "companion": null,
+      "votes": 6
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+/* Mobile Sticky Button - Global pattern for "Add to Party" and similar CTAs */
+
+/* Desktop version - hidden on mobile */
+.add-to-party-desktop {
+  flex-shrink: 0;
+}
+
+/* Mobile floating version - hidden on desktop */
+.add-to-party-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .add-to-party-desktop {
+    display: none;
+  }
+
+  .add-to-party-mobile {
+    display: block;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 100;
+  }
+
+  .add-to-party-mobile.above-party-bar {
+    bottom: 100px;
+  }
+
+  .add-to-party-mobile .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

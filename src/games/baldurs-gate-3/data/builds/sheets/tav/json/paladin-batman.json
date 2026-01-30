@@ -1,0 +1,211 @@
+{
+  "templateVersion": "1.0",
+  "game": "bg3",
+  "source": {
+    "title": "Paladin Batman",
+    "url": "",
+    "author": "",
+    "publisher": "",
+    "publishedAt": "",
+    "retrievedAt": "2026-01-30"
+  },
+  "build": {
+    "title": "Paladin Batman",
+    "summary": "Oath of Vengeance Paladin 5 / Thief or Assassin Rogue 4 / Champion Fighter 3 for mobile, sustainable melee damage.",
+    "patch": "",
+    "playstyle": "Cunning Action mobility with Paladin smites; flexible Thief or Assassin route.",
+    "characterType": "tav",
+    "startingAttributes": {
+      "strength": 8,
+      "dexterity": 17,
+      "constitution": 14,
+      "intelligence": 8,
+      "wisdom": 10,
+      "charisma": 16
+    },
+    "levelingOrder": [
+      {
+        "level": 1,
+        "class": { "name": "Paladin", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "fighting_style",
+            "options": ["Dueling", "Defense"]
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 3,
+        "class": { "name": "Paladin", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 4,
+        "class": { "name": "Paladin", "subclass": "Oath of Vengeance" },
+        "notes": "",
+        "features": ["Subclass: Oath of Vengeance"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 5,
+        "class": { "name": "Paladin", "subclass": "Oath of Vengeance" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": ["Ability Improvement (+2 DEX)"]
+      },
+      {
+        "level": 6,
+        "class": { "name": "Paladin", "subclass": "Oath of Vengeance" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 7,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 8,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "subclass",
+            "options": ["Assassin", "Thief"]
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "class": { "name": "Rogue", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "feat",
+            "options": ["Savage Attacker", "Alert"]
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "class": { "name": "Fighter", "subclass": "" },
+        "notes": "",
+        "features": [],
+        "spells": [],
+        "feats": [],
+        "choices": [
+          {
+            "type": "fighting_style",
+            "options": ["Defense", "Dual Wielding"]
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "class": { "name": "Fighter", "subclass": "" },
+        "notes": "",
+        "features": ["Action Surge"],
+        "spells": [],
+        "feats": []
+      },
+      {
+        "level": 12,
+        "class": { "name": "Fighter", "subclass": "Champion" },
+        "notes": "",
+        "features": ["Subclass: Champion"],
+        "spells": [],
+        "feats": []
+      }
+    ],
+    "keySpells": [],
+    "gearByAct": [
+      {
+        "act": 1,
+        "items": [
+          { "name": "Auntie Ethel's Hair", "slot": "", "notes": "Save Mayrina" },
+          { "name": "Caustic Band", "slot": "", "notes": "Myconid Colony Dwarf Trader" },
+          { "name": "Knife of the Undermountain King", "slot": "", "notes": "Creche Y'llek Trader" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 2,
+        "items": [
+          { "name": "Yuan-Ti Scale Mail", "slot": "", "notes": "Harper Quartermaster" },
+          { "name": "Flawed Helldusk Gloves", "slot": "", "notes": "Bring Dammon Infernal Iron" }
+        ],
+        "notes": ""
+      },
+      {
+        "act": 3,
+        "items": [
+          { "name": "Duellist's Prerogative", "slot": "", "notes": "Save Vanra" },
+          { "name": "Legacy of the Masters", "slot": "", "notes": "Dammon, Lower City" },
+          { "name": "Armor of Agility", "slot": "", "notes": "Stormshore Armoury" },
+          { "name": "Bloodthirst", "slot": "", "notes": "Defeat Orin" },
+          { "name": "Helldusk Armour", "slot": "", "notes": "House of Hope" },
+          { "name": "Sarevok's Helmet", "slot": "", "notes": "Investigate the Murders" }
+        ],
+        "notes": ""
+      }
+    ],
+    "companions": [],
+    "references": {
+      "classes": ["Paladin", "Rogue", "Fighter"],
+      "subclasses": ["Oath of Vengeance", "Assassin", "Thief", "Champion"],
+      "spells": [],
+      "feats": ["Ability Improvement (+2 DEX)", "Savage Attacker", "Alert"],
+      "items": [
+        "Auntie Ethel's Hair",
+        "Caustic Band",
+        "Knife of the Undermountain King",
+        "Yuan-Ti Scale Mail",
+        "Flawed Helldusk Gloves",
+        "Duellist's Prerogative",
+        "Legacy of the Masters",
+        "Armor of Agility",
+        "Bloodthirst",
+        "Helldusk Armour",
+        "Sarevok's Helmet"
+      ]
+    }
+  },
+  "raw": {
+    "htmlFile": "data/tav/pcgaming-multiclass.md",
+    "sectionId": "paladin-batman",
+    "sectionTitle": "Paladin Batman",
+    "sectionHtml": ""
+  },
+  "parseWarnings": [
+    "Dexterity 17 assumes Auntie Ethel's Hair; base DEX may be 16 without it.",
+    "Paladin subclass is inferred from title; table does not specify level of oath selection."
+  ]
+}

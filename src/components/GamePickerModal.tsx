@@ -11,6 +11,9 @@ interface GamePickerModalProps {
 
 export function GamePickerModal({ currentGame, onSelectGame, onClose }: GamePickerModalProps) {
   const games = getAllGames();
+  const orderedGames = currentGame
+    ? [currentGame, ...games.filter((game) => game.id !== currentGame.id)]
+    : games;
 
   const handleSelect = (game: Game) => {
     onSelectGame(game);
@@ -25,7 +28,7 @@ export function GamePickerModal({ currentGame, onSelectGame, onClose }: GamePick
         </button>
         <h2>Select Game</h2>
         <div className="game-grid">
-          {games.map((game) => (
+          {orderedGames.map((game) => (
             <button
               key={game.id}
               className={`game-card ${currentGame?.id === game.id ? 'active' : ''}`}

@@ -15,5 +15,12 @@
 .bg3-keyword-spell { color: #f39c12; }
 .bg3-keyword-feat { color: #2ecc71; }
 .bg3-keyword-condition { color: #e91e63; }
-.bg3-keyword-ability-score { color: #1abc9c; }
+.bg3-keyword-ability { color: #1abc9c; }
 .bg3-keyword-skill { color: #27ae60; }
+.bg3-keyword-action { color: #f97316; }
+.bg3-keyword-feature { color: #f59e0b; }
+.bg3-keyword-potion { color: #38bdf8; }
+.bg3-keyword-elixir { color: #22c55e; }
+.bg3-keyword-grenade { color: #ef4444; }
+.bg3-keyword-arrow { color: #94a3b8; }
+.bg3-keyword-bonus { color: #f472b6; }

@@ -1,0 +1,204 @@
+{
+  "templateVersion": "1.0",
+  "game": "bg3",
+  "source": {
+    "title": "Mr. Know-It-All",
+    "url": "",
+    "author": "",
+    "publisher": "",
+    "publishedAt": "",
+    "retrievedAt": "2026-01-30"
+  },
+  "build": {
+    "title": "Mr. Know-It-All",
+    "summary": "Skill-heavy Sorcerer/Cleric/Bard build focused on dominating dialogue and checks while maintaining strong control spells.",
+    "patch": "",
+    "playstyle": "Skill gorilla with strong face skills and control magic.",
+    "characterType": "tav",
+    "startingAttributes": {
+      "strength": 9,
+      "dexterity": 14,
+      "constitution": 14,
+      "intelligence": 8,
+      "wisdom": 14,
+      "charisma": 16
+    },
+    "levelingOrder": [
+      {
+        "level": 1,
+        "class": { "name": "Sorcerer", "subclass": "Draconic (White)" },
+        "notes": "Table values used; note says Cha 17 from Hag Hair.",
+        "features": [
+          "Race: Gnome",
+          "Subrace: Rock",
+          "Background: Folk Hero",
+          "Wis saving throw advantage",
+          "History expertise",
+          "Con saving throw proficiency",
+          "Subclass: Draconic (White)",
+          "Armor of Agathys spell"
+        ],
+        "spells": ["Chromatic Orb", "Shield"],
+        "feats": [],
+        "skills": ["Animal Handling", "Survival", "Insight", "Persuasion"],
+        "expertise": ["History"],
+        "cantrips": ["Bone Chill", "Fire Bolt", "Ray of Frost", "Shocking Grasp"]
+      },
+      {
+        "level": 2,
+        "class": { "name": "Cleric", "subclass": "Knowledge" },
+        "notes": "",
+        "features": ["Subclass: Knowledge", "Deity: Oghma", "Medium Armor Proficiency", "Shields Proficiency"],
+        "spells": ["Bless", "Healing Word", "Sanctuary", "Sleep"],
+        "feats": [],
+        "skills": ["Nature", "Religion"],
+        "expertise": ["Nature", "Religion"],
+        "cantrips": ["Guidance", "Light", "Thaumaturgy"]
+      },
+      {
+        "level": 3,
+        "class": { "name": "Bard", "subclass": "" },
+        "notes": "",
+        "features": ["Musical Instrument Proficiency"],
+        "spells": ["Dissonant Whispers", "Faerie Fire", "Longstrider", "Tasha's Hideous Laughter"],
+        "feats": [],
+        "skills": ["Perception"],
+        "cantrips": ["Friends", "Mage Hand"]
+      },
+      {
+        "level": 4,
+        "class": { "name": "Bard", "subclass": "" },
+        "notes": "",
+        "features": ["Jack of All Trades", "Song of Rest"],
+        "spells": ["Feather Fall"],
+        "feats": []
+      },
+      {
+        "level": 5,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "",
+        "features": ["Subclass: Lore", "Cutting Words"],
+        "spells": ["Hold Person"],
+        "feats": [],
+        "skills": ["Arcana", "Intimidation", "Sleight of Hand"],
+        "expertise": ["Arcana", "Insight"]
+      },
+      {
+        "level": 6,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "Actor grants Deception and Performance expertise; Cha 18.",
+        "features": [],
+        "spells": ["Enhance Ability"],
+        "feats": ["Actor"],
+        "expertise": ["Deception", "Performance"],
+        "cantrips": ["Minor Illusion"]
+      },
+      {
+        "level": 7,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "",
+        "features": ["Font of Inspiration"],
+        "spells": ["Hypnotic Pattern"],
+        "feats": []
+      },
+      {
+        "level": 8,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "",
+        "features": ["Countercharm", "Magical Secrets"],
+        "spells": ["Glyph of Warding", "Counterspell", "Haste"],
+        "feats": []
+      },
+      {
+        "level": 9,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "",
+        "features": [],
+        "spells": ["Confusion"],
+        "feats": []
+      },
+      {
+        "level": 10,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "Ability Score Increase (Cha) to Cha 20.",
+        "features": [],
+        "spells": ["Dimension Door"],
+        "feats": ["Ability Score Increase (Cha +2)"]
+      },
+      {
+        "level": 11,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "",
+        "features": [],
+        "spells": ["Hold Monster"],
+        "feats": []
+      },
+      {
+        "level": 12,
+        "class": { "name": "Bard", "subclass": "Lore" },
+        "notes": "",
+        "features": ["Magical Secrets"],
+        "spells": ["Dominate Person", "Conjure Elemental", "Contagion"],
+        "feats": [],
+        "cantrips": ["Blade Ward"],
+        "expertise": ["Intimidation", "Persuasion"]
+      }
+    ],
+    "keySpells": [],
+    "gearByAct": [],
+    "companions": [],
+    "references": {
+      "classes": ["Sorcerer", "Cleric", "Bard"],
+      "subclasses": ["Draconic (White)", "Knowledge", "Lore"],
+      "spells": [
+        "Bone Chill",
+        "Fire Bolt",
+        "Ray of Frost",
+        "Shocking Grasp",
+        "Chromatic Orb",
+        "Shield",
+        "Guidance",
+        "Light",
+        "Thaumaturgy",
+        "Bless",
+        "Healing Word",
+        "Sanctuary",
+        "Sleep",
+        "Friends",
+        "Mage Hand",
+        "Dissonant Whispers",
+        "Faerie Fire",
+        "Longstrider",
+        "Tasha's Hideous Laughter",
+        "Feather Fall",
+        "Hold Person",
+        "Minor Illusion",
+        "Enhance Ability",
+        "Hypnotic Pattern",
+        "Glyph of Warding",
+        "Counterspell",
+        "Haste",
+        "Confusion",
+        "Dimension Door",
+        "Hold Monster",
+        "Blade Ward",
+        "Dominate Person",
+        "Conjure Elemental",
+        "Contagion",
+        "Armor of Agathys"
+      ],
+      "feats": ["Actor", "Ability Score Increase (Cha +2)"],
+      "items": []
+    }
+  },
+  "raw": {
+    "htmlFile": "data/tav/mr-know-at-all.md",
+    "sectionId": "",
+    "sectionTitle": "",
+    "sectionHtml": ""
+  },
+  "parseWarnings": [
+    "Table values used when narrative conflicted with character creation details.",
+    "Charisma 17 noted as Hag Hair bonus; base CHA recorded as 16 from table."
+  ]
+}
