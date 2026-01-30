@@ -1,0 +1,247 @@
+{
+  "arrow_of_aberration_slaying": {
+    "arrow": "Arrow of Aberration Slaying",
+    "rarity": "Very Rare",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Aberration",
+    "image": "/images/bg3/arrows_arrow_of_aberration_slaying.png",
+    "name": "Arrow of Aberration Slaying"
+  },
+  "arrow_of_acid": {
+    "arrow": "Arrow of Acid",
+    "rarity": "Common",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmg2": "2d4",
+    "dmg2_type": "Acid",
+    "dc": "12",
+    "negate_st": "DEX",
+    "area": "Acid",
+    "radius": "2.0m",
+    "image": "/images/bg3/arrows_arrow_of_acid.png",
+    "name": "Arrow of Acid"
+  },
+  "arrow_of_arcane_interference": {
+    "arrow": "Arrow of Arcane Interference",
+    "rarity": "Rare",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "condition": "Silenced",
+    "effect": "Breaks the targets Concentration",
+    "image": "/images/bg3/arrows_arrow_of_arcane_interference.png",
+    "name": "Arrow of Arcane Interference"
+  },
+  "arrow_of_beast_slaying": {
+    "arrow": "Arrow of Beast Slaying",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Beast",
+    "image": "/images/bg3/arrows_arrow_of_beast_slaying.png",
+    "name": "Arrow of Beast Slaying"
+  },
+  "arrow_of_construct_slaying": {
+    "arrow": "Arrow of Construct Slaying",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Construct",
+    "image": "/images/bg3/arrows_arrow_of_construct_slaying.png",
+    "name": "Arrow of Construct Slaying"
+  },
+  "arrow_of_darkness": {
+    "arrow": "Arrow of Darkness",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "condition": "Blindness",
+    "area": "Darkness",
+    "radius": "3.0m",
+    "durations": "3 Turns",
+    "image": "/images/bg3/arrows_arrow_of_darkness.png",
+    "name": "Arrow of Darkness"
+  },
+  "arrow_of_dragon_slaying": {
+    "arrow": "Arrow of Dragon Slaying",
+    "rarity": "Very Rare",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Dragon",
+    "image": "/images/bg3/arrows_arrow_of_dragon_slaying.png",
+    "name": "Arrow of Dragon Slaying"
+  },
+  "arrow_of_elemental_slaying": {
+    "arrow": "Arrow of Elemental Slaying",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Elemental",
+    "image": "/images/bg3/arrows_arrow_of_elemental_slaying.png",
+    "name": "Arrow of Elemental Slaying"
+  },
+  "arrow_of_fiend_slaying": {
+    "arrow": "Arrow of Fiend Slaying",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Fiend",
+    "image": "/images/bg3/arrows_arrow_of_fiend_slaying.png",
+    "name": "Arrow of Fiend Slaying"
+  },
+  "arrow_of_fire": {
+    "arrow": "Arrow of Fire",
+    "rarity": "Common",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmg2": "2d4",
+    "dmg2_type": "Fire",
+    "dc": "12",
+    "negate_st": "DEX",
+    "area": "Fire",
+    "radius": "2.0m",
+    "durations": "2 Turns",
+    "image": "/images/bg3/arrows_arrow_of_fire.png",
+    "name": "Arrow of Fire"
+  },
+  "arrow_of_humanoid_slaying": {
+    "arrow": "Arrow of Humanoid Slaying",
+    "rarity": "Very Rare",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Humanoid",
+    "area": "Ice",
+    "radius": "2.0m",
+    "durations": "2 Turns",
+    "image": "/images/bg3/arrows_arrow_of_humanoid_slaying.png",
+    "name": "Arrow of Humanoid Slaying"
+  },
+  "arrow_of_ice": {
+    "arrow": "Arrow of Ice",
+    "rarity": "Common",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmg2": "2d4",
+    "dmg2_type": "Cold",
+    "dc": "12",
+    "negate_st": "DEX",
+    "image": "/images/bg3/arrows_arrow_of_ice.png",
+    "name": "Arrow of Ice"
+  },
+  "arrow_of_ilmater": {
+    "arrow": "Arrow of Ilmater",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmg2": "1d4",
+    "dmg2_type": "Necrotic",
+    "effect": "Target cannot regain Hit Points for 1 turn.",
+    "image": "/images/bg3/arrows_arrow_of_ilmater.png",
+    "name": "Arrow of Ilmater"
+  },
+  "arrow_of_lightning": {
+    "arrow": "Arrow of Lightning",
+    "rarity": "Common",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmg2": "2d4",
+    "dmg2_type": "Lightning",
+    "dc": "12",
+    "negate_st": "DEX",
+    "radius": "2.0m",
+    "image": "/images/bg3/arrows_arrow_of_lightning.png",
+    "name": "Arrow of Lightning"
+  },
+  "arrow_of_many_targets": {
+    "arrow": "Arrow of Many Targets",
+    "rarity": "Rare",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "effect": "Additional half of that damage to three other targets in range.",
+    "image": "/images/bg3/arrows_arrow_of_many_targets.png",
+    "name": "Arrow of Many Targets"
+  },
+  "arrow_of_monstrosity_slaying": {
+    "arrow": "Arrow of Monstrosity Slaying",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Monstrosity",
+    "image": "/images/bg3/arrows_arrow_of_monstrosity_slaying.png",
+    "name": "Arrow of Monstrosity Slaying"
+  },
+  "arrow_of_roaring_thunder": {
+    "arrow": "Arrow of Roaring Thunder",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "condition": "Pushed*",
+    "condition_dc": "12",
+    "condition_st": "STR",
+    "radius": "2.0m",
+    "effect": "Targets caught in the blast are knocked back by 5m.",
+    "image": "/images/bg3/arrows_arrow_of_roaring_thunder.png",
+    "name": "Arrow of Roaring Thunder"
+  },
+  "arrow_of_salving": {
+    "arrow": "Arrow of Salving",
+    "rarity": "Rare",
+    "effect": "Cures a target of Poisoned, Paralysed and  Blinded conditions.",
+    "image": "/images/bg3/arrows_arrow_of_salving.png",
+    "name": "Arrow of Salving"
+  },
+  "arrow_of_transposition": {
+    "arrow": "Arrow of Transposition",
+    "rarity": "Rare",
+    "effect": "Teleports the shooter wherever this arrow is fired.",
+    "image": "/images/bg3/arrows_arrow_of_transposition.png",
+    "name": "Arrow of Transposition"
+  },
+  "arrow_of_undead_slaying": {
+    "arrow": "Arrow of Undead Slaying",
+    "rarity": "Uncommon",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "dmgx2_creature_type": "Undead",
+    "image": "/images/bg3/arrows_arrow_of_undead_slaying.png",
+    "name": "Arrow of Undead Slaying"
+  },
+  "smokepowder_arrow": {
+    "arrow": "Smokepowder Arrow",
+    "rarity": "Rare",
+    "dmg1": "4d6",
+    "dmg1_type": "Fire",
+    "dmg2": "4d6",
+    "dmg2_type": "Force",
+    "dc": "15",
+    "negate_st": "DEX",
+    "condition": "Pushed*",
+    "condition_dc": "15",
+    "condition_st": "DEX",
+    "radius": "5.0m",
+    "effect": "Targets caught in the blast are knocked back 3m.",
+    "image": "/images/bg3/arrows_smokepowder_arrow.png",
+    "name": "Smokepowder Arrow"
+  },
+  "arrow_of_piercing": {
+    "arrow": "Arrow of Piercing",
+    "rarity": "Common",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "effect": "Half of damage to creatures directly behind the target.",
+    "image": "/images/bg3/arrows_arrow_of_piercing.png",
+    "name": "Arrow of Piercing"
+  },
+  "barbed_arrow": {
+    "arrow": "Barbed Arrow",
+    "rarity": "Common",
+    "dmg1": "WD",
+    "dmg1_type": "Weapon",
+    "condition": "Ruptured",
+    "condition_dc": "12",
+    "condition_st": "DEX",
+    "durations": "5 Turns",
+    "image": "/images/bg3/arrows_barbed_arrow.png",
+    "name": "Barbed Arrow"
+  }
+}

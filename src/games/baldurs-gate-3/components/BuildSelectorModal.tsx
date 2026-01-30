@@ -3,6 +3,7 @@ import { Xmark } from 'iconoir-react';
 import type { BG3Build } from '../types';
 import type { CompanionInfo } from '../types';
 import { getClassIcon, getPrimaryClass } from '../data/classIcons';
+import { getCsvGearImage } from '../data/gear';
 import './BuildSelectorModal.css';
 
 interface BuildSelectorModalProps {
@@ -21,6 +22,30 @@ const formatClassLevels = (build: BG3Build) => {
   if (!finalLevel) return '';
   
   return finalLevel.classLevels.map(cl => `${cl.class} ${cl.level}`).join(' / ');
+};
+
+  const getGearIcons = (build: BG3Build) => {
+    if (!build.gearRecommendations) return [];
+    const seen = new Set<string>();
+    const icons: Array<{ name: string; iconPath: string }> = [];
+    for (const rec of build.gearRecommendations) {
+      const firstItem = rec.items[0];
+      if (!firstItem || seen.has(firstItem)) continue;
+      seen.add(firstItem);
+      const iconPath = getCsvGearImage(firstItem);
+      if (iconPath) {
+        icons.push({ name: firstItem, iconPath });
+      }
+      if (icons.length >= 6) break;
+    }
+    return icons;
+  };
+
+const getSource = (build: BG3Build) => {
+  if (build.sourceUrl) {
+    return { url: build.sourceUrl, label: build.sourceLabel || 'Build Source' };
+  }
+  return null;
 };
 
 export function BuildSelectorModal({
@@ -57,6 +82,7 @@ export function BuildSelectorModal({
               const finalLevel = build.progression[build.progression.length - 1];
               const primaryClass = finalLevel ? getPrimaryClass(finalLevel.classLevels) : 'Fighter';
               const classIcon = getClassIcon(primaryClass);
+              const source = getSource(build);
               
               return (
                 <button
@@ -97,8 +123,32 @@ export function BuildSelectorModal({
                           ))}
                         </div>
                       )}
+                      {build.gearRecommendations && (
+                        <div className="build-card-gear">
+                          {getGearIcons(build).map((gear) => (
+                            <img
+                              key={gear.name}
+                              src={gear.iconPath}
+                              alt={gear.name}
+                              className="build-card-gear-icon"
+                              title={gear.name}
+                            />
+                          ))}
+                        </div>
+                      )}
                       {build.description && (
                         <div className="build-card-desc">{build.description}</div>
+                      )}
+                      {source && (
+                        <a
+                          className="build-source-link"
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(event) => event.stopPropagation()}
+                        >
+                          {source.label}
+                        </a>
                       )}
                     </div>
                   </div>

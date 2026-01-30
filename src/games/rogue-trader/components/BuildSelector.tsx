@@ -56,29 +56,50 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
     ? 'Choose a companion build to view the level-by-level progression guide'
     : 'Choose a build for your Rogue Trader protagonist';
 
+  const getSource = (build: BuildGuide) => {
+    if (build.sourceUrl) {
+      return { url: build.sourceUrl, label: build.sourceLabel || 'Build Source' };
+    }
+    if (build.videoUrl) {
+      return { url: build.videoUrl, label: 'Build Video' };
+    }
+    return null;
+  };
+
   // For Rogue Trader builds, show directly without expansion pattern
   if (buildType === 'rogueTrader') {
     const rtBuilds = buildsByCompanion.find(b => b.companion === 'RogueTrader');
     const trackedBuild = getTrackedBuildForCompanion('RogueTrader');
+    const buildCount = rtBuilds?.builds.length ?? 0;
     
     return (
       <div className="build-selector">
-        <h1>{title}</h1>
-        <p className="subtitle">{subtitle}</p>
-        <p className="build-credit">
-          Builds sourced from{' '}
-          <a 
-            href="https://docs.google.com/spreadsheets/d/1rskX4sYcNm6Wqt4rtm8EQqRR4__yrEuxCEzjwoKlHOY/edit?gid=1688447117#gid=1688447117" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Community Rogue Trader Unfair Builds & Resources
-          </a>
-        </p>
+        <header className="view-hero">
+          <div>
+            <p className="view-eyebrow">Builds</p>
+            <h1>{title}</h1>
+            <p className="view-subtitle">{subtitle}.</p>
+          </div>
+          <div className="view-kpis">
+            <div>
+              <span>Builds</span>
+              <strong>{buildCount}</strong>
+            </div>
+            <div>
+              <span>Tracked</span>
+              <strong>{trackedBuild ? 1 : 0}</strong>
+            </div>
+            <div>
+              <span>Archetypes</span>
+              <strong>{new Set((rtBuilds?.builds ?? []).map(b => b.archetypePath.base)).size}</strong>
+            </div>
+          </div>
+        </header>
 
         <div className="builds-grid direct">
           {rtBuilds?.builds.map((build) => {
             const isTracked = trackedBuild?.guideId === build.id;
+            const source = getSource(build);
             return (
               <button
                 key={build.id}
@@ -107,6 +128,17 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
                 {build.description && (
                   <div className="build-desc">{build.description}</div>
                 )}
+                {source && (
+                  <a
+                    className="build-source-link"
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) => event.stopPropagation()}
+                  >
+                    {source.label}
+                  </a>
+                )}
               </button>
             );
           })}
@@ -126,21 +158,31 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
 
   // Get the modal companion's builds
   const modalBuilds = modalCompanion ? getBuildsForCompanion(modalCompanion) : [];
+  const totalCompanionBuilds = buildsByCompanion.reduce((sum, entry) => sum + entry.builds.length, 0);
 
   return (
     <div className="build-selector">
-      <h1>{title}</h1>
-      <p className="subtitle">{subtitle}</p>
-      <p className="build-credit">
-        Builds sourced from{' '}
-        <a 
-          href="https://docs.google.com/spreadsheets/d/1rskX4sYcNm6Wqt4rtm8EQqRR4__yrEuxCEzjwoKlHOY/edit?gid=1688447117#gid=1688447117" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          Community Rogue Trader Unfair Builds & Resources
-        </a>
-      </p>
+      <header className="view-hero">
+        <div>
+          <p className="view-eyebrow">Builds</p>
+          <h1>{title}</h1>
+          <p className="view-subtitle">{subtitle}.</p>
+        </div>
+        <div className="view-kpis">
+          <div>
+            <span>Companions</span>
+            <strong>{buildsByCompanion.length}</strong>
+          </div>
+          <div>
+            <span>Builds</span>
+            <strong>{totalCompanionBuilds}</strong>
+          </div>
+          <div>
+            <span>Tracked</span>
+            <strong>{trackedBuilds.length}</strong>
+          </div>
+        </div>
+      </header>
 
       <div className="companion-list">
         {buildsByCompanion.map(({ companion, info, builds }) => {
@@ -161,14 +203,16 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
                       alt={info.fullName}
                       className="companion-card-portrait"
                     />
-                    {trackedBuild && (
-                      <div className="companion-card-level-badge">{trackedBuild.currentLevel}</div>
-                    )}
                   </div>
                 )}
                 <div className="companion-card-content">
-                  <div className="companion-card-title">
-                    {info.fullName}
+                  <div className="companion-card-title-row">
+                    <div className="companion-card-title">
+                      {info.fullName}
+                    </div>
+                    {trackedBuild && (
+                      <span className="companion-card-level-badge">Lv {trackedBuild.currentLevel}</span>
+                    )}
                   </div>
                   <div className="companion-card-meta">
                     <span className="companion-card-origin">{info.origin}</span>
@@ -180,6 +224,17 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
                   <div className="companion-card-desc">
                     {trackedGuide?.description || info.bio}
                   </div>
+                  {trackedGuide && getSource(trackedGuide) && (
+                    <a
+                      className="build-source-link"
+                      href={getSource(trackedGuide)!.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      {getSource(trackedGuide)!.label}
+                    </a>
+                  )}
                 </div>
               </div>
 

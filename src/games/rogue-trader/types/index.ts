@@ -86,6 +86,8 @@ export interface BuildGuide {
   buildName: string; // e.g., "Navy Breacher", "Defender", "Assassin"
   description?: string;
   videoUrl?: string;
+  sourceUrl?: string;
+  sourceLabel?: string;
 
   // Recommended skills to pick
   skillOptions: string[];

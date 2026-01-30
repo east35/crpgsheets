@@ -1,7 +1,10 @@
 import type { GearInfo } from '../../types';
+import weaponsData from '../weapons.json';
+import wearablesData from '../wearables.json';
 
 // BG3 Gear Database - Popular items for builds
-export const GEAR_DATA: Record<string, GearInfo> = {
+// Legacy curated gear data (kept for reference; no longer used by UI)
+export const LEGACY_GEAR_DATA: Record<string, GearInfo> = {
   // === HEAD SLOT ===
   'haste-helm': {
     name: 'Haste Helm',
@@ -853,18 +856,93 @@ export const GEAR_DATA: Record<string, GearInfo> = {
   },
 };
 
+const WEARABLE_SLOT_KEYS = [
+  'headwear',
+  'cloak',
+  'armour',
+  'armour_clothing',
+  'footwear',
+  'gloves',
+  'handwear',
+  'ring',
+  'amulet',
+  'shield',
+];
+
+export interface CsvGearInfo {
+  name: string;
+  image?: string;
+  category: 'weapon' | 'wearable';
+  type?: string;
+  rarity?: string;
+  location?: string;
+  act?: number;
+  slot?: string;
+  description?: string;
+}
+
+const CSV_GEAR_BY_NAME = (() => {
+  const map = new Map<string, CsvGearInfo>();
+
+  const normalizeName = (value: string) => value.trim().toLowerCase();
+
+  const buildDescription = (entry: Record<string, unknown>) => {
+    const desc1 = typeof entry.desc1 === 'string' ? entry.desc1 : '';
+    const desc2 = typeof entry.desc2 === 'string' ? entry.desc2 : '';
+    const description = [desc1, desc2].filter(Boolean).join('\n\n');
+    if (description) return description;
+    if (typeof entry.description === 'string') return entry.description;
+    if (typeof entry.features === 'string') return entry.features;
+    return undefined;
+  };
+
+  const parseAct = (value: unknown) => {
+    if (typeof value === 'number') return value;
+    if (typeof value === 'string') {
+      const parsed = Number.parseInt(value, 10);
+      return Number.isNaN(parsed) ? undefined : parsed;
+    }
+    return undefined;
+  };
+
+  const inferSlot = (entry: Record<string, unknown>) => {
+    for (const key of WEARABLE_SLOT_KEYS) {
+      const value = entry[key];
+      if (!value) continue;
+      return key.replace('_', ' ');
+    }
+    return undefined;
+  };
+
+  const addEntry = (entry: Record<string, unknown>, category: CsvGearInfo['category']) => {
+    const name = typeof entry.name === 'string' ? entry.name : undefined;
+    if (!name) return;
+    const image = typeof entry.image === 'string' ? entry.image : undefined;
+    const info: CsvGearInfo = {
+      name,
+      image,
+      category,
+      type: typeof entry.type === 'string' ? entry.type : (typeof entry.armour_type === 'string' ? entry.armour_type : undefined),
+      rarity: typeof entry.rarity === 'string' ? entry.rarity : undefined,
+      location: typeof entry.location === 'string' ? entry.location : undefined,
+      act: parseAct(entry.act),
+      slot: category === 'wearable' ? inferSlot(entry) : 'weapon',
+      description: buildDescription(entry),
+    };
+    map.set(normalizeName(name), info);
+  };
+
+  Object.values(weaponsData as Record<string, Record<string, unknown>>).forEach((entry) => addEntry(entry, 'weapon'));
+  Object.values(wearablesData as Record<string, Record<string, unknown>>).forEach((entry) => addEntry(entry, 'wearable'));
+
+  return map;
+})();
+
 // Lookup functions
-export function getGearInfo(name: string): GearInfo | undefined {
-  const key = name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
-  return GEAR_DATA[key] || Object.values(GEAR_DATA).find(g => 
-    g.name.toLowerCase() === name.toLowerCase()
-  );
+export function getCsvGearImage(name: string): string | undefined {
+  return CSV_GEAR_BY_NAME.get(name.toLowerCase())?.image;
 }
 
-export function getGearBySlot(slot: GearInfo['slot']): GearInfo[] {
-  return Object.values(GEAR_DATA).filter(g => g.slot === slot);
-}
-
-export function getGearByAct(act: 1 | 2 | 3): GearInfo[] {
-  return Object.values(GEAR_DATA).filter(g => g.act === act);
+export function getCsvGearInfo(name: string): CsvGearInfo | undefined {
+  return CSV_GEAR_BY_NAME.get(name.toLowerCase());
 }

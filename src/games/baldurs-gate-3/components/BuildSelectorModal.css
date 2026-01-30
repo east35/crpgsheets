@@ -175,6 +175,22 @@
   gap: 0.4rem;
 }
 
+.build-selector-modal-overlay.bg3 .build-card-gear {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.build-selector-modal-overlay.bg3 .build-card-gear-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .build-selector-modal-overlay.bg3 .build-card-tag {
   padding: 2px 8px;
   background: #3a3a5a;
@@ -212,6 +228,19 @@
   color: #999;
   font-style: italic;
   line-height: 1.5;
+}
+
+.build-selector-modal-overlay.bg3 .build-source-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #7bb4ff;
+  text-decoration: none;
+}
+
+.build-selector-modal-overlay.bg3 .build-source-link:hover {
+  text-decoration: underline;
 }
 
 /* Mobile */

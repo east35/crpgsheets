@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import type { Archetype } from '../types';
 import { ARCHETYPE_DISPLAY_NAMES } from '../types';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
 import { TooltipCard, type TooltipField } from '../../../components/TooltipCard';
+import { useCursorTooltip } from '../../../components/useCursorTooltip';
 import './ArchetypeTooltip.css';
 
 // Archetype image paths
@@ -90,32 +91,22 @@ interface ArchetypeTooltipProps {
 }
 
 export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltipProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [position, setPosition] = useState<'top' | 'bottom'>('top');
-  const [horizontalOffset, setHorizontalOffset] = useState(0);
-  const triggerRef = useRef<HTMLSpanElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const hideTimeoutRef = useRef<number | null>(null);
   const { showSheet, isMobile } = useTooltipSheet();
+  const { isVisible, tooltipRef, tooltipStyle, show, hide, handleMouseMove } = useCursorTooltip(!isMobile);
 
   const info = ARCHETYPE_DESCRIPTIONS[archetype];
   const displayName = ARCHETYPE_DISPLAY_NAMES[archetype];
   const imageSrc = ARCHETYPE_IMAGES[archetype];
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (event: React.MouseEvent) => {
     if (isMobile) return;
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current);
-      hideTimeoutRef.current = null;
-    }
-    setIsVisible(true);
+    if (!info) return;
+    show(event);
   };
 
   const handleMouseLeave = () => {
     if (isMobile) return;
-    hideTimeoutRef.current = window.setTimeout(() => {
-      setIsVisible(false);
-    }, 150);
+    hide();
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -131,69 +122,33 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
     });
   };
 
-  useEffect(() => {
-    return () => {
-      if (hideTimeoutRef.current) {
-        clearTimeout(hideTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible && triggerRef.current && tooltipRef.current) {
-      const triggerRect = triggerRef.current.getBoundingClientRect();
-      const tooltipHeight = tooltipRef.current.offsetHeight;
-      const tooltipWidth = tooltipRef.current.offsetWidth;
-
-      if (triggerRect.top - tooltipHeight - 10 < 0) {
-        setPosition('bottom');
-      } else {
-        setPosition('top');
-      }
-
-      const mainContent = document.querySelector('.main-content');
-      if (mainContent) {
-        const mainRect = mainContent.getBoundingClientRect();
-        const tooltipLeft = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
-        const tooltipRight = tooltipLeft + tooltipWidth;
-
-        if (tooltipLeft < mainRect.left + 10) {
-          setHorizontalOffset(mainRect.left + 10 - tooltipLeft);
-        } else if (tooltipRight > mainRect.right - 10) {
-          setHorizontalOffset(mainRect.right - 10 - tooltipRight);
-        } else {
-          setHorizontalOffset(0);
-        }
-      }
-    }
-  }, [isVisible]);
+  const tooltipContent = isVisible && !isMobile && info && createPortal(
+    <div
+      ref={tooltipRef}
+      className="crpg-tooltip-container"
+      style={tooltipStyle}
+    >
+      <TooltipCard
+        title={displayName}
+        iconUrl={imageSrc}
+        badge={{ label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }}
+        sections={[{ label: 'Tier', value: tier } as TooltipField]}
+        description={info.description}
+      />
+    </div>,
+    document.body
+  );
 
   return (
     <span
-      ref={triggerRef}
       className={`archetype-tooltip-trigger tier-${tier}`}
       onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
       {children || displayName}
-      {isVisible && !isMobile && info && (
-        <div
-          ref={tooltipRef}
-          className={`crpg-tooltip-container ${position}`}
-          style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <TooltipCard
-            title={displayName}
-            iconUrl={imageSrc}
-            badge={{ label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }}
-            sections={[{ label: 'Tier', value: tier } as TooltipField]}
-            description={info.description}
-          />
-        </div>
-      )}
+      {tooltipContent}
     </span>
   );
 }

@@ -1,0 +1,281 @@
+{
+  "auntie_ethel_s_boon_strength": {
+    "bonus": "Auntie Ethel's Hair (Strength)",
+    "feature": "Auntie Ethel's Boon (Strength)",
+    "description": "Gain +1 to a Strength ability score. Can be raised above 20.",
+    "name": "Auntie Ethel's Boon (Strength)"
+  },
+  "auntie_ethel_s_boon_dexterity": {
+    "bonus": "Auntie Ethel's Hair (Dexterity)",
+    "feature": "Auntie Ethel's Boon (Dexterity)",
+    "description": "Gain +1 to a Dexterity ability score. Can be raised above 20.",
+    "name": "Auntie Ethel's Boon (Dexterity)"
+  },
+  "auntie_ethel_s_boon_constitutionh": {
+    "bonus": "Auntie Ethel's Hair (Constitution)",
+    "feature": "Auntie Ethel's Boon (Constitutionh)",
+    "description": "Gain +1 to a Constitution ability score. Can be raised above 20.",
+    "name": "Auntie Ethel's Boon (Constitutionh)"
+  },
+  "auntie_ethel_s_boon_intelligence": {
+    "bonus": "Auntie Ethel's Hair (Intelligence)",
+    "feature": "Auntie Ethel's Boon (Intelligence)",
+    "description": "Gain +1 to a Intelligence ability score. Can be raised above 20.",
+    "name": "Auntie Ethel's Boon (Intelligence)"
+  },
+  "auntie_ethel_s_boon_wisdom": {
+    "bonus": "Auntie Ethel's Hair (Wisdom)",
+    "feature": "Auntie Ethel's Boon (Wisdom)",
+    "description": "Gain +1 to a Wisdom ability score. Can be raised above 20.",
+    "name": "Auntie Ethel's Boon (Wisdom)"
+  },
+  "auntie_ethel_s_boon_charisma": {
+    "bonus": "Auntie Ethel's Hair (Charisma)",
+    "feature": "Auntie Ethel's Boon (Charisma)",
+    "description": "Gain +1 to a Charisma ability score. Can be raised above 20.",
+    "name": "Auntie Ethel's Boon (Charisma)"
+  },
+  "awakened": {
+    "bonus": "Awakened",
+    "feature": "Awakened",
+    "description": "Use all illithid powers as a bonus action.",
+    "image": "/images/bg3/permanent_bonuses_awakened.png",
+    "name": "Awakened"
+  },
+  "boooal_s_benediction": {
+    "bonus": "BOOOAL's Benediction",
+    "condition": "BOOOAL's Blessing",
+    "description": "Gain advantage on attack rolls against Bleeding targets.",
+    "name": "BOOOAL's Benediction"
+  },
+  "brand_of_the_absolute": {
+    "bonus": "Brand of the Absolute",
+    "feature": "Brand of the Absolute",
+    "description": "Allows the benefits from Absolute equipment and unlocks unique dialogue options when speaking to followers of the Absolute.",
+    "image": "/images/bg3/permanent_bonuses_brand_of_the_absolute.png",
+    "name": "Brand of the Absolute"
+  },
+  "find_familiar_scratch": {
+    "bonus": "Find Familiar: Scratch",
+    "spell": "Find Familiar: Scratch",
+    "description": "Gain the ability to summon Scratch as a familiar while outside of camp. While summoned, Scratch will be able to uncover buried treasure.",
+    "image": "/images/bg3/permanent_bonuses_find_familiar_scratch.png",
+    "name": "Find Familiar: Scratch"
+  },
+  "find_familiar_quasit": {
+    "bonus": "Find Familiar: Cheeky Quasit",
+    "spell": "Find Familiar: Quasit",
+    "description": "Summon Shovel (or Basket, or Fork), the Cheeky Quasit.",
+    "image": "/images/bg3/permanent_bonuses_find_familiar_quasit.png",
+    "name": "Find Familiar: Quasit"
+  },
+  "loviatar_s_love": {
+    "bonus": "Loviatar's Love",
+    "condition": "Loviatar's Love",
+    "description": "Gain a +2 bonus to attack rolls and Wisdom saving throws if having 30% Hit Points or less.",
+    "name": "Loviatar's Love"
+  },
+  "speak_with_dead": {
+    "bonus": "Necromancy of Thay",
+    "feature": "Forbidden Knowledge",
+    "spell": "Speak with Dead",
+    "description": "Gain the passive feature Forbidden Knowledge, which grants a +1 to Wisdom saving throws and ability checks. The character with this bonus may also cast Speak with Dead once per long rest.",
+    "image": "/images/bg3/permanent_bonuses_speak_with_dead.png",
+    "name": "Speak with Dead"
+  },
+  "paid_the_price": {
+    "bonus": "Paid the Price",
+    "condition": "Paid the Price",
+    "description": "Gain a +1 bonus to Intimidation checks, but also a disadvantage on Perception checks. Additionally, gain a disadvantage when attacking Hags.",
+    "image": "/images/bg3/permanent_bonuses_paid_the_price.png",
+    "name": "Paid the Price"
+  },
+  "survival_instinct": {
+    "bonus": "Survival Instinct",
+    "illithid_power": "Survival Instinct",
+    "description": "Gain the additional illithid power Survival Instinct, which allows the user to infuse a creature with psionic force, healing them if they reach 0 hit points.",
+    "image": "/images/bg3/permanent_bonuses_survival_instinct.png",
+    "name": "Survival Instinct"
+  },
+  "volo_s_ersatz_eye": {
+    "bonus": "Volo's Ersatz Eye",
+    "feature": "Volo's Ersatz Eye",
+    "description": "Gain a permanent See Invisibility effect.",
+    "image": "/images/bg3/permanent_bonuses_volo_s_ersatz_eye.png",
+    "name": "Volo's Ersatz Eye"
+  },
+  "arabella_s_shadow_entangle": {
+    "bonus": "Arabella's Shadow Entangle",
+    "spell": "Arabella's Shadow Entangle",
+    "description": "Gain the ability to entangle an Undead or Shadow Creature.",
+    "image": "/images/bg3/permanent_bonuses_arabella_s_shadow_entangle.png",
+    "name": "Arabella's Shadow Entangle"
+  },
+  "bardic_inspiration": {
+    "bonus": "Bardic Inspiration",
+    "action": "Improved Bardic Inspiration (class action)",
+    "description": "Gain a charge of Bardic Inspiration that is stronger than usual (1d12). Usable once per long rest, and does not consume Bardic Inspiration charges.",
+    "image": "/images/bg3/permanent_bonuses_bardic_inspiration.webp",
+    "name": "Bardic Inspiration"
+  },
+  "githzerai_mind_barrier": {
+    "bonus": "Githzerai Mind Barrier",
+    "condition": "Githzerai Mind Barrier",
+    "description": "Gain advantage on Intelligence saving throws.",
+    "image": "/images/bg3/permanent_bonuses_githzerai_mind_barrier.png",
+    "name": "Githzerai Mind Barrier"
+  },
+  "consumed_shadow_weave": {
+    "bonus": "Consumed Shadow Weave",
+    "description": "Gale gains an additional level three spell slot, separate from normal spell slots. Recharges per long rest.",
+    "image": "/images/bg3/permanent_bonuses_consumed_shadow_weave.png",
+    "name": "Consumed Shadow Weave"
+  },
+  "potion_of_everlasting_vigour": {
+    "bonus": "Potion of Everlasting Vigour",
+    "ability": "STR",
+    "bonus_2": "2",
+    "description": "Gain +2 Strength. Can be used to raise Strength above 20, and will remain after respeccing the character.",
+    "image": "/images/bg3/permanent_bonuses_potion_of_everlasting_vigour.png",
+    "name": "Potion of Everlasting Vigour"
+  },
+  "slayer_form": {
+    "bonus": "Slayer Form",
+    "action": "Slayer (class action)",
+    "description": "Gain the ability to transform into the Slayer once per long rest.",
+    "name": "Slayer Form"
+  },
+  "summon_us": {
+    "bonus": "Summon Us",
+    "cantrip": "Conjure Us",
+    "description": "Summon Us, an intellect devourer, as a familiar.",
+    "image": "/images/bg3/permanent_bonuses_summon_us.png",
+    "name": "Summon Us"
+  },
+  "anointed_in_splendour": {
+    "bonus": "Anointed in Splendour",
+    "condition": "Anointed in Splendour",
+    "description": "Gain +2 bonus to all Saving throw Saving throws.",
+    "name": "Anointed in Splendour"
+  },
+  "partial_ceremorphosis": {
+    "bonus": "Partial Ceremorphosis",
+    "description": "Gain access to tier 3 illithid powers, and automatically unlock all tier 1 illithid powers and the tier 3 illithid power Fly.",
+    "image": "/images/bg3/permanent_bonuses_partial_ceremorphosis.png",
+    "name": "Partial Ceremorphosis"
+  },
+  "danse_macabre": {
+    "bonus": "The Tharchiate Codex: Blessing",
+    "feature": "The Tharchiate Codex: Blessing",
+    "spell": "Danse Macabre",
+    "description": "Gain 20 temporary hit points after a Long Rest. Remains active if The Tharchiate Codex is also used to obtain Danse Macabre.",
+    "image": "/images/bg3/permanent_bonuses_danse_macabre.png",
+    "name": "Danse Macabre"
+  },
+  "tasha_s_hideous_laughter": {
+    "bonus": "Monk's Hideous Laughter",
+    "spell": "Tasha's Hideous Laughter",
+    "description": "Gain the ability to cast Tasha's Hideous Laughter once per long rest.",
+    "image": "/images/bg3/permanent_bonuses_tasha_s_hideous_laughter.png",
+    "name": "Tasha's Hideous Laughter"
+  },
+  "mirror_of_loss_patriars_memory": {
+    "bonus": "Mirror of Loss: Patriars Memory",
+    "ability": "CHA",
+    "bonus_2": "1",
+    "description": "Gain +1 to Charisma.",
+    "name": "Mirror of Loss: Patriars Memory"
+  },
+  "mirror_of_loss_strength": {
+    "bonus": "Mirror of Loss (Strength)",
+    "ability": "STR",
+    "bonus_2": "2",
+    "description": "Gain +2 to Strength.",
+    "name": "Mirror of Loss (Strength)"
+  },
+  "mirror_of_loss_dexterity": {
+    "bonus": "Mirror of Loss (Dexterity)",
+    "ability": "DEX",
+    "bonus_2": "2",
+    "description": "Gain +2 to Dexterity.",
+    "name": "Mirror of Loss (Dexterity)"
+  },
+  "mirror_of_loss_constitution": {
+    "bonus": "Mirror of Loss (Constitution)",
+    "ability": "CON",
+    "bonus_2": "2",
+    "description": "Gain +2 to Constitution.",
+    "name": "Mirror of Loss (Constitution)"
+  },
+  "mirror_of_loss_intelligence": {
+    "bonus": "Mirror of Loss (Intelligence)",
+    "ability": "INT",
+    "bonus_2": "2",
+    "description": "Gain +2 to Intelligence.",
+    "name": "Mirror of Loss (Intelligence)"
+  },
+  "mirror_of_loss_wisdom": {
+    "bonus": "Mirror of Loss (Wisdom)",
+    "ability": "WIS",
+    "bonus_2": "2",
+    "description": "Gain +2 to Wisdom.",
+    "name": "Mirror of Loss (Wisdom)"
+  },
+  "mirror_of_loss_charisma": {
+    "bonus": "Mirror of Loss (Charisma)",
+    "ability": "CHA",
+    "bonus_2": "2",
+    "description": "Gain +2 to Charisma.",
+    "name": "Mirror of Loss (Charisma)"
+  },
+  "slayer_knowledge": {
+    "bonus": "Slayer Knowledge",
+    "feature": "Slayer Knowledge",
+    "action": "Piercing Growl",
+    "description": "Regarding the Slayer - gain advantage against Slayer abilities. When playing as the Dark Urge with the Slayer form unlocked, it also grants the Piercing Growl skill.",
+    "image": "/images/bg3/permanent_bonuses_slayer_knowledge.png",
+    "name": "Slayer Knowledge"
+  },
+  "sweet_stone_features": {
+    "bonus": "Sweet Stone Features",
+    "condition": "Sweet Stone Features",
+    "description": "Gain a +1d4 bonus to attack rolls and saving throws.",
+    "name": "Sweet Stone Features"
+  },
+  "unstable_blood": {
+    "bonus": "Unstable Blood",
+    "feature": "Unstable Blood",
+    "description": "The player character's blood is now highly flammable; if bleeding and creating a blood surface, it will explode on contact with fire.",
+    "image": "/images/bg3/permanent_bonuses_unstable_blood.png",
+    "name": "Unstable Blood"
+  },
+  "undead_ward": {
+    "bonus": "Vampire",
+    "feature": "Undead Ward",
+    "action": "Bite (Vampire Spawn)",
+    "description": "Accepting a romanced Vampire Ascendant Astarion results in the gain of the class action Bite (Vampire Spawn) as well as access to the buff from Circle of Bones.",
+    "image": "/images/bg3/permanent_bonuses_undead_ward.png",
+    "name": "Undead Ward"
+  },
+  "vampire_ascendant": {
+    "bonus": "Vampire Ascendant",
+    "action": "Ascendant Bite, Misty Escape (Vampire Ascendant)",
+    "description": "Astarion gains class actions Ascendant Bite Ascendant Bite and Misty Escape Misty Escape, as well as an extra 1d10⁠1d10 necrotic damage on his weapon and unarmed attacks.",
+    "image": "/images/bg3/permanent_bonuses_vampire_ascendant.png",
+    "name": "Vampire Ascendant"
+  },
+  "resonance_stone": {
+    "bonus": "Resonance Stone",
+    "condition": "Steeped in Bliss",
+    "description": "You and every entity within a 9m / 30ft radius will have Advantage on physical Ability checks, Disadvantage on mental Saving throws and Vulnerability to Psychic damage",
+    "image": "/images/bg3/permanent_bonuses_resonance_stone.png",
+    "name": "Resonance Stone"
+  },
+  "heart_ablaze": {
+    "bonus": "Heart Ablaze",
+    "feature": "Heart Ablaze",
+    "description": "Heart Ablaze grants Karlach Immunity to Charmed effects.",
+    "image": "/images/bg3/permanent_bonuses_heart_ablaze.png",
+    "name": "Heart Ablaze"
+  }
+}

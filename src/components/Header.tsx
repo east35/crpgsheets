@@ -20,6 +20,8 @@ interface HeaderProps {
   onViewParty?: () => void;
   // Subnav items for nav tabs (Companions, Rogue Trader/Tav)
   subnavItems?: { label: string; active: boolean; onClick: () => void }[];
+  // Utility nav items (e.g., Data Audit)
+  utilityNavItems?: { label: string; active: boolean; onClick: () => void }[];
   // Explicitly control when to show the builds subnav (only when browsing build lists)
   showBuildsSubnav?: boolean;
 }
@@ -45,6 +47,7 @@ export function Header({
   isPartyActive,
   onViewParty,
   subnavItems,
+  utilityNavItems,
   showBuildsSubnav,
 }: HeaderProps) {
   const buildsActive = isBuildsActive(subnavItems);
@@ -82,6 +85,15 @@ export function Header({
                     {item.label}
                   </button>
                 ))}
+                {utilityNavItems?.map((item, i) => (
+                  <button
+                    key={`utility-${i}`}
+                    className={`header-nav-tab ${item.active ? 'active' : ''}`}
+                    onClick={item.onClick}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
 
               {/* Mobile: Party, Builds (consolidated) */}
@@ -98,6 +110,15 @@ export function Header({
                 >
                   Builds
                 </button>
+                {utilityNavItems?.map((item, i) => (
+                  <button
+                    key={`utility-mobile-${i}`}
+                    className={`header-nav-tab ${item.active ? 'active' : ''}`}
+                    onClick={item.onClick}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
             </>
           )}

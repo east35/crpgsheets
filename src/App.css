@@ -3,6 +3,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(240, 192, 64, 0.12), transparent 55%),
+  radial-gradient(circle at 85% 20%, rgba(100, 108, 255, 0.18), transparent 60%),
+  linear-gradient(135deg, rgba(18, 19, 35, 0.95), rgba(10, 10, 20, 0.9));
 }
 
 /* Responsive utilities */
@@ -97,13 +101,125 @@
 
 /* Header */
 .header {
-  background: rgba(26, 26, 46, 0.15);
+  /* background: rgba(26, 26, 46, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid #3a3a5a;
+  border-bottom: 1px solid #3a3a5a; */
   padding: 1rem 2rem;
   position: relative;
   z-index: 10;
+}
+
+/* Shared view hero (Party / Builds / Data) */
+.view-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin: 0 0 2rem;
+}
+
+.view-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #f0c040;
+  margin: 0 0 0.5rem;
+}
+
+.view-hero h1 {
+  margin: 0 0 0.35rem;
+  font-size: 2.2rem;
+}
+
+.view-subtitle {
+  margin: 0;
+  color: #a7aecf;
+  max-width: 520px;
+}
+
+.view-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.view-kpis div {
+  padding: 0.9rem 1rem;
+  background: rgba(19, 20, 38, 0.85);
+  border: 1px solid rgba(106, 112, 160, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(7, 8, 20, 0.5);
+}
+
+.view-kpis span {
+  display: block;
+  color: #a7aecf;
+  font-size: 0.8rem;
+}
+
+.view-kpis strong {
+  display: block;
+  font-size: 1.6rem;
+  color: #ffb703;
+}
+
+/* Game-themed KPI accents */
+.app.game-baldurs-gate-3 .view-eyebrow {
+  color: #f0c040;
+}
+
+.app.game-baldurs-gate-3 .view-kpis strong {
+  color: #ffb703;
+}
+
+.app.game-rogue-trader .view-eyebrow {
+  color: #4fd1c5;
+}
+
+.app.game-rogue-trader .view-kpis strong {
+  color: #36c7b8;
+}
+
+@media (max-width: 900px) {
+  .view-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .view-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .build-selector .build-credit {
+    margin-bottom: 0;
+  }
+
+  .view-kpis div {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .view-kpis strong {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .view-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .view-kpis div {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .view-eyebrow {
+    letter-spacing: 0.14em;
+  }
 }
 
 .header-content {
@@ -208,6 +324,10 @@
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+}
+
+.game-selected {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

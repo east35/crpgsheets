@@ -193,6 +193,19 @@
   line-height: 1.4;
 }
 
+.build-selector-modal-card .build-source-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #7bb4ff;
+  text-decoration: none;
+}
+
+.build-selector-modal-card .build-source-link:hover {
+  text-decoration: underline;
+}
+
 .build-selector-modal-card.tracked {
   border-color: #4a7c4a;
   background: rgba(74, 124, 74, 0.1);

@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { findKeyword, ALL_KEYWORD_NAMES, type KeywordInfo } from '../data/keywords';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
-import { TooltipCard, type TooltipBadge, type TooltipField, type TooltipLink } from '../../../components/TooltipCard';
+import { TooltipCard, type TooltipBadge, type TooltipField } from '../../../components/TooltipCard';
+import { useCursorTooltip } from '../../../components/useCursorTooltip';
 import './KeywordText.css';
 
 interface KeywordTextProps {
@@ -54,12 +54,8 @@ function findKeywordMatches(text: string): KeywordMatch[] {
 }
 
 function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React.ReactNode }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
-  const triggerRef = useRef<HTMLSpanElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const hideTimeoutRef = useRef<number | null>(null);
   const { showSheet, isMobile } = useTooltipSheet();
+  const { isVisible, tooltipRef, tooltipStyle, show, hide, handleMouseMove } = useCursorTooltip(!isMobile);
 
   // BG3-themed category colors
   const categoryColors: Record<string, string> = {
@@ -121,20 +117,14 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
     return stats;
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (event: React.MouseEvent) => {
     if (isMobile) return;
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current);
-      hideTimeoutRef.current = null;
-    }
-    setIsVisible(true);
+    show(event);
   };
 
   const handleMouseLeave = () => {
     if (isMobile) return;
-    hideTimeoutRef.current = window.setTimeout(() => {
-      setIsVisible(false);
-    }, 150);
+    hide();
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -151,57 +141,14 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
       description: buildDescription(info),
       stats: buildStats(info),
       callout: info.concentration ? 'Requires Concentration' : undefined,
-      link: info.wikiUrl ? { label: 'View on Wiki', url: info.wikiUrl } : undefined,
     });
   };
-
-  useEffect(() => {
-    return () => {
-      if (hideTimeoutRef.current) {
-        clearTimeout(hideTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible && triggerRef.current && tooltipRef.current) {
-      const triggerRect = triggerRef.current.getBoundingClientRect();
-      const tooltipHeight = tooltipRef.current.offsetHeight;
-      const tooltipWidth = tooltipRef.current.offsetWidth;
-
-      // Calculate vertical position
-      let top: number;
-      if (triggerRect.top - tooltipHeight - 10 < 0) {
-        top = triggerRect.bottom + 8;
-      } else {
-        top = triggerRect.top - tooltipHeight - 8;
-      }
-
-      // Calculate horizontal position with viewport containment
-      let left = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
-
-      const padding = 10;
-      if (left < padding) {
-        left = padding;
-      } else if (left + tooltipWidth > window.innerWidth - padding) {
-        left = window.innerWidth - padding - tooltipWidth;
-      }
-
-      setTooltipStyle({
-        position: 'fixed',
-        top: `${top}px`,
-        left: `${left}px`,
-      });
-    }
-  }, [isVisible]);
 
   const tooltipContent = isVisible && createPortal(
     <div
       ref={tooltipRef}
       className="crpg-tooltip-container"
       style={tooltipStyle}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       <TooltipCard
         title={info.name}
@@ -212,7 +159,6 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
         description={buildDescription(info)}
         stats={buildStats(info)}
         callout={info.concentration ? 'Requires Concentration' : undefined}
-        link={info.wikiUrl ? ({ label: 'View on Wiki', url: info.wikiUrl } as TooltipLink) : undefined}
       />
     </div>,
     document.body
@@ -220,9 +166,9 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
 
   return (
     <span
-      ref={triggerRef}
       className={`bg3-keyword-trigger bg3-keyword-${info.category}`}
       onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >

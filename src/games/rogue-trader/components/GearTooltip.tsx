@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { getGearInfo } from '../data/gear';
 import { useTooltipSheet } from '../../../components/TooltipSheet';
-import { TooltipCard, type TooltipBadge, type TooltipField, type TooltipLink } from '../../../components/TooltipCard';
+import { TooltipCard, type TooltipBadge, type TooltipField } from '../../../components/TooltipCard';
+import { useCursorTooltip } from '../../../components/useCursorTooltip';
 import './GearTooltip.css';
 
 interface GearTooltipProps {
@@ -10,13 +11,8 @@ interface GearTooltipProps {
 }
 
 export function GearTooltip({ gearName, children }: GearTooltipProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [position, setPosition] = useState<'top' | 'bottom'>('top');
-  const [horizontalOffset, setHorizontalOffset] = useState(0);
-  const triggerRef = useRef<HTMLSpanElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const hideTimeoutRef = useRef<number | null>(null);
   const { showSheet, isMobile } = useTooltipSheet();
+  const { isVisible, tooltipRef, tooltipStyle, show, hide, handleMouseMove } = useCursorTooltip(!isMobile);
 
   const gearInfo = getGearInfo(gearName);
   const sections: TooltipField[] = [];
@@ -33,20 +29,15 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   };
   const typeStyle = gearInfo ? (typeStyles[gearInfo.type] || { background: '#3a3a4a', color: '#c0c0ff' }) : { background: '#3a3a4a', color: '#c0c0ff' };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (event: React.MouseEvent) => {
     if (isMobile) return;
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current);
-      hideTimeoutRef.current = null;
-    }
-    setIsVisible(true);
+    if (!gearInfo) return;
+    show(event);
   };
 
   const handleMouseLeave = () => {
     if (isMobile) return;
-    hideTimeoutRef.current = window.setTimeout(() => {
-      setIsVisible(false);
-    }, 150);
+    hide();
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -74,76 +65,37 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
       sections,
       stats,
       description: gearInfo.effect || '',
-      link: gearInfo.wikiUrl ? ({ label: 'View on Wiki', url: gearInfo.wikiUrl } as TooltipLink) : undefined,
     });
   };
 
-  useEffect(() => {
-    return () => {
-      if (hideTimeoutRef.current) {
-        clearTimeout(hideTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible && triggerRef.current && tooltipRef.current) {
-      const triggerRect = triggerRef.current.getBoundingClientRect();
-      const tooltipHeight = tooltipRef.current.offsetHeight;
-      const tooltipWidth = tooltipRef.current.offsetWidth;
-
-      if (triggerRect.top - tooltipHeight - 10 < 0) {
-        setPosition('bottom');
-      } else {
-        setPosition('top');
-      }
-
-      // Check horizontal containment within main content area
-      const mainContent = document.querySelector('.main-content');
-      if (mainContent) {
-        const mainRect = mainContent.getBoundingClientRect();
-        const tooltipLeft = triggerRect.left + triggerRect.width / 2 - tooltipWidth / 2;
-        const tooltipRight = tooltipLeft + tooltipWidth;
-
-        if (tooltipLeft < mainRect.left + 10) {
-          setHorizontalOffset(mainRect.left + 10 - tooltipLeft);
-        } else if (tooltipRight > mainRect.right - 10) {
-          setHorizontalOffset(mainRect.right - 10 - tooltipRight);
-        } else {
-          setHorizontalOffset(0);
-        }
-      }
-    }
-  }, [isVisible]);
+  const tooltipContent = isVisible && !isMobile && gearInfo && createPortal(
+    <div
+      ref={tooltipRef}
+      className="crpg-tooltip-container"
+      style={tooltipStyle}
+    >
+      <TooltipCard
+        title={gearInfo.name}
+        iconUrl={gearInfo.imageRemote}
+        badge={{ label: gearInfo.type.toUpperCase(), background: typeStyle.background, color: typeStyle.color }}
+        sections={sections}
+        description={gearInfo.effect || ''}
+        stats={stats}
+      />
+    </div>,
+    document.body
+  );
 
   return (
     <span
-      ref={triggerRef}
       className="gear-tooltip-trigger"
       onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
       {children || gearName}
-      {isVisible && !isMobile && gearInfo && (
-        <div
-          ref={tooltipRef}
-          className={`crpg-tooltip-container ${position}`}
-          style={{ transform: `translateX(calc(-50% + ${horizontalOffset}px))` }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <TooltipCard
-            title={gearInfo.name}
-            iconUrl={gearInfo.imageRemote}
-            badge={{ label: gearInfo.type.toUpperCase(), background: typeStyle.background, color: typeStyle.color }}
-            sections={sections}
-            description={gearInfo.effect || ''}
-            stats={stats}
-            link={gearInfo.wikiUrl ? ({ label: 'View on Wiki', url: gearInfo.wikiUrl } as TooltipLink) : undefined}
-          />
-        </div>
-      )}
+      {tooltipContent}
     </span>
   );
 }

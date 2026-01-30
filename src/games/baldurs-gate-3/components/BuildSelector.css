@@ -1,6 +1,5 @@
 /* BG3 Build Selector */
 .build-selector.bg3 {
-  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -118,6 +117,19 @@
   font-size: 0.75rem;
 }
 
+.build-selector.bg3 .build-source-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #7bb4ff;
+  text-decoration: none;
+}
+
+.build-selector.bg3 .build-source-link:hover {
+  text-decoration: underline;
+}
+
 /* Companion Builds - grouped by character */
 .build-selector.bg3 .companion-list {
   display: grid;
@@ -219,6 +231,22 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+}
+
+.build-selector.bg3 .companion-card-gear {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.build-selector.bg3 .companion-card-gear-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .build-selector.bg3 .companion-card-tag {

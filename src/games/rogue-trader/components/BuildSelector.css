@@ -28,6 +28,19 @@
   text-decoration: underline;
 }
 
+.build-selector .build-source-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #7bb4ff;
+  text-decoration: none;
+}
+
+.build-selector .build-source-link:hover {
+  text-decoration: underline;
+}
+
 .companion-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -114,6 +127,8 @@ background: #1a1a2e;
 .companion-card-portrait-wrapper {
   position: relative;
   flex-shrink: 0;
+  width: 100px;
+  height: 150px;
 }
 
 .companion-card-portrait {
@@ -122,20 +137,24 @@ background: #1a1a2e;
   border-radius: 8px;
   object-fit: cover;
   border: 2px solid #444;
+  display: block;
+}
+
+.companion-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .companion-card-level-badge {
-  position: absolute;
-  bottom: 40px;
-  left: 12px;
-  background: #4a7c4a;
-  color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  padding: 2px 6px;
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.15);
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
-  min-width: 20px;
-  text-align: center;
+  flex-shrink: 0;
 }
 
 .companion-card-content {

@@ -12,11 +12,6 @@ export interface TooltipField {
   value: string;
 }
 
-export interface TooltipLink {
-  label: string;
-  url: string;
-}
-
 export interface TooltipCardProps {
   title: string;
   badge?: TooltipBadge;
@@ -27,7 +22,6 @@ export interface TooltipCardProps {
   descriptionItalic?: boolean;
   stats?: TooltipField[];
   callout?: string;
-  link?: TooltipLink;
   variant?: 'tooltip' | 'sheet';
 }
 
@@ -41,7 +35,6 @@ export function TooltipCard({
   descriptionItalic,
   stats,
   callout,
-  link,
   variant = 'tooltip',
 }: TooltipCardProps) {
   const isPlaceholderIcon = (url?: string) => {
@@ -70,13 +63,11 @@ export function TooltipCard({
   const hasDescription = !!description;
   const hasStats = !!(stats && stats.length);
   const hasCallout = !!callout;
-  const hasLink = !!link;
-
-  const needsSectionDivider = hasSections && (hasFlavor || hasDescription || hasStats || hasCallout || hasLink);
-  const needsFlavorDivider = hasFlavor && (hasDescription || hasStats || hasCallout || hasLink);
-  const needsDescriptionDivider = hasDescription && (hasStats || hasCallout || hasLink);
-  const needsStatsDivider = hasStats && (hasCallout || hasLink);
-  const needsCalloutDivider = hasCallout && hasLink;
+  const needsSectionDivider = hasSections && (hasFlavor || hasDescription || hasStats || hasCallout);
+  const needsFlavorDivider = hasFlavor && (hasDescription || hasStats || hasCallout);
+  const needsDescriptionDivider = hasDescription && (hasStats || hasCallout);
+  const needsStatsDivider = hasStats && hasCallout;
+  const needsCalloutDivider = false;
 
   return (
     <div className={`crpg-tooltip-card ${variant}`}>
@@ -157,12 +148,6 @@ export function TooltipCard({
       )}
 
       {needsCalloutDivider && <div className="crpg-tooltip-divider" />}
-
-      {hasLink && (
-        <a className="crpg-tooltip-link" href={link.url} target="_blank" rel="noopener noreferrer">
-          {link.label} →
-        </a>
-      )}
     </div>
   );
 }

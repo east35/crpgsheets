@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useCallback, useEffect, type React
 import { createPortal } from 'react-dom';
 import { Xmark } from 'iconoir-react';
 import './TooltipSheet.css';
-import { TooltipCard, type TooltipBadge, type TooltipField, type TooltipLink } from './TooltipCard';
+import { TooltipCard, type TooltipBadge, type TooltipField } from './TooltipCard';
 
 interface TooltipContent {
   title: string;
@@ -17,7 +17,6 @@ interface TooltipContent {
   meta?: Array<{ label: string; value: string; color?: string }>;
   stats?: TooltipField[];
   callout?: string;
-  link?: TooltipLink;
   descriptionItalic?: boolean;
   description: string;
 }

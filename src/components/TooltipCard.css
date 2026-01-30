@@ -17,9 +17,9 @@
 }
 
 .crpg-tooltip-container {
-  position: absolute;
+  position: fixed;
   z-index: 10000;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .crpg-tooltip-container.top {
@@ -129,15 +129,6 @@
   font-size: 1.05rem;
 }
 
-.crpg-tooltip-link {
-  color: #d3b36b;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.crpg-tooltip-link:hover {
-  color: #f0c96d;
-}
 
 @media (max-width: 768px) {
   .crpg-tooltip-card.tooltip {

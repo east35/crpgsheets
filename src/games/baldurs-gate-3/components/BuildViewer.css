@@ -209,7 +209,7 @@
 .tab {
   background: transparent;
   border: none;
-  color: #666;
+  color: #fff;
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-size: 0.9rem;
@@ -481,6 +481,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  
 }
 
 .gear-item-icon {

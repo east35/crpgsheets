@@ -1,0 +1,40 @@
+Potion,,Condition,Throwable,Heal Amount,Duration,Crafting,Conditions,Effect
+Potion of Healing,,,TRUE,2d4+2⁠⁠,,3  Rogue's Morsel + any Suspension,,
+Potion of Greater Healing,,,TRUE,4d4+4⁠⁠,,3  Balsam + any Salt,,
+Potion of Superior Healing,,,TRUE,8d4+8⁠⁠,,3  Yellow Musk Creeper Petals + any Suspension.,,
+Potion of Supreme Healing,,,TRUE,10d4+20⁠⁠,,3  Ki-Rin Hair + any Ash,,
+Antidote,,,TRUE,,,3  Mugwort + any Suspension,,Removes all poisons
+Basilisk Oil,,,TRUE,,,,,Removes all petrifications
+Potion of Angelic Reprieve,,,FALSE,,2 Turns,3  Unicorn Horn + any Salt,,Potion of Angelic Relief
+Potion of Angelic Slumber,,,FALSE,,2 Turns,3  Planetar Feather + any Suspension,,Potion of Angelic Slumber
+Potion of Animal Speaking,,,FALSE,,Long Rest,3  Acorn Truffle + any Salt,Speak with Animals,
+Potion of Feather Fall,,,TRUE,,10 Turns,3  Autumncrocus + any Essence,Feather Fall,
+Potion of Flying,,,TRUE,,10 Turns,3  Eagle Feather + any Essence,Flight,
+Potion of Gaseous Form,,,FALSE,,10 Turns,,Gaseous Form,
+Potion of Glorious Vaulting,,,TRUE,,10 Turns,3  Wispweed + any Ashes,,Potion of Glorious Vaulting
+Potion of Invisibility,,,TRUE,,10 Turns,3  Imp Patagium + any Essence,Invisible,
+Potion of Mind Reading,,,FALSE,,Long Rest,3  Mergrass + any Sublimate,Detect Thoughts,
+Potion of Sleep,,,TRUE,,3 Turns,,Sleeping,
+Potion of Speed,,,TRUE,,3 Turns,3  Hyena Ear + any Salt,Hastened,
+Remedial Potion,,,TRUE,,,3  Xorn Scales + any Suspension,,"Removes blindness, disease, poisoned, paralyzation,  Colour Spray, and  Silenced"
+A Mother's Loathing,,Mother's Loathing,FALSE,,Long Rest,,,Gains  Bite
+Boon of the Hag[1],,Auntie Ethel's Special Brew,FALSE,,10 Turns,,,Deals 2d6⁠⁠Poison at the start of every turn until a successful DC 13  Constitution saving throw.
+Broken Promises,,Broken Promises,FALSE,,Long Rest,,,Strength is increased by 2. Strength is decreased indefinitely by 1 after that Long Rest.
+Butterflies in the Stomach,,Haemorrhaged,FALSE,,5 Turns,,,Takes 1d6⁠⁠Piercing damage at the end of each turn.
+Faltering Will,,Faltering Will,FALSE,,Long Rest,,,Disadvantage on Wisdom Saving Throws.
+Heart of Stone,,Heart of Stone,FALSE,,Long Rest,,,Gain Resistance to ⁠Poison.
+Insanity's Kiss,,Insanity's Kiss,FALSE,,5 Turns,,,Hostile to all other creatures for the condition's duration.
+Lover's Avarice,,Lover's Avarice,FALSE,,Long Rest,,,Wisdom is indefinitely reduced by 1.
+Lost Time,,Lost Time,FALSE,,5 Turns,,,Armour Class is reduced by 2. Can't take Reactions.
+Missing Pets,,Missing Pets,FALSE,,3 Turns,,,Cannot move. Has  Disadvantage on Ability Checks and  Attack rolls.
+Wilted Dreams,,Wilted Dreams,FALSE,,Long Rest,,,Takes 3d6⁠⁠Psychic during its next Long Rest.
+Dream Mist,,Dream Mist Apparitions,FALSE,,3 Turns,,Incapacitated,
+Essence of Ether,,Ether-Essence Slumber,FALSE,,2 Turns,,Sleeping,
+Silkroot,,Silkroot Euphoria,FALSE,,3 Turns,,Drunk,
+Terazul,,The Terazul Jitters,FALSE,,2 Turns,,Hastened,
+Duergar Antidote,,Duergar Antidote,FALSE,,10 Turns,,,Grants ⁠Poison resistance and nullifies certain Duergar poisons.
+Elixir of Health,,,FALSE,,,,,"Neutralize all poisons, blindness, petrification, and diseases."
+Elixir of Silvanus,,Curative Antidote,FALSE,,1 Turn,,,Neutralizes all poisons and grant  Advantage on Saving Throws against poisons.
+Mysterious Elixir,,Feigning Death,FALSE,,10 Turns,,,Goes into a protective coma. They become Resistant to all damage except ⁠Psychic. Disease and poison no longer have any effect.
+Potion of Everlasting Vigour,,,FALSE,,Permanent,,,Increases your Strength by 2.
+Potion of Vitality,,,FALSE,,,,,Cures any  Poisoned or  Diseased

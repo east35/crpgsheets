@@ -1,0 +1,370 @@
+{
+  "acid_vial": {
+    "name": "Acid Vial",
+    "dmg1": "2d6⁠⁠",
+    "dmg1_type": "Acid",
+    "area": "Acid",
+    "craftable": "FALSE",
+    "description": "DC 13  Dexterity saving throw to negate damage",
+    "image": "/images/bg3/grenades_acid_vial.png"
+  },
+  "alchemist_s_fire": {
+    "name": "Alchemist's Fire",
+    "area": "Fire",
+    "duration": "3 Turns",
+    "conditions": "Burning",
+    "duration_2": "1 Turn",
+    "craftable": "TRUE",
+    "image": "/images/bg3/grenades_alchemist_s_fire.png"
+  },
+  "caustic_bulb": {
+    "name": "Caustic Bulb",
+    "area": "Caustic Brine",
+    "conditions": "Caustic Brine",
+    "craftable": "FALSE",
+    "description": "Sold by  Omeluum.",
+    "image": "/images/bg3/grenades_caustic_bulb.png"
+  },
+  "flashblinder": {
+    "name": "Flashblinder",
+    "duration": "10 Turns",
+    "conditions": "Malfunctioning, Blinded",
+    "duration_2": "2 Turns",
+    "craftable": "TRUE",
+    "description": "DC 16  Constitution saving throw to negate Blindness. No save for  Malfunctioning vs Steel Watcher or Scrying Eye. Sold by  Bumpnagel.",
+    "image": "/images/bg3/grenades_flashblinder.png"
+  },
+  "fungal_bamboozler": {
+    "name": "Fungal Bamboozler",
+    "dmg1": "2d4+1⁠⁠",
+    "dmg1_type": "Poison",
+    "area": "Timmask Spores",
+    "duration": "3 Turns",
+    "conditions": "Befuddled",
+    "duration_2": "1 Turn",
+    "craftable": "TRUE",
+    "description": "Damage depends on successful ranged spell attack and applies to the target only.",
+    "image": "/images/bg3/grenades_fungal_bamboozler.png"
+  },
+  "grease_bottle": {
+    "name": "Grease Bottle",
+    "area": "Grease",
+    "conditions": "Prone, Difficult Terrain",
+    "craftable": "FALSE",
+    "description": "DC 12  Dexterity saving throw to negate Prone.",
+    "image": "/images/bg3/grenades_grease_bottle.png"
+  },
+  "haste_spore_grenade": {
+    "name": "Haste Spore Grenade",
+    "area": "Haste Spores",
+    "duration": "3 Turns",
+    "conditions": "Haste Spores",
+    "duration_2": "1 Turn",
+    "craftable": "TRUE",
+    "image": "/images/bg3/grenades_haste_spore_grenade.png"
+  },
+  "hearthlight_bomb": {
+    "name": "Hearthlight Bomb",
+    "area": "Dancing Lights",
+    "duration": "10 Turns",
+    "craftable": "TRUE",
+    "image": "/images/bg3/grenades_hearthlight_bomb.png"
+  },
+  "holy_water": {
+    "name": "Holy Water",
+    "dmg1": "3d6⁠⁠",
+    "dmg1_type": "Radiant",
+    "area": "Water",
+    "craftable": "FALSE",
+    "description": "Damage dealt only to Fiends and Undead. DC 13  Dexterity saving throw to halve damage.",
+    "image": "/images/bg3/grenades_holy_water.png"
+  },
+  "noxious_spore_grenade": {
+    "name": "Noxious Spore Grenade",
+    "dmg1": "2d4",
+    "dmg1_type": "Poison",
+    "dmg2": "1",
+    "dmg2_type": "Poison",
+    "area": "Noxious Fumes",
+    "duration": "3 Turns",
+    "conditions": "Noxious Fumes",
+    "craftable": "TRUE",
+    "description": "Initial damage depends on successful ranged spell attack and applies to the target only. DC 15  Constitution saving throw to halve the per turn damage to 2d4⁠⁠Poison.",
+    "image": "/images/bg3/grenades_noxious_spore_grenade.png"
+  },
+  "ochre_jelly_slime": {
+    "name": "Ochre Jelly Slime",
+    "dmg1": "1d4",
+    "dmg1_type": "Fire",
+    "dmg2": "2",
+    "dmg2_type": "Fire",
+    "conditions": "Burning",
+    "duration_2": "5 Turns",
+    "craftable": "FALSE",
+    "image": "/images/bg3/grenades_ochre_jelly_slime.png"
+  },
+  "oil_flask": {
+    "name": "Oil Flask",
+    "area": "Oil",
+    "craftable": "FALSE",
+    "image": "/images/bg3/grenades_oil_flask.png"
+  },
+  "sanguine_explosive": {
+    "name": "Sanguine Explosive",
+    "dmg1": "4d8",
+    "dmg1_type": "Force",
+    "dmg2": "4d8",
+    "dmg2_type": "Fire",
+    "conditions": "Burning",
+    "duration_2": "2 Turns",
+    "craftable": "FALSE",
+    "description": "DC 17  Dexterity saving throw to halve damage and negate Burning. Sold by  Araj Oblodra.",
+    "image": "/images/bg3/grenades_sanguine_explosive.png"
+  },
+  "smokepowder_bomb": {
+    "name": "Smokepowder Bomb",
+    "dmg1": "3d4",
+    "dmg1_type": "Force",
+    "dmg2": "9",
+    "dmg2_type": "Force",
+    "craftable": "FALSE",
+    "description": "DC 12  Dexterity saving throw to halve damage",
+    "image": "/images/bg3/grenades_smokepowder_bomb.png"
+  },
+  "spiked_bulb": {
+    "name": "Spiked Bulb",
+    "dmg1": "1",
+    "dmg1_type": "Piercing",
+    "conditions": "Bleeding",
+    "duration_2": "1 Turn",
+    "craftable": "FALSE",
+    "description": "Sold by  Omeluum.",
+    "image": "/images/bg3/grenades_spiked_bulb.png"
+  },
+  "void_bulb": {
+    "name": "Void Bulb",
+    "dmg1": "1",
+    "dmg1_type": "Force",
+    "craftable": "FALSE",
+    "description": "Pulls creatures caught 5 m / 17 ft towards the point of impact (DC 18  Strength saving throw to negate). Sold by  Omeluum.",
+    "image": "/images/bg3/grenades_void_bulb.png"
+  },
+  "web_grenade": {
+    "name": "Web Grenade",
+    "area": "Web",
+    "duration": "10 Turns",
+    "craftable": "TRUE",
+    "description": "Sold by  Helsik.",
+    "image": "/images/bg3/grenades_web_grenade.png"
+  },
+  "brilliant_retort": {
+    "name": "Brilliant Retort",
+    "dmg1": "3d4",
+    "dmg1_type": "Force",
+    "dmg2": "9",
+    "dmg2_type": "Force",
+    "conditions": "Silenced",
+    "duration_2": "2 Turns",
+    "craftable": "FALSE",
+    "description": "DC 12  Dexterity saving throw to halve damage and negate Silenced",
+    "image": "/images/bg3/grenades_brilliant_retort.png"
+  },
+  "concussion_grenade": {
+    "name": "Concussion Grenade",
+    "dmg1": "5d10",
+    "dmg1_type": "Thunder",
+    "dmg2": "18",
+    "dmg2_type": "Thunder",
+    "craftable": "FALSE",
+    "description": "DC 18  Dexterity saving throw to halve damage",
+    "image": "/images/bg3/grenades_concussion_grenade.png"
+  },
+  "flammable_slime_bomb": {
+    "name": "Flammable Slime Bomb",
+    "dmg1": "1d4",
+    "dmg1_type": "Fire",
+    "dmg2": "2",
+    "dmg2_type": "Fire",
+    "area": "Fire",
+    "duration": "2 Turns",
+    "conditions": "Burning",
+    "duration_2": "5 Turns",
+    "craftable": "FALSE",
+    "description": "Identical to the  Ochre Jelly Slime",
+    "image": "/images/bg3/grenades_flammable_slime_bomb.png"
+  },
+  "hag_s_bane": {
+    "name": "Hag's Bane",
+    "craftable": "FALSE",
+    "description": "Forces a hag that has consumed a child to disgorge it instantly.",
+    "image": "/images/bg3/grenades_hag_s_bane.png"
+  },
+  "haste_spore_flask": {
+    "name": "Haste Spore Flask",
+    "area": "Haste Spores",
+    "conditions": "Haste Spores",
+    "duration_2": "1 Turn",
+    "craftable": "FALSE",
+    "image": "/images/bg3/grenades_haste_spore_flask.png"
+  },
+  "iron_flask": {
+    "name": "Iron Flask",
+    "craftable": "FALSE",
+    "description": "Releases a Spectator that is hostile to all nearby creatures (including the party).",
+    "image": "/images/bg3/grenades_iron_flask.png"
+  },
+  "merregon_potion": {
+    "name": "Merregon Potion",
+    "dmg1": "2d4",
+    "dmg1_type": "Poison",
+    "dmg2": "1",
+    "dmg2_type": "Poison",
+    "area": "Timmask Spores",
+    "duration": "3 Turns",
+    "conditions": "Befuddled",
+    "duration_2": "1 Turn",
+    "craftable": "FALSE",
+    "description": "Damage depends on successful ranged spell attack and applies to the target only.",
+    "image": "/images/bg3/grenades_merregon_potion.png"
+  },
+  "orthon_explosive": {
+    "name": "Orthon Explosive",
+    "dmg1": "3d6",
+    "dmg1_type": "Fire",
+    "conditions": "Infernal Burning",
+    "duration_2": "3 Turns",
+    "craftable": "FALSE",
+    "description": "DC 13  Dexterity saving throw to halve damage and negate Infernal Burning.",
+    "image": "/images/bg3/grenades_orthon_explosive.png"
+  },
+  "orthonic_handbomb": {
+    "name": "Orthonic Handbomb",
+    "dmg1": "4d8",
+    "dmg1_type": "Force",
+    "dmg2": "4d8",
+    "dmg2_type": "Fire",
+    "conditions": "Burning",
+    "duration_2": "2 Turns",
+    "craftable": "FALSE",
+    "description": "DC 17  Dexterity saving throw to halve damage and negate Burning.",
+    "image": "/images/bg3/grenades_orthonic_handbomb.png"
+  },
+  "phase_optimizer": {
+    "name": "Phase Optimizer",
+    "conditions": "Phase Optimizer Active",
+    "duration_2": "2 Turns",
+    "craftable": "FALSE",
+    "description": "Condition is only granted to Steel Watchers.",
+    "image": "/images/bg3/grenades_phase_optimizer.png"
+  },
+  "poisonous_slime_bomb": {
+    "name": "Poisonous Slime Bomb",
+    "dmg1": "1d4",
+    "dmg1_type": "Poison",
+    "dmg2": "1",
+    "dmg2_type": "Poison",
+    "area": "Poison Cloud",
+    "duration": "10 Turns",
+    "conditions": "Poisoned",
+    "duration_2": "1 Turn",
+    "craftable": "FALSE",
+    "description": "DC 11  Constitution saving throw to avoid being Poisoned",
+    "image": "/images/bg3/grenades_poisonous_slime_bomb.png"
+  },
+  "reflectoguard": {
+    "name": "Reflectoguard",
+    "conditions": "Reflectoguard Active",
+    "duration_2": "2 Turns",
+    "craftable": "FALSE",
+    "image": "/images/bg3/grenades_reflectoguard.png"
+  },
+  "scrap_and_shrapnel_grenade": {
+    "name": "Scrap and Shrapnel Grenade",
+    "dmg1": "1",
+    "dmg1_type": "Piercing",
+    "conditions": "Bleeding",
+    "duration_2": "1 Turn",
+    "craftable": "FALSE",
+    "description": "Identical to  Spiked Bulb.",
+    "image": "/images/bg3/grenades_scrap_and_shrapnel_grenade.png"
+  },
+  "surprise_based_teddy_bear": {
+    "name": "Surprise-Based Teddy Bear",
+    "dmg1": "6d6",
+    "dmg1_type": "Fire",
+    "craftable": "FALSE",
+    "description": "DC 15  Dexterity saving throw to halve damage.",
+    "image": "/images/bg3/grenades_surprise_based_teddy_bear.png"
+  },
+  "karabasan_s_gift": {
+    "name": "Karabasan's Gift",
+    "conditions": "Paralysed (Karabasan's Gift)",
+    "craftable": "FALSE",
+    "description": "Karabasan's Gift is a Grenade that can be thrown to possibly Paralyse creatures in a small area.",
+    "image": "/images/bg3/grenades_karabasan_s_gift.png"
+  },
+  "volo_s_jar_of_moustache_wax": {
+    "name": "Volo's Jar of Moustache Wax",
+    "area": "Grease",
+    "conditions": "Prone, Difficult Terrain",
+    "craftable": "FALSE",
+    "description": "DC 12  Dexterity saving throw to negate Prone. Identical to  Grease Bottle",
+    "image": "/images/bg3/grenades_volo_s_jar_of_moustache_wax.png"
+  },
+  "firewine_barrel": {
+    "name": "Firewine Barrel",
+    "dmg1": "5",
+    "craftable": "FALSE",
+    "description": "Deals 4d6⁠⁠Fire( Dexterity saving throw to halve).",
+    "image": "/images/bg3/grenades_firewine_barrel.png"
+  },
+  "nautiloid_tank": {
+    "name": "Nautiloid Tank",
+    "dmg1": "1",
+    "craftable": "FALSE",
+    "description": "Deals 6d6⁠⁠Fire( Dexterity saving throw to halve).",
+    "image": "/images/bg3/grenades_nautiloid_tank.png"
+  },
+  "oil_barrel": {
+    "name": "Oil Barrel",
+    "dmg1": "5",
+    "craftable": "FALSE",
+    "description": "Deals 6d6⁠⁠Fire( Dexterity saving throw to halve).",
+    "image": "/images/bg3/grenades_oil_barrel.png"
+  },
+  "runepowder_barrel": {
+    "name": "Runepowder Barrel",
+    "dmg1": "2500",
+    "craftable": "FALSE",
+    "description": "Deals 10d8+40⁠⁠Force( Dexterity saving throw to halve). Automatically Critically Hits objects and environments.",
+    "image": "/images/bg3/grenades_runepowder_barrel.png"
+  },
+  "runepowder_bomb": {
+    "name": "Runepowder Bomb",
+    "dmg1": "2500",
+    "craftable": "FALSE",
+    "description": "Deals 10d8+40⁠⁠Force( Dexterity saving throw to halve). Automatically Critically Hits objects and environments.",
+    "image": "/images/bg3/grenades_runepowder_bomb.png"
+  },
+  "runepowder_vial": {
+    "name": "Runepowder Vial",
+    "dmg1": "50",
+    "craftable": "FALSE",
+    "description": "Deals 5d4+18⁠⁠Force( Dexterity saving throw to halve). Automatically Critically Hits objects and environments.",
+    "image": "/images/bg3/grenades_runepowder_vial.png"
+  },
+  "smokepowder_barrel": {
+    "name": "Smokepowder Barrel",
+    "dmg1": "5",
+    "craftable": "FALSE",
+    "description": "Deals 4d4+18⁠⁠Force( Dexterity saving throw to halve). Automatically Critically Hits objects and environments.",
+    "image": "/images/bg3/grenades_smokepowder_barrel.png"
+  },
+  "smokepowder_satchel": {
+    "name": "Smokepowder Satchel",
+    "dmg1": "90",
+    "craftable": "FALSE",
+    "description": "Deals 3d4+9⁠⁠Force( Dexterity saving throw to halve). Automatically Critically Hits objects and environments.",
+    "image": "/images/bg3/grenades_smokepowder_satchel.png"
+  }
+}

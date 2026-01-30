@@ -1,0 +1,342 @@
+{
+  "elixir_of_arcane_cultivation": {
+    "elixir": "Elixir of Arcane Cultivation",
+    "ingredient": "Weavemoss",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Arcane Cultivation",
+    "image": "/images/bg3/elixirs_elixir_of_arcane_cultivation.png",
+    "name": "Elixir of Arcane Cultivation"
+  },
+  "greater_elixir_of_arcane_cultivation": {
+    "elixir": "Greater Elixir of Arcane Cultivation",
+    "ingredient": "Laculite",
+    "throwable": "FALSE",
+    "conditions": "Greater Elixir of Arcane Cultivation",
+    "image": "/images/bg3/elixirs_greater_elixir_of_arcane_cultivation.png",
+    "name": "Greater Elixir of Arcane Cultivation"
+  },
+  "superior_elixir_of_arcane_cultivation": {
+    "elixir": "Superior Elixir of Arcane Cultivation",
+    "ingredient": "Night Orchid",
+    "throwable": "FALSE",
+    "conditions": "Superior Elixir of Arcane Cultivation",
+    "image": "/images/bg3/elixirs_superior_elixir_of_arcane_cultivation.png",
+    "name": "Superior Elixir of Arcane Cultivation"
+  },
+  "supreme_elixir_of_arcane_cultivation": {
+    "elixir": "Supreme Elixir of Arcane Cultivation",
+    "ingredient": "Beholder Iris",
+    "throwable": "FALSE",
+    "conditions": "Supreme Elixir of Arcane Cultivation",
+    "image": "/images/bg3/elixirs_supreme_elixir_of_arcane_cultivation.png",
+    "name": "Supreme Elixir of Arcane Cultivation"
+  },
+  "elixir_of_acid_resistance": {
+    "elixir": "Elixir of Acid Resistance",
+    "throwable": "TRUE",
+    "conditions": "Acid Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_acid_resistance.png",
+    "name": "Elixir of Acid Resistance"
+  },
+  "elixir_of_cold_resistance": {
+    "elixir": "Elixir of Cold Resistance",
+    "throwable": "TRUE",
+    "conditions": "Cold Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_cold_resistance.png",
+    "name": "Elixir of Cold Resistance"
+  },
+  "elixir_of_fire_resistance": {
+    "elixir": "Elixir of Fire Resistance",
+    "ingredient": "Dragon Egg Mushroom",
+    "throwable": "TRUE",
+    "conditions": "Fire Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_fire_resistance.png",
+    "name": "Elixir of Fire Resistance"
+  },
+  "elixir_of_lightning_resistance": {
+    "elixir": "Elixir of Lightning Resistance",
+    "ingredient": "Broken Machinery",
+    "throwable": "TRUE",
+    "conditions": "Lightning Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_lightning_resistance.png",
+    "name": "Elixir of Lightning Resistance"
+  },
+  "elixir_of_necrotic_resistance": {
+    "elixir": "Elixir of Necrotic Resistance",
+    "ingredient": "Black Oleander",
+    "throwable": "TRUE",
+    "conditions": "Necrotic Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_necrotic_resistance.png",
+    "name": "Elixir of Necrotic Resistance"
+  },
+  "elixir_of_poison_resistance": {
+    "elixir": "Elixir of Poison Resistance",
+    "ingredient": "Mud Mephit Wing",
+    "throwable": "TRUE",
+    "conditions": "Poison Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_poison_resistance.png",
+    "name": "Elixir of Poison Resistance"
+  },
+  "elixir_of_psychic_resistance": {
+    "elixir": "Elixir of Psychic Resistance",
+    "ingredient": "Intellect Devourer Cerebellum",
+    "throwable": "TRUE",
+    "conditions": "Psychic Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_psychic_resistance.png",
+    "name": "Elixir of Psychic Resistance"
+  },
+  "elixir_of_radiant_resistance": {
+    "elixir": "Elixir of Radiant Resistance",
+    "throwable": "TRUE",
+    "conditions": "Radiant Resistance",
+    "image": "/images/bg3/elixirs_elixir_of_radiant_resistance.png",
+    "name": "Elixir of Radiant Resistance"
+  },
+  "elixir_of_universal_resistance": {
+    "elixir": "Elixir of Universal Resistance",
+    "ingredient": "Divine Bone Shard",
+    "throwable": "FALSE",
+    "resistance": "Bludgeoning, Piercing, Slashing, Acid, Cold, Fire, Force, Lightning, Necrotic, Poison, Psychic, Radiant, Thunder",
+    "effect": "Resistance to all Damage Types",
+    "image": "/images/bg3/elixirs_elixir_of_universal_resistance.png",
+    "name": "Elixir of Universal Resistance"
+  },
+  "elixir_of_cloud_giant_strength": {
+    "elixir": "Elixir of Cloud Giant Strength",
+    "ingredient": "Cloud Giant Finger",
+    "throwable": "TRUE",
+    "conditions": "Elixir of Cloud Giant Strength",
+    "effect": "Increase your Strength to 27 until Long Rest",
+    "image": "/images/bg3/elixirs_elixir_of_cloud_giant_strength.png",
+    "name": "Elixir of Cloud Giant Strength"
+  },
+  "elixir_of_hill_giant_strength": {
+    "elixir": "Elixir of Hill Giant Strength",
+    "ingredient": "Hill Giant Finger",
+    "throwable": "TRUE",
+    "conditions": "Elixir of Hill Giant Strength",
+    "effect": "Increase your Strength to 21 until Long Rest",
+    "image": "/images/bg3/elixirs_elixir_of_hill_giant_strength.png",
+    "name": "Elixir of Hill Giant Strength"
+  },
+  "elixir_of_barkskin": {
+    "elixir": "Elixir of Barkskin",
+    "ingredient": "Wood Bark",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Barkskin",
+    "effect": "Increases your  Armour Class to 16",
+    "image": "/images/bg3/elixirs_elixir_of_barkskin.png",
+    "name": "Elixir of Barkskin"
+  },
+  "elixir_of_battlemage_s_power": {
+    "elixir": "Elixir of Battlemage's Power",
+    "ingredient": "Gauth Eyestalk",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Battlemage's Power",
+    "effect": "Gain  Arcane Acuity for 3 turns.",
+    "image": "/images/bg3/elixirs_elixir_of_battlemage_s_power.png",
+    "name": "Elixir of Battlemage's Power"
+  },
+  "elixir_of_bloodlust": {
+    "elixir": "Elixir of Bloodlust",
+    "ingredient": "Worg Fang",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Bloodlust",
+    "effect": "Once per turn when you kill a foe, you gain  5 temporary hit points and an additional  Action",
+    "image": "/images/bg3/elixirs_elixir_of_bloodlust.png",
+    "name": "Elixir of Bloodlust"
+  },
+  "elixir_of_darkvision": {
+    "elixir": "Elixir of Darkvision",
+    "ingredient": "Crystalline Lens",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Darkvision",
+    "image": "/images/bg3/elixirs_elixir_of_darkvision.png",
+    "name": "Elixir of Darkvision"
+  },
+  "elixir_of_guileful_movement": {
+    "elixir": "Elixir of Guileful Movement",
+    "ingredient": "Ochre Jelly Slime",
+    "throwable": "FALSE",
+    "conditions": "Freedom of Movement",
+    "image": "/images/bg3/elixirs_elixir_of_guileful_movement.png",
+    "name": "Elixir of Guileful Movement"
+  },
+  "elixir_of_heroism": {
+    "elixir": "Elixir of Heroism",
+    "ingredient": "Pegasus Feather",
+    "throwable": "FALSE",
+    "conditions": "Heroic, Elixir of Heroism",
+    "effect": "Gain  +1d4 bonus to  Attack rolls and  Saving throws. Gain  10 temporary hit points.",
+    "image": "/images/bg3/elixirs_elixir_of_heroism.png",
+    "name": "Elixir of Heroism"
+  },
+  "elixir_of_peerless_focus": {
+    "elixir": "Elixir of Peerless Focus",
+    "ingredient": "Belladonna",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Peerless Focus",
+    "effect": "Gain  Advantage on  Concentration saves and against being  Charmed Magic can't put you to  Sleep",
+    "image": "/images/bg3/elixirs_elixir_of_peerless_focus.png",
+    "name": "Elixir of Peerless Focus"
+  },
+  "elixir_of_see_invisibility": {
+    "elixir": "Elixir of See Invisibility",
+    "ingredient": "Nothic Eye",
+    "throwable": "FALSE",
+    "conditions": "See Invisibility",
+    "image": "/images/bg3/elixirs_elixir_of_see_invisibility.png",
+    "name": "Elixir of See Invisibility"
+  },
+  "elixir_of_the_colossus": {
+    "elixir": "Elixir of the Colossus",
+    "ingredient": "Chasm Creeper",
+    "throwable": "FALSE",
+    "conditions": "Elixir of The Colossus",
+    "effect": "Gain the effects of  Enlarged",
+    "image": "/images/bg3/elixirs_elixir_of_the_colossus.png",
+    "name": "Elixir of the Colossus"
+  },
+  "elixir_of_viciousness": {
+    "elixir": "Elixir of Viciousness",
+    "ingredient": "Shadowroot Sac",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Viciousness",
+    "effect": "The number you need to roll to land a Critical Hit is reduced by 1",
+    "image": "/images/bg3/elixirs_elixir_of_viciousness.png",
+    "name": "Elixir of Viciousness"
+  },
+  "elixir_of_vigilance": {
+    "elixir": "Elixir of Vigilance",
+    "ingredient": "Hook",
+    "throwable": "FALSE",
+    "conditions": "Elixir of Vigilance",
+    "effect": "Gain a +5 bonus to  Initiative You can't be  Surprised",
+    "image": "/images/bg3/elixirs_elixir_of_vigilance.png",
+    "name": "Elixir of Vigilance"
+  },
+  "tadpole_elixir": {
+    "elixir": "Tadpole Elixir",
+    "ingredient": "Tongue of Madness",
+    "throwable": "FALSE",
+    "conditions": "Psionic Weakening, Psionic Enrichment",
+    "effect": "Gain  Psionic Weakening and  Psionic Enrichment",
+    "image": "/images/bg3/elixirs_tadpole_elixir.png",
+    "name": "Tadpole Elixir"
+  },
+  "black_dragonborn_copper_dragonborn": {
+    "elixir": "Elixir of Dragonborn Prowess: Acid",
+    "race": "Black Dragonborn, Copper Dragonborn",
+    "throwable": "FALSE",
+    "conditions": "Draconic Prowess: Acid",
+    "effect": "Gain  Advantage on Intimidation and Persuasion checks ⁠Acid Resistance Can cast  Melf's Acid Arrow once",
+    "name": "Black Dragonborn, Copper Dragonborn"
+  },
+  "brass_dragonborn_gold_dragonborn_red_dragonborn": {
+    "elixir": "Elixir of Dragonborn Prowess: Fire",
+    "race": "Brass Dragonborn, Gold Dragonborn, Red Dragonborn",
+    "throwable": "FALSE",
+    "conditions": "Draconic Prowess: Fire",
+    "effect": "Gain  Advantage on Intimidation and Persuasion checks ⁠Fire Resistance Can cast  Fireball once",
+    "name": "Brass Dragonborn, Gold Dragonborn, Red Dragonborn"
+  },
+  "silver_dragonborn_white_dragonborn": {
+    "elixir": "Elixir of Dragonborn Prowess: Frost",
+    "race": "Silver Dragonborn, White Dragonborn",
+    "throwable": "FALSE",
+    "conditions": "Draconic Prowess: Frost",
+    "effect": "Gain  Advantage on Intimidation and Persuasion checks ⁠Cold Resistance Can cast  Ice Storm once",
+    "name": "Silver Dragonborn, White Dragonborn"
+  },
+  "bronze_dragonborn_blue_dragonborn": {
+    "elixir": "Elixir of Dragonborn Prowess: Lightning",
+    "race": "Bronze Dragonborn, Blue Dragonborn",
+    "throwable": "FALSE",
+    "conditions": "Draconic Prowess: Lightning",
+    "effect": "Gain  Advantage on Intimidation and Persuasion checks ⁠Lightning Resistance Can cast  Lightning Bolt once",
+    "name": "Bronze Dragonborn, Blue Dragonborn"
+  },
+  "green_dragonborn": {
+    "elixir": "Elixir of Dragonborn Prowess: Poison",
+    "race": "Green Dragonborn",
+    "throwable": "FALSE",
+    "conditions": "Draconic Prowess: Poison",
+    "effect": "Gain  Advantage on Intimidation and Persuasion checks ⁠Poison Resistance Can cast  Ray of Sickness once",
+    "image": "/images/bg3/elixirs_green_dragonborn.png",
+    "name": "Green Dragonborn"
+  },
+  "gold_dwarf_shield_dwarf_duergar": {
+    "elixir": "Elixir of Dwarven Resilience",
+    "race": "Gold Dwarf, Shield Dwarf, Duergar",
+    "throwable": "FALSE",
+    "conditions": "Dwarven Resilience",
+    "effect": "Add your Proficiency Modifier to Saving Throws until you succeed on 3 of them",
+    "name": "Gold Dwarf, Shield Dwarf, Duergar"
+  },
+  "high_elf_wood_elf": {
+    "elixir": "Elixir of Elven Elegance",
+    "race": "High Elf, Wood Elf",
+    "throwable": "FALSE",
+    "conditions": "Elven Elegance",
+    "effect": "Gain 10m of movement speed Gain  Darkvision Immune to being  Charmed",
+    "name": "High Elf, Wood Elf"
+  },
+  "githyanki": {
+    "elixir": "Elixir of Githyanki Providence",
+    "race": "Githyanki",
+    "throwable": "FALSE",
+    "conditions": "Githyanki Providence",
+    "effect": "Can cast  Misty Step once Can cast  Enhance Leap once Can cast  Blur once",
+    "image": "/images/bg3/elixirs_githyanki.png",
+    "name": "Githyanki"
+  },
+  "forest_gnome_deep_gnome_rock_gnome": {
+    "elixir": "Elixir of Gnomish Ingenuity",
+    "race": "Forest Gnome, Deep Gnome, Rock Gnome",
+    "throwable": "FALSE",
+    "conditions": "Gnomish Ingenuity",
+    "effect": "Gain Proficiency in Sleight of Hand checks and can cast  Knock",
+    "name": "Forest Gnome, Deep Gnome, Rock Gnome"
+  },
+  "high_half_elf_wood_half_elf_drow_half_elf": {
+    "elixir": "Elixir of Half-Elven Healing",
+    "race": "High Half-Elf, Wood Half-Elf, Drow Half-Elf",
+    "throwable": "FALSE",
+    "effect": "Regain  Hit Points equal to your Constitution score. (This is an instantaneous effect, more like a potion than an elixir.)",
+    "name": "High Half-Elf, Wood Half-Elf, Drow Half-Elf"
+  },
+  "half_orc": {
+    "elixir": "Elixir of Half-Orcish Fury",
+    "race": "Half-Orc",
+    "throwable": "FALSE",
+    "conditions": "Half-Orcish Fury",
+    "effect": "The next time you are  Downed, you instead drop to 1 hit point",
+    "image": "/images/bg3/elixirs_half_orc.png",
+    "name": "Half-Orc"
+  },
+  "lightfoot_halfling_strongheart_halfling": {
+    "elixir": "Elixir of Halfling Luck",
+    "race": "Lightfoot Halfling, Strongheart Halfling",
+    "throwable": "FALSE",
+    "conditions": "Halfling Luck",
+    "effect": "Gain Advantage on Skill Checks",
+    "name": "Lightfoot Halfling, Strongheart Halfling"
+  },
+  "human": {
+    "elixir": "Elixir of Human Versatility",
+    "race": "Human",
+    "throwable": "FALSE",
+    "conditions": "Human Versatility",
+    "effect": "Gain Proficiency in all skills",
+    "image": "/images/bg3/elixirs_human.png",
+    "name": "Human"
+  },
+  "asmodeus_tiefling_mephistopheles_tiefling_zariel_tiefling": {
+    "elixir": "Elixir of Tiefling Vice",
+    "race": "Asmodeus Tiefling, Mephistopheles Tiefling, Zariel Tiefling",
+    "throwable": "FALSE",
+    "conditions": "Fiendish Vice",
+    "effect": "Can cast  Thaumaturgy once Can cast  Hellish Rebuke once Can cast  Burning Hands once Can cast  Flame Blade once",
+    "name": "Asmodeus Tiefling, Mephistopheles Tiefling, Zariel Tiefling"
+  }
+}

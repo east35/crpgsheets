@@ -1,0 +1,42 @@
+Elixir,,Ingredient,Race,Throwable,Conditions,Resistance,Effect
+Elixir of Arcane Cultivation,,Weavemoss,,FALSE,Elixir of Arcane Cultivation,,
+Greater Elixir of Arcane Cultivation,,Laculite,,FALSE,Greater Elixir of Arcane Cultivation,,
+Superior Elixir of Arcane Cultivation,,Night Orchid,,FALSE,Superior Elixir of Arcane Cultivation,,
+Supreme Elixir of Arcane Cultivation,,Beholder Iris,,FALSE,Supreme Elixir of Arcane Cultivation,,
+Elixir of Acid Resistance,,,,TRUE,Acid Resistance,,
+Elixir of Cold Resistance,,,,TRUE,Cold Resistance,,
+Elixir of Fire Resistance,,Dragon Egg Mushroom,,TRUE,Fire Resistance,,
+Elixir of Lightning Resistance,,Broken Machinery,,TRUE,Lightning Resistance,,
+Elixir of Necrotic Resistance,,Black Oleander,,TRUE,Necrotic Resistance,,
+Elixir of Poison Resistance,,Mud Mephit Wing,,TRUE,Poison Resistance,,
+Elixir of Psychic Resistance,,Intellect Devourer Cerebellum,,TRUE,Psychic Resistance,,
+Elixir of Radiant Resistance,,,,TRUE,Radiant Resistance,,
+Elixir of Universal Resistance,,Divine Bone Shard,,FALSE,,"Bludgeoning, Piercing, Slashing, Acid, Cold, Fire, Force, Lightning, Necrotic, Poison, Psychic, Radiant, Thunder",Resistance to all Damage Types
+Elixir of Cloud Giant Strength,,Cloud Giant Finger,,TRUE,Elixir of Cloud Giant Strength,,Increase your Strength to 27 until Long Rest
+Elixir of Hill Giant Strength,,Hill Giant Finger,,TRUE,Elixir of Hill Giant Strength,,Increase your Strength to 21 until Long Rest
+Elixir of Barkskin,,Wood Bark,,FALSE,Elixir of Barkskin,,Increases your  Armour Class to 16
+Elixir of Battlemage's Power,,Gauth Eyestalk,,FALSE,Elixir of Battlemage's Power,,Gain  Arcane Acuity for 3 turns.
+Elixir of Bloodlust,,Worg Fang,,FALSE,Elixir of Bloodlust,,"Once per turn when you kill a foe, you gain  5 temporary hit points and an additional  Action"
+Elixir of Darkvision,,Crystalline Lens,,FALSE,Elixir of Darkvision,,
+Elixir of Guileful Movement,,Ochre Jelly Slime,,FALSE,Freedom of Movement,,
+Elixir of Heroism,,Pegasus Feather,,FALSE,"Heroic, Elixir of Heroism",,Gain  +1d4 bonus to  Attack rolls and  Saving throws. Gain  10 temporary hit points.
+Elixir of Peerless Focus,,Belladonna,,FALSE,Elixir of Peerless Focus,,Gain  Advantage on  Concentration saves and against being  Charmed Magic can't put you to  Sleep
+Elixir of See Invisibility,,Nothic Eye,,FALSE,See Invisibility,,
+Elixir of the Colossus,,Chasm Creeper,,FALSE,Elixir of The Colossus,,Gain the effects of  Enlarged
+Elixir of Viciousness,,Shadowroot Sac,,FALSE,Elixir of Viciousness,,The number you need to roll to land a Critical Hit is reduced by 1
+Elixir of Vigilance,,Hook,,FALSE,Elixir of Vigilance,,Gain a +5 bonus to  Initiative You can't be  Surprised
+Tadpole Elixir,,Tongue of Madness,,FALSE,"Psionic Weakening, Psionic Enrichment",,Gain  Psionic Weakening and  Psionic Enrichment
+Elixir of Dragonborn Prowess: Acid,,,"Black Dragonborn, Copper Dragonborn",FALSE,Draconic Prowess: Acid,,Gain  Advantage on Intimidation and Persuasion checks ⁠Acid Resistance Can cast  Melf's Acid Arrow once
+Elixir of Dragonborn Prowess: Fire,,,"Brass Dragonborn, Gold Dragonborn, Red Dragonborn",FALSE,Draconic Prowess: Fire,,Gain  Advantage on Intimidation and Persuasion checks ⁠Fire Resistance Can cast  Fireball once
+Elixir of Dragonborn Prowess: Frost,,,"Silver Dragonborn, White Dragonborn",FALSE,Draconic Prowess: Frost,,Gain  Advantage on Intimidation and Persuasion checks ⁠Cold Resistance Can cast  Ice Storm once
+Elixir of Dragonborn Prowess: Lightning,,,"Bronze Dragonborn, Blue Dragonborn",FALSE,Draconic Prowess: Lightning,,Gain  Advantage on Intimidation and Persuasion checks ⁠Lightning Resistance Can cast  Lightning Bolt once
+Elixir of Dragonborn Prowess: Poison,,,Green Dragonborn,FALSE,Draconic Prowess: Poison,,Gain  Advantage on Intimidation and Persuasion checks ⁠Poison Resistance Can cast  Ray of Sickness once
+Elixir of Dwarven Resilience,,,"Gold Dwarf, Shield Dwarf, Duergar",FALSE,Dwarven Resilience,,Add your Proficiency Modifier to Saving Throws until you succeed on 3 of them
+Elixir of Elven Elegance,,,"High Elf, Wood Elf",FALSE,Elven Elegance,,Gain 10m of movement speed Gain  Darkvision Immune to being  Charmed
+Elixir of Githyanki Providence,,,Githyanki,FALSE,Githyanki Providence,,Can cast  Misty Step once Can cast  Enhance Leap once Can cast  Blur once
+Elixir of Gnomish Ingenuity,,,"Forest Gnome, Deep Gnome, Rock Gnome",FALSE,Gnomish Ingenuity,,Gain Proficiency in Sleight of Hand checks and can cast  Knock
+Elixir of Half-Elven Healing,,,"High Half-Elf, Wood Half-Elf, Drow Half-Elf",FALSE,,,"Regain  Hit Points equal to your Constitution score. (This is an instantaneous effect, more like a potion than an elixir.)"
+Elixir of Half-Orcish Fury,,,Half-Orc,FALSE,Half-Orcish Fury,,"The next time you are  Downed, you instead drop to 1 hit point"
+Elixir of Halfling Luck,,,"Lightfoot Halfling, Strongheart Halfling",FALSE,Halfling Luck,,Gain Advantage on Skill Checks
+Elixir of Human Versatility,,,Human,FALSE,Human Versatility,,Gain Proficiency in all skills
+Elixir of Tiefling Vice,,,"Asmodeus Tiefling, Mephistopheles Tiefling, Zariel Tiefling",FALSE,Fiendish Vice,,Can cast  Thaumaturgy once Can cast  Hellish Rebuke once Can cast  Burning Hands once Can cast  Flame Blade once

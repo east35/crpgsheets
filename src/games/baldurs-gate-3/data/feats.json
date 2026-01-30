@@ -1,300 +1,443 @@
 {
   "ability_improvement": {
+    "feat": "Ability Improvement",
+    "type": "Ability",
+    "text": "Add Ability Score",
+    "list": "STR, DEX, CON, INT, WIS, CHA",
+    "type_2": "Ability",
+    "text_2": "Add Ability Score",
+    "list_2": "STR, DEX, CON, INT, WIS, CHA",
     "name": "Ability Improvement",
-    "description": "Increase one ability score by 2, or two ability scores by 1, up to a maximum of 20.",
+    "description": "Add Ability Score\nAdd Ability Score\nOptions: STR, DEX, CON, INT, WIS, CHA\nOptions: STR, DEX, CON, INT, WIS, CHA",
     "benefits": [
-      "Increase one ability score by 2, or two ability scores by 1, up to a maximum of 20."
+      "Add Ability Score",
+      "Add Ability Score",
+      "Options: STR, DEX, CON, INT, WIS, CHA",
+      "Options: STR, DEX, CON, INT, WIS, CHA"
     ]
   },
   "actor": {
+    "feat": "Actor",
+    "feature": "Actor",
+    "expertise": "Deception, Performance",
     "name": "Actor",
-    "description": "Your Charisma ability score increases by 1, to a maximum of 20.",
-    "benefits": [
-      "Your Charisma ability score increases by 1, to a maximum of 20."
-    ]
+    "description": "",
+    "benefits": []
   },
   "alert": {
+    "feat": "Alert",
+    "feature": "Alert",
     "name": "Alert",
-    "description": "You gain a +5 bonus to initiative and can't be Surprised .",
-    "benefits": [
-      "You gain a +5 bonus to initiative and can't be Surprised ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "athlete": {
+    "feat": "Athlete",
+    "feature": "Athlete: Standing Up",
+    "type": "Ability",
+    "text": "Add Ability Score",
+    "list": "STR, DEX",
     "name": "Athlete",
-    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.\nWhen you are Prone , standing up uses significantly less movement.",
+    "description": "Add Ability Score\nOptions: STR, DEX",
     "benefits": [
-      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
-      "When you are Prone , standing up uses significantly less movement."
+      "Add Ability Score",
+      "Options: STR, DEX"
     ]
   },
   "charger": {
+    "feat": "Charger",
+    "feature": "Charger",
     "name": "Charger",
-    "description": "Charge forward and slam your weapon into the first enemy in your way without provoking Opportunity Attacks .",
-    "benefits": [
-      "Charge forward and slam your weapon into the first enemy in your way without provoking Opportunity Attacks ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "crossbow_expert": {
+    "feat": "Crossbow Expert",
+    "feature": "Crossbow Expert: Point-Blank, Crossbow Expert: Wounding",
     "name": "Crossbow Expert",
-    "description": "When you make crossbow attacks within melee range, the attack rolls do not have Disadvantage .",
-    "benefits": [
-      "When you make crossbow attacks within melee range, the attack rolls do not have Disadvantage ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "defensive_duellist": {
+    "feat": "Defensive Duellist",
+    "feature": "Defensive Duellist",
     "name": "Defensive Duellist",
-    "description": "When you are attacked with a melee attack while wielding a Finesse weapon you are proficient in, you can use a Reaction to increase your Armour Class by your proficiency bonus, possibly causing the attack to miss. Requires Dexterity to be at least 13.",
-    "benefits": [
-      "When you are attacked with a melee attack while wielding a Finesse weapon you are proficient in, you can use a Reaction to increase your Armour Class by your proficiency bonus, possibly causing the attack to miss. Requires Dexterity to be at least 13."
-    ]
+    "description": "",
+    "benefits": []
   },
   "dual_wielder": {
+    "feat": "Dual Wielder",
+    "feature": "Dual Wielder, Dual Wielder: Bonus Armour Class",
     "name": "Dual Wielder",
-    "description": "You can use Two-Weapon Fighting even if your weapons aren't Light .",
-    "benefits": [
-      "You can use Two-Weapon Fighting even if your weapons aren't Light ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "dungeon_delver": {
+    "feat": "Dungeon Delver",
+    "feature": "Dungeon Delver: Perception, Dungeon Delver: Resist Traps",
     "name": "Dungeon Delver",
-    "description": "You gain Advantage on Perception checks made to detect hidden objects and on Saving throws made to avoid or resist traps.",
-    "benefits": [
-      "You gain Advantage on Perception checks made to detect hidden objects and on Saving throws made to avoid or resist traps."
-    ]
+    "description": "",
+    "benefits": []
   },
   "durable": {
+    "feat": "Durable",
+    "feature": "Durable",
     "name": "Durable",
-    "description": "Your Constitution ability score increases by 1, to a maximum of 20.",
-    "benefits": [
-      "Your Constitution ability score increases by 1, to a maximum of 20."
-    ]
+    "description": "",
+    "benefits": []
   },
   "elemental_adept": {
+    "feat": "Elemental Adept",
+    "type": "Feature",
+    "text": "Choose Damage Resistance",
+    "list": "Elemental Adept: Acid, Elemental Adept: Cold, Elemental Adept: Lightning, Elemental Adept: Fire, Elemental Adept: Thunder",
     "name": "Elemental Adept",
-    "description": "Your spells and attacks ignore resistance to a damage type of your choice. In addition, when you deal that type of damage with a spell , you cannot roll a 1.\nDamage resistance options are one of the following: Elemental Adept: Acid\nElemental Adept: Cold\nElemental Adept: Lightning\nElemental Adept: Fire",
+    "description": "Choose Damage Resistance\nOptions: Elemental Adept: Acid, Elemental Adept: Cold, Elemental Adept: Lightning, Elemental Adept: Fire, Elemental Adept: Thunder",
     "benefits": [
-      "Your spells and attacks ignore resistance to a damage type of your choice. In addition, when you deal that type of damage with a spell , you cannot roll a 1.",
-      "Damage resistance options are one of the following: Elemental Adept: Acid",
-      "Elemental Adept: Cold",
-      "Elemental Adept: Lightning",
-      "Elemental Adept: Fire"
+      "Choose Damage Resistance",
+      "Options: Elemental Adept: Acid, Elemental Adept: Cold, Elemental Adept: Lightning, Elemental Adept: Fire, Elemental Adept: Thunder"
     ]
   },
   "great_weapon_master": {
+    "feat": "Great Weapon Master",
+    "feature": "Great Weapon Master: Bonus Attack, Great Weapon Master: All In",
     "name": "Great Weapon Master",
-    "description": "When an attack with a melee weapon lands a Critical Hit or kills a creature, you can make another melee weapon attack as a Bonus Action that turn.",
-    "benefits": [
-      "When an attack with a melee weapon lands a Critical Hit or kills a creature, you can make another melee weapon attack as a Bonus Action that turn."
-    ]
+    "description": "",
+    "benefits": []
   },
   "heavily_armoured": {
+    "feat": "Heavily Armoured",
+    "feature": "Heavily Armoured",
+    "armour_prof_requirements": "Medium",
     "name": "Heavily Armoured",
-    "description": "Your Strength ability score increases by 1, to a maximum of 20.",
-    "benefits": [
-      "Your Strength ability score increases by 1, to a maximum of 20."
-    ]
+    "description": "",
+    "benefits": []
   },
   "heavy_armour_master": {
+    "feat": "Heavy Armour Master",
+    "feature": "Heavy Armour Master",
+    "armour_prof_requirements": "Heavy",
     "name": "Heavy Armour Master",
-    "description": "Your Strength ability score increases by 1, to a maximum of 20.",
-    "benefits": [
-      "Your Strength ability score increases by 1, to a maximum of 20."
-    ]
+    "description": "",
+    "benefits": []
   },
   "lightly_armoured": {
+    "feat": "Lightly Armoured",
+    "feature": "Lightly Armoured",
+    "type": "Ability",
+    "text": "Add Ability Score",
+    "list": "STR, DEX",
     "name": "Lightly Armoured",
-    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
+    "description": "Add Ability Score\nOptions: STR, DEX",
     "benefits": [
-      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20."
+      "Add Ability Score",
+      "Options: STR, DEX"
     ]
   },
   "lucky": {
+    "feat": "Lucky",
+    "feature": "Lucky",
+    "resource_type": "Luck Point",
+    "resource": "3",
     "name": "Lucky",
-    "description": "You gain 3 Luck Points that recharge after a Long Rest , which you can use to gain Advantage on Attack rolls , Ability checks , or Saving throws , or to make an enemy reroll their Attack roll .",
-    "benefits": [
-      "You gain 3 Luck Points that recharge after a Long Rest , which you can use to gain Advantage on Attack rolls , Ability checks , or Saving throws , or to make an enemy reroll their Attack roll ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "mage_slayer": {
+    "feat": "Mage Slayer",
+    "feature": "Mage Slayer: Attack Caster, Mage Slayer: Break Concentration, Mage Slayer: Saving Throw Advantage",
     "name": "Mage Slayer",
-    "description": "When a creature casts a Spell within melee range of you, you have Advantage on any Saving throws against it.",
-    "benefits": [
-      "When a creature casts a Spell within melee range of you, you have Advantage on any Saving throws against it."
-    ]
+    "description": "",
+    "benefits": []
   },
   "magic_initiate_bard": {
+    "feat": "Magic Initiate: Bard",
+    "feature": "Magic Initiate: Bard",
+    "type": "Cantrip",
+    "text": "Choose Cantrips",
+    "list": "Blade Ward, Mage Hand, True Strike, Friends, Dancing Lights, Light, Minor Illusion, Vicious Mockery",
+    "type_2": "Spell",
+    "text_2": "Choose Spell",
+    "list_2": "Animal Friendship, Bane, Charm Person, Cure Wounds, Disguise Self, Dissonant Whispers, Faerie Fire, Feather Fall, Healing Word, Heroism, Longstrider, Sleep, Speak with Animals, Tasha's Hideous Laughter, Thunderwave",
     "name": "Magic Initiate: Bard",
-    "description": "Learn 2 Cantrips and a 1st-level Spell from the Bard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma .",
+    "description": "Choose Cantrips\nChoose Spell\nOptions: Blade Ward, Mage Hand, True Strike, Friends, Dancing Lights, Light, Minor Illusion, Vicious Mockery\nOptions: Animal Friendship, Bane, Charm Person, Cure Wounds, Disguise Self, Dissonant Whispers, Faerie Fire, Feather Fall, Healing Word, Heroism, Longstrider, Sleep, Speak with Animals, Tasha's Hideous Laughter, Thunderwave",
     "benefits": [
-      "Learn 2 Cantrips and a 1st-level Spell from the Bard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma ."
+      "Choose Cantrips",
+      "Choose Spell",
+      "Options: Blade Ward, Mage Hand, True Strike, Friends, Dancing Lights, Light, Minor Illusion, Vicious Mockery",
+      "Options: Animal Friendship, Bane, Charm Person, Cure Wounds, Disguise Self, Dissonant Whispers, Faerie Fire, Feather Fall, Healing Word, Heroism, Longstrider, Sleep, Speak with Animals, Tasha's Hideous Laughter, Thunderwave"
     ]
   },
   "magic_initiate_cleric": {
+    "feat": "Magic Initiate: Cleric",
+    "feature": "Magic Initiate: Cleric",
+    "type": "Cantrip",
+    "text": "Choose Cantrips",
+    "list": "Blade Ward, Bursting Sinew, Guidance, Light, Produce Flame, Resistance, Sacred Flame, Thaumaturgy, Toll the Dead",
+    "type_2": "Spell",
+    "text_2": "Choose Spell",
+    "list_2": "Bane, Bless, Command, Create or Destroy Water, Cure Wounds, Guiding Bolt, Healing Word, Inflict Wounds, Protection from Evil and Good, Sanctuary, Shield of Faith",
     "name": "Magic Initiate: Cleric",
-    "description": "Learn 2 Cantrips and a 1st-level Spell from the Cleric spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom .",
+    "description": "Choose Cantrips\nChoose Spell\nOptions: Blade Ward, Bursting Sinew, Guidance, Light, Produce Flame, Resistance, Sacred Flame, Thaumaturgy, Toll the Dead\nOptions: Bane, Bless, Command, Create or Destroy Water, Cure Wounds, Guiding Bolt, Healing Word, Inflict Wounds, Protection from Evil and Good, Sanctuary, Shield of Faith",
     "benefits": [
-      "Learn 2 Cantrips and a 1st-level Spell from the Cleric spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom ."
+      "Choose Cantrips",
+      "Choose Spell",
+      "Options: Blade Ward, Bursting Sinew, Guidance, Light, Produce Flame, Resistance, Sacred Flame, Thaumaturgy, Toll the Dead",
+      "Options: Bane, Bless, Command, Create or Destroy Water, Cure Wounds, Guiding Bolt, Healing Word, Inflict Wounds, Protection from Evil and Good, Sanctuary, Shield of Faith"
     ]
   },
   "magic_initiate_druid": {
+    "feat": "Magic Initiate: Druid",
+    "feature": "Magic Initiate: Druid",
+    "type": "Cantrip",
+    "text": "Choose Cantrips",
+    "list": "Guidance, Poison Spray, Produce Flame, Resistance, Shillelagh, Thorn Whip",
+    "type_2": "Spell",
+    "text_2": "Choose Spell",
+    "list_2": "Animal Friendship, Charm Person, Create or Destroy Water, Cure Wounds, Enhance Leap, Entangle, Faerie Fire, Fog Cloud, Goodberry, Healing Word, Ice Knife, Longstrider, Speak with Animals, Thunderwave",
     "name": "Magic Initiate: Druid",
-    "description": "Learn 2 Cantrips and a 1st-level Spell from the Druid spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom .",
+    "description": "Choose Cantrips\nChoose Spell\nOptions: Guidance, Poison Spray, Produce Flame, Resistance, Shillelagh, Thorn Whip\nOptions: Animal Friendship, Charm Person, Create or Destroy Water, Cure Wounds, Enhance Leap, Entangle, Faerie Fire, Fog Cloud, Goodberry, Healing Word, Ice Knife, Longstrider, Speak with Animals, Thunderwave",
     "benefits": [
-      "Learn 2 Cantrips and a 1st-level Spell from the Druid spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Wisdom ."
+      "Choose Cantrips",
+      "Choose Spell",
+      "Options: Guidance, Poison Spray, Produce Flame, Resistance, Shillelagh, Thorn Whip",
+      "Options: Animal Friendship, Charm Person, Create or Destroy Water, Cure Wounds, Enhance Leap, Entangle, Faerie Fire, Fog Cloud, Goodberry, Healing Word, Ice Knife, Longstrider, Speak with Animals, Thunderwave"
     ]
   },
   "magic_initiate_sorcerer": {
+    "feat": "Magic Initiate: Sorcerer",
+    "feature": "Magic Initiate: Sorcerer",
+    "type": "Cantrip",
+    "text": "Choose Cantrips",
+    "list": "Acid Splash, Blade Ward, Bone Chill, Booming Blade, Bursting Sinew, Dancing Lights, Fire Bolt, Friends, Light, Mage Hand, Minor Illusion, Poison Spray, Ray of Frost, Shocking Grasp, True Strike",
+    "type_2": "Spell",
+    "text_2": "Choose Spells",
+    "list_2": "Burning Hands, Charm Person, Chromatic Orb, Colour Spray, Disguise Self, Enhance Leap, Expeditious Retreat, False Life, Feather Fall, Fog Cloud, Ice Knife, Mage Armour, Magic Missile, Ray of Sickness, Shield, Sleep, Thunderwave, Witch Bolt",
     "name": "Magic Initiate: Sorcerer",
-    "description": "Learn 2 Cantrips and a 1st-level Spell from the Sorcerer spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma .",
+    "description": "Choose Cantrips\nChoose Spells\nOptions: Acid Splash, Blade Ward, Bone Chill, Booming Blade, Bursting Sinew, Dancing Lights, Fire Bolt, Friends, Light, Mage Hand, Minor Illusion, Poison Spray, Ray of Frost, Shocking Grasp, True Strike\nOptions: Burning Hands, Charm Person, Chromatic Orb, Colour Spray, Disguise Self, Enhance Leap, Expeditious Retreat, False Life, Feather Fall, Fog Cloud, Ice Knife, Mage Armour, Magic Missile, Ray of Sickness, Shield, Sleep, Thunderwave, Witch Bolt",
     "benefits": [
-      "Learn 2 Cantrips and a 1st-level Spell from the Sorcerer spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma ."
+      "Choose Cantrips",
+      "Choose Spells",
+      "Options: Acid Splash, Blade Ward, Bone Chill, Booming Blade, Bursting Sinew, Dancing Lights, Fire Bolt, Friends, Light, Mage Hand, Minor Illusion, Poison Spray, Ray of Frost, Shocking Grasp, True Strike",
+      "Options: Burning Hands, Charm Person, Chromatic Orb, Colour Spray, Disguise Self, Enhance Leap, Expeditious Retreat, False Life, Feather Fall, Fog Cloud, Ice Knife, Mage Armour, Magic Missile, Ray of Sickness, Shield, Sleep, Thunderwave, Witch Bolt"
     ]
   },
   "magic_initiate_warlock": {
+    "feat": "Magic Initiate: Warlock",
+    "feature": "Magic Initiate: Warlock",
+    "type": "Cantrip",
+    "text": "Choose Cantrips",
+    "list": "Blade Ward, Bone Chill, Booming Blade, Eldritch Blast, Friends, Mage Hand, Minor Illusion, Poison Spray, Toll the Dead, True Strike",
+    "type_2": "Spell",
+    "text_2": "Choose Spells",
+    "list_2": "Armour of Agathys, Arms of Hadar, Charm Person, Expeditious Retreat, Hellish Rebuke, Hex, Protection from Evil and Good, Witch Bolt",
     "name": "Magic Initiate: Warlock",
-    "description": "Learn 2 Cantrips and a 1st-level Spell from the Warlock spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma .",
+    "description": "Choose Cantrips\nChoose Spells\nOptions: Blade Ward, Bone Chill, Booming Blade, Eldritch Blast, Friends, Mage Hand, Minor Illusion, Poison Spray, Toll the Dead, True Strike\nOptions: Armour of Agathys, Arms of Hadar, Charm Person, Expeditious Retreat, Hellish Rebuke, Hex, Protection from Evil and Good, Witch Bolt",
     "benefits": [
-      "Learn 2 Cantrips and a 1st-level Spell from the Warlock spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Charisma ."
+      "Choose Cantrips",
+      "Choose Spells",
+      "Options: Blade Ward, Bone Chill, Booming Blade, Eldritch Blast, Friends, Mage Hand, Minor Illusion, Poison Spray, Toll the Dead, True Strike",
+      "Options: Armour of Agathys, Arms of Hadar, Charm Person, Expeditious Retreat, Hellish Rebuke, Hex, Protection from Evil and Good, Witch Bolt"
     ]
   },
   "magic_initiate_wizard": {
+    "feat": "Magic Initiate: Wizard",
+    "feature": "Magic Initiate: Wizard",
+    "type": "Cantrip",
+    "text": "Choose Cantrips",
+    "list": "Acid Splash, Blade Ward, Bone Chill, Booming Blade, Bursting Sinew, Dancing Lights, Fire Bolt, Friends, Light, Mage Hand, Minor Illusion, Poison Spray, Ray of Frost, Shocking Grasp, Toll the Dead, True Strike",
+    "type_2": "Spell",
+    "text_2": "Choose Spells",
+    "list_2": "Burning Hands, Charm Person, Chromatic Orb, Colour Spray, Disguise Self, Enhance Leap, Expeditious Retreat, False Life, Feather Fall, Find Familiar, Fog Cloud, Grease, Ice Knife, Longstrider, Mage Armour, Magic Missile, Protection from Evil and Good, Ray of Sickness, Shield, Sleep, Tasha's Hideous Laughter, Thunderwave, Witch Bolt",
     "name": "Magic Initiate: Wizard",
-    "description": "Learn 2 Cantrips and a 1st-level Spell from the Wizard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Intelligence .",
+    "description": "Choose Cantrips\nChoose Spells\nOptions: Acid Splash, Blade Ward, Bone Chill, Booming Blade, Bursting Sinew, Dancing Lights, Fire Bolt, Friends, Light, Mage Hand, Minor Illusion, Poison Spray, Ray of Frost, Shocking Grasp, Toll the Dead, True Strike\nOptions: Burning Hands, Charm Person, Chromatic Orb, Colour Spray, Disguise Self, Enhance Leap, Expeditious Retreat, False Life, Feather Fall, Find Familiar, Fog Cloud, Grease, Ice Knife, Longstrider, Mage Armour, Magic Missile, Protection from Evil and Good, Ray of Sickness, Shield, Sleep, Tasha's Hideous Laughter, Thunderwave, Witch Bolt",
     "benefits": [
-      "Learn 2 Cantrips and a 1st-level Spell from the Wizard spell list . You can cast the 1st-level Spell once per Long Rest . Your Spellcasting Ability for all three spells is Intelligence ."
+      "Choose Cantrips",
+      "Choose Spells",
+      "Options: Acid Splash, Blade Ward, Bone Chill, Booming Blade, Bursting Sinew, Dancing Lights, Fire Bolt, Friends, Light, Mage Hand, Minor Illusion, Poison Spray, Ray of Frost, Shocking Grasp, Toll the Dead, True Strike",
+      "Options: Burning Hands, Charm Person, Chromatic Orb, Colour Spray, Disguise Self, Enhance Leap, Expeditious Retreat, False Life, Feather Fall, Find Familiar, Fog Cloud, Grease, Ice Knife, Longstrider, Mage Armour, Magic Missile, Protection from Evil and Good, Ray of Sickness, Shield, Sleep, Tasha's Hideous Laughter, Thunderwave, Witch Bolt"
     ]
   },
   "martial_adept": {
+    "feat": "Martial Adept",
+    "feature": "Martial Adept",
+    "type": "Manoeuvres",
+    "text": "Choose Battle Manoeuvres",
+    "list": "Commander's Strike, Disarming Attack, Distracting Strike, Evasive Footwork, Feinting Attack, Goading Attack, Manoeuvring Attack, Menacing Attack, Precision Attack, Pushing Attack, Rally, Riposte, Sweeping Attack, Trip Attack",
+    "resource_type": "Superiority Dice",
+    "resource": "1",
     "name": "Martial Adept",
-    "description": "Learn two Manoeuvres from the Battle Master archetype and receive 1 (additional) Superiority Die to fuel them. You regain expended Superiority Dice after a Short or Long Rest .",
+    "description": "Choose Battle Manoeuvres\nOptions: Commander's Strike, Disarming Attack, Distracting Strike, Evasive Footwork, Feinting Attack, Goading Attack, Manoeuvring Attack, Menacing Attack, Precision Attack, Pushing Attack, Rally, Riposte, Sweeping Attack, Trip Attack",
     "benefits": [
-      "Learn two Manoeuvres from the Battle Master archetype and receive 1 (additional) Superiority Die to fuel them. You regain expended Superiority Dice after a Short or Long Rest ."
+      "Choose Battle Manoeuvres",
+      "Options: Commander's Strike, Disarming Attack, Distracting Strike, Evasive Footwork, Feinting Attack, Goading Attack, Manoeuvring Attack, Menacing Attack, Precision Attack, Pushing Attack, Rally, Riposte, Sweeping Attack, Trip Attack"
     ]
   },
   "medium_armour_master": {
+    "feat": "Medium Armour Master",
+    "feature": "Medium Armour Master",
+    "armour_prof_requirements": "Medium",
     "name": "Medium Armour Master",
-    "description": "When you wear medium armour, it doesn't impose Disadvantage on Stealth checks. The bonus to Armour Class you can gain from your Dexterity modifier also becomes +3 instead of +2.",
-    "benefits": [
-      "When you wear medium armour, it doesn't impose Disadvantage on Stealth checks. The bonus to Armour Class you can gain from your Dexterity modifier also becomes +3 instead of +2."
-    ]
+    "description": "",
+    "benefits": []
   },
   "mobile": {
+    "feat": "Mobile",
+    "feature": "Mobile, Mobile: Evade Difficult Terrain, Mobile: Evade Opportunity Attack",
     "name": "Mobile",
-    "description": "Your Movement Speed increases by ⁠3 m / 10 ft.",
-    "benefits": [
-      "Your Movement Speed increases by ⁠3 m / 10 ft."
-    ]
+    "description": "",
+    "benefits": []
   },
   "moderately_armoured": {
+    "feat": "Moderately Armoured",
+    "feature": "Moderately Armoured",
+    "type": "Ability",
+    "text": "Add Ability Score",
+    "list": "STR, DEX",
+    "armour_prof_requirements": "Light",
     "name": "Moderately Armoured",
-    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
+    "description": "Add Ability Score\nOptions: STR, DEX",
     "benefits": [
-      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20."
+      "Add Ability Score",
+      "Options: STR, DEX"
     ]
   },
   "performer": {
+    "feat": "Performer",
+    "feature": "Performer",
     "name": "Performer",
-    "description": "Your Charisma ability score increases by 1, to a maximum of 20.",
-    "benefits": [
-      "Your Charisma ability score increases by 1, to a maximum of 20."
-    ]
+    "description": "",
+    "benefits": []
   },
   "polearm_master": {
+    "feat": "Polearm Master",
+    "feature": "Polearm Master: Bonus Attack, Polearm Master: Opportunity Attack",
     "name": "Polearm Master",
-    "description": "When attacking with a Glaive , Halberd , Pike , Quarterstaff , or Spear , you can use a Bonus Action to attack with the butt of your weapon.",
-    "benefits": [
-      "When attacking with a Glaive , Halberd , Pike , Quarterstaff , or Spear , you can use a Bonus Action to attack with the butt of your weapon."
-    ]
+    "description": "",
+    "benefits": []
   },
   "resilient": {
+    "feat": "Resilient",
+    "type": "Feature",
+    "text": "Choose Resilient Type",
+    "list": "Resilient: Strength, Resilient: Dexterity, Resilient: Constitution, Resilient: Intelligence, Resilient: Charisma, Resilient: Wisdom",
     "name": "Resilient",
-    "description": "You increase an Ability by 1, to a maximum of 20.\nGain Proficiency in that ability's Saving throws .\nThe available passive features are: Resilient: Strength\nResilient: Dexterity\nResilient: Constitution\nResilient: Intelligence\nResilient: Wisdom",
+    "description": "Choose Resilient Type\nOptions: Resilient: Strength, Resilient: Dexterity, Resilient: Constitution, Resilient: Intelligence, Resilient: Charisma, Resilient: Wisdom",
     "benefits": [
-      "You increase an Ability by 1, to a maximum of 20.",
-      "Gain Proficiency in that ability's Saving throws .",
-      "The available passive features are: Resilient: Strength",
-      "Resilient: Dexterity",
-      "Resilient: Constitution",
-      "Resilient: Intelligence",
-      "Resilient: Wisdom"
+      "Choose Resilient Type",
+      "Options: Resilient: Strength, Resilient: Dexterity, Resilient: Constitution, Resilient: Intelligence, Resilient: Charisma, Resilient: Wisdom"
     ]
   },
   "ritual_caster": {
+    "feat": "Ritual Caster",
+    "feature": "Ritual Caster: Free Spells",
+    "type": "Spell",
+    "text": "Choose Spells",
+    "list": "Disguise Self, Enhance Leap, Find Familiar, Longstrider, Speak with Animals, Speak with Dead",
     "name": "Ritual Caster",
-    "description": "You learn two Ritual spells of your choice.",
+    "description": "Choose Spells\nOptions: Disguise Self, Enhance Leap, Find Familiar, Longstrider, Speak with Animals, Speak with Dead",
     "benefits": [
-      "You learn two Ritual spells of your choice."
+      "Choose Spells",
+      "Options: Disguise Self, Enhance Leap, Find Familiar, Longstrider, Speak with Animals, Speak with Dead"
     ]
   },
   "savage_attacker": {
+    "feat": "Savage Attacker",
+    "feature": "Savage Attacker",
     "name": "Savage Attacker",
-    "description": "When making melee weapon attacks, you roll your damage dice twice and use the highest result.",
-    "benefits": [
-      "When making melee weapon attacks, you roll your damage dice twice and use the highest result."
-    ]
+    "description": "",
+    "benefits": []
   },
   "sentinel": {
+    "feat": "Sentinel",
+    "feature": "Sentinel: Vengeance, Sentinel: Snare, Sentinel: Opportunity Advantage",
     "name": "Sentinel",
-    "description": "When an enemy in melee range attacks an ally, you can use a Reaction to make a weapon attack against that enemy. Target ally must not have the Sentinel feat.",
-    "benefits": [
-      "When an enemy in melee range attacks an ally, you can use a Reaction to make a weapon attack against that enemy. Target ally must not have the Sentinel feat."
-    ]
+    "description": "",
+    "benefits": []
   },
   "sharpshooter": {
+    "feat": "Sharpshooter",
+    "feature": "Sharpshooter: Low Ground, Sharpshooter: All In",
     "name": "Sharpshooter",
-    "description": "Your ranged weapon attacks are not penalized for High Ground Rules .",
-    "benefits": [
-      "Your ranged weapon attacks are not penalized for High Ground Rules ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "shield_master": {
+    "feat": "Shield Master",
+    "feature": "Shield Master, Shield Master: Block",
     "name": "Shield Master",
-    "description": "Gain a +2 bonus to Dexterity saving throw when wielding a Shield .",
-    "benefits": [
-      "Gain a +2 bonus to Dexterity saving throw when wielding a Shield ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "skilled": {
+    "feat": "Skilled",
+    "feature": "Skilled",
+    "type": "Skill Proficiency",
+    "text": "Gain Proficiency in Skills",
+    "list": "Arcana, Nature, Athletics, Acrobatics, Sleight of Hand, Stealth, History, Investigation, Religion, Animal Handling, Insight, Medicine, Perception, Survival, Deception, Intimidation, Performance, Persuasion",
     "name": "Skilled",
-    "description": "You gain Proficiency in 3 Skills of your choice.",
+    "description": "Gain Proficiency in Skills\nOptions: Arcana, Nature, Athletics, Acrobatics, Sleight of Hand, Stealth, History, Investigation, Religion, Animal Handling, Insight, Medicine, Perception, Survival, Deception, Intimidation, Performance, Persuasion",
     "benefits": [
-      "You gain Proficiency in 3 Skills of your choice."
+      "Gain Proficiency in Skills",
+      "Options: Arcana, Nature, Athletics, Acrobatics, Sleight of Hand, Stealth, History, Investigation, Religion, Animal Handling, Insight, Medicine, Perception, Survival, Deception, Intimidation, Performance, Persuasion"
     ]
   },
   "spell_sniper": {
+    "feat": "Spell Sniper",
+    "feature": "Spell Sniper",
+    "type": "Cantrip",
+    "text": "Choose Cantrips",
+    "list": "Bone Chill, Eldritch Blast, Fire Bolt, Ray of Frost, Shocking Grasp, Thorn Whip",
     "name": "Spell Sniper",
-    "description": "You learn a cantrip, and the number you need to roll a Critical Hit while attacking with a Spell is reduced by 1. This effect can stack.",
+    "description": "Choose Cantrips\nOptions: Bone Chill, Eldritch Blast, Fire Bolt, Ray of Frost, Shocking Grasp, Thorn Whip",
     "benefits": [
-      "You learn a cantrip, and the number you need to roll a Critical Hit while attacking with a Spell is reduced by 1. This effect can stack."
+      "Choose Cantrips",
+      "Options: Bone Chill, Eldritch Blast, Fire Bolt, Ray of Frost, Shocking Grasp, Thorn Whip"
     ]
   },
   "tavern_brawler": {
+    "feat": "Tavern Brawler",
+    "feature": "Tavern Brawler",
+    "type": "Ability",
+    "text": "Add Ability Score",
+    "list": "STR, CON",
     "name": "Tavern Brawler",
-    "description": "Your Strength or Constitution ability score increases by 1, to a maximum of 20.",
+    "description": "Add Ability Score\nOptions: STR, CON",
     "benefits": [
-      "Your Strength or Constitution ability score increases by 1, to a maximum of 20."
+      "Add Ability Score",
+      "Options: STR, CON"
     ]
   },
   "tough": {
+    "feat": "Tough",
+    "feature": "Tough",
     "name": "Tough",
-    "description": "Hit Point maximum increased by 2 for each level.",
-    "benefits": [
-      "Hit Point maximum increased by 2 for each level."
-    ]
+    "description": "",
+    "benefits": []
   },
   "war_caster": {
+    "feat": "War Caster",
+    "feature": "War Caster: Opportunity Spell, War Caster: Concentration",
     "name": "War Caster",
-    "description": "You gain Advantage on Saving throws to maintain Concentration on a Spell .",
-    "benefits": [
-      "You gain Advantage on Saving throws to maintain Concentration on a Spell ."
-    ]
+    "description": "",
+    "benefits": []
   },
   "weapon_master": {
+    "feat": "Weapon Master",
+    "feature": "Weapon Master",
+    "type": "Ability",
+    "text": "Add Ability Score",
+    "list": "STR, DEX",
+    "type_2": "Weapon Proficiency",
+    "text_2": "Choose Weapon Proficiences",
+    "list_2": "Clubs, Daggers, Handaxes, Javelins, Light Hammers, Maces, Sickles, Quarterstaves, Spears, Greatclubs, Flails, Morningstars, Rapiers, Scimitars, Shortswords, War Picks, Battleaxes, Longswords, Tridents, Warhammers, Glaives, Greataxes, Greatswords, Halberds, Mauls, Pikes, Light Crossbows, Shortbows, Hand Crossbows, Heavy Crossbows, Longbows",
     "name": "Weapon Master",
-    "description": "Your Strength or Dexterity ability score increases by 1, to a maximum of 20.",
+    "description": "Add Ability Score\nChoose Weapon Proficiences\nOptions: STR, DEX\nOptions: Clubs, Daggers, Handaxes, Javelins, Light Hammers, Maces, Sickles, Quarterstaves, Spears, Greatclubs, Flails, Morningstars, Rapiers, Scimitars, Shortswords, War Picks, Battleaxes, Longswords, Tridents, Warhammers, Glaives, Greataxes, Greatswords, Halberds, Mauls, Pikes, Light Crossbows, Shortbows, Hand Crossbows, Heavy Crossbows, Longbows",
     "benefits": [
-      "Your Strength or Dexterity ability score increases by 1, to a maximum of 20."
+      "Add Ability Score",
+      "Choose Weapon Proficiences",
+      "Options: STR, DEX",
+      "Options: Clubs, Daggers, Handaxes, Javelins, Light Hammers, Maces, Sickles, Quarterstaves, Spears, Greatclubs, Flails, Morningstars, Rapiers, Scimitars, Shortswords, War Picks, Battleaxes, Longswords, Tridents, Warhammers, Glaives, Greataxes, Greatswords, Halberds, Mauls, Pikes, Light Crossbows, Shortbows, Hand Crossbows, Heavy Crossbows, Longbows"
     ]
   }
 }

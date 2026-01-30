@@ -1,0 +1,337 @@
+{
+  "potion_of_healing": {
+    "potion": "Potion of Healing",
+    "throwable": "TRUE",
+    "heal_amount": "2d4+2⁠⁠",
+    "crafting": "3  Rogue's Morsel + any Suspension",
+    "image": "/images/bg3/potions_potion_of_healing.png",
+    "name": "Potion of Healing"
+  },
+  "potion_of_greater_healing": {
+    "potion": "Potion of Greater Healing",
+    "throwable": "TRUE",
+    "heal_amount": "4d4+4⁠⁠",
+    "crafting": "3  Balsam + any Salt",
+    "image": "/images/bg3/potions_potion_of_greater_healing.png",
+    "name": "Potion of Greater Healing"
+  },
+  "potion_of_superior_healing": {
+    "potion": "Potion of Superior Healing",
+    "throwable": "TRUE",
+    "heal_amount": "8d4+8⁠⁠",
+    "crafting": "3  Yellow Musk Creeper Petals + any Suspension.",
+    "image": "/images/bg3/potions_potion_of_superior_healing.png",
+    "name": "Potion of Superior Healing"
+  },
+  "potion_of_supreme_healing": {
+    "potion": "Potion of Supreme Healing",
+    "throwable": "TRUE",
+    "heal_amount": "10d4+20⁠⁠",
+    "crafting": "3  Ki-Rin Hair + any Ash",
+    "image": "/images/bg3/potions_potion_of_supreme_healing.png",
+    "name": "Potion of Supreme Healing"
+  },
+  "antidote": {
+    "potion": "Antidote",
+    "throwable": "TRUE",
+    "crafting": "3  Mugwort + any Suspension",
+    "effect": "Removes all poisons",
+    "image": "/images/bg3/potions_antidote.png",
+    "name": "Antidote"
+  },
+  "basilisk_oil": {
+    "potion": "Basilisk Oil",
+    "throwable": "TRUE",
+    "effect": "Removes all petrifications",
+    "image": "/images/bg3/potions_basilisk_oil.png",
+    "name": "Basilisk Oil"
+  },
+  "potion_of_angelic_reprieve": {
+    "potion": "Potion of Angelic Reprieve",
+    "throwable": "FALSE",
+    "duration": "2 Turns",
+    "crafting": "3  Unicorn Horn + any Salt",
+    "effect": "Potion of Angelic Relief",
+    "image": "/images/bg3/potions_potion_of_angelic_reprieve.png",
+    "name": "Potion of Angelic Reprieve"
+  },
+  "potion_of_angelic_slumber": {
+    "potion": "Potion of Angelic Slumber",
+    "throwable": "FALSE",
+    "duration": "2 Turns",
+    "crafting": "3  Planetar Feather + any Suspension",
+    "effect": "Potion of Angelic Slumber",
+    "image": "/images/bg3/potions_potion_of_angelic_slumber.png",
+    "name": "Potion of Angelic Slumber"
+  },
+  "potion_of_animal_speaking": {
+    "potion": "Potion of Animal Speaking",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "crafting": "3  Acorn Truffle + any Salt",
+    "conditions": "Speak with Animals",
+    "image": "/images/bg3/potions_potion_of_animal_speaking.png",
+    "name": "Potion of Animal Speaking"
+  },
+  "potion_of_feather_fall": {
+    "potion": "Potion of Feather Fall",
+    "throwable": "TRUE",
+    "duration": "10 Turns",
+    "crafting": "3  Autumncrocus + any Essence",
+    "conditions": "Feather Fall",
+    "image": "/images/bg3/potions_potion_of_feather_fall.png",
+    "name": "Potion of Feather Fall"
+  },
+  "potion_of_flying": {
+    "potion": "Potion of Flying",
+    "throwable": "TRUE",
+    "duration": "10 Turns",
+    "crafting": "3  Eagle Feather + any Essence",
+    "conditions": "Flight",
+    "image": "/images/bg3/potions_potion_of_flying.png",
+    "name": "Potion of Flying"
+  },
+  "potion_of_gaseous_form": {
+    "potion": "Potion of Gaseous Form",
+    "throwable": "FALSE",
+    "duration": "10 Turns",
+    "conditions": "Gaseous Form",
+    "image": "/images/bg3/potions_potion_of_gaseous_form.png",
+    "name": "Potion of Gaseous Form"
+  },
+  "potion_of_glorious_vaulting": {
+    "potion": "Potion of Glorious Vaulting",
+    "throwable": "TRUE",
+    "duration": "10 Turns",
+    "crafting": "3  Wispweed + any Ashes",
+    "effect": "Potion of Glorious Vaulting",
+    "image": "/images/bg3/potions_potion_of_glorious_vaulting.png",
+    "name": "Potion of Glorious Vaulting"
+  },
+  "potion_of_invisibility": {
+    "potion": "Potion of Invisibility",
+    "throwable": "TRUE",
+    "duration": "10 Turns",
+    "crafting": "3  Imp Patagium + any Essence",
+    "conditions": "Invisible",
+    "image": "/images/bg3/potions_potion_of_invisibility.png",
+    "name": "Potion of Invisibility"
+  },
+  "potion_of_mind_reading": {
+    "potion": "Potion of Mind Reading",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "crafting": "3  Mergrass + any Sublimate",
+    "conditions": "Detect Thoughts",
+    "image": "/images/bg3/potions_potion_of_mind_reading.png",
+    "name": "Potion of Mind Reading"
+  },
+  "potion_of_sleep": {
+    "potion": "Potion of Sleep",
+    "throwable": "TRUE",
+    "duration": "3 Turns",
+    "conditions": "Sleeping",
+    "image": "/images/bg3/potions_potion_of_sleep.png",
+    "name": "Potion of Sleep"
+  },
+  "potion_of_speed": {
+    "potion": "Potion of Speed",
+    "throwable": "TRUE",
+    "duration": "3 Turns",
+    "crafting": "3  Hyena Ear + any Salt",
+    "conditions": "Hastened",
+    "image": "/images/bg3/potions_potion_of_speed.png",
+    "name": "Potion of Speed"
+  },
+  "remedial_potion": {
+    "potion": "Remedial Potion",
+    "throwable": "TRUE",
+    "crafting": "3  Xorn Scales + any Suspension",
+    "effect": "Removes blindness, disease, poisoned, paralyzation,  Colour Spray, and  Silenced",
+    "image": "/images/bg3/potions_remedial_potion.png",
+    "name": "Remedial Potion"
+  },
+  "a_mother_s_loathing": {
+    "potion": "A Mother's Loathing",
+    "condition": "Mother's Loathing",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "effect": "Gains  Bite",
+    "image": "/images/bg3/potions_a_mother_s_loathing.png",
+    "name": "A Mother's Loathing"
+  },
+  "boon_of_the_hag_1": {
+    "potion": "Boon of the Hag[1]",
+    "condition": "Auntie Ethel's Special Brew",
+    "throwable": "FALSE",
+    "duration": "10 Turns",
+    "effect": "Deals 2d6⁠⁠Poison at the start of every turn until a successful DC 13  Constitution saving throw.",
+    "name": "Boon of the Hag[1]"
+  },
+  "broken_promises": {
+    "potion": "Broken Promises",
+    "condition": "Broken Promises",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "effect": "Strength is increased by 2. Strength is decreased indefinitely by 1 after that Long Rest.",
+    "image": "/images/bg3/potions_broken_promises.png",
+    "name": "Broken Promises"
+  },
+  "butterflies_in_the_stomach": {
+    "potion": "Butterflies in the Stomach",
+    "condition": "Haemorrhaged",
+    "throwable": "FALSE",
+    "duration": "5 Turns",
+    "effect": "Takes 1d6⁠⁠Piercing damage at the end of each turn.",
+    "image": "/images/bg3/potions_butterflies_in_the_stomach.png",
+    "name": "Butterflies in the Stomach"
+  },
+  "faltering_will": {
+    "potion": "Faltering Will",
+    "condition": "Faltering Will",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "effect": "Disadvantage on Wisdom Saving Throws.",
+    "image": "/images/bg3/potions_faltering_will.png",
+    "name": "Faltering Will"
+  },
+  "heart_of_stone": {
+    "potion": "Heart of Stone",
+    "condition": "Heart of Stone",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "effect": "Gain Resistance to ⁠Poison.",
+    "image": "/images/bg3/potions_heart_of_stone.png",
+    "name": "Heart of Stone"
+  },
+  "insanity_s_kiss": {
+    "potion": "Insanity's Kiss",
+    "condition": "Insanity's Kiss",
+    "throwable": "FALSE",
+    "duration": "5 Turns",
+    "effect": "Hostile to all other creatures for the condition's duration.",
+    "image": "/images/bg3/potions_insanity_s_kiss.png",
+    "name": "Insanity's Kiss"
+  },
+  "lover_s_avarice": {
+    "potion": "Lover's Avarice",
+    "condition": "Lover's Avarice",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "effect": "Wisdom is indefinitely reduced by 1.",
+    "image": "/images/bg3/potions_lover_s_avarice.png",
+    "name": "Lover's Avarice"
+  },
+  "lost_time": {
+    "potion": "Lost Time",
+    "condition": "Lost Time",
+    "throwable": "FALSE",
+    "duration": "5 Turns",
+    "effect": "Armour Class is reduced by 2. Can't take Reactions.",
+    "image": "/images/bg3/potions_lost_time.png",
+    "name": "Lost Time"
+  },
+  "missing_pets": {
+    "potion": "Missing Pets",
+    "condition": "Missing Pets",
+    "throwable": "FALSE",
+    "duration": "3 Turns",
+    "effect": "Cannot move. Has  Disadvantage on Ability Checks and  Attack rolls.",
+    "image": "/images/bg3/potions_missing_pets.png",
+    "name": "Missing Pets"
+  },
+  "wilted_dreams": {
+    "potion": "Wilted Dreams",
+    "condition": "Wilted Dreams",
+    "throwable": "FALSE",
+    "duration": "Long Rest",
+    "effect": "Takes 3d6⁠⁠Psychic during its next Long Rest.",
+    "image": "/images/bg3/potions_wilted_dreams.png",
+    "name": "Wilted Dreams"
+  },
+  "dream_mist": {
+    "potion": "Dream Mist",
+    "condition": "Dream Mist Apparitions",
+    "throwable": "FALSE",
+    "duration": "3 Turns",
+    "conditions": "Incapacitated",
+    "image": "/images/bg3/potions_dream_mist.png",
+    "name": "Dream Mist"
+  },
+  "essence_of_ether": {
+    "potion": "Essence of Ether",
+    "condition": "Ether-Essence Slumber",
+    "throwable": "FALSE",
+    "duration": "2 Turns",
+    "conditions": "Sleeping",
+    "image": "/images/bg3/potions_essence_of_ether.png",
+    "name": "Essence of Ether"
+  },
+  "silkroot": {
+    "potion": "Silkroot",
+    "condition": "Silkroot Euphoria",
+    "throwable": "FALSE",
+    "duration": "3 Turns",
+    "conditions": "Drunk",
+    "image": "/images/bg3/potions_silkroot.png",
+    "name": "Silkroot"
+  },
+  "terazul": {
+    "potion": "Terazul",
+    "condition": "The Terazul Jitters",
+    "throwable": "FALSE",
+    "duration": "2 Turns",
+    "conditions": "Hastened",
+    "image": "/images/bg3/potions_terazul.png",
+    "name": "Terazul"
+  },
+  "duergar_antidote": {
+    "potion": "Duergar Antidote",
+    "condition": "Duergar Antidote",
+    "throwable": "FALSE",
+    "duration": "10 Turns",
+    "effect": "Grants ⁠Poison resistance and nullifies certain Duergar poisons.",
+    "image": "/images/bg3/potions_duergar_antidote.png",
+    "name": "Duergar Antidote"
+  },
+  "elixir_of_health": {
+    "potion": "Elixir of Health",
+    "throwable": "FALSE",
+    "effect": "Neutralize all poisons, blindness, petrification, and diseases.",
+    "image": "/images/bg3/potions_elixir_of_health.png",
+    "name": "Elixir of Health"
+  },
+  "elixir_of_silvanus": {
+    "potion": "Elixir of Silvanus",
+    "condition": "Curative Antidote",
+    "throwable": "FALSE",
+    "duration": "1 Turn",
+    "effect": "Neutralizes all poisons and grant  Advantage on Saving Throws against poisons.",
+    "image": "/images/bg3/potions_elixir_of_silvanus.png",
+    "name": "Elixir of Silvanus"
+  },
+  "mysterious_elixir": {
+    "potion": "Mysterious Elixir",
+    "condition": "Feigning Death",
+    "throwable": "FALSE",
+    "duration": "10 Turns",
+    "effect": "Goes into a protective coma. They become Resistant to all damage except ⁠Psychic. Disease and poison no longer have any effect.",
+    "image": "/images/bg3/potions_mysterious_elixir.png",
+    "name": "Mysterious Elixir"
+  },
+  "potion_of_everlasting_vigour": {
+    "potion": "Potion of Everlasting Vigour",
+    "throwable": "FALSE",
+    "duration": "Permanent",
+    "effect": "Increases your Strength by 2.",
+    "image": "/images/bg3/potions_potion_of_everlasting_vigour.png",
+    "name": "Potion of Everlasting Vigour"
+  },
+  "potion_of_vitality": {
+    "potion": "Potion of Vitality",
+    "throwable": "FALSE",
+    "effect": "Cures any  Poisoned or  Diseased",
+    "image": "/images/bg3/potions_potion_of_vitality.png",
+    "name": "Potion of Vitality"
+  }
+}

@@ -16,6 +16,16 @@ interface BuildSelectorModalProps {
   trackedLevel?: number;
 }
 
+const getSource = (build: BuildGuide) => {
+  if (build.sourceUrl) {
+    return { url: build.sourceUrl, label: build.sourceLabel || 'Build Source' };
+  }
+  if (build.videoUrl) {
+    return { url: build.videoUrl, label: 'Build Video' };
+  }
+  return null;
+};
+
 export function BuildSelectorModal({
   companion,
   builds,
@@ -64,6 +74,7 @@ export function BuildSelectorModal({
           <div className="build-selector-modal-grid">
             {builds.map((build) => {
               const isTracked = build.id === trackedBuildId;
+              const source = getSource(build);
               return (
               <button
                 key={build.id}
@@ -91,6 +102,17 @@ export function BuildSelectorModal({
                 </div>
                 {build.description && (
                   <div className="build-selector-modal-card-desc">{build.description}</div>
+                )}
+                {source && (
+                  <a
+                    className="build-source-link"
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) => event.stopPropagation()}
+                  >
+                    {source.label}
+                  </a>
                 )}
               </button>
               );

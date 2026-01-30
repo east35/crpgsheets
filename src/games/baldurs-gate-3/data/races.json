@@ -1,0 +1,95 @@
+{
+  "human": {
+    "subrace": "Human",
+    "race": "Human",
+    "weapon_proficiencies": "Spears, Pikes, Glaives, Halberds",
+    "armour_proficiencies": "Light, Shields",
+    "select_skill_proficiencies": "Perception, Athletics, Acrobatics, Sleight of Hand, Stealth, Arcana, History, Investigation, Nature, Religion, Animal Handling, Insight, Medicine, Survival, Deception, Intimidation, Performance, Persuasion",
+    "features": "Human Versatility, Opportunity Attack, Civil Militia",
+    "image": "/images/bg3/races_human.png",
+    "name": "Human"
+  },
+  "elf": {
+    "subrace": "Wood Elf",
+    "race": "Elf",
+    "weapon_proficiencies": "Shortswords, Longswords, Shortbows, Longbows",
+    "skill_proficiencies": "Perception, Stealth",
+    "features": "Fey Ancestry, Darkvision, Elven Weapon Training,Opportunity Attack",
+    "image": "/images/bg3/races_elf.png",
+    "name": "Elf"
+  },
+  "drow": {
+    "subrace": "Seldarine Drow",
+    "race": "Drow",
+    "weapon_proficiencies": "Rapiers, Shortswords, Hand Crossbows",
+    "skill_proficiencies": "Perception",
+    "features": "Fey Ancestry, Superior Darkvision, Drow Weapon Training,Opportunity Attack",
+    "image": "/images/bg3/races_drow.jpg",
+    "name": "Drow"
+  },
+  "half_elf": {
+    "subrace": "Drow Half-Elf",
+    "race": "Half-Elf",
+    "weapon_proficiencies": "Pikes, Spears, Halberds, Glaives",
+    "armour_proficiencies": "Light, Shields",
+    "features": "Fey Ancestry, Darkvision, Civil Militia,Opportunity Attack",
+    "image": "/images/bg3/races_half_elf.png",
+    "name": "Half-Elf"
+  },
+  "half_orc": {
+    "subrace": "Half-Orc",
+    "race": "Half-Orc",
+    "skill_proficiencies": "Intimidation",
+    "features": "Darkvision, Savage Attacks, Relentless Endurance,Opportunity Attack",
+    "image": "/images/bg3/races_half_orc.png",
+    "name": "Half-Orc"
+  },
+  "halfling": {
+    "subrace": "Strongheart Halfling",
+    "race": "Halfling",
+    "features": "Halfling Luck, Brave, Strongheart Resilience,Opportunity Attack",
+    "image": "/images/bg3/races_halfling.jpg",
+    "name": "Halfling"
+  },
+  "dwarf": {
+    "subrace": "Duergar",
+    "race": "Dwarf",
+    "weapon_proficiencies": "Battleaxes, Handaxes, Light Hammers, Warhammers",
+    "features": "Dwarven Resilience, Duergar Resilience, Superior Darkvision, Dwarven Combat Training, Sunlight Sensitivity,Opportunity Attack",
+    "image": "/images/bg3/races_dwarf.jpg",
+    "name": "Dwarf"
+  },
+  "gnome": {
+    "subrace": "Rock Gnome",
+    "race": "Gnome",
+    "skill_proficiencies": "History",
+    "features": "Artificer's Lore, Gnome Cunning, Darkvision,Opportunity Attack",
+    "image": "/images/bg3/races_gnome.png",
+    "name": "Gnome"
+  },
+  "tiefling": {
+    "subrace": "Zariel Tiefling",
+    "race": "Tiefling",
+    "features": "Hellish Resistance, Darkvision,Opportunity Attack",
+    "image": "/images/bg3/races_tiefling.png",
+    "name": "Tiefling"
+  },
+  "githyanki": {
+    "subrace": "Githyanki",
+    "race": "Githyanki",
+    "weapon_proficiencies": "Shortswords, Longswords, Greatswords",
+    "armour_proficiencies": "Light, Medium",
+    "features": "Martial Prodigy,Opportunity Attack",
+    "actions": "Astral Knowledge",
+    "image": "/images/bg3/races_githyanki.png",
+    "name": "Githyanki"
+  },
+  "dragonborn": {
+    "subrace": "White Dragonborn",
+    "race": "Dragonborn",
+    "features": "Draconic Ancestry (Cold),Opportunity Attack",
+    "actions": "Frost Breath",
+    "image": "/images/bg3/races_dragonborn.png",
+    "name": "Dragonborn"
+  }
+}

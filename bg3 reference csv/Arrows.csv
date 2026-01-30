@@ -1,0 +1,24 @@
+Arrow,,Rarity,DMG1,DMG1 Type,DMG2,DMG2 Type,DC,Negate ST,DMGx2 Creature Type,Condition,Condition DC,Condition ST,Area,Radius,Durations,Effect
+Arrow of Aberration Slaying,,Very Rare,WD,Weapon,,,,,Aberration,,,,,,,
+Arrow of Acid,,Common,WD,Weapon,2d4,Acid,12,DEX,,,,,Acid,2.0m,,
+Arrow of Arcane Interference,,Rare,WD,Weapon,,,,,,Silenced,,,,,,Breaks the targets Concentration
+Arrow of Beast Slaying,,Uncommon,WD,Weapon,,,,,Beast,,,,,,,
+Arrow of Construct Slaying,,Uncommon,WD,Weapon,,,,,Construct,,,,,,,
+Arrow of Darkness,,Uncommon,WD,Weapon,,,,,,Blindness,,,Darkness,3.0m,3 Turns,
+Arrow of Dragon Slaying,,Very Rare,WD,Weapon,,,,,Dragon,,,,,,,
+Arrow of Elemental Slaying,,Uncommon,WD,Weapon,,,,,Elemental,,,,,,,
+Arrow of Fiend Slaying,,Uncommon,WD,Weapon,,,,,Fiend,,,,,,,
+Arrow of Fire,,Common,WD,Weapon,2d4,Fire,12,DEX,,,,,Fire,2.0m,2 Turns,
+Arrow of Humanoid Slaying,,Very Rare,WD,Weapon,,,,,Humanoid,,,,Ice,2.0m,2 Turns,
+Arrow of Ice,,Common,WD,Weapon,2d4,Cold,12,DEX,,,,,,,,
+Arrow of Ilmater,,Uncommon,WD,Weapon,1d4,Necrotic,,,,,,,,,,Target cannot regain Hit Points for 1 turn.
+Arrow of Lightning,,Common,WD,Weapon,2d4,Lightning,12,DEX,,,,,,2.0m,,
+Arrow of Many Targets,,Rare,WD,Weapon,,,,,,,,,,,,Additional half of that damage to three other targets in range.
+Arrow of Monstrosity Slaying,,Uncommon,WD,Weapon,,,,,Monstrosity,,,,,,,
+Arrow of Roaring Thunder,,Uncommon,WD,Weapon,,,,,,Pushed*,12,STR,,2.0m,,Targets caught in the blast are knocked back by 5m.
+Arrow of Salving,,Rare,,,,,,,,,,,,,,"Cures a target of Poisoned, Paralysed and  Blinded conditions."
+Arrow of Transposition,,Rare,,,,,,,,,,,,,,Teleports the shooter wherever this arrow is fired.
+Arrow of Undead Slaying,,Uncommon,WD,Weapon,,,,,Undead,,,,,,,
+Smokepowder Arrow,,Rare,4d6,Fire,4d6,Force,15,DEX,,Pushed*,15,DEX,,5.0m,,Targets caught in the blast are knocked back 3m.
+Arrow of Piercing,,Common,WD,Weapon,,,,,,,,,,,,Half of damage to creatures directly behind the target.
+Barbed Arrow,,Common,WD,Weapon,,,,,,Ruptured,12,DEX,,,5 Turns,

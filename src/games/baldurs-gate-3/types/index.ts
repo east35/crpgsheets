@@ -167,6 +167,8 @@ export interface BG3Build {
   name: string;
   description: string;
   author?: string;
+  sourceUrl?: string;
+  sourceLabel?: string;
   race: RaceName;
   subrace?: SubraceName;
   background: BackgroundName;
@@ -175,6 +177,20 @@ export interface BG3Build {
   gearRecommendations?: GearRecommendation[];
   tags?: string[];
   difficulty?: 'Beginner' | 'Intermediate' | 'Advanced';
+}
+
+export interface BG3BuildCandidate {
+  id: string;
+  name: string;
+  sourceId: string;
+  sourceUrl: string;
+  author?: string;
+  type?: string;
+  classTags: string[];
+  tags: string[];
+  gearHints: string[];
+  notes?: string;
+  status: 'candidate';
 }
 
 // Companion types

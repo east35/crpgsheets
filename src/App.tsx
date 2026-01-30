@@ -14,16 +14,28 @@ import { getBuildById as getRTBuildById } from './games/rogue-trader/data/builds
 import { BuildSelector as BG3BuildSelector } from './games/baldurs-gate-3/components/BuildSelector';
 import { BuildViewer as BG3BuildViewer } from './games/baldurs-gate-3/components/BuildViewer';
 import { getBuild as getBG3BuildById } from './games/baldurs-gate-3/data/builds';
+import { DataAuditView } from './components/DataAuditView';
 import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
 import { getGame } from './games/registry';
 import './App.css';
 
-type View = 'game-select' | 'companion-builds' | 'rogue-trader-builds' | 'build-viewer' | 'my-builds' | 'build-editor' | 'custom-build-editor' | 'bg3-builds' | 'bg3-companion-builds';
+type View =
+  | 'game-select'
+  | 'companion-builds'
+  | 'rogue-trader-builds'
+  | 'build-viewer'
+  | 'my-builds'
+  | 'build-editor'
+  | 'custom-build-editor'
+  | 'bg3-builds'
+  | 'bg3-companion-builds'
+  | 'data-audit';
 
 const LAST_GAME_KEY = 'crpgsheets_last_game';
 
 function App() {
+  const enableDataAudit = import.meta.env.DEV || import.meta.env.VITE_ENABLE_DATA_AUDIT === 'true';
   // Initialize from localStorage synchronously
   const [currentGame, setCurrentGame] = useState<Game | null>(() => {
     const lastGameId = localStorage.getItem(LAST_GAME_KEY);
@@ -74,6 +86,16 @@ function App() {
       setCurrentProfile(profiles[0]);
     }
   }, [currentGame, profiles, currentProfile, ensureDefaultProfile]);
+
+  useEffect(() => {
+    if (view === 'data-audit' && !enableDataAudit) {
+      if (!currentGame) {
+        setView('game-select');
+      } else {
+        setView(currentGame.id === 'baldurs-gate-3' ? 'bg3-builds' : 'my-builds');
+      }
+    }
+  }, [view, enableDataAudit, currentGame]);
 
   // Check if a guide is already being tracked
   const isGuideTracked = (guideId: string) => {
@@ -402,7 +424,7 @@ function App() {
   };
 
   return (
-    <div className={`app ${currentGame ? 'has-backdrop' : ''}`}>
+    <div className={`app ${currentGame ? 'has-backdrop' : ''} ${currentGame ? `game-${currentGame.id}` : ''}`}>
       {currentGame?.heroImage && (
         <div className="backdrop-container">
           <div 
@@ -437,6 +459,21 @@ function App() {
                   { label: 'Companions', active: view === 'bg3-companion-builds' || (view === 'build-viewer' && navContext === 'builds' && (selectedBG3Build?.tags?.includes('Companion') ?? false)), onClick: () => setView('bg3-companion-builds') },
                   { label: 'Tav', active: view === 'bg3-builds' || (view === 'build-viewer' && navContext === 'builds' && !(selectedBG3Build?.tags?.includes('Companion') ?? false)), onClick: () => setView('bg3-builds') },
                 ]
+          }
+          utilityNavItems={
+            enableDataAudit
+              ? [
+                  {
+                    label: 'Data',
+                    active: view === 'data-audit',
+                    onClick: () => {
+                      setSelectedGuide(null);
+                      setSelectedBG3Build(null);
+                      setView('data-audit');
+                    },
+                  },
+                ]
+              : []
           }
           showBuildsSubnav={
             view === 'companion-builds' ||
@@ -556,6 +593,10 @@ function App() {
           />
         )}
 
+        {view === 'data-audit' && currentGame && enableDataAudit && (
+          <DataAuditView gameId={currentGame.id} gameName={currentGame.name} />
+        )}
+
         {view === 'custom-build-editor' && customBuildCompanion && (
           <CustomBuildEditor
             companion={customBuildCompanion}
@@ -566,9 +607,13 @@ function App() {
 
         {view === 'my-builds' && currentGame && (
           <div className="build-list-view">
-            <div className="view-header">
-              <h1>My Party</h1>
-            </div>
+            <header className="view-hero">
+              <div>
+                <p className="view-eyebrow">Party</p>
+                <h1>My Party</h1>
+                <p className="view-subtitle">Track your active builds and progression for this profile.</p>
+              </div>
+            </header>
 
             <BuildList
               builds={builds}

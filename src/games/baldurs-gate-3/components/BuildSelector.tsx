@@ -3,6 +3,7 @@ import { EditPencil, NavArrowRight } from 'iconoir-react';
 import type { BG3Build, CompanionInfo } from '../types';
 import { getAllBuilds } from '../data/builds';
 import { getAllCompanions } from '../data/companions';
+import { getCsvGearImage } from '../data/gear';
 import { BuildSelectorModal } from './BuildSelectorModal';
 import './BuildSelector.css';
 
@@ -46,6 +47,30 @@ export function BuildSelector({ onSelectBuild, buildType = 'all', trackedBuilds 
     }).join(' / ');
   };
 
+  const getSource = (build: BG3Build) => {
+    if (build.sourceUrl) {
+      return { url: build.sourceUrl, label: build.sourceLabel || 'Build Source' };
+    }
+    return null;
+  };
+
+  const getGearIcons = (build: BG3Build) => {
+    if (!build.gearRecommendations) return [];
+    const seen = new Set<string>();
+    const icons: Array<{ name: string; iconPath: string }> = [];
+    for (const rec of build.gearRecommendations) {
+      const firstItem = rec.items[0];
+      if (!firstItem || seen.has(firstItem)) continue;
+      seen.add(firstItem);
+      const iconPath = getCsvGearImage(firstItem);
+      if (iconPath) {
+        icons.push({ name: firstItem, iconPath });
+      }
+      if (icons.length >= 6) break;
+    }
+    return icons;
+  };
+
   // Get builds for a specific companion
   const getBuildsForCompanion = (companion: CompanionInfo): BG3Build[] => {
     return allBuilds
@@ -76,15 +101,36 @@ export function BuildSelector({ onSelectBuild, buildType = 'all', trackedBuilds 
       return builds.length > 0;
     });
 
+    const totalCompanionBuilds = companionsWithBuilds.reduce((sum, companion) => {
+      return sum + getBuildsForCompanion(companion).length;
+    }, 0);
+
     // Get the modal companion's builds
     const modalBuilds = modalCompanion ? getBuildsForCompanion(modalCompanion) : [];
 
     return (
       <div className="build-selector bg3">
-        <h2>Companion Builds</h2>
-        <p className="build-credit">
-          Choose a companion to view optimized build guides
-        </p>
+        <header className="view-hero">
+          <div>
+            <p className="view-eyebrow">Builds</p>
+            <h1>Companion Builds</h1>
+            <p className="view-subtitle">Choose a companion to view optimized build guides.</p>
+          </div>
+          <div className="view-kpis">
+            <div>
+              <span>Companions</span>
+              <strong>{companionsWithBuilds.length}</strong>
+            </div>
+            <div>
+              <span>Builds</span>
+              <strong>{totalCompanionBuilds}</strong>
+            </div>
+            <div>
+              <span>Tracked</span>
+              <strong>{trackedBuilds.length}</strong>
+            </div>
+          </div>
+        </header>
 
         <div className="companion-list">
           {companionsWithBuilds.map((companion) => {
@@ -140,10 +186,34 @@ export function BuildSelector({ onSelectBuild, buildType = 'all', trackedBuilds 
                         ))}
                       </div>
                     )}
+                    {trackedBuild && (
+                      <div className="companion-card-gear">
+                        {getGearIcons(trackedBuild).map((gear) => (
+                          <img
+                            key={gear.name}
+                            src={gear.iconPath}
+                            alt={gear.name}
+                            className="companion-card-gear-icon"
+                            title={gear.name}
+                          />
+                        ))}
+                      </div>
+                    )}
                     {trackedBuild?.description ? (
                       <div className="companion-card-desc">{trackedBuild.description}</div>
                     ) : (
                       <div className="companion-card-desc">{companion.bio}</div>
+                    )}
+                    {trackedBuild && getSource(trackedBuild) && (
+                      <a
+                        className="build-source-link"
+                        href={getSource(trackedBuild)!.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(event) => event.stopPropagation()}
+                      >
+                        {getSource(trackedBuild)!.label}
+                      </a>
                     )}
                   </div>
                 </div>
@@ -212,10 +282,27 @@ export function BuildSelector({ onSelectBuild, buildType = 'all', trackedBuilds 
 
   return (
     <div className="build-selector bg3">
-      <h2>Community Builds</h2>
-      <p className="build-credit">
-        Popular builds from the BG3 community
-      </p>
+      <header className="view-hero">
+        <div>
+          <p className="view-eyebrow">Builds</p>
+          <h1>Community Builds</h1>
+          <p className="view-subtitle">Popular builds from the BG3 community.</p>
+        </div>
+        <div className="view-kpis">
+          <div>
+            <span>Builds</span>
+            <strong>{communityBuilds.length}</strong>
+          </div>
+          <div>
+            <span>Tracked</span>
+            <strong>{trackedBuilds.length}</strong>
+          </div>
+          <div>
+            <span>Tags</span>
+            <strong>{new Set(communityBuilds.flatMap(b => b.tags ?? [])).size}</strong>
+          </div>
+        </div>
+      </header>
       
       <div className="build-list">
         {communityBuilds.map((build) => (
@@ -244,6 +331,17 @@ export function BuildSelector({ onSelectBuild, buildType = 'all', trackedBuilds 
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
+            )}
+            {getSource(build) && (
+              <a
+                className="build-source-link"
+                href={getSource(build)!.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) => event.stopPropagation()}
+              >
+                {getSource(build)!.label}
+              </a>
             )}
           </button>
         ))}

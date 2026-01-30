@@ -4,7 +4,7 @@ import type { BG3Build } from '../types';
 import type { CharacterBuild } from '../../../types';
 import { getRace } from '../data/character/races';
 import { getBackground } from '../data/character/backgrounds';
-import { getGearInfo } from '../data/gear';
+import { getCsvGearImage } from '../data/gear';
 import { GearTooltip } from './GearTooltip';
 import { KeywordText } from './KeywordText';
 import { MyBuildsPanel, getAvatarForBuild, getCompanionFromBuild } from './MyBuildsPanel';
@@ -37,15 +37,16 @@ interface BuildViewerProps {
 
 function GearItem({ name }: { name: string }) {
   const [hasIcon, setHasIcon] = useState(true);
-  const info = getGearInfo(name);
+  const csvIcon = getCsvGearImage(name);
+  const iconPath = csvIcon;
 
   return (
     <GearTooltip gearName={name}>
       <span className="gear-item">
-        {info?.iconPath && hasIcon && (
+        {iconPath && hasIcon && (
           <img
             className="gear-item-icon"
-            src={info.iconPath}
+            src={iconPath}
             alt={name}
             onError={() => setHasIcon(false)}
           />

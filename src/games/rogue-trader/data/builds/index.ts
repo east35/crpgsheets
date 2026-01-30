@@ -12,6 +12,9 @@ import { MARAZHAI_BUILDS } from './marazhai';
 import { ROGUE_TRADER_BUILDS } from './roguetrader';
 
 // All available build guides
+const BUILD_SOURCE_URL =
+  'https://docs.google.com/spreadsheets/d/1rskX4sYcNm6Wqt4rtm8EQqRR4__yrEuxCEzjwoKlHOY/edit?gid=1688447117#gid=1688447117';
+
 export const ALL_BUILDS: BuildGuide[] = [
   ...ABELARD_BUILDS,
   ...IDIRA_BUILDS,
@@ -24,7 +27,11 @@ export const ALL_BUILDS: BuildGuide[] = [
   ...ULFAR_BUILDS,
   ...MARAZHAI_BUILDS,
   ...ROGUE_TRADER_BUILDS,
-];
+].map((build) => ({
+  ...build,
+  sourceUrl: build.sourceUrl ?? BUILD_SOURCE_URL,
+  sourceLabel: build.sourceLabel ?? 'Build Source',
+}));
 
 // Get builds for a specific companion
 export function getBuildsForCompanion(companion: CompanionName): BuildGuide[] {
