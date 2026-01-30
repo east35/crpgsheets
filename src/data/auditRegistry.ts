@@ -102,7 +102,7 @@ const buildSourceRecord = (() => {
     }
   }
   return Object.fromEntries(
-    Array.from(sources.entries()).map(([key, value], index) => [
+    Array.from(sources.entries()).map(([_key, value], index) => [
       `source_${index}`,
       {
         sourceUrl: value.sourceUrl,
@@ -143,12 +143,12 @@ const companionStartLevelsRecord = Object.fromEntries(
 );
 
 const RT_DATASETS: AuditDataset[] = [
-  { id: 'companions', label: 'Companions', data: COMPANIONS },
+  { id: 'companions', label: 'Companions', data: COMPANIONS as unknown as Record<string, Record<string, unknown>> },
   { id: 'build-sources', label: 'Build Sources', data: buildSourceRecord },
-  { id: 'builds', label: 'Builds', data: Object.fromEntries(ALL_BUILDS.map((entry, index) => [entry.id ?? `build_${index}`, entry as Record<string, unknown>])) },
-  { id: 'character-keywords', label: 'Character Keywords', data: KEYWORD_DATA },
-  { id: 'talents', label: 'Talents', data: WIKI_TALENTS },
-  { id: 'abilities', label: 'Abilities', data: WIKI_ABILITIES },
+  { id: 'builds', label: 'Builds', data: Object.fromEntries(ALL_BUILDS.map((entry, index) => [entry.id ?? `build_${index}`, entry as unknown as Record<string, unknown>])) },
+  { id: 'character-keywords', label: 'Character Keywords', data: KEYWORD_DATA as unknown as Record<string, Record<string, unknown>> },
+  { id: 'talents', label: 'Talents', data: WIKI_TALENTS as unknown as Record<string, Record<string, unknown>> },
+  { id: 'abilities', label: 'Abilities', data: WIKI_ABILITIES as unknown as Record<string, Record<string, unknown>> },
   { id: 'gear', label: 'Gear (Wiki)', data: gearWikiRecord },
   { id: 'helmets', label: 'Helmets', data: helmetRecord },
   { id: 'archetype-sources', label: 'Archetype Sources', data: archetypeSourceRecord },

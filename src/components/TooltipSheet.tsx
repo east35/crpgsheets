@@ -123,7 +123,6 @@ export function TooltipSheetProvider({ children }: TooltipSheetProviderProps) {
                 descriptionItalic={content.descriptionItalic}
                 stats={content.stats || content.meta}
                 callout={content.callout}
-                link={content.link}
                 variant="sheet"
               />
             </div>

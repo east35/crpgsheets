@@ -49,7 +49,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
 
     const badge: TooltipBadge = {
       label: (gearInfo.category === 'weapon' ? 'WEAPON' : 'GEAR'),
-      background: rarityColors[gearInfo.rarity] || '#f0a319',
+      background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || '#f0a319',
       color: '#1b1206',
     };
 
@@ -59,7 +59,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
       sections,
       stats,
       iconUrl: gearInfo.image,
-      description: gearInfo.description,
+      description: gearInfo.description || '',
     });
   };
 
@@ -74,7 +74,7 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
         iconUrl={gearInfo.image}
         badge={{
           label: gearInfo.category === 'weapon' ? 'WEAPON' : 'GEAR',
-          background: rarityColors[gearInfo.rarity] || '#f0a319',
+          background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || '#f0a319',
           color: '#1b1206',
         }}
         sections={[

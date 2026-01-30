@@ -66,7 +66,6 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
           ...(talentInfo.target ? [{ label: 'Target', value: talentInfo.target } as TooltipField] : []),
         ]}
         description={talentInfo.effect || ''}
-        link={undefined}
       />
     </div>,
     document.body

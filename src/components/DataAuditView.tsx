@@ -62,7 +62,7 @@ export function DataAuditView({ gameId, gameName }: { gameId: string; gameName: 
     return datasets.find((dataset) => dataset.id === activeDatasetId) ?? null;
   }, [datasets, activeDatasetId]);
 
-  const entries = useMemo(() => {
+  const entries = useMemo<Array<{ id: string; [key: string]: unknown }>>(() => {
     if (!activeDataset) return [];
     return Object.entries(activeDataset.data).map(([id, value]) => ({
       id,
