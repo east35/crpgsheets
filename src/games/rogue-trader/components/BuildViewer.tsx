@@ -182,7 +182,7 @@ export function BuildViewer({
                 className="build-avatar"
               />
             </button>
-            <div className="build-avatar-level">{currentLevel}</div>
+            {isTracked && <div className="build-avatar-level">{currentLevel}</div>}
           </div>
         ) : isPlayerBuild && profileId ? (
           <div className="build-avatar-wrapper">
@@ -192,7 +192,7 @@ export function BuildViewer({
               profileId={profileId}
               className="build-avatar-upload"
             />
-            <div className="build-avatar-level">{currentLevel}</div>
+            {isTracked && <div className="build-avatar-level">{currentLevel}</div>}
           </div>
         ) : null}
         <div className="build-title">

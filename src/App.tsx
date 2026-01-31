@@ -786,7 +786,7 @@ function App() {
             <span className="footer-dot" aria-hidden="true">•</span>
             <a
               className="footer-github"
-              href="https://github.com/jimjordan/crpg-character-manager"
+              href="https://github.com/east35/crpgsheets"
               target="_blank"
               rel="noreferrer"
             >

@@ -9,7 +9,14 @@
 .add-to-party-mobile .btn {
   border-radius: 999px;
   font-weight: 600;
+  background: #28a75e;
 }
+.add-to-party-desktop.btn:hover, {
+  border-radius: 999px;
+  font-weight: 600;
+  background: #1d7241;;
+}
+
 
 /* Mobile floating version - hidden on desktop */
 .add-to-party-mobile {

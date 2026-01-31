@@ -98,6 +98,13 @@
   gap: 0.5rem;
 }
 
+.party-member-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
 .party-member-name {
   font-size: 1.1rem;
   font-weight: 600;
@@ -182,33 +189,70 @@
   text-align: right;
 }
 
-.party-member-remove {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0.5rem;
+/* Overflow menu */
+.party-member-menu {
+  position: relative;
+}
+
+.party-member-menu-btn {
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(90, 42, 42, 0.9);
+  background: transparent;
   border: none;
   border-radius: 4px;
-  color: #ff8a8a;
+  color: #666;
   cursor: pointer;
-  opacity: 0;
-  transition: all 0.2s;
+  transition: all 0.15s;
   padding: 0;
-  line-height: 1;
 }
 
-.party-member-card:hover .party-member-remove {
-  opacity: 1;
+.party-member-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #aaa;
 }
 
-.party-member-remove:hover {
-  background: #5a2a2a;
+.party-member-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: #2a2a4a;
+  border: 1px solid #3a3a5a;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: #3a3a5a;
+}
+
+.dropdown-item.danger {
   color: #ff8a8a;
+}
+
+.dropdown-item.danger:hover {
+  background: rgba(90, 42, 42, 0.5);
 }
 
 .build-tag {
@@ -230,17 +274,13 @@
   .party-member-card {
     padding: 0.75rem;
   }
-  
+
   .party-member-avatar {
     width: 56px;
     height: 70px;
   }
-  
+
   .party-member-name {
     font-size: 1rem;
-  }
-  
-  .party-member-remove {
-    opacity: 1;
   }
 }

@@ -1,3 +1,5 @@
+import { useState, useRef, useEffect } from 'react';
+import { MoreHoriz, Trash } from 'iconoir-react';
 import type { CharacterBuild } from '../types';
 import { ARCHETYPE_DISPLAY_NAMES } from '../games/rogue-trader/types';
 import type { Archetype } from '../games/rogue-trader/types';
@@ -57,29 +59,45 @@ interface BuildListProps {
   onDeleteBuild: (id: string) => void;
 }
 
-function BuildCard({ build, onSelect, onDelete }: { 
-  build: CharacterBuild; 
-  onSelect: () => void; 
+function BuildCard({ build, onSelect, onDelete }: {
+  build: CharacterBuild;
+  onSelect: () => void;
   onDelete: () => void;
 }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
   const data = build.data as TrackedBuildData | undefined;
   const currentLevel = data?.currentLevel || 1;
   const isCustom = data?.isCustom;
   const characterName = getCharacterName(data);
   const buildDisplayName = getBuildDisplayName(build, data, characterName);
   const defaultAvatar = getAvatarForTrackedBuild(data, build.gameId);
-  
+
   // Check for custom avatar
   const customAvatar = useLiveQuery(
     () => db.customAvatars.where('buildId').equals(data?.buildId || data?.guideId || '').first(),
     [data?.buildId, data?.guideId]
   );
-  
+
   const avatarUrl = customAvatar?.imageData || defaultAvatar;
-  
+
   // Determine max level based on game
   const maxLevel = build.gameId === 'rogue-trader' ? 55 : 12;
   const progressPercent = (currentLevel / maxLevel) * 100;
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   return (
     <div className="party-member-card" onClick={onSelect}>
@@ -93,7 +111,36 @@ function BuildCard({ build, onSelect, onDelete }: {
       <div className="party-member-info">
         <div className="party-member-header">
           <span className="party-member-name">{characterName}</span>
-          <span className="party-member-level">Lv {currentLevel}</span>
+          <div className="party-member-header-right">
+            <div className="party-member-menu" ref={menuRef}>
+              <button
+                className="party-member-menu-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setMenuOpen(!menuOpen);
+                }}
+                aria-label="More options"
+              >
+                <MoreHoriz width={16} height={16} />
+              </button>
+              {menuOpen && (
+                <div className="party-member-dropdown">
+                  <button
+                    className="dropdown-item danger"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMenuOpen(false);
+                      onDelete();
+                    }}
+                  >
+                    <Trash width={14} height={14} />
+                    Remove
+                  </button>
+                </div>
+              )}
+            </div>
+            <span className="party-member-level">Lv {currentLevel}</span>
+          </div>
         </div>
         <div className="party-member-build">{buildDisplayName}</div>
         {data?.archetypePath && (
@@ -115,16 +162,6 @@ function BuildCard({ build, onSelect, onDelete }: {
         </div>
         {isCustom && <span className="build-tag custom">Custom</span>}
       </div>
-      <button
-        className="party-member-remove"
-        onClick={(e) => {
-          e.stopPropagation();
-          onDelete();
-        }}
-        aria-label="Remove from party"
-      >
-        ×
-      </button>
     </div>
   );
 }
