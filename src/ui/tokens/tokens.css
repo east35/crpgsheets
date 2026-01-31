@@ -1,0 +1,21 @@
+:root {
+  --ui-surface-panel: #1a1a2e;
+  --ui-surface-panel-rgb: 26 26 46;
+  --ui-surface-control: #2a2a3e;
+  --ui-surface-hover: #3a3a4e;
+  --ui-border-default: #3a3a5a;
+  --ui-border-hover: #4a4a6a;
+  --ui-text-default: #e0e0e0;
+  --ui-text-muted: #888888;
+  --ui-radius-sm: 8px;
+  --ui-radius-md: 12px;
+  --ui-shadow-dropdown: 0 8px 32px rgba(0 0 0 / 0.4);
+  --ui-shadow-drawer: -4px 0 20px rgba(0 0 0 / 0.4);
+  --ui-layer-overlay: 998;
+  --ui-layer-popover: 999;
+  --ui-motion-duration-200: 200ms;
+  --ui-motion-duration-300: 300ms;
+  --ui-motion-ease-out: ease-out;
+  --ui-overlay-scrim: rgba(0 0 0 / 0.6);
+  --ui-surface-panel-translucent: rgba(var(--ui-surface-panel-rgb) / 0.5);
+}
