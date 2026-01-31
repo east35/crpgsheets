@@ -22,6 +22,7 @@ import { usePersistedBuilds } from './hooks/usePersistedBuilds';
 import { useProfiles } from './hooks/useProfiles';
 import { getGame } from './games/registry';
 import { getProfileSelectionAction } from './utils/profileSelection';
+import { InfoModal, ChangelogContent, RoadmapContent } from './components/InfoModal';
 import './App.css';
 
 type View =
@@ -66,6 +67,8 @@ function App() {
   const [bg3PreviousView, setBg3PreviousView] = useState<'bg3-builds' | 'bg3-companion-builds' | 'bg3-companion-detail'>('bg3-builds');
   // Track navigation context: did we enter detail view from Party or Builds?
   const [navContext, setNavContext] = useState<'party' | 'builds'>('builds');
+  const [showChangelog, setShowChangelog] = useState(false);
+  const [showRoadmap, setShowRoadmap] = useState(false);
 
   const { 
     profiles, 
@@ -784,6 +787,14 @@ function App() {
               </a>
             </span>
             <span className="footer-dot" aria-hidden="true">•</span>
+            <button className="footer-link" onClick={() => setShowChangelog(true)}>
+              Changelog
+            </button>
+            <span className="footer-dot" aria-hidden="true">•</span>
+            <button className="footer-link" onClick={() => setShowRoadmap(true)}>
+              Roadmap
+            </button>
+            <span className="footer-dot" aria-hidden="true">•</span>
             <a
               className="footer-github"
               href="https://github.com/east35/crpgsheets"
@@ -802,6 +813,18 @@ function App() {
             </a>
           </div>
         </footer>
+      )}
+
+      {showChangelog && (
+        <InfoModal title="Changelog" onClose={() => setShowChangelog(false)}>
+          <ChangelogContent />
+        </InfoModal>
+      )}
+
+      {showRoadmap && (
+        <InfoModal title="Roadmap" onClose={() => setShowRoadmap(false)}>
+          <RoadmapContent />
+        </InfoModal>
       )}
     </div>
   );

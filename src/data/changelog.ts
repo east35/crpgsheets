@@ -7,6 +7,7 @@ export const CHANGELOG = [
     changes: [
       'Rogue Trader support is now out of beta',
       'Added game versioning system',
+      'Added changelog and roadmap accessible from footer',
       'Improved party member card UI with overflow menu',
       'Fixed mobile CTA button styling',
       'Level badge now only shows for tracked builds',
