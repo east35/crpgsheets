@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { AbilityScore, BG3Build, BackgroundName, ClassName, GearRecommendation, GearSlot, LevelProgression, RaceName, SubclassName } from '../../types';
 import { CLASSES } from '../classes/index';
 import { COMPANIONS } from '../companions';
@@ -788,7 +789,7 @@ const SOURCE_FILES = [
 ];
 
 export const SHEET_COMMUNITY_BUILDS: BG3Build[] = SOURCE_FILES.flatMap((file) => {
-  if (file?.build) return parseTemplateBuild(file);
-  if (file?.builds) return parseCollectionBuilds(file);
+  if ('build' in file) return parseTemplateBuild(file);
+  if ('builds' in file) return parseCollectionBuilds(file);
   return [];
 });

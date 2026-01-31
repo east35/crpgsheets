@@ -9,7 +9,9 @@ import { BuildList } from './components/BuildList';
 import { BuildSelector as RTBuildSelector } from './games/rogue-trader/components/BuildSelector';
 import { BuildViewer as RTBuildViewer } from './games/rogue-trader/components/BuildViewer';
 import { CustomBuildEditor, type CustomBuildData } from './games/rogue-trader/components/CustomBuildEditor';
-import { getBuildById as getRTBuildById } from './games/rogue-trader/data/builds';
+import { CompanionDetailScreen as RTCompanionDetailScreen } from './games/rogue-trader/components/CompanionDetailScreen';
+import { COMPANIONS } from './games/rogue-trader/data/companions';
+import { getBuildById as getRTBuildById, getBuildsForCompanion as getRTBuildsForCompanion } from './games/rogue-trader/data/builds';
 // BG3 imports
 import { BuildSelector as BG3BuildSelector } from './games/baldurs-gate-3/components/BuildSelector';
 import { BuildViewer as BG3BuildViewer } from './games/baldurs-gate-3/components/BuildViewer';
@@ -26,6 +28,7 @@ type View =
   | 'game-select'
   | 'companion-builds'
   | 'rogue-trader-builds'
+  | 'rt-companion-detail'
   | 'build-viewer'
   | 'my-builds'
   | 'build-editor'
@@ -53,6 +56,7 @@ function App() {
     return 'game-select';
   });
   const [selectedGuide, setSelectedGuide] = useState<BuildGuide | null>(null);
+  const [selectedRTCompanion, setSelectedRTCompanion] = useState<CompanionName | null>(null);
   const [currentLevel, setCurrentLevel] = useState(1);
   const [activeTrackedBuildId, setActiveTrackedBuildId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -91,6 +95,7 @@ function App() {
     });
 
     if (action.type === 'clear') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentProfile(null);
       return;
     }
@@ -110,6 +115,7 @@ function App() {
   useEffect(() => {
     if (view === 'data-audit' && !enableDataAudit) {
       if (!currentGame) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setView('game-select');
       } else {
         setView(currentGame.id === 'baldurs-gate-3' ? 'bg3-builds' : 'my-builds');
@@ -235,6 +241,7 @@ function App() {
   };
 
   const handleViewCompanionBuilds = () => {
+    setSelectedRTCompanion(null);
     setView('companion-builds');
   };
 
@@ -485,6 +492,17 @@ function App() {
     window.scrollTo(0, 0);
   };
 
+  const handleSelectRTCompanion = (companion: CompanionName) => {
+    setSelectedRTCompanion(companion);
+    setView('rt-companion-detail');
+    window.scrollTo(0, 0);
+  };
+
+  const handleBackFromRTCompanionDetail = () => {
+    setSelectedRTCompanion(null);
+    setView('companion-builds');
+  };
+
   const handleSaveCustomBuild = (buildData: CustomBuildData) => {
     addBuild(
       buildData.buildName,
@@ -538,7 +556,7 @@ function App() {
           subnavItems={
             currentGame.id === 'rogue-trader'
               ? [
-                  { label: 'Companions', active: view === 'companion-builds' || (view === 'build-viewer' && navContext === 'builds' && selectedGuide?.companion !== 'RogueTrader'), onClick: handleViewCompanionBuilds },
+                  { label: 'Companions', active: view === 'companion-builds' || view === 'rt-companion-detail' || (view === 'build-viewer' && navContext === 'builds' && selectedGuide?.companion !== 'RogueTrader'), onClick: handleViewCompanionBuilds },
                   { label: 'Rogue Trader', active: view === 'rogue-trader-builds' || (view === 'build-viewer' && navContext === 'builds' && selectedGuide?.companion === 'RogueTrader'), onClick: () => setView('rogue-trader-builds') },
                 ]
               : [
@@ -564,6 +582,7 @@ function App() {
           showBuildsSubnav={
             view === 'companion-builds' ||
             view === 'rogue-trader-builds' ||
+            view === 'rt-companion-detail' ||
             view === 'bg3-companion-builds' ||
             view === 'bg3-builds'
           }
@@ -585,12 +604,24 @@ function App() {
             onSelectBuild={handleSelectGuide}
             onCreateCustomBuild={handleCreateCustomBuild}
             buildType="companion"
+            onSelectCompanion={handleSelectRTCompanion}
             trackedBuilds={getTrackedRTBuilds().map(b => ({
               guideId: b.data.guideId,
               companion: b.data.companion,
               currentLevel: b.data.currentLevel,
             }))}
             onSelectTrackedBuild={handleSelectTrackedRTBuild}
+          />
+        )}
+
+        {view === 'rt-companion-detail' && currentGame?.id === 'rogue-trader' && selectedRTCompanion && (
+          <RTCompanionDetailScreen
+            companion={COMPANIONS[selectedRTCompanion]}
+            builds={getRTBuildsForCompanion(selectedRTCompanion)}
+            onBack={handleBackFromRTCompanionDetail}
+            onSelectBuild={handleSelectGuide}
+            trackedBuildId={getTrackedRTBuilds().find(b => b.data.companion === selectedRTCompanion)?.data.guideId}
+            trackedLevel={getTrackedRTBuilds().find(b => b.data.companion === selectedRTCompanion)?.data.currentLevel}
           />
         )}
 

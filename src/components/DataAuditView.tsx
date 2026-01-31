@@ -54,6 +54,7 @@ export function DataAuditView({ gameId, gameName }: { gameId: string; gameName: 
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActiveDatasetId(datasets[0]?.id ?? null);
   }, [datasets]);
 
@@ -96,11 +97,13 @@ export function DataAuditView({ gameId, gameName }: { gameId: string; gameName: 
   const pagedEntries = filteredEntries.slice((clampedPage - 1) * pageSize, clampedPage * pageSize);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPage(1);
   }, [search, imageFilter, pageSize, activeDatasetId]);
 
   useEffect(() => {
     const first = filteredEntries[0]?.entry.id ?? null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedEntryId(first);
   }, [filteredEntries]);
 

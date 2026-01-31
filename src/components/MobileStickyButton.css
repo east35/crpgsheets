@@ -5,6 +5,12 @@
   flex-shrink: 0;
 }
 
+.add-to-party-desktop.btn,
+.add-to-party-mobile .btn {
+  border-radius: 999px;
+  font-weight: 600;
+}
+
 /* Mobile floating version - hidden on desktop */
 .add-to-party-mobile {
   display: none;

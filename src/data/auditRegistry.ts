@@ -102,7 +102,7 @@ const buildSourceRecord = (() => {
     }
   }
   return Object.fromEntries(
-    Array.from(sources.entries()).map(([_key, value], index) => [
+    Array.from(sources.entries()).map(([, value], index) => [
       `source_${index}`,
       {
         sourceUrl: value.sourceUrl,

@@ -19,6 +19,7 @@ interface BuildSelectorProps {
   onSelectBuild: (build: BuildGuide) => void;
   onCreateCustomBuild?: (companion: CompanionName) => void;
   buildType: BuildType;
+  onSelectCompanion?: (companion: CompanionName) => void;
   trackedBuilds?: TrackedBuildInfo[];
   onSelectTrackedBuild?: (guideId: string, level: number) => void;
 }
@@ -55,7 +56,7 @@ const RT_DLC_COMPANIONS = [
   'Kibellah',
 ];
 
-export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, trackedBuilds = [], onSelectTrackedBuild }: BuildSelectorProps) {
+export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, onSelectCompanion, trackedBuilds = [], onSelectTrackedBuild }: BuildSelectorProps) {
   const [modalCompanion, setModalCompanion] = useState<CompanionName | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const companionOrder = new Map(RT_COMPANION_ORDER.map((name, index) => [name, index]));
@@ -114,6 +115,17 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
     ARCHETYPE_DISPLAY_NAMES[build.archetypePath.exemplar],
   ];
 
+  const getArchetypeImage = (build: BuildGuide) =>
+    `/images/archetypes/rogue-trader/${build.archetypePath.advanced}.png`;
+
+  const openCompanionBuilds = (companion: CompanionName) => {
+    if (onSelectCompanion) {
+      onSelectCompanion(companion);
+    } else {
+      setModalCompanion(companion);
+    }
+  };
+
   const toggleTag = (tag: string) => {
     setSelectedTags(prev =>
       prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
@@ -124,11 +136,14 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
   if (buildType === 'rogueTrader') {
     const rtBuilds = buildsByCompanion.find(b => b.companion === 'RogueTrader');
     const trackedBuild = getTrackedBuildForCompanion('RogueTrader');
-    const buildCount = rtBuilds?.builds.length ?? 0;
     const availableTags = Array.from(new Set((rtBuilds?.builds ?? []).flatMap(getBuildTags))).sort();
     const filteredBuilds = selectedTags.length === 0
       ? (rtBuilds?.builds ?? [])
       : (rtBuilds?.builds ?? []).filter(build => selectedTags.every(tag => getBuildTags(build).includes(tag)));
+    const trackedGuide = trackedBuild ? filteredBuilds.find(build => build.id === trackedBuild.guideId) : undefined;
+    const orderedBuilds = trackedGuide
+      ? [trackedGuide, ...filteredBuilds.filter(build => build.id !== trackedGuide.id)]
+      : filteredBuilds;
     
     return (
       <div className="build-selector">
@@ -168,19 +183,16 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
                 </button>
               ))}
             </div>
+            {selectedTags.length > 0 && (
+              <button className="clear-filters" onClick={() => setSelectedTags([])}>
+                Clear filters
+              </button>
+            )}
           </div>
         </div>
 
-        {selectedTags.length > 0 && (
-          <div className="builds-count">
-            <button className="clear-filters" onClick={() => setSelectedTags([])}>
-              Clear filters
-            </button>
-          </div>
-        )}
-
         <div className="companion-list">
-          {filteredBuilds.map((build) => {
+          {orderedBuilds.map((build) => {
             const isTracked = trackedBuild?.guideId === build.id;
             const source = getSource(build);
             return (
@@ -189,13 +201,20 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
                 className={`companion-section rogue-trader-build-card ${isTracked ? 'has-tracked' : ''}`}
                 onClick={() => onSelectBuild(build)}
               >
-                {isTracked && (
-                  <div className="companion-card-level-badge">Lv {trackedBuild.currentLevel}</div>
-                )}
                 <div className="companion-card-layout">
+                  <div className="rt-build-icon-wrapper">
+                    <img
+                      src={getArchetypeImage(build)}
+                      alt={ARCHETYPE_DISPLAY_NAMES[build.archetypePath.advanced]}
+                      className="rt-build-icon"
+                    />
+                  </div>
                   <div className="companion-card-content">
                     <div className="companion-card-title-row">
                       <div className="companion-card-title">{build.buildName}</div>
+                      {isTracked && (
+                        <span className="companion-card-level-badge">Lv {trackedBuild.currentLevel}</span>
+                      )}
                     </div>
                     <div className="companion-card-meta">
                       <span className="companion-card-archetype">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.base]}</span>
@@ -365,7 +384,7 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
                             <div className="tracked-build-actions">
                               <button
                                 className="tracked-build-change-btn"
-                                onClick={() => setModalCompanion(companion)}
+                                onClick={() => openCompanionBuilds(companion)}
                               >
                                 All Builds
                               </button>
@@ -382,7 +401,7 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, t
                       ) : (
                         <button
                           className="unselected-build-preview"
-                          onClick={() => setModalCompanion(companion)}
+                          onClick={() => openCompanionBuilds(companion)}
                         >
                           <div className="unselected-build-info">
                             <span className="unselected-badge">No Build Selected</span>

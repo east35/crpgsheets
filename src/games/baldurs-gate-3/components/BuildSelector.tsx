@@ -59,7 +59,7 @@ const BG3_RECRUITABLE_COMPANIONS = [
   'Minsc',
 ];
 
-export function BuildSelector({ onSelectBuild, onSelectCompanion, buildType = 'all', trackedBuilds = [], onSelectTrackedBuild: _onSelectTrackedBuild }: BuildSelectorProps) {
+export function BuildSelector({ onSelectBuild, onSelectCompanion, buildType = 'all', trackedBuilds = [] }: BuildSelectorProps) {
   const [modalCompanion, setModalCompanion] = useState<CompanionInfo | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const companionOrder = new Map(BG3_COMPANION_ORDER.map((name, index) => [name, index]));
@@ -394,16 +394,13 @@ export function BuildSelector({ onSelectBuild, onSelectCompanion, buildType = 'a
                 </button>
               ))}
             </div>
+            {selectedTags.length > 0 && (
+              <button className="clear-filters" onClick={() => setSelectedTags([])}>
+                Clear filters
+              </button>
+            )}
           </div>
         </div>
-
-        {selectedTags.length > 0 && (
-          <div className="builds-count">
-            <button className="clear-filters" onClick={() => setSelectedTags([])}>
-              Clear filters
-            </button>
-          </div>
-        )}
 
         <div className="companion-detail-builds">
           {filteredBuilds.map((build) => {

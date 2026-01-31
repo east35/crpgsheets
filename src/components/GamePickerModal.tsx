@@ -35,7 +35,8 @@ export function GamePickerModal({ currentGame, onSelectGame, onClose }: GamePick
               onClick={() => handleSelect(game)}
               style={game.heroImage ? { backgroundImage: `url(${game.heroImage})` } : undefined}
             >
-              <span className="beta-badge">Beta</span>
+              {game.status === 'beta' && <span className="beta-badge">Beta</span>}
+              {game.version && <span className="version-badge">v{game.version}</span>}
               {game.logo ? (
                 <img src={game.logo} alt={game.name} className="game-logo" />
               ) : (

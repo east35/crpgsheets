@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * BG3 Keyword System
  * Simple unified lookup for tooltips

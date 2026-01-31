@@ -131,6 +131,13 @@ export function BuildViewer({
   // Handle level row click - show confirmation if different from current level
   const handleLevelClick = (level: number) => {
     if (level === currentLevel) return;
+    if (!isTracked) {
+      const confirmed = window.confirm('Track this build to update levels. Add to Party now?');
+      if (confirmed) {
+        onTrackBuild?.(build);
+      }
+      return;
+    }
     setPendingLevelChange(level);
   };
 

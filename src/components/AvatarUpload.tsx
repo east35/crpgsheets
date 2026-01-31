@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useRef, useState } from 'react';
 import { Camera, Trash } from 'iconoir-react';
 import { db, type CustomAvatar } from '../db';

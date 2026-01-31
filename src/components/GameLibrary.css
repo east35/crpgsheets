@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #14181d;
+  background: #0d0f14;
   overflow: hidden;
 }
 
@@ -21,6 +21,7 @@
   inset: 0;
   background-size: cover;
   background-position: center;
+  filter: saturate(0.95) contrast(1.05);
 }
 
 .hero-bg::after {
@@ -28,8 +29,9 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(20, 24, 29, 0.9) 0%, rgba(20, 24, 29, 0.5) 50%, rgba(20, 24, 29, 0.7) 100%),
-    linear-gradient(to top, rgba(20, 24, 29, 1) 0%, transparent 40%);
+    radial-gradient(circle at 30% 35%, rgba(255, 255, 255, 0.08), transparent 55%),
+    linear-gradient(to right, rgba(12, 14, 20, 0.92) 0%, rgba(18, 20, 30, 0.6) 50%, rgba(8, 10, 14, 0.85) 100%),
+    linear-gradient(to top, rgba(8, 10, 14, 1) 0%, rgba(8, 10, 14, 0.4) 45%, transparent 75%);
 }
 
 /* Main content container */
@@ -39,8 +41,9 @@
   flex: 1;
   display: flex;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1500px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 /* Left side - Logo, tagline, CTA */
@@ -54,7 +57,7 @@
 }
 
 .hero-logo {
-  max-width: 400px;
+  max-width: 340px;
   width: 100%;
   height: auto;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
@@ -62,56 +65,42 @@
 
 .hero-tagline {
   margin: 0 0 2rem;
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: #fff;
   line-height: 1.6;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
 .hero-cta {
   display: inline-block;
-  padding: 1rem 3rem;
-  background: #6A6EF7;
+  padding: 0.95rem 2.9rem;
+  background: #6b6ef7;
   border: none;
-  border-radius: 4px;
+  border-radius: 100px;
   color: #fff;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   margin-bottom: 1rem;
+  box-shadow:
+    0 10px 24px rgba(71, 76, 209, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .hero-cta:hover {
-  background: #00d040;
+  background: #7a7dff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(0, 192, 48, 0.4);
+  box-shadow:
+    0 16px 30px rgba(71, 76, 209, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .hero-subtitle {
   margin: 0;
   font-size: 0.85rem;
-  color: #678;
-}
-
-/* Right side - Screenshots */
-.hero-screenshots {
-  position: relative;
-  flex: 1;
-}
-
-.hero-screenshot {
-  position: absolute;
-  border-radius: 12px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
-}
-
-.screenshot-front {
-  z-index: 2;
-}
-
-.screenshot-back {
-  z-index: 1;
+  color: #95a0c8;
 }
 
 /* Footer - Always visible */
@@ -167,34 +156,11 @@
     flex-direction: row;
     align-items: center;
     padding: 2rem 4rem;
-    gap: 12rem;
   }
 
   .hero-content {
     flex: 0 0 auto;
     width: 420px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-screenshots {
-    flex: 1;
-    min-height: 500px;
-  }
-
-  .screenshot-front {
-    width: 700px;
-    max-width: 50vw;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }
-
-  .screenshot-back {
-    width: 650px;
-    max-width: 45vw;
-    bottom: 0;
-    right: 0;
   }
 }
 
@@ -219,24 +185,6 @@
     font-size: 1.25rem;
   }
 
-  .hero-screenshots {
-    flex: 1;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .screenshot-front {
-    width: 400px;
-    bottom: 0;
-    left: 0;
-  }
-
-  .screenshot-back {
-    width: 380px;
-    bottom: 0;
-    right: 0;
-  }
 }
 
 /* ===================
@@ -249,9 +197,9 @@
 
   .hero-split {
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding: 3rem 1.5rem 0;
+    padding: 2.5rem 1.5rem;
     height: 100%;
   }
 
@@ -265,38 +213,13 @@
   }
 
   .hero-tagline {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 1.5rem;
   }
 
   .hero-cta {
-    padding: 0.875rem 2.5rem;
-    font-size: 1.25rem;
-  }
-
-  /* Screenshot anchored to bottom, behind footer */
-  .hero-screenshots {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-  }
-
-  .screenshot-front {
-    display: none;
-  }
-
-  .screenshot-back {
-    position: relative;
-    width: 340px;
-    max-width: 90vw;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: -60px; /* Extend behind footer */
+    padding: 0.85rem 2.4rem;
+    font-size: 1.1rem;
   }
 
   .landing-footer {
@@ -453,6 +376,19 @@
 
 .beta-badge {
   background: rgba(0, 192, 48, 0.8);
+}
+
+.version-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(80, 80, 120, 0.8);
 }
 
 .game-stats {

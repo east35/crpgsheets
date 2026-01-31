@@ -37,10 +37,8 @@ function auditImages(): AuditResult {
   };
 
   // Check which icon files actually exist
-  let existingIconFiles: Set<string> = new Set();
   if (fs.existsSync(TALENT_ICONS_DIR)) {
-    const files = fs.readdirSync(TALENT_ICONS_DIR);
-    existingIconFiles = new Set(files);
+    // Icon files exist, ready for audit
   }
 
   // Audit talents

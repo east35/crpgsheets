@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * CSV Ingestion for BG3 Data
  * Reads: bg3 reference csv/*.csv

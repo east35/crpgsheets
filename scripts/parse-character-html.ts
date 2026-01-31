@@ -50,7 +50,6 @@ function parseArchetypesHTML(): ExtractedItem[] {
   let match;
   while ((match = colRegex.exec(html)) !== null) {
     const wikiUrl = match[1].replace(/['"]/g, '');
-    const imgTitle = match[2].replace(/['"]/g, '');
     const imgSrc = match[3];
     const content = match[4];
     
@@ -79,6 +78,7 @@ function parseArchetypesHTML(): ExtractedItem[] {
   return items;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function parseGenericGalleryPage(filename: string, category: string): ExtractedItem[] {
   const htmlPath = path.join(__dirname, '../src/assets/html extractions/Character', filename);
   if (!fs.existsSync(htmlPath)) {

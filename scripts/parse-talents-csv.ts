@@ -45,7 +45,7 @@ function parseCSV(content: string): TalentEntry[] {
     if (firstComma === -1) continue;
     
     currentName = line.substring(0, firstComma).replace(/^"|"$/g, '').trim();
-    let desc = line.substring(firstComma + 1).trim();
+    const desc = line.substring(firstComma + 1).trim();
     
     // Skip empty descriptions or section headers
     if (!desc || desc === ',' || currentName === '') continue;

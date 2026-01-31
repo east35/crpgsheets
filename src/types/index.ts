@@ -1,10 +1,14 @@
 // Core types for CRPG Character Manager
 
+export type GameStatus = 'active' | 'beta' | 'coming-soon';
+
 export interface Game {
   id: string;
   name: string;
   shortName: string;
   description: string;
+  version?: string;
+  status?: GameStatus;
   icon?: string;
   heroImage?: string;
   logo?: string;

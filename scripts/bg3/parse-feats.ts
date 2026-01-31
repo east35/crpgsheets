@@ -33,7 +33,7 @@ function findHtmlFile(): string | null {
 }
 
 function extractText(html: string): string {
-  let text = html
+  const text = html
     // Remove entire img tags (they have complex inline styles)
     .replace(/<img[^>]*>/gi, '')
     // Remove span tags with icon classes but keep content

@@ -68,7 +68,7 @@ function parseHTML(): void {
     const archetype = archetypeMatch ? archetypeMatch[1].trim() : '';
     
     // Extract effect from third cell
-    let effect = cells[2]
+    const effect = cells[2]
       .replace(/<br\s*\/?>/gi, ' ')
       .replace(/<p>/gi, '')
       .replace(/<\/p>/gi, ' ')

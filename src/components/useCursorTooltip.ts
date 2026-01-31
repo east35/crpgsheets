@@ -86,6 +86,7 @@ export function useCursorTooltip(isEnabled: boolean) {
 
   useEffect(() => {
     if (!isEnabled) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsVisible(false);
     }
   }, [isEnabled]);

@@ -93,11 +93,12 @@ export function CompanionDetailScreen({
     let comparison = 0;
 
     switch (sortBy) {
-      case 'difficulty':
+      case 'difficulty': {
         const aDiff = DIFFICULTY_ORDER[a.difficulty || 'Intermediate'] || 2;
         const bDiff = DIFFICULTY_ORDER[b.difficulty || 'Intermediate'] || 2;
         comparison = aDiff - bDiff;
         break;
+      }
       case 'name':
         comparison = a.name.localeCompare(b.name);
         break;
@@ -184,6 +185,11 @@ export function CompanionDetailScreen({
                 </button>
               ))}
             </div>
+            {selectedTags.length > 0 && (
+              <button className="clear-filters" onClick={() => setSelectedTags([])}>
+                Clear filters
+              </button>
+            )}
           </div>
 
           <div className="sort-section">
@@ -218,15 +224,6 @@ export function CompanionDetailScreen({
               </button>
             </div>
           </div>
-        </div>
-
-        <div className="builds-count">
-          {filteredBuilds.length} build{filteredBuilds.length !== 1 ? 's' : ''} available
-          {selectedTags.length > 0 && (
-            <button className="clear-filters" onClick={() => setSelectedTags([])}>
-              Clear filters
-            </button>
-          )}
         </div>
 
         <div className="companion-detail-builds">

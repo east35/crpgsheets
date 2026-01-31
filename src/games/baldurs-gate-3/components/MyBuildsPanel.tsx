@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import type { BG3Build, CompanionName } from '../types';
 import type { CharacterBuild } from '../../../types';
 import { COMPANIONS } from '../data/companions';

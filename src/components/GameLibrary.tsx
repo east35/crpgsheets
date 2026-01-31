@@ -15,7 +15,7 @@ export function GameLibrary({ onSelectGame }: GameLibraryProps) {
       <section className="hero-fullscreen">
         <div
           className="hero-bg"
-          style={{ backgroundImage: 'url(/images/marketing/background.png)' }}
+          style={{ backgroundImage: 'url(/images/marketing/background.jpg)' }}
         />
 
         <div className="hero-split">
@@ -37,19 +37,6 @@ export function GameLibrary({ onSelectGame }: GameLibraryProps) {
               Start Tracking
             </button>
             <p className="hero-subtitle">The build tracker for cRPG lovers.</p>
-          </div>
-
-          <div className="hero-screenshots">
-            <img
-              src="/images/marketing/screenshot1.png"
-              alt="App screenshot"
-              className="hero-screenshot screenshot-front"
-            />
-            <img
-              src="/images/marketing/screenshot2.png"
-              alt="App screenshot"
-              className="hero-screenshot screenshot-back"
-            />
           </div>
         </div>
       </section>

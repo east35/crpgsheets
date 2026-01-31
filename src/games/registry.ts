@@ -6,6 +6,8 @@ export const GAMES: Record<string, Game> = {
     name: 'Warhammer 40,000: Rogue Trader',
     shortName: 'Rogue Trader',
     description: 'Manage your Rogue Trader party builds and progression',
+    version: '1.0.0',
+    status: 'active',
     heroImage: '/images/heroes/rogue-trader-hero.png',
     logo: '/images/logos/rogue-trader-logo.png',
   },
@@ -14,26 +16,20 @@ export const GAMES: Record<string, Game> = {
     name: "Baldur's Gate III",
     shortName: 'BG3',
     description: 'Plan your BG3 character builds and party composition',
+    version: '0.9.0',
+    status: 'beta',
     heroImage: '/images/heroes/bg3-hero.png',
     logo: '/images/logos/baldurs-gate-logo.png',
   },
 };
 
-export interface ComingSoonGame {
-  id: string;
-  name: string;
-  shortName: string;
-  description: string;
-  heroImage?: string;
-  logo?: string;
-}
-
-export const COMING_SOON_GAMES: ComingSoonGame[] = [
+export const COMING_SOON_GAMES: Game[] = [
   {
     id: 'divinity-os2',
     name: 'Divinity: Original Sin 2',
     shortName: 'DOS2',
     description: 'Manage your party builds and skill combinations',
+    status: 'coming-soon',
     heroImage: '/images/heroes/dos2-hero.png',
     logo: '/images/logos/divinity.png',
   },
@@ -42,6 +38,7 @@ export const COMING_SOON_GAMES: ComingSoonGame[] = [
     name: 'Disco Elysium - The Final Cut',
     shortName: 'Disco Elysium',
     description: 'Track your detective skills and thought cabinet',
+    status: 'coming-soon',
     heroImage: '/images/heroes/disco-elysium-hero.png',
     logo: '/images/logos/disco.png',
   },

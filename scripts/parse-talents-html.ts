@@ -111,7 +111,7 @@ export const WIKI_TALENTS: Record<string, WikiTalent> = {\n`;
   const usedKeys = new Set<string>();
   
   for (const talent of talents) {
-    let baseKey = talent.name
+    const baseKey = talent.name
       .replace(/[^a-zA-Z0-9\s]/g, '')
       .replace(/\s+/g, '_')
       .toLowerCase();

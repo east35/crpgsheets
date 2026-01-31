@@ -124,6 +124,13 @@ export function BuildViewer({
   // Handle level row click - show confirmation if different from current level
   const handleLevelClick = (level: number) => {
     if (level === currentLevel) return;
+    if (!isTracked) {
+      const confirmed = window.confirm('Track this build to update levels. Add to Party now?');
+      if (confirmed) {
+        onTrackBuild?.(build);
+      }
+      return;
+    }
     setPendingLevelChange(level);
   };
 
@@ -300,7 +307,7 @@ export function BuildViewer({
                   <div className="level-stat-changes">
                     {(() => {
                       const newScores = getAbilityScoresAtLevel(levelData.characterLevel);
-                      return Object.entries(levelData.abilityScoreImprovement).map(([stat, _bonus]) => {
+                      return Object.entries(levelData.abilityScoreImprovement).map(([stat]) => {
                         const newValue = newScores[stat as keyof typeof newScores];
                         const modifier = Math.floor((newValue - 10) / 2);
                         return (
