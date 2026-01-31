@@ -11,10 +11,9 @@
   font-weight: 600;
   background: #28a75e;
 }
-.add-to-party-desktop.btn:hover, {
-  border-radius: 999px;
-  font-weight: 600;
-  background: #1d7241;;
+.add-to-party-desktop.btn:hover,
+.add-to-party-mobile .btn:hover {
+  background: #1d7241;
 }
 
 
