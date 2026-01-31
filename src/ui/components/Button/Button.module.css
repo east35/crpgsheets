@@ -1,0 +1,132 @@
+.button {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-pill);
+  font-family: var(--ui-type-core-font);
+  font-size: var(--ui-type-core-control);
+  line-height: var(--ui-type-core-leading);
+  font-weight: var(--ui-font-semibold);
+  letter-spacing: var(--ui-tracking-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-space-xs);
+  padding: 0 var(--ui-space-md);
+  min-height: var(--ui-size-control);
+  cursor: pointer;
+  position: relative;
+  transition: background-color var(--ui-motion-duration-200) var(--ui-motion-ease-standard),
+    border-color var(--ui-motion-duration-200) var(--ui-motion-ease-standard),
+    color var(--ui-motion-duration-200) var(--ui-motion-ease-standard),
+    box-shadow var(--ui-motion-duration-200) var(--ui-motion-ease-standard),
+    transform var(--ui-motion-duration-150) var(--ui-motion-ease-standard);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ui-focus-ring);
+}
+
+.button:disabled,
+.button[data-loading='true'] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button[data-full-width='true'] {
+  width: 100%;
+}
+
+.button[data-size='sm'] {
+  min-height: calc(var(--ui-size-control) - var(--ui-space-4));
+  padding: 0 var(--ui-space-sm);
+}
+
+.button[data-size='md'] {
+  min-height: var(--ui-size-control);
+  padding: 0 var(--ui-space-md);
+}
+
+.button[data-size='lg'] {
+  min-height: var(--ui-size-control-lg);
+  padding: 0 var(--ui-space-lg);
+}
+
+.button[data-variant='primary'] {
+  background: var(--ui-accent-primary);
+  color: var(--ui-text-on-dark);
+  border-color: transparent;
+}
+
+.button[data-variant='primary']:hover:not(:disabled):not([data-loading='true']) {
+  background: var(--ui-accent-primary-strong);
+}
+
+.button[data-variant='secondary'] {
+  background: var(--ui-surface-panel);
+  color: var(--ui-text-primary);
+  border-color: var(--ui-border-default);
+}
+
+.button[data-variant='secondary']:hover:not(:disabled):not([data-loading='true']) {
+  background: var(--ui-surface-hover);
+  border-color: var(--ui-border-strong);
+}
+
+.button[data-variant='ghost'] {
+  background: transparent;
+  color: var(--ui-text-primary);
+  border-color: transparent;
+}
+
+.button[data-variant='ghost']:hover:not(:disabled):not([data-loading='true']) {
+  background: var(--ui-surface-panel-alt);
+  border-color: var(--ui-border-default);
+}
+
+.button[data-variant='danger'] {
+  background: var(--ui-status-danger);
+  color: var(--ui-text-on-dark);
+  border-color: transparent;
+}
+
+.button[data-variant='danger']:hover:not(:disabled):not([data-loading='true']) {
+  background: var(--ui-status-danger-strong);
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-xs);
+}
+
+.button[data-loading='true'] .content {
+  visibility: hidden;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.spinner {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: spin var(--ui-motion-duration-300) linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

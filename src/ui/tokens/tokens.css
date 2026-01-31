@@ -1,5 +1,5 @@
 /*
-  Design tokens derived from src/**/*.css audit.
+  Design tokens derived from src CSS audit.
   Conventions: --ui-* are base tokens; theme scopes override these in context.
 */
 :root {
@@ -38,6 +38,7 @@
   --ui-accent-secondary: #f0c040;
   --ui-accent-secondary-strong: #ffb703;
   --ui-accent-secondary-glow: rgba(255, 183, 3, 0.18);
+  --ui-focus-ring: rgba(139, 92, 246, 0.35);
 
   /* Status */
   --ui-status-success: #4a7c4a;
@@ -109,29 +110,49 @@
   --ui-motion-duration-300: 300ms;
   --ui-motion-ease-standard: ease;
 
-  /* Typography */
-  --ui-font-size-xs: 0.7rem;
-  --ui-font-size-sm: 0.75rem;
-  --ui-font-size-sm-plus: 0.8rem;
-  --ui-font-size-md: 0.85rem;
-  --ui-font-size-base: 0.9rem;
-  --ui-font-size-lg: 1rem;
-  --ui-font-size-xl: 1.1rem;
-  --ui-font-size-2xl: 1.25rem;
-  --ui-font-size-3xl: 1.5rem;
-  --ui-font-size-4xl: 1.6rem;
-  --ui-font-size-5xl: 2.2rem;
+  /* Typography (foundations) */
+  --ui-font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ui-font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, monospace;
 
-  --ui-font-weight-regular: 400;
-  --ui-font-weight-medium: 500;
-  --ui-font-weight-semibold: 600;
-  --ui-font-weight-bold: 700;
+  --ui-text-xs: 0.75rem;
+  --ui-text-sm: 0.85rem;
+  --ui-text-md: 0.9rem;
+  --ui-text-base: 1rem;
+  --ui-text-lg: 1.25rem;
+  --ui-text-xl: 1.5rem;
+  --ui-text-2xl: 1.8rem;
+  --ui-text-3xl: 2.2rem;
 
-  --ui-letter-spacing-tight: 0.01em;
-  --ui-letter-spacing-base: 0.02em;
-  --ui-letter-spacing-wide: 0.05em;
-  --ui-letter-spacing-wider: 0.08em;
-  --ui-letter-spacing-ultra: 0.2em;
+  --ui-font-regular: 400;
+  --ui-font-medium: 500;
+  --ui-font-semibold: 600;
+  --ui-font-bold: 700;
+
+  --ui-leading-tight: 1.2;
+  --ui-leading-snug: 1.35;
+  --ui-leading-normal: 1.5;
+  --ui-leading-relaxed: 1.65;
+
+  --ui-tracking-tight: -0.01em;
+  --ui-tracking-normal: 0;
+  --ui-tracking-wide: 0.05em;
+
+  /* Typography (semantic) */
+  --ui-type-core-font: var(--ui-font-sans);
+  --ui-type-core-leading: var(--ui-leading-snug);
+  --ui-type-core-label: var(--ui-text-xs);
+  --ui-type-core-meta: var(--ui-text-sm);
+  --ui-type-core-body: var(--ui-text-base);
+  --ui-type-core-body-dense: var(--ui-text-md);
+  --ui-type-core-control: var(--ui-text-base);
+  --ui-type-core-heading: var(--ui-text-xl);
+
+  --ui-type-editorial-font: var(--ui-font-sans);
+  --ui-type-editorial-leading: var(--ui-leading-relaxed);
+  --ui-type-editorial-body: var(--ui-text-base);
+  --ui-type-editorial-quote: var(--ui-text-lg);
+  --ui-type-editorial-heading: var(--ui-text-xl);
+  --ui-type-editorial-caption: var(--ui-text-sm);
 
   /* Sizing */
   --ui-size-control: 44px;

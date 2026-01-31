@@ -94,7 +94,15 @@ function TokenSwatch({ token }: { token: string }) {
         gap: 'var(--ui-space-xs)',
       }}
     >
-      <div style={{ fontSize: 'var(--ui-font-size-sm)' }}>{token}</div>
+      <div
+        style={{
+          fontFamily: 'var(--ui-type-core-font)',
+          fontSize: 'var(--ui-type-core-meta)',
+          lineHeight: 'var(--ui-type-core-leading)',
+        }}
+      >
+        {token}
+      </div>
       <div
         style={{
           height: 48,
@@ -133,10 +141,110 @@ export const Overview: Story = {
         <h2 style={{ marginBottom: 'var(--ui-space-sm)' }}>Text</h2>
         <div style={{ display: 'grid', gap: 'var(--ui-space-sm)' }}>
           {textTokens.map((token) => (
-            <div key={token} style={{ color: `var(${token})`, fontSize: 'var(--ui-font-size-lg)' }}>
+            <div
+              key={token}
+              style={{
+                color: `var(${token})`,
+                fontFamily: 'var(--ui-type-core-font)',
+                fontSize: 'var(--ui-type-core-body)',
+                lineHeight: 'var(--ui-type-core-leading)',
+              }}
+            >
               {token} — The quick brown fox jumps over the lazy dog.
             </div>
           ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 style={{ marginBottom: 'var(--ui-space-sm)' }}>Typography</h2>
+        <div style={{ display: 'grid', gap: 'var(--ui-space-lg)' }}>
+          <div>
+            <h3 style={{ marginBottom: 'var(--ui-space-xs)' }}>Core Body</h3>
+            <div style={{ color: 'var(--ui-text-muted)', fontSize: 'var(--ui-type-core-meta)' }}>
+              font-size: var(--ui-type-core-body) · line-height: var(--ui-type-core-leading)
+            </div>
+            <p
+              style={{
+                margin: 0,
+                fontFamily: 'var(--ui-type-core-font)',
+                fontSize: 'var(--ui-type-core-body)',
+                lineHeight: 'var(--ui-type-core-leading)',
+                color: 'var(--ui-text-primary)',
+              }}
+            >
+              The core UI copy is compact and calm. It prioritizes dense layouts without
+              feeling cramped, keeping quick scans comfortable across panels and controls.
+            </p>
+          </div>
+          <div>
+            <h3 style={{ marginBottom: 'var(--ui-space-xs)' }}>Editorial Body</h3>
+            <div style={{ color: 'var(--ui-text-muted)', fontSize: 'var(--ui-type-core-meta)' }}>
+              font-size: var(--ui-type-editorial-body) · line-height: var(--ui-type-editorial-leading)
+            </div>
+            <p
+              style={{
+                margin: 0,
+                fontFamily: 'var(--ui-type-editorial-font)',
+                fontSize: 'var(--ui-type-editorial-body)',
+                lineHeight: 'var(--ui-type-editorial-leading)',
+                color: 'var(--ui-text-primary)',
+              }}
+            >
+              Editorial copy uses the same size as core text but opens the leading for
+              longer-form reading. Paragraphs feel airy while maintaining visual alignment.
+            </p>
+          </div>
+          <div>
+            <h3 style={{ marginBottom: 'var(--ui-space-xs)' }}>Core Heading</h3>
+            <div style={{ color: 'var(--ui-text-muted)', fontSize: 'var(--ui-type-core-meta)' }}>
+              font-size: var(--ui-type-core-heading) · line-height: var(--ui-type-core-leading)
+            </div>
+            <div
+              style={{
+                fontFamily: 'var(--ui-type-core-font)',
+                fontSize: 'var(--ui-type-core-heading)',
+                lineHeight: 'var(--ui-type-core-leading)',
+                fontWeight: 'var(--ui-font-semibold)',
+              }}
+            >
+              Core heading for UI sections
+            </div>
+          </div>
+          <div>
+            <h3 style={{ marginBottom: 'var(--ui-space-xs)' }}>Editorial Heading</h3>
+            <div style={{ color: 'var(--ui-text-muted)', fontSize: 'var(--ui-type-core-meta)' }}>
+              font-size: var(--ui-type-editorial-heading) · line-height: var(--ui-type-editorial-leading)
+            </div>
+            <div
+              style={{
+                fontFamily: 'var(--ui-type-editorial-font)',
+                fontSize: 'var(--ui-type-editorial-heading)',
+                lineHeight: 'var(--ui-type-editorial-leading)',
+                fontWeight: 'var(--ui-font-semibold)',
+              }}
+            >
+              Editorial heading for narrative sections
+            </div>
+          </div>
+          <div>
+            <h3 style={{ marginBottom: 'var(--ui-space-xs)' }}>Label</h3>
+            <div style={{ color: 'var(--ui-text-muted)', fontSize: 'var(--ui-type-core-meta)' }}>
+              font-size: var(--ui-type-core-label) · tracking: var(--ui-tracking-wide)
+            </div>
+            <div
+              style={{
+                fontFamily: 'var(--ui-type-core-font)',
+                fontSize: 'var(--ui-type-core-label)',
+                lineHeight: 'var(--ui-type-core-leading)',
+                letterSpacing: 'var(--ui-tracking-wide)',
+                textTransform: 'uppercase',
+                color: 'var(--ui-text-muted)',
+              }}
+            >
+              Core label sample
+            </div>
+          </div>
         </div>
       </section>
 
