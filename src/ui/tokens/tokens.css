@@ -1,0 +1,155 @@
+/*
+  Design tokens derived from src/**/*.css audit.
+  Conventions: --ui-* are base tokens; theme scopes override these in context.
+*/
+:root {
+  /* Surfaces */
+  --ui-surface-base: #1a1a2e;
+  --ui-surface-panel: #2a2a3e;
+  --ui-surface-panel-alt: #2a2a4a;
+  --ui-surface-hover: #3a3a4e;
+  --ui-surface-muted: rgba(18, 20, 36, 0.75);
+  --ui-surface-elevated: rgba(26, 26, 46, 0.9);
+  --ui-surface-scrim: rgba(0, 0, 0, 0.4);
+  --ui-surface-scrim-strong: rgba(0, 0, 0, 0.7);
+
+  /* Text */
+  --ui-text-primary: #e0e0e0;
+  --ui-text-muted: #b7bdd6;
+  --ui-text-subtle: #9aa3c2;
+  --ui-text-disabled: #888;
+  --ui-text-disabled-strong: #666;
+  --ui-text-on-dark: #fff;
+  --ui-text-accent: #e5e9ff;
+
+  /* Borders */
+  --ui-border-default: #3a3a5a;
+  --ui-border-strong: #4a4a6a;
+  --ui-border-subtle: rgba(106, 112, 160, 0.35);
+  --ui-border-contrast: #5a5a7a;
+  --ui-border-ghost: rgba(255, 255, 255, 0.08);
+
+  /* Accents */
+  --ui-accent-primary: #8b5cf6;
+  --ui-accent-primary-strong: #b8b0ff;
+  --ui-accent-primary-soft: rgba(139, 92, 246, 0.2);
+  --ui-accent-primary-soft-strong: rgba(139, 92, 246, 0.35);
+  --ui-accent-primary-glow: rgba(139, 92, 246, 0.6);
+  --ui-accent-secondary: #f0c040;
+  --ui-accent-secondary-strong: #ffb703;
+  --ui-accent-secondary-glow: rgba(255, 183, 3, 0.18);
+
+  /* Status */
+  --ui-status-success: #4a7c4a;
+  --ui-status-success-strong: #10b981;
+  --ui-status-success-soft: rgba(74, 124, 74, 0.35);
+  --ui-status-success-soft-strong: rgba(74, 124, 74, 0.6);
+  --ui-status-warning: #f0c040;
+  --ui-status-warning-strong: #ffd700;
+  --ui-status-danger: #f87171;
+  --ui-status-danger-strong: #ff9999;
+  --ui-status-danger-deep: #7f1d1d;
+
+  /* Spacing (rem scale) */
+  --ui-space-2xs: 0.25rem;
+  --ui-space-xs: 0.5rem;
+  --ui-space-sm: 0.75rem;
+  --ui-space-md: 1rem;
+  --ui-space-lg: 1.5rem;
+  --ui-space-xl: 2rem;
+  --ui-space-2xl: 2.5rem;
+  --ui-space-3xl: 3rem;
+  --ui-space-4xl: 4rem;
+  --ui-space-5xl: 5rem;
+
+  /* Spacing (px) */
+  --ui-space-1: 2px;
+  --ui-space-2: 4px;
+  --ui-space-3: 6px;
+  --ui-space-4: 8px;
+  --ui-space-5: 10px;
+  --ui-space-6: 12px;
+  --ui-space-7: 14px;
+  --ui-space-8: 16px;
+
+  /* Radius */
+  --ui-radius-xs: 4px;
+  --ui-radius-sm: 6px;
+  --ui-radius-md: 8px;
+  --ui-radius-lg: 10px;
+  --ui-radius-xl: 12px;
+  --ui-radius-2xl: 14px;
+  --ui-radius-3xl: 16px;
+  --ui-radius-pill: 100px;
+
+  /* Elevation */
+  --ui-shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --ui-shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.35);
+  --ui-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --ui-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --ui-shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --ui-shadow-glow-accent: 0 0 6px #8b5cf6;
+  --ui-shadow-focus-primary: 0 0 0 2px rgba(139, 92, 246, 0.3);
+  --ui-shadow-focus-brand: 0 0 0 2px rgba(100, 108, 255, 0.2);
+  --ui-shadow-focus-warning: 0 0 0 2px rgba(240, 192, 64, 0.3);
+
+  /* Z-index */
+  --ui-layer-base: 0;
+  --ui-layer-raised: 1;
+  --ui-layer-sticky: 10;
+  --ui-layer-dropdown: 100;
+  --ui-layer-overlay: 999;
+  --ui-layer-modal: 1000;
+  --ui-layer-toast: 10000;
+  --ui-layer-max: 10001;
+
+  /* Motion */
+  --ui-motion-duration-150: 150ms;
+  --ui-motion-duration-200: 200ms;
+  --ui-motion-duration-300: 300ms;
+  --ui-motion-ease-standard: ease;
+
+  /* Typography */
+  --ui-font-size-xs: 0.7rem;
+  --ui-font-size-sm: 0.75rem;
+  --ui-font-size-sm-plus: 0.8rem;
+  --ui-font-size-md: 0.85rem;
+  --ui-font-size-base: 0.9rem;
+  --ui-font-size-lg: 1rem;
+  --ui-font-size-xl: 1.1rem;
+  --ui-font-size-2xl: 1.25rem;
+  --ui-font-size-3xl: 1.5rem;
+  --ui-font-size-4xl: 1.6rem;
+  --ui-font-size-5xl: 2.2rem;
+
+  --ui-font-weight-regular: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-semibold: 600;
+  --ui-font-weight-bold: 700;
+
+  --ui-letter-spacing-tight: 0.01em;
+  --ui-letter-spacing-base: 0.02em;
+  --ui-letter-spacing-wide: 0.05em;
+  --ui-letter-spacing-wider: 0.08em;
+  --ui-letter-spacing-ultra: 0.2em;
+
+  /* Sizing */
+  --ui-size-control: 44px;
+  --ui-size-control-lg: 56px;
+  --ui-size-icon: 28px;
+  --ui-size-avatar: 64px;
+  --ui-size-panel: 320px;
+  --ui-size-card: 120px;
+  --ui-size-detail: 520px;
+}
+
+[data-theme="audit"] {
+  --ui-text-primary: #e6e9ff;
+  --ui-text-muted: #a7aecf;
+  --ui-surface-panel: rgba(19, 20, 38, 0.85);
+  --ui-border-default: rgba(106, 112, 160, 0.35);
+  --ui-accent-primary: #f0c040;
+  --ui-accent-primary-strong: #ffb703;
+  --ui-accent-primary-glow: rgba(255, 183, 3, 0.18);
+  --ui-shadow-xl: 0 24px 60px rgba(7, 8, 20, 0.5);
+}
