@@ -1,0 +1,158 @@
+# CSS Leftovers Report (Post-Tokenization)
+Scope: `src/**/*.css`
+
+## font-size
+- 0.875rem — 5 — `src/components/GameLibrary.css` — `.game-card p`; `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.back-button`; `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.companion-summary-meta`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.back-button`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.build-viewer-back-btn`
+- 1.05rem — 4 — `src/components/TooltipCard.css` — `.crpg-tooltip-kv`; `src/components/TooltipCard.css` — `.crpg-tooltip-description`; `src/components/TooltipCard.css` — `.crpg-tooltip-callout`; `src/components/GameLibrary.css` — `.hero-tagline`
+- 1.2rem — 4 — `src/components/GameLibrary.css` — `.hero-cta`; `src/games/rogue-trader/components/BuildSelector.css` — `.companion-card-title`; `src/games/rogue-trader/components/BuildSelector.css` — `.build-name`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-card-title`
+- 0.8125rem — 4 — `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.build-card-meta`; `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.build-card-desc`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.build-card-meta`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.build-card-desc`
+- 2.2rem — 2 — `src/App.css` — `.view-hero h1`; `src/components/DataAuditView.css` — `.data-audit-hero h1`
+- 1.6rem — 2 — `src/App.css` — `.view-kpis strong`; `src/components/DataAuditView.css` — `.data-audit-kpis strong`
+- 0.95rem — 2 — `src/App.css` — `.btn`; `src/games/rogue-trader/components/CustomBuildEditor.css` — `.form-row input, .form-row select, .form-row textarea`
+- 1.15rem — 2 — `src/games/rogue-trader/components/BuildSelector.css` — `.companion-group-title`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-group-title`
+- 1.125rem — 2 — `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.build-card-title`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.build-card-title`
+- 1.8rem — 1 — `src/App.css` — `.view-hero h1`
+- inherit — 1 — `src/App.css` — `.footer-landing-link`
+- 1.3rem — 1 — `src/components/DataAuditView.css` — `.data-audit-detail-header h2`
+- 3rem — 1 — `src/components/AvatarUpload.css` — `.avatar-upload-placeholder span`
+- 2rem — 1 — `src/components/AvatarUpload.css` — `.avatar-upload-plus`
+- 0.6875rem — 1 — `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.build-card-tag`
+- 0.65rem — 1 — `src/games/baldurs-gate-3/components/BuildViewer.css` — `.stat-change-name`
+
+## line-height
+- 1.4 — 5 — `src/App.css` — `.storage-notice`; `src/components/GameLibrary.css` — `.game-card p`; `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal-card-desc`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .build-card-description`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .builds-grid .build-desc`
+- 1 — 3 — `src/App.css` — `.back-btn`; `src/components/AvatarUpload.css` — `.avatar-upload-plus`; `src/components/PartyBar.css` — `.party-level`
+- 1.2 — 1 — `src/games/rogue-trader/components/BuildSelector.css` — `.build-name`
+
+## font-weight
+- 700 — 9 — `src/components/TooltipCard.css` — `.crpg-tooltip-title`; `src/components/TooltipCard.css` — `.crpg-tooltip-badge`; `src/components/TooltipCard.css` — `.crpg-tooltip-label`; `src/components/TooltipCard.css` — `.crpg-tooltip-callout`; `src/components/GameLibrary.css` — `.hero-tagline`
+- bold — 2 — `src/components/PartyBar.css` — `.delete-badge`; `src/games/rogue-trader/components/BuildViewer.css` — `.level-number`
+- 400 — 1 — `src/index.css` — `:root`
+- 300 — 1 — `src/components/AvatarUpload.css` — `.avatar-upload-plus`
+
+## border-radius
+- 3px — 7 — `src/App.css` — `.build-archetype-path .archetype`; `src/components/BuildList.css` — `.party-member-path .archetype`; `src/components/BuildList.css` — `.progress-bar`; `src/components/BuildList.css` — `.progress-fill`; `src/components/BuildList.css` — `.build-tag`
+- 16px — 5 — `src/components/DataAuditView.css` — `.data-audit-panel`; `src/components/DataAuditView.css` — `.data-audit-toolbar`; `src/components/DataAuditView.css` — `.data-audit-detail`; `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal`; `src/games/baldurs-gate-3/components/BuildSelectorModal.css` — `.build-selector-modal-overlay.bg3 .build-selector-modal`
+- 50% — 5 — `src/components/AvatarUpload.css` — `.avatar-action-btn`; `src/components/PartyBar.css` — `.delete-badge`; `src/components/PartyBar.css` — `.active-indicator`; `src/components/TooltipSheet.css` — `.tooltip-sheet-close`; `src/components/ImageLightbox.css` — `.lightbox-close`
+- 999px — 3 — `src/components/DataAuditView.css` — `.data-audit-coverage-bar`; `src/components/DataAuditView.css` — `.data-audit-pagination button`; `src/components/MobileStickyButton.css` — `.add-to-party-desktop.btn, .add-to-party-mobile .btn`
+- 20px — 3 — `src/games/rogue-trader/components/BuildSelector.css` — `.filter-tag`; `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.filter-tag`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.filter-tag`
+- 0 — 2 — `src/games/rogue-trader/components/BuildSelector.css` — `.rt-build-icon`; `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.rt-build-icon`
+- 8px 8px 0 0 — 2 — `src/games/rogue-trader/components/BuildViewer.css` — `.tab`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.tab`
+- 10px — 1 — `src/patterns/tokens.css` — `.u-surface-card-10`
+- 12px — 1 — `src/patterns/tokens.css` — `.u-surface-card-12`
+- 4px — 1 — `src/patterns/tokens.css` — `.u-radius-4`
+- 18px — 1 — `src/components/DataAuditView.css` — `.data-audit-empty, .data-audit-detail-empty`
+- 6px 6px 0 0 — 1 — `src/games/rogue-trader/components/CustomBuildEditor.css` — `.tier-divider`
+- 0 0 8px 8px — 1 — `src/games/rogue-trader/components/CustomBuildEditor.css` — `.talent-picker`
+- 0 8px 8px 0 — 1 — `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal-quote`
+- 7px — 1 — `src/games/baldurs-gate-3/components/BuildSelectorModal.css` — `.build-selector-modal-overlay.bg3 .build-card-gear-icon`
+
+## spacing
+- 6px — 11 — `src/components/TooltipSheet.css` — `.tooltip-sheet-subtitle.badge`; `src/components/ProfileSelector.css` — `.profile-action-btn-large`; `src/components/ProfileSelector.css` — `.profile-edit-buttons button`; `src/games/rogue-trader/components/BuildSelector.css` — `.unselected-build-action`; `src/games/rogue-trader/components/BuildSelector.css` — `.tracked-build-edit-btn`
+- 2px — 8 — `src/components/SearchBar.css` — `.result-content`; `src/components/PartyBar.css` — `.party-level`; `src/components/PartyBar.css` — `.party-avatar-expand`; `src/components/PartyBar.css` — `.party-avatar-expand`; `src/components/PartyBar.css` — `.party-level`
+- 12px — 7 — `src/components/HeaderGameSelector.css` — `.header-game-item`; `src/components/TooltipSheet.css` — `.tooltip-sheet-close`; `src/components/TooltipSheet.css` — `.tooltip-sheet-close`; `src/components/TooltipSheet.css` — `.tooltip-sheet-header`; `src/components/TooltipSheet.css` — `.tooltip-sheet-meta`
+- auto — 6 — `src/App.css` — `.storage-notice`; `src/App.css` — `.storage-notice`; `src/components/MobileMenu.css` — `.profile-selector.mobile .profile-bottom-actions`; `src/components/ProfileSelector.css` — `.profile-dropdown`; `src/games/rogue-trader/components/BuildSelector.css` — `.companion-expand-icon`
+- 10px 12px — 6 — `src/components/SearchBar.css` — `.search-result-item`; `src/components/ProfileSelector.css` — `.profile-action-btn-large`; `src/components/ProfileSelector.css` — `.profile-edit-large input`; `src/components/ProfileSelector.css` — `.profile-edit-buttons button`; `src/components/ProfileSelector.css` — `.profile-select-btn`
+- 16px — 6 — `src/components/SearchBar.css` — `.search-no-results`; `src/components/TooltipCard.css` — `.crpg-tooltip-card`; `src/components/TooltipSheet.css` — `.tooltip-sheet-header`; `src/components/TooltipSheet.css` — `.tooltip-sheet-header`; `src/components/TooltipSheet.css` — `.tooltip-sheet-meta`
+- 0.25rem 0.75rem — 6 — `src/components/GameLibrary.css` — `.coming-soon-badge, .beta-badge`; `src/components/GameLibrary.css` — `.version-badge`; `src/games/rogue-trader/components/BuildSelector.css` — `.companion-tag`; `src/games/rogue-trader/components/BuildViewer.css` — `.level-display`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.build-tags .tag`
+- 0.85rem 1rem — 5 — `src/components/DataAuditView.css` — `.data-audit-row`; `src/games/rogue-trader/components/BuildSelector.css` — `.tracked-build-preview`; `src/games/rogue-trader/components/BuildSelector.css` — `.unselected-build-preview`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .unselected-build-preview`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-card-footer`
+- 0.2rem 0.5rem — 5 — `src/games/rogue-trader/components/BuildSelector.css` — `.build-path .archetype`; `src/games/rogue-trader/components/BuildViewer.css` — `.tier-completed-badge`; `src/games/rogue-trader/components/BuildViewer.css` — `.talent`; `src/games/rogue-trader/components/BuildViewer.css` — `.gear-item`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .build-card-tags .tag`
+- 0.5rem 1rem — 5 — `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.back-button`; `src/games/rogue-trader/components/BuildViewer.css` — `.tab`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.back-button`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.build-viewer-back-btn`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.tab`
+- 0.4rem — 4 — `src/App.css` — `.build-archetype-path`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-card-tags`; `src/games/baldurs-gate-3/components/BuildSelectorModal.css` — `.build-selector-modal-overlay.bg3 .build-card-tags`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.gear-item`
+- 0.15rem 0.4rem — 4 — `src/App.css` — `.build-archetype-path .archetype`; `src/components/BuildList.css` — `.party-member-path .archetype`; `src/components/BuildList.css` — `.build-tag`; `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal-card-path .archetype`
+- 0.45rem — 4 — `src/App.css` — `.app-footer .footer-github`; `src/components/GameLibrary.css` — `.footer-github`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-card-gear`; `src/games/baldurs-gate-3/components/BuildSelectorModal.css` — `.build-selector-modal-overlay.bg3 .build-card-gear`
+- 8px 12px — 4 — `src/components/HeaderGameSelector.css` — `.header-game-toggle`; `src/components/ProfileSelector.css` — `.profile-selector-toggle`; `src/components/ProfileSelector.css` — `.profile-create-form button`; `src/components/ProfileSelector.css` — `.clear-data-btn`
+- 0.6rem — 4 — `src/components/DataAuditView.css` — `.data-audit-list`; `src/components/DataAuditView.css` — `.data-audit-coverage-row`; `src/components/DataAuditView.css` — `.data-audit-table`; `src/components/DataAuditView.css` — `.data-audit-detail-fields`
+- 0.5rem 0.75rem — 4 — `src/components/PartyBar.css` — `.party-bar-content`; `src/components/BuildList.css` — `.dropdown-item`; `src/games/rogue-trader/components/CustomBuildEditor.css` — `.talent-option`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.stat-change-item`
+- 0.375rem 0.75rem — 4 — `src/games/rogue-trader/components/BuildSelector.css` — `.filter-tag`; `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.filter-tag`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.filter-tag`; `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.sort-option`
+- 0.9rem — 4 — `src/games/rogue-trader/components/BuildSelector.css` — `.tracked-build-preview`; `src/games/rogue-trader/components/BuildSelector.css` — `.unselected-build-preview`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .unselected-build-preview`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-card-footer`
+- 1rem 2rem — 3 — `src/App.css` — `.header`; `src/App.css` — `.app-footer`; `src/components/GameLibrary.css` — `.landing-footer`
+- 0.25rem 0.6rem — 3 — `src/App.css` — `.coming-soon-badge`; `src/App.css` — `.beta-badge`; `src/games/rogue-trader/components/CustomBuildEditor.css` — `.selected-talent`
+- 0 0 0.25rem — 3 — `src/App.css` — `.build-info h3`; `src/App.css` — `.build-info p`; `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal-info h2`
+- calc(100% + 4px) — 3 — `src/components/SearchBar.css` — `.search-results`; `src/components/ProfileSelector.css` — `.profile-dropdown`; `src/components/ProfileSelector.css` — `.profile-dropdown`
+- calc(100% + 8px) — 3 — `src/components/TooltipCard.css` — `.crpg-tooltip-container.top`; `src/components/TooltipCard.css` — `.crpg-tooltip-container.bottom`; `src/components/MobileMenu.css` — `.mobile-menu-panel`
+- 0 0 1rem — 3 — `src/components/DataAuditView.css` — `.data-audit-panel h2`; `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal-builds h3`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.build-description`
+- 100px — 3 — `src/components/MobileStickyButton.css` — `.add-to-party-mobile.above-party-bar`; `src/games/rogue-trader/components/BuildViewer.css` — `.build-viewer.has-party-bar`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.build-viewer.bg3.has-party-bar`
+- 0 0 0.5rem 0 — 3 — `src/games/rogue-trader/components/CustomBuildEditor.css` — `.progression-editor h3`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 h2`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.build-title h2`
+- 6px 12px — 3 — `src/games/rogue-trader/components/BuildSelector.css` — `.tracked-build-change-btn`; `src/games/rogue-trader/components/BuildSelector.css` — `.tracked-build-edit-btn`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .tracked-build-edit-btn`
+- 0 0 2rem — 2 — `src/App.css` — `.view-hero`; `src/components/GameLibrary.css` — `.hero-tagline`
+- 0 0 0.35rem — 2 — `src/App.css` — `.view-hero h1`; `src/components/DataAuditView.css` — `.data-audit-hero h1`
+- 0.9rem 1rem — 2 — `src/App.css` — `.view-kpis div`; `src/components/DataAuditView.css` — `.data-audit-kpis div`
+- 3rem — 2 — `src/App.css` — `.build-list-empty`; `src/games/rogue-trader/components/BuildSelector.css` — `.no-builds`
+- 1rem — 2 — `src/patterns/tokens.css` — `.u-gap-1`; `src/patterns/tokens.css` — `.u-pad-1`
+- 4px 8px — 2 — `src/components/SearchBar.css` — `.search-clear`; `src/components/ProfileSelector.css` — `.profile-edit`
+- 10px — 2 — `src/components/SearchBar.css` — `.search-result-item`; `src/components/ProfileSelector.css` — `.profile-edit-large`
+- 2.5rem — 2 — `src/components/DataAuditView.css` — `.data-audit-hero`; `src/components/DataAuditView.css` — `.data-audit-empty, .data-audit-detail-empty`
+- 50% — 2 — `src/components/AvatarUpload.css` — `.avatar-upload-actions`; `src/components/PartyBar.css` — `.active-indicator`
+- 100% — 2 — `src/components/AvatarUpload.css` — `.avatar-upload-error`; `src/components/BuildList.css` — `.party-member-dropdown`
+- 0.25rem 0 — 2 — `src/components/PartyBar.css` — `.party-avatars`; `src/games/rogue-trader/components/BuildViewer.css` — `.skill-options`
+- -4px — 2 — `src/components/PartyBar.css` — `.delete-badge`; `src/components/PartyBar.css` — `.delete-badge`
+- 0 0 0.75rem 0 — 2 — `src/components/MobileMenu.css` — `.mobile-menu-section h3`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .build-card-description`
+- 0 0 1.5rem — 2 — `src/components/InfoModal.css` — `.info-modal h2`; `src/components/GameLibrary.css` — `.picker-modal h2`
+- 6px 8px — 2 — `src/components/ProfileSelector.css` — `.profile-action-btn`; `src/components/ProfileSelector.css` — `.profile-edit input`
+- 20px — 2 — `src/components/ImageLightbox.css` — `.lightbox-close`; `src/components/ImageLightbox.css` — `.lightbox-close`
+- 0.6rem 0.8rem — 2 — `src/games/rogue-trader/components/CustomBuildEditor.css` — `.form-row input, .form-row select, .form-row textarea`; `src/games/rogue-trader/components/CustomBuildEditor.css` — `.talent-search`
+- 1rem 0 0.25rem — 2 — `src/games/rogue-trader/components/BuildSelector.css` — `.companion-group-title`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-group-title`
+- 0.85rem — 2 — `src/games/rogue-trader/components/BuildSelector.css` — `.companion-list`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .companion-list`
+- 0.75rem 0 0 — 2 — `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal-quote`; `src/games/rogue-trader/components/BuildSelectorModal.css` — `.build-selector-modal-bio`
+- 8px 16px — 2 — `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .tracked-build-change-btn`; `src/games/baldurs-gate-3/components/BuildSelector.css` — `.build-selector.bg3 .tracked-build-edit-btn`
+- 0 0 1rem 0 — 2 — `src/games/baldurs-gate-3/components/BuildViewer.css` — `.stats-section h3`; `src/games/baldurs-gate-3/components/BuildViewer.css` — `.stats-section p`
+- .75rem 1.25rem — 1 — `src/App.css` — `.header-nav-tab`
+- calc(0.75rem + env(safe-area-inset-bottom, 0px)) — 1 — `src/App.css` — `.builds-subnav`
+- 0.6rem 1rem — 1 — `src/App.css` — `.builds-subnav-tab`
+- 0.75rem 0.85rem — 1 — `src/App.css` — `.view-kpis div`
+- 0.7rem 0.8rem — 1 — `src/App.css` — `.view-kpis div`
+- 1rem 0.75rem — 1 — `src/App.css` — `.main-content`
+- 2rem 0 — 1 — `src/App.css` — `.game-selector`
+- 0.5rem 0 — 1 — `src/App.css` — `.build-archetype-path`
+- 0.6rem 1.2rem — 1 — `src/App.css` — `.btn`
+- 0.4rem 0.8rem — 1 — `src/App.css` — `.btn-sm`
+- 0.5rem — 1 — `src/patterns/tokens.css` — `.u-gap-0-5`
+- 0.75rem — 1 — `src/patterns/tokens.css` — `.u-gap-0-75`
+- 0 — 1 — `src/patterns/tokens.css` — `.u-pad-0`
+- 1.5rem — 1 — `src/patterns/tokens.css` — `.u-pad-1-5`
+- 0.75rem 1rem — 1 — `src/patterns/tokens.css` — `.u-pad-0-75-1`
+- 0 12px — 1 — `src/components/SearchBar.css` — `.search-input-wrapper`
+- 10px 0 — 1 — `src/components/SearchBar.css` — `.search-input`
+- 14px — 1 — `src/components/TooltipCard.css` — `.crpg-tooltip-header`
+- 4px 10px — 1 — `src/components/TooltipCard.css` — `.crpg-tooltip-badge`
+- 14px 0 — 1 — `src/components/TooltipCard.css` — `.crpg-tooltip-divider`
+- 12px 16px — 1 — `src/components/HeaderGameSelector.css` — `.header-game-item`
+- 1.2rem — 1 — `src/components/DataAuditView.css` — `.data-audit-panel`
+- 0.65rem 0.75rem — 1 — `src/components/DataAuditView.css` — `.data-audit-list-item`
+- 0.8rem — 1 — `src/components/DataAuditView.css` — `.data-audit-controls`
+- 0.5rem 0.6rem — 1 — `src/components/DataAuditView.css` — `.data-audit-controls input, .data-audit-controls select`
+- 0.35rem 0.8rem — 1 — `src/components/DataAuditView.css` — `.data-audit-pagination button`
+- 1rem 1.1rem — 1 — `src/components/DataAuditView.css` — `.data-audit-detail`
+- 0.75rem 0 — 1 — `src/components/DataAuditView.css` — `.data-audit-detail-image`
+- 0.2rem — 1 — `src/components/DataAuditView.css` — `.data-audit-detail-fields div`
+- 4rem auto — 1 — `src/components/DataAuditView.css` — `.data-audit-empty, .data-audit-detail-empty`
+- 2rem 1.25rem 4.5rem — 1 — `src/components/DataAuditView.css` — `.data-audit`
+- -8px — 1 — `src/components/AvatarUpload.css` — `.avatar-upload-actions`
+- 1rem 1rem 1.25rem — 1 — `src/components/PartyBar.css` — `.party-bar`
+- 0.1rem 0.3rem — 1 — `src/components/PartyBar.css` — `.party-level`
+- -2px — 1 — `src/components/PartyBar.css` — `.active-indicator`
+- 0.75rem 0.75rem 1rem — 1 — `src/components/PartyBar.css` — `.party-bar`
+- 5rem 1rem 5rem 1rem — 1 — `src/components/MobileMenu.css` — `.mobile-menu-content`
+- 1rem 0 — 1 — `src/components/MobileMenu.css` — `.profile-selector.mobile .profile-bottom-actions`
+- 0 0 0.75rem — 1 — `src/components/InfoModal.css` — `.changelog-title`
+- 0.35rem 0.75rem — 1 — `src/components/InfoModal.css` — `.roadmap-section-title`
+- 0.95rem 2.9rem — 1 — `src/components/GameLibrary.css` — `.hero-cta`
+- 2rem 4rem — 1 — `src/components/GameLibrary.css` — `.hero-split`
+- 2.5rem 1.5rem — 1 — `src/components/GameLibrary.css` — `.hero-split`
+- 0.85rem 2.4rem — 1 — `src/components/GameLibrary.css` — `.hero-cta`
+- 2rem 0 1rem — 1 — `src/components/GameLibrary.css` — `.section-header`
+- 1.5rem 2rem — 1 — `src/components/GameLibrary.css` — `.game-card`
+- 16px 20px 32px — 1 — `src/components/TooltipSheet.css` — `.tooltip-sheet-content`
+- 0 0 12px 0 — 1 — `src/components/TooltipSheet.css` — `.tooltip-sheet-description p`
+- calc(32px + env(safe-area-inset-bottom)) — 1 — `src/components/TooltipSheet.css` — `.tooltip-sheet-content`
+- 6px 10px — 1 — `src/components/ProfileSelector.css` — `.profile-edit button`
+- 8px 10px — 1 — `src/components/ProfileSelector.css` — `.profile-create-form input`
+- 0 0 8px 0 — 1 — `src/components/ProfileSelector.css` — `.privacy-notice`
+- 3rem 2rem — 1 — `src/components/BuildList.css` — `.build-list-empty`
+- -1px — 1 — `src/games/rogue-trader/components/CustomBuildEditor.css` — `.talent-picker`
+- 0 1rem 2rem — 1 — `src/games/rogue-trader/components/CompanionDetailScreen.css` — `.companion-detail-screen.rt`
+- 0.6rem 0.75rem — 1 — `src/games/rogue-trader/components/BuildViewer.css` — `.level-row`
+- 0.375rem — 1 — `src/games/baldurs-gate-3/components/CompanionDetailScreen.css` — `.build-card-tags`
+- 0.125rem — 1 — `src/games/baldurs-gate-3/components/BuildViewer.css` — `.stat-change-item`
+- 70px — 1 — `src/games/baldurs-gate-3/components/BuildViewer.css` — `.level-stat-changes`

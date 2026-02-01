@@ -116,7 +116,7 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
 
     showSheet({
       title: displayName,
-      badge: { label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' },
+      badge: { label: info.role.toUpperCase(), background: 'var(--color-rt-tooltip-badge-bg)', color: 'var(--color-rt-tooltip-badge-text)' },
       description: info.description,
       iconUrl: imageSrc,
     });
@@ -131,7 +131,7 @@ export function ArchetypeTooltip({ archetype, tier, children }: ArchetypeTooltip
       <TooltipCard
         title={displayName}
         iconUrl={imageSrc}
-        badge={{ label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }}
+        badge={{ label: info.role.toUpperCase(), background: 'var(--color-rt-tooltip-badge-bg)', color: 'var(--color-rt-tooltip-badge-text)' }}
         sections={[{ label: 'Tier', value: tier } as TooltipField]}
         description={info.description}
       />

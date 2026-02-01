@@ -10,18 +10,18 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: rgba(26, 26, 46, 0.5);
-  border: 1px solid #3a3a5a;
-  border-radius: 8px;
-  color: #e0e0e0;
+  background: var(--rgba-26-26-46-0p5);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-8px);
+  color: var(--color-e0e0e0);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .mobile-menu-toggle:hover,
 .mobile-menu-toggle:active {
-  background: #2a2a3e;
-  border-color: #4a4a6a;
+  background: var(--color-2a2a3e);
+  border-color: var(--color-4a4a6a);
 }
 
 /* ========== DESKTOP STYLES (dropdown) ========== */
@@ -34,21 +34,21 @@
   /* Dropdown panel */
   .mobile-menu-panel {
     position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
+    top: calc(100% + var(--space-8px));
+    right: var(--space-0);
     width: 320px;
     max-height: calc(100vh - 100px);
-    background: #1a1a2e;
-    border: 1px solid #3a3a5a;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    z-index: 999;
+    background: var(--color-1a1a2e);
+    border: 1px solid var(--color-3a3a5a);
+    border-radius: var(--radius-12px);
+    box-shadow: 0 8px 32px var(--rgba-0-0-0-0p4);
+    z-index: var(--z-menu);
     display: flex;
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
+    transition: var(--transition-overlay-0p2s);
   }
 
   .mobile-menu-panel.open {
@@ -66,7 +66,7 @@
   .mobile-menu-content {
     flex: 1;
     overflow-y: auto;
-    padding: 1rem;
+    padding: var(--space-1rem);
     display: flex;
     flex-direction: column;
   }
@@ -77,12 +77,12 @@
   /* Overlay */
   .mobile-menu-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 998;
+    top: var(--space-0);
+    left: var(--space-0);
+    right: var(--space-0);
+    bottom: var(--space-0);
+    background: var(--rgba-0-0-0-0p6);
+    z-index: var(--z-menu);
     animation: fadeIn 0.2s ease-out;
   }
 
@@ -94,17 +94,17 @@
   /* Slide-out panel from right - using transform for reliable off-screen positioning */
   .mobile-menu-panel {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: var(--space-0);
+    right: var(--space-0);
     width: min(320px, 85vw);
     height: 100vh;
-    background: #1a1a2e;
-    z-index: 999;
+    background: var(--color-1a1a2e);
+    z-index: var(--z-menu);
     transform: translateX(100%);
-    transition: transform 0.3s ease-out;
+    transition: var(--transition-transform-0p3s-ease-out);
     display: flex;
     flex-direction: column;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: -4px 0 20px var(--rgba-0-0-0-0p4);
   }
 
   .mobile-menu-panel.open {
@@ -114,33 +114,33 @@
   /* Close button - top right */
   .mobile-menu-close {
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+    top: var(--space-0p75rem);
+    right: var(--space-0p75rem);
     display: flex;
     align-items: center;
     justify-content: center;
     width: 44px;
     height: 44px;
-    background: transparent;
-    border: 1px solid #3a3a5a;
-    color: #e0e0e0;
+    background: var(--color-transparent);
+    border: 1px solid var(--color-3a3a5a);
+    color: var(--color-e0e0e0);
     cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.2s;
-    z-index: 1;
+    border-radius: var(--radius-8px);
+    transition: var(--transition-fast);
+    z-index: var(--z-content);
   }
 
   .mobile-menu-close:hover,
   .mobile-menu-close:active {
-    background: #2a2a3e;
-    border-color: #4a4a6a;
+    background: var(--color-2a2a3e);
+    border-color: var(--color-4a4a6a);
   }
 
   /* Panel content */
   .mobile-menu-content {
     flex: 1;
     overflow-y: auto;
-    padding: 5rem 1rem 5rem 1rem;
+    padding: var(--space-5rem) var(--space-1rem) var(--space-5rem) var(--space-1rem);
     display: flex;
     flex-direction: column;
   }
@@ -154,24 +154,24 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.75rem 1rem;
-  background: #2a2a3e;
-  border: 1px solid #3a3a5a;
-  border-radius: 8px;
-  color: #e0e0e0;
+  padding: var(--space-0p75rem) var(--space-1rem);
+  background: var(--color-2a2a3e);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-8px);
+  color: var(--color-e0e0e0);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .game-select-btn:hover {
-  background: #3a3a4e;
-  border-color: #4a4a6a;
+  background: var(--color-3a3a4e);
+  border-color: var(--color-4a4a6a);
 }
 
 .game-select-info {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--space-0p75rem);
 }
 
 .game-select-logo {
@@ -180,30 +180,30 @@
 }
 
 .game-select-name {
-  font-weight: 500;
+  font-weight: var(--type-weight-500);
   text-align: left;
-  font-size: 1rem;
+  font-size: var(--type-size-1rem);
 }
 
 /* Sections */
 .mobile-menu-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-1p5rem);
 }
 
 .mobile-menu-section:last-child {
-  margin-bottom: 0;
+  margin-bottom: var(--space-0);
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .mobile-menu-section h3 {
-  margin: 0 0 0.75rem 0;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #888;
+  margin: 0 0 var(--space-0p75rem) 0;
+  font-size: var(--type-size-0p75rem);
+  font-weight: var(--type-weight-600);
+  text-transform: var(--type-transform-uppercase);
+  letter-spacing: var(--type-track-0p05em);
+  color: var(--color-888);
 }
 
 /* Mobile variants for profile selector */
@@ -216,51 +216,51 @@
 
 .mobile-menu-section .profile-dropdown.mobile {
   position: static;
-  background: transparent;
+  background: var(--color-transparent);
   border: none;
   box-shadow: none;
-  padding: 0;
+  padding: var(--space-0);
   min-width: auto;
 }
 
 .mobile-menu-section .profile-current {
-  background: #2a2a3e;
-  border-radius: 8px;
-  padding: 1rem;
+  background: var(--color-2a2a3e);
+  border-radius: var(--radius-8px);
+  padding: var(--space-1rem);
 }
 
 .mobile-menu-section .profile-current-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  gap: var(--space-0p5rem);
 }
 
 .mobile-menu-section .profile-switch-section {
-  margin-top: 1rem;
+  margin-top: var(--space-1rem);
 }
 
 .mobile-menu-section .profile-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-top: .5rem;
+  gap: var(--space-0p5rem);
+  margin-top: var(--space-0p5rem);
 }
 
 .mobile-menu-section .profile-select-btn {
   width: 100%;
-  padding: 0.75rem 1rem;
-  background: #2a2a3e;
-  border-radius: 8px;
+  padding: var(--space-0p75rem) var(--space-1rem);
+  background: var(--color-2a2a3e);
+  border-radius: var(--radius-8px);
   text-align: left;
 }
 
 /* Bottom actions - pinned to bottom of panel */
 .profile-selector.mobile .profile-bottom-actions {
   margin-top: auto;
-  padding: 1rem 0;
+  padding: var(--space-1rem) 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-0p5rem);
 }
 
 .profile-selector.mobile .profile-bottom-actions .profile-import-btn {
@@ -273,7 +273,7 @@
 }
 
 .profile-selector.mobile .profile-bottom-actions .profile-privacy {
-  margin-top: 0.5rem;
+  margin-top: var(--space-0p5rem);
 }
 
 .profile-selector.mobile .profile-bottom-actions .clear-data-btn {
@@ -284,19 +284,19 @@
 .profile-selector.mobile .profile-create-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0;
+  gap: var(--space-0p5rem);
+  padding: var(--space-0);
   border: none;
   width: 100%;
 }
 
 .profile-selector.mobile .profile-create-form input {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
+  padding: var(--space-0p75rem) var(--space-1rem);
+  border-radius: var(--radius-8px);
 }
 
 .profile-selector.mobile .profile-create-form button {
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
+  padding: var(--space-0p75rem) var(--space-1rem);
+  border-radius: var(--radius-8px);
 }

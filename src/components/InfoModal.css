@@ -1,13 +1,5 @@
 /* Info Modal - Reusable modal for Changelog, Roadmap, etc. */
 .info-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
 }
 
 .info-modal {
@@ -15,166 +7,160 @@
   width: 100%;
   max-width: 600px;
   max-height: 85vh;
-  background: #1c2228;
-  border-radius: 8px;
-  padding: 2rem;
+  background: var(--color-1c2228);
+  border-radius: var(--radius-8px);
+  padding: var(--space-2rem);
   overflow-y: auto;
 }
 
 .info-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: var(--space-1rem);
+  right: var(--space-1rem);
   background: none;
   border: none;
-  color: #678;
+  color: var(--color-678);
   cursor: pointer;
-  padding: 0.5rem;
-  transition: color 0.2s;
+  padding: var(--space-0p5rem);
+  transition: var(--transition-color-0p2s);
 }
 
 .info-modal-close:hover {
-  color: #fff;
+  color: var(--color-fff);
 }
 
 .info-modal h2 {
-  margin: 0 0 1.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
+  margin: 0 0 var(--space-1p5rem);
+  font-size: var(--type-size-1p5rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
 }
 
 .info-modal-content {
-  color: #9ab;
-  line-height: 1.6;
+  color: var(--color-9ab);
+  line-height: var(--type-lh-1p6);
 }
 
 /* Changelog Styles */
 .changelog-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .changelog-entry {
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #2a3038;
+  padding-bottom: var(--space-1p5rem);
+  border-bottom: 1px solid var(--color-2a3038);
 }
 
 .changelog-entry:last-child {
   border-bottom: none;
-  padding-bottom: 0;
+  padding-bottom: var(--space-0);
 }
 
 .changelog-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
+  gap: var(--space-1rem);
+  margin-bottom: var(--space-0p5rem);
 }
 
 .changelog-version {
-  background: #3a4858;
-  color: #8cf;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: monospace;
+  background: var(--color-3a4858);
+  color: var(--color-8cf);
+  padding: var(--space-0p2rem-0p6rem);
+  border-radius: var(--radius-4px);
+  font-size: var(--type-size-0p8rem);
+  font-weight: var(--type-weight-600);
+  font-family: var(--font-mono);
 }
 
 .changelog-date {
-  color: #567;
-  font-size: 0.85rem;
+  color: var(--color-567);
+  font-size: var(--type-size-0p85rem);
 }
 
 .changelog-title {
-  margin: 0 0 0.75rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
+  margin: 0 0 var(--space-0p75rem);
+  font-size: var(--type-size-1p1rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
 }
 
 .changelog-changes {
-  margin: 0;
-  padding-left: 1.25rem;
+  margin: var(--space-0);
+  padding-left: var(--space-1p25rem);
   list-style: disc;
 }
 
 .changelog-changes li {
-  margin-bottom: 0.35rem;
-  color: #9ab;
-  font-size: 0.9rem;
+  margin-bottom: var(--space-0p35rem);
+  color: var(--color-9ab);
+  font-size: var(--type-size-0p9rem);
 }
 
 /* Roadmap Styles */
 .roadmap-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .roadmap-section {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--space-0p75rem);
 }
 
 .roadmap-section-title {
-  margin: 0;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.35rem 0.75rem;
-  border-radius: 4px;
+  margin: var(--space-0);
+  font-size: var(--type-size-0p85rem);
+  font-weight: var(--type-weight-600);
+  text-transform: var(--type-transform-uppercase);
+  letter-spacing: var(--type-track-0p05em);
+  padding: var(--space-0p35rem) var(--space-0p75rem);
+  border-radius: var(--radius-4px);
   width: fit-content;
 }
 
 .roadmap-section-title.in-progress {
-  background: rgba(100, 200, 100, 0.2);
-  color: #8f8;
+  background: var(--rgba-100-200-100-0p2);
+  color: var(--color-8f8);
 }
 
 .roadmap-section-title.planned {
-  background: rgba(100, 150, 255, 0.2);
-  color: #8bf;
+  background: var(--rgba-100-150-255-0p2);
+  color: var(--color-8bf);
 }
 
 .roadmap-section-title.considering {
-  background: rgba(180, 140, 100, 0.2);
-  color: #db9;
+  background: var(--rgba-180-140-100-0p2);
+  color: var(--color-db9);
 }
 
 .roadmap-item {
-  background: #252a32;
-  border-radius: 6px;
-  padding: 1rem;
-  border-left: 3px solid #3a4858;
+  background: var(--color-252a32);
+  border-radius: var(--radius-6px);
+  padding: var(--space-1rem);
+  border-left: 3px solid var(--color-3a4858);
 }
 
 .roadmap-item-title {
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.35rem;
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
+  margin-bottom: var(--space-0p35rem);
 }
 
 .roadmap-item-desc {
-  font-size: 0.9rem;
-  color: #789;
+  font-size: var(--type-size-0p9rem);
+  color: var(--color-789);
 }
 
 @media (max-width: 768px) {
   .info-modal-overlay {
-    padding: 1rem;
+    padding: var(--space-1rem);
   }
 
   .info-modal {
-    padding: 1.5rem;
+    padding: var(--space-1p5rem);
     max-height: 90vh;
   }
 
   .info-modal h2 {
-    font-size: 1.25rem;
+    font-size: var(--type-size-1p25rem);
   }
 }

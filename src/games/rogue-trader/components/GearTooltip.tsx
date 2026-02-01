@@ -23,11 +23,11 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
   if (gearInfo?.stats?.keywords) stats.push({ label: 'Keywords', value: gearInfo.stats.keywords });
 
   const typeStyles: Record<string, { background: string; color: string }> = {
-    weapon: { background: '#4a3030', color: '#ff8a8a' },
-    accessory: { background: '#3a4a30', color: '#8aff8a' },
-    item: { background: '#3a3a4a', color: '#c0c0ff' },
+    weapon: { background: 'var(--color-rt-gear-weapon-bg)', color: 'var(--color-rt-gear-weapon-text)' },
+    accessory: { background: 'var(--color-rt-gear-accessory-bg)', color: 'var(--color-rt-gear-accessory-text)' },
+    item: { background: 'var(--color-rt-gear-item-bg)', color: 'var(--color-rt-gear-item-text)' },
   };
-  const typeStyle = gearInfo ? (typeStyles[gearInfo.type] || { background: '#3a3a4a', color: '#c0c0ff' }) : { background: '#3a3a4a', color: '#c0c0ff' };
+  const typeStyle = gearInfo ? (typeStyles[gearInfo.type] || { background: 'var(--color-rt-gear-item-bg)', color: 'var(--color-rt-gear-item-text)' }) : { background: 'var(--color-rt-gear-item-bg)', color: 'var(--color-rt-gear-item-text)' };
 
   const handleMouseEnter = (event: React.MouseEvent) => {
     if (isMobile) return;

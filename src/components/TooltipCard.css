@@ -1,10 +1,10 @@
 .crpg-tooltip-card {
-  background: #1b1b1b;
-  border: 1px solid #6f5f3b;
-  border-radius: 12px;
-  padding: 16px;
-  color: #d9cdb8;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  background: var(--color-1b1b1b);
+  border: 1px solid var(--color-6f5f3b);
+  border-radius: var(--radius-12px);
+  padding: var(--space-16px);
+  color: var(--color-d9cdb8);
+  box-shadow: 0 10px 30px var(--rgba-0-0-0-0p55);
 }
 
 .crpg-tooltip-card.tooltip {
@@ -18,36 +18,36 @@
 
 .crpg-tooltip-container {
   position: fixed;
-  z-index: 10000;
+  z-index: var(--z-modal);
   pointer-events: none;
 }
 
 .crpg-tooltip-container.top {
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + var(--space-8px));
 }
 
 .crpg-tooltip-container.bottom {
-  top: calc(100% + 8px);
+  top: calc(100% + var(--space-8px));
 }
 
 .crpg-tooltip-header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 1rem;
+  gap: var(--space-14px);
+  margin-bottom: var(--space-1rem);
 }
 
 .crpg-tooltip-icon-wrap {
   width: 64px;
   height: 64px;
-  border-radius: 8px;
-  background: #25201a;
-  border: 1px solid #6f5f3b;
+  border-radius: var(--radius-8px);
+  background: var(--color-25201a);
+  border: 1px solid var(--color-6f5f3b);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: inset 0 0 12px rgba(217, 184, 109, 0.18);
+  box-shadow: inset 0 0 12px var(--rgba-217-184-109-0p18);
 }
 
 .crpg-tooltip-icon {
@@ -57,82 +57,76 @@
 }
 
 .crpg-tooltip-title-block {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .crpg-tooltip-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #e8dbc6;
+  font-size: var(--type-size-1p5rem);
+  font-weight: var(--font-weight-700);
+  color: var(--color-e8dbc6);
 }
 
 .crpg-tooltip-badge {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: #f0a319;
-  color: #1b1206;
+  padding: var(--space-4px) var(--space-10px);
+  border-radius: var(--radius-8px);
+  font-size: var(--type-size-0p75rem);
+  font-weight: var(--font-weight-700);
+  text-transform: var(--type-transform-uppercase);
+  letter-spacing: var(--type-track-0p05em);
+  background: var(--color-f0a319);
+  color: var(--color-1b1206);
   width: fit-content;
 }
 
 .crpg-tooltip-divider {
   height: 1px;
-  background: #514636;
-  margin: 14px 0;
+  background: var(--color-514636);
+  margin: var(--space-14px) 0;
 }
 
 .crpg-tooltip-section,
 .crpg-tooltip-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .crpg-tooltip-kv {
   display: flex;
-  gap: 8px;
+  gap: var(--space-8px);
   flex-wrap: wrap;
-  font-size: 1.05rem;
+  font-size: var(--font-size-1p05rem);
 }
 
 .crpg-tooltip-label {
-  font-weight: 700;
-  color: #e6d9c4;
+  font-weight: var(--font-weight-700);
+  color: var(--color-e6d9c4);
 }
 
 .crpg-tooltip-value {
-  color: #bfae95;
+  color: var(--color-bfae95);
 }
 
 .crpg-tooltip-description {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #c7b7a0;
+  font-size: var(--font-size-1p05rem);
+  line-height: var(--type-lh-1p6);
+  color: var(--color-c7b7a0);
   white-space: pre-line;
 }
 
 .crpg-tooltip-description.italic {
   font-style: italic;
-  color: #c5b39c;
+  color: var(--color-c5b39c);
 }
 
 .crpg-tooltip-callout {
-  color: #f0a319;
-  font-weight: 700;
-  font-size: 1.05rem;
+  color: var(--color-f0a319);
+  font-weight: var(--font-weight-700);
+  font-size: var(--font-size-1p05rem);
 }
 
 
 @media (max-width: 768px) {
   .crpg-tooltip-card.tooltip {
-    min-width: 0;
+    min-width: var(--space-0);
     max-width: none;
   }
 }

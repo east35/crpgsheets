@@ -11,21 +11,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--space-0p5rem);
   width: 80px;
   height: 100px;
-  background: #2a2a4a;
-  border: 2px dashed #3a3a5a;
-  border-radius: 8px;
-  color: #888;
+  background: var(--color-2a2a4a);
+  border: 2px dashed var(--color-3a3a5a);
+  border-radius: var(--radius-8px);
+  color: var(--color-888);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .avatar-upload-placeholder:hover {
-  border-color: #8b5cf6;
-  color: #8b5cf6;
-  background: #1a1a2e;
+  border-color: var(--color-8b5cf6);
+  color: var(--color-8b5cf6);
+  background: var(--color-1a1a2e);
 }
 
 .avatar-upload-placeholder:disabled {
@@ -36,7 +36,7 @@
 .avatar-upload-placeholder span {
   font-size: 3rem;
   text-align: center;
-  color: #fff;
+  color: var(--color-fff);
 }
 
 .avatar-upload-plus {
@@ -56,19 +56,19 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
-  border-radius: 8px;
-  border: 2px solid #444;
+  border-radius: var(--radius-8px);
+  border: 2px solid var(--color-444);
 }
 
 .avatar-upload-actions {
   position: absolute;
-  bottom: -8px;
+  bottom: calc(-1 * var(--space-8px));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.25rem;
+  gap: var(--space-0p25rem);
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: var(--transition-opacity-0p2s);
 }
 
 .avatar-upload-preview:hover .avatar-upload-actions {
@@ -82,27 +82,27 @@
   width: 28px;
   height: 28px;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-50pct);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .avatar-action-btn.upload {
-  background: #8b5cf6;
-  color: white;
+  background: var(--color-8b5cf6);
+  color: var(--color-white);
 }
 
 .avatar-action-btn.upload:hover {
-  background: #7c3aed;
+  background: var(--color-7c3aed);
 }
 
 .avatar-action-btn.delete {
-  background: #ef4444;
-  color: white;
+  background: var(--color-ef4444);
+  color: var(--color-white);
 }
 
 .avatar-action-btn.delete:hover {
-  background: #dc2626;
+  background: var(--color-dc2626);
 }
 
 .avatar-action-btn:disabled {
@@ -113,14 +113,14 @@
 .avatar-upload-error {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  margin-top: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  background: #7f1d1d;
-  color: #fca5a5;
-  font-size: 0.7rem;
-  border-radius: 4px;
+  left: var(--space-0);
+  right: var(--space-0);
+  margin-top: var(--space-0p5rem);
+  padding: var(--space-0p25rem-0p5rem);
+  background: var(--color-7f1d1d);
+  color: var(--color-fca5a5);
+  font-size: var(--type-size-0p7rem);
+  border-radius: var(--radius-4px);
   text-align: center;
   white-space: nowrap;
 }

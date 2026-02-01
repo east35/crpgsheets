@@ -3,24 +3,24 @@
   position: relative;
   cursor: pointer;
   border-bottom: 1px dotted currentColor;
-  font-weight: 500;
+  font-weight: var(--type-weight-500);
 }
 
 /* Category-specific trigger colors */
-.bg3-keyword-class { color: #e74c3c; }
-.bg3-keyword-subclass { color: #c0392b; }
-.bg3-keyword-race { color: #9b59b6; }
-.bg3-keyword-subrace { color: #8e44ad; }
-.bg3-keyword-background { color: #3498db; }
-.bg3-keyword-spell { color: #f39c12; }
-.bg3-keyword-feat { color: #2ecc71; }
-.bg3-keyword-condition { color: #e91e63; }
-.bg3-keyword-ability { color: #1abc9c; }
-.bg3-keyword-skill { color: #27ae60; }
-.bg3-keyword-action { color: #f97316; }
-.bg3-keyword-feature { color: #f59e0b; }
-.bg3-keyword-potion { color: #38bdf8; }
-.bg3-keyword-elixir { color: #22c55e; }
-.bg3-keyword-grenade { color: #ef4444; }
-.bg3-keyword-arrow { color: #94a3b8; }
-.bg3-keyword-bonus { color: #f472b6; }
+.bg3-keyword-class { color: var(--color-e74c3c); }
+.bg3-keyword-subclass { color: var(--color-c0392b); }
+.bg3-keyword-race { color: var(--color-9b59b6); }
+.bg3-keyword-subrace { color: var(--color-8e44ad); }
+.bg3-keyword-background { color: var(--color-3498db); }
+.bg3-keyword-spell { color: var(--color-f39c12); }
+.bg3-keyword-feat { color: var(--color-2ecc71); }
+.bg3-keyword-condition { color: var(--color-e91e63); }
+.bg3-keyword-ability { color: var(--color-1abc9c); }
+.bg3-keyword-skill { color: var(--color-27ae60); }
+.bg3-keyword-action { color: var(--color-f97316); }
+.bg3-keyword-feature { color: var(--color-f59e0b); }
+.bg3-keyword-potion { color: var(--color-38bdf8); }
+.bg3-keyword-elixir { color: var(--color-22c55e); }
+.bg3-keyword-grenade { color: var(--color-ef4444); }
+.bg3-keyword-arrow { color: var(--color-94a3b8); }
+.bg3-keyword-bonus { color: var(--color-f472b6); }

@@ -1,5 +1,5 @@
 .gear-tooltip-trigger {
   position: relative;
   cursor: pointer;
-  color: #8ac4ff;
+  color: var(--color-8ac4ff);
 }
