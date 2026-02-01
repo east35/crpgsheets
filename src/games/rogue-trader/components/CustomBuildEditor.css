@@ -1,38 +1,38 @@
 .custom-build-editor {
   max-width: 900px;
-  margin: 0 auto;
+  margin: var(--space-0-auto);
 }
 
 .editor-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #3a3a5a;
+  margin-bottom: var(--space-1p5rem);
+  padding-bottom: var(--space-1rem);
+  border-bottom: 1px solid var(--color-3a3a5a);
 }
 
 .editor-header h2 {
-  margin: 0;
-  color: #f0c040;
+  margin: var(--space-0);
+  color: var(--color-f0c040);
 }
 
 .header-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: var(--space-0p75rem);
 }
 
 .editor-form {
-  background: #1a1a2e;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  background: var(--color-1a1a2e);
+  border-radius: var(--radius-8px);
+  padding: var(--space-1p5rem);
+  margin-bottom: var(--space-1p5rem);
 }
 
 .form-row {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  gap: var(--space-1p5rem);
+  margin-bottom: var(--space-1rem);
 }
 
 .form-row.full-width {
@@ -43,19 +43,19 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  color: #a0a0c0;
-  font-size: 0.9rem;
+  gap: var(--space-0p5rem);
+  color: var(--color-a0a0c0);
+  font-size: var(--type-size-0p9rem);
 }
 
 .form-row input,
 .form-row select,
 .form-row textarea {
   padding: 0.6rem 0.8rem;
-  background: #2a2a3e;
-  border: 1px solid #3a3a5a;
-  border-radius: 6px;
-  color: #e0e0e0;
+  background: var(--color-2a2a3e);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-6px);
+  color: var(--color-e0e0e0);
   font-size: 0.95rem;
 }
 
@@ -63,7 +63,7 @@
 .form-row select:focus,
 .form-row textarea:focus {
   outline: none;
-  border-color: #f0c040;
+  border-color: var(--color-f0c040);
 }
 
 .form-row textarea {
@@ -73,73 +73,73 @@
 
 .progression-editor h3 {
   margin: 0 0 0.5rem 0;
-  color: #e0e0e0;
+  color: var(--color-e0e0e0);
 }
 
 .progression-editor .hint {
-  color: #888;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+  color: var(--color-888);
+  font-size: var(--type-size-0p85rem);
+  margin-bottom: var(--space-1rem);
 }
 
 .tier-divider {
-  padding: 0.75rem 1rem;
-  margin-top: 1rem;
-  font-weight: 600;
-  font-size: 0.9rem;
+  padding: var(--space-0p75rem-1rem);
+  margin-top: var(--space-1rem);
+  font-weight: var(--type-weight-600);
+  font-size: var(--type-size-0p9rem);
   border-radius: 6px 6px 0 0;
 }
 
 .tier-divider.base {
   background: linear-gradient(90deg, #2a4a2a, transparent);
-  color: #8aff8a;
+  color: var(--color-8aff8a);
 }
 
 .tier-divider.advanced {
   background: linear-gradient(90deg, #3a3a6a, transparent);
-  color: #8a8aff;
+  color: var(--color-8a8aff);
 }
 
 .tier-divider.exemplar {
   background: linear-gradient(90deg, #5a3a2a, transparent);
-  color: #ffaa6a;
+  color: var(--color-ffaa6a);
 }
 
 .level-row {
   display: flex;
   align-items: flex-start;
-  padding: 0.75rem 1rem;
-  background: #1a1a2e;
-  border-left: 3px solid transparent;
+  padding: var(--space-0p75rem-1rem);
+  background: var(--color-1a1a2e);
+  border-left: 3px solid var(--color-transparent);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .level-row:hover {
-  background: #2a2a3e;
+  background: var(--color-2a2a3e);
 }
 
 .level-row.editing {
-  background: #2a2a4e;
-  border-left-color: #f0c040;
+  background: var(--color-2a2a4e);
+  border-left-color: var(--color-f0c040);
 }
 
 .level-row.base {
-  border-left-color: #3a5a3a;
+  border-left-color: var(--color-3a5a3a);
 }
 
 .level-row.advanced {
-  border-left-color: #4a4a7a;
+  border-left-color: var(--color-4a4a7a);
 }
 
 .level-row.exemplar {
-  border-left-color: #6a4a3a;
+  border-left-color: var(--color-6a4a3a);
 }
 
 .level-number {
   width: 50px;
-  font-weight: 600;
-  color: #888;
+  font-weight: var(--type-weight-600);
+  color: var(--color-888);
   flex-shrink: 0;
 }
 
@@ -147,45 +147,45 @@
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-0p5rem);
 }
 
 .selected-talent {
   padding: 0.25rem 0.6rem;
-  background: #3a4a3a;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  color: #c0ffc0;
+  background: var(--color-3a4a3a);
+  border-radius: var(--radius-4px);
+  font-size: var(--type-size-0p85rem);
+  color: var(--color-c0ffc0);
 }
 
 .no-talents {
-  color: #666;
-  font-size: 0.85rem;
+  color: var(--color-666);
+  font-size: var(--type-size-0p85rem);
   font-style: italic;
 }
 
 .talent-picker {
-  background: #1a1a2e;
-  border: 1px solid #3a3a5a;
+  background: var(--color-1a1a2e);
+  border: 1px solid var(--color-3a3a5a);
   border-radius: 0 0 8px 8px;
   margin-top: -1px;
-  padding: 1rem;
+  padding: var(--space-1rem);
 }
 
 .talent-search {
   width: 100%;
   padding: 0.6rem 0.8rem;
-  background: #2a2a3e;
-  border: 1px solid #3a3a5a;
-  border-radius: 6px;
-  color: #e0e0e0;
-  font-size: 0.9rem;
-  margin-bottom: 0.75rem;
+  background: var(--color-2a2a3e);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-6px);
+  color: var(--color-e0e0e0);
+  font-size: var(--type-size-0p9rem);
+  margin-bottom: var(--space-0p75rem);
 }
 
 .talent-search:focus {
   outline: none;
-  border-color: #f0c040;
+  border-color: var(--color-f0c040);
 }
 
 .talent-list {
@@ -201,36 +201,36 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.75rem;
-  background: #2a2a3e;
-  border-radius: 4px;
+  background: var(--color-2a2a3e);
+  border-radius: var(--radius-4px);
   cursor: pointer;
   transition: all 0.15s;
 }
 
 .talent-option:hover {
-  background: #3a3a4e;
+  background: var(--color-3a3a4e);
 }
 
 .talent-option.selected {
-  background: #3a5a3a;
-  border-left: 3px solid #8aff8a;
+  background: var(--color-3a5a3a);
+  border-left: 3px solid var(--color-8aff8a);
 }
 
 .talent-name {
-  font-size: 0.9rem;
-  color: #e0e0e0;
+  font-size: var(--type-size-0p9rem);
+  color: var(--color-e0e0e0);
 }
 
 .talent-source {
-  font-size: 0.75rem;
-  color: #888;
+  font-size: var(--type-size-0p75rem);
+  color: var(--color-888);
 }
 
 .more-talents {
-  padding: 0.5rem;
+  padding: var(--space-0p5rem);
   text-align: center;
-  color: #888;
-  font-size: 0.85rem;
+  color: var(--color-888);
+  font-size: var(--type-size-0p85rem);
   font-style: italic;
 }
 
@@ -238,12 +238,12 @@
 @media (max-width: 600px) {
   .form-row {
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-1rem);
   }
   
   .editor-header {
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-1rem);
     align-items: flex-start;
   }
 }

@@ -7,13 +7,13 @@
 
 .add-to-party-desktop.btn,
 .add-to-party-mobile .btn {
-  border-radius: 999px;
-  font-weight: 600;
-  background: #28a75e;
+  border-radius: var(--radius-999px);
+  font-weight: var(--type-weight-600);
+  background: var(--color-28a75e);
 }
 .add-to-party-desktop.btn:hover,
 .add-to-party-mobile .btn:hover {
-  background: #1d7241;
+  background: var(--color-1d7241);
 }
 
 
@@ -30,9 +30,9 @@
   .add-to-party-mobile {
     display: block;
     position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
+    bottom: var(--space-1rem);
+    left: var(--space-1rem);
+    right: var(--space-1rem);
     z-index: 100;
   }
 
@@ -42,7 +42,7 @@
 
   .add-to-party-mobile .btn {
     width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: var(--space-1rem);
+    font-size: var(--type-size-1rem);
   }
 }

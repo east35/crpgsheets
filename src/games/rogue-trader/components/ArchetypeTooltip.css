@@ -1,36 +1,36 @@
 .archetype-tooltip-trigger {
   position: relative;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 500;
+  padding: var(--space-0p25rem-0p5rem);
+  border-radius: var(--radius-4px);
+  font-size: var(--type-size-0p85rem);
+  font-weight: var(--type-weight-500);
   transition: all 0.2s;
 }
 
 .archetype-tooltip-trigger.tier-base {
-  background: #2d4a2d;
-  color: #90ee90;
+  background: var(--color-2d4a2d);
+  color: var(--color-90ee90);
 }
 
 .archetype-tooltip-trigger.tier-base:hover {
-  background: #3d5a3d;
+  background: var(--color-3d5a3d);
 }
 
 .archetype-tooltip-trigger.tier-advanced {
-  background: #4a3d2d;
-  color: #ffd700;
+  background: var(--color-4a3d2d);
+  color: var(--color-ffd700);
 }
 
 .archetype-tooltip-trigger.tier-advanced:hover {
-  background: #5a4d3d;
+  background: var(--color-5a4d3d);
 }
 
 .archetype-tooltip-trigger.tier-exemplar {
-  background: #4a2d4a;
-  color: #da70d6;
+  background: var(--color-4a2d4a);
+  color: var(--color-da70d6);
 }
 
 .archetype-tooltip-trigger.tier-exemplar:hover {
-  background: #5a3d5a;
+  background: var(--color-5a3d5a);
 }

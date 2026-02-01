@@ -3,33 +3,22 @@
 }
 
 .header-game-toggle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: #2a2a3e;
-  border: 1px solid #3a3a5a;
-  border-radius: 6px;
-  color: #e0e0e0;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s;
 }
 
 .header-game-toggle:hover {
-  background: #3a3a4e;
-  border-color: #4a4a6a;
+  background: var(--color-3a3a4e);
+  border-color: var(--color-4a4a6a);
 }
 
 .header-game-icon {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: var(--radius-4px);
 }
 
 .header-game-name {
-  font-weight: 500;
+  font-weight: var(--type-weight-500);
 }
 
 .header-game-arrow {
@@ -45,10 +34,10 @@
 .header-game-dropdown {
   position: fixed;
   min-width: 280px;
-  background: #1a1a2e;
-  border: 1px solid #3a3a5a;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background: var(--color-1a1a2e);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-8px);
+  box-shadow: 0 8px 24px var(--rgba-0-0-0-0p4);
   z-index: 1000;
   overflow: hidden;
 }
@@ -64,10 +53,10 @@
   gap: 12px;
   width: 100%;
   padding: 12px 16px;
-  background: transparent;
+  background: var(--color-transparent);
   border: none;
-  border-bottom: 1px solid #2a2a3e;
-  color: #e0e0e0;
+  border-bottom: 1px solid var(--color-2a2a3e);
+  color: var(--color-e0e0e0);
   cursor: pointer;
   text-align: left;
   transition: background 0.2s;
@@ -78,29 +67,29 @@
 }
 
 .header-game-item:hover {
-  background: #2a2a4e;
+  background: var(--color-2a2a4e);
 }
 
 .header-game-item.active {
-  background: #2a2a4e;
+  background: var(--color-2a2a4e);
 }
 
 .header-game-item-icon {
   width: 32px;
   height: 32px;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: var(--radius-4px);
 }
 
 .header-game-item-name {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: var(--type-size-0p9rem);
+  font-weight: var(--type-weight-500);
 }
 
 /* Mobile: hide game name, show only icon */
 @media (max-width: 768px) {
   .header-game-toggle {
-    padding: 8px;
+    padding: var(--space-8px);
   }
 
   .header-game-name {

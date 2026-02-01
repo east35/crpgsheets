@@ -5,12 +5,12 @@
 
 .gear-trigger.has-info {
   cursor: pointer;
-  color: #8b5cf6;
+  color: var(--color-8b5cf6);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 2px;
 }
 
 .gear-trigger.has-info:hover {
-  color: #a78bfa;
+  color: var(--color-a78bfa);
 }

@@ -2,16 +2,16 @@
   position: relative;
   cursor: pointer;
   border-bottom: 1px dotted currentColor;
-  font-weight: 500;
+  font-weight: var(--type-weight-500);
 }
 
-.keyword-homeworld { color: #4a9eff; }
-.keyword-origin { color: #9b59b6; }
-.keyword-archetype { color: #e74c3c; }
-.keyword-characteristic { color: #f39c12; }
-.keyword-skill { color: #2ecc71; }
-.keyword-stat { color: #1abc9c; }
-.keyword-conviction { color: #e91e63; }
-.keyword-status-effect { color: #ff5722; }
-.keyword-talent { color: #3498db; }
-.keyword-ability { color: #8e44ad; }
+.keyword-homeworld { color: var(--color-4a9eff); }
+.keyword-origin { color: var(--color-9b59b6); }
+.keyword-archetype { color: var(--color-e74c3c); }
+.keyword-characteristic { color: var(--color-f39c12); }
+.keyword-skill { color: var(--color-2ecc71); }
+.keyword-stat { color: var(--color-1abc9c); }
+.keyword-conviction { color: var(--color-e91e63); }
+.keyword-status-effect { color: var(--color-ff5722); }
+.keyword-talent { color: var(--color-3498db); }
+.keyword-ability { color: var(--color-8e44ad); }

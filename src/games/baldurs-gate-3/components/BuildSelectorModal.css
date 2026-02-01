@@ -1,18 +1,18 @@
 /* BG3 Build Selector Modal */
 .build-selector-modal-overlay.bg3 {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  inset: var(--space-0);
+  background: var(--rgba-0-0-0-0p85);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: var(--space-1rem);
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal {
-  background: #1a1a2e;
-  border-radius: 16px;
+  background: var(--color-1a1a2e);
+  border-radius: var(--radius-16px);
   max-width: 700px;
   width: 100%;
   max-height: 90vh;
@@ -22,51 +22,51 @@
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  top: var(--space-1rem);
+  right: var(--space-1rem);
+  background: var(--rgba-255-255-255-0p1);
   border: none;
-  border-radius: 8px;
-  padding: 0.5rem;
+  border-radius: var(--radius-8px);
+  padding: var(--space-0p5rem);
   cursor: pointer;
-  color: #888;
+  color: var(--color-888);
   transition: all 0.2s;
   z-index: 1;
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: var(--rgba-255-255-255-0p2);
+  color: var(--color-fff);
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-header {
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #3a3a5a;
+  padding: var(--space-1p25rem-1p5rem);
+  border-bottom: 1px solid var(--color-3a3a5a);
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-header h2 {
-  margin: 0;
-  font-size: 1.25rem;
-  color: #fff;
+  margin: var(--space-0);
+  font-size: var(--type-size-1p25rem);
+  color: var(--color-fff);
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-builds {
-  padding: 1rem;
+  padding: var(--space-1rem);
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-1rem);
 }
 
 /* Build Card */
 .build-selector-modal-overlay.bg3 .build-selector-modal-card {
   display: block;
-  padding: 1rem;
-  background: #252540;
-  border: 1px solid #3a3a5a;
-  border-radius: 12px;
+  padding: var(--space-1rem);
+  background: var(--color-252540);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-12px);
   cursor: pointer;
   transition: all 0.2s;
   text-align: left;
@@ -76,25 +76,25 @@
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-card:hover {
-  background: #2a2a50;
-  border-color: #8b5cf6;
+  background: var(--color-2a2a50);
+  border-color: var(--color-8b5cf6);
   transform: translateY(-2px);
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-card.tracked {
-  border-color: #4a7c4a;
-  background: rgba(74, 124, 74, 0.15);
+  border-color: var(--color-4a7c4a);
+  background: var(--rgba-74-124-74-0p15);
 }
 
 .build-selector-modal-overlay.bg3 .build-selector-modal-card.tracked:hover {
-  border-color: #5a9c5a;
-  background: rgba(74, 124, 74, 0.2);
+  border-color: var(--color-5a9c5a);
+  background: var(--rgba-74-124-74-0p2);
 }
 
 /* Build Card Layout - Icon + Content */
 .build-selector-modal-overlay.bg3 .build-card-layout {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-1rem);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-icon-wrapper {
@@ -115,54 +115,54 @@
 
 .build-selector-modal-overlay.bg3 .build-card-level-badge {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
-  background: #4a7c4a;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 4px;
+  bottom: var(--space-4px);
+  right: var(--space-4px);
+  background: var(--color-4a7c4a);
+  color: var(--color-fff);
+  font-size: var(--type-size-0p75rem);
+  font-weight: var(--type-weight-600);
+  padding: var(--space-2px-6px);
+  border-radius: var(--radius-4px);
   min-width: 20px;
   text-align: center;
 }
 
 .build-selector-modal-overlay.bg3 .build-card-content {
   flex: 1;
-  min-width: 0;
+  min-width: var(--space-0);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-0p5rem);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: var(--type-size-1p1rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-meta {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
+  gap: var(--space-0p5rem);
+  font-size: var(--type-size-0p85rem);
   flex-wrap: wrap;
 }
 
 .build-selector-modal-overlay.bg3 .build-card-race {
-  color: #888;
+  color: var(--color-888);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-separator {
-  color: #555;
+  color: var(--color-555);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-background {
-  color: #f0a040;
+  color: var(--color-f0a040);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-classes {
-  color: #10b981;
+  color: var(--color-10b981);
 }
 
 /* Tags */
@@ -175,7 +175,7 @@
 .build-selector-modal-overlay.bg3 .build-card-gear {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: var(--space-0p35rem);
   margin-top: 0.45rem;
 }
 
@@ -184,55 +184,55 @@
   height: 26px;
   border-radius: 7px;
   object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--rgba-255-255-255-0p08);
+  background: var(--rgba-0-0-0-0p3);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-tag {
-  padding: 2px 8px;
-  background: #3a3a5a;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  color: #888;
+  padding: var(--space-2px-8px);
+  background: var(--color-3a3a5a);
+  border-radius: var(--radius-4px);
+  font-size: var(--type-size-0p75rem);
+  color: var(--color-888);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-tag.difficulty {
-  font-weight: 600;
+  font-weight: var(--type-weight-600);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-tag.difficulty.beginner {
-  background: rgba(74, 124, 74, 0.3);
-  color: #6a9c6a;
+  background: var(--rgba-74-124-74-0p3);
+  color: var(--color-6a9c6a);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-tag.difficulty.intermediate {
-  background: rgba(200, 150, 50, 0.3);
-  color: #f0a040;
+  background: var(--rgba-200-150-50-0p3);
+  color: var(--color-f0a040);
 }
 
 .build-selector-modal-overlay.bg3 .build-card-tag.difficulty.advanced {
-  background: rgba(200, 80, 80, 0.3);
-  color: #f06060;
+  background: var(--rgba-200-80-80-0p3);
+  color: var(--color-f06060);
 }
 
 /* Description */
 .build-selector-modal-overlay.bg3 .build-card-desc {
-  margin-top: 0.25rem;
-  padding: 0.75rem;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
-  font-size: 0.85rem;
-  color: #999;
+  margin-top: var(--space-0p25rem);
+  padding: var(--space-0p75rem);
+  background: var(--rgba-0-0-0-0p3);
+  border-radius: var(--radius-6px);
+  font-size: var(--type-size-0p85rem);
+  color: var(--color-999);
   font-style: italic;
-  line-height: 1.5;
+  line-height: var(--type-lh-1p5);
 }
 
 .build-selector-modal-overlay.bg3 .build-source-link {
   display: inline-flex;
   align-items: center;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: #7bb4ff;
+  margin-top: var(--space-0p5rem);
+  font-size: var(--type-size-0p8rem);
+  color: var(--color-7bb4ff);
   text-decoration: none;
 }
 
@@ -247,16 +247,16 @@
   }
 
   .build-selector-modal-overlay.bg3 .build-selector-modal-header {
-    padding: 1rem;
+    padding: var(--space-1rem);
   }
 
   .build-selector-modal-overlay.bg3 .build-selector-modal-header h2 {
-    font-size: 1.1rem;
-    padding-right: 2rem;
+    font-size: var(--type-size-1p1rem);
+    padding-right: var(--space-2rem);
   }
 
   .build-selector-modal-overlay.bg3 .build-card-layout {
-    gap: 0.75rem;
+    gap: var(--space-0p75rem);
   }
 
   .build-selector-modal-overlay.bg3 .build-card-icon-wrapper {
@@ -275,10 +275,10 @@
   }
 
   .build-selector-modal-overlay.bg3 .build-card-title {
-    font-size: 1rem;
+    font-size: var(--type-size-1rem);
   }
 
   .build-selector-modal-overlay.bg3 .build-card-meta {
-    font-size: 0.8rem;
+    font-size: var(--type-size-0p8rem);
   }
 }

@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #0d0f14;
+  background: var(--color-0d0f14);
   overflow: hidden;
 }
 
@@ -12,13 +12,13 @@
   flex: 1;
   position: relative;
   display: flex;
-  min-height: 0;
+  min-height: var(--space-0);
 }
 
 /* Background image with overlay */
 .hero-bg {
   position: absolute;
-  inset: 0;
+  inset: var(--space-0);
   background-size: cover;
   background-position: center;
   filter: saturate(0.95) contrast(1.05);
@@ -27,7 +27,7 @@
 .hero-bg::after {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: var(--space-0);
   background:
     radial-gradient(circle at 30% 35%, rgba(255, 255, 255, 0.08), transparent 55%),
     linear-gradient(to right, rgba(12, 14, 20, 0.92) 0%, rgba(18, 20, 30, 0.6) 50%, rgba(8, 10, 14, 0.85) 100%),
@@ -42,7 +42,7 @@
   display: flex;
   width: 100%;
   max-width: 1500px;
-  margin: 0 auto;
+  margin: var(--space-0-auto);
   justify-content: center;
 }
 
@@ -53,7 +53,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: var(--space-2rem);
 }
 
 .hero-logo {
@@ -65,32 +65,32 @@
 
 .hero-tagline {
   margin: 0 0 2rem;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.6;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  font-size: var(--type-size-1p35rem);
+  font-weight: var(--font-weight-700);
+  color: var(--color-fff);
+  line-height: var(--type-lh-1p6);
+  text-shadow: 0 6px 18px var(--rgba-0-0-0-0p45);
 }
 
 .hero-cta {
   display: inline-block;
   padding: 0.95rem 2.9rem;
-  background: #6b6ef7;
+  background: var(--color-6b6ef7);
   border: none;
-  border-radius: 100px;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
+  border-radius: var(--radius-100px);
+  color: var(--color-fff);
+  font-size: var(--font-size-1p2rem);
+  font-weight: var(--font-weight-700);
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-1rem);
   box-shadow:
     0 10px 24px rgba(71, 76, 209, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .hero-cta:hover {
-  background: #7a7dff;
+  background: var(--color-7a7dff);
   transform: translateY(-1px);
   box-shadow:
     0 16px 30px rgba(71, 76, 209, 0.45),
@@ -98,9 +98,9 @@
 }
 
 .hero-subtitle {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #95a0c8;
+  margin: var(--space-0);
+  font-size: var(--type-size-0p85rem);
+  color: var(--color-95a0c8);
 }
 
 /* Footer - Always visible */
@@ -108,8 +108,8 @@
   position: relative;
   z-index: 10;
   padding: 1rem 2rem;
-  background: #0d1014;
-  border-top: 1px solid #1c2228;
+  background: var(--color-0d1014);
+  border-top: 1px solid var(--color-1c2228);
   text-align: center;
 }
 
@@ -117,38 +117,38 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  font-size: 0.8rem;
-  color: #567;
+  gap: var(--space-0p75rem);
+  font-size: var(--type-size-0p8rem);
+  color: var(--color-567);
   flex-wrap: wrap;
 }
 
 .landing-footer a {
-  color: #9ab;
+  color: var(--color-9ab);
   text-decoration: none;
 }
 
 .landing-footer a:hover {
-  color: #fff;
+  color: var(--color-fff);
 }
 
 .footer-link {
   background: none;
   border: none;
-  padding: 0;
+  padding: var(--space-0);
   font: inherit;
-  color: #9ab;
+  color: var(--color-9ab);
   cursor: pointer;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-link:hover {
-  color: #fff;
+  color: var(--color-fff);
 }
 
 .footer-dot {
-  color: #345;
+  color: var(--color-345);
 }
 
 .footer-github {
@@ -185,7 +185,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-split {
     flex-direction: column;
-    padding: 2rem;
+    padding: var(--space-2rem);
   }
 
   .hero-content {
@@ -197,7 +197,7 @@
   }
 
   .hero-tagline {
-    font-size: 1.25rem;
+    font-size: var(--type-size-1p25rem);
   }
 
 }
@@ -228,21 +228,21 @@
   }
 
   .hero-tagline {
-    font-size: 1.05rem;
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-1p05rem);
+    margin-bottom: var(--space-1p5rem);
   }
 
   .hero-cta {
     padding: 0.85rem 2.4rem;
-    font-size: 1.1rem;
+    font-size: var(--type-size-1p1rem);
   }
 
   .landing-footer {
-    padding: 0.75rem 1rem;
+    padding: var(--space-0p75rem-1rem);
   }
 
   .footer-content {
-    font-size: 0.75rem;
+    font-size: var(--type-size-0p75rem);
   }
 }
 
@@ -250,14 +250,6 @@
    Game Picker Modal
    =================== */
 .picker-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
 }
 
 .picker-modal {
@@ -265,47 +257,47 @@
   width: 100%;
   max-width: 700px;
   max-height: 90vh;
-  background: #1c2228;
-  border-radius: 8px;
-  padding: 2rem;
+  background: var(--color-1c2228);
+  border-radius: var(--radius-8px);
+  padding: var(--space-2rem);
   overflow-y: auto;
 }
 
 .picker-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: var(--space-1rem);
+  right: var(--space-1rem);
   background: none;
   border: none;
-  color: #678;
+  color: var(--color-678);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: var(--space-0p5rem);
   transition: color 0.2s;
 }
 
 .picker-close:hover {
-  color: #fff;
+  color: var(--color-fff);
 }
 
 .picker-modal h2 {
   margin: 0 0 1.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: var(--type-size-1p5rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
   text-align: left;
 }
 
 .section-header {
   margin: 2rem 0 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: var(--type-size-1rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
 }
 
 .game-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-1rem);
 }
 
 .game-card {
@@ -317,7 +309,7 @@
   padding: 1.5rem 2rem;
   min-height: 180px;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-8px);
   overflow: hidden;
   cursor: pointer;
   background-size: cover;
@@ -329,7 +321,7 @@
 .game-card::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: var(--space-0);
   background: linear-gradient(to top, rgba(20, 24, 29, 0.8) 0%, rgba(20, 24, 29, 0.3) 50%, transparent 100%);
 }
 
@@ -355,67 +347,67 @@
   height: 145px;
   width: auto;
   object-fit: contain;
-  margin: 0;
+  margin: var(--space-0);
 }
 
 .game-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #fff;
+  margin: var(--space-0-0-0p5rem);
+  font-size: var(--type-size-1p25rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
 }
 
 .game-card p {
-  margin: 0;
-  font-size: 0.875rem;
-  color: #9ab;
-  line-height: 1.4;
+  margin: var(--space-0);
+  font-size: var(--font-size-0p875rem);
+  color: var(--color-9ab);
+  line-height: var(--line-height-1p4);
 }
 
 .coming-soon-badge,
 .beta-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: var(--space-1rem);
+  right: var(--space-1rem);
   padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  border-radius: var(--radius-4px);
+  font-size: var(--type-size-0p7rem);
+  color: var(--color-fff);
+  text-transform: var(--type-transform-uppercase);
+  letter-spacing: var(--type-track-0p05em);
 }
 
 .coming-soon-badge {
-  background: rgba(100, 100, 140, 0.8);
+  background: var(--rgba-100-100-140-0p8);
 }
 
 .beta-badge {
-  background: rgba(0, 192, 48, 0.8);
+  background: var(--rgba-0-192-48-0p8);
 }
 
 .version-badge {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: var(--space-1rem);
+  left: var(--space-1rem);
   padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: rgba(80, 80, 120, 0.8);
+  border-radius: var(--radius-4px);
+  font-size: var(--type-size-0p7rem);
+  color: var(--color-fff);
+  text-transform: var(--type-transform-uppercase);
+  letter-spacing: var(--type-track-0p05em);
+  background: var(--rgba-80-80-120-0p8);
 }
 
 .game-stats {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #cde;
-  font-weight: 500;
+  margin: var(--space-0);
+  font-size: var(--type-size-0p85rem);
+  color: var(--color-cde);
+  font-weight: var(--type-weight-500);
 }
 
 @media (max-width: 768px) {
   .picker-modal {
-    padding: 1.5rem;
+    padding: var(--space-1p5rem);
   }
 
   .game-card {

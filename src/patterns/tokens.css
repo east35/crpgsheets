@@ -1,0 +1,706 @@
+:root {
+  --space-0p25rem: 0.25rem;
+  --space-4px: 4px;
+  --space-0p35rem: 0.35rem;
+  --space-0p5rem: 0.5rem;
+  --space-8px: 8px;
+  --space-p5rem: .5rem;
+  --space-0p75rem: 0.75rem;
+  --space-1rem: 1rem;
+  --space-1p25rem: 1.25rem;
+  --space-1p5rem: 1.5rem;
+  --space-2rem: 2rem;
+  --space-0p9rem: 0.9rem;
+  --space-0: 0;
+  --space-0-0-0p5rem: 0 0 0.5rem;
+  --space-0-auto: 0 auto;
+  --space-0p25rem-0p5rem: 0.25rem 0.5rem;
+  --space-0p2rem-0p6rem: 0.2rem 0.6rem;
+  --space-8px-12px: 8px 12px;
+  --space-0p5rem-1rem: 0.5rem 1rem;
+  --space-0p375rem-0p75rem: 0.375rem 0.75rem;
+  --space-0p85rem-1rem: 0.85rem 1rem;
+  --space-0p25rem-0p75rem: 0.25rem 0.75rem;
+  --space-0p75rem-1rem: 0.75rem 1rem;
+  --space-1p25rem-1p5rem: 1.25rem 1.5rem;
+  --space-2px-6px: 2px 6px;
+  --space-2px-8px: 2px 8px;
+  --radius-4px: 4px;
+  --radius-6px: 6px;
+  --radius-8px: 8px;
+  --radius-10px: 10px;
+  --radius-12px: 12px;
+  --radius-14px: 14px;
+  --radius-20px: 20px;
+  --radius-8px-8px-0-0: 8px 8px 0 0;
+  --radius-100px: 100px;
+  --type-size-0p7rem: 0.7rem;
+  --type-size-0p75rem: 0.75rem;
+  --type-size-0p8rem: 0.8rem;
+  --type-size-0p85rem: 0.85rem;
+  --type-size-0p9rem: 0.9rem;
+  --type-size-1rem: 1rem;
+  --type-size-1p1rem: 1.1rem;
+  --type-size-1p25rem: 1.25rem;
+  --type-size-1p35rem: 1.35rem;
+  --type-size-1p5rem: 1.5rem;
+  --type-lh-1p5: 1.5;
+  --type-lh-1p6: 1.6;
+  --type-weight-500: 500;
+  --type-weight-600: 600;
+  --type-track-0p05em: 0.05em;
+  --type-transform-uppercase: uppercase;
+  --size-40px: 40px;
+  --size-120px: 120px;
+  --size-160px: 160px;
+  --transition-fast: all 0.2s;
+  --transition-fast-ease: all 0.2s ease;
+
+  /* type (audit leftovers) */
+  --font-weight-700: 700; 
+  --color-064e3b: #064e3b;
+  --color-0d0f14: #0d0f14;
+  --color-0d1014: #0d1014;
+  --color-0f0f1a: #0f0f1a;
+  --color-10b981: #10b981;
+  --color-1a1a2e: #1a1a2e;
+  --color-1abc9c: #1abc9c;
+  --color-1b1206: #1b1206;
+  --color-1b1b1b: #1b1b1b;
+  --color-1c2228: #1c2228;
+  --color-1d7241: #1d7241;
+  --color-222240: #222240;
+  --color-22c55e: #22c55e;
+  --color-25201a: #25201a;
+  --color-252540: #252540;
+  --color-252a32: #252a32;
+  --color-27ae60: #27ae60;
+  --color-28a75e: #28a75e;
+  --color-2a2218: #2a2218;
+  --color-2a2a3e: #2a2a3e;
+  --color-2a2a46: #2a2a46;
+  --color-2a2a4a: #2a2a4a;
+  --color-2a2a4e: #2a2a4e;
+  --color-2a2a50: #2a2a50;
+  --color-2a3038: #2a3038;
+  --color-2a4a2a: #2a4a2a;
+  --color-2a6a4a: #2a6a4a;
+  --color-2d4a2d: #2d4a2d;
+  --color-2ecc71: #2ecc71;
+  --color-333: #333;
+  --color-345: #345;
+  --color-3498db: #3498db;
+  --color-34d399: #34d399;
+  --color-36c7b8: #36c7b8;
+  --color-38bdf8: #38bdf8;
+  --color-3a2e1d: #3a2e1d;
+  --color-3a3a4e: #3a3a4e;
+  --color-3a3a5a: #3a3a5a;
+  --color-3a3a6a: #3a3a6a;
+  --color-3a4858: #3a4858;
+  --color-3a4a3a: #3a4a3a;
+  --color-3a4a6a: #3a4a6a;
+  --color-3a5a3a: #3a5a3a;
+  --color-3d5a3d: #3d5a3d;
+  --color-444: #444;
+  --color-4a2d4a: #4a2d4a;
+  --color-4a3a6a: #4a3a6a;
+  --color-4a3d2d: #4a3d2d;
+  --color-4a4a6a: #4a4a6a;
+  --color-4a4a7a: #4a4a7a;
+  --color-4a7c4a: #4a7c4a;
+  --color-4a804a: #4a804a;
+  --color-4a9eff: #4a9eff;
+  --color-4fd1c5: #4fd1c5;
+  --color-514636: #514636;
+  --color-535bf2: #535bf2;
+  --color-555: #555;
+  --color-567: #567;
+  --color-5a3d5a: #5a3d5a;
+  --color-5a4d3d: #5a4d3d;
+  --color-5a5a7a: #5a5a7a;
+  --color-5a9c5a: #5a9c5a;
+  --color-5c1a1a: #5c1a1a;
+  --color-5d6386: #5d6386;
+  --color-646cff: #646cff;
+  --color-666: #666;
+  --color-678: #678;
+  --color-6a4a3a: #6a4a3a;
+  --color-6a6a8a: #6a6a8a;
+  --color-6a9c6a: #6a9c6a;
+  --color-6b6ef7: #6b6ef7;
+  --color-6e2020: #6e2020;
+  --color-6f5f3b: #6f5f3b;
+  --color-78350f: #78350f;
+  --color-789: #789;
+  --color-7a7dff: #7a7dff;
+  --color-7bb4ff: #7bb4ff;
+  --color-7c3aed: #7c3aed;
+  --color-7f1d1d: #7f1d1d;
+  --color-7fd3c7: #7fd3c7;
+  --color-80ffa0: #80ffa0;
+  --color-888: #888;
+  --color-8a8aaa: #8a8aaa;
+  --color-8a8aff: #8a8aff;
+  --color-8ac4ff: #8ac4ff;
+  --color-8aff8a: #8aff8a;
+  --color-8b5cf6: #8b5cf6;
+  --color-8bf: #8bf;
+  --color-8cf: #8cf;
+  --color-8e44ad: #8e44ad;
+  --color-8f8: #8f8;
+  --color-90ee90: #90ee90;
+  --color-94a3b8: #94a3b8;
+  --color-95a0c8: #95a0c8;
+  --color-98a0c3: #98a0c3;
+  --color-999: #999;
+  --color-9aa3c2: #9aa3c2;
+  --color-9ab: #9ab;
+  --color-9b59b6: #9b59b6;
+  --color-9df7b2: #9df7b2;
+  --color-a050a0: #a050a0;
+  --color-a0a0c0: #a0a0c0;
+  --color-a78bfa: #a78bfa;
+  --color-a7aecf: #a7aecf;
+  --color-aaa: #aaa;
+  --color-b7bdd6: #b7bdd6;
+  --color-b8b0ff: #b8b0ff;
+  --color-bfae95: #bfae95;
+  --color-c0392b: #c0392b;
+  --color-c0a0ff: #c0a0ff;
+  --color-c0c0d0: #c0c0d0;
+  --color-c0ffc0: #c0ffc0;
+  --color-c5b39c: #c5b39c;
+  --color-c7b47e: #c7b47e;
+  --color-c7b7a0: #c7b7a0;
+  --color-c7cbe1: #c7cbe1;
+  --color-c9a030: #c9a030;
+  --color-c9f6d2: #c9f6d2;
+  --color-ccc: #ccc;
+  --color-cde: #cde;
+  --color-cfd6ff: #cfd6ff;
+  --color-d9cdb8: #d9cdb8;
+  --color-da70d6: #da70d6;
+  --color-db9: #db9;
+  --color-dc2626: #dc2626;
+  --color-dc3545: #dc3545;
+  --color-e0e0e0: #e0e0e0;
+  --color-e2c98c: #e2c98c;
+  --color-e5e9ff: #e5e9ff;
+  --color-e6d9c4: #e6d9c4;
+  --color-e6e9ff: #e6e9ff;
+  --color-e74c3c: #e74c3c;
+  --color-e8dbc6: #e8dbc6;
+  --color-e91e63: #e91e63;
+  --color-eef0ff: #eef0ff;
+  --color-ef4444: #ef4444;
+  --color-f06060: #f06060;
+  --color-f0a040: #f0a040;
+  --color-f0a319: #f0a319;
+  --color-f0c040: #f0c040;
+  --color-f39c12: #f39c12;
+  --color-f472b6: #f472b6;
+  --color-f59e0b: #f59e0b;
+  --color-f7a3a3: #f7a3a3;
+  --color-f87171: #f87171;
+  --color-f97316: #f97316;
+  --color-fbbf24: #fbbf24;
+  --color-fca5a5: #fca5a5;
+  --color-ff5722: #ff5722;
+  --color-ff6b6b: #ff6b6b;
+  --color-ff8a8a: #ff8a8a;
+  --color-ff9999: #ff9999;
+  --color-ffaa6a: #ffaa6a;
+  --color-ffb703: #ffb703;
+  --color-ffd700: #ffd700;
+  --color-fff: #fff;
+  --color-fff1c9: #fff1c9;
+  --color-transparent: transparent;
+  --color-white: white;
+
+  --line-height-1p4: 1.4; /* 5 uses / 4 files */ /* :contentReference[oaicite:1]{index=1} */
+  --font-size-0p875rem: 0.875rem; /* 5 uses / 4 files */ /* :contentReference[oaicite:2]{index=2} */
+  --font-size-1p05rem: 1.05rem; /* 4 uses / 2 files */ /* :contentReference[oaicite:3]{index=3} */
+  --letter-spacing-0p08em: 0.08em; /* 4 uses / 1 file */ /* :contentReference[oaicite:4]{index=4} */
+  --font-size-1p2rem: 1.2rem; /* 4 uses / 3 files */ /* :contentReference[oaicite:5]{index=5} */
+  --font-size-0p8125rem: 0.8125rem; /* 4 uses / 2 files */ /* :contentReference[oaicite:6]{index=6} */
+
+  /* radius (audit leftovers beyond the “top 6” plan) */
+  --radius-16px: 16px; /* 5 uses */ /* :contentReference[oaicite:7]{index=7} */
+  --radius-50pct: 50%; /* 5 uses */ /* :contentReference[oaicite:8]{index=8} */
+  --radius-999px: 999px; /* 3 uses */ /* :contentReference[oaicite:9]{index=9} */
+
+  /* optional “singletons” if you want completeness (low priority) */
+  --line-height-1p2: 1.2; /* 1 use */ /* :contentReference[oaicite:10]{index=10} */
+
+  --rgba-26-26-46-1: rgb(26, 26, 46);
+  --rgba-0-0-0-0: rgba(0, 0, 0, 0);
+  --rgba-0-0-0-0p3: rgba(0, 0, 0, 0.3);
+  --rgba-0-0-0-0p4: rgba(0, 0, 0, 0.4);
+  --rgba-0-0-0-0p5: rgba(0, 0, 0, 0.5);
+  --rgba-0-0-0-0p6: rgba(0, 0, 0, 0.6);
+  --rgba-0-0-0-0p8: rgba(0, 0, 0, 0.8);
+  --rgba-0-0-0-0p9: rgba(0, 0, 0, 0.9);
+  --rgba-10-11-24-0p78: rgba(10, 11, 24, 0.78);
+  --rgba-100-108-255-0p1: rgba(100, 108, 255, 0.1);
+  --rgba-100-108-255-0p3: rgba(100, 108, 255, 0.3);
+  --rgba-100-108-255-0p6: rgba(100, 108, 255, 0.6);
+  --rgba-100-150-255-0p2: rgba(100, 150, 255, 0.2);
+  --rgba-106-112-160-0p25: rgba(106, 112, 160, 0.25);
+  --rgba-11-12-24-0p85: rgba(11, 12, 24, 0.85);
+  --rgba-139-92-246-0p12: rgba(139, 92, 246, 0.12);
+  --rgba-139-92-246-0p2: rgba(139, 92, 246, 0.2);
+  --rgba-139-92-246-0p35: rgba(139, 92, 246, 0.35);
+  --rgba-139-92-246-0p6: rgba(139, 92, 246, 0.6);
+  --rgba-15-16-32-0p8: rgba(15, 16, 32, 0.8);
+  --rgba-18-20-36-0p95: rgba(18, 20, 36, 0.95);
+  --rgba-19-20-38-0p85: rgba(19, 20, 38, 0.85);
+  --rgba-20-24-29-0p3: rgba(20, 24, 29, 0.3);
+  --rgba-200-150-50-0p3: rgba(200, 150, 50, 0.3);
+  --rgba-217-184-109-0p18: rgba(217, 184, 109, 0.18);
+  --rgba-220-53-69-0p2: rgba(220, 53, 69, 0.2);
+  --rgba-220-53-69-0p5: rgba(220, 53, 69, 0.5);
+  --rgba-240-192-64-0p3: rgba(240, 192, 64, 0.3);
+  --rgba-255-183-3-0p18: rgba(255, 183, 3, 0.18);
+  --rgba-255-255-255-0p08: rgba(255, 255, 255, 0.08);
+  --rgba-255-255-255-0p2: rgba(255, 255, 255, 0.2);
+  --rgba-26-26-46-0: rgba(26, 26, 46, 0);
+  --rgba-26-26-46-0p7: rgba(26, 26, 46, 0.7);
+  --rgba-26-26-46-0p9: rgba(26, 26, 46, 0.9);
+  --rgba-5-6-15-0p7: rgba(5, 6, 15, 0.7);
+  --rgba-74-124-74-0p1: rgba(74, 124, 74, 0.1);
+  --rgba-74-124-74-0p2: rgba(74, 124, 74, 0.2);
+  --rgba-74-124-74-0p35: rgba(74, 124, 74, 0.35);
+  --rgba-74-124-74-0p45: rgba(74, 124, 74, 0.45);
+  --rgba-8-9-18-0p9: rgba(8, 9, 18, 0.9);
+  --rgba-90-42-42-0p5: rgba(90, 42, 42, 0.5);
+  --rgba-0-0-0-0p2: rgba(0, 0, 0, 0.2);
+  --rgba-0-0-0-0p35: rgba(0, 0, 0, 0.35);
+  --rgba-0-0-0-0p45: rgba(0, 0, 0, 0.45);
+  --rgba-0-0-0-0p55: rgba(0, 0, 0, 0.55);
+  --rgba-0-0-0-0p7: rgba(0, 0, 0, 0.7);
+  --rgba-0-0-0-0p85: rgba(0, 0, 0, 0.85);
+  --rgba-0-192-48-0p8: rgba(0, 192, 48, 0.8);
+  --rgba-100-100-140-0p8: rgba(100, 100, 140, 0.8);
+  --rgba-100-108-255-0p2: rgba(100, 108, 255, 0.2);
+  --rgba-100-108-255-0p4: rgba(100, 108, 255, 0.4);
+  --rgba-100-108-255-0p85: rgba(100, 108, 255, 0.85);
+  --rgba-100-200-100-0p2: rgba(100, 200, 100, 0.2);
+  --rgba-106-112-160-0p35: rgba(106, 112, 160, 0.35);
+  --rgba-12-13-28-0p7: rgba(12, 13, 28, 0.7);
+  --rgba-139-92-246-0p15: rgba(139, 92, 246, 0.15);
+  --rgba-139-92-246-0p3: rgba(139, 92, 246, 0.3);
+  --rgba-139-92-246-0p4: rgba(139, 92, 246, 0.4);
+  --rgba-139-92-246-0p8: rgba(139, 92, 246, 0.8);
+  --rgba-18-20-36-0p75: rgba(18, 20, 36, 0.75);
+  --rgba-180-140-100-0p2: rgba(180, 140, 100, 0.2);
+  --rgba-199-180-126-0p25: rgba(199, 180, 126, 0.25);
+  --rgba-20-24-29-0p8: rgba(20, 24, 29, 0.8);
+  --rgba-200-80-80-0p3: rgba(200, 80, 80, 0.3);
+  --rgba-220-53-69-0p1: rgba(220, 53, 69, 0.1);
+  --rgba-220-53-69-0p3: rgba(220, 53, 69, 0.3);
+  --rgba-240-192-64-0p1: rgba(240, 192, 64, 0.1);
+  --rgba-25-25-45-0p9: rgba(25, 25, 45, 0.9);
+  --rgba-255-255-255-0p05: rgba(255, 255, 255, 0.05);
+  --rgba-255-255-255-0p1: rgba(255, 255, 255, 0.1);
+  --rgba-255-255-255-0p87: rgba(255, 255, 255, 0.87);
+  --rgba-26-26-46-0p5: rgba(26, 26, 46, 0.5);
+  --rgba-26-26-46-0p75: rgba(26, 26, 46, 0.75);
+  --rgba-26-26-46-0p92: rgba(26, 26, 46, 0.92);
+  --rgba-34-34-64-0p95: rgba(34, 34, 64, 0.95);
+  --rgba-7-8-20-0p5: rgba(7, 8, 20, 0.5);
+  --rgba-74-124-74-0p15: rgba(74, 124, 74, 0.15);
+  --rgba-74-124-74-0p3: rgba(74, 124, 74, 0.3);
+  --rgba-74-124-74-0p4: rgba(74, 124, 74, 0.4);
+  --rgba-74-124-74-0p6: rgba(74, 124, 74, 0.6);
+  --rgba-80-80-120-0p8: rgba(80, 80, 120, 0.8);
+}
+
+.p-overlay,
+.info-modal-overlay,
+.picker-overlay {
+  position: fixed;
+  inset: var(--space-0);
+  background: var(--rgba-0-0-0-0p8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-2rem);
+}
+
+.p-toggle,
+.header-game-toggle,
+.profile-selector-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8px);
+  padding: var(--space-8px-12px);
+  background: var(--color-2a2a3e);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-6px);
+  color: var(--color-e0e0e0);
+  cursor: pointer;
+  font-size: var(--type-size-0p9rem);
+  transition: var(--transition-fast);
+}
+
+.p-portraitCard,
+.companion-summary-portrait,
+.companion-detail-screen .companion-card-portrait {
+  width: var(--size-120px);
+  height: var(--size-160px);
+  border-radius: var(--radius-10px);
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--color-3a3a5a);
+  background: var(--color-2a2a4a);
+  box-shadow: 0 6px 18px var(--rgba-0-0-0-0p35);
+}
+
+.p-companionSection,
+.companion-section,
+.build-selector.bg3 .companion-section,
+.companion-detail-screen .companion-section {
+  background: var(--rgba-26-26-46-0p9);
+  border: 1px solid var(--color-3a3a5a);
+  border-radius: var(--radius-14px);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.p-buildDescription,
+.build-description,
+.build-card-desc {
+  color: var(--color-b7bdd6);
+  font-style: italic;
+  padding-left: var(--space-0p75rem);
+  border-left: 2px solid var(--rgba-139-92-246-0p35);
+}
+
+.p-metaRow,
+.build-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-0p5rem);
+  color: var(--color-98a0c3);
+  font-size: var(--type-size-0p9rem);
+}
+
+.p-backButton,
+.build-viewer-back-btn,
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-0p5rem);
+  padding: var(--space-0p5rem-1rem);
+  background: var(--rgba-18-20-36-0p75);
+  border: 1px solid var(--rgba-106-112-160-0p35);
+  border-radius: var(--radius-10px);
+  color: var(--color-b7bdd6);
+  cursor: pointer;
+  font-size: var(--font-size-0p875rem);
+  transition: var(--transition-fast-ease);
+}
+
+.p-backButton:hover,
+.build-viewer-back-btn:hover,
+.back-button:hover {
+  border-color: var(--rgba-139-92-246-0p6);
+  color: var(--color-e5e9ff);
+}
+
+.p-pathDisplay,
+.party-member-path {
+  display: flex;
+  align-items: center;
+  gap: var(--space-0p35rem);
+  flex-wrap: wrap;
+}
+
+.p-tabContainer,
+.tabs {
+  display: flex;
+  gap: var(--space-0p5rem);
+  border-bottom: 1px solid var(--rgba-106-112-160-0p35);
+}
+
+.p-filterSection,
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: var(--space-0p75rem);
+  flex-wrap: wrap;
+}
+
+.p-viewerTab,
+.tab {
+  background: var(--color-transparent);
+  border: none;
+  color: var(--color-9aa3c2);
+  padding: var(--space-0p5rem-1rem);
+  border-radius: var(--radius-8px-8px-0-0);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.p-viewerTab:hover,
+.tab:hover {
+  color: var(--color-e5e9ff);
+  background: var(--rgba-18-20-36-0p75);
+}
+
+.p-viewerTab.active,
+.tab.active {
+  color: var(--color-e5e9ff);
+  background: var(--rgba-18-20-36-0p95);
+  border: 1px solid var(--rgba-106-112-160-0p35);
+  border-bottom-color: var(--color-transparent);
+}
+
+.p-surfaceControls,
+.companion-detail-controls,
+.build-selector-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1p5rem);
+  margin-bottom: var(--space-1rem);
+  padding: var(--space-1rem);
+  background: var(--rgba-18-20-36-0p75);
+  border-radius: var(--radius-12px);
+  border: 1px solid var(--rgba-106-112-160-0p35);
+}
+
+.p-cardSurface,
+.build-card,
+.build-selector.bg3 .build-list .build-card,
+.companion-build-card,
+.gear-slot,
+.tracked-build-preview {
+  background: var(--rgba-18-20-36-0p75);
+  border: 1px solid var(--rgba-106-112-160-0p35);
+  border-radius: var(--radius-12px);
+}
+
+.p-selectorPill,
+.build-selector .filter-tag,
+.companion-detail-screen.rt .filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-0p25rem);
+  padding: var(--space-0p375rem-0p75rem);
+  background: var(--rgba-18-20-36-0p75);
+  border: 1px solid var(--rgba-106-112-160-0p35);
+  border-radius: var(--radius-20px);
+  font-size: var(--type-size-0p75rem);
+  color: var(--color-b7bdd6);
+  cursor: pointer;
+  transition: var(--transition-fast-ease);
+}
+
+.p-selectorPill:hover,
+.build-selector .filter-tag:hover,
+.companion-detail-screen.rt .filter-tag:hover,
+.companion-detail-screen .filter-tag:hover {
+  border-color: var(--rgba-139-92-246-0p6);
+}
+
+.p-selectorPill.active,
+.build-selector .filter-tag.active,
+.companion-detail-screen.rt .filter-tag.active,
+.companion-detail-screen .filter-tag.active {
+  background: var(--rgba-139-92-246-0p2);
+  border-color: var(--rgba-139-92-246-0p6);
+  color: var(--color-e5e9ff);
+}
+
+.p-tooltipStack,
+.crpg-tooltip-title-block,
+.crpg-tooltip-section,
+.crpg-tooltip-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8px);
+}
+
+.p-modalListStack,
+.changelog-list,
+.roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1p5rem);
+}
+
+.p-listStack,
+.build-list-container,
+.build-selector.bg3 .build-list,
+.companion-list,
+.companion-group,
+.companion-detail-builds {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1rem);
+}
+
+.p-buildPreviewRow,
+.build-selector.bg3 .unselected-build-preview,
+.unselected-build-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1rem);
+  padding: var(--space-0p85rem-1rem);
+  margin-top: var(--space-0p9rem);
+  background: var(--rgba-18-20-36-0p75);
+  border: 1px solid var(--rgba-106-112-160-0p35);
+  border-radius: var(--radius-10px);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+
+.p-pillBadgeMuted,
+.build-selector.bg3 .unselected-badge,
+.unselected-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4px);
+  padding: var(--space-2px-8px);
+  background: var(--rgba-139-92-246-0p15);
+  border-radius: var(--radius-6px);
+  font-size: var(--type-size-0p75rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-b8b0ff);
+}
+
+.p-pillBadgeSuccess,
+.build-selector.bg3 .tracked-badge,
+.tracked-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4px);
+  padding: var(--space-2px-8px);
+  background: var(--rgba-74-124-74-0p35);
+  border-radius: var(--radius-6px);
+  font-size: var(--type-size-0p75rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-c9f6d2);
+}
+
+.p-pillBadgeTracked,
+.build-selector.bg3 .build-card-tracked-badge,
+.build-card-tracked-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4px);
+  padding: var(--space-2px-8px);
+  background: var(--color-4a7c4a);
+  border-radius: var(--radius-4px);
+  font-size: var(--type-size-0p7rem);
+  font-weight: var(--type-weight-600);
+  color: var(--color-fff);
+  align-self: flex-start;
+}
+
+.p-buttonGhostSm,
+.build-selector.bg3 .tracked-build-change-btn,
+.tracked-build-change-btn {
+  background: var(--color-transparent);
+  border: 1px solid var(--color-4a4a6a);
+  border-radius: var(--radius-6px);
+  cursor: pointer;
+  font-size: var(--type-size-0p85rem);
+  transition: var(--transition-fast);
+}
+
+.p-levelBadge,
+.party-member-level,
+.companion-card-level-badge,
+.build-card-level {
+  font-weight: var(--type-weight-600);
+  color: var(--color-8b5cf6);
+  background: var(--rgba-139-92-246-0p15);
+  padding: var(--space-0p2rem-0p6rem);
+  flex-shrink: 0;
+}
+
+.p-levelDisplay,
+.build-viewer .level-display {
+  background: var(--rgba-139-92-246-0p2);
+  color: var(--color-b8b0ff);
+  padding: var(--space-0p25rem-0p75rem);
+  border-radius: var(--radius-6px);
+  font-weight: var(--type-weight-600);
+  min-width: var(--size-40px);
+  text-align: center;
+  border: 1px solid var(--rgba-106-112-160-0p35);
+}
+
+.p-tab,
+.header-nav-tab,
+.builds-subnav-tab {
+  border-radius: var(--radius-100px);
+  color: var(--color-e0e0e0);
+  font-size: var(--type-size-1rem);
+  font-weight: var(--type-weight-500);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.p-tab:hover,
+.header-nav-tab:hover,
+.builds-subnav-tab:hover {
+  color: var(--color-fff);
+}
+
+.p-tab.active,
+.header-nav-tab.active,
+.builds-subnav-tab.active {
+  color: var(--color-fff);
+  background: var(--color-646cff);
+  box-shadow: 0 8px 32px var(--rgba-0-0-0-0p4);
+}
+
+.p-fixedBottomBar,
+.builds-subnav {
+  position: fixed;
+  bottom: var(--space-0);
+  left: var(--space-0);
+  right: var(--space-0);
+  z-index: 100;
+}
+
+.p-tabsBarCore,
+.header-nav {
+  display: flex;
+  border-radius: var(--radius-100px);
+  overflow: hidden;
+}
+
+/* Layout bundles */
+.u-align-center { align-items: center; }
+.u-gap-0-5 { gap: 0.5rem; }
+.u-gap-0-75 { gap: 0.75rem; }
+.u-gap-1 { gap: 1rem; }
+.u-pad-0 { padding: 0; }
+.u-pad-1 { padding: 1rem; }
+.u-pad-1-5 { padding: 1.5rem; }
+.u-pad-0-75-1 { padding: 0.75rem 1rem; }
+
+/* Surface bundles */
+.u-surface-none { background: none; border: none; }
+.u-surface-transparent { background: var(--color-transparent); border: none; }
+.u-surface-border-accent { border: 1px solid rgba(139, 92, 246, 0.6); }
+.u-surface-card-10 { background: rgba(18, 20, 36, 0.75); border: 1px solid rgba(106, 112, 160, 0.35); border-radius: 10px; }
+.u-surface-card-12 { background: rgba(18, 20, 36, 0.75); border: 1px solid rgba(106, 112, 160, 0.35); border-radius: 12px; }
+.u-radius-4 { border-radius: 4px; }
+.u-bg-tier-advanced { background: var(--color-4a3d2d); }
+.u-bg-tier-base { background: var(--color-2d4a2d); }
+.u-bg-tier-exemplar { background: var(--color-4a2d4a); }
+.u-bg-active-2a2a4e { background: var(--color-2a2a4e); }
