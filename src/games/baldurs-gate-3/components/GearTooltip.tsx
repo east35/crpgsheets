@@ -16,11 +16,11 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
 
   const gearInfo = getCsvGearInfo(gearName);
   const rarityColors: Record<string, string> = {
-    Common: '#9d9d9d',
-    Uncommon: '#1eff00',
-    Rare: '#0070dd',
-    'Very Rare': '#a335ee',
-    Legendary: '#ff8000',
+    Common: 'var(--color-bg3-gear-common)',
+    Uncommon: 'var(--color-bg3-gear-uncommon)',
+    Rare: 'var(--color-bg3-gear-rare)',
+    'Very Rare': 'var(--color-bg3-gear-very-rare)',
+    Legendary: 'var(--color-bg3-gear-legendary)',
   };
 
   const handleMouseEnter = (event: React.MouseEvent) => {
@@ -49,8 +49,8 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
 
     const badge: TooltipBadge = {
       label: (gearInfo.category === 'weapon' ? 'WEAPON' : 'GEAR'),
-      background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || '#f0a319',
-      color: '#1b1206',
+      background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || 'var(--color-bg3-gear-badge-bg)',
+      color: 'var(--color-bg3-gear-badge-text)',
     };
 
     showSheet({
@@ -74,8 +74,8 @@ export function GearTooltip({ gearName, children }: GearTooltipProps) {
         iconUrl={gearInfo.image}
         badge={{
           label: gearInfo.category === 'weapon' ? 'WEAPON' : 'GEAR',
-          background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || '#f0a319',
-          color: '#1b1206',
+          background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || 'var(--color-bg3-gear-badge-bg)',
+          color: 'var(--color-bg3-gear-badge-text)',
         }}
         sections={[
           ...(gearInfo.slot ? [{ label: 'Slot', value: gearInfo.slot }] : []),

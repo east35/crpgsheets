@@ -51,7 +51,7 @@
 .form-row input,
 .form-row select,
 .form-row textarea {
-  padding: 0.6rem 0.8rem;
+  padding: var(--space-0p6rem) var(--space-0p8rem);
   background: var(--color-2a2a3e);
   border: 1px solid var(--color-3a3a5a);
   border-radius: var(--radius-6px);
@@ -72,7 +72,7 @@
 }
 
 .progression-editor h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 var(--space-0p5rem) 0;
   color: var(--color-e0e0e0);
 }
 
@@ -83,7 +83,7 @@
 }
 
 .tier-divider {
-  padding: var(--space-0p75rem-1rem);
+  padding: var(--space-0p75rem) var(--space-1rem);
   margin-top: var(--space-1rem);
   font-weight: var(--type-weight-600);
   font-size: var(--type-size-0p9rem);
@@ -91,28 +91,28 @@
 }
 
 .tier-divider.base {
-  background: linear-gradient(90deg, #2a4a2a, transparent);
+  background: linear-gradient(90deg, var(--color-accent-green-muted), transparent);
   color: var(--color-8aff8a);
 }
 
 .tier-divider.advanced {
-  background: linear-gradient(90deg, #3a3a6a, transparent);
+  background: linear-gradient(90deg, var(--color-accent-blue-muted), transparent);
   color: var(--color-8a8aff);
 }
 
 .tier-divider.exemplar {
-  background: linear-gradient(90deg, #5a3a2a, transparent);
+  background: linear-gradient(90deg, var(--color-accent-brown-muted), transparent);
   color: var(--color-ffaa6a);
 }
 
 .level-row {
   display: flex;
   align-items: flex-start;
-  padding: var(--space-0p75rem-1rem);
+  padding: var(--space-0p75rem) var(--space-1rem);
   background: var(--color-1a1a2e);
   border-left: 3px solid var(--color-transparent);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .level-row:hover {
@@ -151,7 +151,7 @@
 }
 
 .selected-talent {
-  padding: 0.25rem 0.6rem;
+  padding: var(--space-0p25rem) var(--space-0p6rem);
   background: var(--color-3a4a3a);
   border-radius: var(--radius-4px);
   font-size: var(--type-size-0p85rem);
@@ -174,7 +174,7 @@
 
 .talent-search {
   width: 100%;
-  padding: 0.6rem 0.8rem;
+  padding: var(--space-0p6rem) var(--space-0p8rem);
   background: var(--color-2a2a3e);
   border: 1px solid var(--color-3a3a5a);
   border-radius: var(--radius-6px);
@@ -193,18 +193,18 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-2px);
 }
 
 .talent-option {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0.75rem;
+  padding: var(--space-0p5rem) var(--space-0p75rem);
   background: var(--color-2a2a3e);
   border-radius: var(--radius-4px);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: var(--transition-all-0p15s);
 }
 
 .talent-option:hover {

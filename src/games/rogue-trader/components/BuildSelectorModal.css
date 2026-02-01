@@ -3,7 +3,7 @@
   position: fixed;
   inset: var(--space-0);
   background: var(--rgba-0-0-0-0p8);
-  z-index: 1000;
+  z-index: var(--z-menu);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,8 +52,8 @@
   border-radius: var(--radius-8px);
   color: var(--color-888);
   cursor: pointer;
-  transition: all 0.2s;
-  z-index: 1;
+  transition: var(--transition-fast);
+  z-index: var(--z-content);
 }
 
 .build-selector-modal-close:hover {
@@ -83,7 +83,7 @@
 }
 
 .build-selector-modal-info h2 {
-  margin: 0 0 0.25rem;
+  margin: 0 0 var(--space-0p25rem);
   font-size: var(--type-size-1p5rem);
 }
 
@@ -93,8 +93,8 @@
 }
 
 .build-selector-modal-quote {
-  margin: 0.75rem 0 0;
-  padding: var(--space-0p75rem-1rem);
+  margin: var(--space-0p75rem) 0 0;
+  padding: var(--space-0p75rem) var(--space-1rem);
   background: var(--rgba-100-108-255-0p1);
   border-left: 3px solid var(--color-646cff);
   border-radius: 0 8px 8px 0;
@@ -105,7 +105,7 @@
 }
 
 .build-selector-modal-bio {
-  margin: 0.75rem 0 0;
+  margin: var(--space-0p75rem) 0 0;
   font-size: var(--type-size-0p9rem);
   color: var(--color-aaa);
   line-height: var(--type-lh-1p5);
@@ -116,7 +116,7 @@
 }
 
 .build-selector-modal-builds h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 var(--space-1rem);
   font-size: var(--type-size-1rem);
   color: var(--color-888);
   text-transform: var(--type-transform-uppercase);
@@ -136,7 +136,7 @@
   padding: var(--space-1rem);
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
   display: flex;
   flex-direction: column;
   gap: var(--space-0p5rem);
@@ -163,7 +163,7 @@
 }
 
 .build-selector-modal-card-path .archetype {
-  padding: 0.15rem 0.4rem;
+  padding: var(--space-0p15rem) var(--space-0p4rem);
   border-radius: 3px;
   font-weight: var(--type-weight-500);
 }
@@ -220,7 +220,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-4px);
-  padding: var(--space-2px-8px);
+  padding: var(--space-2px) var(--space-8px);
   background: var(--color-4a7c4a);
   border-radius: var(--radius-4px);
   font-size: var(--type-size-0p7rem);

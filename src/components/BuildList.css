@@ -1,6 +1,6 @@
 .build-list-empty {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: var(--space-3rem) var(--space-2rem);
   color: var(--color-888);
   background: var(--color-1a1a2e);
   border-radius: var(--radius-8px);
@@ -38,7 +38,7 @@
   border-radius: var(--radius-12px);
   padding: var(--space-1rem);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
   position: relative;
   overflow: hidden;
 }
@@ -75,7 +75,7 @@
   font-size: var(--type-size-1p5rem);
   font-weight: var(--type-weight-600);
   color: var(--color-666);
-  background: linear-gradient(135deg, #2a2a4a 0%, #1a1a2e 100%);
+  background: linear-gradient(135deg, var(--color-2a2a4a) 0%, var(--color-1a1a2e) 100%);
 }
 
 .party-member-info {
@@ -126,7 +126,7 @@
 }
 
 .party-member-path .archetype {
-  padding: 0.15rem 0.4rem;
+  padding: var(--space-0p15rem) var(--space-0p4rem);
   border-radius: 3px;
 }
 
@@ -161,9 +161,9 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%);
+  background: linear-gradient(90deg, var(--color-8b5cf6) 0%, var(--color-a78bfa) 100%);
   border-radius: 3px;
-  transition: width 0.3s ease;
+  transition: var(--transition-width-0p3s-ease);
 }
 
 .progress-label {
@@ -190,7 +190,7 @@
   border-radius: var(--radius-4px);
   color: var(--color-666);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: var(--transition-all-0p15s);
   padding: var(--space-0);
 }
 
@@ -209,7 +209,7 @@
   border-radius: var(--radius-8px);
   box-shadow: 0 4px 16px var(--rgba-0-0-0-0p4);
   overflow: hidden;
-  z-index: 20;
+  z-index: var(--z-overlay-high);
 }
 
 .dropdown-item {
@@ -217,14 +217,14 @@
   align-items: center;
   gap: var(--space-0p5rem);
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: var(--space-0p5rem) var(--space-0p75rem);
   background: none;
   border: none;
   color: var(--color-ccc);
   font-size: var(--type-size-0p8rem);
   cursor: pointer;
   text-align: left;
-  transition: background 0.15s;
+  transition: var(--transition-background-0p15s);
   white-space: nowrap;
 }
 
@@ -242,7 +242,7 @@
 
 .build-tag {
   font-size: var(--type-size-0p7rem);
-  padding: 0.15rem 0.4rem;
+  padding: var(--space-0p15rem) var(--space-0p4rem);
   border-radius: 3px;
   text-transform: var(--type-transform-uppercase);
   font-weight: var(--type-weight-500);

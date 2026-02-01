@@ -1,0 +1,82 @@
+src/App.css:82: z-index: 10;
+src/App.css:274: z-index: 0;
+src/App.css:298: z-index: 1;
+src/App.css:386: z-index: 1;
+src/App.css:419: z-index: 0;
+src/App.css:425: z-index: 1;
+src/App.css:471: z-index: 1;
+src/App.css:485: z-index: 1;
+src/App.css:723: z-index: 10;
+src/index.css:2: font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+src/components/SearchBar.css:65: z-index: 1000;
+src/components/TooltipCard.css:21: z-index: 10000;
+src/components/HeaderGameSelector.css:41: z-index: 1000;
+src/components/DataAuditView.css:22: z-index: 0;
+src/components/DataAuditView.css:27: z-index: 1;
+src/components/PartyBar.css:8: z-index: 100;
+src/components/MobileMenu.css:45: z-index: 999;
+src/components/MobileMenu.css:85: z-index: 998;
+src/components/MobileMenu.css:102: z-index: 999;
+src/components/MobileMenu.css:130: z-index: 1;
+src/components/MobileMenu.css:221: box-shadow: none;
+src/components/InfoModal.css:72: font-family: monospace;
+src/components/GameLibrary.css:40: z-index: 2;
+src/components/GameLibrary.css:109: z-index: 10;
+src/components/GameLibrary.css:223: z-index: 2;
+src/components/GameLibrary.css:343: z-index: 1;
+src/components/TooltipSheet.css:7: z-index: 10000;
+src/components/TooltipSheet.css:10: transition: background 0.3s, opacity 0.3s;
+src/components/TooltipSheet.css:31: z-index: 10001;
+src/components/MobileStickyButton.css:36: z-index: 100;
+src/components/ProfileSelector.css:41: z-index: 100;
+src/components/BuildList.css:212: z-index: 20;
+src/components/ImageLightbox.css:11: z-index: 9999;
+src/games/rogue-trader/components/CustomBuildEditor.css:171: margin-top: -1px;
+src/games/rogue-trader/components/BuildSelector.css:161: z-index: 1;
+src/games/rogue-trader/components/BuildSelector.css:426: z-index: 1;
+src/games/rogue-trader/components/BuildSelectorModal.css:6: z-index: 1000;
+src/games/rogue-trader/components/BuildSelectorModal.css:56: z-index: 1;
+src/games/rogue-trader/components/BuildViewer.css:333: z-index: 1;
+src/games/rogue-trader/components/BuildViewer.css:444: z-index: 1000;
+src/games/baldurs-gate-3/components/BuildSelector.css:324: z-index: 1;
+src/games/baldurs-gate-3/components/BuildSelectorModal.css:6: z-index: 1000;
+src/games/baldurs-gate-3/components/BuildSelectorModal.css:34: z-index: 1;
+src/games/baldurs-gate-3/components/BuildViewer.css:4: transition: margin-left 0.3s ease;
+src/games/baldurs-gate-3/components/BuildViewer.css:499: z-index: 1000;
+src/games/rogue-trader/components/ArchetypeTooltip.tsx:119: badge: { label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' },
+src/games/rogue-trader/components/ArchetypeTooltip.tsx:134: badge={{ label: info.role.toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }}
+src/games/rogue-trader/components/TalentTooltip.tsx:36: if (talentInfo.cost) meta.push({ label: 'Cost', value: talentInfo.cost, color: '#60a0ff' });
+src/games/rogue-trader/components/TalentTooltip.tsx:37: if (talentInfo.target) meta.push({ label: 'Target', value: talentInfo.target, color: '#a0ff60' });
+src/games/rogue-trader/components/TalentTooltip.tsx:42: ? { label: talentInfo.source.join(', ').toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }
+src/games/rogue-trader/components/TalentTooltip.tsx:61: ? { label: talentInfo.source.join(', ').toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }
+src/games/rogue-trader/components/GearTooltip.tsx:26: weapon: { background: '#4a3030', color: '#ff8a8a' },
+src/games/rogue-trader/components/GearTooltip.tsx:27: accessory: { background: '#3a4a30', color: '#8aff8a' },
+src/games/rogue-trader/components/GearTooltip.tsx:28: item: { background: '#3a3a4a', color: '#c0c0ff' },
+src/games/rogue-trader/components/GearTooltip.tsx:30: const typeStyle = gearInfo ? (typeStyles[gearInfo.type] || { background: '#3a3a4a', color: '#c0c0ff' }) : { background: '#3a3a4a', color: '#c0c0ff' };
+src/games/baldurs-gate-3/components/GearTooltip.tsx:19: Common: '#9d9d9d',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:20: Uncommon: '#1eff00',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:21: Rare: '#0070dd',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:22: 'Very Rare': '#a335ee',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:23: Legendary: '#ff8000',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:52: background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || '#f0a319',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:53: color: '#1b1206',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:77: background: (gearInfo.rarity && rarityColors[gearInfo.rarity]) || '#f0a319',
+src/games/baldurs-gate-3/components/GearTooltip.tsx:78: color: '#1b1206',
+src/games/baldurs-gate-3/components/KeywordText.tsx:62: 'class': '#e74c3c',
+src/games/baldurs-gate-3/components/KeywordText.tsx:63: 'subclass': '#c0392b',
+src/games/baldurs-gate-3/components/KeywordText.tsx:64: 'race': '#9b59b6',
+src/games/baldurs-gate-3/components/KeywordText.tsx:65: 'subrace': '#8e44ad',
+src/games/baldurs-gate-3/components/KeywordText.tsx:66: 'background': '#3498db',
+src/games/baldurs-gate-3/components/KeywordText.tsx:67: 'spell': '#f39c12',
+src/games/baldurs-gate-3/components/KeywordText.tsx:68: 'feat': '#2ecc71',
+src/games/baldurs-gate-3/components/KeywordText.tsx:69: 'condition': '#e91e63',
+src/games/baldurs-gate-3/components/KeywordText.tsx:70: 'ability': '#1abc9c',
+src/games/baldurs-gate-3/components/KeywordText.tsx:71: 'skill': '#27ae60',
+src/games/baldurs-gate-3/components/KeywordText.tsx:72: 'action': '#f97316',
+src/games/baldurs-gate-3/components/KeywordText.tsx:73: 'feature': '#f59e0b',
+src/games/baldurs-gate-3/components/KeywordText.tsx:74: 'potion': '#38bdf8',
+src/games/baldurs-gate-3/components/KeywordText.tsx:75: 'elixir': '#22c55e',
+src/games/baldurs-gate-3/components/KeywordText.tsx:76: 'grenade': '#ef4444',
+src/games/baldurs-gate-3/components/KeywordText.tsx:77: 'arrow': '#94a3b8',
+src/games/baldurs-gate-3/components/KeywordText.tsx:78: 'bonus': '#f472b6',
+src/games/baldurs-gate-3/components/KeywordText.tsx:83: background: categoryColors[category] || '#f0a319',

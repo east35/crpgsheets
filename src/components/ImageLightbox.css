@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: var(--z-modal);
   animation: lightbox-fade-in 0.2s ease;
 }
 
@@ -23,8 +23,8 @@
 
 .lightbox-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: var(--space-20px);
+  right: var(--space-20px);
   width: 44px;
   height: 44px;
   border-radius: var(--radius-50pct);
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: var(--transition-background-0p2s);
 }
 
 .lightbox-close:hover {

@@ -5,8 +5,8 @@
   bottom: var(--space-0);
   left: var(--space-0);
   right: var(--space-0);
-  z-index: 100;
-  padding: 1rem 1rem 1.25rem;
+  z-index: var(--z-sticky);
+  padding: var(--space-1rem) var(--space-1rem) var(--space-1p25rem);
 }
 
 .party-bar-content {
@@ -18,7 +18,7 @@
   background: var(--color-1a1a2e);
   border: 1px solid var(--color-3a3a5a);
   border-radius: var(--radius-12px);
-  padding: var(--space-0p75rem-1rem);
+  padding: var(--space-0p75rem) var(--space-1rem);
   box-shadow: 0 -4px 20px var(--rgba-0-0-0-0p4);
 }
 
@@ -36,7 +36,7 @@
   gap: var(--space-0p5rem);
   flex: 1;
   overflow-x: auto;
-  padding: 0.25rem 0;
+  padding: var(--space-0p25rem) 0;
   scrollbar-width: none;
 }
 
@@ -50,7 +50,7 @@
   height: 56px;
   border-radius: var(--radius-8px);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
   flex-shrink: 0;
   border: 2px solid var(--color-444);
   overflow: hidden;
@@ -96,7 +96,7 @@
   font-size: var(--type-size-1rem);
   font-weight: var(--type-weight-600);
   color: var(--color-888);
-  background: linear-gradient(135deg, #2a2a4a 0%, #1a1a2e 100%);
+  background: linear-gradient(135deg, var(--color-2a2a4a) 0%, var(--color-1a1a2e) 100%);
 }
 
 .party-avatar-fallback.hidden {
@@ -105,21 +105,21 @@
 
 .party-level {
   position: absolute;
-  bottom: 2px;
-  right: 2px;
+  bottom: var(--space-2px);
+  right: var(--space-2px);
   background: var(--rgba-0-0-0-0p8);
   color: var(--color-8b5cf6);
   font-size: var(--type-size-0p7rem);
   font-weight: var(--type-weight-600);
-  padding: 0.1rem 0.3rem;
+  padding: var(--space-0p1rem) var(--space-0p3rem);
   border-radius: var(--radius-4px);
   line-height: 1;
 }
 
 .delete-badge {
   position: absolute;
-  top: -4px;
-  right: -4px;
+  top: calc(-1 * var(--space-4px));
+  right: calc(-1 * var(--space-4px));
   width: 18px;
   height: 18px;
   background: var(--color-dc2626);
@@ -134,20 +134,20 @@
 
 .active-indicator {
   position: absolute;
-  bottom: -2px;
+  bottom: calc(-1 * var(--space-2px));
   left: 50%;
   transform: translateX(-50%);
   width: var(--space-8px);
   height: var(--space-8px);
   background: var(--color-8b5cf6);
   border-radius: var(--radius-50pct);
-  box-shadow: 0 0 6px #8b5cf6;
+  box-shadow: 0 0 6px var(--color-8b5cf6);
 }
 
 .party-avatar-expand {
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: var(--space-2px);
+  left: var(--space-2px);
   width: 20px;
   height: 20px;
   background: var(--rgba-0-0-0-0p7);
@@ -159,7 +159,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: var(--transition-opacity-0p2s);
 }
 
 .party-member:hover .party-avatar-expand {
@@ -192,7 +192,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
   flex-shrink: 0;
 }
 
@@ -212,11 +212,11 @@
 @media (max-width: 768px) {
   /* Position party bar above the bottom header */
   .party-bar {
-    padding: 0.75rem 0.75rem 1rem;
+    padding: var(--space-0p75rem) var(--space-0p75rem) var(--space-1rem);
   }
 
   .party-bar-content {
-    padding: 0.5rem 0.75rem;
+    padding: var(--space-0p5rem) var(--space-0p75rem);
     gap: var(--space-0p75rem);
   }
 

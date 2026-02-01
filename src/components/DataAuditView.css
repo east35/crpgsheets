@@ -19,12 +19,12 @@
   content: '';
   position: absolute;
   pointer-events: none;
-  z-index: 0;
+  z-index: var(--z-base);
 }
 
 .data-audit > * {
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .data-audit-hero {
@@ -32,7 +32,7 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: var(--space-2rem);
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--space-2p5rem);
 }
 
 .data-audit-eyebrow {
@@ -44,7 +44,7 @@
 }
 
 .data-audit-hero h1 {
-  margin: 0 0 0.35rem;
+  margin: 0 0 var(--space-0p35rem);
   font-size: 2.2rem;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .data-audit-kpis div {
-  padding: 0.9rem 1rem;
+  padding: var(--space-0p9rem) var(--space-1rem);
   background: var(--audit-panel);
   border: 1px solid var(--audit-border);
   border-radius: var(--radius-14px);
@@ -90,13 +90,13 @@
   background: var(--audit-panel);
   border: 1px solid var(--audit-border);
   border-radius: var(--radius-16px);
-  padding: 1.2rem;
+  padding: var(--space-1p2rem);
   box-shadow: var(--audit-shadow);
 }
 
 .data-audit-panel h2 {
   font-size: var(--type-size-1rem);
-  margin: 0 0 1rem;
+  margin: 0 0 var(--space-1rem);
   color: var(--audit-muted);
   letter-spacing: var(--letter-spacing-0p08em);
   text-transform: var(--type-transform-uppercase);
@@ -104,7 +104,7 @@
 
 .data-audit-list {
   display: grid;
-  gap: 0.6rem;
+  gap: var(--space-0p6rem);
 }
 
 .data-audit-list-item {
@@ -112,13 +112,13 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-0p5rem);
-  padding: 0.65rem 0.75rem;
+  padding: var(--space-0p65rem) var(--space-0p75rem);
   border-radius: var(--radius-12px);
   border: 1px solid var(--color-transparent);
   background: var(--rgba-12-13-28-0p7);
   color: inherit;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast-ease);
 }
 
 .data-audit-list-item em {
@@ -142,7 +142,7 @@
   display: grid;
   grid-template-columns: 1fr 1.2fr auto;
   align-items: center;
-  gap: 0.6rem;
+  gap: var(--space-0p6rem);
   font-size: var(--type-size-0p8rem);
   color: var(--audit-muted);
 }
@@ -156,7 +156,7 @@
 
 .data-audit-coverage-bar div {
   height: 100%;
-  background: linear-gradient(90deg, var(--audit-accent), rgba(100, 108, 255, 0.85));
+  background: linear-gradient(90deg, var(--audit-accent), var(--rgba-100-108-255-0p85));
 }
 
 .data-audit-main {
@@ -179,7 +179,7 @@
 .data-audit-controls {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 0.8rem;
+  gap: var(--space-0p8rem);
 }
 
 .data-audit-controls label {
@@ -197,7 +197,7 @@
   border-radius: var(--radius-10px);
   background: var(--rgba-11-12-24-0p85);
   color: var(--audit-ink);
-  padding: 0.5rem 0.6rem;
+  padding: var(--space-0p5rem) var(--space-0p6rem);
 }
 
 .data-audit-meta {
@@ -219,7 +219,7 @@
   border-radius: var(--radius-999px);
   background: var(--rgba-15-16-32-0p8);
   color: var(--audit-ink);
-  padding: 0.35rem 0.8rem;
+  padding: var(--space-0p35rem) var(--space-0p8rem);
   cursor: pointer;
 }
 
@@ -230,7 +230,7 @@
 
 .data-audit-table {
   display: grid;
-  gap: 0.6rem;
+  gap: var(--space-0p6rem);
   max-height: 70vh;
   overflow: auto;
   padding-right: var(--space-0p25rem);
@@ -240,14 +240,14 @@
   border: 1px solid var(--color-transparent);
   border-radius: var(--radius-14px);
   background: var(--rgba-10-11-24-0p78);
-  padding: 0.85rem 1rem;
+  padding: var(--space-0p85rem) var(--space-1rem);
   color: inherit;
   text-align: left;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   gap: var(--space-1rem);
-  transition: all 0.2s ease;
+  transition: var(--transition-fast-ease);
 }
 
 .data-audit-row:hover {
@@ -292,7 +292,7 @@
   background: var(--audit-panel);
   border: 1px solid var(--audit-border);
   border-radius: var(--radius-16px);
-  padding: 1rem 1.1rem;
+  padding: var(--space-1rem) calc(var(--space-1rem) + var(--space-0p1rem));
   box-shadow: var(--audit-shadow);
   max-height: 82vh;
   overflow: auto;
@@ -313,7 +313,7 @@
 }
 
 .data-audit-detail-image {
-  margin: 0.75rem 0;
+  margin: var(--space-0p75rem) 0;
   border-radius: var(--radius-14px);
   overflow: hidden;
   border: 1px solid var(--audit-border);
@@ -328,12 +328,12 @@
 
 .data-audit-detail-fields {
   display: grid;
-  gap: 0.6rem;
+  gap: var(--space-0p6rem);
 }
 
 .data-audit-detail-fields div {
   display: grid;
-  gap: 0.2rem;
+  gap: var(--space-0p2rem);
 }
 
 .data-audit-detail-fields strong {
@@ -376,9 +376,9 @@
   background: var(--audit-panel);
   border: 1px solid var(--audit-border);
   border-radius: 18px;
-  padding: 2.5rem;
+  padding: var(--space-2p5rem);
   text-align: center;
-  margin: 4rem auto;
+  margin: var(--space-4rem) auto;
   max-width: 520px;
   box-shadow: var(--audit-shadow);
 }
@@ -395,7 +395,7 @@
 
 @media (max-width: 900px) {
   .data-audit {
-    padding: 2rem 1.25rem 4.5rem;
+    padding: var(--space-2rem) var(--space-1p25rem) var(--space-4p5rem);
   }
 
   .data-audit-hero {

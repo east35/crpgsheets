@@ -29,15 +29,15 @@
   position: absolute;
   inset: var(--space-0);
   background:
-    radial-gradient(circle at 30% 35%, rgba(255, 255, 255, 0.08), transparent 55%),
-    linear-gradient(to right, rgba(12, 14, 20, 0.92) 0%, rgba(18, 20, 30, 0.6) 50%, rgba(8, 10, 14, 0.85) 100%),
-    linear-gradient(to top, rgba(8, 10, 14, 1) 0%, rgba(8, 10, 14, 0.4) 45%, transparent 75%);
+    radial-gradient(circle at 30% 35%, var(--rgba-255-255-255-0p08), transparent 55%),
+    linear-gradient(to right, var(--rgba-12-14-20-0p92) 0%, var(--rgba-18-20-30-0p6) 50%, var(--rgba-8-10-14-0p85) 100%),
+    linear-gradient(to top, var(--rgba-8-10-14-1) 0%, var(--rgba-8-10-14-0p4) 45%, transparent 75%);
 }
 
 /* Main content container */
 .hero-split {
   position: relative;
-  z-index: 2;
+  z-index: var(--z-content);
   flex: 1;
   display: flex;
   width: 100%;
@@ -60,11 +60,11 @@
   max-width: 340px;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 4px 12px var(--rgba-0-0-0-0p5));
 }
 
 .hero-tagline {
-  margin: 0 0 2rem;
+  margin: 0 0 var(--space-2rem);
   font-size: var(--type-size-1p35rem);
   font-weight: var(--font-weight-700);
   color: var(--color-fff);
@@ -74,7 +74,7 @@
 
 .hero-cta {
   display: inline-block;
-  padding: 0.95rem 2.9rem;
+  padding: var(--space-0p95rem) var(--space-2p9rem);
   background: var(--color-6b6ef7);
   border: none;
   border-radius: var(--radius-100px);
@@ -82,19 +82,19 @@
   font-size: var(--font-size-1p2rem);
   font-weight: var(--font-weight-700);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast-ease);
   margin-bottom: var(--space-1rem);
   box-shadow:
-    0 10px 24px rgba(71, 76, 209, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 10px 24px var(--rgba-71-76-209-0p35),
+    inset 0 1px 0 var(--rgba-255-255-255-0p2);
 }
 
 .hero-cta:hover {
   background: var(--color-7a7dff);
   transform: translateY(-1px);
   box-shadow:
-    0 16px 30px rgba(71, 76, 209, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 16px 30px var(--rgba-71-76-209-0p45),
+    inset 0 1px 0 var(--rgba-255-255-255-0p25);
 }
 
 .hero-subtitle {
@@ -106,8 +106,8 @@
 /* Footer - Always visible */
 .landing-footer {
   position: relative;
-  z-index: 10;
-  padding: 1rem 2rem;
+  z-index: var(--z-overlay);
+  padding: var(--space-1rem) var(--space-2rem);
   background: var(--color-0d1014);
   border-top: 1px solid var(--color-1c2228);
   text-align: center;
@@ -140,7 +140,7 @@
   color: var(--color-9ab);
   cursor: pointer;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: var(--transition-color-0p2s);
 }
 
 .footer-link:hover {
@@ -154,7 +154,7 @@
 .footer-github {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: var(--space-0p45rem);
 }
 
 .footer-github-icon {
@@ -170,7 +170,7 @@
   .hero-split {
     flex-direction: row;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: var(--space-2rem) var(--space-4rem);
   }
 
   .hero-content {
@@ -214,13 +214,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2.5rem 1.5rem;
+    padding: var(--space-2p5rem) var(--space-1p5rem);
     height: 100%;
   }
 
   .hero-content {
     flex: 0 0 auto;
-    z-index: 2;
+    z-index: var(--z-content);
   }
 
   .hero-logo {
@@ -233,12 +233,12 @@
   }
 
   .hero-cta {
-    padding: 0.85rem 2.4rem;
+    padding: var(--space-0p85rem) var(--space-2p4rem);
     font-size: var(--type-size-1p1rem);
   }
 
   .landing-footer {
-    padding: var(--space-0p75rem-1rem);
+    padding: var(--space-0p75rem) var(--space-1rem);
   }
 
   .footer-content {
@@ -272,7 +272,7 @@
   color: var(--color-678);
   cursor: pointer;
   padding: var(--space-0p5rem);
-  transition: color 0.2s;
+  transition: var(--transition-color-0p2s);
 }
 
 .picker-close:hover {
@@ -280,7 +280,7 @@
 }
 
 .picker-modal h2 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--space-1p5rem);
   font-size: var(--type-size-1p5rem);
   font-weight: var(--type-weight-600);
   color: var(--color-fff);
@@ -288,7 +288,7 @@
 }
 
 .section-header {
-  margin: 2rem 0 1rem;
+  margin: var(--space-2rem) 0 var(--space-1rem);
   font-size: var(--type-size-1rem);
   font-weight: var(--type-weight-600);
   color: var(--color-fff);
@@ -306,7 +306,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: var(--space-1p5rem) var(--space-2rem);
   min-height: 180px;
   border: none;
   border-radius: var(--radius-8px);
@@ -314,7 +314,7 @@
   cursor: pointer;
   background-size: cover;
   background-position: center;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast-ease);
   text-align: center;
 }
 
@@ -322,7 +322,7 @@
   content: '';
   position: absolute;
   inset: var(--space-0);
-  background: linear-gradient(to top, rgba(20, 24, 29, 0.8) 0%, rgba(20, 24, 29, 0.3) 50%, transparent 100%);
+  background: linear-gradient(to top, var(--rgba-20-24-29-0p8) 0%, var(--rgba-20-24-29-0p3) 50%, transparent 100%);
 }
 
 .game-card:hover {
@@ -340,7 +340,7 @@
 
 .game-card > * {
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 .picker-modal .game-card .game-logo {
@@ -369,7 +369,7 @@
   position: absolute;
   top: var(--space-1rem);
   right: var(--space-1rem);
-  padding: 0.25rem 0.75rem;
+  padding: var(--space-0p25rem) var(--space-0p75rem);
   border-radius: var(--radius-4px);
   font-size: var(--type-size-0p7rem);
   color: var(--color-fff);
@@ -389,7 +389,7 @@
   position: absolute;
   top: var(--space-1rem);
   left: var(--space-1rem);
-  padding: 0.25rem 0.75rem;
+  padding: var(--space-0p25rem) var(--space-0p75rem);
   border-radius: var(--radius-4px);
   font-size: var(--type-size-0p7rem);
   color: var(--color-fff);

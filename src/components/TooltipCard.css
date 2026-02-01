@@ -2,7 +2,7 @@
   background: var(--color-1b1b1b);
   border: 1px solid var(--color-6f5f3b);
   border-radius: var(--radius-12px);
-  padding: 16px;
+  padding: var(--space-16px);
   color: var(--color-d9cdb8);
   box-shadow: 0 10px 30px var(--rgba-0-0-0-0p55);
 }
@@ -18,22 +18,22 @@
 
 .crpg-tooltip-container {
   position: fixed;
-  z-index: 10000;
+  z-index: var(--z-modal);
   pointer-events: none;
 }
 
 .crpg-tooltip-container.top {
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + var(--space-8px));
 }
 
 .crpg-tooltip-container.bottom {
-  top: calc(100% + 8px);
+  top: calc(100% + var(--space-8px));
 }
 
 .crpg-tooltip-header {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--space-14px);
   margin-bottom: var(--space-1rem);
 }
 
@@ -68,7 +68,7 @@
 .crpg-tooltip-badge {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
+  padding: var(--space-4px) var(--space-10px);
   border-radius: var(--radius-8px);
   font-size: var(--type-size-0p75rem);
   font-weight: var(--font-weight-700);
@@ -82,7 +82,7 @@
 .crpg-tooltip-divider {
   height: 1px;
   background: var(--color-514636);
-  margin: 14px 0;
+  margin: var(--space-14px) 0;
 }
 
 .crpg-tooltip-section,

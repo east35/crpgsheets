@@ -33,13 +33,13 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
     e.stopPropagation();
 
     const meta: Array<{ label: string; value: string; color?: string }> = [];
-    if (talentInfo.cost) meta.push({ label: 'Cost', value: talentInfo.cost, color: '#60a0ff' });
-    if (talentInfo.target) meta.push({ label: 'Target', value: talentInfo.target, color: '#a0ff60' });
+    if (talentInfo.cost) meta.push({ label: 'Cost', value: talentInfo.cost, color: 'var(--color-rt-tooltip-meta-cost)' });
+    if (talentInfo.target) meta.push({ label: 'Target', value: talentInfo.target, color: 'var(--color-rt-tooltip-meta-target)' });
 
     showSheet({
       title: talentInfo.name,
       badge: talentInfo.source?.length
-        ? { label: talentInfo.source.join(', ').toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }
+        ? { label: talentInfo.source.join(', ').toUpperCase(), background: 'var(--color-rt-tooltip-badge-bg)', color: 'var(--color-rt-tooltip-badge-text)' }
         : undefined,
       iconUrl: talentInfo.iconPath,
       stats: meta,
@@ -58,7 +58,7 @@ export function TalentTooltip({ talentName, children }: TalentTooltipProps) {
         iconUrl={talentInfo.iconPath}
         badge={
           talentInfo.source?.length
-            ? { label: talentInfo.source.join(', ').toUpperCase(), background: '#5f4a2a', color: '#f1d29a' }
+            ? { label: talentInfo.source.join(', ').toUpperCase(), background: 'var(--color-rt-tooltip-badge-bg)', color: 'var(--color-rt-tooltip-badge-text)' }
             : undefined
         }
         stats={[

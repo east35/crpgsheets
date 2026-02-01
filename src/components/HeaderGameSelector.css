@@ -24,7 +24,7 @@
 .header-game-arrow {
   display: flex;
   align-items: center;
-  transition: transform 0.2s;
+  transition: var(--transition-transform-0p2s);
 }
 
 .header-game-arrow.expanded {
@@ -38,7 +38,7 @@
   border: 1px solid var(--color-3a3a5a);
   border-radius: var(--radius-8px);
   box-shadow: 0 8px 24px var(--rgba-0-0-0-0p4);
-  z-index: 1000;
+  z-index: var(--z-menu);
   overflow: hidden;
 }
 
@@ -50,16 +50,16 @@
 .header-game-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-12px);
   width: 100%;
-  padding: 12px 16px;
+  padding: var(--space-12px) var(--space-16px);
   background: var(--color-transparent);
   border: none;
   border-bottom: 1px solid var(--color-2a2a3e);
   color: var(--color-e0e0e0);
   cursor: pointer;
   text-align: left;
-  transition: background 0.2s;
+  transition: var(--transition-background-0p2s);
 }
 
 .header-game-item:last-child {

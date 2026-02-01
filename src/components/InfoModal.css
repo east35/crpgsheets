@@ -22,7 +22,7 @@
   color: var(--color-678);
   cursor: pointer;
   padding: var(--space-0p5rem);
-  transition: color 0.2s;
+  transition: var(--transition-color-0p2s);
 }
 
 .info-modal-close:hover {
@@ -30,7 +30,7 @@
 }
 
 .info-modal h2 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--space-1p5rem);
   font-size: var(--type-size-1p5rem);
   font-weight: var(--type-weight-600);
   color: var(--color-fff);
@@ -69,7 +69,7 @@
   border-radius: var(--radius-4px);
   font-size: var(--type-size-0p8rem);
   font-weight: var(--type-weight-600);
-  font-family: monospace;
+  font-family: var(--font-mono);
 }
 
 .changelog-date {
@@ -78,7 +78,7 @@
 }
 
 .changelog-title {
-  margin: 0 0 0.75rem;
+  margin: 0 0 var(--space-0p75rem);
   font-size: var(--type-size-1p1rem);
   font-weight: var(--type-weight-600);
   color: var(--color-fff);
@@ -112,7 +112,7 @@
   font-weight: var(--type-weight-600);
   text-transform: var(--type-transform-uppercase);
   letter-spacing: var(--type-track-0p05em);
-  padding: 0.35rem 0.75rem;
+  padding: var(--space-0p35rem) var(--space-0p75rem);
   border-radius: var(--radius-4px);
   width: fit-content;
 }

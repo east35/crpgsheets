@@ -1,7 +1,7 @@
 .companion-detail-screen.rt {
   max-width: 1200px;
   margin: var(--space-0-auto);
-  padding: 0 1rem 2rem;
+  padding: 0 var(--space-1rem) var(--space-2rem);
 }
 
 .companion-detail-header {
@@ -112,7 +112,7 @@
   padding: var(--space-0);
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast-ease);
   overflow: hidden;
   color: inherit;
   font-family: inherit;

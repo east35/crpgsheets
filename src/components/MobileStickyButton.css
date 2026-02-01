@@ -33,11 +33,11 @@
     bottom: var(--space-1rem);
     left: var(--space-1rem);
     right: var(--space-1rem);
-    z-index: 100;
+    z-index: var(--z-sticky);
   }
 
   .add-to-party-mobile.above-party-bar {
-    bottom: 100px;
+    bottom: var(--space-100px);
   }
 
   .add-to-party-mobile .btn {

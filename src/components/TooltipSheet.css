@@ -4,10 +4,10 @@
   position: fixed;
   inset: var(--space-0);
   background: var(--rgba-0-0-0-0);
-  z-index: 10000;
+  z-index: var(--z-modal);
   opacity: 0;
   pointer-events: none;
-  transition: background 0.3s, opacity 0.3s;
+  transition: background var(--duration-0p3s), opacity var(--duration-0p3s);
 }
 
 .tooltip-sheet-overlay.visible {
@@ -27,8 +27,8 @@
   max-height: 70vh;
   overflow-y: auto;
   transform: translateY(100%);
-  transition: transform 0.3s ease-out;
-  z-index: 10001;
+  transition: var(--transition-transform-0p3s-ease-out);
+  z-index: var(--z-tooltip);
 }
 
 .tooltip-sheet.visible {
@@ -37,8 +37,8 @@
 
 .tooltip-sheet-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: var(--space-12px);
+  right: var(--space-12px);
   width: 32px;
   height: 32px;
   border: none;
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .tooltip-sheet-close:hover {
@@ -58,15 +58,15 @@
 }
 
 .tooltip-sheet-content {
-  padding: 16px 20px 32px;
+  padding: var(--space-16px) var(--space-20px) var(--space-32px);
 }
 
 .tooltip-sheet-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
+  gap: var(--space-12px);
+  margin-bottom: var(--space-16px);
+  padding-bottom: var(--space-16px);
   border-bottom: 1px solid var(--color-3a3a5a);
 }
 
@@ -97,7 +97,7 @@
   color: var(--color-8a8aaa);
   font-style: italic;
   display: block;
-  margin-top: 2px;
+  margin-top: var(--space-2px);
 }
 
 .tooltip-sheet-subtitle.badge {
@@ -110,14 +110,14 @@
   font-weight: var(--type-weight-600);
   text-transform: var(--type-transform-uppercase);
   letter-spacing: 0.04em;
-  margin-top: 6px;
+  margin-top: var(--space-6px);
 }
 
 .tooltip-sheet-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: var(--space-12px);
+  margin-bottom: var(--space-16px);
   font-size: var(--type-size-0p9rem);
 }
 
@@ -132,7 +132,7 @@
 }
 
 .tooltip-sheet-description p {
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-12px) 0;
 }
 
 .tooltip-sheet-description p:last-child {
@@ -142,6 +142,6 @@
 /* Safe area padding for devices with home indicators */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .tooltip-sheet-content {
-    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+    padding-bottom: calc(var(--space-32px) + env(safe-area-inset-bottom));
   }
 }

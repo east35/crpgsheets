@@ -58,21 +58,21 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
   const { isVisible, tooltipRef, tooltipStyle, show, hide, handleMouseMove } = useCursorTooltip(!isMobile);
 
   const categoryColors: Record<string, string> = {
-    homeworld: '#4a9eff',
-    origin: '#9b59b6',
-    archetype: '#e74c3c',
-    characteristic: '#f39c12',
-    skill: '#2ecc71',
-    stat: '#1abc9c',
-    conviction: '#e91e63',
-    'status-effect': '#ff5722',
-    talent: '#3498db',
-    ability: '#8e44ad',
+    homeworld: 'var(--color-keyword-homeworld)',
+    origin: 'var(--color-keyword-origin)',
+    archetype: 'var(--color-keyword-archetype)',
+    characteristic: 'var(--color-keyword-characteristic)',
+    skill: 'var(--color-keyword-skill)',
+    stat: 'var(--color-keyword-stat)',
+    conviction: 'var(--color-keyword-conviction)',
+    'status-effect': 'var(--color-keyword-status-effect)',
+    talent: 'var(--color-keyword-talent)',
+    ability: 'var(--color-keyword-ability)',
   };
 
   const buildBadge = (category: string): TooltipBadge => ({
     label: category.replace('-', ' ').toUpperCase(),
-    background: categoryColors[category] || '#f0a319',
+    background: categoryColors[category] || 'var(--color-keyword-background)',
   });
 
   const buildSections = (): TooltipField[] => [];

@@ -59,28 +59,28 @@ function KeywordTooltip({ info, children }: { info: KeywordInfo; children: React
 
   // BG3-themed category colors
   const categoryColors: Record<string, string> = {
-    'class': '#e74c3c',
-    'subclass': '#c0392b',
-    'race': '#9b59b6',
-    'subrace': '#8e44ad',
-    'background': '#3498db',
-    'spell': '#f39c12',
-    'feat': '#2ecc71',
-    'condition': '#e91e63',
-    'ability': '#1abc9c',
-    'skill': '#27ae60',
-    'action': '#f97316',
-    'feature': '#f59e0b',
-    'potion': '#38bdf8',
-    'elixir': '#22c55e',
-    'grenade': '#ef4444',
-    'arrow': '#94a3b8',
-    'bonus': '#f472b6',
+    'class': 'var(--color-bg3-keyword-class)',
+    'subclass': 'var(--color-bg3-keyword-subclass)',
+    'race': 'var(--color-bg3-keyword-race)',
+    'subrace': 'var(--color-bg3-keyword-subrace)',
+    'background': 'var(--color-bg3-keyword-background)',
+    'spell': 'var(--color-bg3-keyword-spell)',
+    'feat': 'var(--color-bg3-keyword-feat)',
+    'condition': 'var(--color-bg3-keyword-condition)',
+    'ability': 'var(--color-bg3-keyword-ability)',
+    'skill': 'var(--color-bg3-keyword-skill)',
+    'action': 'var(--color-bg3-keyword-action)',
+    'feature': 'var(--color-bg3-keyword-feature)',
+    'potion': 'var(--color-bg3-keyword-potion)',
+    'elixir': 'var(--color-bg3-keyword-elixir)',
+    'grenade': 'var(--color-bg3-keyword-grenade)',
+    'arrow': 'var(--color-bg3-keyword-arrow)',
+    'bonus': 'var(--color-bg3-keyword-bonus)',
   };
 
   const buildBadge = (category: string): TooltipBadge => ({
     label: category.replace('-', ' ').toUpperCase(),
-    background: categoryColors[category] || '#f0a319',
+    background: categoryColors[category] || 'var(--color-bg3-keyword-fallback)',
   });
 
   const buildSections = (info: KeywordInfo): TooltipField[] => {

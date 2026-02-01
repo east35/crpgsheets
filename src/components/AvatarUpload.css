@@ -19,7 +19,7 @@
   border-radius: var(--radius-8px);
   color: var(--color-888);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .avatar-upload-placeholder:hover {
@@ -62,13 +62,13 @@
 
 .avatar-upload-actions {
   position: absolute;
-  bottom: -8px;
+  bottom: calc(-1 * var(--space-8px));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: var(--space-0p25rem);
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: var(--transition-opacity-0p2s);
 }
 
 .avatar-upload-preview:hover .avatar-upload-actions {
@@ -84,7 +84,7 @@
   border: none;
   border-radius: var(--radius-50pct);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .avatar-action-btn.upload {

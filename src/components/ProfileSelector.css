@@ -22,7 +22,7 @@
 
 .profile-arrow {
   font-size: var(--type-size-0p7rem);
-  transition: transform 0.2s;
+  transition: var(--transition-transform-0p2s);
 }
 
 .profile-arrow.expanded {
@@ -31,20 +31,20 @@
 
 .profile-dropdown {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + var(--space-4px));
   right: var(--space-0);
   min-width: 300px;
   background: var(--color-1a1a2e);
   border: 1px solid var(--color-3a3a5a);
   border-radius: var(--radius-8px);
   box-shadow: 0 8px 24px var(--rgba-0-0-0-0p4);
-  z-index: 100;
+  z-index: var(--z-sticky);
   overflow: hidden;
 }
 
 /* Current Profile Section */
 .profile-current {
-  padding: 16px;
+  padding: var(--space-16px);
   background: var(--color-2a2a4e);
   border-bottom: 1px solid var(--color-3a3a5a);
 }
@@ -64,7 +64,7 @@
   font-size: var(--type-size-1p25rem);
   font-weight: var(--type-weight-600);
   color: var(--color-f0c040);
-  margin-bottom: 12px;
+  margin-bottom: var(--space-12px);
 }
 
 .profile-current-actions {
@@ -77,15 +77,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 12px;
+  gap: var(--space-6px);
+  padding: var(--space-10px) var(--space-12px);
   background: var(--color-3a3a5a);
   border: 1px solid var(--color-4a4a6a);
   border-radius: var(--radius-6px);
   color: var(--color-e0e0e0);
   cursor: pointer;
   font-size: var(--type-size-0p85rem);
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .profile-action-btn-large:hover {
@@ -108,11 +108,11 @@
 .profile-edit-large {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-10px);
 }
 
 .profile-edit-large input {
-  padding: 10px 12px;
+  padding: var(--space-10px) var(--space-12px);
   background: var(--color-1a1a2e);
   border: 1px solid var(--color-4a4a6a);
   border-radius: var(--radius-6px);
@@ -130,8 +130,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 12px;
+  gap: var(--space-6px);
+  padding: var(--space-10px) var(--space-12px);
   background: var(--color-3a3a5a);
   border: none;
   border-radius: var(--radius-6px);
@@ -185,7 +185,7 @@
 
 .profile-select-btn {
   flex: 1;
-  padding: 10px 12px;
+  padding: var(--space-10px) var(--space-12px);
   background: var(--color-transparent);
   border: none;
   color: var(--color-e0e0e0);
@@ -200,17 +200,17 @@
 
 .profile-actions {
   display: flex;
-  gap: 2px;
+  gap: var(--space-2px);
   padding-right: var(--space-4px);
 }
 
 .profile-action-btn {
-  padding: 6px 8px;
+  padding: var(--space-6px) var(--space-8px);
   background: var(--color-transparent);
   border: none;
   cursor: pointer;
   opacity: 0.6;
-  transition: opacity 0.2s;
+  transition: var(--transition-opacity-0p2s);
   font-size: var(--type-size-0p85rem);
 }
 
@@ -226,13 +226,13 @@
   display: flex;
   align-items: center;
   gap: var(--space-4px);
-  padding: 4px 8px;
+  padding: var(--space-4px) var(--space-8px);
   flex: 1;
 }
 
 .profile-edit input {
   flex: 1;
-  padding: 6px 8px;
+  padding: var(--space-6px) var(--space-8px);
   background: var(--color-2a2a3e);
   border: 1px solid var(--color-4a4a6a);
   border-radius: var(--radius-4px);
@@ -241,7 +241,7 @@
 }
 
 .profile-edit button {
-  padding: 6px 10px;
+  padding: var(--space-6px) var(--space-10px);
   background: var(--color-3a3a5a);
   border: none;
   border-radius: var(--radius-4px);
@@ -262,7 +262,7 @@
 
 .profile-create-form input {
   flex: 1;
-  padding: 8px 10px;
+  padding: var(--space-8px) var(--space-10px);
   background: var(--color-2a2a3e);
   border: 1px solid var(--color-4a4a6a);
   border-radius: var(--radius-4px);
@@ -271,7 +271,7 @@
 }
 
 .profile-create-form button {
-  padding: 8px 12px;
+  padding: var(--space-8px) var(--space-12px);
   background: var(--color-3a3a5a);
   border: none;
   border-radius: var(--radius-4px);
@@ -290,14 +290,14 @@
 
 .profile-create-btn {
   width: 100%;
-  padding: 12px;
+  padding: var(--space-12px);
   background: var(--color-2a2a3e);
   border-radius: var(--radius-8px);
   color: var(--color-fff);
   border: none;
   cursor: pointer;
   font-size: var(--type-size-0p9rem);
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .profile-create-btn:hover {
@@ -312,14 +312,14 @@
 
 .profile-import-btn {
   width: 100%;
-  padding: 10px 12px;
+  padding: var(--space-10px) var(--space-12px);
   background: var(--rgba-100-108-255-0p1);
   border: 1px dashed var(--rgba-100-108-255-0p4);
   border-radius: var(--radius-6px);
   color: var(--color-8a8aff);
   cursor: pointer;
   font-size: var(--type-size-0p85rem);
-  transition: all 0.2s;
+  transition: var(--transition-fast);
   margin-bottom: var(--space-0p5rem);
 }
 
@@ -336,20 +336,20 @@
 .privacy-notice {
   font-size: var(--type-size-0p75rem);
   color: var(--color-666);
-  margin: 0 0 8px 0;
+  margin: 0 0 var(--space-8px) 0;
   text-align: center;
 }
 
 .clear-data-btn {
   width: 100%;
-  padding: 8px 12px;
+  padding: var(--space-8px) var(--space-12px);
   background: var(--rgba-220-53-69-0p1);
   border: 1px solid var(--rgba-220-53-69-0p3);
   border-radius: var(--radius-6px);
   color: var(--color-dc3545);
   cursor: pointer;
   font-size: var(--type-size-0p8rem);
-  transition: all 0.2s;
+  transition: var(--transition-fast);
 }
 
 .clear-data-btn:hover {
@@ -361,7 +361,7 @@
 @media (max-width: 768px) {
   .profile-dropdown {
     top: auto;
-    bottom: calc(100% + 4px);
+    bottom: calc(100% + var(--space-4px));
     max-height: 60vh;
   }
 }
