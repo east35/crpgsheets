@@ -1,6 +1,16 @@
 // Changelog data
 export const CHANGELOG = [
   {
+    version: '1.0.1',
+    date: '2026-02-01',
+    title: 'UI Tokenization Closure',
+    changes: [
+      '### Changed\n- Consolidated UI styling into a single token system (`src/patterns/tokens.css`) and removed remaining hard-coded styling values across CSS and tooltip/keyword components.\n- Normalized z-index, typography, and motion values to named tokens for consistency and maintainability.',
+      '### Fixed\n- Fixed malformed spacing token usage and missing `calc()` parentheses in CSS.',
+      '### Maintenance\n- Archived/removed internal audit artifacts used during the UI tokenization work.',
+    ],
+  },
+  {
     version: '1.0.0',
     date: '2026-01-31',
     title: 'Rogue Trader 1.0 Release',
