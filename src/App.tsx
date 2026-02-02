@@ -655,7 +655,7 @@ function App() {
           <RTBuildViewer
             build={selectedGuide}
             onBack={handleBackToGuides}
-            backLabel={COMPANIONS[selectedGuide.companion]?.fullName}
+            backLabel={navContext === 'party' ? 'Party' : COMPANIONS[selectedGuide.companion]?.fullName}
             currentLevel={currentLevel}
             onLevelChange={handleLevelChange}
             onTrackBuild={handleTrackBuild}
@@ -681,7 +681,7 @@ function App() {
                 setView(bg3PreviousView);
               }
             }}
-            backLabel={selectedBG3Companion?.fullName}
+            backLabel={navContext === 'party' ? 'Party' : selectedBG3Companion?.fullName}
             currentLevel={currentLevel}
             onLevelChange={handleBG3LevelChange}
             onTrackBuild={handleTrackBG3Build}
