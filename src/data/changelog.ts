@@ -1,5 +1,13 @@
 // Changelog data
 export const CHANGELOG = [
+    {
+    version: '1.0.3',
+    date: '2026-02-02',
+    title: 'Added Missing Revan619 Data',
+    changes: [
+      'Completed Revan619 companion data import (thanks, u/adincha).',
+    ],
+  },
   {
     version: '1.0.2',
     date: '2026-02-01',
