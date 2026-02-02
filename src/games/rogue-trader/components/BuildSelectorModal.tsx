@@ -72,6 +72,20 @@ export function BuildSelectorModal({
         <div className="build-selector-modal-builds">
           <h3>Available Builds</h3>
           <div className="build-selector-modal-grid">
+            {onCreateCustomBuild && (
+              <button
+                className="build-selector-modal-card custom"
+                onClick={() => {
+                  onCreateCustomBuild(companion);
+                  onClose();
+                }}
+              >
+                <div className="build-selector-modal-card-name">+ Custom Build</div>
+                <div className="build-selector-modal-card-desc">
+                  Create your own build for {info.fullName}
+                </div>
+              </button>
+            )}
             {builds.map((build) => {
               const isTracked = build.id === trackedBuildId;
               const source = getSource(build);
@@ -117,20 +131,6 @@ export function BuildSelectorModal({
               </button>
               );
             })}
-            {onCreateCustomBuild && (
-              <button
-                className="build-selector-modal-card custom"
-                onClick={() => {
-                  onCreateCustomBuild(companion);
-                  onClose();
-                }}
-              >
-                <div className="build-selector-modal-card-name">+ Custom Build</div>
-                <div className="build-selector-modal-card-desc">
-                  Create your own build for {info.fullName}
-                </div>
-              </button>
-            )}
           </div>
         </div>
       </div>

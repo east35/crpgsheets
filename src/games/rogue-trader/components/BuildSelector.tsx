@@ -156,6 +156,19 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, o
         </div>
 
         <div className="companion-list">
+          {onCreateCustomBuild && (
+            <button
+              className="companion-section rogue-trader-build-card"
+              onClick={() => onCreateCustomBuild('RogueTrader')}
+            >
+              <div className="companion-card-layout">
+                <div className="companion-card-content">
+                  <div className="companion-card-title">+ Custom Build</div>
+                  <div className="companion-card-desc">Create your own Rogue Trader build</div>
+                </div>
+              </div>
+            </button>
+          )}
           {orderedBuilds.map((build) => {
             const isTracked = trackedBuild?.guideId === build.id;
             const source = getSource(build);
@@ -206,19 +219,6 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, o
               </button>
             );
           })}
-          {onCreateCustomBuild && (
-            <button
-              className="companion-section rogue-trader-build-card"
-              onClick={() => onCreateCustomBuild('RogueTrader')}
-            >
-              <div className="companion-card-layout">
-                <div className="companion-card-content">
-                  <div className="companion-card-title">+ Custom Build</div>
-                  <div className="companion-card-desc">Create your own Rogue Trader build</div>
-                </div>
-              </div>
-            </button>
-          )}
         </div>
       </div>
     );
