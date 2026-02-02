@@ -5,6 +5,47 @@ const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB max file size
 const MAX_BUILDS = 1000; // Max builds per import
 const MAX_NAME_LENGTH = 200; // Max length for names
 
+/**
+ * Validates a URL string and returns it only if it uses http: or https: protocol.
+ * Returns null for any other protocol (javascript:, data:, file:, etc.) or invalid URLs.
+ */
+export function safeUrl(value: unknown): string | null {
+  if (typeof value !== "string" || value.length === 0) return null;
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "http:" || parsed.protocol === "https:" ? value : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Recursively sanitizes an object, removing URL-like fields that contain unsafe schemes.
+ * Keys containing "url" (case-insensitive) or equal to "href"/"link" are checked.
+ * Unsafe URLs are removed entirely (key omitted), safe URLs are preserved.
+ */
+function sanitizeUrls(obj: unknown): unknown {
+  if (obj === null || obj === undefined) return obj;
+  if (Array.isArray(obj)) return obj.map((item) => sanitizeUrls(item));
+  if (typeof obj === "object") {
+    const result: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
+      const lowerKey = key.toLowerCase();
+      const isUrlField = lowerKey.includes("url") || lowerKey === "href" || lowerKey === "link";
+
+      if (isUrlField && typeof value === "string") {
+        const safe = safeUrl(value);
+        if (safe !== null) result[key] = safe;
+        // else omit key
+      } else {
+        result[key] = sanitizeUrls(value);
+      }
+    }
+    return result;
+  }
+  return obj;
+}
+
 export function exportBuilds(game: Game, builds: CharacterBuild[]): string {
   const exportData: ExportData = {
     version: CURRENT_VERSION,
@@ -60,7 +101,7 @@ function sanitizeBuild(build: unknown): CharacterBuild | null {
     createdAt: b.createdAt as string,
     updatedAt: b.updatedAt as string,
     description: isValidString(b.description, 10000) ? b.description as string : undefined,
-    data: b.data && typeof b.data === 'object' ? b.data : undefined,
+    data: b.data && typeof b.data === 'object' ? sanitizeUrls(b.data) : undefined,
   };
 }
 

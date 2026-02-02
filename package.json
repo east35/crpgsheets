@@ -9,7 +9,13 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "vitest",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:run": "vitest run",
+    "security:csp": "node scripts/check-csp.js",
+    "security:imports": "node scripts/check-import-safety.js",
+    "security:dangerous": "node scripts/check-dangerous-patterns.js",
+    "security:gate": "npm run security:csp && npm run security:imports && npm run security:dangerous",
+    "ci": "npm run security:gate && npm run test:run && npm run build"
   },
   "dependencies": {
     "dexie": "^4.2.1",
