@@ -8,7 +8,7 @@ export const GAMES: Record<string, Game> = {
     description: 'Manage your Rogue Trader party builds and progression',
     version: '1.0.0',
     status: 'active',
-    heroImage: '/images/heroes/rogue-trader-hero.png',
+    heroImage: '/images/heroes/rogue-trader-hero.webp',
     logo: '/images/logos/rogue-trader-logo.png',
   },
   'baldurs-gate-3': {
@@ -18,7 +18,7 @@ export const GAMES: Record<string, Game> = {
     description: 'Plan your BG3 character builds and party composition',
     version: '0.9.0',
     status: 'beta',
-    heroImage: '/images/heroes/bg3-hero.png',
+    heroImage: '/images/heroes/bg3-hero.webp',
     logo: '/images/logos/baldurs-gate-logo.png',
   },
 };
@@ -30,7 +30,7 @@ export const COMING_SOON_GAMES: Game[] = [
     shortName: 'DOS2',
     description: 'Manage your party builds and skill combinations',
     status: 'coming-soon',
-    heroImage: '/images/heroes/dos2-hero.png',
+    heroImage: '/images/heroes/dos2-hero.webp',
     logo: '/images/logos/divinity.png',
   },
   {
@@ -39,7 +39,7 @@ export const COMING_SOON_GAMES: Game[] = [
     shortName: 'Disco Elysium',
     description: 'Track your detective skills and thought cabinet',
     status: 'coming-soon',
-    heroImage: '/images/heroes/disco-elysium-hero.png',
+    heroImage: '/images/heroes/disco-elysium-hero.webp',
     logo: '/images/logos/disco.png',
   },
 ];

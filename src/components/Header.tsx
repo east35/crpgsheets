@@ -59,7 +59,7 @@ export function Header({
           {/* Left: Logo */}
           <div className="header-left">
             <img
-              src="/images/marketing/SheetsLogo.png"
+              src="/images/marketing/SheetsLogo.webp"
               alt="Sheets"
               className="header-logo"
             />

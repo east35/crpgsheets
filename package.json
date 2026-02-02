@@ -15,7 +15,13 @@
     "security:imports": "node scripts/check-import-safety.js",
     "security:dangerous": "node scripts/check-dangerous-patterns.js",
     "security:gate": "npm run security:csp && npm run security:imports && npm run security:dangerous",
-    "ci": "npm run security:gate && npm run test:run && npm run build"
+    "ci": "npm run security:gate && npm run test:run && npm run build",
+    "optimize:images": "node scripts/optimize-images.js",
+    "images:dry": "node scripts/convert-images-to-webp-and-rewrite.js --dry-run",
+    "images:convert": "node scripts/convert-images-to-webp-and-rewrite.js",
+    "images:convert:keep": "node scripts/convert-images-to-webp-and-rewrite.js --keep-originals",
+    "images:webp": "node scripts/convert-images-to-webp-and-rewrite.js",
+    "images:webp:keep": "node scripts/convert-images-to-webp-and-rewrite.js --keep-originals"
   },
   "dependencies": {
     "dexie": "^4.2.1",
@@ -35,6 +41,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "sharp": "^0.34.5",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4",

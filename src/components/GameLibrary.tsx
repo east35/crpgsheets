@@ -18,13 +18,13 @@ export function GameLibrary({ onSelectGame }: GameLibraryProps) {
       <section className="hero-fullscreen">
         <div
           className="hero-bg"
-          style={{ backgroundImage: 'url(/images/marketing/background.jpg)' }}
+          style={{ backgroundImage: 'url(/images/marketing/background.webp)' }}
         />
 
         <div className="hero-split">
           <div className="hero-content">
             <img
-              src="/images/marketing/SheetsLogo.png"
+              src="/images/marketing/SheetsLogo.webp"
               alt="Sheets"
               className="hero-logo"
             />
