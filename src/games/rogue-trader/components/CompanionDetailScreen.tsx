@@ -31,6 +31,11 @@ export function CompanionDetailScreen({
   trackedLevel,
 }: CompanionDetailScreenProps) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const availabilityLabel = companion.availability === 'dlc'
+    ? 'DLC'
+    : companion.availability === 'secret'
+      ? 'Secret'
+      : `Act ${companion.recruitmentAct}`;
 
   const availableTags = Array.from(new Set(builds.flatMap(getBuildTags))).sort();
   const filteredBuilds = selectedTags.length === 0
@@ -77,7 +82,7 @@ export function CompanionDetailScreen({
                 <span className="separator">•</span>
                 <span>{companion.role}</span>
                 <span className="separator">•</span>
-                <span>Act {companion.recruitmentAct}</span>
+                <span>{availabilityLabel}</span>
               </div>
               <div className="companion-summary-desc">{companion.bio}</div>
             </div>

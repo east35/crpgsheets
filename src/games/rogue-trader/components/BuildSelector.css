@@ -110,6 +110,14 @@
   font-weight: var(--font-weight-700);
   color: var(--color-eef0ff);
   letter-spacing: 0.01em;
+  grid-column: 1 / -1;
+}
+
+/* Two-column companion grid on desktop */
+.companion-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-1rem);
 }
 
 @media (max-width: 768px) {
@@ -129,6 +137,10 @@
 
   .companion-group-title {
     font-size: 1.15rem;
+  }
+
+  .companion-group {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -458,6 +470,7 @@
   color: var(--color-b8b0ff);
   font-size: var(--type-size-0p85rem);
   font-weight: var(--type-weight-500);
+  white-space: nowrap;
 }
 
 .tracked-build-info {

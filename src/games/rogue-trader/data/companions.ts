@@ -1,6 +1,25 @@
 import type { CompanionInfo, CompanionName, BaseArchetype } from '../types';
 
 export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
+  // ============================================
+  // PLAYER CHARACTER
+  // ============================================
+  RogueTrader: {
+    name: 'RogueTrader',
+    fullName: 'Rogue Trader',
+    defaultArchetype: 'warrior',
+    origin: 'imperialWorld',
+    description: 'Your custom Rogue Trader protagonist.',
+    bio: 'The Rogue Trader is the player character, heir to a powerful dynasty with a Warrant of Trade granting them authority to explore beyond the borders of the Imperium.',
+    quote: 'By the authority of the Golden Throne and the Warrant of Trade, I claim dominion over all I survey.',
+    recruitmentAct: 1,
+    startingLevel: 1,
+    role: 'Varies by Build',
+  },
+
+  // ============================================
+  // PROLOGUE COMPANIONS
+  // ============================================
   Abelard: {
     name: 'Abelard',
     fullName: 'Abelard Werserian',
@@ -13,19 +32,6 @@ export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
     recruitmentAct: 1,
     startingLevel: 1,
     role: 'Frontline Damage / Tank',
-  },
-  Argenta: {
-    name: 'Argenta',
-    fullName: 'Sister Argenta',
-    defaultArchetype: 'soldier',
-    origin: 'schola',
-    description: 'A Battle Sister of the Adepta Sororitas. Excels at ranged combat with bolters.',
-    bio: 'Sister Argenta is one of the blessed Adepta Sororitas, a warrior of the God-Emperor who brings His wrath to heretics, mutants, and other enemies of Humanity.',
-    quote: 'The Sisters of Battle are a fire lit by the God-Emperor. They are the echo of His voice that travels through the dark expanses of the universe. We bring His wrath to heretics, mutants, and other enemies of Humanity. We protect the faithful from the unholy and unhallowed. Sometimes with words. More often than not, with a bolter.',
-    portraitUrl: '/images/companions/rogue-trader/argenta.jpg',
-    recruitmentAct: 1,
-    startingLevel: 1,
-    role: 'Ranged Damage',
   },
   Idira: {
     name: 'Idira',
@@ -40,19 +46,23 @@ export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
     startingLevel: 1,
     role: 'Psyker Support / Disruptor / Blaster',
   },
-  Pasqal: {
-    name: 'Pasqal',
-    fullName: 'Pasqal Haneumann',
-    defaultArchetype: 'operative',
-    origin: 'forgeWorld',
-    description: 'A Tech-Priest of the Adeptus Mechanicus. Master of technology and mechadendrites.',
-    bio: 'Pasqal Haneumann is a venerable Magos of the Adeptus Mechanicus. He serves as the technical expert aboard the Rogue Trader\'s vessel, maintaining the sacred machine spirits.',
-    quote: 'Everything that bears the blessed seal of machinery comes from our hands, and it is we who make sure the operating rituals are performed as they were meant to. We are everywhere — we are the Mars-forged steel bars that give the Imperium strength.',
-    portraitUrl: '/images/companions/rogue-trader/pasqal.jpg',
+  Argenta: {
+    name: 'Argenta',
+    fullName: 'Sister Argenta',
+    defaultArchetype: 'soldier',
+    origin: 'schola',
+    description: 'A Battle Sister of the Adepta Sororitas. Excels at ranged combat with bolters.',
+    bio: 'Sister Argenta is one of the blessed Adepta Sororitas, a warrior of the God-Emperor who brings His wrath to heretics, mutants, and other enemies of Humanity.',
+    quote: 'The Sisters of Battle are a fire lit by the God-Emperor. They are the echo of His voice that travels through the dark expanses of the universe. We bring His wrath to heretics, mutants, and other enemies of Humanity. We protect the faithful from the unholy and unhallowed. Sometimes with words. More often than not, with a bolter.',
+    portraitUrl: '/images/companions/rogue-trader/argenta.jpg',
     recruitmentAct: 1,
     startingLevel: 1,
-    role: 'Ranged Damage / Support',
+    role: 'Ranged Damage',
   },
+
+  // ============================================
+  // CHAPTER 1 COMPANIONS
+  // ============================================
   Cassia: {
     name: 'Cassia',
     fullName: 'Cassia Orsellio',
@@ -65,6 +75,19 @@ export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
     recruitmentAct: 1,
     startingLevel: 1,
     role: 'Support / Buffer',
+  },
+  Pasqal: {
+    name: 'Pasqal',
+    fullName: 'Pasqal Haneumann',
+    defaultArchetype: 'operative',
+    origin: 'forgeWorld',
+    description: 'A Tech-Priest of the Adeptus Mechanicus. Master of technology and mechadendrites.',
+    bio: 'Pasqal Haneumann is a venerable Magos of the Adeptus Mechanicus. He serves as the technical expert aboard the Rogue Trader\'s vessel, maintaining the sacred machine spirits.',
+    quote: 'Everything that bears the blessed seal of machinery comes from our hands, and it is we who make sure the operating rituals are performed as they were meant to. We are everywhere — we are the Mars-forged steel bars that give the Imperium strength.',
+    portraitUrl: '/images/companions/rogue-trader/pasqal.jpg',
+    recruitmentAct: 1,
+    startingLevel: 1,
+    role: 'Ranged Damage / Support',
   },
   Heinrix: {
     name: 'Heinrix',
@@ -79,6 +102,10 @@ export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
     startingLevel: 1,
     role: 'Psyker / Ranged Damage',
   },
+
+  // ============================================
+  // CHAPTER 2 COMPANIONS
+  // ============================================
   Jae: {
     name: 'Jae',
     fullName: 'Jae Heydari',
@@ -105,6 +132,23 @@ export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
     startingLevel: 16,
     role: 'Long Range Damage',
   },
+
+  // ============================================
+  // CHAPTER 3 COMPANIONS
+  // ============================================
+  Ulfar: {
+    name: 'Ulfar',
+    fullName: 'Ulfar',
+    defaultArchetype: 'warrior',
+    origin: 'deathWorld',
+    description: 'A Space Wolf. Devastating melee combatant with superhuman abilities.',
+    bio: 'Ulfar is a proud member of the Adeptus Astartes, the Vlka Fenryka of Fenris, a proud skald and savage warrior. Before becoming an Astartes, he dreamed of becoming a keeper of stories.',
+    quote: 'Before becoming an Astartes, I dreamed of becoming a skjald, a keeper of stories. At feasts I often sing of my brothers\' exploits. Thousands are stored in my memory. When I am near, Wolves fight even more ferociously, for they know their deeds will be immortalised. One of the Tech-Priests theorised that our songs contained hidden psychometric codes to increase courage. Maybe there is such a thing in other places. But on Fenris our sagas are spun from memory, from respect, from pride.',
+    portraitUrl: '/images/companions/rogue-trader/ulfar.png',
+    recruitmentAct: 3,
+    startingLevel: 26,
+    role: 'Melee Damage / Tank',
+  },
   Marazhai: {
     name: 'Marazhai',
     fullName: 'Marazhai Aezyrraesh',
@@ -118,30 +162,83 @@ export const COMPANIONS: Record<CompanionName, CompanionInfo> = {
     startingLevel: 26,
     role: 'Melee Damage / Assassin',
   },
-  Ulfar: {
-    name: 'Ulfar',
-    fullName: 'Ulfar',
-    defaultArchetype: 'warrior',
+
+  // ============================================
+  // DLC COMPANIONS
+  // ============================================
+  Kibellah: {
+    name: 'Kibellah',
+    fullName: 'Kibellah',
+    defaultArchetype: 'bladeDancer',
     origin: 'deathWorld',
-    description: 'A Space Wolf. Devastating melee combatant with superhuman abilities.',
-    bio: 'Ulfar is a proud member of the Adeptus Astartes, the Vlka Fenryka of Fenris, a proud skald and savage warrior. Before becoming an Astartes, he dreamed of becoming a keeper of stories.',
-    quote: 'Before becoming an Astartes, I dreamed of becoming a skjald, a keeper of stories. At feasts I often sing of my brothers\' exploits. Thousands are stored in my memory. When I am near, Wolves fight even more ferociously, for they know their deeds will be immortalised. One of the Tech-Priests theorised that our songs contained hidden psychometric codes to increase courage. Maybe there is such a thing in other places. But on Fenris our sagas are spun from memory, from respect, from pride.',
-    portraitUrl: '/images/companions/rogue-trader/ulfar.png',
-    recruitmentAct: 4,
-    startingLevel: 36,
-    role: 'Melee Damage / Tank',
+    description: 'A deadly Blade Dancer from the Death Cult Assassins. DLC companion.',
+    bio: 'Kibellah is a Death Cult Assassin, a lethal warrior who has dedicated her life to the art of killing in service to the God-Emperor.',
+    quote: 'Death is my art, and I am its finest artist.',
+    portraitUrl: '/images/companions/rogue-trader/kibellah.jpg',
+    recruitmentAct: 2,
+    startingLevel: 16,
+    role: 'Melee Damage / Assassin',
+    availability: 'dlc',
   },
-  RogueTrader: {
-    name: 'RogueTrader',
-    fullName: 'Rogue Trader',
+  Solomorne: {
+    name: 'Solomorne',
+    fullName: 'Solomorne Anthar',
+    defaultArchetype: 'soldier',
+    origin: 'imperialWorld',
+    description: 'An Arbitrator with a loyal cyber-mastiff. DLC companion.',
+    bio: 'Solomorne Anthar is an Adeptus Arbites enforcer who brings Imperial law to the lawless Koronus Expanse, accompanied by his faithful cyber-mastiff.',
+    quote: 'The law is absolute. There is no negotiation, only judgement.',
+    portraitUrl: '/images/companions/rogue-trader/solomorne.jpg',
+    recruitmentAct: 2,
+    startingLevel: 19,
+    role: 'Ranged Damage / Pet Handler',
+    availability: 'dlc',
+  },
+
+  // ============================================
+  // SECRET COMPANIONS
+  // ============================================
+  Incendia: {
+    name: 'Incendia',
+    fullName: 'Incendia Bastaal-Chorda',
+    defaultArchetype: 'soldier',
+    origin: 'imperialWorld',
+    description: 'A zealous Ministorum Priest wielding dual pistols. Secret companion.',
+    bio: 'Incendia Bastaal-Chorda is a fiery preacher of the Imperial Cult, spreading the word of the God-Emperor with righteous fury and blazing pistols.',
+    quote: 'Let the flames of faith purify the unworthy!',
+    portraitUrl: '/images/companions/rogue-trader/incendia.jpg',
+    recruitmentAct: 2,
+    startingLevel: 16,
+    role: 'Ranged Damage / Support',
+    availability: 'secret',
+  },
+  Winterscale: {
+    name: 'Winterscale',
+    fullName: 'Calligos Winterscale',
     defaultArchetype: 'warrior',
     origin: 'imperialWorld',
-    description: 'Your custom Rogue Trader protagonist.',
-    bio: 'The Rogue Trader is the player character, heir to a powerful dynasty with a Warrant of Trade granting them authority to explore beyond the borders of the Imperium.',
-    quote: 'By the authority of the Golden Throne and the Warrant of Trade, I claim dominion over all I survey.',
-    recruitmentAct: 1,
-    startingLevel: 1,
-    role: 'Varies by Build',
+    description: 'A rival Rogue Trader known for his aggressive tactics. Secret companion.',
+    bio: 'Calligos Winterscale is a legendary Rogue Trader whose dynasty rivals the von Valancius. He is known for his bold tactics and martial prowess.',
+    quote: 'In the Koronus Expanse, the bold take what they want and the weak serve those who do.',
+    portraitUrl: '/images/companions/rogue-trader/calligos.jpg',
+    recruitmentAct: 3,
+    startingLevel: 26,
+    role: 'Melee Damage / Frontline',
+    availability: 'secret',
+  },
+  Uralon: {
+    name: 'Uralon',
+    fullName: 'Uralon the Cruel',
+    defaultArchetype: 'officer',
+    origin: 'deathWorld',
+    description: 'A Dark Apostle of the Word Bearers. Secret companion.',
+    bio: 'Uralon the Cruel is a Dark Apostle of the Word Bearers Traitor Legion, a preacher of the Ruinous Powers who spreads the word of Chaos.',
+    quote: 'The False Emperor sits upon a throne of lies. Let me show you the truth.',
+    portraitUrl: '/images/companions/rogue-trader/uralon.jpeg',
+    recruitmentAct: 4,
+    startingLevel: 36,
+    role: 'Support / Buffer',
+    availability: 'secret',
   },
 };
 

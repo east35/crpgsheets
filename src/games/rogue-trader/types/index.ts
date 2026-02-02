@@ -158,6 +158,11 @@ export type CompanionName =
   | 'Yrliet'
   | 'Marazhai'
   | 'Ulfar'
+  | 'Kibellah'
+  | 'Solomorne'
+  | 'Winterscale'
+  | 'Uralon'
+  | 'Incendia'
   | 'RogueTrader';
 
 export interface CompanionInfo {
@@ -172,6 +177,7 @@ export interface CompanionInfo {
   recruitmentAct: number;
   startingLevel: number;
   role: string; // e.g., "Frontline Damage / Tank"
+  availability?: 'dlc' | 'secret';
 }
 
 // === Display Helpers ===

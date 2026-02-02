@@ -1,13 +1,23 @@
 // Changelog data
 export const CHANGELOG = [
   {
+    version: '1.0.2',
+    date: '2026-02-01',
+    title: 'New Companions & Builds',
+    changes: [
+      'Added\n- Added 5 new companions: Kibellah, Solomorne, Incendia, Winterscale, and Uralon\n- Created build guides for all new companions with full level 1-55 progressions\n- Added companion availability field to distinguish DLC and secret companions',
+      'Restored missing back button on build viewer\n- Corrected companion recruitment acts and starting levels',
+      'Reorganized companion data by recruitment chapter (Prologue, Chapter 1-3, DLC, Secret)',
+    ],
+  },
+  {
     version: '1.0.1',
     date: '2026-02-01',
     title: 'UI Tokenization Closure',
     changes: [
-      '### Changed\n- Consolidated UI styling into a single token system (`src/patterns/tokens.css`) and removed remaining hard-coded styling values across CSS and tooltip/keyword components.\n- Normalized z-index, typography, and motion values to named tokens for consistency and maintainability.',
-      '### Fixed\n- Fixed malformed spacing token usage and missing `calc()` parentheses in CSS.',
-      '### Maintenance\n- Archived/removed internal audit artifacts used during the UI tokenization work.',
+      'Changed\n- Consolidated UI styling into a single token system (`src/patterns/tokens.css`) and removed remaining hard-coded styling values across CSS and tooltip/keyword components.\n- Normalized z-index, typography, and motion values to named tokens for consistency and maintainability.',
+      'Fixed\n- Fixed malformed spacing token usage and missing `calc()` parentheses in CSS.',
+      'Maintenance\n- Archived/removed internal audit artifacts used during the UI tokenization work.',
     ],
   },
   {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavArrowDown, NavArrowRight, Check } from 'iconoir-react';
+import { NavArrowDown, NavArrowRight, Check, NavArrowLeft } from 'iconoir-react';
 import type { BuildGuide, CompanionName } from '../types';
 import type { CharacterBuild } from '../../../types';
 import { ARCHETYPE_DISPLAY_NAMES, GEAR_SLOT_LABELS } from '../types';
@@ -41,7 +41,7 @@ interface BuildViewerProps {
 
 export function BuildViewer({
   build,
-  onBack: _onBack,
+  onBack,
   currentLevel = 1,
   onLevelChange,
   onTrackBuild,
@@ -54,7 +54,6 @@ export function BuildViewer({
   profileId = '',
   customName,
 }: BuildViewerProps) {
-  void _onBack;
   void _onUntrackBuild;
   const [activeTab, setActiveTab] = useState<'progression' | 'gear'>('progression');
   const [showLightbox, setShowLightbox] = useState(false);
@@ -165,65 +164,64 @@ export function BuildViewer({
         />
       )}
       <div className={`build-viewer ${showPartyBar ? 'has-party-bar' : ''}`}>
-      <div className="build-viewer-header">
-        {/* <button className="btn btn-secondary btn-sm" onClick={onBack}>
-          Back
-        </button> */}
-        {avatarUrl ? (
-          <div className="build-avatar-wrapper">
-            <button
-              className="build-avatar-btn"
-              onClick={() => setShowLightbox(true)}
-              aria-label="View larger portrait"
-            >
-              <img
-                src={avatarUrl}
-                alt=""
-                className="build-avatar"
+        <button className="build-viewer-back-btn" onClick={onBack}>
+          <NavArrowLeft width={20} height={20} />
+          <span>Back</span>
+        </button>
+        <div className="build-viewer-header">
+          {avatarUrl ? (
+            <div className="build-avatar-wrapper">
+              <button
+                className="build-avatar-btn"
+                onClick={() => setShowLightbox(true)}
+                aria-label="View larger portrait"
+              >
+                <img
+                  src={avatarUrl}
+                  alt=""
+                  className="build-avatar"
+                />
+              </button>
+              {isTracked && <div className="build-avatar-level">{currentLevel}</div>}
+            </div>
+          ) : isPlayerBuild && profileId ? (
+            <div className="build-avatar-wrapper">
+              <AvatarUpload
+                buildId={build.id}
+                gameId={gameId}
+                profileId={profileId}
+                className="build-avatar-upload"
               />
+              {isTracked && <div className="build-avatar-level">{currentLevel}</div>}
+            </div>
+          ) : null}
+          <div className="build-title">
+            <h2>{customName || build.companion}: {build.buildName}</h2>
+            <div className="archetype-path">
+              <ArchetypeTooltip archetype={archetypePath.base} tier="base" />
+              <span className="arrow">→</span>
+              <ArchetypeTooltip archetype={archetypePath.advanced} tier="advanced" />
+              <span className="arrow">→</span>
+              <ArchetypeTooltip archetype={archetypePath.exemplar} tier="exemplar" />
+            </div>
+            <div className="skill-options">
+              <strong>Skills:</strong> <KeywordText text={build.skillOptions.join(', ')} />
+            </div>
+
+            {build.description && (
+              <p className="build-description"><KeywordText text={build.description} /></p>
+            )}
+          </div>
+          {/* Desktop Add to Party button */}
+          {onTrackBuild && !isTracked && (
+            <button
+              className="btn btn-primary add-to-party-desktop"
+              onClick={() => onTrackBuild(build)}
+            >
+              Add to Party
             </button>
-            {isTracked && <div className="build-avatar-level">{currentLevel}</div>}
-          </div>
-        ) : isPlayerBuild && profileId ? (
-          <div className="build-avatar-wrapper">
-            <AvatarUpload
-              buildId={build.id}
-              gameId={gameId}
-              profileId={profileId}
-              className="build-avatar-upload"
-            />
-            {isTracked && <div className="build-avatar-level">{currentLevel}</div>}
-          </div>
-        ) : null}
-        <div className="build-title">
-          <h2>{customName || build.companion}: {build.buildName}</h2>
-          <div className="archetype-path">
-            <ArchetypeTooltip archetype={archetypePath.base} tier="base" />
-            <span className="arrow">→</span>
-            <ArchetypeTooltip archetype={archetypePath.advanced} tier="advanced" />
-            <span className="arrow">→</span>
-            <ArchetypeTooltip archetype={archetypePath.exemplar} tier="exemplar" />
-          </div>
-          <div className="skill-options">
-            <strong>Skills:</strong> <KeywordText text={build.skillOptions.join(', ')} />
-          </div>
-
-      {build.description && (
-        <p className="build-description"><KeywordText text={build.description} /></p>
-      )}
-
-
+          )}
         </div>
-        {/* Desktop Add to Party button */}
-        {onTrackBuild && !isTracked && (
-          <button
-            className="btn btn-primary add-to-party-desktop"
-            onClick={() => onTrackBuild(build)}
-          >
-            Add to Party
-          </button>
-        )}
-      </div>
 
       {/* Mobile floating Add to Party button */}
       {onTrackBuild && !isTracked && (

@@ -9,6 +9,11 @@ import { JAE_BUILDS } from './jae';
 import { YRLIET_BUILDS } from './yrliet';
 import { ULFAR_BUILDS } from './ulfar';
 import { MARAZHAI_BUILDS } from './marazhai';
+import { KIBELLAH_BUILDS } from './kibellah';
+import { SOLOMORNE_BUILDS } from './solomorne';
+import { WINTERSCALE_BUILDS } from './winterscale';
+import { URALON_BUILDS } from './uralon';
+import { INCENDIA_BUILDS } from './incendia';
 import { ROGUE_TRADER_BUILDS } from './roguetrader';
 
 // All available build guides
@@ -26,6 +31,11 @@ export const ALL_BUILDS: BuildGuide[] = [
   ...YRLIET_BUILDS,
   ...ULFAR_BUILDS,
   ...MARAZHAI_BUILDS,
+  ...KIBELLAH_BUILDS,
+  ...SOLOMORNE_BUILDS,
+  ...WINTERSCALE_BUILDS,
+  ...URALON_BUILDS,
+  ...INCENDIA_BUILDS,
   ...ROGUE_TRADER_BUILDS,
 ].map((build) => ({
   ...build,

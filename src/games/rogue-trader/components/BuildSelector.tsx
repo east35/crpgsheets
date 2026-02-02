@@ -24,42 +24,9 @@ interface BuildSelectorProps {
   onSelectTrackedBuild?: (guideId: string, level: number) => void;
 }
 
-const RT_COMPANION_ORDER = [
-  'Abelard',
-  'Idira',
-  'Cassia',
-  'Pasqal',
-  'Argenta',
-  'Heinrix',
-  'Yrliet',
-  'Ulfar',
-  'Jae',
-  'Kibellah',
-];
-
-const RT_CORE_COMPANIONS = [
-  'Abelard',
-  'Idira',
-  'Cassia',
-  'Pasqal',
-  'Argenta',
-];
-
-const RT_CONDITIONAL_COMPANIONS = [
-  'Heinrix',
-  'Yrliet',
-  'Ulfar',
-  'Jae',
-];
-
-const RT_DLC_COMPANIONS = [
-  'Kibellah',
-];
-
 export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, onSelectCompanion, trackedBuilds = [], onSelectTrackedBuild }: BuildSelectorProps) {
   const [modalCompanion, setModalCompanion] = useState<CompanionName | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const companionOrder = new Map(RT_COMPANION_ORDER.map((name, index) => [name, index]));
 
   // Get tracked build for a specific companion
   const getTrackedBuildForCompanion = (companion: CompanionName): TrackedBuildInfo | undefined => {
@@ -73,12 +40,9 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, o
     ? allCompanionsWithBuilds.filter((c): c is Exclude<CompanionName, 'RogueTrader'> => c !== 'RogueTrader')
     : allCompanionsWithBuilds.filter((c): c is 'RogueTrader' => c === 'RogueTrader');
   const sortedCompanionsWithBuilds = buildType === 'companion'
-    ? [...companionsWithBuilds].sort((a, b) => {
-        const aOrder = companionOrder.get(a) ?? Number.MAX_SAFE_INTEGER;
-        const bOrder = companionOrder.get(b) ?? Number.MAX_SAFE_INTEGER;
-        if (aOrder !== bOrder) return aOrder - bOrder;
-        return COMPANIONS[a]?.fullName.localeCompare(COMPANIONS[b]?.fullName ?? '') ?? 0;
-      })
+    ? [...companionsWithBuilds].sort((a, b) =>
+        (COMPANIONS[a]?.fullName ?? '').localeCompare(COMPANIONS[b]?.fullName ?? '')
+      )
     : companionsWithBuilds;
 
   // Get companions without builds for "coming soon" section
@@ -290,28 +254,26 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, o
 
       <div className="companion-list">
         {(() => {
-          const buildMap = new Map(buildsByCompanion.map(entry => [entry.companion, entry]));
-          const usedCompanions = new Set<string>();
-          const getCompanionsByNameOrder = (names: string[]) => {
-            return names
-              .map(name => buildMap.get(name as CompanionName))
-              .filter((entry): entry is (typeof buildsByCompanion)[number] => {
-                if (!entry) return false;
-                usedCompanions.add(entry.companion);
-                return true;
-              });
-          };
-
-          const coreCompanions = getCompanionsByNameOrder(RT_CORE_COMPANIONS);
-          const conditionalCompanions = getCompanionsByNameOrder(RT_CONDITIONAL_COMPANIONS);
-          const dlcCompanions = getCompanionsByNameOrder(RT_DLC_COMPANIONS);
-          const otherCompanions = buildsByCompanion.filter(entry => !usedCompanions.has(entry.companion));
+          const sortByName = (entries: (typeof buildsByCompanion)[number][]) =>
+            [...entries].sort((a, b) => a.info.fullName.localeCompare(b.info.fullName));
+          const storyCompanions = buildsByCompanion.filter(entry => !entry.info.availability);
+          const actNumbers = Array.from(new Set(storyCompanions.map(entry => entry.info.recruitmentAct)))
+            .sort((a, b) => a - b);
+          const actSections = actNumbers.map(act => ({
+            title: `Act ${act} Companions`,
+            entries: sortByName(storyCompanions.filter(entry => entry.info.recruitmentAct === act)),
+          }));
+          const dlcCompanions = sortByName(
+            buildsByCompanion.filter(entry => entry.info.availability === 'dlc')
+          );
+          const secretCompanions = sortByName(
+            buildsByCompanion.filter(entry => entry.info.availability === 'secret')
+          );
 
           return [
-            { title: 'Core Companions', entries: coreCompanions },
-            { title: 'Conditional Companions', entries: conditionalCompanions },
+            ...actSections,
             { title: 'DLC Companions', entries: dlcCompanions },
-            { title: 'Other Companions', entries: otherCompanions },
+            { title: 'Secret Companions', entries: secretCompanions },
           ]
             .filter(section => section.entries.length > 0)
             .map(section => (
