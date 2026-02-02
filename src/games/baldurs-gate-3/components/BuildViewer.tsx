@@ -23,6 +23,7 @@ interface TrackedBG3Build extends CharacterBuild {
 interface BuildViewerProps {
   build: BG3Build;
   onBack: () => void;
+  backLabel?: string;
   currentLevel?: number;
   onLevelChange?: (level: number) => void;
   onTrackBuild?: (build: BG3Build) => void;
@@ -62,6 +63,7 @@ function GearItem({ name }: { name: string }) {
 export function BuildViewer({
   build,
   onBack,
+  backLabel,
   currentLevel = 1,
   onLevelChange,
   onTrackBuild,
@@ -161,7 +163,7 @@ export function BuildViewer({
       <div className={`build-viewer bg3 ${showPartyBar ? 'has-party-bar' : ''}`}>
       <button className="build-viewer-back-btn" onClick={onBack}>
         <NavArrowLeft width={20} height={20} />
-        <span>Back</span>
+        <span>{backLabel || 'Back'}</span>
       </button>
       <div className="build-viewer-header">
         {avatarUrl ? (

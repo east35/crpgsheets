@@ -304,7 +304,9 @@ export function BuildSelector({ onSelectBuild, onSelectCompanion, buildType = 'a
                         ) : (
                           <div className="unselected-build-info">
                             <span className="unselected-badge">No Build Selected</span>
-                            <span className="unselected-build-count">{builds.length} builds available</span>
+                            <span className="unselected-build-count">
+                              {builds.length} build{builds.length === 1 ? '' : 's'} available
+                            </span>
                           </div>
                         )}
                         <span className="companion-card-action">

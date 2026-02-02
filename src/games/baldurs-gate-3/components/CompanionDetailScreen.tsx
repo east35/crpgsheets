@@ -139,7 +139,7 @@ export function CompanionDetailScreen({
       <header className="companion-detail-header">
         <button className="back-button" onClick={onBack}>
           <NavArrowLeft width={20} height={20} />
-          <span>Back</span>
+          <span>Companions</span>
         </button>
       </header>
 

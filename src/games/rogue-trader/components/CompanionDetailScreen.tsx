@@ -3,6 +3,7 @@ import { NavArrowLeft } from 'iconoir-react';
 import type { BuildGuide, CompanionInfo } from '../types';
 import { ARCHETYPE_DISPLAY_NAMES } from '../types';
 import './CompanionDetailScreen.css';
+import './BuildSelector.css';
 
 interface CompanionDetailScreenProps {
   companion: CompanionInfo;
@@ -59,7 +60,7 @@ export function CompanionDetailScreen({
       <header className="companion-detail-header">
         <button className="back-button" onClick={onBack}>
           <NavArrowLeft width={20} height={20} />
-          <span>Back</span>
+          <span>Companions</span>
         </button>
       </header>
 
@@ -121,33 +122,33 @@ export function CompanionDetailScreen({
             return (
               <button
                 key={build.id}
-                className={`companion-build-card ${isTracked ? 'tracked' : ''}`}
+                className={`companion-section rogue-trader-build-card ${isTracked ? 'has-tracked' : ''}`}
                 onClick={() => onSelectBuild(build)}
               >
-                <div className="build-card-layout">
-                  <div className="build-card-icon-wrapper rt-build-icon-wrapper">
+                <div className="companion-card-layout">
+                  <div className="rt-build-icon-wrapper">
                     <img
                       src={getArchetypeImage(build)}
                       alt={ARCHETYPE_DISPLAY_NAMES[build.archetypePath.advanced]}
                       className="rt-build-icon"
                     />
                   </div>
-                  <div className="build-card-content">
-                    <div className="build-card-title-row">
-                      <div className="build-card-title">{build.buildName}</div>
+                  <div className="companion-card-content">
+                    <div className="companion-card-title-row">
+                      <div className="companion-card-title">{build.buildName}</div>
                       {isTracked && (
-                        <span className="build-card-level">Lv {trackedLevel}</span>
+                        <span className="companion-card-level-badge">Lv {trackedLevel}</span>
                       )}
                     </div>
-                    <div className="build-card-meta">
-                      <span className="build-card-archetype">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.base]}</span>
-                      <span className="build-card-separator">•</span>
-                      <span className="build-card-archetype">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.advanced]}</span>
-                      <span className="build-card-separator">•</span>
-                      <span className="build-card-archetype">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.exemplar]}</span>
+                    <div className="build-path">
+                      <span className="archetype base">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.base]}</span>
+                      <span className="arrow">→</span>
+                      <span className="archetype advanced">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.advanced]}</span>
+                      <span className="arrow">→</span>
+                      <span className="archetype exemplar">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.exemplar]}</span>
                     </div>
                     {build.description && (
-                      <div className="build-card-desc">{build.description}</div>
+                      <div className="companion-card-desc">{build.description}</div>
                     )}
                     {source && (
                       <a

@@ -36,12 +36,18 @@
   border: none;
 }
 
-.header-nav-tab:hover {
-  background: var(--rgba-255-255-255-0p1);
+@media (hover: hover) {
+  .header-nav-tab:hover {
+    background: var(--rgba-255-255-255-0p1);
+  }
 }
 
 .header-nav-tab.active {
   border: none;
+}
+
+.header-nav-tab.active:hover {
+    background: var(--rgba-100-100-140-0p8);
 }
 
 /* Mobile sticky bottom subnav (Companions / Rogue Trader tabs) */

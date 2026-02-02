@@ -142,6 +142,10 @@
   .companion-group {
     grid-template-columns: 1fr;
   }
+
+  .rt-build-icon-wrapper {
+    display: none;
+  }
 }
 
 .companion-section {

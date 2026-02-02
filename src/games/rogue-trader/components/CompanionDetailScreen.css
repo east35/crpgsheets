@@ -106,109 +106,7 @@
   text-decoration: underline;
 }
 
-.companion-build-card {
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-0);
-  text-align: left;
-  cursor: pointer;
-  transition: var(--transition-fast-ease);
-  overflow: hidden;
-  color: inherit;
-  font-family: inherit;
-}
-
-.companion-build-card:hover {
-  background: var(--rgba-26-26-46-0p9);
-  border-color: var(--color-8b5cf6);
-  transform: translateY(-2px);
-}
-
-.companion-build-card.tracked {
-  border-color: var(--rgba-74-124-74-0p6);
-  border-width: 1px;
-}
-
-.build-card-layout {
-  display: flex;
-  gap: var(--space-1p25rem);
-  padding: var(--space-1rem);
-}
-
-.build-card-icon-wrapper {
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.rt-build-icon {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 0;
-  background: var(--color-transparent);
-  border: none;
-}
-
-.build-card-content {
-  flex: 1;
-  min-width: var(--space-0);
-}
-
-.build-card-title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-0p75rem);
-}
-
-.build-card-title {
-  font-size: 1.125rem;
-  font-weight: var(--type-weight-600);
-  color: var(--color-e5e9ff);
-  margin-bottom: var(--space-0p25rem);
-}
-
-.build-card-level {
-  font-size: var(--type-size-0p8rem);
-  border-radius: var(--radius-6px);
-}
-
-.build-card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-0p5rem);
-  align-items: center;
-  font-size: var(--font-size-0p8125rem);
-  color: var(--color-98a0c3);
-  margin-bottom: var(--space-0p5rem);
-}
-
-.build-card-separator {
-  opacity: 0.5;
-}
-
-.build-card-desc {
-  font-size: var(--font-size-0p8125rem);
-  line-height: var(--type-lh-1p5);
-  margin-bottom: var(--space-0p5rem);
-}
-
-.build-source-link {
-  display: inline-block;
-  font-size: var(--type-size-0p75rem);
-  color: var(--color-b8b0ff);
-  text-decoration: none;
-}
-
-.build-source-link:hover {
-  text-decoration: underline;
-}
+/* Build cards now use shared styles from BuildSelector.css */
 
 @media (max-width: 768px) {
   .companion-summary-layout {
@@ -225,14 +123,5 @@
   .filter-section {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .build-card-layout {
-    flex-direction: column;
-  }
-
-  .build-card-icon-wrapper {
-    width: 56px;
-    height: 56px;
   }
 }

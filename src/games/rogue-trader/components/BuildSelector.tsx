@@ -180,12 +180,12 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, o
                         <span className="companion-card-level-badge">Lv {trackedBuild.currentLevel}</span>
                       )}
                     </div>
-                    <div className="companion-card-meta">
-                      <span className="companion-card-archetype">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.base]}</span>
-                      <span className="companion-card-separator">•</span>
-                      <span className="companion-card-archetype">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.advanced]}</span>
-                      <span className="companion-card-separator">•</span>
-                      <span className="companion-card-archetype">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.exemplar]}</span>
+                    <div className="build-path">
+                      <span className="archetype base">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.base]}</span>
+                      <span className="arrow">→</span>
+                      <span className="archetype advanced">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.advanced]}</span>
+                      <span className="arrow">→</span>
+                      <span className="archetype exemplar">{ARCHETYPE_DISPLAY_NAMES[build.archetypePath.exemplar]}</span>
                     </div>
                     {build.description && (
                       <div className="companion-card-desc">{build.description}</div>
@@ -367,7 +367,7 @@ export function BuildSelector({ onSelectBuild, onCreateCustomBuild, buildType, o
                         >
                           <div className="unselected-build-info">
                             <span className="unselected-badge">No Build Selected</span>
-                            <span className="unselected-build-count">{builds.length} builds available</span>
+                            <span className="unselected-build-count">{builds.length} {builds.length === 1 ? 'build' : 'builds'} available</span>
                           </div>
                           <span className="unselected-build-action">
                             Select Build

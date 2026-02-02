@@ -65,6 +65,7 @@ function App() {
   const [selectedBG3Build, setSelectedBG3Build] = useState<BG3Build | null>(null);
   const [selectedBG3Companion, setSelectedBG3Companion] = useState<BG3CompanionInfo | null>(null);
   const [bg3PreviousView, setBg3PreviousView] = useState<'bg3-builds' | 'bg3-companion-builds' | 'bg3-companion-detail'>('bg3-builds');
+  const [rtPreviousView, setRtPreviousView] = useState<'companion-builds' | 'rogue-trader-builds' | 'rt-companion-detail'>('companion-builds');
   // Track navigation context: did we enter detail view from Party or Builds?
   const [navContext, setNavContext] = useState<'party' | 'builds'>('builds');
   const [showChangelog, setShowChangelog] = useState(false);
@@ -226,16 +227,15 @@ function App() {
   };
 
   const handleBackToGuides = () => {
-    // Return to Party if we came from Party, otherwise return to appropriate Builds view
+    // Return to Party if we came from Party, otherwise return to previous view
     if (navContext === 'party') {
       setSelectedGuide(null);
       setActiveTrackedBuildId(null);
       setView('my-builds');
     } else {
-      const returnView = selectedGuide?.companion === 'RogueTrader' ? 'rogue-trader-builds' : 'companion-builds';
       setSelectedGuide(null);
       setActiveTrackedBuildId(null);
-      setView(returnView);
+      setView(rtPreviousView);
     }
   };
 
@@ -604,7 +604,10 @@ function App() {
 
         {view === 'companion-builds' && currentGame?.id === 'rogue-trader' && (
           <RTBuildSelector
-            onSelectBuild={handleSelectGuide}
+            onSelectBuild={(guide) => {
+              setRtPreviousView('companion-builds');
+              handleSelectGuide(guide);
+            }}
             onCreateCustomBuild={handleCreateCustomBuild}
             buildType="companion"
             onSelectCompanion={handleSelectRTCompanion}
@@ -622,7 +625,10 @@ function App() {
             companion={COMPANIONS[selectedRTCompanion]}
             builds={getRTBuildsForCompanion(selectedRTCompanion)}
             onBack={handleBackFromRTCompanionDetail}
-            onSelectBuild={handleSelectGuide}
+            onSelectBuild={(guide) => {
+              setRtPreviousView('rt-companion-detail');
+              handleSelectGuide(guide);
+            }}
             trackedBuildId={getTrackedRTBuilds().find(b => b.data.companion === selectedRTCompanion)?.data.guideId}
             trackedLevel={getTrackedRTBuilds().find(b => b.data.companion === selectedRTCompanion)?.data.currentLevel}
           />
@@ -630,7 +636,10 @@ function App() {
 
         {view === 'rogue-trader-builds' && currentGame?.id === 'rogue-trader' && (
           <RTBuildSelector
-            onSelectBuild={handleSelectGuide}
+            onSelectBuild={(guide) => {
+              setRtPreviousView('rogue-trader-builds');
+              handleSelectGuide(guide);
+            }}
             onCreateCustomBuild={handleCreateCustomBuild}
             buildType="rogueTrader"
             trackedBuilds={getTrackedRTBuilds().map(b => ({
@@ -646,6 +655,7 @@ function App() {
           <RTBuildViewer
             build={selectedGuide}
             onBack={handleBackToGuides}
+            backLabel={COMPANIONS[selectedGuide.companion]?.fullName}
             currentLevel={currentLevel}
             onLevelChange={handleLevelChange}
             onTrackBuild={handleTrackBuild}
@@ -671,6 +681,7 @@ function App() {
                 setView(bg3PreviousView);
               }
             }}
+            backLabel={selectedBG3Companion?.fullName}
             currentLevel={currentLevel}
             onLevelChange={handleBG3LevelChange}
             onTrackBuild={handleTrackBG3Build}

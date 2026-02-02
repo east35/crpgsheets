@@ -26,6 +26,7 @@ interface TrackedRTBuild extends CharacterBuild {
 interface BuildViewerProps {
   build: BuildGuide;
   onBack: () => void;
+  backLabel?: string;
   currentLevel?: number;
   onLevelChange?: (level: number) => void;
   onTrackBuild?: (build: BuildGuide) => void;
@@ -42,6 +43,7 @@ interface BuildViewerProps {
 export function BuildViewer({
   build,
   onBack,
+  backLabel,
   currentLevel = 1,
   onLevelChange,
   onTrackBuild,
@@ -166,7 +168,7 @@ export function BuildViewer({
       <div className={`build-viewer ${showPartyBar ? 'has-party-bar' : ''}`}>
         <button className="build-viewer-back-btn" onClick={onBack}>
           <NavArrowLeft width={20} height={20} />
-          <span>Back</span>
+          <span>{backLabel || 'Back'}</span>
         </button>
         <div className="build-viewer-header">
           {avatarUrl ? (
