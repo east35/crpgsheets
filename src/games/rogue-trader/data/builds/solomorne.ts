@@ -84,6 +84,5 @@ export const SOLOMORNE_BUILDS: BuildGuide[] = [
       { slot: 'weaponSet1', items: ['Double-Barreled Shotgun', 'Gunnery Shield'] },
       { slot: 'weaponSet2', items: ['Scoped Shotgun', 'Sol-Pattern Shotgun', 'The Rack', 'Crescendo', 'The Ruin'] },
     ],
-    pet: ['Pack Hunting', 'Heel! Protocol'],
   },
 ];
