@@ -68,6 +68,7 @@ function App() {
   const [rtPreviousView, setRtPreviousView] = useState<'companion-builds' | 'rogue-trader-builds' | 'rt-companion-detail'>('companion-builds');
   // Track navigation context: did we enter detail view from Party or Builds?
   const [navContext, setNavContext] = useState<'party' | 'builds'>('builds');
+  const [partyBuildScrollY, setPartyBuildScrollY] = useState(0);
   const [showChangelog, setShowChangelog] = useState(false);
   const [showRoadmap, setShowRoadmap] = useState(false);
 
@@ -229,6 +230,7 @@ function App() {
   const handleBackToGuides = () => {
     // Return to Party if we came from Party, otherwise return to previous view
     if (navContext === 'party') {
+      setPartyBuildScrollY(window.scrollY);
       setSelectedGuide(null);
       setActiveTrackedBuildId(null);
       setView('my-builds');
@@ -259,7 +261,7 @@ function App() {
         setActiveTrackedBuildId(build.id);
         setNavContext('party');
         setView('build-viewer');
-        window.scrollTo(0, 0);
+        window.scrollTo(0, partyBuildScrollY);
       }
     }
     // BG3 build from Party
@@ -271,7 +273,7 @@ function App() {
         setActiveTrackedBuildId(build.id);
         setNavContext('party');
         setView('build-viewer');
-        window.scrollTo(0, 0);
+        window.scrollTo(0, partyBuildScrollY);
       }
     }
   };
@@ -325,7 +327,9 @@ function App() {
         setActiveTrackedBuildId(trackedBuild.id);
       }
       setView('build-viewer');
-      window.scrollTo(0, 0);
+      if (view !== 'build-viewer') {
+        window.scrollTo(0, 0);
+      }
     }
   };
 
@@ -423,7 +427,9 @@ function App() {
         setActiveTrackedBuildId(trackedBuild.id);
       }
       setView('build-viewer');
-      window.scrollTo(0, 0);
+      if (view !== 'build-viewer') {
+        window.scrollTo(0, 0);
+      }
     }
   };
 
@@ -676,6 +682,7 @@ function App() {
               setSelectedBG3Build(null);
               setActiveTrackedBuildId(null);
               if (navContext === 'party') {
+                setPartyBuildScrollY(window.scrollY);
                 setView('my-builds');
               } else {
                 setView(bg3PreviousView);
